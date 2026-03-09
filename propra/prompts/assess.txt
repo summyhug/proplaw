@@ -1,0 +1,10 @@
+# WHAT: Synthesises retrieved KG nodes and RAG document chunks into a plain-German
+#       regulatory assessment for the user's specific situation.
+# INPUTS: {situation} — structured situation object (JSON),
+#         {kg_results} — list of relevant KG nodes and edges (JSON),
+#         {rag_chunks} — list of retrieved document excerpts with source citations (JSON)
+# OUTPUT FORMAT: JSON object matching the AssessmentResponse Pydantic schema:
+#   verdict (ALLOWED|CONDITIONAL|NOT_ALLOWED), confidence (LOW|MEDIUM|HIGH),
+#   explanation (plain German str), cited_sources (list), next_action (plain German str)
+
+[Prompt body to be written here]

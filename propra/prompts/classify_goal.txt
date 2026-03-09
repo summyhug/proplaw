@@ -1,0 +1,6 @@
+# WHAT: Classifies the user's free-text property goal into a structured category
+#       (e.g. fence, window, garden structure, extension) and extracts key parameters.
+# INPUTS: {user_goal} — raw free-text description of what the user wants to do
+# OUTPUT FORMAT: JSON object with fields: category (str), parameters (dict), confidence (LOW|MEDIUM|HIGH)
+
+[Prompt body to be written here]

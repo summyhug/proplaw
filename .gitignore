@@ -1,0 +1,27 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Raw source documents (PDFs — tracked by folder, not content)
+data/raw/*.pdf
+
+# Vector database files
+*.faiss
+*.pkl
+
+# IDE
+.idea/
+.vscode/
