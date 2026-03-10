@@ -8,7 +8,7 @@ pydantic>=2.7.0
 # LLM
 anthropic>=0.26.0
 
-# Knowledge graph
+# Knowledge graph (build, explore, visualize, audit — see propra/graph/README.md)
 networkx>=3.3
 
 # Vector search
@@ -17,7 +17,7 @@ faiss-cpu>=1.8.0
 # Embeddings (for RAG — required to generate FAISS vectors)
 sentence-transformers>=3.0.0
 
-# PDF parsing (for extracting text from LBO source documents)
+# PDF parsing (extract text from LBO/MBO source PDFs; propra/data/extract_pdf.py)
 pdfminer.six>=20221105
 
 # Environment variables
@@ -34,5 +34,6 @@ pytest-asyncio>=0.23.0
 # NetworkX supports pickle natively; joblib used for larger objects
 joblib>=1.4.0
 
-# Visualisation (optional — useful during development to inspect the graph)
+# Graph visualisation (propra/graph/visualize_html.py — interactive HTML export)
+pyvis>=0.3.2
 matplotlib>=3.9.0

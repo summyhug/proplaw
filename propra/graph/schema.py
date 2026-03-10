@@ -1,8 +1,12 @@
 """
-Knotentypen, Kantentypen und Validierungslogik für den Propra-Wissensgraphen.
+Node types, edge types, and validation logic for the Propra knowledge graph.
 
-Jeder Knoten muss enthalten: type, jurisdiction, source_paragraph, text
-Jede Kante muss enthalten: relation, sourced_from
+Every node must contain: type, jurisdiction, source_paragraph, text
+Every edge must contain: relation, sourced_from
+
+Note: NODE_TYPES values are intentionally in German — they are German legal
+taxonomy terms with no clean English equivalent. RELATION_TYPES values are in
+English as they are structural graph primitives.
 """
 
 from dataclasses import dataclass, field
@@ -10,7 +14,7 @@ from typing import Optional
 
 
 # ---------------------------------------------------------------------------
-# Erlaubte Knotentypen
+# Allowed node types (German legal taxonomy — do not translate)
 # ---------------------------------------------------------------------------
 
 NODE_TYPES = {
@@ -56,7 +60,7 @@ NODE_TYPES = {
     "behoerdenstruktur",
     "genehmigungspflicht",
     "verfahrensfreiheit",
-    "verfahrensfreies_vorhaben",  # einzelne Anhang-1-Einträge
+    "verfahrensfreies_vorhaben",  # individual Annex-1 entries
     "kenntnisgabeverfahren",
     "vereinfachtes_genehmigungsverfahren",
     "bauantrag",
@@ -76,89 +80,88 @@ NODE_TYPES = {
     "sanktion",
     "bestandsschutz",
     "schlussvorschrift",
-    "zahlenwert",            # numerische Schwellenwerte als eigene Knoten
+    "zahlenwert",            # numeric threshold nodes
 }
 
 # ---------------------------------------------------------------------------
-# Erlaubte Kantentypen
+# Allowed edge/relation types
 # ---------------------------------------------------------------------------
 
 RELATION_TYPES = {
-    # Regelstruktur
-    "hat_bedingung",         # Knoten → Bedingungsknoten (z. B. Schwellenwert)
-    "gilt_fuer",             # Regelknoten → Anwendungsbereich
-    "ausnahme_von",          # Ausnahmeknoten → Grundregel
-    "ergaenzt",              # Knoten ergänzt anderen Knoten
-    "verweist_auf",          # Querverweis auf anderen Paragrafen
-    "wird_ueberschrieben_von", # LBO-Standard → örtliche Bauvorschrift (§74)
+    # Rule structure
+    "has_condition",         # node → condition/threshold node
+    "applies_to",            # rule node → its scope of application
+    "exception_of",          # exception node → the base rule it overrides
+    "supplements",           # node supplements another node
+    "references",            # cross-reference to another paragraph
+    "overridden_by",         # LBO standard → local bylaw (§74)
 
-    # Verfahren
-    "ermoeglicht_verfahren", # Vorhaben → Verfahrenstyp
-    "erfordert_nachweis",    # Anforderung → Nachweistyp
+    # Procedure
+    "enables_procedure",     # project type → permit procedure type
+    "requires_proof",        # requirement → required proof/documentation
 
-    # Klassifizierung
-    "klassifiziert_als",     # Vorhaben → Knotentyp (z. B. Sonderbautyp)
-    "gehoert_zu_gruppe",     # Anhang-1-Eintrag → Gruppe
+    # Classification
+    "classified_as",         # project → category (e.g. Sonderbautyp)
+    "belongs_to_group",      # Annex-1 entry → its group
 
-    # Zuständigkeit
-    "zustaendig",            # Behörde → Verfahren
-    "gilt_in",               # Regel → Zuständigkeit/Gebietstyp
+    # Jurisdiction
+    "responsible_for",       # authority → procedure
+    "applies_in",            # rule → jurisdiction/zone type
+    "state_version_of",      # BW-specific node → the MBO base node it deviates from
 }
 
 # ---------------------------------------------------------------------------
-# Datenklassen
+# Dataclasses
 # ---------------------------------------------------------------------------
 
 @dataclass
-class Knoten:
+class Node:
     """
-    Repräsentiert einen Knoten im Propra-Wissensgraphen.
+    Represents a node in the Propra knowledge graph.
 
-    Pflichtfelder entsprechen CLAUDE.md:
-        type, jurisdiction, source_paragraph, text
+    Required fields per CLAUDE.md: type, jurisdiction, source_paragraph, text
     """
-    id: str                          # eindeutiger Bezeichner, z. B. "BW_LBO_§6_01"
-    type: str                        # muss in NODE_TYPES enthalten sein
-    jurisdiction: str                # z. B. "DE-BW"
-    source_paragraph: str            # z. B. "§6 Abs. 1 Nr. 2 LBO BW"
-    text: str                        # Wortlaut des Gesetzes oder Regelzusammenfassung
-    zahlenwert: Optional[float] = None   # numerischer Schwellenwert, falls vorhanden
-    einheit: Optional[str] = None        # z. B. "m", "m²", "m³", "Jahre"
-    metadaten: dict = field(default_factory=dict)  # optionale Zusatzfelder
+    id: str                              # unique identifier, e.g. "BW_LBO_§6_01"
+    type: str                            # must be in NODE_TYPES
+    jurisdiction: str                    # e.g. "DE-BW"
+    source_paragraph: str                # e.g. "§6 Abs. 1 Nr. 2 LBO BW"
+    text: str                            # statutory wording or rule summary
+    numeric_value: Optional[float] = None    # numeric threshold if applicable
+    unit: Optional[str] = None               # e.g. "m", "m²", "m³", "Jahre"
+    metadata: dict = field(default_factory=dict)
 
-    def validieren(self) -> None:
-        """Überprüft, ob alle Pflichtfelder korrekt befüllt sind."""
+    def validate(self) -> None:
+        """Checks that all required fields are correctly populated."""
         if self.type not in NODE_TYPES:
             raise ValueError(
-                f"Unbekannter Knotentyp '{self.type}'. "
-                f"Erlaubte Typen: {sorted(NODE_TYPES)}"
+                f"Unknown node type '{self.type}'. "
+                f"Allowed types: {sorted(NODE_TYPES)}"
             )
-        for pflichtfeld in ("id", "jurisdiction", "source_paragraph", "text"):
-            if not getattr(self, pflichtfeld):
-                raise ValueError(f"Pflichtfeld '{pflichtfeld}' darf nicht leer sein.")
+        for required in ("id", "jurisdiction", "source_paragraph", "text"):
+            if not getattr(self, required):
+                raise ValueError(f"Required field '{required}' must not be empty.")
 
 
 @dataclass
-class Kante:
+class Edge:
     """
-    Repräsentiert eine gerichtete Kante im Propra-Wissensgraphen.
+    Represents a directed edge in the Propra knowledge graph.
 
-    Pflichtfelder entsprechen CLAUDE.md:
-        relation, sourced_from
+    Required fields per CLAUDE.md: relation, sourced_from
     """
-    von: str            # ID des Quellknotens
-    nach: str           # ID des Zielknotens
-    relation: str       # muss in RELATION_TYPES enthalten sein
-    sourced_from: str   # z. B. "§6 Abs. 1 Nr. 2 LBO BW"
-    metadaten: dict = field(default_factory=dict)
+    source: str         # ID of the source node
+    target: str         # ID of the target node
+    relation: str       # must be in RELATION_TYPES
+    sourced_from: str   # e.g. "§6 Abs. 1 Nr. 2 LBO BW"
+    metadata: dict = field(default_factory=dict)
 
-    def validieren(self) -> None:
-        """Überprüft, ob alle Pflichtfelder korrekt befüllt sind."""
+    def validate(self) -> None:
+        """Checks that all required fields are correctly populated."""
         if self.relation not in RELATION_TYPES:
             raise ValueError(
-                f"Unbekannter Kantentyp '{self.relation}'. "
-                f"Erlaubte Typen: {sorted(RELATION_TYPES)}"
+                f"Unknown relation type '{self.relation}'. "
+                f"Allowed types: {sorted(RELATION_TYPES)}"
             )
-        for pflichtfeld in ("von", "nach", "sourced_from"):
-            if not getattr(self, pflichtfeld):
-                raise ValueError(f"Pflichtfeld '{pflichtfeld}' darf nicht leer sein.")
+        for required in ("source", "target", "sourced_from"):
+            if not getattr(self, required):
+                raise ValueError(f"Required field '{required}' must not be empty.")
