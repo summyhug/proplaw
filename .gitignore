@@ -17,10 +17,16 @@ node_modules/
 
 # Raw source documents (PDFs — tracked by folder, not content)
 data/raw/*.pdf
+propra/data/raw/*.pdf
 
 # Vector database files
 *.faiss
 *.pkl
+
+# Generated graph outputs (regenerate with scripts in propra/graph/)
+propra/data/graph*.html
+propra/data/*.csv
+propra/data/graph.graphml
 
 # IDE
 .idea/

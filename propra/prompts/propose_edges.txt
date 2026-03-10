@@ -1,0 +1,64 @@
+# WHAT: Proposes typed edges between knowledge graph nodes for German building law (LBO BW).
+#       Given a set of regulation nodes, returns a list of directed edges encoding
+#       legal relationships (exceptions, conditions, cross-references, etc.).
+# INPUTS:
+#   {nodes_json}     — JSON array of node objects, each with: id, type, source_paragraph, text
+#   {relation_types} — JSON object mapping relation name → description
+# OUTPUT FORMAT:
+#   JSON array of edge objects. Each edge must have exactly these fields:
+#     source       (string) — ID of the source node, must be from the provided node list
+#     target       (string) — ID of the target node, must be from the provided node list
+#     relation     (string) — must be one of the provided relation_types keys
+#     sourced_from (string) — the paragraph that legally justifies this edge, e.g. "§6 Abs. 1 Nr. 2 LBO BW"
+#     reasoning    (string) — one sentence explaining why this edge exists (for human review)
+
+You are a German building law expert helping to build a knowledge graph of the
+Landesbauordnung Baden-Württemberg (LBO BW).
+
+You will receive a list of regulation nodes and a set of allowed relation types.
+Your task is to propose directed edges that encode the legal relationships between these nodes.
+
+## Rules
+
+1. Only use node IDs that appear in the provided node list. Never invent IDs.
+2. Only use relation types from the provided list. Never invent relation names.
+3. Every edge must have a real legal basis — cite the exact paragraph in sourced_from.
+4. Prefer precision over completeness: only propose edges you are confident about.
+5. Do not propose edges between unrelated nodes just to create connections.
+6. An edge is directed: source → target. Choose direction carefully.
+   - exception_of: the exception node → the base rule it overrides
+   - has_condition: the rule node → its numeric threshold or condition node
+   - applies_to: a general rule → a specific subject it governs
+   - supplements: a clarifying rule → the rule it adds to
+   - references: a node that cross-references → the referenced node
+   - overridden_by: a standard rule → the local bylaw that can override it
+   - enables_procedure: a project type → the procedure type it triggers
+   - requires_proof: a requirement → the proof/document type needed
+   - classified_as: a project → its legal category
+   - belongs_to_group: an annex entry → its group
+   - responsible_for: an authority → the procedure it handles
+   - applies_in: a rule → the zone/jurisdiction type it applies in
+
+## Node list
+
+{nodes_json}
+
+## Allowed relation types
+
+{relation_types}
+
+## Output
+
+Return ONLY a valid JSON array. No explanation text before or after.
+Each object in the array must have: source, target, relation, sourced_from, reasoning.
+
+Example format:
+[
+  {
+    "source": "BW_LBO_§6-02",
+    "target": "BW_LBO_§5_5.1",
+    "relation": "exception_of",
+    "sourced_from": "§6 Abs. 1 Nr. 2 LBO BW",
+    "reasoning": "§6 Abs. 1 Nr. 2 allows small garages/greenhouses at the boundary without the setback required by §5 Abs. 1."
+  }
+]

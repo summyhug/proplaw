@@ -1,17 +1,16 @@
 """
-Kernfunktionen zum Aufbau, zur Validierung und zur Speicherung des Propra-Wissensgraphen.
+Core functions for building, validating, and persisting the Propra knowledge graph.
 
-Alle domänenspezifischen Build-Skripte (build_fence.py, build_garden.py usw.)
-importieren diese Funktionen und arbeiten auf demselben Graphobjekt.
+All domain-specific build scripts (build_fence.py, build_garden.py, etc.)
+import these functions and operate on the same graph object.
 
-Verwendung:
-    from propra.graph.builder import graph_erstellen, knoten_hinzufuegen, \
-                                     kante_hinzufuegen, graph_speichern, graph_laden
+Usage:
+    from propra.graph.builder import create_graph, add_node, add_edge, save_graph, load_graph
 
-    G = graph_erstellen()
-    knoten_hinzufuegen(G, Knoten(...))
-    kante_hinzufuegen(G, Kante(...))
-    graph_speichern(G, "propra/data/graph.pkl")
+    G = create_graph()
+    add_node(G, Node(...))
+    add_edge(G, Edge(...))
+    save_graph(G, "propra/data/graph.pkl")
 """
 
 import pickle
@@ -19,130 +18,130 @@ from pathlib import Path
 
 import networkx as nx
 
-from propra.graph.schema import Kante, Knoten
+from propra.graph.schema import Edge, Node
 
 
-def graph_erstellen() -> nx.DiGraph:
-    """Erstellt einen neuen, leeren gerichteten Graphen für Propra."""
+def create_graph() -> nx.DiGraph:
+    """Creates a new empty directed graph for Propra."""
     G = nx.DiGraph()
     G.graph["name"] = "Propra Wissensgraph"
     G.graph["jurisdiction"] = "DE-BW"
-    G.graph["quelle"] = "Landesbauordnung Baden-Württemberg, Fassung ab 28. Februar 2026"
+    G.graph["source"] = "Landesbauordnung Baden-Württemberg, Fassung ab 28. Februar 2026"
     return G
 
 
-def knoten_hinzufuegen(G: nx.DiGraph, knoten: Knoten) -> None:
+def add_node(G: nx.DiGraph, node: Node) -> None:
     """
-    Validiert einen Knoten und fügt ihn dem Graphen hinzu.
+    Validates a node and adds it to the graph.
 
     Args:
-        G:      Der Zielgraph.
-        knoten: Instanz von Knoten (aus schema.py).
+        G:    The target graph.
+        node: Instance of Node (from schema.py).
 
     Raises:
-        ValueError: Wenn Pflichtfelder fehlen oder der Knotentyp unbekannt ist.
+        ValueError: If required fields are missing or the node type is unknown.
     """
-    knoten.validieren()
+    node.validate()
     G.add_node(
-        knoten.id,
-        type=knoten.type,
-        jurisdiction=knoten.jurisdiction,
-        source_paragraph=knoten.source_paragraph,
-        text=knoten.text,
-        zahlenwert=knoten.zahlenwert,
-        einheit=knoten.einheit,
-        **knoten.metadaten,
+        node.id,
+        type=node.type,
+        jurisdiction=node.jurisdiction,
+        source_paragraph=node.source_paragraph,
+        text=node.text,
+        numeric_value=node.numeric_value,
+        unit=node.unit,
+        **node.metadata,
     )
 
 
-def kante_hinzufuegen(G: nx.DiGraph, kante: Kante) -> None:
+def add_edge(G: nx.DiGraph, edge: Edge) -> None:
     """
-    Validiert eine Kante und fügt sie dem Graphen hinzu.
+    Validates an edge and adds it to the graph.
 
     Args:
-        G:     Der Zielgraph.
-        kante: Instanz von Kante (aus schema.py).
+        G:    The target graph.
+        edge: Instance of Edge (from schema.py).
 
     Raises:
-        ValueError: Wenn Pflichtfelder fehlen, der Kantentyp unbekannt ist
-                    oder Quell-/Zielknoten nicht im Graphen existieren.
+        ValueError: If required fields are missing, the relation type is unknown,
+                    or the source/target nodes do not exist in the graph.
     """
-    kante.validieren()
-    if kante.von not in G:
-        raise ValueError(f"Quellknoten '{kante.von}' existiert nicht im Graphen.")
-    if kante.nach not in G:
-        raise ValueError(f"Zielknoten '{kante.nach}' existiert nicht im Graphen.")
+    edge.validate()
+    if edge.source not in G:
+        raise ValueError(f"Source node '{edge.source}' does not exist in the graph.")
+    if edge.target not in G:
+        raise ValueError(f"Target node '{edge.target}' does not exist in the graph.")
     G.add_edge(
-        kante.von,
-        kante.nach,
-        relation=kante.relation,
-        sourced_from=kante.sourced_from,
-        **kante.metadaten,
+        edge.source,
+        edge.target,
+        relation=edge.relation,
+        sourced_from=edge.sourced_from,
+        **edge.metadata,
     )
 
 
-def graph_speichern(G: nx.DiGraph, pfad: str) -> None:
+def save_graph(G: nx.DiGraph, path: str) -> None:
     """
-    Speichert den Graphen als Pickle-Datei.
+    Saves the graph to a pickle file.
 
     Args:
-        G:    Der zu speichernde Graph.
-        pfad: Dateipfad für die Ausgabedatei (z. B. "propra/data/graph.pkl").
+        G:    The graph to save.
+        path: Output file path (e.g. "propra/data/graph.pkl").
     """
-    ziel = Path(pfad)
-    ziel.parent.mkdir(parents=True, exist_ok=True)
-    with open(ziel, "wb") as f:
+    dest = Path(path)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with open(dest, "wb") as f:
         pickle.dump(G, f)
-    print(f"Graph gespeichert: {ziel} ({G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten)")
+    print(f"Graph saved: {dest} ({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)")
 
 
-def graph_laden(pfad: str) -> nx.DiGraph:
+def load_graph(path: str) -> nx.DiGraph:
     """
-    Lädt einen gespeicherten Graphen aus einer Pickle-Datei.
+    Loads a saved graph from a pickle file.
 
     Args:
-        pfad: Dateipfad der gespeicherten Graphdatei.
+        path: File path of the saved graph.
 
     Returns:
-        nx.DiGraph: Der geladene Graph.
+        nx.DiGraph: The loaded graph.
 
     Raises:
-        FileNotFoundError: Wenn die Datei nicht gefunden wird.
+        FileNotFoundError: If the file is not found.
     """
-    quelle = Path(pfad)
-    if not quelle.exists():
+    src = Path(path)
+    if not src.exists():
         raise FileNotFoundError(
-            f"Graphdatei nicht gefunden: {quelle}. "
-            "Bitte zuerst einen Build-Script ausführen."
+            f"Graph file not found: {src}. "
+            "Please run a build script first."
         )
-    with open(quelle, "rb") as f:
+    with open(src, "rb") as f:
         G = pickle.load(f)
-    print(f"Graph geladen: {quelle} ({G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten)")
+    print(f"Graph loaded: {src} ({G.number_of_nodes()} nodes, {G.number_of_edges()} edges)")
     return G
 
 
-def graph_zusammenfassung(G: nx.DiGraph) -> dict:
+def graph_summary(G: nx.DiGraph) -> dict:
     """
-    Gibt eine Zusammenfassung des Graphen zurück — nützlich für Tests und Debugging.
+    Returns a summary of the graph — useful for tests and debugging.
 
     Returns:
-        dict mit Anzahl Knoten, Kanten und Knotentypen.
+        dict with node count, edge count, node types, and relation types.
     """
-    knotentypen: dict[str, int] = {}
-    for _, daten in G.nodes(data=True):
-        typ = daten.get("type", "unbekannt")
-        knotentypen[typ] = knotentypen.get(typ, 0) + 1
+    node_types: dict[str, int] = {}
+    for _, data in G.nodes(data=True):
+        t = data.get("type", "unknown")
+        node_types[t] = node_types.get(t, 0) + 1
 
-    kantentypen: dict[str, int] = {}
-    for _, _, daten in G.edges(data=True):
-        relation = daten.get("relation", "unbekannt")
-        kantentypen[relation] = kantentypen.get(relation, 0) + 1
+    relation_types: dict[str, int] = {}
+    for _, _, data in G.edges(data=True):
+        r = data.get("relation", "unknown")
+        relation_types[r] = relation_types.get(r, 0) + 1
 
     return {
-        "knoten_gesamt": G.number_of_nodes(),
-        "kanten_gesamt": G.number_of_edges(),
-        "knotentypen": knotentypen,
-        "kantentypen": kantentypen,
-        "quelle": G.graph.get("quelle", "unbekannt"),
-        "jurisdiction": G.graph.get("jurisdiction", "unbekannt"),
+        "node_count": G.number_of_nodes(),
+        "edge_count": G.number_of_edges(),
+        "node_types": node_types,
+        "relation_types": relation_types,
+        "source": G.graph.get("source", "unknown"),
+        "jurisdiction": G.graph.get("jurisdiction", "unknown"),
     }

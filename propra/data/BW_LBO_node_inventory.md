@@ -1,20 +1,20 @@
 # BW LBO — Knotenverzeichnis
 ## Landesbauordnung Baden-Württemberg (LBO)
-**Quelle:** BW_LBO2026.pdf — Fassung ab 28. Februar 2026
-**Herausgeber:** Architektenkammer Baden-Württemberg, Merkblatt Nr. 610
-**Rechtsgrundlage:** LBO vom 8. August 1995, zuletzt geändert durch Artikel 5 des Gesetzes vom 10. Februar 2026 (GBl. Nr. 15, S. 22)
-**Zuständigkeit:** Baden-Württemberg (DE-BW)
+**source:** BW_LBO2026.pdf — Fassung ab 28. Februar 2026
+**publisher:** Architektenkammer Baden-Württemberg, Merkblatt Nr. 610
+**legal_basis:** LBO vom 8. August 1995, zuletzt geändert durch Artikel 5 des Gesetzes vom 10. Februar 2026 (GBl. Nr. 15, S. 22)
+**jurisdiction:** Baden-Württemberg (DE-BW)
 
 ---
 
-> **Zweck dieser Datei:** Vollständiges strukturiertes Verzeichnis aller Paragrafen, Regeln, Bedingungen und Zahlenwerte der LBO BW in der Fassung 2026. Dies ist ein Vorbereitungsdokument für den Aufbau des Wissensgraphen — keine Kanten werden hier definiert, nur Knoten. Der Regeltext entspricht dem Wortlaut des Gesetzes.
+> **purpose:** Vollständiges strukturiertes Verzeichnis aller Paragrafen, Regeln, Bedingungen und Zahlenwerte der LBO BW in der Fassung 2026. Dies ist ein Vorbereitungsdokument für den Aufbau des Wissensgraphen — keine Kanten werden hier definiert, nur Knoten. Der Regeltext entspricht dem Wortlaut des Gesetzes.
 
 ---
 
 ## ERSTER TEIL — Allgemeine Vorschriften
 
 ### §1 — Anwendungsbereich
-**Knotentyp:** Anwendungsbereich
+**type:** Anwendungsbereich
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -30,7 +30,7 @@
 ---
 
 ### §2 — Begriffe
-**Knotentyp:** Begriffsbestimmung
+**type:** Begriffsbestimmung
 
 #### §2 Abs. 1 — Bauliche Anlage
 | Nr. | Regeltext (Wortlaut LBO) |
@@ -115,7 +115,7 @@
 ---
 
 ### §3 — Allgemeine Anforderungen
-**Knotentyp:** Allgemeine Anforderung
+**type:** Allgemeine Anforderung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -128,7 +128,7 @@
 ## ZWEITER TEIL — Das Grundstück und seine Bebauung
 
 ### §4 — Bebauung der Grundstücke
-**Knotentyp:** Grundstücksbebauung
+**type:** Grundstücksbebauung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -138,7 +138,7 @@
 | 4.3a | Ausnahme: „Dies gilt nicht für Gebäude, die nach den Festsetzungen des Bebauungsplans mit einem geringeren Abstand als nach Satz 1 zulässig sind, sowie für bauliche Änderungen und Nutzungsänderungen rechtmäßig bestehender baulicher Anlagen." |
 | 4.3b | „Ausnahmen können zugelassen werden. Größere Abstände können verlangt werden, soweit dies wegen des Brandschutzes oder zur Sicherheit der Gebäude erforderlich ist." |
 
-**Zahlenwerte §4:**
+**numeric_values §4:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Mindestabstand zu Wald, Moor, Heide | 30 m | §4 Abs. 3 |
@@ -146,7 +146,7 @@
 ---
 
 ### §5 — Abstandsflächen
-**Knotentyp:** Abstandsfläche
+**type:** Abstandsfläche
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -199,7 +199,7 @@
 ---
 
 ### §6 — Abstandsflächen in Sonderfällen
-**Knotentyp:** Abstandsfläche Sonderfall
+**type:** Abstandsfläche Sonderfall
 
 **In den Abstandsflächen sowie ohne eigene Abstandsflächen zulässig:**
 | Knoten-ID | Regeltext (Wortlaut LBO) | Zahlenwerte |
@@ -227,7 +227,7 @@
 | 6.9 | „in überwiegend bebauten Gebieten die Gestaltung des Straßenbildes oder besondere örtliche Verhältnisse dies erfordern" |
 | 6.10 | „Beleuchtung mit Tageslicht sowie Belüftung in ausreichendem Maße gewährleistet bleiben, Gründe des Brandschutzes nicht entgegenstehen und nachbarliche Belange nicht erheblich beeinträchtigt werden" |
 
-**Zahlenwerte §6:**
+**numeric_values §6:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Max. Wandhöhe (Nr. 2) | 3 m | §6 Abs. 1 Nr. 2 |
@@ -239,7 +239,7 @@
 ---
 
 ### §7 — Übernahme von Abständen auf Nachbargrundstücke
-**Knotentyp:** Abstandsflächenübertragung
+**type:** Abstandsflächenübertragung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -248,14 +248,14 @@
 ---
 
 ### §8 — Teilung von Grundstücken
-**Knotentyp:** Grundstücksteilung
+**type:** Grundstücksteilung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
 | 8.1 | „Durch die Teilung eines Grundstücks, das bebaut oder dessen Bebauung genehmigt ist, dürfen keine Verhältnisse geschaffen werden, die Vorschriften dieses Gesetzes oder auf Grund dieses Gesetzes widersprechen." |
 | 8.2 | „Die geplante Teilung eines Grundstücks nach Absatz 1 ist der unteren Baurechtsbehörde zwei Wochen vorher anzuzeigen." |
 
-**Zahlenwerte §8:**
+**numeric_values §8:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Vorankündigungsfrist Teilungsanzeige | 2 Wochen | §8 Abs. 2 |
@@ -263,7 +263,7 @@
 ---
 
 ### §9 — Nichtüberbaute Flächen, Kinderspielplätze
-**Knotentyp:** Freiflächengestaltung
+**type:** Freiflächengestaltung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -278,7 +278,7 @@
 | 9.9 | Pflicht gilt nicht: „wenn die Art der Wohnungen einen Kinderspielplatz nicht erfordert" |
 | 9.10 | Ablösung: „Der Bauherr kann zur Erfüllung seiner Verpflichtung nach Absatz 2 einen Geldbetrag an die Gemeinde zahlen." |
 
-**Zahlenwerte §9:**
+**numeric_values §9:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Auslöseschwelle Spielplatzpflicht | > 3 Wohnungen mit je ≥ 2 Aufenthaltsräumen | §9 Abs. 2 |
@@ -290,7 +290,7 @@
 ---
 
 ### §10 — Höhenlage des Grundstücks
-**Knotentyp:** Geländehöhe
+**type:** Geländehöhe
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -301,7 +301,7 @@
 ## DRITTER TEIL — Allgemeine Anforderungen an die Bauausführung
 
 ### §11 — Gestaltung
-**Knotentyp:** Gestaltungsanforderung
+**type:** Gestaltungsanforderung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -312,7 +312,7 @@
 ---
 
 ### §12 — Baustelle
-**Knotentyp:** Baustellenanforderung
+**type:** Baustellenanforderung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -323,7 +323,7 @@
 ---
 
 ### §13 — Standsicherheit
-**Knotentyp:** Standsicherheit
+**type:** Standsicherheit
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -332,7 +332,7 @@
 ---
 
 ### §14 — Schutz baulicher Anlagen
-**Knotentyp:** Schutzanforderung
+**type:** Schutzanforderung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -341,7 +341,7 @@
 ---
 
 ### §15 — Brandschutz
-**Knotentyp:** Brandschutzanforderung
+**type:** Brandschutzanforderung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -356,7 +356,7 @@
 ---
 
 ### §16 — Verkehrssicherheit
-**Knotentyp:** Verkehrssicherheit
+**type:** Verkehrssicherheit
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -366,7 +366,7 @@
 ---
 
 ### §§ 16a–25 — Bauprodukte und Bauarten
-**Knotentyp:** Bauproduktzulassung
+**type:** Bauproduktzulassung
 
 | § | Titel | Wesentliche Regel |
 |---|---|---|
@@ -386,7 +386,7 @@
 ---
 
 ### §26 — Brandverhalten von Baustoffen und Bauteilen
-**Knotentyp:** Brandklassifizierung
+**type:** Brandklassifizierung
 
 **Baustoffe nach Brennbarkeit:**
 | Klasse | Bezeichnung |
@@ -407,7 +407,7 @@
 ---
 
 ### §27 — Tragende Wände und Stützen
-**Knotentyp:** Tragende Wand
+**type:** Tragende Wand
 
 | Gebäudeklasse | Anforderung |
 |---|---|
@@ -419,7 +419,7 @@
 ---
 
 ### §27a — Außenwände
-**Knotentyp:** Außenwand
+**type:** Außenwand
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -432,7 +432,7 @@
 ---
 
 ### §27b — Trennwände
-**Knotentyp:** Trennwand
+**type:** Trennwand
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -446,7 +446,7 @@
 ---
 
 ### §27c — Brandwände
-**Knotentyp:** Brandwand
+**type:** Brandwand
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -455,7 +455,7 @@
 | 27c.3 | Erforderlich als Gebäudeabschlusswand, wo kein ausreichender Abstand zur Grundstücksgrenze besteht |
 | 27c.4 | Innerhalb von Gebäuden: alle 40 m (gemessen an der Außenwand); bei Grundflächen > 1.600 m² je Geschoss |
 
-**Zahlenwerte §27c:**
+**numeric_values §27c:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Brandwandabstand (innerhalb Gebäude) | alle 40 m | §27c |
@@ -465,7 +465,7 @@
 ---
 
 ### §27d — Decken
-**Knotentyp:** Decke
+**type:** Decke
 
 | Gebäudeklasse | Anforderung |
 |---|---|
@@ -477,14 +477,14 @@
 ---
 
 ### §27e — Dächer
-**Knotentyp:** Dach
+**type:** Dach
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
 | 27e.1 | Dächer müssen eine Brandausbreitung von außen (Flugfeuer und strahlende Wärme) ausreichend lang verhindern (hartes Dach) |
 | 27e.2 | Weiches Dach zulässig bei ausreichendem Abstand zu Nachbarbebauung: allgemein ≥ 12 m zu Nachbargebäuden und ≥ 6 m zur Grundstücksgrenze |
 
-**Zahlenwerte §27e:**
+**numeric_values §27e:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Mindestabstand für weiches Dach (zu Nachbargebäuden) | 12 m | §27e |
@@ -493,7 +493,7 @@
 ---
 
 ### §27f — Nutzungsänderungen im Bestand (tragende Bauteile)
-**Knotentyp:** Bestandsänderung Tragwerk
+**type:** Bestandsänderung Tragwerk
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -503,7 +503,7 @@
 ---
 
 ### §28 — Treppen
-**Knotentyp:** Treppe
+**type:** Treppe
 
 | Nr. | Regeltext / Zahlenwert |
 |---|---|
@@ -513,7 +513,7 @@
 | 28.4 | Trittstufen müssen rutschhemmend sein |
 | 28.5 | Max. Stufenhöhe: 21 cm |
 
-**Zahlenwerte §28:**
+**numeric_values §28:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Min. Treppenbreite GK 1–4 | 1,0 m | §28 |
@@ -523,7 +523,7 @@
 ---
 
 ### §28a — Notwendige Treppenräume, Ausgänge
-**Knotentyp:** Treppenraum
+**type:** Treppenraum
 
 | Gebäudeklasse | Anforderung Treppenraumwände |
 |---|---|
@@ -540,7 +540,7 @@
 ---
 
 ### §28b — Notwendige Flure, offene Gänge
-**Knotentyp:** Notwendiger Flur
+**type:** Notwendiger Flur
 
 | Nr. | Regeltext / Zahlenwert |
 |---|---|
@@ -550,7 +550,7 @@
 ---
 
 ### §28c — Fenster, sonstige Öffnungen
-**Knotentyp:** Fensteröffnung
+**type:** Fensteröffnung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -560,7 +560,7 @@
 ---
 
 ### §28d — Nutzungsänderungen bei Bauteilen im Bestand
-**Knotentyp:** Bestandsänderung Bauteile
+**type:** Bestandsänderung Bauteile
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -569,7 +569,7 @@
 ---
 
 ### §29 — Aufzugsanlagen
-**Knotentyp:** Aufzugsanlage
+**type:** Aufzugsanlage
 
 | Nr. | Regeltext / Zahlenwert |
 |---|---|
@@ -580,7 +580,7 @@
 | 29.5 | Fahrschachtwände: GK 3 feuerhemmend; GK 4 hochfeuerhemmend; GK 5 feuerbeständig, nichtbrennbar |
 | 29.6 | „Fahrschächte müssen zu lüften sein und eine Öffnung zur Rauchableitung mit einem freien Querschnitt von mindestens 2,5 Prozent der Fahrschachtgrundfläche, mindestens jedoch 0,1 m² haben." |
 
-**Zahlenwerte §29:**
+**numeric_values §29:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Aufzugspflicht ab | 4 oberirdische Geschosse | §29 |
@@ -592,7 +592,7 @@
 ---
 
 ### §§ 30–33 — Technische Anlagen
-**Knotentyp:** Technische Anlage
+**type:** Technische Anlage
 
 | § | Titel | Wesentliche Regel |
 |---|---|---|
@@ -604,7 +604,7 @@
 ---
 
 ### §34 — Aufenthaltsräume
-**Knotentyp:** Aufenthaltsraum
+**type:** Aufenthaltsraum
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -614,7 +614,7 @@
 | 34.4 | „Aufenthaltsräume, deren Fußboden unter der Geländeoberfläche liegt, sind zulässig, wenn das Gelände mit einer Neigung von höchstens 45° an die Außenwände vor notwendigen Fenstern anschließt. Die Oberkante der Brüstung notwendiger Fenster muss mindestens 1,3 m unter der Decke liegen." |
 | 34.5 | „Verglaste Vorbauten und Loggien sind vor notwendigen Fenstern zulässig, wenn eine ausreichende Beleuchtung mit Tageslicht gewährleistet bleibt." |
 
-**Zahlenwerte §34:**
+**numeric_values §34:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Min. lichte Höhe (allgemein) | 2,3 m | §34 Abs. 1 |
@@ -627,7 +627,7 @@
 ---
 
 ### §35 — Wohnungen
-**Knotentyp:** Wohnung
+**type:** Wohnung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -642,7 +642,7 @@
 ---
 
 ### §36 — Toilettenräume und Bäder
-**Knotentyp:** Sanitärraum
+**type:** Sanitärraum
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -652,7 +652,7 @@
 ---
 
 ### §37 — Stellplätze für Kraftfahrzeuge und Fahrräder, Garagen
-**Knotentyp:** Stellplatzpflicht
+**type:** Stellplatzpflicht
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -665,7 +665,7 @@
 ---
 
 ### §38 — Sonderbauten
-**Knotentyp:** Sonderbautyp
+**type:** Sonderbautyp
 
 **Definition Sonderbauten (§38 Abs. 2):**
 | Knoten-ID | Typ | Schwellenwert |
@@ -694,7 +694,7 @@
 ---
 
 ### §39 — Barrierefreie Anlagen
-**Knotentyp:** Barrierefreiheit
+**type:** Barrierefreiheit
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -705,7 +705,7 @@
 ---
 
 ### §40 — Gemeinschaftsanlagen
-**Knotentyp:** Gemeinschaftsanlage
+**type:** Gemeinschaftsanlage
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -717,7 +717,7 @@
 ## VIERTER TEIL — Beteiligte am Bau
 
 ### §§ 41–45 — Pflichten der Beteiligten
-**Knotentyp:** Beteiligtenpflicht
+**type:** Beteiligtenpflicht
 
 | § | Beteiligter | Wesentliche Pflicht |
 |---|---|---|
@@ -732,7 +732,7 @@
 ## FÜNFTER TEIL — Baurechtsbehörden
 
 ### §§ 46–48 — Aufbau und Zuständigkeit
-**Knotentyp:** Behördenstruktur
+**type:** Behördenstruktur
 
 | § | Behörde | Zuständigkeit |
 |---|---|---|
@@ -746,7 +746,7 @@
 ## SECHSTER TEIL — Verfahren
 
 ### §49 — Genehmigungspflichtige Vorhaben
-**Knotentyp:** Genehmigungspflicht
+**type:** Genehmigungspflicht
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -755,7 +755,7 @@
 ---
 
 ### §50 — Verfahrensfreie Vorhaben
-**Knotentyp:** Verfahrensfreiheit
+**type:** Verfahrensfreiheit
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -766,7 +766,7 @@
 ---
 
 ### §51 — Kenntnisgabeverfahren
-**Knotentyp:** Kenntnisgabeverfahren
+**type:** Kenntnisgabeverfahren
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -778,7 +778,7 @@
 ---
 
 ### §52 — Vereinfachtes Baugenehmigungsverfahren
-**Knotentyp:** Vereinfachtes Genehmigungsverfahren
+**type:** Vereinfachtes Genehmigungsverfahren
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -790,7 +790,7 @@
 ---
 
 ### §53 — Bauvorlagen und Bauantrag
-**Knotentyp:** Bauantrag
+**type:** Bauantrag
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -800,7 +800,7 @@
 ---
 
 ### §54 — Fristen im Genehmigungsverfahren
-**Knotentyp:** Verfahrensfrist
+**type:** Verfahrensfrist
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -810,7 +810,7 @@
 | 54.4 | Frist beginnt erst, wenn Vollständigkeit bestätigt und Anhörung betroffener Stellen abgeschlossen |
 | 54.5 | „Der Bauherr kann auf den Eintritt der Genehmigungsfiktion verzichten und die formale Entscheidung der Baurechtsbehörde abwarten." |
 
-**Zahlenwerte §54:**
+**numeric_values §54:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Vollständigkeitsprüfung | 10 Werktage | §54 Abs. 1 |
@@ -820,7 +820,7 @@
 ---
 
 ### §55 — Benachrichtigung der Nachbarn
-**Knotentyp:** Nachbarbenachrichtigung
+**type:** Nachbarbenachrichtigung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -831,7 +831,7 @@
 ---
 
 ### §56 — Abweichungen, Ausnahmen und Befreiungen
-**Knotentyp:** Abweichung
+**type:** Abweichung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -843,7 +843,7 @@
 ---
 
 ### §57 — Bauvorbescheid
-**Knotentyp:** Bauvorbescheid
+**type:** Bauvorbescheid
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -853,7 +853,7 @@
 ---
 
 ### §58 — Baugenehmigung
-**Knotentyp:** Baugenehmigung
+**type:** Baugenehmigung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -862,7 +862,7 @@
 | 58.3 | Gültigkeit: 3 Jahre |
 | 58.4 | Genehmigung erlischt nicht, wenn Baubeginn erfolgt ist und ohne wesentliche Unterbrechung weitergebaut wird |
 
-**Zahlenwerte §58:**
+**numeric_values §58:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Gültigkeitsdauer Baugenehmigung | 3 Jahre | §58 Abs. 3 |
@@ -870,14 +870,14 @@
 ---
 
 ### §59 — Baubeginn
-**Knotentyp:** Baubeginn
+**type:** Baubeginn
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
 | 59.1 | Baubeginn muss der Baurechtsbehörde mindestens 2 Wochen vorher angezeigt werden |
 | 59.2 | Baufreigabeschein wird nach Eingang der Anzeige erteilt |
 
-**Zahlenwerte §59:**
+**numeric_values §59:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Vorankündigungsfrist Baubeginn | 2 Wochen | §59 |
@@ -885,7 +885,7 @@
 ---
 
 ### §60 — Sicherheitsleistung
-**Knotentyp:** Sicherheitsleistung
+**type:** Sicherheitsleistung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -894,7 +894,7 @@
 ---
 
 ### §§ 61–67 — Überwachung und Abnahme
-**Knotentyp:** Bauüberwachung
+**type:** Bauüberwachung
 
 | § | Titel | Wesentliche Regel |
 |---|---|---|
@@ -908,7 +908,7 @@
 ---
 
 ### §68 — Typengenehmigung, Typenprüfung
-**Knotentyp:** Typengenehmigung
+**type:** Typengenehmigung
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -919,7 +919,7 @@
 ---
 
 ### §§ 69–72 — Besondere Verfahren
-**Knotentyp:** Besonderes Verfahren
+**type:** Besonderes Verfahren
 
 | § | Titel | Wesentliche Regel |
 |---|---|---|
@@ -931,7 +931,7 @@
 ---
 
 ### §73 — Rechtsverordnungen
-**Knotentyp:** Ermächtigungsgrundlage
+**type:** Ermächtigungsgrundlage
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -940,7 +940,7 @@
 ---
 
 ### §73a — Technische Baubestimmungen
-**Knotentyp:** Technische Baubestimmungen
+**type:** Technische Baubestimmungen
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -950,7 +950,7 @@
 ---
 
 ### §74 — Örtliche Bauvorschriften
-**Knotentyp:** Örtliche Bauvorschrift
+**type:** Örtliche Bauvorschrift
 **Hinweis für Propra:** Immer prüfen, ob die jeweilige Gemeinde eine aktive §74-Satzung hat — diese kann LBO-Standardwerte überschreiben.
 
 | Nr. | Regeltext (Wortlaut LBO) |
@@ -961,14 +961,14 @@
 ---
 
 ### §75 — Ordnungswidrigkeiten
-**Knotentyp:** Sanktion
+**type:** Sanktion
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
 | 75.1 | Bauen ohne erforderliche Genehmigung oder entgegen Genehmigungsbedingungen: Bußgeld |
 | 75.2 | Höchstbußgeld: 500.000 Euro bei schwerwiegenden Verstößen |
 
-**Zahlenwerte §75:**
+**numeric_values §75:**
 | Größe | Wert | Quelle |
 |---|---|---|
 | Höchstbußgeld | 500.000 € | §75 |
@@ -976,7 +976,7 @@
 ---
 
 ### §76 — Bestehende bauliche Anlagen
-**Knotentyp:** Bestandsschutz
+**type:** Bestandsschutz
 
 | Nr. | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -987,7 +987,7 @@
 ---
 
 ### §§ 77–79 — Übergangs- und Schlussvorschriften
-**Knotentyp:** Schlussvorschrift
+**type:** Schlussvorschrift
 
 | § | Regeltext (Wortlaut LBO) |
 |---|---|
@@ -998,9 +998,9 @@
 ---
 
 ## ANHANG 1 (zu §50 Absatz 1) — Verfahrensfreie Vorhaben
-**Knotentyp:** Verfahrensfreies Vorhaben
-**Quellenangabe:** Anhang 1 zu §50 Abs. 1 LBO BW
-**Zuständigkeit:** Baden-Württemberg (DE-BW)
+**type:** Verfahrensfreies Vorhaben
+**source_paragraph:** Anhang 1 zu §50 Abs. 1 LBO BW
+**jurisdiction:** Baden-Württemberg (DE-BW)
 **Wichtiger Hinweis:** Verfahrensfreiheit bedeutet kein Genehmigungsverfahren. Alle materiellen Vorschriften (Abstandsflächen, Brandschutz etc.) gelten weiterhin.
 
 ---
