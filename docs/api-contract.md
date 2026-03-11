@@ -1,13 +1,52 @@
-# Propra API Contract — v0.3
+# Propra API Contract — v0.4
 
 ## Base URL
 `http://localhost:8000` (development)
 
 ---
 
-## POST /query
+## POST /intake
 
-Main endpoint. The user submits a legal question along with structured context from the guided input fields. The backend returns an explanation with citations.
+First step. Validates the structured form data before the user submits their question. Returns no content on success — just confirms the input is valid.
+
+### Request
+
+```json
+{
+  "jurisdiction": "BE",
+  "language": "de",
+  "property_type": "single_family_house",
+  "floors": 2
+}
+```
+
+| Field | Type | Required | Notes |
+|---|---|---|---|
+| `jurisdiction` | string | yes | 2-letter German state code |
+| `language` | enum | yes | `"de"` or `"en"` — follows the UI language toggle |
+| `property_type` | enum | yes | Property category selected by the user |
+| `floors` | integer | yes | Number of floors of the building |
+
+### Response (200)
+
+```json
+{ "status": "ok" }
+```
+
+### Error response (422)
+
+```json
+{
+  "detail": "Field 'jurisdiction' must be a valid German state code.",
+  "user_message": "Ihre Angaben konnten nicht verarbeitet werden. Bitte überprüfen Sie Ihre Eingaben."
+}
+```
+
+---
+
+## POST /assess
+
+Second step. Receives the full context (form fields + question) and returns the legal assessment.
 
 ### Request
 
@@ -56,7 +95,10 @@ These are English slugs used as API values. The frontend maps them to German or 
 
 ```json
 {
-  "answer": "In Berlin darf ein Zaun an der Grundstücksgrenze bis zu 1,20 m hoch sein.",
+  "verdict": "Zulässig mit Auflagen",
+  "explanation": "In Berlin darf ein Zaun an der Grundstücksgrenze bis zu 1,20 m hoch sein.",
+  "confidence": "medium",
+  "confidence_note": "Die Antwort basiert auf der BauOBln, jedoch fehlen B-Plan-Daten für dieses Grundstück.",
   "citations": [
     {
       "id": "BauOBln_6_7",
@@ -66,18 +108,22 @@ These are English slugs used as API values. The frontend maps them to German or 
       "url": "https://gesetze.berlin.de/..."
     }
   ],
-  "confidence": "medium",
-  "next_action": "Sprechen Sie mit Ihrem Bezirksamt, bevor Sie mit dem Bau beginnen.",
+  "next_actions": [
+    "Sprechen Sie mit Ihrem Bezirksamt, bevor Sie mit dem Bau beginnen.",
+    "Prüfen Sie den Bebauungsplan Ihres Grundstücks."
+  ],
   "language": "de"
 }
 ```
 
 | Field | Type | Notes |
 |---|---|---|
-| `answer` | string | Plain-language explanation for the user |
-| `citations` | array (1..n) | At least one citation is required |
+| `verdict` | string | Short ruling, e.g. "Zulässig", "Nicht zulässig", "Zulässig mit Auflagen" |
+| `explanation` | string | Plain-language explanation for the user |
 | `confidence` | enum | `"low"`, `"medium"`, `"high"` |
-| `next_action` | string | Concrete next step for the user |
+| `confidence_note` | string | Explains why confidence is not high — always present when confidence is `"low"` or `"medium"` |
+| `citations` | array (1..n) | At least one citation is required |
+| `next_actions` | array of strings | One or more concrete next steps for the user |
 | `language` | string | Echoes the request language — all response content must be in this language |
 
 ### Citation object
@@ -121,6 +167,7 @@ Used for infrastructure monitoring.
 ## Backend rules (from CLAUDE.md)
 
 - `confidence: "high"` must never be returned when B-Plan data is absent
+- `confidence_note` must always be present when confidence is `"low"` or `"medium"`
 - All outputs must be validated using Pydantic
 - Every response must include at least one citation
 - All user-facing content in the response (including `user_message` in errors) must match the `language` field in the request
@@ -129,6 +176,7 @@ Used for infrastructure monitoring.
 
 ## Notes for backend team
 
-- The `property_type` and `floors` slugs in this contract are a starting point for MVP. Backend should update them to reflect whichever property categories are most useful given the most important nodes in the Knowledge Graph.
+- The `property_type` slugs in this contract are a starting point for MVP. Backend should update them to reflect whichever property categories are most useful given the most important nodes in the Knowledge Graph.
 - The backend is responsible for mapping `property_type` slugs to the corresponding German KG node names.
+- The frontend is responsible for mapping `property_type` slugs to German and English display labels in the dropdown.
 - The frontend will normalize jurisdiction values to uppercase before sending requests.
