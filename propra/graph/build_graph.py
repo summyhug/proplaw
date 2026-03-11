@@ -1,20 +1,16 @@
 """
-Unified Propra knowledge graph builder.
+Build the Propra core knowledge graph (MBO, section by section).
 
-Builds a single graph.pkl containing all nodes and domain edges:
-  1. MBO nodes  — shared federal model code base layer (DE-MBO)
-  2. BW nodes   — Baden-Württemberg state rules (DE-BW)
-  3. Structural edges — every node connects to its section anchor
-  4. Fence domain edges — setback, boundary, permit-free fence rules
-  5. References edges — parsed from node text (§ 34, §§ 5–7) for intersectional links
-
-Cross-jurisdiction `state_version_of` edges link BW nodes back to the MBO
-nodes they deviate from. References edges connect sections that cite each other.
+Loads nodes from MBO_node_inventory.md, keeps only the sections we have defined
+(§1 for now), adds structural edges + section-defined edges + reference edges.
+Saves to graph.pkl and graph.graphml. This graph is the single source of truth.
 
 Usage:
     python -m propra.graph.build_graph
 """
 
+import argparse
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -22,34 +18,140 @@ import networkx as nx
 
 from propra.graph.builder import add_edge, add_node, create_graph, graph_summary, save_graph
 from propra.graph.parse_inventory import parse_inventory
+from propra.graph.schema import Node
 from propra.graph.visualize import export_graphml
-import propra.graph.fence_edges as fence
+from propra.graph.mbo_section_edges import edges as mbo_section_edges
 from propra.graph.references_edges import references_edges
 
 _DATA = Path(__file__).parent.parent / "data"
 
 _MBO_INVENTORY = str(_DATA / "MBO_node_inventory.md")
-_BW_INVENTORY  = str(_DATA / "BW_LBO_node_inventory.md")
-_GRAPH_PATH    = str(_DATA / "graph.pkl")
-_GRAPHML_PATH  = str(_DATA / "graph.graphml")
+_GRAPH_PATH = str(_DATA / "graph.pkl")
+_GRAPHML_PATH = str(_DATA / "graph.graphml")
+
+# Sections to include (add § numbers as we go)
+_SECTIONS = [
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    "11", "12", "13", "14", "15", "16", "16a", "16b", "16c",
+    "17", "18", "19", "20", "21", "22", "23", "24",
+    "25", "26", "27", "28", "29", "30",
+    "31", "32", "33", "34", "35", "36", "37", "38",
+    "39", "40", "41", "42", "43", "44", "45", "46",
+    "47", "48", "49", "50", "51",
+    "52", "53", "54", "55", "56", "57", "58", "59", "60",
+    "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72",
+    "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86",
+]
+
+# Section number -> (title, type for section anchor node)
+_SECTION_ANCHORS = {
+    "1": ("Anwendungsbereich", "anwendungsbereich"),
+    "2": ("Begriffe", "begriffsbestimmung"),
+    "3": ("Allgemeine Anforderungen", "allgemeine_anforderung"),
+    "4": ("Bebauung der Grundstücke mit Gebäuden", "grundstuecksbebauung"),
+    "5": ("Zugänge und Zufahrten auf den Grundstücken", "grundstuecksbebauung"),
+    "6": ("Abstandsflächen, Abstände", "abstandsflaeche"),
+    "7": ("Teilung von Grundstücken", "grundstuecksteilung"),
+    "8": ("Nicht überbaute Flächen, Kinderspielplätze", "freiflaechengestaltung"),
+    "9": ("Gestaltung", "gestaltungsanforderung"),
+    "10": ("Anlagen der Außenwerbung, Warenautomaten", "gestaltungsanforderung"),
+    "11": ("Baustelle", "baustellenanforderung"),
+    "12": ("Standsicherheit", "standsicherheit"),
+    "13": ("Schutz gegen schädliche Einflüsse", "allgemeine_anforderung"),
+    "14": ("Brandschutz", "brandschutzanforderung"),
+    "15": ("Wärme-, Schall-, Erschütterungsschutz", "allgemeine_anforderung"),
+    "16": ("Verkehrssicherheit", "verkehrssicherheit"),
+    "16a": ("Bauarten", "allgemeine_anforderung"),
+    "16b": ("Bauprodukte (allg. Anforderungen)", "allgemeine_anforderung"),
+    "16c": ("CE-gekennzeichnete Bauprodukte", "allgemeine_anforderung"),
+    "17": ("Verwendbarkeitsnachweise", "allgemeine_anforderung"),
+    "18": ("Allgemeine bauaufsichtliche Zulassung", "genehmigungspflicht"),
+    "19": ("Allgemeines bauaufsichtliches Prüfzeugnis", "genehmigungspflicht"),
+    "20": ("Nachweis Verwendbarkeit im Einzelfall", "allgemeine_anforderung"),
+    "21": ("Übereinstimmungsbestätigung", "allgemeine_anforderung"),
+    "22": ("Übereinstimmungserklärung des Herstellers", "allgemeine_anforderung"),
+    "23": ("Zertifizierung", "allgemeine_anforderung"),
+    "24": ("Prüf-, Zertifizierungs-, Überwachungsstellen", "allgemeine_anforderung"),
+    "25": ("Sachkunde- und Sorgfaltsanforderungen", "allgemeine_anforderung"),
+    "26": ("Brandverhalten von Baustoffen und Bauteilen", "brandklassifizierung"),
+    "27": ("Tragende Wände, Stützen", "tragende_wand"),
+    "28": ("Außenwände", "aussenwand"),
+    "29": ("Trennwände", "trennwand"),
+    "30": ("Brandwände", "brandwand"),
+    "31": ("Decken", "decke"),
+    "32": ("Dächer", "dach"),
+    "33": ("Erster und zweiter Rettungsweg", "treppe"),
+    "34": ("Treppen", "treppe"),
+    "35": ("Notwendige Treppenräume, Ausgänge", "treppenraum"),
+    "36": ("Notwendige Flure, offene Gänge", "notwendiger_flur"),
+    "37": ("Fenster, Türen, sonstige Öffnungen", "fensteroffnung"),
+    "38": ("Umwehrungen", "schutzanforderung"),
+    "39": ("Aufzüge", "aufzugsanlage"),
+    "40": ("Leitungsanlagen, Installationsschächte und -kanäle", "technische_anlage"),
+    "41": ("Lüftungsanlagen", "technische_anlage"),
+    "42": ("Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung", "technische_anlage"),
+    "43": ("Sanitäre Anlagen, Wasserzähler", "sanitaerraum"),
+    "44": ("Kleinkläranlagen, Gruben", "technische_anlage"),
+    "45": ("Aufbewahrung fester Abfallstoffe", "gemeinschaftsanlage"),
+    "46": ("Blitzschutzanlagen", "technische_anlage"),
+    "47": ("Aufenthaltsräume", "aufenthaltsraum"),
+    "48": ("Wohnungen", "wohnung"),
+    "49": ("Stellplätze, Garagen und Abstellplätze für Fahrräder", "stellplatzpflicht"),
+    "50": ("Barrierefreies Bauen", "barrierefreiheit"),
+    "51": ("Sonderbauten", "sonderbautyp"),
+    # Procedure, authorities, approval (§52–§86) — for "what's needed" (who, what to submit, when)
+    "52": ("Grundpflichten", "beteiligtenpflicht"),
+    "53": ("Bauherr", "beteiligtenpflicht"),
+    "54": ("Entwurfsverfasser", "beteiligtenpflicht"),
+    "55": ("Unternehmer", "beteiligtenpflicht"),
+    "56": ("Bauleiter", "beteiligtenpflicht"),
+    "57": ("Aufbau und Zuständigkeit der Bauaufsichtsbehörden", "behoerdenstruktur"),
+    "58": ("Aufgaben und Befugnisse der Bauaufsichtsbehörden", "behoerdenstruktur"),
+    "59": ("Grundsatz", "genehmigungspflicht"),
+    "60": ("Vorrang anderer Gestattungsverfahren", "genehmigungspflicht"),
+    "61": ("Verfahrensfreie Bauvorhaben, Beseitigung von Anlagen", "verfahrensfreiheit"),
+    "62": ("Genehmigungsfreistellung", "genehmigungspflicht"),
+    "63": ("Vereinfachtes Baugenehmigungsverfahren", "vereinfachtes_genehmigungsverfahren"),
+    "64": ("Baugenehmigungsverfahren", "genehmigungspflicht"),
+    "65": ("Bauvorlageberechtigung", "bauantrag"),
+    "66": ("Bautechnische Nachweise", "genehmigungspflicht"),
+    "67": ("Abweichungen", "abweichung"),
+    "68": ("Bauantrag, Bauvorlagen", "bauantrag"),
+    "69": ("Behandlung des Bauantrags", "bauantrag"),
+    "70": ("Beteiligung der Nachbarn und der Öffentlichkeit", "nachbarbenachrichtigung"),
+    "71": ("Ersetzung des gemeindlichen Einvernehmens", "genehmigungspflicht"),
+    "72": ("Baugenehmigung, Baubeginn", "baugenehmigung"),
+    "73": ("Geltungsdauer der Genehmigung", "verfahrensfrist"),
+    "74": ("Teilbaugenehmigung", "baugenehmigung"),
+    "75": ("Vorbescheid", "bauvorbescheid"),
+    "76": ("Fliegende Bauten", "typengenehmigung"),
+    "77": ("Bauaufsichtliche Zustimmung", "genehmigungspflicht"),
+    "78": ("Verbot unrechtmäßig gekennzeichneter Bauprodukte", "genehmigungspflicht"),
+    "79": ("Einstellung von Arbeiten", "behoerdenstruktur"),
+    "80": ("Beseitigung von Anlagen, Nutzungsuntersagung", "behoerdenstruktur"),
+    "81": ("Bauüberwachung", "bauueberwachung"),
+    "82": ("Bauzustandsanzeigen, Aufnahme der Nutzung", "genehmigungspflicht"),
+    "83": ("Baulasten, Baulastenverzeichnis", "genehmigungspflicht"),
+    "84": ("Ordnungswidrigkeiten", "sanktion"),
+    "85": ("Rechtsvorschriften", "schlussvorschrift"),
+    "86": ("Örtliche Bauvorschriften", "oertliche_bauvorschrift"),
+}
+
+
+def _para_number_from_source(source_paragraph: str) -> str | None:
+    """Extract § number from source_paragraph, e.g. '§1 Abs. 2 MBO' -> '1'."""
+    if not source_paragraph:
+        return None
+    m = re.search(r"§\s*(\d+[a-z]?)", source_paragraph.strip(), re.IGNORECASE)
+    return m.group(1).lower() if m else None
 
 
 def _add_structural_edges(G: nx.DiGraph) -> int:
-    """
-    Add 'supplements' edges so every node in each section connects to its anchor.
-
-    Nodes are grouped by (source_paragraph, group). Within each group the first
-    non-zahlenwert node (alphabetically by ID) becomes the anchor, and all other
-    nodes get exactly one supplements edge to it. So we add (n-1) edges per
-    group with n nodes — no duplicate links. These are marked as structural
-    (metadata["structural"] = True) so they can be filtered from semantic
-    "supplements" (e.g. in visualization or when querying domain logic).
-    """
-    groups: dict[tuple, list[str]] = defaultdict(list)
-
+    """Add 'supplements' edges so every node in each section connects to its anchor."""
+    groups = defaultdict(list)
     for nid, data in G.nodes(data=True):
         src_para = data.get("source_paragraph", "")
-        group    = data.get("group", "")
+        group = data.get("group", "")
         groups[(src_para, group)].append(nid)
 
     added = 0
@@ -68,22 +170,20 @@ def _add_structural_edges(G: nx.DiGraph) -> int:
                 nid, anchor,
                 relation="supplements",
                 sourced_from=src_para,
-                structural=True,  # so UI/queries can treat these separately from domain supplements
+                structural=True,
             )
             added += 1
-
     return added
 
 
-def _load_inventory(path: str, label: str) -> list:
-    """Parse an inventory file and return its nodes, printing a summary line."""
-    nodes = parse_inventory(path=path)
-    print(f"  {label}: {len(nodes)} nodes")
-    return nodes
+def _load_mbo_nodes() -> list:
+    """Parse MBO inventory and return nodes for included sections only."""
+    nodes = parse_inventory(path=_MBO_INVENTORY)
+    filtered = [n for n in nodes if _para_number_from_source(n.source_paragraph) in _SECTIONS]
+    return filtered
 
 
 def _apply_edges(G: nx.DiGraph, edge_list: list, label: str) -> None:
-    """Add domain edges to the graph, printing a summary line."""
     failed = 0
     for edge in edge_list:
         try:
@@ -96,17 +196,19 @@ def _apply_edges(G: nx.DiGraph, edge_list: list, label: str) -> None:
 
 
 def build() -> nx.DiGraph:
-    """Build the complete unified knowledge graph and save it."""
-    print("=== Propra — Knowledge Graph Build ===\n")
+    """Build the core graph and save to graph.pkl / graph.graphml."""
+    print("=== Propra — Core graph build ===\n")
+    print(f"Sections: §{', §'.join(_SECTIONS)}\n")
 
     G = create_graph()
+    G.graph["name"] = "Propra Wissensgraph"
+    G.graph["jurisdiction"] = "DE-MBO"
+    G.graph["source"] = "Musterbauordnung (MBO) — section by section"
 
-    # 1. Load all nodes
+    # 1. Load nodes (only included sections)
     print("Loading nodes:")
-    all_nodes = (
-        _load_inventory(_MBO_INVENTORY, "MBO")
-        + _load_inventory(_BW_INVENTORY, "BW LBO")
-    )
+    all_nodes = _load_mbo_nodes()
+    print(f"  MBO: {len(all_nodes)} nodes")
     failed_nodes = 0
     for node in all_nodes:
         try:
@@ -115,14 +217,28 @@ def build() -> nx.DiGraph:
             print(f"    [ERROR] {node.id}: {e}")
             failed_nodes += 1
 
-    # 2. Structural edges (connect every node to its section anchor)
+    # Section anchor nodes (§1 Anwendungsbereich, §2 Begriffe, etc.) — core for each §
+    for num in _SECTIONS:
+        nid = f"MBO_§{num}"
+        if nid in G:
+            continue
+        title, stype = _SECTION_ANCHORS.get(num, (f"§{num}", "allgemeine_anforderung"))
+        add_node(G, Node(
+            id=nid,
+            type=stype,
+            jurisdiction="DE-MBO",
+            source_paragraph=f"§{num} MBO",
+            text=title,
+        ))
+    print(f"  Section anchors: {len(_SECTIONS)}")
+
+    # 2. Structural edges
     structural = _add_structural_edges(G)
     print(f"\nStructural edges: {structural} supplements added")
 
-    # 3. Domain edges (semantic relations between rules)
+    # 3. Domain edges (section-defined + references)
     print("\nDomain edges:")
-    _apply_edges(G, fence.edges(), "fence (BW)")
-    # Intersectional: references extracted from node text (e.g. "§ 34", "§§ 5–7")
+    _apply_edges(G, mbo_section_edges(), "MBO section (§1 exclusions)")
     ref_edges = references_edges(G)
     _apply_edges(G, ref_edges, "references (from text)")
 
@@ -133,17 +249,17 @@ def build() -> nx.DiGraph:
     print(f"Nodes     : {summary['node_count']}  (failed: {failed_nodes})")
     print(f"Edges     : {summary['edge_count']}")
     print(f"Orphans   : {orphans}")
-    print(f"\nNode types:")
-    for t, count in sorted(summary["node_types"].items(), key=lambda x: -x[1]):
-        print(f"  {t:<40} {count}")
     print(f"\nRelation types:")
     for r, count in sorted(summary["relation_types"].items(), key=lambda x: -x[1]):
         print(f"  {r:<30} {count}")
 
     save_graph(G, _GRAPH_PATH)
     export_graphml(G, _GRAPHML_PATH)
+    print(f"\nSaved: {_GRAPH_PATH}")
     return G
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build Propra core knowledge graph (MBO, section by section).")
+    args = parser.parse_args()
     build()

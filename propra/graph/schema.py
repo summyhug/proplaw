@@ -93,6 +93,7 @@ RELATION_TYPES = {
     "applies_to",            # rule node → its scope of application
     "exception_of",          # exception node → the base rule it overrides
     "supplements",           # node supplements another node
+    "sub_item_of",           # list item node → parent rule (e.g. exclusion 2.2 → 2.1)
     "references",            # cross-reference to another paragraph
     "overridden_by",         # LBO standard → local bylaw (§74)
 

@@ -136,7 +136,7 @@ python -m propra.graph.visualize_html
 python -m propra.graph.audit_relations --sample 15
 ```
 
-Full details, data pipeline, and audit workflow: [propra/graph/README.md](propra/graph/README.md) and [propra/graph/README_AUDIT.md](propra/graph/README_AUDIT.md).
+Full details and data pipeline: [propra/graph/README.md](propra/graph/README.md).
 
 ---
 
