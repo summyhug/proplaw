@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import {
   Send, Scale, BookOpen, Shield, ChevronDown, ChevronUp, Copy,
   ThumbsUp, ThumbsDown, Loader2, FileSignature, Bell,
-  CheckCircle2, Circle, Search, Check, Building2, MapPin, Layers,
+  CheckCircle2, Circle, Search, Check, Building2, MapPin, Layers, Tag, Home, Trees,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useLanguage } from "@/context/LanguageContext";
@@ -51,6 +51,8 @@ interface Message {
   reliabilityLabel?: string;
   timestamp: Date;
   documentBlock?: string;
+  classificationLabel?: string;
+  awaitingClassification?: boolean;
 }
 
 interface CaseStep {
@@ -476,6 +478,16 @@ const getResponse = (question: string): ResponseData => {
   return SAMPLE_RESPONSES.default;
 };
 
+const classifyQuestion = (text: string): string | null => {
+  const lower = text.toLowerCase();
+  if (["zaun", "grenze", "hecke"].some((k) => lower.includes(k))) return "Zaun / Grenze";
+  if (["fenster", "öffnung", "tür"].some((k) => lower.includes(k))) return "Fenster / Öffnung";
+  if (["garten", "terrasse", "schuppen"].some((k) => lower.includes(k))) return "Gartenanlage";
+  return null;
+};
+
+const CLASSIFICATION_TILES = ["Zaun / Grenze", "Fenster / Öffnung", "Gartenanlage"];
+
 const ReliabilityBadge = ({ score, label }: { score: number; label: string }) => {
   const color =
     score >= 90 ? "text-emerald-700 bg-emerald-50 border-emerald-200" :
@@ -652,9 +664,15 @@ const AdvisorPage = () => {
   const [bundeslandSearch, setBundeslandSearch] = useState("");
   const [bundeslandOpen, setBundeslandOpen] = useState(false);
   const [propertyType, setPropertyType] = useState("");
+  const [insideOutside, setInsideOutside] = useState<"inside" | "outside" | "">("");
+  const [postcode, setPostcode] = useState("");
   const [floors, setFloors] = useState("");
 
-  const contextReady = bundesland !== "" && propertyType !== "" && floors !== "" && Number(floors) > 0;
+  const contextReady =
+    bundesland !== "" &&
+    propertyType !== "" &&
+    insideOutside !== "" &&
+    (insideOutside !== "inside" || (floors !== "" && Number(floors) > 0));
 
   // Close Bundesland dropdown on outside click
   useEffect(() => {
@@ -697,6 +715,7 @@ const AdvisorPage = () => {
     await new Promise((r) => setTimeout(r, 1800 + Math.random() * 800));
 
     const resp = getResponse(question);
+    const label = classifyQuestion(question);
     const aiMsg: Message = {
       id: Date.now() + 1,
       role: "assistant",
@@ -706,10 +725,20 @@ const AdvisorPage = () => {
       reliabilityLabel: resp.reliabilityLabel,
       timestamp: new Date(),
       documentBlock: resp.documentBlock,
+      classificationLabel: label ?? undefined,
+      awaitingClassification: label === null,
     };
 
     setMessages((prev) => [...prev, aiMsg]);
     setLoading(false);
+  };
+
+  const setMessageClassification = (id: number, label: string) => {
+    setMessages((prev) =>
+      prev.map((m) =>
+        m.id === id ? { ...m, classificationLabel: label, awaitingClassification: false } : m
+      )
+    );
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -789,7 +818,8 @@ const AdvisorPage = () => {
                 )}
               </div>
 
-              <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-4 space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* 1 — Bundesland searchable dropdown */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-body font-semibold text-foreground flex items-center gap-1.5">
@@ -871,26 +901,85 @@ const AdvisorPage = () => {
                   </div>
                 </div>
 
-                {/* 3 — Number of floors */}
+                {/* 3 — Inside / Outside tiles */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-body font-semibold text-foreground flex items-center gap-1.5">
-                    <Layers className="w-3 h-3 text-gold" />
-                    {t("advisor.context.floors.label")}
+                    <Home className="w-3 h-3 text-gold" />
+                    {t("advisor.context.insideoutside.label")}
+                  </label>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => { setInsideOutside("inside"); setFloors(""); }}
+                      className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-xl border text-sm font-body transition-colors ${
+                        insideOutside === "inside"
+                          ? "border-gold/50 bg-gold-muted/20 text-foreground font-medium"
+                          : "border-border bg-background text-muted-foreground hover:border-gold/40"
+                      }`}
+                    >
+                      <Home className="w-3.5 h-3.5" />
+                      {t("advisor.context.insideoutside.inside")}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setInsideOutside("outside"); setFloors(""); }}
+                      className={`flex-1 flex items-center justify-center gap-1.5 h-10 rounded-xl border text-sm font-body transition-colors ${
+                        insideOutside === "outside"
+                          ? "border-gold/50 bg-gold-muted/20 text-foreground font-medium"
+                          : "border-border bg-background text-muted-foreground hover:border-gold/40"
+                      }`}
+                    >
+                      <Trees className="w-3.5 h-3.5" />
+                      {t("advisor.context.insideoutside.outside")}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2 — Postcode (always) + Floors (only when inside) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-body font-semibold text-foreground flex items-center gap-1.5">
+                    <MapPin className="w-3 h-3 text-gold" />
+                    {t("advisor.context.postcode.label")}
                   </label>
                   <input
-                    type="number"
-                    min={1}
-                    max={99}
-                    value={floors}
-                    onChange={(e) => setFloors(e.target.value)}
-                    placeholder={t("advisor.context.floors.placeholder")}
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={5}
+                    value={postcode}
+                    onChange={(e) => setPostcode(e.target.value.replace(/\D/g, ""))}
+                    placeholder={t("advisor.context.postcode.placeholder")}
                     className={`h-10 w-full px-3 rounded-xl border text-sm font-body transition-colors ${
-                      floors && Number(floors) > 0
+                      postcode
                         ? "border-gold/40 bg-gold-muted/10 text-foreground"
                         : "border-border bg-background text-muted-foreground"
-                    } hover:border-gold/50 focus:outline-none focus:border-gold/50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+                    } hover:border-gold/50 focus:outline-none focus:border-gold/50`}
                   />
                 </div>
+
+                {insideOutside === "inside" && (
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-body font-semibold text-foreground flex items-center gap-1.5">
+                      <Layers className="w-3 h-3 text-gold" />
+                      {t("advisor.context.floors.label")}
+                    </label>
+                    <input
+                      type="number"
+                      min={1}
+                      max={99}
+                      value={floors}
+                      onChange={(e) => setFloors(e.target.value)}
+                      placeholder={t("advisor.context.floors.placeholder")}
+                      className={`h-10 w-full px-3 rounded-xl border text-sm font-body transition-colors ${
+                        floors && Number(floors) > 0
+                          ? "border-gold/40 bg-gold-muted/10 text-foreground"
+                          : "border-border bg-background text-muted-foreground"
+                      } hover:border-gold/50 focus:outline-none focus:border-gold/50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+                    />
+                  </div>
+                )}
+              </div>
               </div>
             </div>
 
@@ -910,6 +999,15 @@ const AdvisorPage = () => {
                         {msg.content}
                       </div>
                     ) : (
+                      <>
+                      {msg.classificationLabel && (
+                        <div className="mb-1.5">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-navy/10 text-navy border border-navy/20">
+                            <Tag className="w-3 h-3" />
+                            {msg.classificationLabel}
+                          </span>
+                        </div>
+                      )}
                       <div className="bg-card border border-border rounded-2xl rounded-tl-sm p-5 shadow-sm">
                         <div className="font-body text-sm space-y-1">
                           {renderContent(msg.content)}
@@ -961,7 +1059,27 @@ const AdvisorPage = () => {
                             </button>
                           </div>
                         )}
+
+                        {msg.awaitingClassification && (
+                          <div className="mt-4 pt-4 border-t border-border">
+                            <p className="text-xs font-body text-muted-foreground mb-2">{t("advisor.classify.pick")}</p>
+                            <div className="flex flex-wrap gap-2">
+                              {CLASSIFICATION_TILES.map((tile) => (
+                                <button
+                                  key={tile}
+                                  type="button"
+                                  onClick={() => setMessageClassification(msg.id, tile)}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-navy/30 bg-navy/5 text-navy text-xs font-body font-medium hover:bg-navy/10 hover:border-navy/50 transition-colors"
+                                >
+                                  <Tag className="w-3 h-3" />
+                                  {tile}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
+                      </>
                     )}
                     <div className="text-xs text-muted-foreground font-body mt-1.5 px-1">
                       {msg.timestamp.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}
@@ -990,7 +1108,7 @@ const AdvisorPage = () => {
               <textarea
                 ref={textareaRef}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => setInput(e.target.value.slice(0, 500))}
                 onKeyDown={handleKeyDown}
                 placeholder={contextReady ? t("advisor.placeholder") : t("advisor.context.sub")}
                 rows={3}
@@ -1001,14 +1119,23 @@ const AdvisorPage = () => {
                 <p className="text-xs text-muted-foreground font-body">
                   {t("advisor.hint")}
                 </p>
-                <button
-                  onClick={() => sendMessage()}
-                  disabled={!input.trim() || loading || !contextReady}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-navy text-primary-foreground font-body text-sm font-medium disabled:opacity-40 hover:bg-navy-mid transition-colors disabled:cursor-not-allowed"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  {t("advisor.send")}
-                </button>
+                <div className="flex items-center gap-3">
+                  <span className={`text-xs font-body tabular-nums ${
+                    input.length > 500 ? "text-red-500" :
+                    input.length > 0 && input.trim().length < 10 ? "text-amber-500" :
+                    "text-muted-foreground"
+                  }`}>
+                    {input.length}/500
+                  </span>
+                  <button
+                    onClick={() => sendMessage()}
+                    disabled={input.trim().length < 10 || loading || !contextReady}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-navy text-primary-foreground font-body text-sm font-medium disabled:opacity-40 hover:bg-navy-mid transition-colors disabled:cursor-not-allowed"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    {t("advisor.send")}
+                  </button>
+                </div>
               </div>
             </div>
 

@@ -133,6 +133,12 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.context.proptype.gewerbe": "Gewerbe (Commercial)",
     "advisor.context.proptype.gemischte": "Gemischte Nutzung (Mixed Use)",
     "advisor.context.proptype.sonderbau": "Sonderbau (Special Structure)",
+    "advisor.context.insideoutside.label": "Location",
+    "advisor.context.insideoutside.inside": "Inside",
+    "advisor.context.insideoutside.outside": "Outside",
+    "advisor.context.postcode.label": "Postcode (optional)",
+    "advisor.context.postcode.placeholder": "e.g. 10115",
+    "advisor.classify.pick": "Please select a topic:",
 
     // Permit page
     "permit.badge": "Member Feature",
@@ -305,6 +311,12 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.context.proptype.gewerbe": "Gewerbe",
     "advisor.context.proptype.gemischte": "Gemischte Nutzung",
     "advisor.context.proptype.sonderbau": "Sonderbau",
+    "advisor.context.insideoutside.label": "Lage",
+    "advisor.context.insideoutside.inside": "Innen",
+    "advisor.context.insideoutside.outside": "Außen",
+    "advisor.context.postcode.label": "Postleitzahl (optional)",
+    "advisor.context.postcode.placeholder": "z.B. 10115",
+    "advisor.classify.pick": "Bitte wählen Sie ein Thema:",
 
     // Permit page
     "permit.badge": "Mitglieder-Funktion",
