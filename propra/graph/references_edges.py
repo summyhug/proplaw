@@ -45,11 +45,13 @@ def _parse_paragraph_refs(text: str) -> set[str]:
 
 
 def _node_prefix(nid: str) -> str | None:
-    """Return 'BW_LBO' or 'MBO' from node ID."""
+    """Return inventory prefix from node ID (e.g. 'MBO', 'BbgBO', 'BW_LBO') for same-law reference grouping."""
     if nid.startswith("BW_LBO_"):
         return "BW_LBO"
     if nid.startswith("MBO_"):
         return "MBO"
+    if nid.startswith("BbgBO_"):
+        return "BbgBO"
     return None
 
 
