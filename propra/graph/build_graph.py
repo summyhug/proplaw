@@ -1,9 +1,12 @@
 """
-Build the Propra core knowledge graph (MBO, section by section).
+Build the Propra core knowledge graph (MBO + all registered state LBOs).
 
-Loads nodes from MBO_node_inventory.md, keeps only the sections we have defined
-(§1 for now), adds structural edges + section-defined edges + reference edges.
+Loads nodes from MBO_node_inventory.md and each entry in _STATE_REGISTRY,
+adds structural edges + section-defined edges + reference edges.
 Saves to graph.pkl and graph.graphml. This graph is the single source of truth.
+
+To add a new state: drop its *_node_inventory.md into propra/data/ and append
+one entry to _STATE_REGISTRY — no other code changes required.
 
 Usage:
     python -m propra.graph.build_graph
@@ -22,12 +25,25 @@ from propra.graph.schema import Node
 from propra.graph.visualize import export_graphml
 from propra.graph.mbo_section_edges import edges as mbo_section_edges
 from propra.graph.references_edges import references_edges
+from propra.graph.state_structural_edges import state_structural_edges
 
 _DATA = Path(__file__).parent.parent / "data"
 
 _MBO_INVENTORY = str(_DATA / "MBO_node_inventory.md")
 _GRAPH_PATH = str(_DATA / "graph.pkl")
 _GRAPHML_PATH = str(_DATA / "graph.graphml")
+
+# Registry of state LBOs to include in the graph.
+# To add a new state: append one entry here and drop the inventory file in propra/data/.
+_STATE_REGISTRY = [
+    {
+        "name": "BbgBO",
+        "inventory": "BbgBO_node_inventory.md",
+        "prefix": "BbgBO_",
+        "source_suffix": "BbgBO",
+        "jurisdiction": "DE-BB",
+    },
+]
 
 # Sections to include (add § numbers as we go)
 _SECTIONS = [
@@ -183,6 +199,22 @@ def _load_mbo_nodes() -> list:
     return filtered
 
 
+def _load_state_nodes(config: dict) -> list:
+    """Parse a state LBO inventory; all sections included (independent of MBO)."""
+    path = str(_DATA / config["inventory"])
+    return parse_inventory(
+        path=path,
+        node_prefix=config["prefix"],
+        source_suffix=config["source_suffix"],
+    )
+
+
+def _section_numbers(nodes: list) -> set[str]:
+    """Unique § numbers extracted from nodes' source_paragraph."""
+    return {_para_number_from_source(n.source_paragraph) for n in nodes
+            if _para_number_from_source(n.source_paragraph)}
+
+
 def _apply_edges(G: nx.DiGraph, edge_list: list, label: str) -> None:
     failed = 0
     for edge in edge_list:
@@ -203,21 +235,24 @@ def build() -> nx.DiGraph:
     G = create_graph()
     G.graph["name"] = "Propra Wissensgraph"
     G.graph["jurisdiction"] = "DE-MBO"
-    G.graph["source"] = "Musterbauordnung (MBO) — section by section"
+    G.graph["source"] = "Musterbauordnung (MBO) + Landesbauordnungen"
 
-    # 1. Load nodes (only included sections)
-    print("Loading nodes:")
-    all_nodes = _load_mbo_nodes()
-    print(f"  MBO: {len(all_nodes)} nodes")
     failed_nodes = 0
-    for node in all_nodes:
+
+    # 1. Load nodes
+    print("Loading nodes:")
+
+    # MBO
+    mbo_nodes = _load_mbo_nodes()
+    print(f"  MBO: {len(mbo_nodes)} nodes")
+    for node in mbo_nodes:
         try:
             add_node(G, node)
         except ValueError as e:
             print(f"    [ERROR] {node.id}: {e}")
             failed_nodes += 1
 
-    # Section anchor nodes (§1 Anwendungsbereich, §2 Begriffe, etc.) — core for each §
+    # MBO section anchors
     for num in _SECTIONS:
         nid = f"MBO_§{num}"
         if nid in G:
@@ -230,15 +265,48 @@ def build() -> nx.DiGraph:
             source_paragraph=f"§{num} MBO",
             text=title,
         ))
-    print(f"  Section anchors: {len(_SECTIONS)}")
+    print(f"  MBO section anchors: {len(_SECTIONS)}")
 
-    # 2. Structural edges
+    # State LBOs (registry-driven)
+    state_nodes_by_prefix: dict[str, list] = {}
+    for cfg in _STATE_REGISTRY:
+        nodes = _load_state_nodes(cfg)
+        print(f"  {cfg['name']}: {len(nodes)} nodes")
+        for node in nodes:
+            try:
+                add_node(G, node)
+            except ValueError as e:
+                print(f"    [ERROR] {node.id}: {e}")
+                failed_nodes += 1
+
+        # Section anchor nodes — one per § in the state inventory
+        sections = sorted(_section_numbers(nodes))
+        for num in sections:
+            nid = f"{cfg['prefix']}§{num}"
+            if nid in G:
+                continue
+            # Reuse MBO type where § numbering matches; fall back to allgemeine_anforderung
+            _, stype = _SECTION_ANCHORS.get(num, (None, "allgemeine_anforderung"))
+            add_node(G, Node(
+                id=nid,
+                type=stype,
+                jurisdiction=cfg["jurisdiction"],
+                source_paragraph=f"§{num} {cfg['source_suffix']}",
+                text=f"§ {num} {cfg['source_suffix']}",
+            ))
+        print(f"  {cfg['name']} section anchors: {len(sections)}")
+        state_nodes_by_prefix[cfg["prefix"]] = nodes
+
+    # 2. Structural edges (supplements: content nodes → section anchors)
     structural = _add_structural_edges(G)
     print(f"\nStructural edges: {structural} supplements added")
 
-    # 3. Domain edges (section-defined + references)
+    # 3. Domain edges
     print("\nDomain edges:")
     _apply_edges(G, mbo_section_edges(), "MBO section (§1 exclusions)")
+    for cfg in _STATE_REGISTRY:
+        edges = state_structural_edges(G, cfg["prefix"])
+        _apply_edges(G, edges, f"{cfg['name']} structural (sub_item_of)")
     ref_edges = references_edges(G)
     _apply_edges(G, ref_edges, "references (from text)")
 
