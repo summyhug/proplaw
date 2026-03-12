@@ -38,6 +38,7 @@ _GRAPHML_PATH = str(_DATA / "graph.graphml")
 _STATE_REGISTRY = [
     {
         "name": "BbgBO",
+        "full_name": "Brandenburgische Bauordnung (BbgBO)",
         "inventory": "BbgBO_node_inventory.md",
         "prefix": "BbgBO_",
         "source_suffix": "BbgBO",
@@ -215,6 +216,39 @@ def _section_numbers(nodes: list) -> set[str]:
             if _para_number_from_source(n.source_paragraph)}
 
 
+def _add_law_root(G: nx.DiGraph, prefix: str, text: str, jurisdiction: str, source_suffix: str) -> int:
+    """
+    Create a root node for a law and connect all its section anchors to it via supplements.
+
+    The root node ID is {prefix}ROOT (e.g. MBO_ROOT, BbgBO_ROOT).
+    Section anchors are identified as nodes whose ID matches {prefix}§N exactly
+    (no trailing underscore — they are anchors, not content nodes).
+
+    Returns the number of supplements edges added.
+    """
+    root_id = f"{prefix}ROOT"
+    add_node(G, Node(
+        id=root_id,
+        type="gesetz",
+        jurisdiction=jurisdiction,
+        source_paragraph=source_suffix,
+        text=text,
+    ))
+
+    added = 0
+    for nid in G.nodes():
+        if nid == root_id:
+            continue
+        if not nid.startswith(prefix):
+            continue
+        # Section anchors: {prefix}§N with no further underscore-delimited parts
+        rest = nid[len(prefix):]
+        if re.match(r"^§\d+[a-z]?$", rest) and not G.has_edge(nid, root_id):
+            G.add_edge(nid, root_id, relation="supplements", sourced_from=source_suffix, structural=True)
+            added += 1
+    return added
+
+
 def _apply_edges(G: nx.DiGraph, edge_list: list, label: str) -> None:
     failed = 0
     for edge in edge_list:
@@ -297,7 +331,15 @@ def build() -> nx.DiGraph:
         print(f"  {cfg['name']} section anchors: {len(sections)}")
         state_nodes_by_prefix[cfg["prefix"]] = nodes
 
-    # 2. Structural edges (supplements: content nodes → section anchors)
+    # 2. Law root nodes — one per law, all section anchors connect to it
+    mbo_root_edges = _add_law_root(G, "MBO_", "Musterbauordnung (MBO)", "DE-MBO", "MBO")
+    print(f"\nLaw root nodes:")
+    print(f"  MBO_ROOT: {mbo_root_edges} section anchors connected")
+    for cfg in _STATE_REGISTRY:
+        n = _add_law_root(G, cfg["prefix"], cfg["full_name"], cfg["jurisdiction"], cfg["source_suffix"])
+        print(f"  {cfg['prefix']}ROOT: {n} section anchors connected")
+
+    # 3. Structural edges (supplements: content nodes → section anchors)
     structural = _add_structural_edges(G)
     print(f"\nStructural edges: {structural} supplements added")
 

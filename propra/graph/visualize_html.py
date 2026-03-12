@@ -96,11 +96,149 @@ def _node_tooltip(nid: str, data: dict) -> str:
 
 def _short_label(nid: str, data: dict) -> str:
     """Short label shown on the node itself — paragraph + row, strip inventory prefix."""
-    label = nid.replace("BW_LBO_", "").replace("MBO_", "MBO:")
-    # Truncate long annex IDs
+    label = nid
+    for prefix in ("BW_LBO_", "MBO_", "BbgBO_"):
+        label = label.replace(prefix, prefix.rstrip("_") + ":")
     if len(label) > 20:
         label = label[:18] + "…"
     return label
+
+
+_LAW_COLOURS = [
+    "#1A3355",  # navy
+    "#C9952A",  # amber
+    "#2E7D4F",  # green
+    "#8E44AD",  # purple
+    "#C0392B",  # red
+    "#1A7A8A",  # teal
+]
+
+
+def _detect_laws(G: nx.DiGraph) -> list[tuple[str, str]]:
+    """
+    Return (label, prefix) for every law present in the graph.
+    Detected via ROOT nodes: 'MBO_ROOT' → ('MBO', 'MBO_').
+    """
+    laws = []
+    for nid in G.nodes():
+        if nid.endswith("ROOT"):
+            prefix = nid[:-4]          # e.g. 'MBO_'
+            label = prefix.rstrip("_") # e.g. 'MBO'
+            laws.append((label, prefix))
+    return sorted(laws)
+
+
+def _build_toolbar(laws: list[tuple[str, str]]) -> str:
+    """Build the combined search + law-filter toolbar HTML/JS to inject into the page."""
+
+    # Toggle buttons HTML
+    toggle_btns = ""
+    for i, (label, _) in enumerate(laws):
+        colour = _LAW_COLOURS[i % len(_LAW_COLOURS)]
+        toggle_btns += (
+            f'<button id="btn-{label}" onclick="toggleLaw(\'{label}\')" '
+            f'style="background:{colour}" class="kg-law-btn active">{label}</button>'
+        )
+
+    # JS law-prefix map  { 'MBO': 'MBO_', 'BbgBO': 'BbgBO_', ... }
+    law_map_js = "{" + ", ".join(f"'{l}': '{p}'" for l, p in laws) + "}"
+    # Visible state map  { 'MBO': true, 'BbgBO': true, ... }
+    vis_map_js = "{" + ", ".join(f"'{l}': true" for l, _ in laws) + "}"
+
+    return f"""
+<style>
+  #kg-toolbar {{
+    position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+    z-index: 9999; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    background: rgba(255,255,255,0.96); padding: 8px 16px;
+    border-radius: 10px; box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+    font-family: DM Sans, sans-serif;
+  }}
+  #kg-toolbar input {{
+    border: 1.5px solid #1A3355; border-radius: 4px;
+    padding: 5px 10px; font-size: 13px; width: 220px; outline: none;
+  }}
+  #kg-toolbar button {{
+    border: none; border-radius: 4px; padding: 5px 12px;
+    font-size: 13px; cursor: pointer; color: #fff;
+  }}
+  .kg-action-btn {{ background: #1A3355; }}
+  .kg-action-btn:hover {{ background: #C9952A; }}
+  .kg-law-btn {{ opacity: 1; transition: opacity 0.2s; }}
+  .kg-law-btn.hidden {{ opacity: 0.35; }}
+  #kg-divider {{ width: 1px; height: 28px; background: #ccc; margin: 0 4px; }}
+  #kg-match-count {{ font-size: 12px; color: #555; min-width: 56px; }}
+</style>
+<div id="kg-toolbar">
+  <input id="kg-input" type="text" placeholder="Search node ID or text…" />
+  <button class="kg-action-btn" onclick="kgSearch()">Find</button>
+  <button class="kg-action-btn" onclick="kgClear()">Clear</button>
+  <span id="kg-match-count"></span>
+  <div id="kg-divider"></div>
+  {toggle_btns}
+</div>
+<script>
+var lawPrefixes = {law_map_js};
+var lawVisible  = {vis_map_js};
+
+function isHidden(nodeId) {{
+  for (var law in lawPrefixes) {{
+    if (!lawVisible[law] && nodeId.startsWith(lawPrefixes[law])) return true;
+  }}
+  return false;
+}}
+
+function toggleLaw(law) {{
+  lawVisible[law] = !lawVisible[law];
+  var btn = document.getElementById('btn-' + law);
+  btn.classList.toggle('hidden', !lawVisible[law]);
+
+  var net = window.network;
+  var nodeUpdates = [];
+  net.body.data.nodes.forEach(function(n) {{
+    if (n.id.startsWith(lawPrefixes[law])) {{
+      nodeUpdates.push({{ id: n.id, hidden: !lawVisible[law] }});
+    }}
+  }});
+  net.body.data.nodes.update(nodeUpdates);
+
+  var edgeUpdates = [];
+  net.body.data.edges.forEach(function(e) {{
+    edgeUpdates.push({{ id: e.id, hidden: isHidden(e.from) || isHidden(e.to) }});
+  }});
+  net.body.data.edges.update(edgeUpdates);
+}}
+
+function kgSearch() {{
+  var term = document.getElementById('kg-input').value.toLowerCase().trim();
+  if (!term) {{ kgClear(); return; }}
+  var net = window.network;
+  var matchIds = [];
+  net.body.data.nodes.forEach(function(n) {{
+    if (n.hidden) return;
+    var id = (n.id || '').toLowerCase();
+    var lbl = (n.label || '').toLowerCase();
+    var title = (n.title || '').toLowerCase();
+    if (id.includes(term) || lbl.includes(term) || title.includes(term)) matchIds.push(n.id);
+  }});
+  document.getElementById('kg-match-count').textContent = matchIds.length + ' found';
+  if (matchIds.length > 0) {{
+    net.selectNodes(matchIds);
+    net.focus(matchIds[0], {{ scale: 1.4, animation: {{ duration: 600 }} }});
+  }}
+}}
+
+function kgClear() {{
+  window.network.unselectAll();
+  document.getElementById('kg-input').value = '';
+  document.getElementById('kg-match-count').textContent = '';
+}}
+
+document.getElementById('kg-input').addEventListener('keydown', function(e) {{
+  if (e.key === 'Enter') kgSearch();
+}});
+</script>
+"""
 
 
 def render(
@@ -215,6 +353,13 @@ def render(
     dest = Path(output_path)
     dest.parent.mkdir(parents=True, exist_ok=True)
     net.save_graph(str(dest))
+
+    # Inject toolbar (search + law toggles) into the generated HTML
+    laws = _detect_laws(sub)
+    html = dest.read_text(encoding="utf-8")
+    html = html.replace("</body>", _build_toolbar(laws) + "\n</body>")
+    dest.write_text(html, encoding="utf-8")
+
     print(f"HTML graph saved → {dest.resolve()}")
     print(f"Open in browser: open '{dest.resolve()}'")
     return str(dest.resolve())

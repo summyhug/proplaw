@@ -81,6 +81,7 @@ NODE_TYPES = {
     "bestandsschutz",
     "schlussvorschrift",
     "zahlenwert",            # numeric threshold nodes
+    "gesetz",                # root node representing a whole law (e.g. BbgBO, MBO)
 }
 
 # ---------------------------------------------------------------------------
