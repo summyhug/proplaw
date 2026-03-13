@@ -154,6 +154,15 @@ pytest tests/
 2. Follow the conventions in [CLAUDE.md](./CLAUDE.md)
 3. Ensure all new API endpoints have happy-path and error-path tests
 4. Open a pull request with a clear description of what you changed and why
+5. Enable the pre-commit hooks, setup (run once):
+
+```
+pip install pre-commit
+pre-commit install
+```
+
+After installation, the hooks will automatically run before every commit.
+
 
 ---
 
