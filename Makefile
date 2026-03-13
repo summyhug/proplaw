@@ -1,3 +1,5 @@
+.PHONY: install lint test run setup-dev frontend-install frontend-lint frontend-build
+
 install:
 	pip install -r requirements.txt
 
