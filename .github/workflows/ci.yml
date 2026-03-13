@@ -30,7 +30,7 @@ jobs:
         run: python -c "from schemas.assessment import AssessResponse; from schemas.situation import Situation; print('Schemas OK')"
 
       - name: Run tests with coverage
-        run: pytest --cov --cov-report=xml
+        run: pytest --cov=propra --cov-report=xml
 
       - name: Upload coverage report to PR
         uses: codecov/codecov-action@v4
