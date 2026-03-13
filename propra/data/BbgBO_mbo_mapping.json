@@ -1,0 +1,383 @@
+{
+  "state": "BbgBO",
+  "generated": "2026-03-12",
+  "thresholds": {
+    "auto": 0.85,
+    "review": 0.5
+  },
+  "mapping": {
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "5": "5",
+    "7": "8",
+    "8": "9",
+    "10": "11",
+    "12": "14",
+    "13": "15",
+    "15": "18",
+    "16": "19",
+    "17": "20",
+    "18": "16a",
+    "20": "22",
+    "22": "24",
+    "23": "26",
+    "26": "30",
+    "27": "28",
+    "28": "32",
+    "29": "33",
+    "30": "34",
+    "31": "35",
+    "34": "39",
+    "40": "47",
+    "41": "48",
+    "44": "51",
+    "45": "50",
+    "46": "59",
+    "47": "53",
+    "49": "81",
+    "50": "55",
+    "52": "58",
+    "57": "63",
+    "62": "68",
+    "63": "69",
+    "66": "66",
+    "67": "74",
+    "69": "73",
+    "70": "71",
+    "77": "78",
+    "79": "84",
+    "81": "86"
+  },
+  "review": [
+    {
+      "state_para": "4",
+      "state_title": "Bebauung der Grundstücke mit Gebäuden, Teilung der Grundstücke",
+      "mbo_para": "4",
+      "mbo_title": "Bebauung der Grundstücke mit Gebäuden",
+      "score": 0.757,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "6",
+      "state_title": "Abstandsflächen",
+      "mbo_para": "6",
+      "mbo_title": "Abstandsflächen, Abstände",
+      "score": 0.762,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "9",
+      "state_title": "Werbeanlagen",
+      "mbo_para": "38",
+      "mbo_title": "Umwehrungen",
+      "score": 0.609,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "11",
+      "state_title": "Standsicherheit, Schutz gegen schädliche Einflüsse",
+      "mbo_para": "13",
+      "mbo_title": "Schutz gegen schädliche Einflüsse",
+      "score": 0.814,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "14",
+      "state_title": "Bauprodukte",
+      "mbo_para": "16a",
+      "mbo_title": "Bauarten",
+      "score": 0.632,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "19",
+      "state_title": "Übereinstimmungsnachweis",
+      "mbo_para": "21",
+      "mbo_title": "Übereinstimmungsbestätigung",
+      "score": 0.667,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "21",
+      "state_title": "Übereinstimmungszertifikat",
+      "mbo_para": "21",
+      "mbo_title": "Übereinstimmungsbestätigung",
+      "score": 0.714,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "24",
+      "state_title": "Tragende oder aussteifende Bauteile",
+      "mbo_para": "27",
+      "mbo_title": "Tragende Wände, Stützen",
+      "score": 0.61,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "25",
+      "state_title": "Raumabschließende Bauteile",
+      "mbo_para": "76",
+      "mbo_title": "Fliegende Bauten",
+      "score": 0.605,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "33",
+      "state_title": "Umwehrungen und Abdeckungen",
+      "mbo_para": "38",
+      "mbo_title": "Umwehrungen",
+      "score": 0.579,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "35",
+      "state_title": "Leitungen, Schächte und Kanäle für technische Gebäudeausrüstungen",
+      "mbo_para": "40",
+      "mbo_title": "Leitungsanlagen, Installationsschächte und –kanäle",
+      "score": 0.521,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "36",
+      "state_title": "Feuerungsanlagen, Anlagen zur Wärmeerzeugung und Brennstoffversorgungsanlagen",
+      "mbo_para": "42",
+      "mbo_title": "Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung und",
+      "score": 0.716,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "37",
+      "state_title": "Wasserversorgungsanlagen",
+      "mbo_para": "41",
+      "mbo_title": "Lüftungsanlagen",
+      "score": 0.6,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "38",
+      "state_title": "Kleinkläranlagen, Gruben und Sickeranlagen",
+      "mbo_para": "44",
+      "mbo_title": "Kleinkläranlagen, Gruben",
+      "score": 0.727,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "42",
+      "state_title": "Toilettenräume und Toilettenanlagen",
+      "mbo_para": "35",
+      "mbo_title": "Notwendige Treppenräume, Ausgänge",
+      "score": 0.514,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "43",
+      "state_title": "Stellplätze und Garagen, Stellplatzablösevertrag",
+      "mbo_para": "49",
+      "mbo_title": "Stellplätze, Garagen und Abstellplätze für Fahrräder",
+      "score": 0.692,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "48",
+      "state_title": "Objektplaner, Bauvorlageberechtigung",
+      "mbo_para": "65",
+      "mbo_title": "Bauvorlageberechtigung",
+      "score": 0.772,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "53",
+      "state_title": "Aufgaben und Befugnisse der amtsfreien Gemeinden und der Ämter als Sonderordnungsbehörden",
+      "mbo_para": "58",
+      "mbo_title": "Aufgaben und Befugnisse der Bauaufsichtsbehörden",
+      "score": 0.571,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "54",
+      "state_title": "Genehmigungspflichtige Vorhaben",
+      "mbo_para": "72",
+      "mbo_title": "Baugenehmigung, Baubeginn",
+      "score": 0.582,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "55",
+      "state_title": "Genehmigungsfreie Vorhaben",
+      "mbo_para": "62",
+      "mbo_title": "Genehmigungsfreistellung",
+      "score": 0.72,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "56",
+      "state_title": "Baugenehmigungsverfahren",
+      "mbo_para": "63",
+      "mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "score": 0.774,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "58",
+      "state_title": "Bauanzeigeverfahren",
+      "mbo_para": "63",
+      "mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "score": 0.561,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "59",
+      "state_title": "Vorbescheidsverfahren",
+      "mbo_para": "75",
+      "mbo_title": "Vorbescheid",
+      "score": 0.688,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "60",
+      "state_title": "Zulassung von Abweichungen",
+      "mbo_para": "67",
+      "mbo_title": "Abweichungen",
+      "score": 0.632,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "64",
+      "state_title": "Beteiligung der Nachbarn",
+      "mbo_para": "70",
+      "mbo_title": "Beteiligung der Nachbarn und der Öffentlichkeit",
+      "score": 0.667,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "65",
+      "state_title": "Rechtliche Sicherung",
+      "mbo_para": "77",
+      "mbo_title": "Bauaufsichtliche Zustimmung",
+      "score": 0.596,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "73",
+      "state_title": "Baueinstellung und Nutzungsuntersagung",
+      "mbo_para": "80",
+      "mbo_title": "Beseitigung von Anlagen, Nutzungsuntersagung",
+      "score": 0.716,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "74",
+      "state_title": "Beseitigungsanordnung",
+      "mbo_para": "62",
+      "mbo_title": "Genehmigungsfreistellung",
+      "score": 0.533,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "75",
+      "state_title": "Überprüfung der Bauausführung",
+      "mbo_para": "58",
+      "mbo_title": "Aufgaben und Befugnisse der Bauaufsichtsbehörden",
+      "score": 0.568,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "76",
+      "state_title": "Fertigstellung und Nutzung der baulichen Anlage",
+      "mbo_para": "71",
+      "mbo_title": "Ersetzung des gemeindlichen Einvernehmens",
+      "score": 0.5,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "78",
+      "state_title": "Anpassung bestehender baulicher Anlagen",
+      "mbo_para": "58",
+      "mbo_title": "Aufgaben und Befugnisse der Bauaufsichtsbehörden",
+      "score": 0.523,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "82",
+      "state_title": "Datenschutz",
+      "mbo_para": "14",
+      "mbo_title": "Brandschutz",
+      "score": 0.636,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "83",
+      "state_title": "Übergangsvorschriften",
+      "mbo_para": "85",
+      "mbo_title": "Rechtsvorschriften",
+      "score": 0.7,
+      "flag": "low_confidence"
+    }
+  ],
+  "unmatched": [
+    {
+      "state_para": "32",
+      "state_title": "Abschlüsse von Öffnungen, Fenster und Kellerlichtschächte",
+      "best_mbo_para": "40",
+      "best_mbo_title": "Leitungsanlagen, Installationsschächte und –kanäle",
+      "best_score": 0.422
+    },
+    {
+      "state_para": "39",
+      "state_title": "Wertstoff- und Abfallbehälter, Abfallschächte",
+      "best_mbo_para": "45",
+      "best_mbo_title": "Aufbewahrung fester Abfallstoffe",
+      "best_score": 0.494
+    },
+    {
+      "state_para": "51",
+      "state_title": "Bauaufsichtsbehörden, Sonderordnungsbehörden, Sonderaufsichtsbehörden",
+      "best_mbo_para": "22",
+      "best_mbo_title": "Übereinstimmungserklärung des Herstellers",
+      "best_score": 0.389
+    },
+    {
+      "state_para": "61",
+      "state_title": "Abweichungen von örtlichen Bauvorschriften, sonderordnungsbehördliches Erlaubnisverfahren",
+      "best_mbo_para": "86",
+      "best_mbo_title": "Örtliche Bauvorschriften",
+      "best_score": 0.435
+    },
+    {
+      "state_para": "68",
+      "state_title": "Baubeginn, Baufreigabe, Einmessung, Mitteilungspflichten über den Stand der Bauarbeiten",
+      "best_mbo_para": "70",
+      "best_mbo_title": "Beteiligung der Nachbarn und der Öffentlichkeit",
+      "best_score": 0.391
+    },
+    {
+      "state_para": "71",
+      "state_title": "Besondere Verfahrensvorschriften für Fliegende Bauten",
+      "best_mbo_para": "65b",
+      "best_mbo_title": "Eintragungsverfahren für Antragstellende nach § 65a Absatz 3",
+      "best_score": 0.46
+    },
+    {
+      "state_para": "72",
+      "state_title": "Zustimmung zu Vorhaben öffentlicher Bauherren",
+      "best_mbo_para": "70",
+      "best_mbo_title": "Beteiligung der Nachbarn und der Öffentlichkeit",
+      "best_score": 0.468
+    },
+    {
+      "state_para": "80",
+      "state_title": "Ermächtigung zum Erlass von Rechtsverordnungen",
+      "best_mbo_para": "80",
+      "best_mbo_title": "Beseitigung von Anlagen, Nutzungsuntersagung",
+      "best_score": 0.444
+    },
+    {
+      "state_para": "84",
+      "state_title": "(Inkrafttreten, Außerkrafttreten) * Dieses Gesetz dient der Umsetzung der Richtlinie 2000/9/EG des Europäischen Parlaments und des Rates vom 20. März 2000 über Seilbahnen für den Personenverkehr (ABl. EG Nr. L 106 S. 21) in Landesrecht.",
+      "best_mbo_para": "71",
+      "best_mbo_title": "Ersetzung des gemeindlichen Einvernehmens",
+      "best_score": 0.237
+    }
+  ]
+}

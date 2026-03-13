@@ -27,6 +27,7 @@ This file defines the rules and conventions the Claude Code agent must follow th
 - All API endpoints must include **input validation** (Pydantic) and return structured error messages:
   - **English** for developers (in the `detail` field)
   - **German** for end users (in the `user_message` field)
+- Never push directly to main, always open a PR.
 
 ### JavaScript / React
 

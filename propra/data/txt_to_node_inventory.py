@@ -1,19 +1,18 @@
 """
 Converts MBO.txt (PDF-extracted plain text) into MBO_node_inventory.md.
 
-Produces a structured node inventory in the same format as BW_LBO_node_inventory.md
-(see that file as the reference). parse_inventory.py loads the result for the
-knowledge graph. Sections are detected from § markers; (1)/(2) Absatz markers
-and sentence/list numbering are used to split content into numbered rules.
+Preserves legal hierarchy: § (Paragraf) → (1), (2) (Absatz) → 1., 2., a) (Satz/Nummer).
+Each Absatz is emitted as a #### subheading with its own table; each row is one
+Satz or list item so nodes get a clear legal address (e.g. §1 Abs. 2 MBO, row 2.3).
+
+Optional preprocessing: strip standalone page-number lines and footnote refs
+(word + digit, e.g. Tageseinrichtungen1 → Tageseinrichtungen) from the raw text.
 
 Usage:
     python propra/data/txt_to_node_inventory.py
 
 Input:  propra/data/raw/MBO.txt
 Output: propra/data/MBO_node_inventory.md
-
-After running, you can refine individual sections (e.g. §6 Abstandsflächen,
-§61 Verfahrensfreiheit) manually and add numeric_values tables as in BW_LBO.
 """
 
 import re
@@ -24,6 +23,30 @@ _DATA = Path(__file__).parent
 _RAW = _DATA / "raw"
 _MBO_TXT = _RAW / "MBO.txt"
 _MBO_INVENTORY = _DATA / "MBO_node_inventory.md"
+
+# Regex: line is only digits (page number)
+_PAGE_NUMBER_LINE = re.compile(r"^\s*\d+\s*$")
+# Footnote ref: word character(s) + 1–2 digits at word end (e.g. Tageseinrichtungen1)
+_FOOTNOTE_REF = re.compile(r"([a-zA-ZäöüÄÖÜß]+)(\d{1,2})(?=\s|$|[\.,;:\)])")
+
+
+def _preprocess_mbo_text(raw: str) -> str:
+    """
+    Clean MBO.txt before parsing: remove page-number lines and footnote refs.
+
+    - Page numbers: lines that contain only digits and whitespace (e.g. "  6  ").
+    - Footnote refs: digit(s) glued to a word (e.g. Tageseinrichtungen1 → Tageseinrichtungen).
+    """
+    lines = raw.splitlines()
+    out = []
+    for line in lines:
+        if _PAGE_NUMBER_LINE.match(line.strip()):
+            continue
+        # Strip footnote refs (word + digit) from the line
+        cleaned = _FOOTNOTE_REF.sub(r"\1", line)
+        out.append(cleaned)
+    return "\n".join(out)
+
 
 # MBO metadata (from the PDF header)
 _MBO_HEADER = """# MBO — Knotenverzeichnis
@@ -93,22 +116,22 @@ def _merge_section_lines(lines: list[str]) -> str:
     return " ".join(out).strip()
 
 
-def _split_into_rules(merged: str) -> list[str]:
+def _split_into_absatz_blocks(merged: str) -> list[tuple[str, list[str]]]:
     """
-    Split merged section text into rule strings.
-    Splits by (1), (2), then by sentence numbers ( 1… 2…) and list items (1. 2. a) b)).
+    Split merged § content by hierarchy: (1), (2) = Absatz; within each, split by
+    sentence (1Text, 2Text) or list (1., 2., a), b)) into rule strings.
+
+    Returns [(absatz_num, [rule1, rule2, ...]), ...] so we can emit one #### and
+    one table per Absatz with clear source_paragraph (§N Abs. K MBO).
     """
     if not merged or not merged.strip():
         return []
-    # Normalize: single spaces
     text = re.sub(r"\s+", " ", merged).strip()
-    rules: list[str] = []
     # Split by Absatz (1), (2), (3)...
     absatz_parts = re.split(r"\s*\((\d+)\)\s*", text)
     if len(absatz_parts) <= 1 and "(" not in text:
-        # No (1)(2) found — treat whole as one block
         absatz_parts = ["", "1", text]
-    # absatz_parts = [before_first, "1", content1, "2", content2, ...]
+    blocks: list[tuple[str, list[str]]] = []
     i = 1
     while i < len(absatz_parts):
         absatz_num = absatz_parts[i]
@@ -116,22 +139,24 @@ def _split_into_rules(merged: str) -> list[str]:
         i += 2
         if not content.strip():
             continue
-        # Within this Absatz, split by " 1" " 2" (sentence) or " 1." " 2." (list)
-        # Pattern: space + digit + (capital letter or ".") = new sentence/list
+        # Within this Absatz: split by sentence (1Text, 2Text) or list (1., 2., a), b))
         parts = re.split(r"\s+(?=\d+[A-ZÄÖÜ.]|\d+\.\s)", content)
-        sub = 0
+        rules: list[str] = []
         for p in parts:
             p = p.strip()
-            if not p or len(p) < 3:
+            if not p or len(p) < 2:
                 continue
-            # Remove leading "1." "2." from list items so we don't duplicate
+            # Remove leading "1." "2." "a)" from list items
             p = re.sub(r"^\d+\.\s*", "", p)
             p = re.sub(r"^[a-z]\)\s*", "", p)
+            # Remove leading sentence number (1Text → Text, 2Abweichend → Abweichend)
+            p = re.sub(r"^\d+([A-ZÄÖÜ])", r"\1", p)
             if not p.strip():
                 continue
-            sub += 1
             rules.append(p.strip())
-    return rules
+        if rules:
+            blocks.append((absatz_num, rules))
+    return blocks
 
 
 def _infer_type(title: str) -> str:
@@ -183,23 +208,28 @@ def _build_toc_titles(lines: list[str]) -> dict[str, str]:
 
 def main() -> None:
     raw = _MBO_TXT.read_text(encoding="utf-8")
+    raw = _preprocess_mbo_text(raw)
     all_lines = raw.splitlines()
 
-    # Body starts after TOC: first "§ 1 Anwendungsbereich" (with title) marks the real §1
+    # Body starts after TOC: find § 1 that is followed by (1) (first Absatz), not the TOC entry
     body_start = 0
     for i, line in enumerate(all_lines):
         s = line.strip()
-        if re.match(r"^§\s+1\s+Anwendungsbereich\s*$", s):
-            # Include the "Erster Teil" header just above: walk back to previous part
-            body_start = i
-            for j in range(i - 1, max(0, i - 15), -1):
-                if "Erster Teil" in all_lines[j] and "Allgemeine" in all_lines[j]:
-                    body_start = j
-                    break
+        if not (s == "§ 1" or re.match(r"^§\s+1\s", s)):
+            continue
+        # Look forward for "(1)" or "(1) 1" (first Absatz) within 15 lines
+        for j in range(i + 1, min(i + 15, len(all_lines))):
+            if re.match(r"^\(\d+\)", all_lines[j].strip()):
+                body_start = i
+                break
+        if body_start:
             break
-    if body_start == 0:
-        body_start = 0  # fallback to start of file
-
+    if body_start > 0:
+        # Include "Erster Teil" / part header just above
+        for j in range(body_start - 1, max(0, body_start - 15), -1):
+            if _part_or_abschnitt(all_lines[j]):
+                body_start = j
+                break
     body_lines = all_lines[body_start:]
 
     # Split into sections: each section starts with § N or Part/Abschnitt
@@ -208,7 +238,7 @@ def main() -> None:
     current_kind = ""
     current_title = ""
 
-    for line in body_lines:
+    for idx, line in enumerate(body_lines):
         stripped = line.strip()
         part = _part_or_abschnitt(line)
         if part:
@@ -224,6 +254,13 @@ def main() -> None:
                 sections.append((current_kind, current_title, current))
                 current = []
             num, title = _extract_para_and_title(line)
+            # If title empty (e.g. "§ 1" on one line, "Anwendungsbereich" on next), use next non-empty line
+            if not title.strip() and idx + 1 < len(body_lines):
+                for next_line in body_lines[idx + 1 : idx + 4]:
+                    t = next_line.strip()
+                    if t and not _section_starts(t) and not _part_or_abschnitt(next_line) and not re.match(r"^\(\d+\)", t):
+                        title = t
+                        break
             current_kind = "para"
             current_title = f"{num}|{title}"  # num and optional title
             current = []
@@ -266,22 +303,27 @@ def main() -> None:
         md.append(f"**source_paragraph:** §{num} MBO\n\n")
 
         merged = _merge_section_lines(content)
-        rules = _split_into_rules(merged)
-        if not rules:
-            # Fallback: single row with full merged text (truncated if very long)
+        blocks = _split_into_absatz_blocks(merged)
+        if not blocks:
+            # Fallback: no (1)(2) structure — single row under this §
             rule_text = merged[:2000] + "…" if len(merged) > 2000 else merged
             if rule_text:
                 md.append("| Nr. | Regeltext (MBO-Wortlaut) |\n")
                 md.append("|---|---|\n")
-                md.append(f'| {num}.1 | „{rule_text}" |\n')
+                rule_esc = rule_text.replace("|", "\\|").replace('"', "'")
+                md.append(f'| {num}.1 | „{rule_esc}" |\n')
         else:
-            md.append("| Nr. | Regeltext (MBO-Wortlaut) |\n")
-            md.append("|---|---|\n")
-            for idx, rule in enumerate(rules[:200], 1):  # cap 200 rules per §
-                rule_esc = rule.replace("|", "\\|").replace('"', "'")
-                if len(rule_esc) > 500:
-                    rule_esc = rule_esc[:497] + "…"
-                md.append(f'| {num}.{idx} | „{rule_esc}" |\n')
+            for absatz_num, rules in blocks:
+                md.append(f"\n#### §{num} Abs. {absatz_num}\n\n")
+                md.append(f"**source_paragraph:** §{num} Abs. {absatz_num} MBO\n\n")
+                md.append("| Nr. | Regeltext (MBO-Wortlaut) |\n")
+                md.append("|---|---|\n")
+                for idx, rule in enumerate(rules[:150], 1):  # cap per Absatz
+                    rule_esc = rule.replace("|", "\\|").replace('"', "'")
+                    if len(rule_esc) > 500:
+                        rule_esc = rule_esc[:497] + "…"
+                    row_id = f"{absatz_num}.{idx}"
+                    md.append(f'| {row_id} | „{rule_esc}" |\n')
         md.append("\n---\n")
 
     _MBO_INVENTORY.write_text("".join(md), encoding="utf-8")

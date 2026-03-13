@@ -1,0 +1,13 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+
+  - repo: local
+    hooks:
+      - id: schema-check
+        name: Validate Pydantic schemas
+        entry: python -c "from schemas.assessment import AssessResponse; from schemas.situation import Situation"
+        language: system
+        pass_filenames: false

@@ -103,11 +103,17 @@ def _extract_para(heading: str) -> str:
     Extract paragraph reference from a section heading.
 
     '### §5 — Abstandsflächen'  → '§5'
-    '### §§ 16a–25 — ...'       → '§§ 16a–25'
-    '### §§ 77–79 — ...'        → '§§ 77–79'
+    '### § 5 — Abstandsflächen' → '§5'  (space after § normalised)
+    '### §§ 16a–25 — ...'       → '§§16a–25'
+    '### §§ 77–79 — ...'        → '§§77–79'
     """
     m = re.match(r"^#{1,4}\s+(§[^—\n]+?)(?:\s*—|\s*$)", heading)
-    return m.group(1).strip() if m else ""
+    if not m:
+        return ""
+    raw = m.group(1).strip()
+    # Normalise "§ N" / "§§ N" → "§N" / "§§N" so node IDs are consistent
+    # across inventories regardless of whether the PDF had a space after §.
+    return re.sub(r"(§§?)\s+", r"\1", raw)
 
 
 def _extract_subsection(heading: str) -> str:
@@ -141,15 +147,18 @@ def _is_explicit_id(cell: str) -> bool:
 def parse_inventory(
     path: Optional[str] = None,
     node_prefix: Optional[str] = None,
+    source_suffix: Optional[str] = None,
 ) -> list[Node]:
     """
     Parse a node inventory markdown file and return a list of Node objects.
 
     Args:
-        path:        Path to the markdown file. Defaults to the BW LBO inventory.
-        node_prefix: Prefix for generated node IDs (e.g. 'MBO_'). When None,
-                     the parser reads **node_prefix:** from the file header, or
-                     falls back to 'BW_LBO_'.
+        path:          Path to the markdown file. Defaults to the BW LBO inventory.
+        node_prefix:   Prefix for generated node IDs (e.g. 'MBO_', 'BbgBO_'). When None,
+                       the parser reads **node_prefix:** from the file header, or
+                       falls back to 'BW_LBO_'.
+        source_suffix: Suffix for source_paragraph (e.g. 'BbgBO', 'MBO'). When None,
+                       uses 'LBO BW'. Use for state inventories so citations are correct.
 
     Returns:
         List of Node objects ready to be added to the graph.
@@ -163,6 +172,7 @@ def parse_inventory(
     # --- parser state ---
     jurisdiction: str = _JURISDICTION
     active_prefix: str = node_prefix or _DEFAULT_NODE_PREFIX
+    source_suffix_val: str = source_suffix if source_suffix is not None else "LBO BW"
     current_type: str = ""
     current_para: str = ""          # e.g. "§5" or "§§ 16a–25"
     current_subsection: str = ""    # e.g. "Abs. 1"
@@ -178,7 +188,7 @@ def parse_inventory(
         base = current_para
         if current_subsection:
             base = f"{current_para} {current_subsection}"
-        return f"{base} LBO BW" if base else "LBO BW"
+        return f"{base} {source_suffix_val}" if base else source_suffix_val
 
     def _build_node_id(row_id: str) -> str:
         safe = re.sub(r"[\s/\\]", "-", row_id)

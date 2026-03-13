@@ -1,104 +1,65 @@
 # Knowledge graph
 
-The Propra knowledge graph is built from **node inventories** (Markdown) and **domain edge** modules. Colleagues can build, inspect, and audit it locally without extra services.
+The core graph is **MBO only**, built section by section. One build, one output: `propra/data/graph.pkl`.
 
 ## Prerequisites
 
 - Python 3.11+
 - Dependencies from repo root: `pip install -r requirements.txt`
 
-No API keys are required for build, explore, visualize, or audit (only for `edge_proposer`, which uses Claude).
+No API keys required.
 
 ---
 
 ## 1. Build the graph
 
-Loads MBO + BW node inventories, adds structural edges (section anchors), fence domain edges, and reference edges parsed from node text. Writes `propra/data/graph.pkl` and `graph.graphml`.
+Loads MBO nodes for the sections defined in `build_graph.py` (§1 for now), adds structural edges, section-defined edges (e.g. §1 exclusions), and reference edges. Writes `propra/data/graph.pkl` and `graph.graphml`.
 
 ```bash
-# From repo root
 python -m propra.graph.build_graph
 ```
 
-You should see a summary of node counts, edge counts, and relation types. The first run creates the graph; later runs overwrite it.
+To add more sections, edit `_SECTIONS` in `build_graph.py` and add the corresponding edges in `mbo_section_edges.py`.
 
 ---
 
 ## 2. Explore nodes (CLI)
 
-Inspect a node and its neighbours by ID or search term:
-
 ```bash
 python -m propra.graph.explore
-# or with explicit graph path:
-python -m propra.graph.explore propra/data/graph.pkl
+# or: python -m propra.graph.explore propra/data/graph.pkl
 ```
 
-At the prompt, type a node ID (e.g. `BW_LBO_§5_5.1`) or a substring. Enter with no input to list all node IDs.
+Type a node ID (e.g. `MBO_§1_2.1`) or a substring. Empty input lists all node IDs.
 
 ---
 
 ## 3. Visualize (HTML)
 
-Export the graph (or a filtered subgraph) to an interactive HTML file:
-
 ```bash
-# Full graph (can be heavy)
 python -m propra.graph.visualize_html
-
-# Focused subgraph (e.g. fence-related §§)
-python -m propra.graph.visualize_html --filter §5 §6 A1-07 §74
+# optional: python -m propra.graph.visualize_html --filter §1
 ```
 
-Output is written next to `graph.pkl`, e.g. `propra/data/graph.html` or `propra/data/graph_§5_§6_A1-07_§74.html`. Open in a browser. Structural edges are shown grey/dashed; domain and reference edges are bold.
+Output: `propra/data/graph.html`. Open in a browser.
 
 ---
 
-## 4. Core nodes report
+## 4. Audit relations
 
-List the most connected nodes (by total degree or by semantic connections only):
+```bash
+python -m propra.graph.audit_relations
+python -m propra.graph.audit_relations --relation sub_item_of --sample 20
+python -m propra.graph.audit_relations --export propra/data/audit_edges.csv
+```
+
+---
+
+## 5. Core nodes
 
 ```bash
 python -m propra.graph.core_nodes
 ```
-
-Useful to see which sections act as hubs (e.g. §66, §85a, §5).
-
----
-
-## 5. Audit relations
-
-Check that edges make sense by sampling or exporting them:
-
-```bash
-# Summary (counts per relation type, structural excluded)
-python -m propra.graph.audit_relations
-
-# Sample 15 edges per relation type for terminal review
-python -m propra.graph.audit_relations --sample 15
-
-# Focus on one relation type
-python -m propra.graph.audit_relations --relation references --sample 30
-
-# Export all non-structural edges to CSV for spreadsheet review
-python -m propra.graph.audit_relations --export propra/data/audit_edges.csv
-```
-
-For a step-by-step audit workflow (what to check per relation type, suggested order), see [README_AUDIT.md](./README_AUDIT.md).
-
----
-
-## Data pipeline (optional)
-
-If you need to regenerate node inventories or clean source text:
-
-| Step | Script | Purpose |
-|------|--------|--------|
-| Extract text from PDF | `python propra/data/extract_pdf.py propra/data/raw/MBO.pdf` | PDF → `.txt` (then clean if needed) |
-| Clean MBO.txt after PDF import | `python propra/data/clean_mbo_txt.py` | Fix broken words, page numbers, blank lines |
-| MBO.txt → node inventory | `python propra/data/txt_to_node_inventory.py` | Build `MBO_node_inventory.md` from `raw/MBO.txt` |
-
-The graph build uses `MBO_node_inventory.md` and `BW_LBO_node_inventory.md`; you only need these scripts when updating source PDFs or the MBO text.
 
 ---
 
@@ -107,13 +68,13 @@ The graph build uses `MBO_node_inventory.md` and `BW_LBO_node_inventory.md`; you
 | File | Role |
 |------|------|
 | `schema.py` | Node/edge types and validation |
-| `builder.py` | `create_graph`, `add_node`, `add_edge`, `load_graph`, `save_graph` |
-| `parse_inventory.py` | Parse Markdown inventories → `Node` list |
-| `build_graph.py` | Main build: load nodes, structural edges, fence edges, reference edges |
-| `fence_edges.py` | Domain edges for fence/Abstandsfläche (BW §5, §6, §50, §74, etc.) |
-| `references_edges.py` | Extract § refs from node text → `references` edges |
+| `builder.py` | Graph I/O: create_graph, add_node, add_edge, load_graph, save_graph |
+| `build_graph.py` | Build core graph (MBO, sections in _SECTIONS) |
+| `mbo_section_edges.py` | Section-defined edges (e.g. §1 exclusions 2.2–2.12 → 2.1) |
+| `references_edges.py` | References parsed from node text |
+| `parse_inventory.py` | Parse MBO_node_inventory.md → Node list |
 | `explore.py` | Interactive CLI explorer |
+| `visualize.py` | Export to GraphML |
 | `visualize_html.py` | Export to HTML (pyvis) |
 | `audit_relations.py` | Sample/export edges for review |
-| `core_nodes.py` | Report high-degree nodes |
-| `edge_proposer.py` | LLM-assisted edge proposals (requires `ANTHROPIC_API_KEY`) |
+| `core_nodes.py` | List high-degree nodes |
