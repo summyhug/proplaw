@@ -18,7 +18,7 @@ faiss-cpu>=1.8.0
 sentence-transformers>=3.0.0
 
 # PDF parsing (extract text from LBO/MBO source PDFs; propra/data/extract_pdf.py)
-pdfminer.six>=20221105
+pdfplumber>=0.11.0
 
 # Environment variables
 python-dotenv>=1.0.0
