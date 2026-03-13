@@ -83,7 +83,7 @@ def _node_tooltip(nid: str, data: dict) -> str:
     lines = [
         f"<b>{nid}</b>",
         f"<i>{ntype}</i>",
-        f"<hr/>",
+        "<hr/>",
         f"{text}",
     ]
     if ctx:
@@ -141,9 +141,9 @@ def _build_toolbar(laws: list[tuple[str, str]]) -> str:
         )
 
     # JS law-prefix map  { 'MBO': 'MBO_', 'BbgBO': 'BbgBO_', ... }
-    law_map_js = "{" + ", ".join(f"'{l}': '{p}'" for l, p in laws) + "}"
+    law_map_js = "{" + ", ".join(f"'{label}': '{p}'" for label, p in laws) + "}"
     # Visible state map  { 'MBO': true, 'BbgBO': true, ... }
-    vis_map_js = "{" + ", ".join(f"'{l}': true" for l, _ in laws) + "}"
+    vis_map_js = "{" + ", ".join(f"'{label}': true" for label, _ in laws) + "}"
 
     return f"""
 <style>

@@ -174,7 +174,7 @@ def process_one(pdf_path: str, out_path: str) -> dict:
     text = extract(pdf_path)
     Path(out_path).write_text(text, encoding="utf-8")
 
-    lines    = [l for l in text.splitlines() if l.strip()]
+    lines    = [line for line in text.splitlines() if line.strip()]
     paras    = len(re.findall(r'^§\s*\d+', text, re.MULTILINE))
     absaetze = len(re.findall(r'^\(\d+\)', text, re.MULTILINE))
     trunc    = text.count('…')

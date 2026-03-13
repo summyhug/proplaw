@@ -9,7 +9,7 @@ Usage:
     python -m propra.graph.core_nodes
 """
 
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 from propra.graph.builder import load_graph

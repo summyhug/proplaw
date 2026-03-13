@@ -5,7 +5,7 @@ Loads nodes from MBO_node_inventory.md and each entry in _STATE_REGISTRY,
 adds structural edges + section-defined edges + reference edges.
 Saves to graph.pkl and graph.graphml. This graph is the single source of truth.
 
-To add a new state: drop its *_node_inventory.md into propra/data/ and append
+To add a new state: drop its *_node_inventory.md into propra/data/node inventory/ and append
 one entry to _STATE_REGISTRY — no other code changes required.
 
 Usage:
@@ -26,20 +26,22 @@ from propra.graph.visualize import export_graphml
 from propra.graph.mbo_section_edges import edges as mbo_section_edges
 from propra.graph.references_edges import references_edges
 from propra.graph.state_structural_edges import state_structural_edges
+from propra.graph.bbgbo_mbo_edges import bbgbo_edges_from_mbo
 
 _DATA = Path(__file__).parent.parent / "data"
+_NODE_INVENTORY_DIR = "node inventory"
 
-_MBO_INVENTORY = str(_DATA / "MBO_node_inventory.md")
+_MBO_INVENTORY = str(_DATA / _NODE_INVENTORY_DIR / "MBO_node_inventory.md")
 _GRAPH_PATH = str(_DATA / "graph.pkl")
 _GRAPHML_PATH = str(_DATA / "graph.graphml")
 
 # Registry of state LBOs to include in the graph.
-# To add a new state: append one entry here and drop the inventory file in propra/data/.
+# To add a new state: append one entry here and drop the inventory file in propra/data/node inventory/.
 _STATE_REGISTRY = [
     {
         "name": "BbgBO",
         "full_name": "Brandenburgische Bauordnung (BbgBO)",
-        "inventory": "BbgBO_node_inventory.md",
+        "inventory": "BbgBO_node_inventory_fine.md",
         "prefix": "BbgBO_",
         "source_suffix": "BbgBO",
         "jurisdiction": "DE-BB",
@@ -202,7 +204,7 @@ def _load_mbo_nodes() -> list:
 
 def _load_state_nodes(config: dict) -> list:
     """Parse a state LBO inventory; all sections included (independent of MBO)."""
-    path = str(_DATA / config["inventory"])
+    path = str(_DATA / _NODE_INVENTORY_DIR / config["inventory"])
     return parse_inventory(
         path=path,
         node_prefix=config["prefix"],
@@ -333,7 +335,7 @@ def build() -> nx.DiGraph:
 
     # 2. Law root nodes — one per law, all section anchors connect to it
     mbo_root_edges = _add_law_root(G, "MBO_", "Musterbauordnung (MBO)", "DE-MBO", "MBO")
-    print(f"\nLaw root nodes:")
+    print("\nLaw root nodes:")
     print(f"  MBO_ROOT: {mbo_root_edges} section anchors connected")
     for cfg in _STATE_REGISTRY:
         n = _add_law_root(G, cfg["prefix"], cfg["full_name"], cfg["jurisdiction"], cfg["source_suffix"])
@@ -349,6 +351,11 @@ def build() -> nx.DiGraph:
     for cfg in _STATE_REGISTRY:
         edges = state_structural_edges(G, cfg["prefix"])
         _apply_edges(G, edges, f"{cfg['name']} structural (sub_item_of)")
+        # Copy MBO relationship structure onto this state where section mapping exists
+        mapping_path = _DATA / f"{cfg['name']}_mbo_mapping.json"
+        if mapping_path.exists():
+            mbo_copied = bbgbo_edges_from_mbo(G, cfg["prefix"], mapping_path)
+            _apply_edges(G, mbo_copied, f"{cfg['name']} from MBO (mapping)")
     ref_edges = references_edges(G)
     _apply_edges(G, ref_edges, "references (from text)")
 
@@ -359,7 +366,7 @@ def build() -> nx.DiGraph:
     print(f"Nodes     : {summary['node_count']}  (failed: {failed_nodes})")
     print(f"Edges     : {summary['edge_count']}")
     print(f"Orphans   : {orphans}")
-    print(f"\nRelation types:")
+    print("\nRelation types:")
     for r, count in sorted(summary["relation_types"].items(), key=lambda x: -x[1]):
         print(f"  {r:<30} {count}")
 

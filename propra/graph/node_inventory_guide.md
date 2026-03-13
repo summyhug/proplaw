@@ -34,7 +34,7 @@ The node **type** is the most critical field. Wrong type = wrong graph structure
 ## How inventories are produced
 
 ```
-PDF → extract_pdf.py → .txt → draft_inventory.py → _node_inventory.md
+PDF → extract_pdf_clean.py → data/txt/*.txt → draft_inventory.py → data/node inventory/*_node_inventory.md
 ```
 
 The draft is generated using the Anthropic API to classify each provision. It is always a **draft** — manual review and correction is required before committing.
@@ -113,10 +113,10 @@ The §§ 50+ are the most error-prone. `genehmigungspflicht`, `bauantrag`, `baug
 
 | Issue | Fix in |
 |---|---|
-| § 1 not first provision | `extract_pdf.py` via Claude Code |
-| Duplicate provisions | `extract_pdf.py` via Claude Code |
-| Title bleeding into body | `extract_pdf.py` via Claude Code |
-| Structural headers as provisions | `extract_pdf.py` via Claude Code |
+| § 1 not first provision | `extract_pdf_clean.py` via Claude Code |
+| Duplicate provisions | `extract_pdf_clean.py` via Claude Code |
+| Title bleeding into body | `extract_pdf_clean.py` via Claude Code |
+| Structural headers as provisions | `extract_pdf_clean.py` via Claude Code |
 | Wrong node type classification | Edit `.md` file directly |
 | Missing title (known PDF limitation) | Edit `.md` file directly |
 | Truncated body text | Edit `.md` file directly |
@@ -125,7 +125,7 @@ The §§ 50+ are the most error-prone. `genehmigungspflicht`, `bauantrag`, `baug
 
 ## Review workflow per LBO
 
-1. Open `propra/data/{LBO}_node_inventory.md` in VS Code
+1. Open `propra/data/node inventory/{LBO}_node_inventory.md` in VS Code
 2. Confirm file starts at § 1 / Art. 1
 3. Scan § numbers top to bottom — sequence must be complete
 4. Check types in the permit section (§§ 50+) — most common errors here
@@ -151,7 +151,13 @@ Expect 10–15% of API classifications to need manual correction. This is normal
 | File | Description |
 |---|---|
 | `propra/data/raw/{LBO}.pdf` | Original source PDF |
-| `propra/data/raw/{LBO}.txt` | Cleaned extracted text |
-| `propra/data/{LBO}_node_inventory.md` | Draft node inventory (review before use) |
+| `propra/data/txt/{LBO}.txt` | Cleaned extracted text (from extract_pdf_clean.py) |
+| `propra/data/node inventory/{LBO}_node_inventory.md` | Draft node inventory (review before use) |
 
 Jurisdiction codes: `DE-BW`, `DE-BY`, `DE-BE`, `DE-BB`, `DE-HB`, `DE-HH`, `DE-HE`, `DE-MV`, `DE-NI`, `DE-NW`, `DE-RP`, `DE-SL`, `DE-SN`, `DE-ST`, `DE-SH`, `DE-TH`
+
+---
+
+## Adding a state to the graph
+
+After you have a reviewed paragraph-level inventory, the graph needs a **sentence-level** version and (optionally) a **section mapping** to MBO. See **`docs/ADDING_A_NEW_STATE.md`** for the full steps (refine granularity → mapping → register in build). You can do this with Cursor or Claude by following that guide.

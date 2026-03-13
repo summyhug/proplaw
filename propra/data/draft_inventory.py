@@ -12,16 +12,16 @@ The output is a DRAFT — always review and correct before committing.
 
 Usage:
     python propra/data/draft_inventory.py \
-        --txt propra/data/raw/BayBO.txt \
+        --txt propra/data/txt/BayBO.txt \
         --bundesland Bayern \
         --lbo_code BayBO \
         --jurisdiction DE-BY \
         --version_date "23. Dezember 2025" \
         --source_url "https://www.gesetze-bayern.de/Content/Document/BayBO" \
-        --output propra/data/BayBO_node_inventory.md
+        --output propra/data/node inventory/BayBO_node_inventory.md
 
     # Dry run — parse only, no API calls, no output file
-    python propra/data/draft_inventory.py --txt propra/data/raw/BayBO.txt --dry_run
+    python propra/data/draft_inventory.py --txt propra/data/txt/BayBO.txt --dry_run
 """
 
 import argparse
@@ -31,7 +31,6 @@ import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
 
 import anthropic
 from dotenv import load_dotenv
@@ -377,8 +376,8 @@ def draft_inventory(
     output_path.write_text(md, encoding="utf-8")
 
     print(f"\nOK Draft inventory written to: {output_path}")
-    print(f"\nWARN NEXT STEP: Review and correct the draft before committing.")
-    print(f"   Pay attention to: node type classifications, truncated Absätze, numeric values.")
+    print("\nWARN NEXT STEP: Review and correct the draft before committing.")
+    print("   Pay attention to: node type classifications, truncated Absätze, numeric values.")
     print(f"   Compare against {txt_path} for any missed provisions.")
 
 
@@ -406,7 +405,7 @@ def main():
         sys.exit(1)
 
     output_path = Path(args.output) if args.output else \
-        txt_path.parent.parent / f"{args.lbo_code}_node_inventory.md"
+        txt_path.parent.parent / "node inventory" / f"{args.lbo_code}_node_inventory.md"
 
     draft_inventory(
         txt_path=txt_path,

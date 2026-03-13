@@ -1,5 +1,5 @@
 """
-Parser for propra/data/BW_LBO_node_inventory.md → list of Node objects.
+Parser for propra/data/node inventory/*_node_inventory.md → list of Node objects.
 
 Reads the structured markdown node inventory and emits one Node per table row.
 Numeric-value rows produce nodes of type 'zahlenwert'.
@@ -27,7 +27,7 @@ from propra.graph.schema import NODE_TYPES, Node
 # Constants
 # ---------------------------------------------------------------------------
 
-_INVENTORY_PATH = Path(__file__).parent.parent / "data" / "BW_LBO_node_inventory.md"
+_INVENTORY_PATH = Path(__file__).parent.parent / "data" / "node inventory" / "BW_LBO_node_inventory.md"
 
 _JURISDICTION = "DE-BW"
 _DEFAULT_NODE_PREFIX = "BW_LBO_"

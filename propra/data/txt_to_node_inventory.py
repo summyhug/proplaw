@@ -11,8 +11,8 @@ Optional preprocessing: strip standalone page-number lines and footnote refs
 Usage:
     python propra/data/txt_to_node_inventory.py
 
-Input:  propra/data/raw/MBO.txt
-Output: propra/data/MBO_node_inventory.md
+Input:  propra/data/txt/MBO.txt
+Output: propra/data/node inventory/MBO_node_inventory.md
 """
 
 import re
@@ -20,9 +20,8 @@ from pathlib import Path
 
 # Paths
 _DATA = Path(__file__).parent
-_RAW = _DATA / "raw"
-_MBO_TXT = _RAW / "MBO.txt"
-_MBO_INVENTORY = _DATA / "MBO_node_inventory.md"
+_MBO_TXT = _DATA / "txt" / "MBO.txt"
+_MBO_INVENTORY = _DATA / "node inventory" / "MBO_node_inventory.md"
 
 # Regex: line is only digits (page number)
 _PAGE_NUMBER_LINE = re.compile(r"^\s*\d+\s*$")
@@ -239,7 +238,6 @@ def main() -> None:
     current_title = ""
 
     for idx, line in enumerate(body_lines):
-        stripped = line.strip()
         part = _part_or_abschnitt(line)
         if part:
             if current and (current_kind == "para" or current_kind == "part"):
@@ -275,11 +273,9 @@ def main() -> None:
 
     # Build markdown
     md: list[str] = [_MBO_HEADER]
-    current_part = ""
 
     for kind, title_or_num, content in sections:
         if kind == "part":
-            current_part = title_or_num
             # Drop leading page number if present (e.g. "2 Siebenter Abschnitt" -> "Siebenter Abschnitt")
             title_or_num = re.sub(r"^\d+\s+", "", title_or_num.strip()).strip()
             # "Erster Teil Allgemeine Vorschriften" -> "## ERSTER TEIL — Allgemeine Vorschriften"

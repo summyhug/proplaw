@@ -100,7 +100,7 @@ def section_2_begriffe() -> list[Edge]:
 
     # 5.1, 6.1, 7.1, 8.1, 9.1, 11.1 → section
     for row in ("5.1", "6.1", "7.1", "8.1", "9.1", "11.1"):
-        edges.append(Edge(_n("2", row), section, "supplements", f"§2 MBO", metadata={"reasoning": "Definition block under Begriffe."}))
+        edges.append(Edge(_n("2", row), section, "supplements", "§2 MBO", metadata={"reasoning": "Definition block under Begriffe."}))
 
     # 6.2 under 6.1; 7.2, 7.3 under 7.1
     edges.append(Edge(_n("2", "6.2"), _n("2", "6.1"), "sub_item_of", "§2 Abs. 6 MBO", metadata={"reasoning": "Continuation of Geschosse definition."}))

@@ -1,6 +1,6 @@
 # Knowledge graph
 
-The core graph is **MBO only**, built section by section. One build, one output: `propra/data/graph.pkl`.
+The graph contains **MBO** (section anchors; model structure) and **state LBOs** (e.g. **BbgBO**): full content nodes at sentence/list-item level, structural edges, and edges copied from MBO via section mapping. One build, one output: `propra/data/graph.pkl`. The product **cites only the LBO**; MBO is internal only. See `docs/GRAPH_ARCHITECTURE.md` and **`docs/ADDING_A_NEW_STATE.md`** to add another state.
 
 ## Prerequisites
 
@@ -13,13 +13,13 @@ No API keys required.
 
 ## 1. Build the graph
 
-Loads MBO nodes for the sections defined in `build_graph.py` (§1 for now), adds structural edges, section-defined edges (e.g. §1 exclusions), and reference edges. Writes `propra/data/graph.pkl` and `graph.graphml`.
+Loads MBO section anchors and each state in `_STATE_REGISTRY` from `data/node inventory/*_node_inventory_fine.md`, adds structural edges (supplements, sub_item_of), MBO section edges, state edges copied from MBO mapping, and reference edges. Writes `propra/data/graph.pkl` and `graph.graphml`.
 
 ```bash
 python -m propra.graph.build_graph
 ```
 
-To add more sections, edit `_SECTIONS` in `build_graph.py` and add the corresponding edges in `mbo_section_edges.py`.
+To **add a new state**, follow `docs/ADDING_A_NEW_STATE.md` (inventory → refine → mapping → register). To add more MBO sections, edit `_SECTIONS` in `build_graph.py` and edges in `mbo_section_edges.py`.
 
 ---
 
@@ -69,12 +69,17 @@ python -m propra.graph.core_nodes
 |------|------|
 | `schema.py` | Node/edge types and validation |
 | `builder.py` | Graph I/O: create_graph, add_node, add_edge, load_graph, save_graph |
-| `build_graph.py` | Build core graph (MBO, sections in _SECTIONS) |
-| `mbo_section_edges.py` | Section-defined edges (e.g. §1 exclusions 2.2–2.12 → 2.1) |
+| `build_graph.py` | Build graph (MBO anchors + state LBOs in _STATE_REGISTRY) |
+| `mbo_section_edges.py` | MBO section-defined edges (e.g. §1 exclusions, §6 exception_of) |
+| `state_structural_edges.py` | sub_item_of for state content nodes (block.sub → block.1) |
+| `bbgbo_mbo_edges.py` | Copy MBO edges onto a state using data/{STATE}_mbo_mapping.json |
 | `references_edges.py` | References parsed from node text |
-| `parse_inventory.py` | Parse MBO_node_inventory.md → Node list |
+| `parse_inventory.py` | Parse data/node inventory/*_node_inventory.md → Node list |
+| `map_to_mbo.py` | Generate state↔MBO section mapping (→ data/{STATE}_mbo_mapping.json) |
 | `explore.py` | Interactive CLI explorer |
 | `visualize.py` | Export to GraphML |
 | `visualize_html.py` | Export to HTML (pyvis) |
 | `audit_relations.py` | Sample/export edges for review |
 | `core_nodes.py` | List high-degree nodes |
+
+State inventories are refined to sentence level by `propra/data/split_inventory_to_sentences.py` before the build.

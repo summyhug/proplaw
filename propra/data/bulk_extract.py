@@ -3,8 +3,8 @@ propra/data/bulk_extract.py
 ────────────────────────────────────────────────────────────────────────────
 Bulk PDF extraction for all LBO source files.
 
-Runs extract_pdf.py on every PDF in propra/data/raw/ that does not already
-have a corresponding .txt file. Skips files that are already extracted.
+Runs extract_pdf_clean.py on every PDF in propra/data/raw/ that does not already
+have a corresponding .txt file in propra/data/txt/. Skips files that are already extracted.
 
 Usage:
     python propra/data/bulk_extract.py
@@ -19,7 +19,8 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 RAW_DIR = Path("propra/data/raw")
-EXTRACTOR = Path("propra/data/extract_pdf.py")
+TXT_DIR = Path("propra/data/txt")
+EXTRACTOR = Path("propra/data/extract_pdf_clean.py")
 
 PDFS = [
     "BauO_BE.pdf",
@@ -55,7 +56,7 @@ def main():
 
     for pdf_name in PDFS:
         pdf_path = RAW_DIR / pdf_name
-        txt_path = pdf_path.with_suffix(".txt")
+        txt_path = TXT_DIR / Path(pdf_name).with_suffix(".txt").name
 
         if not pdf_path.exists():
             print(f"\nERR  {pdf_name} not found in {RAW_DIR} -- skipping")
@@ -67,10 +68,11 @@ def main():
             skipped.append(pdf_name)
             continue
 
+        TXT_DIR.mkdir(parents=True, exist_ok=True)
         print(f"\nExtracting {pdf_name} ...")
 
         result = subprocess.run(
-            [sys.executable, str(EXTRACTOR), str(pdf_path)]
+            [sys.executable, str(EXTRACTOR), str(pdf_path), str(txt_path)]
         )
 
         if result.returncode == 0:

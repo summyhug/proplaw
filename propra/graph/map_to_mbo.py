@@ -25,7 +25,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 _DATA = Path(__file__).parent.parent / "data"
-_MBO_INVENTORY = _DATA / "MBO_node_inventory.md"
+_NODE_INVENTORY_DIR = "node inventory"
+_MBO_INVENTORY = _DATA / _NODE_INVENTORY_DIR / "MBO_node_inventory.md"
 
 # Auto-confirmed if score >= HIGH_THRESHOLD; sent to review if >= LOW_THRESHOLD
 _HIGH_THRESHOLD = 0.85
@@ -94,7 +95,10 @@ def build_mapping(
 
     Returns a dict with keys: state, generated, mapping, review, unmatched.
     """
-    state_inventory = _DATA / f"{state}_node_inventory.md"
+    state_dir = _DATA / _NODE_INVENTORY_DIR
+    state_inventory = state_dir / f"{state}_node_inventory_v2.md"
+    if not state_inventory.exists():
+        state_inventory = state_dir / f"{state}_node_inventory.md"
     if not state_inventory.exists():
         print(f"[ERROR] Inventory not found: {state_inventory}", file=sys.stderr)
         sys.exit(1)

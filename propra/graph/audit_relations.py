@@ -252,9 +252,9 @@ def run_audit(
         ]
         (out_dir / "START_HERE.md").write_text("\n".join(start_here), encoding="utf-8")
         print(f"Section audit written to {out_dir.resolve()}")
-        print(f"  START_HERE.md — what to do first (read this)")
-        print(f"  INDEX.md — index of all sections")
-        print(f"  Open .md files in an editor to review full text.")
+        print("  START_HERE.md — what to do first (read this)")
+        print("  INDEX.md — index of all sections")
+        print("  Open .md files in an editor to review full text.")
         if export_path is None and (sample_per_type or 0) == 0:
             return
 
@@ -313,8 +313,6 @@ def _export_csv(G, edges_by_rel: dict, path: str) -> None:
 
 
 def main() -> None:
-    from collections import defaultdict  # noqa: F811
-
     parser = argparse.ArgumentParser(description="Audit graph relations: sample or export edges for review.")
     parser.add_argument("graph", nargs="?", default=_DEFAULT_GRAPH, help="Path to graph.pkl")
     parser.add_argument("--relation", "-r", dest="relation_filter", help="Only this relation type (e.g. references)")
