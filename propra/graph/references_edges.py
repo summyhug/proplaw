@@ -20,8 +20,9 @@ from propra.graph.schema import Edge
 
 
 # § 34, §34, § 6 Absatz 1, §§ 5–7, § 16a
+# Also matches BayBO-style "Art. 34", "Art. 6a"
 _PARA_RE = re.compile(
-    r"§§?\s*(\d+[a-z]?)\s*(?:[\-–]\s*(\d+[a-z]?))?"
+    r"(?:§§?|Art\.)\s*(\d+[a-z]?)\s*(?:[\-–]\s*(\d+[a-z]?))?"
 )
 
 def _parse_paragraph_refs(text: str) -> set[str]:
@@ -45,13 +46,15 @@ def _parse_paragraph_refs(text: str) -> set[str]:
 
 
 def _node_prefix(nid: str) -> str | None:
-    """Return inventory prefix from node ID (e.g. 'MBO', 'BbgBO', 'BW_LBO') for same-law reference grouping."""
+    """Return inventory prefix from node ID (e.g. 'MBO', 'BbgBO', 'BW_LBO', 'BayBO') for same-law reference grouping."""
     if nid.startswith("BW_LBO_"):
         return "BW_LBO"
     if nid.startswith("MBO_"):
         return "MBO"
     if nid.startswith("BbgBO_"):
         return "BbgBO"
+    if nid.startswith("BayBO_"):
+        return "BayBO"
     return None
 
 

@@ -26,9 +26,50 @@ _DEFAULT_INPUT = _INVENTORY_DIR / "BbgBO_node_inventory_v2.md"
 _DEFAULT_OUTPUT = _INVENTORY_DIR / "BbgBO_node_inventory_fine.md"
 
 # Sentence boundary: period + space, when period follows a letter (avoid "Nr. 1." / "1. item")
-_SENTENCE_RE = re.compile(r"(?<=[a-zäöüßA-ZÄÖÜ])\.\s+")
+# Negative lookbehinds prevent splitting after common German legal abbreviations.
+_SENTENCE_RE = re.compile(
+    r"(?<!Art)(?<!Abs)(?<!Nr)(?<!Satz)(?<!bzw)(?<!ggf)(?<!Vgl)(?<!vgl)(?<!Hs)"
+    r"(?<=[a-zäöüßA-ZÄÖÜ])\.\s+"
+)
 # Line that starts a numbered list item: optional space, digits, period, space
 _LIST_LINE_RE = re.compile(r"^\s*(\d+)\.\s+", re.MULTILINE)
+
+# Detects the start of an inline numbered list: space/colon then "1. "
+# NOT preceded by common abbreviations (Nr, Abs, Art, Satz).
+_INLINE_LIST_START_RE = re.compile(
+    r"(?<!\bNr)(?<!\bAbs)(?<!\bArt)(?<!\bSatz)(?<!\bNo)(?<=[:\s])1\.\s+"
+)
+# Splits between inline list items: comma/semicolon/space then "N. "
+_INLINE_LIST_ITEM_RE = re.compile(r"(?:,\s*|;\s*|\s+)(\d{1,2})\.\s+")
+
+
+def _expand_inline_list(text: str) -> str:
+    """If text contains an inline numbered list (e.g. '... 1. item, 2. item'),
+    expand it to multi-line so the line-based list handler can process it.
+    Returns unchanged text if no inline list is detected."""
+    m = _INLINE_LIST_START_RE.search(text)
+    if not m:
+        return text
+    intro = text[: m.start()].rstrip()
+    rest = text[m.start():]  # starts with "1. item..."
+    pieces = _INLINE_LIST_ITEM_RE.split(rest)
+    # pieces: ["1. item_1_text", "2", "item_2_text", "3", "item_3_text", ...]
+    lines: list[str] = []
+    if intro:
+        lines.append(intro)
+    # First piece starts with "1. "
+    first_text = pieces[0]
+    if first_text.startswith("1. "):
+        first_text = first_text[3:]
+    lines.append(f"1. {first_text.strip().rstrip(',;').strip()}")
+    i = 1
+    while i + 1 < len(pieces):
+        num_str = pieces[i]
+        item_text = pieces[i + 1].strip().rstrip(",;").strip()
+        if item_text:
+            lines.append(f"{num_str}. {item_text}")
+        i += 2
+    return "\n".join(lines)
 
 
 @dataclass
@@ -83,7 +124,7 @@ def _parse_inventory(path: Path) -> list[Section]:
                     current.rows.append((current_nr, "\n".join(current_text_parts)))
                 # Check if first cell looks like Nr. (e.g. 1.1, 6.2, 12.3)
                 first = cells[0].strip()
-                if re.match(r"^\d+\.\d+$", first):
+                if re.match(r"^\d+[a-z]*\.\d+$", first):
                     current_nr = first
                     current_text_parts = [cells[1]]
                 else:
@@ -107,6 +148,8 @@ def _split_paragraph_text(text: str) -> list[str]:
     text = text.strip()
     if not text:
         return []
+    # Expand inline numbered lists into separate lines before line-based processing
+    text = _expand_inline_list(text)
     segments: list[str] = []
     lines = text.split("\n")
     # Detect list structure: lines that start with "1. ", "2. ", etc.
@@ -169,8 +212,16 @@ def _segment_paragraph(nr: str, text: str) -> list[tuple[str, str]]:
 
 def _write_fine_inventory(sections: list[Section], out_path: Path) -> None:
     """Write refined inventory: same structure, but table rows use Absatz.Satz and split content."""
+    # Derive law name from the first source_paragraph found (e.g. "§1 BbgBO" -> "BbgBO")
+    law_name = "LBO"
+    for sec in sections:
+        if sec.source_paragraph:
+            parts = sec.source_paragraph.replace("**source_paragraph:**", "").strip().split()
+            if len(parts) >= 2:
+                law_name = parts[-1]
+                break
     lines = [
-        "# BbgBO — Node Inventory (Sentence / List-Item Level)",
+        f"# {law_name} — Node Inventory (Sentence / List-Item Level)",
         "",
         "_Refined from paragraph-level inventory by split_inventory_to_sentences.py. One row per sentence or numbered list item._",
         "",
@@ -182,10 +233,12 @@ def _write_fine_inventory(sections: list[Section], out_path: Path) -> None:
         lines.append(sec.type_line)
         lines.append(sec.source_paragraph)
         lines.append("")
-        lines.append("| Nr. | Regeltext (BbgBO-Wortlaut) |")
+        lines.append(f"| Nr. | Regeltext ({law_name}-Wortlaut) |")
         lines.append("|---|---|")
         for nr, text in sec.rows:
             for new_nr, segment in _segment_paragraph(nr, text):
+                # Strip leading superscript sentence numbers (e.g. "1Dieses" -> "Dieses")
+                segment = re.sub(r"^\d+(?=[A-ZÄÖÜ])", "", segment)
                 # Escape pipe in text for markdown table
                 cell = segment.replace("|", "\\|").replace("\n", " ")
                 if len(cell) > 400:

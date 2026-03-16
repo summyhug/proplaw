@@ -46,6 +46,14 @@ _STATE_REGISTRY = [
         "source_suffix": "BbgBO",
         "jurisdiction": "DE-BB",
     },
+    {
+        "name": "BayBO",
+        "full_name": "Bayerische Bauordnung (BayBO)",
+        "inventory": "BayBO_node_inventory_fine.md",
+        "prefix": "BayBO_",
+        "source_suffix": "BayBO",
+        "jurisdiction": "DE-BY",
+    },
 ]
 
 # Sections to include (add § numbers as we go)
@@ -316,13 +324,28 @@ def build() -> nx.DiGraph:
                 failed_nodes += 1
 
         # Section anchor nodes — one per § in the state inventory
+        # Build a type lookup from the inventory nodes themselves (first non-zahlenwert
+        # content node for each section) so the anchor type matches the inventory,
+        # not the MBO § numbering which may differ for this law.
+        section_type_from_inventory: dict[str, str] = {}
+        for node in nodes:
+            sp = node.source_paragraph or ""
+            m = re.search(r"§(\d+[a-z]*)", sp)
+            if m:
+                sec_num = m.group(1)
+                if sec_num not in section_type_from_inventory and node.type != "zahlenwert":
+                    section_type_from_inventory[sec_num] = node.type
+
         sections = sorted(_section_numbers(nodes))
         for num in sections:
             nid = f"{cfg['prefix']}§{num}"
             if nid in G:
                 continue
-            # Reuse MBO type where § numbering matches; fall back to allgemeine_anforderung
-            _, stype = _SECTION_ANCHORS.get(num, (None, "allgemeine_anforderung"))
+            # Prefer type from inventory; fall back to MBO mapping; then allgemeine_anforderung
+            stype = (
+                section_type_from_inventory.get(num)
+                or _SECTION_ANCHORS.get(num, (None, "allgemeine_anforderung"))[1]
+            )
             add_node(G, Node(
                 id=nid,
                 type=stype,
