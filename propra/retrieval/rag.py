@@ -18,18 +18,15 @@ Usage (import):
 """
 
 import sys
-import os
-import json
 import re
 import pickle
-from pathlib import Path
 from dataclasses import dataclass, asdict
+from pathlib import Path
 
-sys.stdout.reconfigure(encoding="utf-8")
-
-import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
+
+sys.stdout.reconfigure(encoding="utf-8")
 
 # ---------------------------------------------------------------------------
 # Paths
