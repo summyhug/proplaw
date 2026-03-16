@@ -34,13 +34,6 @@ interface Source {
   url?: string;
 }
 
-interface ResponseData {
-  content: string;
-  sources: Source[];
-  reliability: number;
-  reliabilityLabel: string;
-  documentBlock?: string;
-}
 
 interface Message {
   id: number;
@@ -69,119 +62,6 @@ interface Case {
   steps: CaseStep[];
 }
 
-const WIDERSPRUCH_LETTER = `Einschreiben mit Rückschein
-
-An die
-Stadtentwicklungsbehörde / Baurechtsamt
-[Behörde und Adresse]
-[PLZ und Ort]
-
-Ihr Zeichen: 2024-BG-00142
-[Ort], den [Datum]
-
-Widerspruch gegen Baugenehmigung vom 15. Januar 2024
-– Az. 2024-BG-00142, Bauvorhaben Musterstraße 12 –
-
-Sehr geehrte Damen und Herren,
-
-hiermit erhebe ich fristgerecht Widerspruch gemäß § 70 VwGO gegen Ihren
-Bescheid vom 15. Januar 2024 (Az.: 2024-BG-00142), mit dem dem Eigentümer
-des Grundstücks Musterstraße 12, 10115 Berlin, eine Baugenehmigung für
-den Neubau eines viergeschossigen Wohngebäudes erteilt wurde.
-
-I. BEGRÜNDUNG
-
-1. Verstoß gegen den Bebauungsplan (§§ 29, 30 BauGB)
-
-Das genehmigte Vorhaben überschreitet die im rechtskräftigen Bebauungsplan
-Nr. II-45 festgesetzte Geschossflächenzahl (GFZ) von 0,8 erheblich. Nach
-meiner Berechnung erreicht das Vorhaben eine GFZ von 1,2, was einen Verstoß
-gegen die verbindlichen Festsetzungen des § 30 Abs. 1 BauGB darstellt.
-
-2. Verletzung der Abstandsflächenvorschriften (§ 6 BauO Bln)
-
-Gemäß § 6 Abs. 5 BauO Bln ist eine Mindesttiefe der Abstandsflächen von
-3 Metern einzuhalten. Das genehmigte Bauvorhaben hält zu meinem Grundstück
-lediglich 1,5 Meter ein und verletzt damit nachbarschützende Vorschriften.
-
-3. Verstoß gegen das Rücksichtnahmegebot (§ 15 Abs. 1 BauNVO)
-
-Das Vorhaben führt zu einer unzumutbaren Verschattung meines Wohngebäudes.
-In den Wintermonaten werden die Hauptwohnräume mehr als sechs Stunden täglich
-ohne Direktbesonnung bleiben, was die Grenze des Zumutbaren überschreitet
-(vgl. BVerwG, Urteil vom 23. Mai 1986, Az. 4 C 34/85).
-
-II. ANTRAG
-
-Ich beantrage, den angefochtenen Bescheid aufzuheben und die Baugenehmigung
-zu versagen, hilfsweise nur unter Auflagen zur Einhaltung der Abstandsflächen
-und einer GFZ von maximal 0,8 zu erteilen.
-
-Mit freundlichen Grüßen
-
-_________________________
-[Ihr vollständiger Name]
-[Straße, Hausnummer]
-[PLZ, Ort]
-[Telefon / E-Mail]`;
-
-const STELLUNGNAHME_LETTER = `An die Gemeinde [Gemeindename]
-Stadtplanungsamt
-[Adresse]
-[PLZ und Ort]
-
-[Ort], den [Datum]
-
-Stellungnahme gemäß § 3 Abs. 2 BauGB
-zum Bebauungsplanentwurf Nr. B-Plan 45-2
-
-Sehr geehrte Damen und Herren,
-
-im Rahmen der öffentlichen Auslegung gemäß § 3 Abs. 2 BauGB nehme ich als
-Eigentümer des Grundstücks [Ihre Adresse] zu dem ausgelegten Bebauungsplan-
-entwurf Nr. B-Plan 45-2 wie folgt Stellung:
-
-I. ALLGEMEINE BEDENKEN
-
-Der vorliegende Entwurf sieht eine erhebliche Verdichtung des bestehenden
-Wohngebiets vor. Die Infrastrukturkapazitäten — insbesondere Straßennetz,
-Parkraum und Grünflächenversorgung — sind für die geplante Nutzungsintensität
-nicht ausgelegt.
-
-II. KONKRETE RECHTLICHE EINWÄNDE
-
-1. Überschreitung der zulässigen Bebauungsdichte (§ 17 BauNVO)
-
-Die vorgesehene Grundflächenzahl (GRZ) von 0,6 überschreitet den nach
-§ 17 Abs. 1 BauNVO für allgemeine Wohngebiete (WA) geltenden Höchstwert
-von 0,4 ohne die nach § 17 Abs. 2 BauNVO erforderliche besondere städte-
-bauliche Begründung.
-
-2. Mangelnde gesicherte Erschließung (§ 30 Abs. 1 BauGB)
-
-Eine gesicherte Erschließung gemäß § 30 Abs. 1 BauGB ist nicht gegeben.
-Ein aktuelles Verkehrsgutachten liegt nicht vor; die angrenzenden Erschlie-
-ßungsstraßen sind für das prognostizierte Verkehrsaufkommen nicht ausgelegt.
-
-3. Unzureichende Eingriffsbilanzierung (§ 1a Abs. 3 BauGB)
-
-Der Entwurf enthält keine ausreichende Eingriffs- und Ausgleichsbilanz
-gemäß § 1a Abs. 3 BauGB. Der vollständige Verlust von ca. [X m²] Grünfläche
-wurde nicht kompensiert.
-
-III. FORDERUNGEN
-
-Ich fordere die Gemeinde auf, den Entwurf zu überarbeiten:
-– Reduzierung der GRZ auf den gesetzlichen Höchstwert von 0,4
-– Vorlage eines aktuellen Verkehrsgutachtens vor Satzungsbeschluss
-– Vollständige Eingriffs- und Ausgleichsbilanz gemäß § 1a Abs. 3 BauGB
-
-Mit freundlichen Grüßen
-
-_________________________
-[Ihr vollständiger Name]
-[Grundstücksadresse]
-[Datum]`;
 
 const CASES: Case[] = [
   {
@@ -221,262 +101,12 @@ const CASES: Case[] = [
   },
 ];
 
-const SAMPLE_RESPONSES: { [key: string]: ResponseData } = {
-  default: {
-    content: `Based on German property law, I can provide you with a comprehensive answer to your question.
-
-The relevant legal framework in Germany provides specific protections and obligations for property owners and tenants. The Bürgerliches Gesetzbuch (BGB) serves as the primary legal source for property-related matters, supplemented by state-specific regulations (Landesrecht) that vary by Bundesland.
-
-**Key Legal Points:**
-- German property law distinguishes between *Eigentum* (ownership) and *Besitz* (possession) — a crucial distinction under § 903 BGB
-- Property transactions must be notarized (*notarielle Beurkundung*) as required under § 311b BGB
-- The Grundbuch (land register) is the authoritative record of property rights under the Grundbuchordnung (GBO)
-
-**Practical Implications:**
-Your rights and obligations depend heavily on the specific circumstances of your property and its location, as municipal building codes (*Bebauungspläne*) can significantly affect what is permissible.
-
-I recommend consulting the specific §§ cited below and, for binding advice, engaging a *Rechtsanwalt* specializing in *Immobilienrecht*.`,
-    sources: [
-      {
-        code: "BGB",
-        section: "§ 903",
-        title: "Befugnisse des Eigentümers",
-        excerpt: "Der Eigentümer einer Sache kann, soweit nicht das Gesetz oder Rechte Dritter entgegenstehen, mit der Sache nach Belieben verfahren und andere von jeder Einwirkung ausschließen.",
-      },
-      {
-        code: "BGB",
-        section: "§ 311b Abs. 1",
-        title: "Verträge über Grundstücke",
-        excerpt: "Ein Vertrag, durch den sich der eine Teil verpflichtet, das Eigentum an einem Grundstück zu übertragen oder zu erwerben, bedarf der notariellen Beurkundung.",
-      },
-      {
-        code: "GBO",
-        section: "§ 1",
-        title: "Grundbuchordnung — Grundsatz",
-        excerpt: "Die Grundbücher werden von den Amtsgerichten als Grundbuchämtern geführt.",
-      },
-    ],
-    reliability: 87,
-    reliabilityLabel: "High Confidence",
-  },
-};
-
-const MOCK_RESPONSES: { keywords: string[]; response: ResponseData }[] = [
-  {
-    keywords: ["schreiben", "widerspruch", "dokument", "brief"],
-    response: {
-      content: `Ich habe für Sie ein rechtssicheres **Widerspruchsschreiben** erstellt, das auf die einschlägigen Vorschriften des BauGB, der VwGO und der BauO Bln gestützt ist.
-
-Das Schreiben enthält:
-- Formelle Einleitung mit Aktenzeichen und Bezugszeile
-- Rechtliche Begründung mit konkreten §§-Verweisen (§ 30 BauGB, § 6 BauO Bln, § 15 BauNVO)
-- Klar formulierte Anträge (Haupt- und Hilfsantrag)
-
-Bitte ersetzen Sie alle Angaben in **[eckigen Klammern]** durch Ihre persönlichen Daten. Das fertige Schreiben kann per Einschreiben mit Rückschein an die zuständige Behörde gesandt werden.`,
-      documentBlock: WIDERSPRUCH_LETTER,
-      sources: [
-        {
-          code: "VwGO",
-          section: "§ 70",
-          title: "Widerspruch",
-          excerpt: "Über den Widerspruch entscheidet die nächsthöhere Behörde, soweit nicht durch Gesetz eine andere höhere Behörde bestimmt wird.",
-        },
-        {
-          code: "BauGB",
-          section: "§ 29",
-          title: "Begriff des Vorhabens",
-          excerpt: "Für Vorhaben, die die Errichtung, Änderung oder Nutzungsänderung von baulichen Anlagen zum Inhalt haben, gelten die §§ 30 bis 37.",
-        },
-        {
-          code: "BauO Bln",
-          section: "§ 6 Abs. 5",
-          title: "Abstandsflächen",
-          excerpt: "Die Tiefe der Abstandsfläche beträgt 0,4 H, mindestens 3 m.",
-        },
-      ],
-      reliability: 88,
-      reliabilityLabel: "High Confidence",
-    },
-  },
-  {
-    keywords: ["stellungnahme"],
-    response: {
-      content: `Ich habe für Sie eine rechtssichere **Stellungnahme** zum Bebauungsplanentwurf erstellt, gestützt auf § 3 Abs. 2 BauGB, § 17 BauNVO und § 1a BauGB.
-
-Das Schreiben enthält:
-- Formelle Einleitung gemäß § 3 Abs. 2 BauGB (Öffentlichkeitsbeteiligung)
-- Konkrete rechtliche Einwände mit §§-Verweisen
-- Klar formulierte Forderungen an die Gemeinde
-
-Bitte ergänzen Sie die in **[eckigen Klammern]** markierten Felder mit Ihren Angaben.`,
-      documentBlock: STELLUNGNAHME_LETTER,
-      sources: [
-        {
-          code: "BauGB",
-          section: "§ 3 Abs. 2",
-          title: "Öffentlichkeitsbeteiligung",
-          excerpt: "Die Entwürfe der Bauleitpläne sind mit der Begründung und den nach Einschätzung der Gemeinde wesentlichen, bereits vorliegenden umweltbezogenen Stellungnahmen für die Dauer eines Monats öffentlich auszulegen.",
-        },
-        {
-          code: "BauNVO",
-          section: "§ 17",
-          title: "Obergrenzen für die Bestimmung des Maßes der baulichen Nutzung",
-          excerpt: "Bei der Bestimmung des Maßes der baulichen Nutzung nach § 16 sind die in Absatz 1 festgesetzten Obergrenzen zu beachten.",
-        },
-        {
-          code: "BauGB",
-          section: "§ 1a Abs. 3",
-          title: "Ergänzende Vorschriften zum Umweltschutz",
-          excerpt: "Die Vermeidung und der Ausgleich voraussichtlich erheblicher Beeinträchtigungen des Landschaftsbildes sowie der Leistungs- und Funktionsfähigkeit des Naturhaushalts sind in der Abwägung zu berücksichtigen.",
-        },
-      ],
-      reliability: 85,
-      reliabilityLabel: "High Confidence",
-    },
-  },
-  {
-    keywords: ["eigenbedarf", "tenant", "landlord", "terminate", "eviction"],
-    response: {
-      content: `**Eigenbedarfskündigung** (termination for personal use) is regulated under § 573 Abs. 2 Nr. 2 BGB and grants landlords the right to terminate a tenancy if they genuinely need the property for themselves or close family members.
-
-**Requirements for a Valid Eigenbedarf Claim:**
-- The landlord must have a **legitimate and concrete** need (*berechtigt und konkret*)
-- The person named must be the landlord, their household members, or close relatives
-- The landlord must state the specific reasons in writing in the termination notice
-- The notice period depends on the duration of the tenancy (3–9 months per § 573c BGB)
-
-**Tenant Protections:**
-- Tenants may object to termination if it causes *undue hardship* (*soziale Härte*) under § 574 BGB
-- Fictitious Eigenbedarf (Vorgetäuschter Eigenbedarf) gives tenants the right to claim damages
-- Tenants aged 70+ or with severe disabilities receive enhanced protection
-
-**Recent Court Decisions:**
-German courts apply strict scrutiny to Eigenbedarf claims. The BGH has repeatedly ruled that the landlord's need must be *current*, not speculative.`,
-      sources: [
-        {
-          code: "BGB",
-          section: "§ 573 Abs. 2 Nr. 2",
-          title: "Berechtigtes Interesse des Vermieters",
-          excerpt: "Ein berechtigtes Interesse des Vermieters an der Beendigung des Mietverhältnisses liegt vor, wenn der Vermieter die Räume als Wohnung für sich, seine Familienangehörigen oder Angehörige seines Haushalts benötigt.",
-        },
-        {
-          code: "BGB",
-          section: "§ 573c",
-          title: "Kündigungsfristen bei der Kündigung des Mietverhältnisses",
-          excerpt: "Die Kündigung ist spätestens am dritten Werktag eines Kalendermonats zum Ablauf des übernächsten Monats zulässig. Die Kündigungsfrist für den Vermieter verlängert sich nach fünf und acht Jahren seit der Überlassung des Wohnraums um jeweils drei Monate.",
-        },
-        {
-          code: "BGB",
-          section: "§ 574",
-          title: "Widerspruch des Mieters",
-          excerpt: "Der Mieter kann der Kündigung des Vermieters widersprechen und von ihm die Fortsetzung des Mietverhältnisses verlangen, wenn die Beendigung des Mietverhältnisses für den Mieter, seine Familie oder einen anderen Angehörigen seines Haushalts eine Härte bedeuten würde.",
-        },
-      ],
-      reliability: 92,
-      reliabilityLabel: "Very High Confidence",
-    },
-  },
-  {
-    keywords: ["permit", "balcony", "extension", "build", "renovate", "construction"],
-    response: {
-      content: `**Building permits** (*Baugenehmigungen*) in Germany are governed by state-level building codes (*Landesbauordnungen — LBO*), so requirements vary by Bundesland. However, the federal Baugesetzbuch (BauGB) sets overarching principles.
-
-**When is a Permit Required?**
-- **New structures** and **substantial modifications** generally require approval
-- **Balconies and extensions** typically require a permit, though small additions may qualify as *verfahrensfreie Bauvorhaben* (permit-free works) depending on size thresholds
-- In Berlin: extensions up to 10m² of new floor space may be permit-free under § 62 BauO Bln
-- In Bavaria: up to 75m³ of additional volume is often permit-free under Art. 57 BayBO
-
-**Process Overview:**
-1. Consult your local *Bauamt* (building authority)
-2. Check the *Bebauungsplan* (development plan) for your plot
-3. Engage a licensed *Bauvorlageberechtigter* (qualified architect) if required
-4. Submit application with drawings, site plans, and structural calculations
-
-**Key Consideration:** Even if the project is technically permit-free, you must comply with the applicable LBO, BauNVO setback rules, and any *Denkmalschutz* (heritage protection) requirements.`,
-      sources: [
-        {
-          code: "BauGB",
-          section: "§ 29",
-          title: "Begriff des Vorhabens",
-          excerpt: "Für Vorhaben, die die Errichtung, Änderung oder Nutzungsänderung von baulichen Anlagen zum Inhalt haben, und für Aufschüttungen und Abgrabungen größeren Umfangs sowie für Ausschachtungen, Ablagerungen einschließlich Lagerstätten gelten die §§ 30 bis 37.",
-        },
-        {
-          code: "BauNVO",
-          section: "§ 23",
-          title: "Überbaubare Grundstücksfläche",
-          excerpt: "Ist eine Baulinie festgesetzt, so muss auf ihr gebaut werden. Ist eine Baugrenze festgesetzt, so dürfen Gebäude und Gebäudeteile diese nicht überschreiten.",
-        },
-        {
-          code: "BauO Bln",
-          section: "§ 62",
-          title: "Verfahrensfreie Bauvorhaben",
-          excerpt: "Verfahrensfrei sind: Gebäude ohne Aufenthaltsräume, Toiletten und Feuerstätten, wenn die Grundfläche nicht mehr als 10 Quadratmeter beträgt.",
-        },
-      ],
-      reliability: 84,
-      reliabilityLabel: "High Confidence",
-    },
-  },
-  {
-    keywords: ["grunderwerbsteuer", "transfer tax", "purchase", "buy", "tax"],
-    response: {
-      content: `**Grunderwerbsteuer** (Real Estate Transfer Tax) is levied on property transactions in Germany under the Grunderwerbsteuergesetz (GrEStG) and represents a significant cost in property acquisitions.
-
-**Tax Rates by Bundesland (2024):**
-| State | Rate |
-|-------|------|
-| Bavaria, Saxony | 3.5% |
-| Hamburg | 5.5% |
-| Berlin, Hesse | 6.0% |
-| Brandenburg, Saarland, Schleswig-Holstein | 6.5% |
-| Most other states | 5.0–6.0% |
-
-**Tax Base:**
-The tax is calculated on the *Bemessungsgrundlage*, typically the purchase price (§ 8 GrEStG). Connected transactions (e.g., simultaneous purchase of furnishings) may be excluded if properly documented.
-
-**Exemptions Under § 3 GrEStG:**
-- Transactions between spouses or registered partners are exempt
-- Acquisitions by direct line relatives (parents/children) are exempt
-- Transfers under inheritance law are generally exempt
-
-**Share Deals:**
-Acquiring a property-holding company (share deal) can defer the tax if the threshold of 90% ownership change is not reached within 10 years (§ 1 Abs. 3 GrEStG), though recent reforms have tightened this.`,
-      sources: [
-        {
-          code: "GrEStG",
-          section: "§ 1 Abs. 1",
-          title: "Erwerbsvorgänge",
-          excerpt: "Der Grunderwerbsteuer unterliegen die folgenden Rechtsvorgänge, soweit sie sich auf inländische Grundstücke beziehen: ein Kaufvertrag oder ein anderes Rechtsgeschäft, das den Anspruch auf Übereignung begründet.",
-        },
-        {
-          code: "GrEStG",
-          section: "§ 8",
-          title: "Grundsatz der Bemessung",
-          excerpt: "Die Steuer bemisst sich nach dem Wert der Gegenleistung. Die Gegenleistung ist in den Fällen der Abtretung von Übereignungsansprüchen der Wert des abgetretenen Anspruchs.",
-        },
-        {
-          code: "GrEStG",
-          section: "§ 3 Nr. 4",
-          title: "Allgemeine Ausnahmen von der Besteuerung",
-          excerpt: "Von der Besteuerung sind ausgenommen: der Erwerb eines Grundstücks durch den Ehegatten oder den Lebenspartner des Veräußerers.",
-        },
-      ],
-      reliability: 95,
-      reliabilityLabel: "Very High Confidence",
-    },
-  },
+const LOADING_MESSAGES = [
+  "Wir prüfen die Vorschriften für Ihre Region...",
+  "Rechtliche Quellen werden durchsucht...",
+  "Antwort wird zusammengestellt...",
 ];
-
-const getResponse = (question: string): ResponseData => {
-  const lower = question.toLowerCase();
-  for (const mock of MOCK_RESPONSES) {
-    if (mock.keywords.some((k) => lower.includes(k))) {
-      return mock.response;
-    }
-  }
-  return SAMPLE_RESPONSES.default;
-};
+const LOADING_TIMEOUT_MSG = "Das dauert länger als erwartet. Bitte warten...";
 
 const classifyQuestion = (text: string): string | null => {
   const lower = text.toLowerCase();
@@ -641,6 +271,36 @@ const CaseCard = ({ case: c, statusConfig, stepsLabel, deadlineLabel }: {
   );
 };
 
+const LoadingMessage = () => {
+  const [msgIndex, setMsgIndex] = useState(0);
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const cycleInterval = setInterval(() => {
+      setMsgIndex((i) => (i + 1) % LOADING_MESSAGES.length);
+    }, 3000);
+    const timeoutTimer = setTimeout(() => setTimedOut(true), 15000);
+    return () => {
+      clearInterval(cycleInterval);
+      clearTimeout(timeoutTimer);
+    };
+  }, []);
+
+  return (
+    <div className="flex gap-4 animate-fade-in">
+      <div className="w-9 h-9 rounded-xl bg-navy border border-gold/30 flex items-center justify-center shrink-0 mt-1">
+        <Scale className="w-4 h-4 text-gold" />
+      </div>
+      <div className="bg-card border border-border rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-3">
+        <Loader2 className="w-4 h-4 text-gold animate-spin shrink-0" />
+        <span className="text-sm text-muted-foreground font-body">
+          {timedOut ? LOADING_TIMEOUT_MSG : LOADING_MESSAGES[msgIndex]}
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const AdvisorPage = () => {
   const { t } = useLanguage();
 
@@ -705,25 +365,69 @@ const AdvisorPage = () => {
     setInput("");
     setLoading(true);
 
-    await new Promise((r) => setTimeout(r, 1800 + Math.random() * 800));
+    try {
+      // TODO: replace with Render URL once Sebastian confirms endpoint
+      const res = await fetch("https://proplaw-api.onrender.com/api/assess", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          jurisdiction: bundesland,
+          property_type: propertyType,
+          language: "de",
+          floors: floors ? Number(floors) : null,
+          inside_outside: insideOutside,
+          postcode,
+          project_description: question,
+        }),
+      });
 
-    const resp = getResponse(question);
-    const label = classifyQuestion(question);
-    const aiMsg: Message = {
-      id: Date.now() + 1,
-      role: "assistant",
-      content: resp.content,
-      sources: resp.sources,
-      reliability: resp.reliability,
-      reliabilityLabel: resp.reliabilityLabel,
-      timestamp: new Date(),
-      documentBlock: resp.documentBlock,
-      classificationLabel: label ?? undefined,
-      awaitingClassification: label === null,
-    };
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    setMessages((prev) => [...prev, aiMsg]);
-    setLoading(false);
+      const data = await res.json();
+
+      const confidenceScore =
+        data.confidence === "HIGH" ? 90 :
+        data.confidence === "MEDIUM" ? 70 : 50;
+
+      const sources: Source[] = (data.citations ?? []).map(
+        (c: { regulation_name: string; paragraph: string; jurisdiction: string; text: string }) => ({
+          code: c.regulation_name,
+          section: c.paragraph,
+          title: c.jurisdiction,
+          excerpt: c.text,
+        })
+      );
+
+      const nextActionsText = data.next_actions?.length
+        ? "\n\n**Nächste Schritte:**\n" + data.next_actions.map((a: string) => `- ${a}`).join("\n")
+        : "";
+      const content = `**${data.verdict}**\n\n${data.explanation}${nextActionsText}`;
+
+      const label = classifyQuestion(question);
+      const aiMsg: Message = {
+        id: Date.now() + 1,
+        role: "assistant",
+        content,
+        sources,
+        reliability: confidenceScore,
+        reliabilityLabel: data.confidence_note ?? data.confidence,
+        timestamp: new Date(),
+        classificationLabel: label ?? undefined,
+        awaitingClassification: label === null,
+      };
+
+      setMessages((prev) => [...prev, aiMsg]);
+    } catch {
+      const errMsg: Message = {
+        id: Date.now() + 1,
+        role: "assistant",
+        content: "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errMsg]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const setMessageClassification = (id: number, label: string) => {
@@ -1094,15 +798,7 @@ const AdvisorPage = () => {
               ))}
 
               {loading && (
-                <div className="flex gap-4 animate-fade-in">
-                  <div className="w-9 h-9 rounded-xl bg-navy border border-gold/30 flex items-center justify-center shrink-0 mt-1">
-                    <Scale className="w-4 h-4 text-gold" />
-                  </div>
-                  <div className="bg-card border border-border rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-3">
-                    <Loader2 className="w-4 h-4 text-gold animate-spin" />
-                    <span className="text-sm text-muted-foreground font-body">{t("advisor.loading")}</span>
-                  </div>
-                </div>
+                <LoadingMessage />
               )}
 
               <div ref={bottomRef} />
