@@ -378,6 +378,7 @@ const AdvisorPage = () => {
           inside_outside: insideOutside,
           postcode,
           project_description: question,
+          has_bplan: false,
         }),
       });
 
@@ -389,17 +390,17 @@ const AdvisorPage = () => {
         data.confidence === "HIGH" ? 90 :
         data.confidence === "MEDIUM" ? 70 : 50;
 
-      const sources: Source[] = (data.citations ?? []).map(
-        (c: { regulation_name: string; paragraph: string; jurisdiction: string; text: string }) => ({
+      const sources: Source[] = (data.cited_sources ?? []).map(
+        (c: { regulation_name: string; paragraph: string; jurisdiction: string }) => ({
           code: c.regulation_name,
           section: c.paragraph,
           title: c.jurisdiction,
-          excerpt: c.text,
+          excerpt: "",
         })
       );
 
-      const nextActionsText = data.next_actions?.length
-        ? "\n\n**Nächste Schritte:**\n" + data.next_actions.map((a: string) => `- ${a}`).join("\n")
+      const nextActionsText = data.next_action
+        ? `\n\n**Nächster Schritt:**\n- ${data.next_action}`
         : "";
       const content = `**${data.verdict}**\n\n${data.explanation}${nextActionsText}`;
 
@@ -410,7 +411,7 @@ const AdvisorPage = () => {
         content,
         sources,
         reliability: confidenceScore,
-        reliabilityLabel: data.confidence_note ?? data.confidence,
+        reliabilityLabel: data.confidence,
         timestamp: new Date(),
         classificationLabel: label ?? undefined,
         awaitingClassification: label === null,
