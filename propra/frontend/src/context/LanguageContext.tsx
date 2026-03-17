@@ -116,6 +116,7 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.words": "words",
     "advisor.copy": "Copy document",
     "advisor.copied": "Copied!",
+    "advisor.error": "An error occurred. Please try again.",
 
     // Advisor — guided context inputs
     "advisor.context.title": "Tell us about your property",
@@ -294,6 +295,7 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.words": "Wörter",
     "advisor.copy": "Dokument kopieren",
     "advisor.copied": "Kopiert!",
+    "advisor.error": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
 
     // Advisor — guided context inputs
     "advisor.context.title": "Erzählen Sie uns von Ihrer Immobilie",

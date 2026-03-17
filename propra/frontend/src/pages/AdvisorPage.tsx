@@ -421,7 +421,7 @@ const AdvisorPage = () => {
       const errMsg: Message = {
         id: Date.now() + 1,
         role: "assistant",
-        content: "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        content: t("advisor.error"),
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errMsg]);
