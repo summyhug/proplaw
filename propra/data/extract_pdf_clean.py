@@ -169,9 +169,75 @@ def extract(pdf_path: str) -> str:
 # ---------------------------------------------------------------------------
 # Per-file processing + stats
 # ---------------------------------------------------------------------------
+def _postprocess_nrw(text: str) -> str:
+    """
+    NRW-specific cleanup applied after core extraction.
+
+    1. Remove footer lines containing the Herausgeber/publisher stamp.
+    2. Strip the TOC block — everything before the second occurrence of
+       '§ 1 Anwendungsbereich', which marks the start of the actual law text.
+    """
+    # --- 1. Remove Herausgeber footer lines ---
+    lines = [l for l in text.splitlines()
+             if "Herausgeber: Im Namen der Landesregierung" not in l]
+    text = "\n".join(lines)
+
+    # --- 2. Drop TOC (everything before the second § 1 Anwendungsbereich) ---
+    marker = "§ 1 Anwendungsbereich"
+    first = text.find(marker)
+    if first != -1:
+        second = text.find(marker, first + len(marker))
+        if second != -1:
+            text = text[second:]
+
+    # --- 3. Strip LRGV footnote annotations ---
+    # The NRW PDF embeds change-history footnotes in three forms:
+    #
+    #   a) "§ N Title Fußnoten zu § N Title"  — real section header with footnote
+    #      suffix appended; two § refs → killed by rag.py Filter 2.
+    #      Fix: remove the "Fußnoten zu …" suffix, leaving a clean "§ N Title".
+    #
+    #   b) "§ N Absatz X geändert/aufgehoben durch Gesetz …"  — standalone
+    #      footnote line that sometimes captures the real (1)… body content.
+    #      Fix: remove entire line.
+    #
+    #   c) Orphaned ": Absatz X …" / ": neu gefasst …" continuation lines
+    #      that follow a bare "§ N" match.
+    #      Fix: remove entire line.
+
+    # a) Strip "Fußnoten zu § …" suffix from section title lines
+    text = re.sub(r'\s+Fußnoten zu §[^\n]*', '', text)
+
+    # b) Remove footnote change-entry lines  (§ N … geändert / aufgehoben …)
+    text = re.sub(
+        r'^§\s*\d+\w*[^\n]*'
+        r'(?:geändert|aufgehoben|neu gefasst|eingefügt|wird\s+zu)[^\n]*\n?',
+        '',
+        text,
+        flags=re.MULTILINE,
+    )
+
+    # c) Remove orphaned ": Absatz / : neu gefasst" continuation lines
+    text = re.sub(
+        r'^:\s*(?:Absatz|neu\s|aufgehoben|eingefügt)[^\n]*\n?',
+        '',
+        text,
+        flags=re.MULTILINE,
+    )
+
+    # Collapse any excessive blank lines left behind
+    text = re.sub(r'\n{3,}', '\n\n', text)
+
+    return text.strip()
+
+
 def process_one(pdf_path: str, out_path: str) -> dict:
     """Extract one PDF, write .txt, return stats dict."""
     text = extract(pdf_path)
+
+    if "NRW" in Path(pdf_path).name:
+        text = _postprocess_nrw(text)
+
     Path(out_path).write_text(text, encoding="utf-8")
 
     lines    = [l for l in text.splitlines() if l.strip()]

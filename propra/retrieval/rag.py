@@ -243,6 +243,23 @@ def build_index(txt_dir: Path = TXT_DIR, retrieval_dir: Path = RETRIEVAL_DIR) ->
 # 3. Retriever
 # ---------------------------------------------------------------------------
 
+class _ChunkUnpickler(pickle.Unpickler):
+    """
+    Remaps __main__.Chunk → rag.Chunk.
+
+    chunks.pkl is built by running `python rag.py build` directly, which makes
+    rag.py the __main__ module. Python's pickle stores the dataclass as
+    __main__.Chunk. When the index is loaded from main.py or uvicorn, __main__
+    is no longer rag.py, so the default Unpickler raises
+    "Can't get attribute 'Chunk'". This subclass redirects the lookup.
+    """
+
+    def find_class(self, module: str, name: str):
+        if module == "__main__" and name == "Chunk":
+            return Chunk
+        return super().find_class(module, name)
+
+
 class Retriever:
     """
     Loads a persisted FAISS index and exposes a retrieve() method.
@@ -273,7 +290,7 @@ class Retriever:
             )
         self._index = faiss.read_index(str(self._index_path))
         with open(self._chunks_path, "rb") as f:
-            self._chunks = pickle.load(f)
+            self._chunks = _ChunkUnpickler(f).load()
         self._model = SentenceTransformer(self._model_name)
 
     def retrieve(
