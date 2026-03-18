@@ -131,6 +131,15 @@ _HDR_DASH_DATE = re.compile(
 _HDR_NO_DASH = re.compile(
     r"^§\s*(\d+[a-z]*)\s+(?!Abs\.|Absatz\s)([A-ZÄÖÜ][^\n(]{3,100})$",
 )
+
+# LBO_SL has two edge-case header formats that _HDR_NO_DASH misses:
+# 1) "§ 13 2130-1 13 Standsicherheit" — legislative ref number before title
+# 2) "§ 14 Title Body text..."        — body text inline after the title
+# This regex strips the legislative ref and this pre-processor normalises both.
+_LBO_SL_LEG_REF = re.compile(
+    r"^(§\s*\d+[a-z]*\s+)\d{4}-\d+\s+\d+\s+",
+    re.MULTILINE,
+)
 # synoptic (HBauO): § N Title § N Title  – take first title
 _HDR_SYNOPTIC = re.compile(
     r"^§\s*(\d+[a-z]*)\s+([\w][^\n§]{3,100?}?)\s+§\s*\d+[a-z]*\b",
@@ -256,12 +265,85 @@ def _dedupe_synoptic_line(line: str) -> str:
     return deduped
 
 
+def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
+    """Normalise edge-case header lines in no_dash texts (e.g. LBO_SL).
+
+    Handles two patterns the main regex misses:
+    1) Legislative ref before title: "§ 13 2130-1 13 Standsicherheit"
+       → "§ 13 Standsicherheit"
+    2) Body text inline after title: "§ 14 Title Body ..."
+       → "§ 14 Title\\nBody ..."
+    """
+    # Step 1: strip legislative reference numbers
+    txt = _LBO_SL_LEG_REF.sub(r"\1", txt)
+
+    # Build an enriched title map: start by collecting clean titles found via
+    # the header regex (e.g. from the ToC), then fill gaps from title_map.
+    # Regex-matched titles are preferred because flat-inventory titles can be
+    # truncated or wrong (e.g. LBO_SL §65).
+    enriched: dict[str, str] = {}
+    for line in txt.splitlines():
+        m = _HDR_NO_DASH.match(line.strip())
+        if m and not _is_noise_title(m.group(2).strip()):
+            sec = m.group(1).lower()
+            title = m.group(2).strip().rstrip(".")
+            # Keep longest regex-matched title per section
+            if sec not in enriched or len(title) > len(enriched[sec]):
+                enriched[sec] = title
+    # Fill gaps from flat inventory title_map
+    if title_map:
+        for sec, title in title_map.items():
+            if sec not in enriched:
+                enriched[sec] = title
+
+    # Step 2: split lines where body text follows a known title
+    if not enriched:
+        return txt
+    out_lines = []
+    for line in txt.splitlines():
+        m = re.match(r"^§\s*(\d+[a-z]*)\s+", line)
+        if m and len(line) > 105:
+            sec = m.group(1).lower()
+            title = enriched.get(sec)
+            if title:
+                # Try exact title match
+                idx = line.find(title)
+                if idx >= 0:
+                    end = idx + len(title)
+                    rest = line[end:].strip()
+                    if rest and not rest.startswith("§"):
+                        out_lines.append(line[:end])
+                        out_lines.append(rest)
+                        continue
+            # Fallback: title may differ between ToC and body.  Try to find
+            # the split point where a new sentence begins by looking for
+            # Absatz markers or articles/verbs after the title section.
+            fb = re.search(
+                r"([a-zäöü)n]\s+)"
+                r"((?:\(\d+\)\s+)?"          # optional Absatz marker
+                r"(?:Die|Der|Das|Ein|Bei|Mit|Auf|Sind|Soweit|Bauliche|Jede)\s)",
+                line[len(m.group(0)) + 15:],  # skip past "§ N " + min title
+            )
+            if fb:
+                split_pos = len(m.group(0)) + 15 + fb.start() + len(fb.group(1))
+                header = line[:split_pos].rstrip()
+                body = line[split_pos:].strip()
+                if body:
+                    out_lines.append(header)
+                    out_lines.append(body)
+                    continue
+        out_lines.append(line)
+    return "\n".join(out_lines)
+
+
 def _parse_sections(
     txt: str,
     header_type: str,
     title_map: dict[str, str],
 ) -> list[tuple[str, str, str]]:
     """Split txt into (sec_num, title, body_text) triples."""
+    if header_type == "no_dash":
+        txt = _preprocess_no_dash(txt, title_map)
     match_header = _make_header_matcher(header_type)
     lines = txt.splitlines()
 

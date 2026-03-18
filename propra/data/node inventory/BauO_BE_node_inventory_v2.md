@@ -11,7 +11,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (BauO BE-Wortlaut) |
 |---|---|
 | 1.1 | Dieses Gesetz gilt für bauliche Anlagen und Bauprodukte. Es gilt auch für Grundstücke sowie für sonstige Anlagen und Ein |
-| 1.2 | Dieses Gesetz gilt nicht für - Seite 8 von 88 - 1. Anlagen des öffentlichen Verkehrs einschließlich Zubehör, Nebenanlage |
+| 1.2 | Dieses Gesetz gilt nicht für |
 
 ### § 2 — Begriffe
 **type:** begriffsbestimmung
@@ -261,7 +261,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (BauO BE-Wortlaut) |
 |---|---|
 | 21.1 | Bauprodukte bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 86a Absatz 2, de |
-| 21.2 | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). - Seite 23 von 88 - |
+| 21.2 | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). |
 | 21.3 | Die Übereinstimmungserklärung hat die Herstellerin oder der Hersteller durch Kennzeichnung der Bauprodukte mit dem Übere |
 | 21.4 | Das Ü-Zeichen ist auf dem Bauprodukt, auf einem Beipackzettel oder auf seiner Verpackung oder, wenn dies Schwierigkeiten |
 | 21.5 | Ü-Zeichen aus anderen Ländern und aus anderen Staaten gelten auch im Land Berlin. |
@@ -385,7 +385,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 32.1 | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lange widers |
 | 32.2 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3, |
 | 32.3 | Die Absätze 1 und 2 gelten nicht für 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit nicht mehr als 50 m Br |
-| 32.4 | Abweichend von den Absätzen 1 und 2 sind - Seite 32 von 88 - 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen |
+| 32.4 | Abweichend von den Absätzen 1 und 2 sind |
 | 32.5 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln und Oberl |
 | 32.6 | Dächer von traufseitig aneinander gebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung vo |
 | 32.7 | Dächer von Anbauten, die an Außenwände mit Öffnungen oder ohne Feuerwiderstandsfähigkeit anschließen, müssen innerhalb e |
@@ -494,7 +494,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 41.2 | Lüftungsleitungen sowie deren Bekleidungen und Dämmstoffe müssen aus nichtbrennbaren Baustoffen bestehen; brennbare Baus |
 | 41.3 | Lüftungsanlagen sind so herzustellen, dass sie Gerüche und Staub nicht in andere Räume übertragen. |
 | 41.4 | Lüftungsanlagen dürfen nicht in Abgasanlagen eingeführt werden; die gemeinsame Nutzung von Lüftungsleitungen zur Lüftung |
-| 41.5 | Die Absätze 2 und 3 gelten nicht 1. für Gebäude der Gebäudeklassen 1 und 2, 2. innerhalb von Wohnungen, - Seite 41 von 8 |
+| 41.5 | Die Absätze 2 und 3 gelten nicht 1. für Gebäude der Gebäudeklassen 1 und 2, 2. innerhalb von Wohnungen, |
 | 41.6 | Für raumlufttechnische Anlagen und Warmluftheizungen gelten die Absätze 1 bis 5 entsprechend. |
 
 ### § 42 — Feuerungsanlagen, sonstige Anlagen zur W
@@ -677,7 +677,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO BE-Wortlaut) |
 |---|---|
-| 60.1 | - Seite 51 von 88 - |
+| 60.1 | Vorrang anderer Gestattungsverfahren Keiner Baugenehmigung, Abweichung, Genehmigungsfreistellung, Zustimmung und Bauüberwachung nach diesem Gesetz bedürfen 1. nach anderen Rechtsvorschriften zulassungsbedürftige Anlagen in oder an oberirdischen Gewässern u |
 
 ### § 61 — Verfahrensfreie Bauvorhaben, Beseitigung
 **type:** verfahrensfreies_vorhaben
@@ -710,7 +710,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO BE-Wortlaut) |
 |---|---|
-| 63.1 | - Seite 58 von 88 Außer bei Sonderbauten werden geprüft |
+| 63.1 | Außer bei Sonderbauten werden geprüft 1. die Übereinstimmung mit den Vorschriften über die Zulässigkei |
 
 ### § 63a — Vereinfachtes Baugenehmigungsverfahren f
 **type:** vereinfachtes_genehmigungsverfahren
@@ -932,7 +932,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO BE-Wortlaut) |
 |---|---|
-| 78.1 | Verbot unrechtmäßig gekennzeichneter Bauprodukte 20.04.2018 |
+| 78.1 | Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 21 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
 
 ### § 79 — Einstellung von Arbeiten
 **type:** bauueberwachung
@@ -1033,7 +1033,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 87.2 | Die betroffenen Personen sind verpflichtet, den Bauaufsichtsbehörden sowie den sonst am Verfahren beteiligten Behörden u |
 | 87.3 | Die Übermittlung der personenbezogenen Daten an die am Verfahren beteiligten Behörden, öffentlichen und privaten Stellen |
 | 87.4 | Die für das Bauwesen zuständige Senatsverwaltung erlässt durch Rechtsverordnung nähere Bestimmungen über Art, Umfang und |
-| 87.5 | Im Übrigen gelten die Bestimmungen des Berliner Datenschutzgesetzes. Fußnoten [1]) - Seite 85 von 88 Absatz 4 in Kraft m |
+| 87.5 | Im Übrigen gelten die Bestimmungen des Berliner Datenschutzgesetzes. Fußnoten [1]) |
 
 ### § 88 — Zuständigkeit für den Erlass des Widersp
 **type:** schlussvorschrift

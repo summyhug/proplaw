@@ -151,7 +151,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO LSA-Wortlaut) |
 |---|---|
-| 15.1 | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. - Seite 19 von 8 |
+| 15.1 | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. |
 | 15.2 | Gebäude müssen einen ihrer Nutzung entsprechenden Schallschutz haben. Geräusche, die von ortsfesten Einrichtungen in bau |
 | 15.3 | Erschütterungen oder Schwingungen, die von ortsfesten Einrichtungen in baulichen Anlagen oder auf Baugrundstücken ausgeh |
 
@@ -202,7 +202,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (BauO LSA-Wortlaut) |
 |---|---|
 | 17.1 | Ein Verwendbarkeitsnachweis nach den §§ 18 bis 20 ist für ein Bauprodukt erforderlich, wenn 1. es keine Technische Baube |
-| 17.2 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, - Seite 21 von 87 - 1. das von einer allgemein an |
+| 17.2 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, |
 | 17.3 | Die Technischen Baubestimmungen nach § 85a enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwend |
 
 ### § 18 — Allgemeine bauaufsichtliche Zulassung
@@ -355,7 +355,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 31.1 | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst |
 | 31.2 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3, |
-| 31.3 | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 87 - 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 31.3 | Die Absätze 1 und 2 gelten nicht für |
 | 31.4 | Abweichend von den Absätzen 1 und 2 sind 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach |
 | 31.5 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich |
 | 31.6 | Dächer von traufseitig aneinandergebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung von |
@@ -436,7 +436,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 37.1 | In, an und auf baulichen Anlagen sind zu umwehren oder mit Brüstungen zu versehen: 1. Flächen, die im Allgemeinen zum Be |
 | 37.2 | In Verkehrsflächen liegende Kellerlichtschächte und Betriebsschächte sind in Höhe der Verkehrsfläche verkehrssicher abzu |
 | 37.3 | Fensterbrüstungen von Flächen mit einer Absturzhöhe bis zu 12 m müssen mindestens 0,80 m, von Flächen mit mehr als 12 m |
-| 37.4 | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben: - Seite 37 von 87 - 1. Umwehrungen zur Sicherung von Ö |
+| 37.4 | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben: |
 
 ### § 38 — Aufzüge
 **type:** allgemeine_anforderung
@@ -617,7 +617,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO LSA-Wortlaut) |
 |---|---|
-| 56.1 | Bauaufsichtsbehörden sind - Seite 46 von 87 - 1. die Landkreise und kreisfreien Städte als untere Bauaufsichtsbehörden, |
+| 56.1 | Bauaufsichtsbehörden sind |
 | 56.2 | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen und mit |
 
 ### § 57 — Aufgaben und Befugnisse der Bauaufsichts

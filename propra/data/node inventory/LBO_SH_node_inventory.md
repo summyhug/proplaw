@@ -42,8 +42,7 @@
 | 8.1 | §8 Nicht überbaute Flächen der bebauten Gru | Abs. 1 | freiflaechengestaltung | Die nicht mit Gebäuden oder vergleichbaren baulichen Anlagen überbauten Flächen der bebauten Grundstücke sind 1. wassera |
 | 8.2 | §8 Nicht überbaute Flächen der bebauten Gru | Abs. 2 | freiflaechengestaltung | Bei der Errichtung von Gebäuden mit mehr als zehn Wohnungen ist auf dem Baugrundstück oder in unmittelbarer Nähe auf ein |
 | 9.1 | §9 Gestaltung 05.07.2024 | — | gestaltungsanforderung | Gestaltung Bauliche Anlagen müssen nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, Werkstoff und Farbe so gestaltet sein, dass sie nicht verunstaltet wirken. Bauliche Anlagen dürfen das Straßen-, Orts- und Landschaftsbild nicht verunstalten. |
-| 10.1 | §10 Anlagen der Außenwerbung, Warenautomaten | — | gestaltungsanforderung | - Seite 1 von 86 Titel Gültig ab
-Abschnitt 2 - Allgemeine Anforderungen an die Bauausführung 05.07.2024 |
+| 10.1 | §10 Anlagen der Außenwerbung, Warenautomaten | — | gestaltungsanforderung | (1) Anlagen der Außenwerbung (Werbeanlagen) sind alle ortsfesten Einrichtungen, die der Ankündigung oder Anpreisung oder als Hinweis auf Gewerbe oder Beruf dienen und vom öffentlichen Verkehrsraum aus sichtbar sind. Hierzu zählen insbesondere Schilder, Beschriftungen, Bemalungen, Lichtwerbungen, Sch Abschnitt 2 - Allgemeine Anforderungen an die Bauausführung 05.07.2024 |
 | 11.1 | §11 Baustelle | Abs. 1 | baustellenanforderung | Baustellen sind so einzurichten, dass bauliche Anlagen ordnungsgemäß errichtet, geändert oder beseitigt werden können un |
 | 11.2 | §11 Baustelle | Abs. 2 | baustellenanforderung | Bei Bauarbeiten, durch die unbeteiligte Personen gefährdet werden können, ist die Gefahrenzone abzugrenzen oder durch Wa |
 | 11.3 | §11 Baustelle | Abs. 3 | baustellenanforderung | Bei der Ausführung nicht verfahrensfreier Bauvorhaben hat die Bauherrin oder der Bauherr an der Baustelle ein Schild, da |
@@ -219,7 +218,7 @@ Abschnitt 2 - Allgemeine Anforderungen an die Bauausführung 05.07.2024 |
 | 55.2 | §55 Unternehmerin oder Unternehmer | Abs. 2 | verfahrensfreies_vorhaben | Jede Unternehmerin oder jeder Unternehmer hat auf Verlangen der Bauaufsichtsbehörde für Arbeiten, bei denen die Sicherhe |
 | 56.1 | §56 Bauleiterin oder Bauleiter | Abs. 1 | beteiligtenpflicht | Die Bauleiterin oder der Bauleiter hat darüber zu wachen, dass die Baumaßnahme entsprechend den öffentlich-rechtlichen A |
 | 56.2 | §56 Bauleiterin oder Bauleiter | Abs. 2 | beteiligtenpflicht | Die Bauleiterin oder der Bauleiter muss über die für ihre oder seine Aufgabe erforderliche Sachkunde und Erfahrung verfü |
-| 57.1 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind - Seite 49 von 86 - 1. die für Bauordnungsrecht zuständige oberste Landesbehörde als oberste B |
+| 57.1 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind |
 | 57.2 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 2 | behoerdenstruktur | Die oberste Bauaufsichtsbehörde kann durch Verordnung die Aufgaben der unteren Bauaufsichtsbehörde und in besonderen Fäl |
 | 57.3 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 3 | behoerdenstruktur | Die Träger der Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu beset |
 | 57.4 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 4 | behoerdenstruktur | Fachaufsichtsbehörden sind 1. über die unteren Bauaufsichtsbehörden nach Absatz 1 Satz 1 Nummer 2 und über die Bürgermei |

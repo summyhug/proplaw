@@ -14,118 +14,6 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 4.1 | Die Landesregierung berichtet dem Landtag des Saarlandes bis zum 1. Januar 2025 über die §§ 1, 2, 3, 7, 8, 11, 12a, 16 und 17 des Saarländischen Behindertengleichstellungsgesetzes. Alle obersten Landesbehörden im Sinne des § 1 Absatz 1 des Landesorganisationsgesetzes erstellen über die von ihnen genutzten Gebäude, die im Eigentum des Landes einschließlich der landesunmittelbaren Körperschaften, Anstalten und Stiftungen des öffentlichen Rechts stehen, bis 30. Juni 2023 Berichte über den Stand der Barrierefreiheit dieser Bestandsgebäude nach § 8 des Saarländischen Behindertengleichstellungsgesetzes. Die obersten Landesbehörden erstellen bis zum 30. Juni 2023 Berichte über den Stand der Informationsangebote und Verwaltungsabläufe nach § 12 Saarländisches Behindertengleichstellungsgesetz. |
 | 4.2 | Die Landesregierung berichtet dem Landtag des Saarlandes bis zum 1. Januar 2023 über § 50 Absatz 1 der Landesbauordnung.“ Das Gesetz vom 11. Dezember 2012 enthält folgenden Artikel 3: „Die den kommunalen Gebietskörperschaften auf Grund dieses Gesetzes entstehenden Kosten werden vom Saarland im jeweils folgenden Haushaltsjahr im nachgewiesenen Umfang erstattet. Kosten (Gebühren und Auslagen), die von Dritten erhoben werden können, werden auf den Erstattungsanspruch nach Satz 1 angerechnet.“ Das Gesetz vom 15. Juli 2015 enthält folgenden Artikel 5: „Die den kommunalen Gebietskörperschaften auf Grund der Übertragung von Aufgaben durch Artikel 1 dieses Gesetzes entstehenden Kosten werden vom Saarland im jeweils folgenden Haushaltsjahr im nachgewiesenen Umfang erstattet. Kosten (Gebühren und Auslagen), die von Dritten erhoben werden können, werden auf den Erstattungsanspruch nach Satz 1 angerechnet.“ 1 Notifiziert gemäß der Richtlinie (EU) 2015/1535 des Europäischen Parlaments und des Rates vom 9. September 2015 über ein Informationsverfahren auf dem Gebiet der technischen Vorschriften und der Vorschriften für die Dienste der Informationsgesellschaft (ABl. L 241 vom 17.9.2015, S. 1). - Amtliche Fußnote 1. 2 Dieses Gesetz dient auch der Umsetzung der Richtlinie 2006/123/EG des Europäischen Parlaments und des Rates vom 12. Dezember 2006 über Dienstleistungen im Binnenmarkt (ABl. EU Nr. L 376 S. 36). - Amtliche Fußnote 2. 3 Dieses Gesetz dient auch der Umsetzung der Richtlinie 2006/42/EG des Europäischen Parlaments und des Rates vom 17. Mai 2006 über Maschinen und zur Änderung der Richtlinie 95/16/EG (ABl. L 157 vom 9.6.2006, S. 24; berichtigt durch ABl. L 76 vom 16.3.2007, S. 35), zuletzt geändert durch die Verordnung (EU) Nr. 1243/2019 vom 20.06.2019 (Abl. L 198 vom 25.7.2019, S. 241). – Amtliche Fußnote 3. 4 Dieses Gesetz dient auch der Umsetzung der Richtlinie (EU) 2012/18 des Europäischen Parlaments und des Rates vom 4. Juli 2012 zur Beherrschung der Gefahren schwerer Unfälle mit gefährlichen Stoffen, zur Änderung und anschließenden Aufhebung der Richtlinie 96/82/EG des Rates (ABl. L 197 vom 24.7.2012, S. 1). - Amtliche Fußnote 4. 5 Dieses Gesetz dient auch der Umsetzung der Richtlinie (EU) 2018/2001 des Europäischen Parlaments und des Rates vom 11. Dezember 2018 zur Förderung der Nutzung von Energie aus erneuerbaren Quellen (ABl. L 328 vom 21.12.2018, S. 82, berichtigt durch L 311 vom 25.9.2020, S. 11; L 41 vom 22.2.2022, S. 37), zuletzt geändert durch die Richtlinie (EU) 2024/1711 des Europäischen Parlaments und des Rates vom 13. Juni 2024 (ABl. L 2024/1711 vom 26.6.2024, S. 1). - Amtliche Fußnote 5. 6 Gem. Art. 5 des Gesetzes tritt die Landesbauordnung am 1. Juni 2004 in Kraft. 2130-1 2 |
 
-### § 13 — Standsicherheit
-**type:** schutzanforderung
-**source_paragraph:** §13 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 13.1 |  |
-
-### § 14 — Schutz gegen schädliche Einwirkungen
-**type:** brandschutzanforderung
-**source_paragraph:** §14 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 14.1 |  |
-
-### § 15 — Brandschutz
-**type:** schutzanforderung
-**source_paragraph:** §15 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 15.1 |  |
-
-### § 17c — Anforderungen für die Verwendung von CE-
-**type:** bauproduktzulassung
-**source_paragraph:** §17c LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 17c.1 |  |
-
-### § 21 — Nachweis der Verwendbarkeit von Bauprodu
-**type:** bauproduktzulassung
-**source_paragraph:** §21 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 21.1 |  |
-
-### § 25 — Prüf-, Zertifizierungs-, Überwachungsste
-**type:** bauproduktzulassung
-**source_paragraph:** §25 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 25.1 |  |
-
-### § 44 — Blitzschutzanlagen
-**type:** technische_anlage
-**source_paragraph:** §44 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 44.1 | Abschnitt 6 Nutzungsbedingte Anforderungen |
-
-### § 51 — Sonderbauten An Sonderbauten können im E
-**type:** sonderbautyp
-**source_paragraph:** §51 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 51.1 | Teil 4 Die am Bau Beteiligten |
-
-### § 52 — Grundsatz
-**type:** beteiligtenpflicht
-**source_paragraph:** §52 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 52.1 |  |
-
-### § 59 — Sachliche Zuständigkeit
-**type:** genehmigungspflicht
-**source_paragraph:** §59 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 59.1 | Abschnitt 2 Genehmigungspflicht, Genehmigungsfreiheit |
-
-### § 62 — Vorhaben des Bundes und der Länder
-**type:** kenntnisgabeverfahren
-**source_paragraph:** §62 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 62.1 |  |
-
-### § 65 — zu prüfen sind, als für die bisherige Nu
-**type:** beteiligtenpflicht
-**source_paragraph:** §65 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 65.1 |  |
-
-### § 76 — Vorbescheid
-**type:** besonderes_verfahren
-**source_paragraph:** §76 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 76.1 |  |
-
-### § 80 — Verbot unrechtmäßig gekennzeichneter Bau
-**type:** sanktion
-**source_paragraph:** §80 LBO_SL
-
-| Nr. | Regeltext (LBO SL-Wortlaut) |
-|---|---|
-| 80.1 |  |
-
 ### § 1 — Anwendungsbereich
 **type:** anwendungsbereich
 **source_paragraph:** §1 LBO_SL
@@ -163,7 +51,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 3.1 | Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass sie 1. die öffentliche Sicherheit und Ordnung, insbesondere Leben, Gesundheit und die natürlichen Lebensgrundlagen, nicht gefährden; dabei sind die Grundanforderungen an Bauwerke gemäß Anhang I der Verordnung (EU) Nr. 305/2011, einschließlich der nachhaltigen Nutzung der natürlichen Ressourcen zu berücksichtigen, 2. keine unzumutbaren Belästigungen verursachen, 3. ihrem Zweck entsprechend ohne Missstände zu benutzen sind, 4. die besonderen Belange der Familien und der Personen mit Kindern, der Menschen mit Behinderungen und der alten Menschen berücksichtigen. |
-| 3.2 | Für die Beseitigung von Anlagen und für die Änderung ihrer Nutzung gilt Absatz 1 entsprechend. § 4 Gestalterische Anforderungen Bauliche Anlagen müssen nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, Werkstoff und Farbe so gestaltet sein, dass sie nicht verunstaltet wirken. Sie sind mit ihrer Umgebung so in Einklang zu bringen, dass sie das vorhandene Straßen-, Orts- oder Landschaftsbild nicht verunstalten. Teil 2 Das Grundstück und seine Bebauung |
+| 3.2 | Für die Beseitigung von Anlagen und für die Änderung ihrer Nutzung gilt Absatz 1 entsprechend. |
 
 ### § 5 — Bebauung der Grundstücke 2130-1 7
 **type:** verkehrssicherheit
@@ -288,9 +176,32 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 12c.1 | Bei Gebäuden mit einer Dachfläche von mindestens 50 m2, die weder § 12a noch § 12b unterfallen, hat die Bauherrin oder der Bauherr bei der Errichtung die Tragwerkskonstruktion und bei der wesentlichen Dachänderung die Lastreserve so zu bemessen, dass auf allen Dachflächen Photovoltaikanlagen errichtet werden können. |
-| 12c.2 | § 12a Abs. 3, 5 und 7 gelten entsprechend. Die Pflicht nach Abs. 1 entfällt auch, sofern sonstige öffentlich-rechtliche Pflichten entgegenstehen. Teil 3 Bauliche Anlagen Abschnitt 1 Allgemeine Anforderungen an die Bauausführung § 13 2130-1 13 Standsicherheit |
-| 12c.1 | Jede bauliche Anlage muss im Ganzen und in ihren einzelnen Teilen sowie für sich allein standsicher sein. Die Standsicherheit anderer baulicher Anlagen und die Tragfähigkeit des Baugrunds der Nachbargrundstücke dürfen nicht gefährdet werden. Die Standsicherheit muss auch während der Errichtung, bei der Änderung und der Beseitigung gewährleistet sein. |
-| 12c.2 | Die Verwendung gemeinsamer Bauteile für mehrere bauliche Anlagen ist zulässig, wenn öffentlich-rechtlich gesichert ist, dass die gemeinsamen Bauteile bei der Beseitigung einer der baulichen Anlagen erhalten bleiben. § 14 Schutz gegen schädliche Einwirkungen Bauliche Anlagen müssen so beschaffen sein, dass durch Wasser, Feuchtigkeit, Einflüsse der Witterung, pflanzliche oder tierische Schädlinge oder durch andere chemische, physikalische oder biologische Einflüsse Gefahren oder unzumutbare Belästigungen oder Nachteile nicht entstehen. Baugrundstücke müssen für bauliche Anlagen entsprechend geeignet sein. § 15 Brandschutz Bauliche Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass der Entstehung eines Brandes und der Ausbreitung von Feuer und Rauch (Brandausbreitung) vorgebeugt wird und bei einem Brand die Rettung von Menschen und Tieren sowie wirksame Löscharbeiten möglich sind. |
+| 12c.2 | § 12a Abs. 3, 5 und 7 gelten entsprechend. Die Pflicht nach Abs. 1 entfällt auch, sofern sonstige öffentlich-rechtliche Pflichten entgegenstehen. Teil 3 Bauliche Anlagen Abschnitt 1 Allgemeine Anforderungen an die Bauausführung |
+
+### § 13 — Standsicherheit
+**type:** schutzanforderung
+**source_paragraph:** §13 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 13.1 | Jede bauliche Anlage muss im Ganzen und in ihren einzelnen Teilen sowie für sich allein standsicher sein. Die Standsicherheit anderer baulicher Anlagen und die Tragfähigkeit des Baugrunds der Nachbargrundstücke dürfen nicht gefährdet werden. Die Standsicherheit muss auch während der Errichtung, bei der Änderung und der Beseitigung gewährleistet sein. |
+| 13.2 | Die Verwendung gemeinsamer Bauteile für mehrere bauliche Anlagen ist zulässig, wenn öffentlich-rechtlich gesichert ist, dass die gemeinsamen Bauteile bei der Beseitigung einer der baulichen Anlagen erhalten bleiben. |
+
+### § 14 — Schutz gegen schädliche Einwirkungen
+**type:** brandschutzanforderung
+**source_paragraph:** §14 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 14.1 | Bauliche Anlagen müssen so beschaffen sein, dass durch Wasser, Feuchtigkeit, Einflüsse der Witterung, pflanzliche oder tierische Schädlinge oder durch andere chemische, physikalische oder biologische Einflüsse Gefahren oder unzumutbare Belästigungen oder Nachteile nicht entstehen. Baugrundstücke müssen für bauliche Anlagen entsprechend geeignet sein. |
+
+### § 15 — Brandschutz
+**type:** schutzanforderung
+**source_paragraph:** §15 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 15.1 | Bauliche Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass der Entstehung eines Brandes und der Ausbreitung von Feuer und Rauch (Brandausbreitung) vorgebeugt wird und bei einem Brand die Rettung von Menschen und Tieren sowie wirksame Löscharbeiten möglich sind. |
 
 ### § 16 — Wärme-, Schall- und Erschütterungsschutz
 **type:** verkehrssicherheit
@@ -332,7 +243,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 17b.1 | Bauprodukte dürfen nur verwendet werden, wenn bei ihrer Verwendung die baulichen Anlagen bei ordnungsgemäßer Instandhaltung während einer dem Zweck entsprechenden angemessenen Zeitdauer die Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes erfüllen und gebrauchstauglich sind. |
-| 17b.2 | Bauprodukte, die in Vorschriften anderer Vertragsstaaten des Abkommens vom 2. Mai 1992 über den Europäischen Wirtschaftsraum genannten technischen Anforderungen entsprechen, dürfen verwendet werden, wenn das geforderte Schutzniveau gemäß § 3 Abs. 1 Nr. 1 gleichermaßen dauerhaft erreicht wird. § 17c Anforderungen für die Verwendung von CE-gekennzeichneten Bauprodukten Ein Bauprodukt, das die CE-Kennzeichnung trägt, darf verwendet werden, wenn die erklärten Leistungen den in diesem Gesetz oder aufgrund dieses Gesetzes festgelegten Anforderungen für diese Verwendung entsprechen. Die §§ 18 bis 26 Abs. 1 gelten nicht für Bauprodukte, die die CE-Kennzeichnung aufgrund der Verordnung (EU) Nr. 305/2011 tragen. |
+| 17b.2 | Bauprodukte, die in Vorschriften anderer Vertragsstaaten des Abkommens vom 2. Mai 1992 über den Europäischen Wirtschaftsraum genannten technischen Anforderungen entsprechen, dürfen verwendet werden, wenn das geforderte Schutzniveau gemäß § 3 Abs. 1 Nr. 1 gleichermaßen dauerhaft erreicht wird. |
+
+### § 17c — Anforderungen für die Verwendung von CE-
+**type:** bauproduktzulassung
+**source_paragraph:** §17c LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 17c.1 | Ein Bauprodukt, das die CE-Kennzeichnung trägt, darf verwendet werden, wenn die erklärten Leistungen den in diesem Gesetz oder aufgrund dieses Gesetzes festgelegten Anforderungen für diese Verwendung entsprechen. Die §§ 18 bis 26 Abs. 1 gelten nicht für Bauprodukte, die die CE-Kennzeichnung aufgrund der Verordnung (EU) Nr. 305/2011 tragen. |
 
 ### § 18 — Verwendbarkeitsnachweise
 **type:** bauproduktzulassung
@@ -365,7 +284,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 20.1 | Bauprodukte, die nach allgemein anerkannten Prüfverfahren beurteilt werden, bedürfen anstelle einer allgemeinen bauaufsichtlichen Zulassung nur eines allgemeinen bauaufsichtlichen Prüfzeugnisses. Dies wird mit der Angabe der maßgebenden technischen Regeln in den Technischen Baubestimmungen nach § 86a bekannt gemacht. |
-| 20.2 | Ein allgemeines bauaufsichtliches Prüfzeugnis wird von einer Prüfstelle nach § 25 Satz 1 Nr. 1 für Bauprodukte nach Absatz 1 erteilt, wenn deren Verwendbarkeit im Sinne des § 17b Abs. 1 nachgewiesen ist. § 19 Abs. 2 und 4 bis 7 gilt entsprechend. Die Anerkennungsbehörde für Stellen nach § 25 Satz 1 Nr. 1 und § 86 Abs. 4 Nr. 1 kann allgemeine bauaufsichtliche Prüfzeugnisse zurücknehmen oder widerrufen; § 1 des Saarländischen Verwaltungsverfahrensgesetzes7 in Verbindung mit §§ 48 und 49 des Verwaltungsverfahrensgesetzes finden Anwendung. § 21 Nachweis der Verwendbarkeit von Bauprodukten im Einzelfall Mit Zustimmung der obersten Bauaufsichtsbehörde dürfen unter den Voraussetzungen des § 18 Abs. 1 im Einzelfall Bauprodukte verwendet werden, wenn ihre Verwendbarkeit im Sinne des § 17b Abs. 1 nachgewiesen ist. Wenn Gefahren im Sinne des § 3 Abs. 1 Nr. 1 nicht zu erwarten sind, kann die oberste Bauaufsichtsbehörde im Einzelfall erklären, dass ihre Zustimmung nicht erforderlich ist. |
+| 20.2 | Ein allgemeines bauaufsichtliches Prüfzeugnis wird von einer Prüfstelle nach § 25 Satz 1 Nr. 1 für Bauprodukte nach Absatz 1 erteilt, wenn deren Verwendbarkeit im Sinne des § 17b Abs. 1 nachgewiesen ist. § 19 Abs. 2 und 4 bis 7 gilt entsprechend. Die Anerkennungsbehörde für Stellen nach § 25 Satz 1 Nr. 1 und § 86 Abs. 4 Nr. 1 kann allgemeine bauaufsichtliche Prüfzeugnisse zurücknehmen oder widerrufen; § 1 des Saarländischen Verwaltungsverfahrensgesetzes7 in Verbindung mit §§ 48 und 49 des Verwaltungsverfahrensgesetzes finden Anwendung. |
+
+### § 21 — Nachweis der Verwendbarkeit von Bauprodu
+**type:** bauproduktzulassung
+**source_paragraph:** §21 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 21.1 | Mit Zustimmung der obersten Bauaufsichtsbehörde dürfen unter den Voraussetzungen des § 18 Abs. 1 im Einzelfall Bauprodukte verwendet werden, wenn ihre Verwendbarkeit im Sinne des § 17b Abs. 1 nachgewiesen ist. Wenn Gefahren im Sinne des § 3 Abs. 1 Nr. 1 nicht zu erwarten sind, kann die oberste Bauaufsichtsbehörde im Einzelfall erklären, dass ihre Zustimmung nicht erforderlich ist. |
 
 ### § 22 — Übereinstimmungsbestätigung
 **type:** bauproduktzulassung
@@ -397,7 +324,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 24.1 | Dem herstellenden Unternehmen ist ein Übereinstimmungszertifikat von einer Zertifizierungsstelle nach § 25 zu erteilen, wenn das Bauprodukt 1. den Technischen Baubestimmungen nach § 86a Abs. 2, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht und 2. einer werkseigenen Produktionskontrolle sowie einer Fremdüberwachung nach Maßgabe des Absatzes 2 unterliegt. |
-| 24.2 | Die Fremdüberwachung ist von Überwachungsstellen nach § 25 durchzuführen. Die Fremdüberwachung hat regelmäßig zu überprüfen, ob das Bauprodukt den Technischen Baubestimmungen nach § 86a Abs. 2, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht. § 25 Prüf-, Zertifizierungs-, Überwachungsstellen Die oberste Bauaufsichtsbehörde kann eine natürliche oder juristische Person als 1. Prüfstelle für die Erteilung allgemeiner bauaufsichtlicher Prüfzeugnisse (§ 20 Abs. 2), 2. Prüfstelle für die Überprüfung von Bauprodukten vor Bestätigung der Übereinstimmung (§ 23 Abs. 2), 3. Zertifizierungsstelle (§ 24 Abs. 1), 4. Überwachungsstelle für die Fremdüberwachung (§ 24 Abs. 2), 5. Überwachungsstelle für die Überwachung nach § 17a Abs. 7 und § 26 Abs. 2 oder 6. Prüfstelle für die Überprüfung nach § 17a Abs. 6 und § 26 Abs. 1 anerkennen, wenn sie oder die bei ihr Beschäftigten nach ihrer Ausbildung, Fachkenntnis, persönlichen Zuverlässigkeit, ihrer Unparteilichkeit und ihren Leistungen die Gewähr dafür bieten, dass diese Aufgaben den öffentlich-rechtlichen Vorschriften entsprechend wahrgenommen werden, und wenn sie über die erforderlichen Vorrichtungen verfügen. Satz 1 ist entsprechend auf Behörden anzuwenden, wenn sie ausreichend mit geeigneten Fachkräften besetzt und mit den erforderlichen Vorrichtungen ausgestattet sind. Die Anerkennung von Prüf-, Zertifizierungs- und Überwachungsstellen anderer Länder gilt auch im Saarland. |
+| 24.2 | Die Fremdüberwachung ist von Überwachungsstellen nach § 25 durchzuführen. Die Fremdüberwachung hat regelmäßig zu überprüfen, ob das Bauprodukt den Technischen Baubestimmungen nach § 86a Abs. 2, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht. |
+
+### § 25 — Prüf-, Zertifizierungs-, Überwachungsste
+**type:** bauproduktzulassung
+**source_paragraph:** §25 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 25.1 | Die oberste Bauaufsichtsbehörde kann eine natürliche oder juristische Person als 1. Prüfstelle für die Erteilung allgemeiner bauaufsichtlicher Prüfzeugnisse (§ 20 Abs. 2), 2. Prüfstelle für die Überprüfung von Bauprodukten vor Bestätigung der Übereinstimmung (§ 23 Abs. 2), 3. Zertifizierungsstelle (§ 24 Abs. 1), 4. Überwachungsstelle für die Fremdüberwachung (§ 24 Abs. 2), 5. Überwachungsstelle für die Überwachung nach § 17a Abs. 7 und § 26 Abs. 2 oder 6. Prüfstelle für die Überprüfung nach § 17a Abs. 6 und § 26 Abs. 1 anerkennen, wenn sie oder die bei ihr Beschäftigten nach ihrer Ausbildung, Fachkenntnis, persönlichen Zuverlässigkeit, ihrer Unparteilichkeit und ihren Leistungen die Gewähr dafür bieten, dass diese Aufgaben den öffentlich-rechtlichen Vorschriften entsprechend wahrgenommen werden, und wenn sie über die erforderlichen Vorrichtungen verfügen. Satz 1 ist entsprechend auf Behörden anzuwenden, wenn sie ausreichend mit geeigneten Fachkräften besetzt und mit den erforderlichen Vorrichtungen ausgestattet sind. Die Anerkennung von Prüf-, Zertifizierungs- und Überwachungsstellen anderer Länder gilt auch im Saarland. |
 
 ### § 26 — Besondere Sachkunde- und Sorgfaltsanford
 **type:** brandklassifizierung
@@ -623,7 +558,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (LBO SL-Wortlaut) |
 |---|---|
 | 43.1 | Feste Abfallstoffe dürfen innerhalb von Gebäuden vorübergehend aufbewahrt werden, in Gebäuden der Gebäudeklassen 3 bis 5 jedoch nur, wenn die dafür bestimmten Räume 1. Trennwände und Decken als raumabschließende Bauteile mit der Feuerwiderstandsfähigkeit der tragenden Wände und 2. Öffnungen vom Gebäudeinnern zum Aufstellraum mit feuerhemmenden, dicht- und selbstschließenden Abschlüssen haben, 3. unmittelbar vom Freien entleert werden können und 4. eine ständig wirksame Lüftung haben. |
-| 43.2 | Abfallschächte in Gebäuden sind nicht zulässig. § 44 Blitzschutzanlagen Bauliche Anlagen, bei denen nach Lage, Bauart oder Nutzung Blitzschlag leicht eintreten oder zu schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. Abschnitt 6 Nutzungsbedingte Anforderungen |
+| 43.2 | Abfallschächte in Gebäuden sind nicht zulässig. |
+
+### § 44 — Blitzschutzanlagen
+**type:** technische_anlage
+**source_paragraph:** §44 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 44.1 | Bauliche Anlagen, bei denen nach Lage, Bauart oder Nutzung Blitzschlag leicht eintreten oder zu schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. Abschnitt 6 Nutzungsbedingte Anforderungen |
 
 ### § 45 — Aufenthaltsräume
 **type:** technische_anlage
@@ -675,7 +618,23 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 50.2 | Bauliche Anlagen, die öffentlich zugänglich sind, müssen in den dem allgemeinen Besucher- und Benutzerverkehr dienenden Teilen barrierefrei sein. Dies gilt insbesondere für 1. Einrichtungen der Kultur und des Bildungs- und Erziehungswesens, 2. Sport- und Freizeitstätten, 3. Einrichtungen des Gesundheitswesens, 4. Büro-, Verwaltungs- und Gerichtsgebäude, 5. Verkaufsstätten, Schank- und Speisegaststätten, 6. Stellplätze, Garagen und Toilettenanlagen, 7. Beherbergungsstätten, 8. Serviceautomaten, insbesondere zur Bargeldbeschaffung. Für die der zweckentsprechenden Nutzung dienenden Räume und Anlagen genügt es, wenn sie in dem erforderlichen Umfang barrierefrei sind. Toilettenräume und notwendige Stellplätze für Besucherinnen, Besucher, Benutzerinnen und Benutzer müssen in der erforderlichen Anzahl barrierefrei sein. |
 | 50.3 | Für bauliche Anlagen, die überwiegend oder ausschließlich von Menschen mit Behinderungen oder aufgrund von Alter oder Krankheit beeinträchtigten Menschen genutzt werden oder die ihrer Betreuung dienen, wie 1. Tagesstätten, Schulen, Werkstätten und Heime für behinderte Menschen, 2. Altenheime, Altenwohnheime und Altenpflegeheime, gelten die Anforderungen des Absatzes 2 Satz 1 für die gesamte Anlage oder Einrichtung. |
 | 50.4 | Sollen rechtmäßig bestehende bauliche Anlagen, andere Anlagen oder Einrichtungen nach den Absätzen 2 und 3 wesentlich geändert werden, so soll die Bauaufsichtsbehörde verlangen, dass auch die von der Änderung nicht unmittelbar berührten Teile mit den Anforderungen der Absätze 2 und 3in Einklang gebracht werden, wenn dies für die Bauherrin oder den Bauherrn keine unzumutbaren Mehrkosten verursacht. |
-| 50.5 | Von den Absätzen 1 bis 3 können Abweichungen zugelassen werden, soweit die Anforderungen wegen schwieriger Geländeverhältnisse, wegen des Einbaus eines sonst nicht erforderlichen Aufzugs, wegen ungünstiger vorhandener Bebauung oder im Hinblick auf die Sicherheit der Menschen mit Behinderung und der alten Menschen nur mit einem unverhältnismäßigen Mehraufwand erfüllt werden können. § 68 Abs. 2 gilt entsprechend. § 51 Sonderbauten An Sonderbauten können im Einzelfall zur Verwirklichung der allgemeinen Anforderungen nach § 3 besondere Anforderungen gestellt werden. Die besonderen Anforderungen können sich insbesondere erstrecken auf 1. die Anordnung der baulichen Anlagen auf dem Grundstück, 2. die Abstände von Grundstücksgrenzen, von anderen baulichen Anlagen auf dem Grundstück und von öffentlichen Verkehrsflächen sowie auf die Größe der freizuhaltenden Flächen des Baugrundstücks, 3. die Öffnungen nach öffentlichen Verkehrsflächen und nach angrenzenden Grundstücken, 4. die Anlage der Zu- und Abfahrten, 5. die Anlage von Grünstreifen, Baumpflanzungen und anderen Pflanzungen, die Begrünung oder Beseitigung von Halden und Gruben, das Sammeln, Versickern und Verwenden von Niederschlags- oder Brauchwasser, 6. die Bauart und Anordnung aller für die Stand- und Verkehrssicherheit, den Brand-, Wärme-, Schall- oder Gesundheitsschutz wesentlichen Bauteile und die Verwendung von Baustoffen, 7. Brandschutzanlagen, -einrichtungen und -vorkehrungen, 8. die Löschwasserrückhaltung, 9. die Anordnung und Herstellung von Aufzügen, Treppen, Treppenräumen, Fluren, Ausgängen und sonstigen Rettungswegen, 10. die Beleuchtung und Energieversorgung, 11. die Lüftung und Rauchableitung, 12. die Feuerungsanlagen und Heizräume, 13. die Wasserversorgung, 14. die Aufbewahrung und Entsorgung von Abwasser und von festen Abfallstoffen, 15. die Stellplätze und Garagen, 16. die barrierefreie Nutzbarkeit, 17. die zulässige Zahl der Benutzerinnen und Benutzer, Anordnung und Zahl der zulässigen Sitz- und Stehplätze bei Versammlungsstätten, Tribünen und Fliegenden Bauten, 18. die Zahl der Toiletten für Besucherinnen und Besucher, 19. Umfang, Inhalt und Zahl besonderer Bauvorlagen, insbesondere eines Brandschutzkonzeptes, 20. weitere zu erbringende Bescheinigungen, 21. die Bestellung und Qualifikation der Bauleiterin oder des Bauleiters und der Fachbauleiterinnen und Fachbauleiter, 2130-1 31 22. den Betrieb und die Benutzung, einschließlich der Bestellung und der Qualifikation einer oder eines Brandschutzbeauftragten, 23. Erst-, Wiederholungs- und Nachprüfungen und die Bescheinigungen, die hierüber zu erbringen sind, 24. Kommunikationseinrichtungen für die Gefahrenabwehr. Teil 4 Die am Bau Beteiligten § 52 Grundsatz Bei der Errichtung, Änderung, Nutzungsänderung und der Beseitigung von Anlagen sind die Bauherrin oder der Bauherr und im Rahmen ihres Aufgabenbereichs die anderen am Bau Beteiligten dafür verantwortlich, dass die öffentlichrechtlichen Vorschriften und die Anordnungen der Bauaufsichtsbehörde eingehalten werden. |
+| 50.5 | Von den Absätzen 1 bis 3 können Abweichungen zugelassen werden, soweit die Anforderungen wegen schwieriger Geländeverhältnisse, wegen des Einbaus eines sonst nicht erforderlichen Aufzugs, wegen ungünstiger vorhandener Bebauung oder im Hinblick auf die Sicherheit der Menschen mit Behinderung und der alten Menschen nur mit einem unverhältnismäßigen Mehraufwand erfüllt werden können. § 68 Abs. 2 gilt entsprechend. |
+
+### § 51 — Sonderbauten An Sonderbauten können im E
+**type:** sonderbautyp
+**source_paragraph:** §51 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 51.1 | An Sonderbauten können im Einzelfall zur Verwirklichung der allgemeinen Anforderungen nach § 3 besondere Anforderungen gestellt werden. Die besonderen Anforderungen können sich insbesondere erstrecken auf 1. die Anordnung der baulichen Anlagen auf dem Grundstück, 2. die Abstände von Grundstücksgrenzen, von anderen baulichen Anlagen auf dem Grundstück und von öffentlichen Verkehrsflächen sowie auf die Größe der freizuhaltenden Flächen des Baugrundstücks, 3. die Öffnungen nach öffentlichen Verkehrsflächen und nach angrenzenden Grundstücken, 4. die Anlage der Zu- und Abfahrten, 5. die Anlage von Grünstreifen, Baumpflanzungen und anderen Pflanzungen, die Begrünung oder Beseitigung von Halden und Gruben, das Sammeln, Versickern und Verwenden von Niederschlags- oder Brauchwasser, 6. die Bauart und Anordnung aller für die Stand- und Verkehrssicherheit, den Brand-, Wärme-, Schall- oder Gesundheitsschutz wesentlichen Bauteile und die Verwendung von Baustoffen, 7. Brandschutzanlagen, -einrichtungen und -vorkehrungen, 8. die Löschwasserrückhaltung, 9. die Anordnung und Herstellung von Aufzügen, Treppen, Treppenräumen, Fluren, Ausgängen und sonstigen Rettungswegen, 10. die Beleuchtung und Energieversorgung, 11. die Lüftung und Rauchableitung, 12. die Feuerungsanlagen und Heizräume, 13. die Wasserversorgung, 14. die Aufbewahrung und Entsorgung von Abwasser und von festen Abfallstoffen, 15. die Stellplätze und Garagen, 16. die barrierefreie Nutzbarkeit, 17. die zulässige Zahl der Benutzerinnen und Benutzer, Anordnung und Zahl der zulässigen Sitz- und Stehplätze bei Versammlungsstätten, Tribünen und Fliegenden Bauten, 18. die Zahl der Toiletten für Besucherinnen und Besucher, 19. Umfang, Inhalt und Zahl besonderer Bauvorlagen, insbesondere eines Brandschutzkonzeptes, 20. weitere zu erbringende Bescheinigungen, 21. die Bestellung und Qualifikation der Bauleiterin oder des Bauleiters und der Fachbauleiterinnen und Fachbauleiter, 2130-1 31 22. den Betrieb und die Benutzung, einschließlich der Bestellung und der Qualifikation einer oder eines Brandschutzbeauftragten, 23. Erst-, Wiederholungs- und Nachprüfungen und die Bescheinigungen, die hierüber zu erbringen sind, 24. Kommunikationseinrichtungen für die Gefahrenabwehr. Teil 4 Die am Bau Beteiligten |
+
+### § 52 — Grundsatz
+**type:** beteiligtenpflicht
+**source_paragraph:** §52 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 52.1 | Bei der Errichtung, Änderung, Nutzungsänderung und der Beseitigung von Anlagen sind die Bauherrin oder der Bauherr und im Rahmen ihres Aufgabenbereichs die anderen am Bau Beteiligten dafür verantwortlich, dass die öffentlichrechtlichen Vorschriften und die Anordnungen der Bauaufsichtsbehörde eingehalten werden. |
 
 ### § 53 — Bauherrin, Bauherr
 **type:** beteiligtenpflicht
@@ -738,7 +697,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 58.1 | Oberste Bauaufsichtsbehörde ist das Ministerium für Inneres, Bauen und Sport. Die Aufgaben der unteren Bauaufsichtsbehörden werden von den Landkreisen und dem Regionalverband Saarbrücken als Auftragsangelegenheiten wahrgenommen, soweit in diesem Gesetz oder auf Grund dieses Gesetzes nichts anderes bestimmt ist. Die oberste Bauaufsichtsbehörde führt die Fachaufsicht über die unteren Bauaufsichtsbehörden nach Satz 2 und Absatz 2. |
 | 58.2 | Die oberste Bauaufsichtsbehörde überträgt einer Gemeinde auf Antrag durch Rechtsverordnung ganz oder teilweise die Aufgaben der unteren Bauaufsichtsbehörde, wenn die Gemeinde mehr als 30.000 Einwohnerinnen und Einwohner hat und ihre Leistungsfähigkeit nachweist.8 |
-| 58.3 | Die unteren Bauaufsichtsbehörden müssen zur Wahrnehmung ihrer Aufgaben mit ausreichend geeigneten Fachkräften besetzt sein § 59 Sachliche Zuständigkeit Sachlich zuständig ist die untere Bauaufsichtsbehörde, soweit nichts anderes bestimmt ist. Satz 1 gilt nicht für bauliche Anlagen inländischer öffentlicher Stellen auf dauerhaft militärisch genutzten Grundstücken, die im Eigentum des Bundes stehen oder deren militärische Nutzung dinglich gesichert ist (Militärgelände). Abschnitt 2 Genehmigungspflicht, Genehmigungsfreiheit |
+| 58.3 | Die unteren Bauaufsichtsbehörden müssen zur Wahrnehmung ihrer Aufgaben mit ausreichend geeigneten Fachkräften besetzt sein |
+
+### § 59 — Sachliche Zuständigkeit
+**type:** genehmigungspflicht
+**source_paragraph:** §59 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 59.1 | Sachlich zuständig ist die untere Bauaufsichtsbehörde, soweit nichts anderes bestimmt ist. Satz 1 gilt nicht für bauliche Anlagen inländischer öffentlicher Stellen auf dauerhaft militärisch genutzten Grundstücken, die im Eigentum des Bundes stehen oder deren militärische Nutzung dinglich gesichert ist (Militärgelände). Abschnitt 2 Genehmigungspflicht, Genehmigungsfreiheit |
 
 ### § 60 — Grundsatz
 **type:** genehmigungspflicht
@@ -761,11 +728,18 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 61.2 | Über Absatz 1 hinaus sind verfahrensfrei: 1. Gebäude ohne Feuerstätten mit einer traufseitigen Wandhöhe bis zu 5 m, die einem land- oder forstwirtschaftlichen Betrieb im Sinne des § 35 Abs. 1 Nr. 1 oder 2 und des § 201 des Baugesetzbuchs dienen und nur zur Unterbringung von Sachen oder zum vorübergehenden Schutz von Tieren bestimmt sind, 2. Gewächshäuser bis 5 m Firsthöhe, die einem landwirtschaftlichen Betrieb im Sinne des § 35 Abs. 1 Nr. 1 oder 2 und des § 201 des Baugesetzbuchs dienen, wenn die Bauherrin oder der Bauherr der Gemeinde das beabsichtigte Vorhaben durch Einreichen der erforderlichen Unterlagen zur Kenntnis gegeben hat und die Gemeinde nicht innerhalb einer Frist von zwei Wochen eine vorläufige Untersagung nach § 15 Abs. 1 Satz 2 des Baugesetzbuchs beantragt. Teilt die Gemeinde der Bauherrin oder dem Bauherrn vor Ablauf der Frist mit, dass sie eine vorläufige Untersagung nach § 15 Abs. 1 Satz 2 des Baugesetzbuchs nicht beantragen wird, darf mit der Ausführung des Vorhabens bereits vor Ablauf der Frist nach Satz 1 begonnen werden. |
 | 61.3 | Verfahrensfrei ist die Änderung der Nutzung von Anlagen, wenn 1. für die neue Nutzung keine anderen öffentlich-rechtlichen Anforderungen, die im Baugenehmigungsverfahren nach § 65 zu prüfen sind, als für die bisherige Nutzung in Betracht kommen, 2. Räume eines Wohngebäudes mit nicht mehr als zwei Wohnungen in Aufenthaltsräume, die zu diesen Wohnungen gehören, umgenutzt werden, 3. Räume in vorhandenen Wohngebäuden und Wohnungen in Räume für Bäder und Toiletten umgenutzt werden, 4. die Errichtung oder Änderung der Anlagen nach Absatz 1 verfahrensfrei wäre. |
 | 61.4 | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, 2. freistehenden Gebäuden der Gebäudeklassen 1 und 3, 3. sonstigen Anlagen, die keine Gebäude sind, mit einer Höhe bis zu 10 m. Im Übrigen ist die beabsichtigte Beseitigung von Anlagen mindestens einen Monat zuvor der Bauaufsichtsbehörde anzuzeigen. Bei nicht freistehenden Gebäuden muss die Standsicherheit des Gebäudes oder der Gebäude, an die das zu beseitigende Gebäude angebaut ist, durch eine Tragwerksplanerin oder einen Tragwerksplaner im Sinne des § 67 Abs. 2 Satz 1 oder 2 beurteilt und im erforderlichen Umfang nachgewiesen werden; die Beseitigung ist, soweit notwendig, durch eine Tragwerksplanerin oder einen Tragwerksplaner im Sinne des § 67 Abs. 2 Satz 1 oder 2 zu überwachen. Satz 3 gilt nicht, soweit an verfahrensfreie Gebäude angebaut ist. § 73 Abs. 6 Nr. 3 und Abs. 8 gilt entsprechend. |
-| 61.5 | Instandhaltungsarbeiten sind verfahrensfrei. § 62 2130-1 37 Vorhaben des Bundes und der Länder |
-| 61.1 | Nicht verfahrensfreie Vorhaben des Bundes und der Länder sowie ihrer rechtsfähigen Anstalten, Körperschaften und Stiftungen bedürfen keiner Genehmigungsfreistellung oder Baugenehmigung sowie Bauüberwachung und Bauzustandsbesichtigung (§§ 63 bis 65, 78, 79), wenn 1. die Leitung der Entwurfsarbeiten und der Bauüberwachung einer Baudienststelle des Bundes oder eines Landes übertragen ist und 2. die Baudienststelle mindestens mit einer Beamtin oder einem Beamten des höheren technischen Verwaltungsdienstes der Fachrichtung Hochbau oder einer oder einem technischen Angestellten, die oder der die Voraussetzungen für die Einstellung in den Vorbereitungsdienst der Laufbahn des höheren Dienstes der Fachrichtung Hochbau erfüllt und über eine Berufserfahrung von mindestens drei Jahren in ihrer oder seiner Fachrichtung verfügt, besetzt ist. Solche Vorhaben bedürfen der Zustimmung der obersten Bauaufsichtsbehörde (Zustimmungsverfahren). Die Zustimmung der obersten Bauaufsichtsbehörde entfällt, wenn die Gemeinde nicht widerspricht und die Nachbarschaft dem Vorhaben zustimmt. Keiner Genehmigungsfreistellung, Baugenehmigung oder Zustimmung sowie Bauüberwachung und Bauzustandsbesichtigung bedürfen unter den Voraussetzungen des Satzes 1 Baumaßnahmen in oder an bestehenden Gebäuden, soweit sie nicht zu einer Erweiterung des Bauvolumens oder zu einer der Genehmigungspflicht unterliegenden Nutzungsänderung führen. Die Sätze 3 und 4 gelten nicht für Vorhaben, für die nach dem Gesetz über die Umweltverträglichkeitsprüfung in der Fassung der Bekanntmachung vom 18. März 2021 (BGBl. I S. 540), zuletzt geändert durch Artikel 14 des Gesetzes vom 10. September 2021 (BGBl. I S. 4147), in der jeweils geltenden Fassung oder dem Saarländischen Gesetz über die Umweltverträglichkeitsprüfung vom 30. Oktober 2002 (Amtsbl. S. 2494), zuletzt geändert durch Artikel 1 des Gesetzes vom 13. Februar 2019 (Amtsbl. I S. 324), in der jeweils geltenden Fassung,10 eine Pflicht zur Durchführung einer Umweltverträglichkeitsprüfung oder einer Vorprüfung besteht und für Vorhaben, für die nach § 71 Abs. 3 Satz 2 eine Öffentlichkeitsbeteiligung durchzuführen ist. |
-| 61.2 | Der Antrag auf Zustimmung ist bei der obersten Bauaufsichtsbehörde einzureichen. Die oberste Bauaufsichtsbehörde prüft die Zulässigkeit des Vorhabens entsprechend § 64 Abs. 2 Satz 1 Nr. 1. Sie führt eine nach den Vorschriften über die Umweltverträglichkeitsprüfung erforderliche Öffentlichkeitsbeteiligung und bei Vorhaben nach § 71 Abs. 3 Satz 2 die Öffentlichkeitsbeteiligung nach § 71 Abs. 3 bis 6 durch. Sie entscheidet über Abweichungen von den nach Satz 2 zu prüfenden sowie von anderen Vorschriften, soweit sie nachbarschützend sind und die Nachbarschaft nicht zugestimmt hat; darüber hinaus bedarf die Zulässigkeit von Ausnahmen, Befreiungen und Abweichungen keiner bauaufsichtlichen Entscheidung. Die Gemeinde ist vor Erteilung der Zustimmung zu hören; § 36 Abs. 2 Satz 2 Halbsatz 1 des Baugesetzbuches gilt entsprechend. § 68 Abs. 1 und Abs. 2 Satz 1, § 69 Abs. 2 und die §§ 70 bis 75 finden Anwendung. |
-| 61.3 | Die Baudienststelle trägt unter den Voraussetzungen des Absatzes 1 Satz 1 die Verantwortung dafür, dass die Errichtung, die Änderung, die Nutzungsänderung und die Beseitigung baulicher Anlagen den öffentlich-rechtlichen Vorschriften entsprechen; die Verantwortung für die Unterhaltung baulicher Anlagen trägt die Baudienststelle nur, wenn und solange sie die oder der für die Anlage Verantwortliche ausschließlich ihr überträgt. Die Verantwortung der öffentlichen Bauherrschaft (§ 53) sowie der Unternehmen (§ 55) und die Befugnisse der unteren Bauaufsichtsbehörden bleiben unberührt. |
-| 61.4 | Nicht verfahrensfreie Vorhaben des Bundes, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, sind abweichend von den Absätzen 1 bis 3 der obersten Bauaufsichtsbehörde vor Baubeginn in geeigneter Weise zur Kenntnis zu bringen; dies gilt nicht, wenn die Gemeinde nicht widerspricht. Darüber hinaus wirken die Bauaufsichtsbehörden nicht mit. Besteht für ein Vorhaben nach Satz 1 eine Pflicht zur Durchführung einer Umweltverträglichkeitsprüfung oder einer Vorprüfung, bedarf es der Zustimmung der obersten Bauaufsichtsbehörde. Auf Fliegende Bauten, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, finden Satz 1 und § 77 Abs. 2 bis 10 keine Anwendung; sie bedürfen auch keiner Genehmigungsfreistellung oder Baugenehmigung. |
+| 61.5 | Instandhaltungsarbeiten sind verfahrensfrei. |
+
+### § 62 — Vorhaben des Bundes und der Länder
+**type:** kenntnisgabeverfahren
+**source_paragraph:** §62 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 62.1 | Nicht verfahrensfreie Vorhaben des Bundes und der Länder sowie ihrer rechtsfähigen Anstalten, Körperschaften und Stiftungen bedürfen keiner Genehmigungsfreistellung oder Baugenehmigung sowie Bauüberwachung und Bauzustandsbesichtigung (§§ 63 bis 65, 78, 79), wenn 1. die Leitung der Entwurfsarbeiten und der Bauüberwachung einer Baudienststelle des Bundes oder eines Landes übertragen ist und 2. die Baudienststelle mindestens mit einer Beamtin oder einem Beamten des höheren technischen Verwaltungsdienstes der Fachrichtung Hochbau oder einer oder einem technischen Angestellten, die oder der die Voraussetzungen für die Einstellung in den Vorbereitungsdienst der Laufbahn des höheren Dienstes der Fachrichtung Hochbau erfüllt und über eine Berufserfahrung von mindestens drei Jahren in ihrer oder seiner Fachrichtung verfügt, besetzt ist. Solche Vorhaben bedürfen der Zustimmung der obersten Bauaufsichtsbehörde (Zustimmungsverfahren). Die Zustimmung der obersten Bauaufsichtsbehörde entfällt, wenn die Gemeinde nicht widerspricht und die Nachbarschaft dem Vorhaben zustimmt. Keiner Genehmigungsfreistellung, Baugenehmigung oder Zustimmung sowie Bauüberwachung und Bauzustandsbesichtigung bedürfen unter den Voraussetzungen des Satzes 1 Baumaßnahmen in oder an bestehenden Gebäuden, soweit sie nicht zu einer Erweiterung des Bauvolumens oder zu einer der Genehmigungspflicht unterliegenden Nutzungsänderung führen. Die Sätze 3 und 4 gelten nicht für Vorhaben, für die nach dem Gesetz über die Umweltverträglichkeitsprüfung in der Fassung der Bekanntmachung vom 18. März 2021 (BGBl. I S. 540), zuletzt geändert durch Artikel 14 des Gesetzes vom 10. September 2021 (BGBl. I S. 4147), in der jeweils geltenden Fassung oder dem Saarländischen Gesetz über die Umweltverträglichkeitsprüfung vom 30. Oktober 2002 (Amtsbl. S. 2494), zuletzt geändert durch Artikel 1 des Gesetzes vom 13. Februar 2019 (Amtsbl. I S. 324), in der jeweils geltenden Fassung,10 eine Pflicht zur Durchführung einer Umweltverträglichkeitsprüfung oder einer Vorprüfung besteht und für Vorhaben, für die nach § 71 Abs. 3 Satz 2 eine Öffentlichkeitsbeteiligung durchzuführen ist. |
+| 62.2 | Der Antrag auf Zustimmung ist bei der obersten Bauaufsichtsbehörde einzureichen. Die oberste Bauaufsichtsbehörde prüft die Zulässigkeit des Vorhabens entsprechend § 64 Abs. 2 Satz 1 Nr. 1. Sie führt eine nach den Vorschriften über die Umweltverträglichkeitsprüfung erforderliche Öffentlichkeitsbeteiligung und bei Vorhaben nach § 71 Abs. 3 Satz 2 die Öffentlichkeitsbeteiligung nach § 71 Abs. 3 bis 6 durch. Sie entscheidet über Abweichungen von den nach Satz 2 zu prüfenden sowie von anderen Vorschriften, soweit sie nachbarschützend sind und die Nachbarschaft nicht zugestimmt hat; darüber hinaus bedarf die Zulässigkeit von Ausnahmen, Befreiungen und Abweichungen keiner bauaufsichtlichen Entscheidung. Die Gemeinde ist vor Erteilung der Zustimmung zu hören; § 36 Abs. 2 Satz 2 Halbsatz 1 des Baugesetzbuches gilt entsprechend. § 68 Abs. 1 und Abs. 2 Satz 1, § 69 Abs. 2 und die §§ 70 bis 75 finden Anwendung. |
+| 62.3 | Die Baudienststelle trägt unter den Voraussetzungen des Absatzes 1 Satz 1 die Verantwortung dafür, dass die Errichtung, die Änderung, die Nutzungsänderung und die Beseitigung baulicher Anlagen den öffentlich-rechtlichen Vorschriften entsprechen; die Verantwortung für die Unterhaltung baulicher Anlagen trägt die Baudienststelle nur, wenn und solange sie die oder der für die Anlage Verantwortliche ausschließlich ihr überträgt. Die Verantwortung der öffentlichen Bauherrschaft (§ 53) sowie der Unternehmen (§ 55) und die Befugnisse der unteren Bauaufsichtsbehörden bleiben unberührt. |
+| 62.4 | Nicht verfahrensfreie Vorhaben des Bundes, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, sind abweichend von den Absätzen 1 bis 3 der obersten Bauaufsichtsbehörde vor Baubeginn in geeigneter Weise zur Kenntnis zu bringen; dies gilt nicht, wenn die Gemeinde nicht widerspricht. Darüber hinaus wirken die Bauaufsichtsbehörden nicht mit. Besteht für ein Vorhaben nach Satz 1 eine Pflicht zur Durchführung einer Umweltverträglichkeitsprüfung oder einer Vorprüfung, bedarf es der Zustimmung der obersten Bauaufsichtsbehörde. Auf Fliegende Bauten, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, finden Satz 1 und § 77 Abs. 2 bis 10 keine Anwendung; sie bedürfen auch keiner Genehmigungsfreistellung oder Baugenehmigung. |
 
 ### § 63 — Genehmigungsfreistellung
 **type:** vereinfachtes_genehmigungsverfahren
@@ -789,7 +763,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 64.1 | Für Vorhaben nach § 63 Abs. 1 Satz 1, bei denen die Voraussetzungen nach § 63 Abs. 2 nicht vorliegen, wird ein vereinfachtes Baugenehmigungsverfahren durchgeführt. Satz 1 gilt nicht für Vorhaben nach § 63 Abs. 1 Satz 2 Nr. 2 und 3. Ein vereinfachtes Verfahren wird auch für nicht nach § 63 Abs. 3 baugenehmigungsfrei gestellte Vorhaben und Antennen, einschließlich Masten mit einer Höhe bis zu 50 Metern über der Geländeoberfläche durchgeführt. |
 | 64.2 | Im vereinfachten Baugenehmigungsverfahren werden geprüft: 1. die Zulässigkeit des Vorhabens nach den Vorschriften des Baugesetzbuchs und den sonstigen öffentlich-rechtlichen Vorschriften außerhalb des Bauordnungsrechts, ausgenommen die Anforderungen nach der Arbeitsstättenverordnung vom 12. August 2004 (BGBl. I S. 2179), zuletzt geändert durch Artikel 4 der Verordnung vom 19. Juli 2010 (BGBl. I S. 96), in der jeweils geltenden Fassung und die Anforderungen nach dem Gesetz zur Einsparung von Energie und zur Nutzung Erneuerbarer Energien zur Wärme- und Kälteerzeugung in Gebäuden vom 8. August 2020 (BGBl. I S. 1728), in der jeweils geltenden Fassung, und dem Gesetz zum Aufbau einer gebäudeintegrierten Ladeund Leitungsinfrastruktur für die Elektromobilität vom 18. März 2021 (BGBl I. S. 354), in der jeweils geltenden Fassung, 2. die Übereinstimmung des Vorhabens mit den Vorschriften über die Abstandsflächen (§§ 7, 8) und das barrierefreie Bauen (§ 50) sowie den Örtlichen Bauvorschriften (§ 85), ausgenommen Anforderungen einer aufgrund von § 85 Abs. 2 Nr. 2 erlassenen Örtlichen Bauvorschrift, 3. bei Werbeanlagen abweichend von Nummer 2 die Übereinstimmung des Vorhabens mit den Vorschriften der §§ 4, 7, 8, 12, 14 und 17 Abs. 2 sowie mit den Örtlichen Bauvorschriften (§ 85), 4. beantragte Abweichungen. § 67 bleibt unberührt. |
 | 64.3 | Über den Bauantrag ist innerhalb von zehn Wochen nach Eingang des vollständigen Antrags zu entscheiden; die Bauaufsichtsbehörde kann diese Frist aus wichtigem Grund um bis zu einem Monat verlängern. Ein wichtiger Grund liegt insbesondere vor, wenn eine Ausnahme, Befreiung oder Abweichung beantragt ist oder die Erteilung der Baugenehmigung der Entscheidung einer anderen Behörde oder Stelle bedarf oder eine Öffentlichkeitsbeteiligung nach § 71 Abs. 3 erforderlich ist. Wenn zur Beurteilung eines Vorhabens durch eine beteiligte Behörde oder Stelle noch zusätzliche Unterlagen oder Angaben erforderlich sind, wird die Frist bis zum Eingang der nachgeforderten Unterlagen oder Angaben unterbrochen. Die Frist wird im Übrigen auch durch einen nachgereichten Antrag auf Erteilung einer Ausnahme, Befreiung oder Abweichung unterbrochen. Die Genehmigung gilt als erteilt, wenn über den Bauantrag nicht innerhalb der Frist entschieden worden ist. Auf Verlangen der Bauherrin oder des Bauherrn hat die Bauaufsichtsbehörde die Genehmigung nach Satz 5 schriftlich zu bestätigen. Die Sätze 1 bis 6 gelten nicht, wenn die Frist für die Entscheidung einer anderen Behörde oder Stelle nach bundesrechtlichen Vorschriften mehr als zwei Monate beträgt oder über zwei Monate hinaus verlängert werden darf. |
-| 64.4 | Für Vorhaben, die in den Anwendungsbereich der Richtlinie (EU) 2018/2001 des Europäischen Parlaments und des Rates vom 11. Dezember 2018 zur Förderung der Nutzung von Energie aus erneuerbaren Quellen (ABl. L 328 vom 21.12.2018, S. 82, berichtigt durch L 311 vom 25.9.2020, S. 11; L 41 vom 22.2.2022, S. 37), zuletzt geändert durch die Richtlinie (EU) 2024/1711 des Europäischen Parlaments und des Rates vom 13. Juni 2024 (ABl. L 2024/1711 vom 26.6.2024, S. 1) fallen, wird ebenfalls ein vereinfachtes Verfahren durchgeführt; dies gilt auch für Sonderbauten. Für diese Verfahren gelten abweichend folgende Vorschriften: 1. die Frist nach § 70 Abs.1 Satz 1 beträgt 45 Tage, 2. über den Bauantrag ist innerhalb eines Jahres nach Vollständigkeit des Antrags zu entscheiden; die Bauaufsichtsbehörde kann diese Frist aus wichtigem Grund um bis zu drei Monate verlängern; die Genehmigung gilt als erteilt, wenn über den Bauantrag nicht innerhalb der Frist entschieden worden ist, 3. ab dem 21. November 2025 ist das Genehmigungsverfahren elektronisch durchzuführen. § 65 Baugenehmigungsverfahren Bei baugenehmigungsbedürftigen Anlagen, die nicht unter § 64 fallen, werden geprüft: 1. die Zulässigkeit des Vorhabens nach den Vorschriften des Baugesetzbuchs, 2. die Zulässigkeit des Vorhabens nach den Vorschriften des Bauordnungsrechts, ausgenommen a) Anforderungen aufgrund von §§ 12a bis 12c, b) Anforderungen einer aufgrund von § 85 Abs. 2 Nr. 2 erlassenen Örtlichen Bauvorschrift, c) Anforderungen an den Wärme-, Schall- und Erschütterungsschutz, 3. die Zulässigkeit nach den sonstigen öffentlich-rechtlichen Vorschriften, ausgenommen die Anforderungen nach dem Gesetz zur Einsparung von Energie und zur Nutzung erneuerbarer Energien zur Wärme- und Kälteerzeugung in Gebäuden und dem Gesetz zum Aufbau einer gebäudeintegrierten Lade- und Leitungsinfrastruktur für die Elektro2130-1 40 mobilität, 4. beantragte Abweichungen. § 67 bleibt unberührt. |
+| 64.4 | Für Vorhaben, die in den Anwendungsbereich der Richtlinie (EU) 2018/2001 des Europäischen Parlaments und des Rates vom 11. Dezember 2018 zur Förderung der Nutzung von Energie aus erneuerbaren Quellen (ABl. L 328 vom 21.12.2018, S. 82, berichtigt durch L 311 vom 25.9.2020, S. 11; L 41 vom 22.2.2022, S. 37), zuletzt geändert durch die Richtlinie (EU) 2024/1711 des Europäischen Parlaments und des Rates vom 13. Juni 2024 (ABl. L 2024/1711 vom 26.6.2024, S. 1) fallen, wird ebenfalls ein vereinfachtes Verfahren durchgeführt; dies gilt auch für Sonderbauten. Für diese Verfahren gelten abweichend folgende Vorschriften: 1. die Frist nach § 70 Abs.1 Satz 1 beträgt 45 Tage, 2. über den Bauantrag ist innerhalb eines Jahres nach Vollständigkeit des Antrags zu entscheiden; die Bauaufsichtsbehörde kann diese Frist aus wichtigem Grund um bis zu drei Monate verlängern; die Genehmigung gilt als erteilt, wenn über den Bauantrag nicht innerhalb der Frist entschieden worden ist, 3. ab dem 21. November 2025 ist das Genehmigungsverfahren elektronisch durchzuführen. |
+
+### § 65 — zu prüfen sind, als für die bisherige Nu
+**type:** beteiligtenpflicht
+**source_paragraph:** §65 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 65.1 | Bei baugenehmigungsbedürftigen Anlagen, die nicht unter § 64 fallen, werden geprüft: 1. die Zulässigkeit des Vorhabens nach den Vorschriften des Baugesetzbuchs, 2. die Zulässigkeit des Vorhabens nach den Vorschriften des Bauordnungsrechts, ausgenommen a) Anforderungen aufgrund von §§ 12a bis 12c, b) Anforderungen einer aufgrund von § 85 Abs. 2 Nr. 2 erlassenen Örtlichen Bauvorschrift, c) Anforderungen an den Wärme-, Schall- und Erschütterungsschutz, 3. die Zulässigkeit nach den sonstigen öffentlich-rechtlichen Vorschriften, ausgenommen die Anforderungen nach dem Gesetz zur Einsparung von Energie und zur Nutzung erneuerbarer Energien zur Wärme- und Kälteerzeugung in Gebäuden und dem Gesetz zum Aufbau einer gebäudeintegrierten Lade- und Leitungsinfrastruktur für die Elektro2130-1 40 mobilität, 4. beantragte Abweichungen. § 67 bleibt unberührt. |
 
 ### § 66 — Bauvorlageberechtigung
 **type:** bauantrag
@@ -904,7 +886,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 75.1 | Ist das Gesamtvorhaben grundsätzlich genehmigungsfähig, kann vorab für die Baugrube und für einzelne Bauteile oder Bauabschnitte auf in Textform gestellten Antrag eine Teilbaugenehmigung erteilt werden. |
 | 75.2 | Die §§ 66 bis 74 gelten entsprechend. |
-| 75.3 | In der Baugenehmigung können, ungeachtet der Teilbaugenehmigung, für die bereits begonnenen oder ausgeführten Teile des Bauvorhabens zusätzliche Anforderungen gestellt werden, wenn sich bei der weiteren Prüfung der Bauvorlagen ergibt, dass diese Anforderungen wegen der öffentlichen Sicherheit oder Ordnung erforderlich sind. § 76 Vorbescheid Auf in Textform gestellten Antrag der Bauherrin oder des Bauherrn ist zu einzelnen Fragen ihres oder seines Bauvorhabens ein Vorbescheid zu erteilen. Der Vorbescheid gilt drei Jahre. Die Frist kann auf in Textform gestellten Antrag jeweils bis zu einem Jahr verlängert werden. Für Fragen zu Vorhaben nach den §§ 61 und 63 gilt § 64 Abs. 2 entsprechend; für Fragen zu Vorhaben nach den §§ 64 und 65 gilt § 65 entsprechend; daneben gelten die §§ 67 bis 72 und § 74 Abs. 2 Satz 2 entsprechend. |
+| 75.3 | In der Baugenehmigung können, ungeachtet der Teilbaugenehmigung, für die bereits begonnenen oder ausgeführten Teile des Bauvorhabens zusätzliche Anforderungen gestellt werden, wenn sich bei der weiteren Prüfung der Bauvorlagen ergibt, dass diese Anforderungen wegen der öffentlichen Sicherheit oder Ordnung erforderlich sind. |
+
+### § 76 — Vorbescheid
+**type:** besonderes_verfahren
+**source_paragraph:** §76 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 76.1 | Auf in Textform gestellten Antrag der Bauherrin oder des Bauherrn ist zu einzelnen Fragen ihres oder seines Bauvorhabens ein Vorbescheid zu erteilen. Der Vorbescheid gilt drei Jahre. Die Frist kann auf in Textform gestellten Antrag jeweils bis zu einem Jahr verlängert werden. Für Fragen zu Vorhaben nach den §§ 61 und 63 gilt § 64 Abs. 2 entsprechend; für Fragen zu Vorhaben nach den §§ 64 und 65 gilt § 65 entsprechend; daneben gelten die §§ 67 bis 72 und § 74 Abs. 2 Satz 2 entsprechend. |
 
 ### § 76a — Typengenehmigung
 **type:** typengenehmigung
@@ -961,7 +951,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 79.3 | Ob und in welchem Umfang eine Besichtigung nach Absatz 1 durchgeführt wird, bleibt dem Ermessen der Bauaufsichtsbehörde überlassen. Soweit Bescheinigungen und Erklärungen nach Absatz 2 Satz 3 vorliegen, findet eine Bauzustandsbesichtigung nicht statt. Über das Ergebnis der Besichtigung ist auf Verlangen der Bauherrin oder des Bauherrn eine Bescheinigung auszustellen. |
 | 79.4 | Mit dem Innenausbau darf erst einen Tag nach dem in der Anzeige nach Absatz 1 genannten Zeitpunkt der Fertigstellung des Rohbaus begonnen werden, soweit die Bauaufsichtsbehörde nicht einem früheren Beginn des Innenausbaus zugestimmt hat. |
 | 79.5 | Die Bauaufsichtsbehörde kann verlangen, dass die Anlagen erst benutzt werden, wenn sie von ihr, einer oder einem von ihr Beauftragten oder einer oder einem Prüfsachverständigen geprüft worden sind. |
-| 79.6 | Eine bauliche Anlage darf erst benutzt werden, wenn sie selbst, Zufahrtswege, Wasserversorgungs- und Abwasserbeseitigungsanlagen sowie Gemeinschaftsanlagen ordnungsgemäß fertiggestellt und sicher benutzbar sind, frühestens jedoch eine Woche nach dem in der Anzeige nach Absatz 1 genannten Zeitpunkt der Fertigstellung. Die Bauaufsichtsbehörde soll gestatten, dass die bauliche Anlage ganz oder teilweise schon früher benutzt wird, wenn wegen der öffentlichen Sicherheit und Ordnung Bedenken nicht bestehen und die Bescheinigung der bevollmächtigten Bezirksschornsteinfegerin oder des bevollmächtigten Bezirksschornsteinfegers nach § 41 Abs. 6 vorliegt. Abschnitt 5 Bauaufsichtliche Maßnahmen § 80 Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 22 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde ihre Verwendung untersagen und die Kennzeichnung entwerten oder beseitigen lassen. |
+| 79.6 | Eine bauliche Anlage darf erst benutzt werden, wenn sie selbst, Zufahrtswege, Wasserversorgungs- und Abwasserbeseitigungsanlagen sowie Gemeinschaftsanlagen ordnungsgemäß fertiggestellt und sicher benutzbar sind, frühestens jedoch eine Woche nach dem in der Anzeige nach Absatz 1 genannten Zeitpunkt der Fertigstellung. Die Bauaufsichtsbehörde soll gestatten, dass die bauliche Anlage ganz oder teilweise schon früher benutzt wird, wenn wegen der öffentlichen Sicherheit und Ordnung Bedenken nicht bestehen und die Bescheinigung der bevollmächtigten Bezirksschornsteinfegerin oder des bevollmächtigten Bezirksschornsteinfegers nach § 41 Abs. 6 vorliegt. Abschnitt 5 Bauaufsichtliche Maßnahmen |
+
+### § 80 — Verbot unrechtmäßig gekennzeichneter Bau
+**type:** sanktion
+**source_paragraph:** §80 LBO_SL
+
+| Nr. | Regeltext (LBO SL-Wortlaut) |
+|---|---|
+| 80.1 | Sind Bauprodukte entgegen § 22 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde ihre Verwendung untersagen und die Kennzeichnung entwerten oder beseitigen lassen. |
 
 ### § 81 — Einstellung von Arbeiten
 **type:** bauueberwachung

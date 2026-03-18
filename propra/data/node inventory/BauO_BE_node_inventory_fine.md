@@ -10,8 +10,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Dieses Gesetz gilt für bauliche Anlagen und Bauprodukte. |
 | 1.2 | Es gilt auch für Grundstücke sowie für sonstige Anlagen und Ein. |
-| 2.1 | Dieses Gesetz gilt nicht für - Seite 8 von 88 -. |
-| 2.2 | 1. Anlagen des öffentlichen Verkehrs einschließlich Zubehör, Nebenanlage |
+| 2.1 | Dieses Gesetz gilt nicht für. |
 
 ---
 
@@ -327,7 +326,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | Nr. | Regeltext (BauO_BE-Wortlaut) |
 |---|---|
 | 1.1 | Bauprodukte bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 86a Absatz 2, de. |
-| 2.1 | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). - Seite 23 von 88 -. |
+| 2.1 | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). |
 | 3.1 | Die Übereinstimmungserklärung hat die Herstellerin oder der Hersteller durch Kennzeichnung der Bauprodukte mit dem Übere. |
 | 4.1 | Das Ü-Zeichen ist auf dem Bauprodukt, auf einem Beipackzettel oder auf seiner Verpackung oder, wenn dies Schwierigkeiten. |
 | 5.1 | Ü-Zeichen aus anderen Ländern und aus anderen Staaten gelten auch im Land Berlin. |
@@ -489,8 +488,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 2.1 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,. |
 | 3.1 | Die Absätze 1 und 2 gelten nicht für. |
 | 3.2 | 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit nicht mehr als 50 m Br |
-| 4.1 | Abweichend von den Absätzen 1 und 2 sind - Seite 32 von 88 -. |
-| 4.2 | 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen |
+| 4.1 | Abweichend von den Absätzen 1 und 2 sind. |
 | 5.1 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln und Oberl. |
 | 6.1 | Dächer von traufseitig aneinander gebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung vo. |
 | 7.1 | Dächer von Anbauten, die an Außenwände mit Öffnungen oder ohne Feuerwiderstandsfähigkeit anschließen, müssen innerhalb e. |
@@ -632,7 +630,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 4.1 | Lüftungsanlagen dürfen nicht in Abgasanlagen eingeführt werden; die gemeinsame Nutzung von Lüftungsleitungen zur Lüftung. |
 | 5.1 | Die Absätze 2 und 3 gelten nicht. |
 | 5.2 | 1. für Gebäude der Gebäudeklassen 1 und 2 |
-| 5.3 | 2. innerhalb von Wohnungen, - Seite 41 von 8 |
+| 5.3 | 2. innerhalb von Wohnungen |
 | 6.1 | Für raumlufttechnische Anlagen und Warmluftheizungen gelten die Absätze 1 bis 5 entsprechend. |
 
 ---
@@ -865,7 +863,8 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_BE-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 51 von 88 -. |
+| 1.1 | Vorrang anderer Gestattungsverfahren Keiner Baugenehmigung, Abweichung, Genehmigungsfreistellung, Zustimmung und Bauüberwachung nach diesem Gesetz bedürfen. |
+| 1.2 | 1. nach anderen Rechtsvorschriften zulassungsbedürftige Anlagen in oder an oberirdischen Gewässern u |
 
 ---
 
@@ -911,7 +910,8 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_BE-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 58 von 88 Außer bei Sonderbauten werden geprüft. |
+| 1.1 | Außer bei Sonderbauten werden geprüft. |
+| 1.2 | 1. die Übereinstimmung mit den Vorschriften über die Zulässigkei |
 
 ---
 
@@ -1203,7 +1203,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_BE-Wortlaut) |
 |---|---|
-| 1.1 | Verbot unrechtmäßig gekennzeichneter Bauprodukte 20.04.2018. |
+| 1.1 | Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 21 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
 
 ---
 
@@ -1331,7 +1331,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 3.1 | Die Übermittlung der personenbezogenen Daten an die am Verfahren beteiligten Behörden, öffentlichen und privaten Stellen. |
 | 4.1 | Die für das Bauwesen zuständige Senatsverwaltung erlässt durch Rechtsverordnung nähere Bestimmungen über Art, Umfang und. |
 | 5.1 | Im Übrigen gelten die Bestimmungen des Berliner Datenschutzgesetzes. |
-| 5.2 | Fußnoten [1]) - Seite 85 von 88 Absatz 4 in Kraft m. |
+| 5.2 | Fußnoten [1]). |
 
 ---
 

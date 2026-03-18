@@ -99,8 +99,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 9.1 | In den Abstandsflächen eines Gebäudes und zu diesem ohne eigene Abstandsfläche sind zulässig:. |
 | 9.2 | 1. erdgeschossige Garagen |
 | 10.1 | Ohne Abstandsfläche jeweils unmittelbar an oder mit einem Mindestabstand von 1 m zu den Nachbargrenzen sind je Baugrunds. |
-| 11.1 | Die Abs. 1 bis 10 gelten nicht, soweit - Seite 18 von 97 -. |
-| 11.2 | 1. Festsetzungen eines Bebauungsplans oder einer anderen baup |
+| 11.1 | Die Abs. 1 bis 10 gelten nicht, soweit. |
 | 12.1 | Bei rechtmäßig errichteten Gebäuden, die die erforderliche Tiefe der Abstandsfläche gegenüber Nachbargrenzen nicht einha. |
 | 13.1 | Die Regelungen des Hessischen Nachbarrechtsgesetzes vom 24. September 1962 (GVBl. |
 | 13.2 | I S. |
@@ -672,7 +671,6 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | Nr. | Regeltext (BauO_HE-Wortlaut) |
 |---|---|
 | 1.1 | Fensterlose Bäder und Toiletten sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. |
-| 1.2 | - Seite 45 von 97 1 2. |
 | 2.1 | Jede Wohnung muss Einrichtungen zur Erfassung des Wasserverbrauchs haben. |
 | 2.2 | Dies gilt nicht bei Nutzungsänderungen, wenn d. |
 | 3.1 | In Gaststätten mit Alkoholausschank im Sinne des § 3 Abs. 1 des Hessischen Gaststättengesetzes vom 28. März 2012 (GVBl. |
@@ -849,7 +847,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | Nr. | Regeltext (BauO_HE-Wortlaut) |
 |---|---|
 | 1.1 | Bauaufsichtsbehörden sind. |
-| 1.2 | 1. als untere Bauaufsichtsbehörde - Seite 54 von 97 - a) der Gemeindevorstand in den kreisfrei |
+| 1.2 | 1. als untere Bauaufsichtsbehörde |
 | 2.1 | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben mit den erforderlichen Vorrichtungen auszustatten und ange. |
 
 ---
@@ -902,7 +900,8 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_HE-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 56 von 97 Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von. |
+| 1.1 | Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von. |
+| 1.2 | 1. Anlagen im Sinne des § |
 
 ---
 
@@ -1006,7 +1005,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_HE-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen, - Seite 63 von 97 - 1. |
+| 1.1 | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen,. |
 | 2.1 | Die Bauaufsichtsbehörde hat nach Eingang des Bauantrags binnen eines Monats zu prüfen, ob der Antrag und die Bauvorlagen. |
 | 3.1 | Ist für das Vorhaben eine Umweltverträglichkeitsprüfung erforderlich, sind im Genehmigungsverfahren die Vorschriften des. |
 | 4.1 | Ausgenommen bei Sonderbauten ist über den Bauantrag innerhalb von drei Monaten nach Eingang des vollständigen Antrages z. |
@@ -1104,7 +1103,6 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 2.1 | Die Typengenehmigung gilt fünf Jahre. |
 | 2.2 | Die Frist kann auf Antrag jeweils bis zu fünf Jahren verlängert werden; § 74 Abs. |
 | 3.1 | Typengenehmigungen anderer Bundesländer gelten auch im Land Hessen. |
-| 3.2 | - Seite 69 von 97 -. |
 | 4.1 | Eine Typengenehmigung entbindet nicht von der Verpflichtung, ein bauaufsichtliches Verfahren durchzuführen. |
 | 4.2 | Die in der T. |
 | 5.1 | Die §§ 67, 69 Abs. 2 und 5 Satz 1 und 2, § 70 Abs. 1 mit Ausnahme der Beteiligung der Gemeinde,. |
@@ -1165,7 +1163,9 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_HE-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 72 von 97 -. |
+| 1.1 | Baueinstellung Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet, geändert, abgebrochen oder beseitigt, kann die Bauaufsichtsbehörde die Einstellung der Arbeiten anordnen. |
+| 1.2 | Das gilt insbesondere, wenn. |
+| 1.3 | 1. die Ausführung eines Vorhabens entgegen den Vorschriften des § 75 Abs. 1 bis 3 begonnen wurde |
 
 ---
 

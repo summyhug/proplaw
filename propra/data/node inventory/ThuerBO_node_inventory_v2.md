@@ -207,7 +207,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (ThuerBO-Wortlaut) |
 |---|---|
 | 20.1 | Ein Verwendbarkeitsnachweis nach den §§ 21 bis 23 ist für ein Bauprodukt erforderlich, wenn 1. es keine Technische Baube |
-| 20.2 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das - Seite 21 von 89 - 1. von einer allgemein an |
+| 20.2 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das |
 | 20.3 | Die Technischen Baubestimmungen nach § 96 enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwendb |
 
 ### § 21 — Allgemeine bauaufsichtliche Zulassung
@@ -410,7 +410,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 38.2 | Von jeder Stelle eines Aufenthaltsraumes und eines Kellergeschosses muss mindestens ein Ausgang in einen notwendigen Tre |
 | 38.3 | Jeder notwendige Treppenraum muss einen unmittelbaren Ausgang ins Freie haben. Sofern der Ausgang eines notwendigen Trep |
 | 38.4 | Die Wände notwendiger Treppenräume müssen als raumabschließende Bauteile in Gebäuden 1. der Gebäudeklasse 5 die Bauart v |
-| 38.5 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen - Seite 35 von 89 - 1. Bekleidungen, Putze, Dämms |
+| 38.5 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen |
 | 38.6 | In notwendigen Treppenräumen müssen Öffnungen 1. zu Kellergeschossen, zu nicht ausgebauten Dachräumen, Werkstätten, Läde |
 | 38.7 | Notwendige Treppenräume müssen zu beleuchten sein. Notwendige Treppenräume ohne Fenster müssen in Gebäuden mit einer Höh |
 | 38.8 | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. Sie müsse |
@@ -666,7 +666,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 63.1 | Verfahrensfrei sind 1. folgende Gebäude: a) 2 eingeschossige Gebäude mit einer Grundfläche bis zu 10 m , außer im Außenb |
 | 63.2 | Verfahrensfrei ist die Änderung der Nutzung von Anlagen, wenn 1. für die neue Nutzung keine anderen öffentlich-rechtlich |
-| 63.3 | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, - Seite 55 von 89 - 2. freistehenden Gebäuden der Gebäu |
+| 63.3 | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, |
 | 63.4 | Verfahrensfrei sind Instandhaltungsarbeiten. |
 
 ### § 64 — Genehmigungsfreistellung
@@ -949,7 +949,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (ThuerBO-Wortlaut) |
 |---|---|
-| 91.1 | - Seite 78 von 89 Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind |
+| 91.1 | Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind 1. die obere Bauaufsichtsbehörde |
 
 ### § 92 — Aufgaben und Befugnisse der Marktüberwac
 **type:** schlussvorschrift

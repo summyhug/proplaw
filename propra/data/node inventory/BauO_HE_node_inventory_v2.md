@@ -75,7 +75,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 6.8 | Für Anlagen, von denen Wirkungen wie von Gebäuden ausgehen, gelten Abs. 1 bis 7 entsprechend. Keine Wirkungen wie von Ge |
 | 6.9 | In den Abstandsflächen eines Gebäudes und zu diesem ohne eigene Abstandsfläche sind zulässig: 1. erdgeschossige Garagen |
 | 6.10 | Ohne Abstandsfläche jeweils unmittelbar an oder mit einem Mindestabstand von 1 m zu den Nachbargrenzen sind je Baugrunds |
-| 6.11 | Die Abs. 1 bis 10 gelten nicht, soweit - Seite 18 von 97 - 1. Festsetzungen eines Bebauungsplans oder einer anderen baup |
+| 6.11 | Die Abs. 1 bis 10 gelten nicht, soweit |
 | 6.12 | Bei rechtmäßig errichteten Gebäuden, die die erforderliche Tiefe der Abstandsfläche gegenüber Nachbargrenzen nicht einha |
 | 6.13 | Die Regelungen des Hessischen Nachbarrechtsgesetzes vom 24. September 1962 (GVBl. I S. 417), zuletzt geändert durch Gese |
 
@@ -510,7 +510,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO HE-Wortlaut) |
 |---|---|
-| 46.1 | Fensterlose Bäder und Toiletten sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. - Seite 45 von 97 1 2 |
+| 46.1 | Fensterlose Bäder und Toiletten sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. |
 | 46.2 | Jede Wohnung muss Einrichtungen zur Erfassung des Wasserverbrauchs haben. Dies gilt nicht bei Nutzungsänderungen, wenn d |
 | 46.3 | In Gaststätten mit Alkoholausschank im Sinne des § 3 Abs. 1 des Hessischen Gaststättengesetzes vom 28. März 2012 (GVBl. |
 
@@ -646,7 +646,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO HE-Wortlaut) |
 |---|---|
-| 60.1 | Bauaufsichtsbehörden sind 1. als untere Bauaufsichtsbehörde - Seite 54 von 97 - a) der Gemeindevorstand in den kreisfrei |
+| 60.1 | Bauaufsichtsbehörden sind 1. als untere Bauaufsichtsbehörde |
 | 60.2 | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben mit den erforderlichen Vorrichtungen auszustatten und ange |
 
 ### § 61 — Aufgaben und Befugnisse der Bauaufsichts
@@ -690,7 +690,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO HE-Wortlaut) |
 |---|---|
-| 63a.1 | - Seite 56 von 97 Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von |
+| 63a.1 | Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von 1. Anlagen im Sinne des § |
 
 ### § 64 — Genehmigungsfreistellung
 **type:** genehmigungspflicht
@@ -768,7 +768,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO HE-Wortlaut) |
 |---|---|
-| 70.1 | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen, - Seite 63 von 97 - 1. |
+| 70.1 | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen, |
 | 70.2 | Die Bauaufsichtsbehörde hat nach Eingang des Bauantrags binnen eines Monats zu prüfen, ob der Antrag und die Bauvorlagen |
 | 70.3 | Ist für das Vorhaben eine Umweltverträglichkeitsprüfung erforderlich, sind im Genehmigungsverfahren die Vorschriften des |
 | 70.4 | Ausgenommen bei Sonderbauten ist über den Bauantrag innerhalb von drei Monaten nach Eingang des vollständigen Antrages z |
@@ -848,7 +848,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 77a.1 | Für bauliche Anlagen, die in derselben Ausführung an mehreren Stellen errichtet werden sollen, wird auf Antrag durch das |
 | 77a.2 | Die Typengenehmigung gilt fünf Jahre. Die Frist kann auf Antrag jeweils bis zu fünf Jahren verlängert werden; § 74 Abs. |
-| 77a.3 | Typengenehmigungen anderer Bundesländer gelten auch im Land Hessen. - Seite 69 von 97 - |
+| 77a.3 | Typengenehmigungen anderer Bundesländer gelten auch im Land Hessen. |
 | 77a.4 | Eine Typengenehmigung entbindet nicht von der Verpflichtung, ein bauaufsichtliches Verfahren durchzuführen. Die in der T |
 | 77a.5 | Die §§ 67, 69 Abs. 2 und 5 Satz 1 und 2, § 70 Abs. 1 mit Ausnahme der Beteiligung der Gemeinde, |
 
@@ -897,7 +897,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO HE-Wortlaut) |
 |---|---|
-| 81.1 | - Seite 72 von 97 - |
+| 81.1 | Baueinstellung Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet, geändert, abgebrochen oder beseitigt, kann die Bauaufsichtsbehörde die Einstellung der Arbeiten anordnen. Das gilt insbesondere, wenn 1. die Ausführung eines Vorhabens entgegen den Vorschriften des § 75 Abs. 1 bis 3 begonnen wurde, |
 
 ### § 82 — Nutzungsverbot, Beseitigungsanordnung
 **type:** baubeginn

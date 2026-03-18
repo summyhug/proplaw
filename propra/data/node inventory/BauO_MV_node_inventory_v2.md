@@ -21,7 +21,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 2.1 | Bauliche Anlagen sind mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlagen; eine Verbindung mit dem Boden |
 | 2.2 | Gebäude sind selbstständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet |
-| 2.3 | Gebäude werden in folgende Gebäudeklassen eingeteilt: - Seite 9 von 82 - 1. Gebäudeklasse 1: a) freistehende Gebäude mit |
+| 2.3 | Gebäude werden in folgende Gebäudeklassen eingeteilt: |
 | 2.4 | Sonderbauten sind Anlagen und Räume besonderer Art oder Nutzung, die einen der nachfolgenden Tatbestände erfüllen: 1. Ho |
 | 2.5 | Aufenthaltsräume sind Räume, die zum nicht nur vorübergehenden Aufenthalt von Menschen bestimmt oder geeignet sind. |
 | 2.6 | Geschosse sind oberirdische Geschosse, wenn ihre Deckenoberkanten im Mittel mehr als 1,40 m über die Geländeoberfläche h |
@@ -86,7 +86,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO MV-Wortlaut) |
 |---|---|
-| 8.1 | - Seite 1 von 82 Titel Gültig ab |
+| 8.1 | Nicht überbaute Flächen der bebauten Grundstücke, Kinderspielplätze Teil 3 - Bauliche Anlagen 31.10.2015 |
 
 ### § 9 — Gestaltung
 **type:** gestaltungsanforderung
@@ -364,7 +364,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 |---|---|
 | 32.1 | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst |
 | 32.2 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3, |
-| 32.3 | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 82 - 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 32.3 | Die Absätze 1 und 2 gelten nicht für |
 | 32.4 | Abweichend von den Absätzen 1 und 2 sind 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach |
 | 32.5 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich |
 | 32.6 | Dächer von traufseitig aneinander gebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung vo |
@@ -407,7 +407,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 35.3 | Jeder notwendige Treppenraum muss einen unmittelbaren Ausgang ins Freie haben. Sofern der Ausgang eines notwendigen Trep |
 | 35.4 | Die Wände notwendiger Treppenräume müssen als raumabschließende Bauteile 1. in Gebäuden der Gebäudeklasse 5 die Bauart v |
 | 35.5 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen 1. Bekleidungen, Putze, Dämmstoffe, Unterdecken u |
-| 35.6 | In notwendigen Treppenräumen müssen Öffnungen - Seite 34 von 82 - 1. zu Kellergeschossen, zu nicht ausgebauten Dachräume |
+| 35.6 | In notwendigen Treppenräumen müssen Öffnungen |
 | 35.7 | Notwendige Treppenräume müssen zu beleuchten sein. Notwendige Treppenräume ohne Fenster müssen in Gebäuden mit einer Höh |
 | 35.8 | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. Sie müsse |
 
@@ -628,7 +628,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (BauO MV-Wortlaut) |
 |---|---|
-| 57.1 | Bauaufsichtsbehörden sind - Seite 46 von 82 - 1. die Landräte und die Oberbürgermeister der kreisfreien und großen kreis |
+| 57.1 | Bauaufsichtsbehörden sind |
 | 57.2 | Für den Vollzug dieses Gesetzes sowie anderer öffentlich-rechtlicher Vorschriften für die Errichtung, Änderung, Nutzungs |
 | 57.3 | Die unteren Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen |
 

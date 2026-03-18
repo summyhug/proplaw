@@ -34,7 +34,7 @@
 | 6.8 | §6 Abstandsflächen und Abstände | Abs. 8 | abstandsflaeche | Für Anlagen, von denen Wirkungen wie von Gebäuden ausgehen, gelten Abs. 1 bis 7 entsprechend. Keine Wirkungen wie von Ge |
 | 6.9 | §6 Abstandsflächen und Abstände | Abs. 9 | abstandsflaeche | In den Abstandsflächen eines Gebäudes und zu diesem ohne eigene Abstandsfläche sind zulässig: 1. erdgeschossige Garagen  |
 | 6.10 | §6 Abstandsflächen und Abstände | Abs. 10 | abstandsflaeche | Ohne Abstandsfläche jeweils unmittelbar an oder mit einem Mindestabstand von 1 m zu den Nachbargrenzen sind je Baugrunds |
-| 6.11 | §6 Abstandsflächen und Abstände | Abs. 11 | abstandsflaeche | Die Abs. 1 bis 10 gelten nicht, soweit - Seite 18 von 97 - 1. Festsetzungen eines Bebauungsplans oder einer anderen baup |
+| 6.11 | §6 Abstandsflächen und Abstände | Abs. 11 | abstandsflaeche | Die Abs. 1 bis 10 gelten nicht, soweit |
 | 6.12 | §6 Abstandsflächen und Abstände | Abs. 12 | abstandsflaeche | Bei rechtmäßig errichteten Gebäuden, die die erforderliche Tiefe der Abstandsfläche gegenüber Nachbargrenzen nicht einha |
 | 6.13 | §6 Abstandsflächen und Abstände | Abs. 13 | abstandsflaeche | Die Regelungen des Hessischen Nachbarrechtsgesetzes vom 24. September 1962 (GVBl. I S. 417), zuletzt geändert durch Gese |
 | 7.1 | §7 Grundstücksteilung | Abs. 1 | grundstuecksteilung | Die Teilung eines Grundstücks, das bebaut oder dessen Bebauung genehmigt ist oder das aufgrund einer Genehmigungsfreiste |
@@ -190,7 +190,7 @@
 | 45.3 | §45 Feuerungsanlagen, Wärmeerzeugung, Brenns | Abs. 3 | technische_anlage | Abgase von Feuerstätten sind durch Abgasleitungen, Schornsteine und Verbindungsstücke (Abgasanlagen) so abzuführen, dass |
 | 45.4 | §45 Feuerungsanlagen, Wärmeerzeugung, Brenns | Abs. 4 | technische_anlage | Behälter und Rohrleitungen für brennbare Gase und Flüssigkeiten müssen betriebssicher und brandsicher sein. Diese Behält |
 | 45.5 | §45 Feuerungsanlagen, Wärmeerzeugung, Brenns | Abs. 5 | technische_anlage | Für die Aufstellung von ortsfesten Verbrennungsmotoren, Blockheizkraftwerken, Brennstoffzellen und Verdichtern sowie die |
-| 46.1 | §46 Sanitäre Anlagen, Toilettenanlagen in Ga | Abs. 1 | technische_anlage | Fensterlose Bäder und Toiletten sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. - Seite 45 von 97 1 2 |
+| 46.1 | §46 Sanitäre Anlagen, Toilettenanlagen in Ga | Abs. 1 | technische_anlage | Fensterlose Bäder und Toiletten sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. |
 | 46.2 | §46 Sanitäre Anlagen, Toilettenanlagen in Ga | Abs. 2 | technische_anlage | Jede Wohnung muss Einrichtungen zur Erfassung des Wasserverbrauchs haben. Dies gilt nicht bei Nutzungsänderungen, wenn d |
 | 46.3 | §46 Sanitäre Anlagen, Toilettenanlagen in Ga | Abs. 3 | technische_anlage | In Gaststätten mit Alkoholausschank im Sinne des § 3 Abs. 1 des Hessischen Gaststättengesetzes vom 28. März 2012 (GVBl.  |
 | 47.1 | §47 Kleinkläranlagen, Abwasserbehälter 07.07 | — | aufenthaltsraum | Kleinkläranlagen, Abwasserbehälter 1 2 Kleinkläranlagen und Abwasserbehälter müssen wasserdicht und ausreichend groß sein. Sie müssen eine dichte und sichere Abdeckung sowie Reinigungs- und Entleerungsöffnungen haben. Diese Öffnungen dürfen nur vom Freien aus zugänglich sein. Die Anlagen sind so zu  |
@@ -229,7 +229,7 @@
 | 58.3 | §58 Seite 53 von 97 Unternehmen | Abs. 3 | behoerdenstruktur | Unternehmen, Fachunternehmen und Fachleute haben auf Verlangen der Bauaufsichtsbehörde für Bauarbeiten, bei denen die Si |
 | 59.1 | §59 Bauleitung | Abs. 1 | genehmigungspflicht | Die mit der Bauleitung beauftragte Person hat darüber zu wachen, dass die Baumaßnahme den öffentlich-rechtlichen Anforde |
 | 59.2 | §59 Bauleitung | Abs. 2 | genehmigungspflicht | Die Bauleitung darf nur übernehmen, wer über die erforderliche Sachkunde und Erfahrung verfügt; für die Mindestqualifika |
-| 60.1 | §60 Zuständigkeiten, personelle Besetzung | Abs. 1 | genehmigungspflicht | Bauaufsichtsbehörden sind 1. als untere Bauaufsichtsbehörde - Seite 54 von 97 - a) der Gemeindevorstand in den kreisfrei |
+| 60.1 | §60 Zuständigkeiten, personelle Besetzung | Abs. 1 | genehmigungspflicht | Bauaufsichtsbehörden sind 1. als untere Bauaufsichtsbehörde |
 | 60.2 | §60 Zuständigkeiten, personelle Besetzung | Abs. 2 | genehmigungspflicht | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben mit den erforderlichen Vorrichtungen auszustatten und ange |
 | 61.1 | §61 Aufgaben und Befugnisse der Bauaufsichts | Abs. 1 | verfahrensfreies_vorhaben | Die Bauaufsicht ist Aufgabe des Staates. |
 | 61.2 | §61 Aufgaben und Befugnisse der Bauaufsichts | Abs. 2 | verfahrensfreies_vorhaben | Die Bauaufsichtsbehörden haben bei der Errichtung, Änderung, Nutzungsänderung und Beseitigung sowie bei der Nutzung und  |
@@ -245,8 +245,7 @@
 | 62.4 | §62 Grundsatz | Abs. 4 | kenntnisgabeverfahren | Das Schriftformerfordernis entfällt in einem von der Bauaufsichtsbehörde zur Verfügung gestellten elektronischen Verfahr |
 | 62.5 | §62 Grundsatz | Abs. 5 | kenntnisgabeverfahren | Auch soweit kein Schriftformerfordernis besteht, muss das jeweilige Verfahren eine sichere und nachvollziehbare Verknüpf |
 | 63.1 | §63 Baugenehmigungsfreie Bauvorhaben 07.07.2 | — | vereinfachtes_genehmigungsverfahren | oder § 63a baugenehmigungsfreier Bauvorhaben ist an der Baustelle ein Schild dauerhaft anzubringen, das mindestens die Nutzungsart des Gebäudes, die Zahl seiner Geschosse und die Namen und Anschriften der am Bau Beteiligten (§§ 56 bis 59) enthalten 2 3 muss. Das Schild muss vom öffentlichen Verkehrs |
-| 63a.1 | §63a Abbruch, Beseitigung | — | vereinfachtes_genehmigungsverfahren | - Seite 56 von 97 Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von
-1. Anlagen im Sinne des § |
+| 63a.1 | §63a Abbruch, Beseitigung | — | vereinfachtes_genehmigungsverfahren | Keiner Baugenehmigung bedarf die vollständige oder teilweise Beseitigung von 1. Anlagen im Sinne des § |
 | 64.1 | §64 Genehmigungsfreistellung | Abs. 1 | genehmigungspflicht | Keiner Baugenehmigung bedarf über § 63 hinaus die Errichtung, Änderung oder Nutzungsänderung von baulichen Anlagen, die  |
 | 64.2 | §64 Genehmigungsfreistellung | Abs. 2 | genehmigungspflicht | Die Genehmigungsfreistellung nach Abs. 1 gilt nicht für die Errichtung, Änderung oder Nutzungsänderung 1. 2 von Gebäuden |
 | 64.3 | §64 Genehmigungsfreistellung | Abs. 3 | genehmigungspflicht | Die Bauherrschaft hat die erforderlichen Bauvorlagen bei der Bauaufsichtsbehörde einzureichen. 2 3 Die Bauaufsichtsbehör |
@@ -269,7 +268,7 @@
 | 69.3 | §69 Bauantrag, Bauvorlagen | Abs. 3 | baugenehmigung | Auch soweit die bauaufsichtliche Prüfung entfällt, sind die Bauvorlagen spätestens vor Baubeginn, nach § 68 erforderlich |
 | 69.4 | §69 Bauantrag, Bauvorlagen | Abs. 4 | baugenehmigung | In besonderen Fällen kann zur Beurteilung der Einwirkung der baulichen Anlage auf die Umgebung und das Orts- und Landsch |
 | 69.5 | §69 Bauantrag, Bauvorlagen | Abs. 5 | baugenehmigung | Für Bauvorhaben auf fremden Grundstücken kann der Nachweis verlangt werden, dass die Eigentumsberechtigten zustimmen. |
-| 70.1 | §70 Behandlung des Bauantrages | Abs. 1 | nachbarbenachrichtigung | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen, - Seite 63 von 97 - 1.  |
+| 70.1 | §70 Behandlung des Bauantrages | Abs. 1 | nachbarbenachrichtigung | Die Bauaufsichtsbehörde beteiligt oder hört zum Bauantrag die Gemeinde sowie diejenigen Stellen, |
 | 70.2 | §70 Behandlung des Bauantrages | Abs. 2 | nachbarbenachrichtigung | Die Bauaufsichtsbehörde hat nach Eingang des Bauantrags binnen eines Monats zu prüfen, ob der Antrag und die Bauvorlagen |
 | 70.3 | §70 Behandlung des Bauantrages | Abs. 3 | nachbarbenachrichtigung | Ist für das Vorhaben eine Umweltverträglichkeitsprüfung erforderlich, sind im Genehmigungsverfahren die Vorschriften des |
 | 70.4 | §70 Behandlung des Bauantrages | Abs. 4 | nachbarbenachrichtigung | Ausgenommen bei Sonderbauten ist über den Bauantrag innerhalb von drei Monaten nach Eingang des vollständigen Antrages z |
@@ -293,7 +292,7 @@
 | 77.2 | §77 Teilbaugenehmigung | Abs. 2 | besonderes_verfahren | In der Baugenehmigung können für die bereits begonnenen Teile des Bauvorhabens zusätzliche Anforderungen gestellt werden |
 | 77a.1 | §77a Typengenehmigung | Abs. 1 | typengenehmigung | Für bauliche Anlagen, die in derselben Ausführung an mehreren Stellen errichtet werden sollen, wird auf Antrag durch das |
 | 77a.2 | §77a Typengenehmigung | Abs. 2 | typengenehmigung | Die Typengenehmigung gilt fünf Jahre. Die Frist kann auf Antrag jeweils bis zu fünf Jahren verlängert werden; § 74 Abs.  |
-| 77a.3 | §77a Typengenehmigung | Abs. 3 | typengenehmigung | Typengenehmigungen anderer Bundesländer gelten auch im Land Hessen. - Seite 69 von 97 - |
+| 77a.3 | §77a Typengenehmigung | Abs. 3 | typengenehmigung | Typengenehmigungen anderer Bundesländer gelten auch im Land Hessen. |
 | 77a.4 | §77a Typengenehmigung | Abs. 4 | typengenehmigung | Eine Typengenehmigung entbindet nicht von der Verpflichtung, ein bauaufsichtliches Verfahren durchzuführen. Die in der T |
 | 77a.5 | §77a Typengenehmigung | Abs. 5 | typengenehmigung | Die §§ 67, 69 Abs. 2 und 5 Satz 1 und 2, § 70 Abs. 1 mit Ausnahme der Beteiligung der Gemeinde, |
 | 78.1 | §78 Fliegende Bauten | Abs. 1 | bauproduktzulassung | Fliegende Bauten sind bauliche Anlagen, die geeignet und bestimmt sind, an verschiedenen Orten wiederholt aufgestellt un |
@@ -314,8 +313,7 @@
 | 79.5 | §79 Vorhaben in öffentlicher Trägerschaft | Abs. 5 | bauueberwachung | Anlagen, die nicht genehmigungsfrei sind und der Landesverteidigung dienen, sind abweichend von Abs. 1 bis 3 der oberen  |
 | 79.6 | §79 Vorhaben in öffentlicher Trägerschaft | Abs. 6 | bauueberwachung | Die öffentliche Bauherrschaft trägt die Verantwortung, dass Entwurf, Ausführung und Zustand der Anlagen den öffentlich-r |
 | 80.1 | §80 Verbot unrechtmäßig gekennzeichneter Bau | — | sanktion | Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 24 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
-| 81.1 | §81 Baueinstellung Werden Anlagen im Widersp | — | bauueberwachung | - Seite 72 von 97 -
-1. die Ausführung eines Vorhabens entgegen den Vorschriften des § 75 Abs. 1 bis 3 begonnen wurde,
+| 81.1 | §81 Baueinstellung Werden Anlagen im Widersp | — | bauueberwachung | Baueinstellung Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet, geändert, abgebrochen oder beseitigt, kann die Bauaufsichtsbehörde die Einstellung der Arbeiten anordnen. Das gilt insbesondere, wenn 1. die Ausführung eines Vorhabens entgegen den Vorschriften des § 75 Abs. 1 bis 3 begonnen wurde,
 2. |
 | 82.1 | §82 Nutzungsverbot, Beseitigungsanordnung | Abs. 1 | baubeginn | Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet oder geändert, kann die Bauaufsichtsbehör |
 | 82.2 | §82 Nutzungsverbot, Beseitigungsanordnung | Abs. 2 | baubeginn | Die Bauaufsichtsbehörde kann verlangen, dass ein erforderliches Verfahren durchgeführt wird oder nach § 64 Abs. 3 Satz 1 |

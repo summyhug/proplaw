@@ -690,7 +690,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 58.1 | Bauaufsichtsbehörden sind: - Seite 50 von 92 - 1. das fachlich zuständige Ministerium als oberste Bauaufsichtsbehörde, 2 |
+| 58.1 | Bauaufsichtsbehörden sind: |
 | 58.2 | Die unteren Bauaufsichtsbehörden müssen mit geeigneten Fachkräften besetzt sein. |
 | 58.3 | Die Verbandsgemeinden, die großen kreisangehörigen und die kreisfreien Städte sowie die Landkreise nehmen die Bauaufsich |
 

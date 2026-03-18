@@ -68,7 +68,7 @@
 | 18.2 | §18 Allgemeine Anforderungen für die Verwend | Abs. 2 | bauproduktzulassung | Bauprodukte, die in Rechtsvorschriften anderer Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum vom 2 |
 | 19.1 | §19 Anforderungen für die Verwendung von CE- | — | bauproduktzulassung | Anforderungen für die Verwendung von CE-gekennzeichneten Baupro- 19.07.2024 dukten |
 | 20.1 | §20 Verwendbarkeitsnachweise | Abs. 1 | bauproduktzulassung | Ein Verwendbarkeitsnachweis nach den §§ 21 bis 23 ist für ein Bauprodukt erforderlich, wenn 1. es keine Technische Baube |
-| 20.2 | §20 Verwendbarkeitsnachweise | Abs. 2 | bauproduktzulassung | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das - Seite 21 von 89 - 1. von einer allgemein an |
+| 20.2 | §20 Verwendbarkeitsnachweise | Abs. 2 | bauproduktzulassung | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das |
 | 20.3 | §20 Verwendbarkeitsnachweise | Abs. 3 | bauproduktzulassung | Die Technischen Baubestimmungen nach § 96 enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwendb |
 | 21.1 | §21 Allgemeine bauaufsichtliche Zulassung | Abs. 1 | bauproduktzulassung | Das Deutsche Institut für Bautechnik erteilt auf Antrag unter den Voraussetzungen des § 20 Abs. 1 eine allgemeine bauauf |
 | 21.2 | §21 Allgemeine bauaufsichtliche Zulassung | Abs. 2 | bauproduktzulassung | Die zur Begründung des Antrags erforderlichen Unterlagen sind beizufügen. Soweit erforderlich, sind Probestücke von der  |
@@ -146,7 +146,7 @@
 | 38.2 | §38 Notwendige Treppenräume, Ausgänge | Abs. 2 | allgemeine_anforderung | Von jeder Stelle eines Aufenthaltsraumes und eines Kellergeschosses muss mindestens ein Ausgang in einen notwendigen Tre |
 | 38.3 | §38 Notwendige Treppenräume, Ausgänge | Abs. 3 | allgemeine_anforderung | Jeder notwendige Treppenraum muss einen unmittelbaren Ausgang ins Freie haben. Sofern der Ausgang eines notwendigen Trep |
 | 38.4 | §38 Notwendige Treppenräume, Ausgänge | Abs. 4 | allgemeine_anforderung | Die Wände notwendiger Treppenräume müssen als raumabschließende Bauteile in Gebäuden 1. der Gebäudeklasse 5 die Bauart v |
-| 38.5 | §38 Notwendige Treppenräume, Ausgänge | Abs. 5 | allgemeine_anforderung | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen - Seite 35 von 89 - 1. Bekleidungen, Putze, Dämms |
+| 38.5 | §38 Notwendige Treppenräume, Ausgänge | Abs. 5 | allgemeine_anforderung | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen |
 | 38.6 | §38 Notwendige Treppenräume, Ausgänge | Abs. 6 | allgemeine_anforderung | In notwendigen Treppenräumen müssen Öffnungen 1. zu Kellergeschossen, zu nicht ausgebauten Dachräumen, Werkstätten, Läde |
 | 38.7 | §38 Notwendige Treppenräume, Ausgänge | Abs. 7 | allgemeine_anforderung | Notwendige Treppenräume müssen zu beleuchten sein. Notwendige Treppenräume ohne Fenster müssen in Gebäuden mit einer Höh |
 | 38.8 | §38 Notwendige Treppenräume, Ausgänge | Abs. 8 | allgemeine_anforderung | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. Sie müsse |
@@ -229,7 +229,7 @@
 | 62.2 | §62 Grundsatz | Abs. 2 | kenntnisgabeverfahren | Die Genehmigungsfreiheit nach den §§ 63, 64, § 83 Abs. 2 und § 84 Abs. 1 sowie die Beschränkung der bauaufsichtlichen Pr |
 | 63.1 | §63 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 1 | vereinfachtes_genehmigungsverfahren | Verfahrensfrei sind 1. folgende Gebäude: a) 2 eingeschossige Gebäude mit einer Grundfläche bis zu 10 m , außer im Außenb |
 | 63.2 | §63 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 2 | vereinfachtes_genehmigungsverfahren | Verfahrensfrei ist die Änderung der Nutzung von Anlagen, wenn 1. für die neue Nutzung keine anderen öffentlich-rechtlich |
-| 63.3 | §63 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 3 | vereinfachtes_genehmigungsverfahren | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, - Seite 55 von 89 - 2. freistehenden Gebäuden der Gebäu |
+| 63.3 | §63 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 3 | vereinfachtes_genehmigungsverfahren | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, |
 | 63.4 | §63 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 4 | vereinfachtes_genehmigungsverfahren | Verfahrensfrei sind Instandhaltungsarbeiten. |
 | 64.1 | §64 Genehmigungsfreistellung | Abs. 1 | genehmigungspflicht | Keiner Genehmigung bedarf unter den Voraussetzungen des Absatzes 2 1. die Errichtung, Änderung und Nutzungsänderung von  |
 | 64.2 | §64 Genehmigungsfreistellung | Abs. 2 | genehmigungspflicht | Bauvorhaben nach Absatz 1 Satz 1 Nr. 1 sind genehmigungsfrei gestellt, wenn 1. sie im Geltungsbereich eines Bebauungspla |
@@ -317,8 +317,7 @@
 | 90.3 | §90 Baulasten und Baulastenverzeichnis | Abs. 3 | schlussvorschrift | Die Baulast geht durch Verzicht der Bauaufsichtsbehörde unter. Der Verzicht ist zu erklären, wenn ein öffentliches Inter |
 | 90.4 | §90 Baulasten und Baulastenverzeichnis | Abs. 4 | schlussvorschrift | Das Baulastenverzeichnis ist von der Bauaufsichtsbehörde zu führen. In das Baulastenverzeichnis können auch 1. andere ba |
 | 90.5 | §90 Baulasten und Baulastenverzeichnis | Abs. 5 | schlussvorschrift | Wer ein berechtigtes Interesse darlegt, kann in das Baulastenverzeichnis Einsicht nehmen und sich einen Auszug erstellen |
-| 91.1 | §91 Aufbau der Marktüberwachungsbehörden | — | schlussvorschrift | - Seite 78 von 89 Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind
-1. die obere Bauaufsichtsbehörde  |
+| 91.1 | §91 Aufbau der Marktüberwachungsbehörden | — | schlussvorschrift | Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind 1. die obere Bauaufsichtsbehörde  |
 | 92.1 | §92 Aufgaben und Befugnisse der Marktüberwac | Abs. 1 | schlussvorschrift | Die Marktüberwachungsbehörden nehmen die Aufgaben nach 1. der Verordnung (EU) 2019/1020 des Europäischen Parlaments und  |
 | 92.2 | §92 Aufgaben und Befugnisse der Marktüberwac | Abs. 2 | schlussvorschrift | Den Marktüberwachungsbehörden stehen die sich aus den Aufgaben nach Absatz 1 Satz 1 ergebenden Befugnisse zu. |
 | 93.1 | §93 Zuständigkeit der Marktüberwachungsbehör | Abs. 1 | schlussvorschrift | Zuständig ist die obere Marktüberwachungsbehörde, soweit in den Absätzen 2 bis 5 nichts Abweichendes bestimmt ist. |

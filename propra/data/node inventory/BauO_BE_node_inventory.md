@@ -5,7 +5,7 @@
 | Row ID | § | Absatz | Node Type | Text (excerpt) |
 |--------|---|--------|-----------|----------------|
 | 1.1 | §1 Anwendungsbereich | Abs. 1 | anwendungsbereich | Dieses Gesetz gilt für bauliche Anlagen und Bauprodukte. Es gilt auch für Grundstücke sowie für sonstige Anlagen und Ein |
-| 1.2 | §1 Anwendungsbereich | Abs. 2 | anwendungsbereich | Dieses Gesetz gilt nicht für - Seite 8 von 88 - 1. Anlagen des öffentlichen Verkehrs einschließlich Zubehör, Nebenanlage |
+| 1.2 | §1 Anwendungsbereich | Abs. 2 | anwendungsbereich | Dieses Gesetz gilt nicht für |
 | 2.1 | §2 Begriffe | Abs. 1 | begriffsbestimmung | Anlagen sind bauliche Anlagen und sonstige Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2. Bauliche Anlagen si |
 | 2.2 | §2 Begriffe | Abs. 2 | begriffsbestimmung | Gebäude sind selbständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet o |
 | 2.3 | §2 Begriffe | Abs. 3 | begriffsbestimmung | Gebäude werden in folgende Gebäudeklassen eingeteilt: 1. Gebäudeklasse 1: a) freistehende Gebäude mit einer Höhe bis zu  |
@@ -87,7 +87,7 @@
 | 19.2 | §19 Allgemeines bauaufsichtliches Prüfzeugni | Abs. 2 | bauproduktzulassung | Ein allgemeines bauaufsichtliches Prüfzeugnis wird von einer Prüfstelle nach § 24 Satz 1 Nummer 1 für nicht geregelte Ba |
 | 20.1 | §20 Nachweis der Verwendbarkeit von Bauprodu | — | bauproduktzulassung | Nachweis der Verwendbarkeit von Bauprodukten im Einzelfall 20.04.2018 |
 | 21.1 | §21 Übereinstimmungsbestätigung | Abs. 1 | bauproduktzulassung | Bauprodukte bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 86a Absatz 2, de |
-| 21.2 | §21 Übereinstimmungsbestätigung | Abs. 2 | bauproduktzulassung | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). - Seite 23 von 88 - |
+| 21.2 | §21 Übereinstimmungsbestätigung | Abs. 2 | bauproduktzulassung | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellers (§ 22). |
 | 21.3 | §21 Übereinstimmungsbestätigung | Abs. 3 | bauproduktzulassung | Die Übereinstimmungserklärung hat die Herstellerin oder der Hersteller durch Kennzeichnung der Bauprodukte mit dem Übere |
 | 21.4 | §21 Übereinstimmungsbestätigung | Abs. 4 | bauproduktzulassung | Das Ü-Zeichen ist auf dem Bauprodukt, auf einem Beipackzettel oder auf seiner Verpackung oder, wenn dies Schwierigkeiten |
 | 21.5 | §21 Übereinstimmungsbestätigung | Abs. 5 | bauproduktzulassung | Ü-Zeichen aus anderen Ländern und aus anderen Staaten gelten auch im Land Berlin. |
@@ -135,7 +135,7 @@
 | 32.1 | §32 Dächer | Abs. 1 | dach | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lange widers |
 | 32.2 | §32 Dächer | Abs. 2 | dach | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,  |
 | 32.3 | §32 Dächer | Abs. 3 | dach | Die Absätze 1 und 2 gelten nicht für 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit nicht mehr als 50 m Br |
-| 32.4 | §32 Dächer | Abs. 4 | dach | Abweichend von den Absätzen 1 und 2 sind - Seite 32 von 88 - 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen  |
+| 32.4 | §32 Dächer | Abs. 4 | dach | Abweichend von den Absätzen 1 und 2 sind |
 | 32.5 | §32 Dächer | Abs. 5 | dach | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln und Oberl |
 | 32.6 | §32 Dächer | Abs. 6 | dach | Dächer von traufseitig aneinander gebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung vo |
 | 32.7 | §32 Dächer | Abs. 7 | dach | Dächer von Anbauten, die an Außenwände mit Öffnungen oder ohne Feuerwiderstandsfähigkeit anschließen, müssen innerhalb e |
@@ -181,7 +181,7 @@
 | 41.2 | §41 Lüftungsanlagen | Abs. 2 | technische_anlage | Lüftungsleitungen sowie deren Bekleidungen und Dämmstoffe müssen aus nichtbrennbaren Baustoffen bestehen; brennbare Baus |
 | 41.3 | §41 Lüftungsanlagen | Abs. 3 | technische_anlage | Lüftungsanlagen sind so herzustellen, dass sie Gerüche und Staub nicht in andere Räume übertragen. |
 | 41.4 | §41 Lüftungsanlagen | Abs. 4 | technische_anlage | Lüftungsanlagen dürfen nicht in Abgasanlagen eingeführt werden; die gemeinsame Nutzung von Lüftungsleitungen zur Lüftung |
-| 41.5 | §41 Lüftungsanlagen | Abs. 5 | technische_anlage | Die Absätze 2 und 3 gelten nicht 1. für Gebäude der Gebäudeklassen 1 und 2, 2. innerhalb von Wohnungen, - Seite 41 von 8 |
+| 41.5 | §41 Lüftungsanlagen | Abs. 5 | technische_anlage | Die Absätze 2 und 3 gelten nicht 1. für Gebäude der Gebäudeklassen 1 und 2, 2. innerhalb von Wohnungen, |
 | 41.6 | §41 Lüftungsanlagen | Abs. 6 | technische_anlage | Für raumlufttechnische Anlagen und Warmluftheizungen gelten die Absätze 1 bis 5 entsprechend. |
 | 42.1 | §42 Feuerungsanlagen, sonstige Anlagen zur W | Abs. 1 | technische_anlage | Feuerstätten und Abgasanlagen (Feuerungsanlagen) müssen betriebssicher und brandsicher sein. |
 | 42.2 | §42 Feuerungsanlagen, sonstige Anlagen zur W | Abs. 2 | technische_anlage | Feuerstätten dürfen in Räumen nur aufgestellt werden, wenn nach der Art der Feuerstätte und nach Lage, Größe, baulicher  |
@@ -232,8 +232,7 @@
 | 59.1 | §59 Grundsatz | Abs. 1 | genehmigungspflicht | Die Errichtung, Änderung und Nutzungsänderung von Anlagen bedürfen der Baugenehmigung, soweit in den §§ 60 bis 62, 76 un |
 | 59.2 | §59 Grundsatz | Abs. 2 | genehmigungspflicht | Die Genehmigungsfreiheit nach den §§ 60 bis 62, 76 und 77 Absatz 1 Satz 3 sowie die Beschränkung der bauaufsichtlichen P |
 | 59.3 | §59 Grundsatz | Abs. 3 | genehmigungspflicht | Die Bauaufsichtsbehörde kann im Einzelfall bei geringfügigen genehmigungsbedürftigen Vorhaben von der Erteilung der Baug |
-| 60.1 | §60 Vorrang anderer Gestattungsverfahren Kei | — | genehmigungspflicht | - Seite 51 von 88 -
-1. nach anderen Rechtsvorschriften zulassungsbedürftige Anlagen in oder an oberirdischen Gewässern u |
+| 60.1 | §60 Vorrang anderer Gestattungsverfahren Kei | — | genehmigungspflicht | Vorrang anderer Gestattungsverfahren Keiner Baugenehmigung, Abweichung, Genehmigungsfreistellung, Zustimmung und Bauüberwachung nach diesem Gesetz bedürfen 1. nach anderen Rechtsvorschriften zulassungsbedürftige Anlagen in oder an oberirdischen Gewässern u |
 | 61.1 | §61 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 1 | verfahrensfreies_vorhaben | Verfahrensfrei sind 1. folgende Gebäude: a) eingeschossige Gebäude mit einer Brutto-Grundfläche bis zu 10 m², außer im A |
 | 61.2 | §61 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 2 | verfahrensfreies_vorhaben | Verfahrensfrei ist die Änderung der Nutzung von Anlagen, wenn 1. für die neue Nutzung keine anderen öffentlich-rechtlich |
 | 61.3 | §61 Verfahrensfreie Bauvorhaben, Beseitigung | Abs. 3 | verfahrensfreies_vorhaben | Verfahrensfrei ist die Beseitigung von 1. Anlagen nach Absatz 1, 2. freistehenden Gebäuden ohne Wohnraum der Gebäudeklas |
@@ -245,8 +244,7 @@
 | 62.4 | §62 Genehmigungsfreistellung | Abs. 4 | kenntnisgabeverfahren | Die Erklärung der Bauaufsichtsbehörde nach Absatz 2 Satz 1 Nummer 3 erste Alternative kann insbesondere deshalb erfolgen |
 | 62.5 | §62 Genehmigungsfreistellung | Abs. 5 | kenntnisgabeverfahren | Wird nach Durchführung des Bauvorhabens die Nichtigkeit des Bebauungsplans festgestellt, so bedarf das Bauvorhaben auch  |
 | 62.6 | §62 Genehmigungsfreistellung | Abs. 6 | kenntnisgabeverfahren | § 66 bleibt unberührt. § 68 Absatz 2 Satz 1, § 72 Absatz 1, 2 Nummer 2 und Absatz 3 sowie § 73 Absatz 1 Satz 3 und Absat |
-| 63.1 | §63 Vereinfachtes Baugenehmigungsverfahren | — | vereinfachtes_genehmigungsverfahren | - Seite 58 von 88 Außer bei Sonderbauten werden geprüft
-1. die Übereinstimmung mit den Vorschriften über die Zulässigkei |
+| 63.1 | §63 Vereinfachtes Baugenehmigungsverfahren | — | vereinfachtes_genehmigungsverfahren | Außer bei Sonderbauten werden geprüft 1. die Übereinstimmung mit den Vorschriften über die Zulässigkei |
 | 63a.1 | §63a Vereinfachtes Baugenehmigungsverfahren f | — | vereinfachtes_genehmigungsverfahren | 1. die Übereinstimmung mit den Vorschriften über die Zulässigkeit der baulichen Anlagen nach den §§ 29 bis 38 des Bauges |
 | 64.1 | §64 Baugenehmigungsverfahren Bei Sonderbaute | — | genehmigungspflicht | 1. die Übereinstimmung mit den Vorschriften über die Zulässigkeit der baulichen Anlagen nach den §§ 29 bis 38 des Bauges |
 | 65.1 | §65 Bauvorlageberechtigung | Abs. 1 | beteiligtenpflicht | Bauvorlagen für die nicht verfahrensfreie Errichtung und Änderung von Gebäuden müssen von einer Entwurfsverfasserin oder |
@@ -321,7 +319,7 @@
 | 77.3 | §77 Bauaufsichtliche Zustimmung | Abs. 3 | besonderes_verfahren | Die für das Bauwesen zuständige Senatsverwaltung prüft 1. die Übereinstimmung mit den Vorschriften über die Zulässigkeit |
 | 77.4 | §77 Bauaufsichtliche Zustimmung | Abs. 4 | besonderes_verfahren | Anlagen, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen,  |
 | 77.5 | §77 Bauaufsichtliche Zustimmung | Abs. 5 | besonderes_verfahren | Die für das Bauwesen zuständige Senatsverwaltung kann bestimmen, dass Absatz 1 auf Vorhaben Berlins ganz oder teilweise  |
-| 78.1 | §78 Verbot unrechtmäßig gekennzeichneter Bau | — | bauproduktzulassung | Verbot unrechtmäßig gekennzeichneter Bauprodukte 20.04.2018 |
+| 78.1 | §78 Verbot unrechtmäßig gekennzeichneter Bau | — | bauproduktzulassung | Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 21 mit dem Ü-Zeichen gekennzeichnet, kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
 | 79.1 | §79 Einstellung von Arbeiten | Abs. 1 | bauueberwachung | Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet, geändert oder beseitigt, kann die Bauauf |
 | 79.2 | §79 Einstellung von Arbeiten | Abs. 2 | bauueberwachung | Werden unzulässige Arbeiten trotz einer verfügten Einstellung fortgesetzt, kann die Bauaufsichtsbehörde die Baustelle ve |
 | 80.1 | §80 Beseitigung von Anlagen, Nutzungsuntersa | — | sanktion | Beseitigung von Anlagen, Nutzungsuntersagung Werden Anlagen im Widerspruch zu öffentlich-rechtlichen Vorschriften errichtet oder geändert, kann die Bauaufsichtsbehörde die teilweise oder vollständige Beseitigung der Anlagen anordnen, wenn nicht auf andere Weise rechtmäßige Zustände hergestellt werde |
@@ -352,7 +350,7 @@
 | 87.2 | §87 Verarbeitung personenbezogener Daten | Abs. 2 | schlussvorschrift | Die betroffenen Personen sind verpflichtet, den Bauaufsichtsbehörden sowie den sonst am Verfahren beteiligten Behörden u |
 | 87.3 | §87 Verarbeitung personenbezogener Daten | Abs. 3 | schlussvorschrift | Die Übermittlung der personenbezogenen Daten an die am Verfahren beteiligten Behörden, öffentlichen und privaten Stellen |
 | 87.4 | §87 Verarbeitung personenbezogener Daten | Abs. 4 | schlussvorschrift | Die für das Bauwesen zuständige Senatsverwaltung erlässt durch Rechtsverordnung nähere Bestimmungen über Art, Umfang und |
-| 87.5 | §87 Verarbeitung personenbezogener Daten | Abs. 5 | schlussvorschrift | Im Übrigen gelten die Bestimmungen des Berliner Datenschutzgesetzes. Fußnoten [1]) - Seite 85 von 88 Absatz 4 in Kraft m |
+| 87.5 | §87 Verarbeitung personenbezogener Daten | Abs. 5 | schlussvorschrift | Im Übrigen gelten die Bestimmungen des Berliner Datenschutzgesetzes. Fußnoten [1]) |
 | 88.1 | §88 Zuständigkeit für den Erlass des Widersp | Abs. 1 | schlussvorschrift | Die für das Bauwesen zuständige Senatsverwaltung entscheidet über den Widerspruch gegen einen Verwaltungsakt einer Bezir |
 | 88.2 | §88 Zuständigkeit für den Erlass des Widersp | Abs. 2 | schlussvorschrift | Erfordert die Entscheidung über den Widerspruch nach Absatz 1 Beteiligungen innerhalb des Landes Berlin, so sind anstell |
 | 89.1 | §89 Abwicklung eingeleiteter Verfahren, Über | Abs. 1 | schlussvorschrift | Die vor dem Inkrafttreten dieses Gesetzes eingeleiteten Verfahren sind nach den bis zum Inkrafttreten geltenden Vorschri |

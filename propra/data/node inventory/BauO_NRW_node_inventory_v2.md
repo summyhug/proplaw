@@ -470,7 +470,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | Nr. | Regeltext (BauO NRW-Wortlaut) |
 |---|---|
 | 44.1 | 1. Trennwände und Decken als raumabschließende Bauteile mit der Feuerwiderstandsfähigkeit der tragenden Wände haben, 2. Öffnungen vom Gebäudeinnern zum Aufstellraum mit feuerhemmenden, dicht- und selbstschließenden Abschlüssen haben, 3. unmittelbar vom Freien entleert werden können und 4. eine ständig wirksame Lüftung haben. |
-| 44.2 | Vorhandene Abfallschächte dürfen nicht betrieben werden. Der Betrieb von Abfallschächten, die zum Zeitpunkt des Inkrafttretens dieser Vorschrift betrieben werden, kann widerruflich unter der Voraussetzung genehmigt werden, dass der Betreiber den sicheren und störungsfreien Betrieb und eine wirksame Abfalltrennung ständig überwacht und dies dokumentiert. Den Bauaufsichtsbehörden sind diese Aufzeichnungen auf Verlangen vorzulegen. § 45 Blitzschutzanlagen Bauliche Anlagen, bei denen nach Lage, Bauart oder Nutzung Blitzschlag leicht eintreten oder zu schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. Siebenter Abschnitt Nutzungsbedingte Anforderungen |
+| 44.2 | Vorhandene Abfallschächte dürfen nicht betrieben werden. Der Betrieb von Abfallschächten, die zum Zeitpunkt des Inkrafttretens dieser Vorschrift betrieben werden, kann widerruflich unter der Voraussetzung genehmigt werden, dass der Betreiber den sicheren und störungsfreien Betrieb und eine wirksame Abfalltrennung ständig überwacht und dies dokumentiert. Den Bauaufsichtsbehörden sind diese Aufzeichnungen auf Verlangen vorzulegen. |
+
+### § 45 — Blitzschutzanlagen Siebenter Abschnitt N
+**type:** technische_anlage
+**source_paragraph:** §45 BauO_NRW
+
+| Nr. | Regeltext (BauO NRW-Wortlaut) |
+|---|---|
+| 45.1 | Bauliche Anlagen, bei denen nach Lage, Bauart oder Nutzung Blitzschlag leicht eintreten oder zu schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. Siebenter Abschnitt Nutzungsbedingte Anforderungen |
 
 ### § 46 — Absatz 1 und 2
 **type:** technische_anlage
@@ -809,7 +817,15 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 | 79.2 | Der Antrag auf Zustimmung ist bei der oberen Bauaufsichtsbehörde einzureichen. |
 | 79.4 | Die Gemeinde ist vor Erteilung der Zustimmung zu hören. § 36 Absatz 2 Satz 2 Halbsatz 1 BauGB gilt entsprechend. Im Übrigen sind die Vorschriften über das Baugenehmigungsverfahren entsprechend anzuwenden. |
 | 79.5 | Die Baudienststelle trägt die Verantwortung dafür, dass die Errichtung, die Änderung, die Nutzungsänderung und die Beseitigung baulicher Anlagen den öffentlich-rechtlichen Vorschriften entsprechen. Die Baudienststelle ist verpflichtet, dem Eigentümer Unterlagen und Pläne in Zusammenhang mit der Errichtung, Änderung und Nutzungsänderung von Anlagen sowie bautechnische Nachweise und Bescheinigungen von Sachverständigen zur Verfügung zu stellen. Im Übrigen gilt § 74 Absatz 5 Satz 1 und 2 entsprechend. Die Verantwortung des Unternehmens (§ 55) bleibt unberührt. |
-| 79.6 | Anlagen, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, sind abweichend von den Absätzen 1 bis 4 der oberen Bauaufsichtsbehörde vor Baubeginn in geeigneter Weise zur Kenntnis zu bringen. Die Zustimmung ist nicht erforderlich, wenn die Gemeinde nicht widerspricht. Im Übrigen wirken die Bauaufsichtsbehörden nicht mit. § 78 Absatz 2 bis 10 findet auf Fliegende Bauten, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, keine Anwendung. Vierter Abschnitt Bauaufsichtliche Maßnahmen § 80 Verbot unrechtmäßig gekennzeichneter Bauprodukte Sind Bauprodukte entgegen § 24 mit dem Ü-Zeichen gekennzeichnet, so kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
+| 79.6 | Anlagen, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, sind abweichend von den Absätzen 1 bis 4 der oberen Bauaufsichtsbehörde vor Baubeginn in geeigneter Weise zur Kenntnis zu bringen. Die Zustimmung ist nicht erforderlich, wenn die Gemeinde nicht widerspricht. Im Übrigen wirken die Bauaufsichtsbehörden nicht mit. § 78 Absatz 2 bis 10 findet auf Fliegende Bauten, die der Landesverteidigung, dienstlichen Zwecken der Bundespolizei oder dem zivilen Bevölkerungsschutz dienen, keine Anwendung. Vierter Abschnitt Bauaufsichtliche Maßnahmen |
+
+### § 80 — Verbot unrechtmäßig gekennzeichneter Bau
+**type:** sanktion
+**source_paragraph:** §80 BauO_NRW
+
+| Nr. | Regeltext (BauO NRW-Wortlaut) |
+|---|---|
+| 80.1 | produkte Sind Bauprodukte entgegen § 24 mit dem Ü-Zeichen gekennzeichnet, so kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
 
 ### § 81 — Einstellung von Arbeiten
 **type:** bauueberwachung

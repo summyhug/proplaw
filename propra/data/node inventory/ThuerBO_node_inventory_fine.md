@@ -266,8 +266,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Ein Verwendbarkeitsnachweis nach den §§ 21 bis 23 ist für ein Bauprodukt erforderlich, wenn. |
 | 1.2 | 1. es keine Technische Baube |
-| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das - Seite 21 von 89 -. |
-| 2.2 | 1. von einer allgemein an |
+| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, das. |
 | 3.1 | Die Technischen Baubestimmungen nach § 96 enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwendb. |
 
 ---
@@ -530,8 +529,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 3.2 | Sofern der Ausgang eines notwendigen Trep. |
 | 4.1 | Die Wände notwendiger Treppenräume müssen als raumabschließende Bauteile in Gebäuden. |
 | 4.2 | 1. der Gebäudeklasse 5 die Bauart v |
-| 5.1 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen - Seite 35 von 89 -. |
-| 5.2 | 1. Bekleidungen, Putze, Dämms |
+| 5.1 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen. |
 | 6.1 | In notwendigen Treppenräumen müssen Öffnungen. |
 | 6.2 | 1. zu Kellergeschossen, zu nicht ausgebauten Dachräumen, Werkstätten, Läde |
 | 7.1 | Notwendige Treppenräume müssen zu beleuchten sein. |
@@ -866,8 +864,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 2.1 | Verfahrensfrei ist die Änderung der Nutzung von Anlagen, wenn. |
 | 2.2 | 1. für die neue Nutzung keine anderen öffentlich-rechtlich |
 | 3.1 | Verfahrensfrei ist die Beseitigung von. |
-| 3.2 | 1. Anlagen nach Absatz 1, - Seite 55 von 89 - |
-| 3.3 | 2. freistehenden Gebäuden der Gebäu |
+| 3.2 | 1. Anlagen nach Absatz 1 |
 | 4.1 | Verfahrensfrei sind Instandhaltungsarbeiten. |
 
 ---
@@ -1241,7 +1238,8 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (ThuerBO-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 78 von 89 Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind. |
+| 1.1 | Marktüberwachungsbehörden nach der Verordnung (EU) Nr. 305/2011 sind. |
+| 1.2 | 1. die obere Bauaufsichtsbehörde |
 
 ---
 

@@ -47,7 +47,7 @@
 | 14.1 | §14 Brandschutz, Brandschutzanforderungen an | Abs. 1 | brandschutzanforderung | Bauliche Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass der Entstehung eines Brandes un |
 | 14.2 | §14 Brandschutz, Brandschutzanforderungen an | Abs. 2 | brandschutzanforderung | Baustoffe werden nach den Anforderungen an ihr Brandverhalten unterschieden in 1. nichtbrennbare, 2. schwerentflammbare  |
 | 14.3 | §14 Brandschutz, Brandschutzanforderungen an | Abs. 3 | brandschutzanforderung | Bauteile werden nach den Anforderungen an ihre Feuerwiderstandsfähigkeit unterschieden in 1. feuerbeständige, 2. hochfeu |
-| 15.1 | §15 Wärme-, Schall-, Erschütterungsschutz | Abs. 1 | schutzanforderung | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. - Seite 19 von 8 |
+| 15.1 | §15 Wärme-, Schall-, Erschütterungsschutz | Abs. 1 | schutzanforderung | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. |
 | 15.2 | §15 Wärme-, Schall-, Erschütterungsschutz | Abs. 2 | schutzanforderung | Gebäude müssen einen ihrer Nutzung entsprechenden Schallschutz haben. Geräusche, die von ortsfesten Einrichtungen in bau |
 | 15.3 | §15 Wärme-, Schall-, Erschütterungsschutz | Abs. 3 | schutzanforderung | Erschütterungen oder Schwingungen, die von ortsfesten Einrichtungen in baulichen Anlagen oder auf Baugrundstücken ausgeh |
 | 16.1 | §16 Verkehrssicherheit | Abs. 1 | verkehrssicherheit | Bauliche Anlagen und die dem Verkehr dienenden nicht überbauten Flächen von bebauten Grundstücken müssen verkehrssicher  |
@@ -63,7 +63,7 @@
 | 16b.2 | §16b Allgemeine Anforderungen an die Verwendu | Abs. 2 | bauproduktzulassung | Bauprodukte, die den in Vorschriften anderer Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum genannt |
 | 16c.1 | §16c Anforderungen an die Verwendung von CE-g | — | bauproduktzulassung | Anforderungen an die Verwendung von CE-gekennzeichneten 15.10.2016 Bauprodukten |
 | 17.1 | §17 Verwendbarkeitsnachweise | Abs. 1 | bauproduktzulassung | Ein Verwendbarkeitsnachweis nach den §§ 18 bis 20 ist für ein Bauprodukt erforderlich, wenn 1. es keine Technische Baube |
-| 17.2 | §17 Verwendbarkeitsnachweise | Abs. 2 | bauproduktzulassung | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, - Seite 21 von 87 - 1. das von einer allgemein an |
+| 17.2 | §17 Verwendbarkeitsnachweise | Abs. 2 | bauproduktzulassung | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, |
 | 17.3 | §17 Verwendbarkeitsnachweise | Abs. 3 | bauproduktzulassung | Die Technischen Baubestimmungen nach § 85a enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwend |
 | 18.1 | §18 Allgemeine bauaufsichtliche Zulassung | Abs. 1 | bauproduktzulassung | Das Deutsche Institut für Bautechnik erteilt unter den Voraussetzungen des § 17 Abs. 1 auf Antrag eine allgemeine bauauf |
 | 18.2 | §18 Allgemeine bauaufsichtliche Zulassung | Abs. 2 | bauproduktzulassung | Die zur Begründung des Antrags erforderlichen Unterlagen sind beizufügen. Soweit erforderlich, sind Probestücke vom Antr |
@@ -119,7 +119,7 @@
 | 30.5 | §30 Decken | Abs. 5 | brandwand | Öffnungen in Decken, für die eine Feuerwiderstandsfähigkeit vorgeschrieben ist, sind nur zulässig 1. in Gebäuden der Geb |
 | 31.1 | §31 Dächer | Abs. 1 | decke | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst |
 | 31.2 | §31 Dächer | Abs. 2 | decke | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,  |
-| 31.3 | §31 Dächer | Abs. 3 | decke | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 87 - 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 31.3 | §31 Dächer | Abs. 3 | decke | Die Absätze 1 und 2 gelten nicht für |
 | 31.4 | §31 Dächer | Abs. 4 | decke | Abweichend von den Absätzen 1 und 2 sind 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach  |
 | 31.5 | §31 Dächer | Abs. 5 | decke | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich |
 | 31.6 | §31 Dächer | Abs. 6 | decke | Dächer von traufseitig aneinandergebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung von |
@@ -158,7 +158,7 @@
 | 37.1 | §37 Umwehrungen | Abs. 1 | fensteroffnung | In, an und auf baulichen Anlagen sind zu umwehren oder mit Brüstungen zu versehen: 1. Flächen, die im Allgemeinen zum Be |
 | 37.2 | §37 Umwehrungen | Abs. 2 | fensteroffnung | In Verkehrsflächen liegende Kellerlichtschächte und Betriebsschächte sind in Höhe der Verkehrsfläche verkehrssicher abzu |
 | 37.3 | §37 Umwehrungen | Abs. 3 | fensteroffnung | Fensterbrüstungen von Flächen mit einer Absturzhöhe bis zu 12 m müssen mindestens 0,80 m, von Flächen mit mehr als 12 m  |
-| 37.4 | §37 Umwehrungen | Abs. 4 | fensteroffnung | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben: - Seite 37 von 87 - 1. Umwehrungen zur Sicherung von Ö |
+| 37.4 | §37 Umwehrungen | Abs. 4 | fensteroffnung | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben: |
 | 38.1 | §38 Aufzüge | Abs. 1 | allgemeine_anforderung | Aufzüge im Innern von Gebäuden müssen eigene Fahrschächte haben, um eine Brandausbreitung in andere Geschosse ausreichen |
 | 38.2 | §38 Aufzüge | Abs. 2 | allgemeine_anforderung | Die Fahrschachtwände müssen als raumabschließende Bauteile 1. in Gebäuden der Gebäudeklasse 5 feuerbeständig und aus nic |
 | 38.3 | §38 Aufzüge | Abs. 3 | allgemeine_anforderung | Fahrschächte müssen zu lüften sein und eine Öffnung zur Rauchableitung mit einem freien Querschnitt von mindestens 2,5 v |
@@ -206,7 +206,7 @@
 | 54.2 | §54 Unternehmer oder Unternehmerin | Abs. 2 | beteiligtenpflicht | Jeder Unternehmer und jede Unternehmerin hat auf Verlangen der Bauaufsichtsbehörde für Arbeiten, bei denen die Sicherhei |
 | 55.1 | §55 Bauleiter oder Bauleiterin | Abs. 1 | verfahrensfreies_vorhaben | Der Bauleiter oder die Bauleiterin hat darüber zu wachen, dass die Baumaßnahme entsprechend den öffentlich-rechtlichen A |
 | 55.2 | §55 Bauleiter oder Bauleiterin | Abs. 2 | verfahrensfreies_vorhaben | Der Bauleiter oder die Bauleiterin muss über die für seine oder ihre Aufgabe erforderliche Sachkunde und Erfahrung verfü |
-| 56.1 | §56 Aufbau und Zuständigkeiten der Bauaufsic | Abs. 1 | beteiligtenpflicht | Bauaufsichtsbehörden sind - Seite 46 von 87 - 1. die Landkreise und kreisfreien Städte als untere Bauaufsichtsbehörden,  |
+| 56.1 | §56 Aufbau und Zuständigkeiten der Bauaufsic | Abs. 1 | beteiligtenpflicht | Bauaufsichtsbehörden sind |
 | 56.2 | §56 Aufbau und Zuständigkeiten der Bauaufsic | Abs. 2 | beteiligtenpflicht | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen und mit |
 | 57.1 | §57 Aufgaben und Befugnisse der Bauaufsichts | Abs. 1 | behoerdenstruktur | Die unteren Bauaufsichtsbehörden werden im übertragenen Wirkungskreis tätig. |
 | 57.2 | §57 Aufgaben und Befugnisse der Bauaufsichts | Abs. 2 | behoerdenstruktur | Die Bauaufsichtsbehörden haben bei der Errichtung, der Änderung, der Nutzung, der Nutzungsänderung, der Instandhaltung u |

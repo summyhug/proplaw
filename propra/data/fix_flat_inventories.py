@@ -21,15 +21,22 @@ STATES = [
 ]
 
 # Pattern: text starts with optional dash/space then "Seite N von M"
-# followed by optional section title/date, then the real legal text
+# followed by optional section title/date, then the real legal text.
+# The (?:...) group is optional so this also matches "- Seite 51 von 88 -"
 NOISE_PREFIX = re.compile(
-    r"^[-–]?\s*Seite\s+\d+\s+von\s+\d+\s+(?:[A-ZÄÖÜ§][^\n]{0,80}?\s+\d{2}\.\d{2}\.\d{4}\s+)?",
+    r"^[-–]?\s*Seite\s+\d+\s+von\s+\d+\s*(?:[A-ZÄÖÜ§][^\n]{0,80}?\s+\d{2}\.\d{2}\.\d{4}\s+)?[-–.\s]*",
     re.IGNORECASE,
 )
 
 # SaechsBO-specific: noise APPENDED at end — "Fassung vom DD.MM.YYYY Seite N von M SächsBO ..."
 NOISE_SUFFIX = re.compile(
     r"\s*Fassung\s+vom\s+\d{2}\.\d{2}\.\d{4}\s+Seite\s+\d+.*$",
+    re.IGNORECASE,
+)
+
+# General tail noise: "- Seite N von M ..." or ". - Seite N von M -" at end of text
+NOISE_TAIL = re.compile(
+    r"\s*[-–.]?\s*Seite\s+\d+\s+von\s+\d+[^§]*$",
     re.IGNORECASE,
 )
 
@@ -45,13 +52,25 @@ def extract_section_text(txt_path: Path, section_num: str) -> str:
     1. TOC entry: "§ 13 - Title DD.MM.YYYY" (ends with date — skip)
     2. Short index: "§ 13 Title" (short line — skip)
     3. Body: "§ 13 Title Actual legal text starts here..." (long line — use this)
+
+    Some .txt files split the section header and body across two lines:
+    "§ 78\\n- Seite 75 von 88 Verbot ... text ..."
+    or
+    "§ 10 Title\\n(1) Body text..."
+    In that case we join the next line if the header line itself is short.
     """
     text = txt_path.read_text(encoding="utf-8", errors="replace")
+    lines = text.splitlines()
 
     # Strip trailing letters from e.g. "64e" → "64"
     sec_int = re.sub(r"[a-zA-Z]+$", "", section_num.split(".")[0])
 
-    pattern = re.compile(rf"§\s*{re.escape(sec_int)}\b([^\n]+)", re.MULTILINE)
+    # Match section header at the START of a line like "§ 14 Brandschutz ..."
+    # The ([^\n]*) allows matching "§ 78" with nothing after it
+    pattern = re.compile(
+        rf"^§\s*{re.escape(sec_int)}\b([^\n]*)",
+        re.MULTILINE,
+    )
 
     for m in pattern.finditer(text):
         line_rest = m.group(1).strip()
@@ -62,9 +81,30 @@ def extract_section_text(txt_path: Path, section_num: str) -> str:
         # Skip "Titel Gültig ab" table noise
         if re.match(r"Titel\s+Gültig|Gültig\s+ab", line_rest, re.IGNORECASE):
             continue
-        # Skip very short lines (just the section title, no body)
+
+        # If this header line is short, try appending the next line
         if len(line_rest) < 60:
-            continue
+            # Find which source line this match is on
+            line_start = text.count("\n", 0, m.start())
+            if line_start + 1 < len(lines):
+                next_line = lines[line_start + 1].strip()
+                # Skip if next line is another section header or structural divider
+                if next_line.startswith("§") or re.match(
+                    r"^(Abschnitt|Teil|Kapitel|Anlage)\s+\d",
+                    next_line,
+                    re.IGNORECASE,
+                ):
+                    continue
+                # Strip page noise from next line
+                next_line = re.sub(
+                    r"^[-–]?\s*Seite\s+\d+\s+von\s+\d+\s*",
+                    "",
+                    next_line,
+                ).strip()
+                if len(next_line) > 30:
+                    cleaned = re.sub(r"Seite\s+\d+\s+von\s+\d+[^\n]*", "", next_line).strip()
+                    return cleaned[:300]
+            continue  # too short and no useful next line
 
         # This line has body text — extract up to 300 chars of substantive content
         cleaned = re.sub(r"Seite\s+\d+\s+von\s+\d+[^\n]*", "", line_rest).strip()
@@ -91,7 +131,7 @@ def fix_inventory(state: str, dry_run: bool = False) -> dict:
             continue
 
         parts = line.split("|")
-        if len(parts) < 7:
+        if len(parts) < 6:
             new_lines.append(line)
             continue
 
@@ -99,26 +139,39 @@ def fix_inventory(state: str, dry_run: bool = False) -> dict:
         row_id = parts[1].strip()  # e.g. "14.1"
         fixed_text = text
 
-        if NOISE_PREFIX.match(text):
+        # Determine if text is problematic: page-noise prefix, tail-noise, or title-only
+        is_noise_prefix = bool(NOISE_PREFIX.match(text))
+        is_noise_suffix = bool(NOISE_SUFFIX.search(text))
+        is_title_only = bool(TITLE_ONLY.match(text))
+
+        if is_noise_prefix:
             # Strip noise prefix
             cleaned = NOISE_PREFIX.sub("", text).strip()
             # Also strip residual "Titel Gültig ab ..." table header after page marker
             cleaned = re.sub(r"^Titel\s+Gültig\s+ab\s+", "", cleaned).strip()
+            # Strip trailing noise too (dash, punctuation-only)
+            cleaned = re.sub(r"^[-–.]+\s*$", "", cleaned).strip()
             if len(cleaned) > 15 and not TITLE_ONLY.match(cleaned):
                 fixed_text = cleaned
                 stats["noise_fixed"] += 1
                 print(f"  [noise ] {state} {row_id}: '{text[:60]}' → '{cleaned[:60]}'")
-            # If nothing substantive left after stripping, fall through to title lookup
+            # If nothing substantive, fall through to .txt lookup
 
-        if fixed_text == text and NOISE_SUFFIX.search(text):
+        if fixed_text == text and is_noise_suffix:
             # Strip tail noise (SaechsBO pattern: noise appended at end)
             cleaned = NOISE_SUFFIX.sub("", text).strip()
             if len(cleaned) > 15:
                 fixed_text = cleaned
                 stats["noise_fixed"] += 1
                 print(f"  [tail  ] {state} {row_id}: '{text[:60]}' → '{cleaned[:60]}'")
-
-        if fixed_text == text and (TITLE_ONLY.match(text) or NOISE_PREFIX.match(text)):
+        if fixed_text == text and NOISE_TAIL.search(text):
+            # Strip general "- Seite N von M" tail noise
+            cleaned = NOISE_TAIL.sub("", text).strip()
+            if len(cleaned) > 15:
+                fixed_text = cleaned
+                stats["noise_fixed"] += 1
+                print(f"  [tail  ] {state} {row_id}: '{text[:60]}' → '{cleaned[:60]}'")
+        if fixed_text == text and (is_title_only or is_noise_prefix or is_noise_suffix):
             # Title-only: look up from .txt file
             if txt_path.exists():
                 real_text = extract_section_text(txt_path, row_id)

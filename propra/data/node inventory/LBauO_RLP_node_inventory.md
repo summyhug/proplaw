@@ -258,7 +258,7 @@
 | 57.1 | §57 Unternehmen | Abs. 1 | behoerdenstruktur | Die Unternehmen sind dafür verantwortlich, dass die von ihnen übernommenen Arbeiten nach den geprüften oder, wenn eine P |
 | 57.2 | §57 Unternehmen | Abs. 2 | behoerdenstruktur | Haben Unternehmen für einzelne Bauarbeiten nicht die erforderliche Sachkunde und Erfahrung, so haben sie die Bauherrin o |
 | 57.3 | §57 Unternehmen | Abs. 3 | behoerdenstruktur | Die Unternehmen und Fachleute haben auf Verlangen der Bauaufsichtsbehörde für Bauarbeiten, bei denen die Sicherheit der  |
-| 58.1 | §58 Bauaufsichtsbehörden | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind: - Seite 50 von 92 - 1. das fachlich zuständige Ministerium als oberste Bauaufsichtsbehörde, 2 |
+| 58.1 | §58 Bauaufsichtsbehörden | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind: |
 | 58.2 | §58 Bauaufsichtsbehörden | Abs. 2 | behoerdenstruktur | Die unteren Bauaufsichtsbehörden müssen mit geeigneten Fachkräften besetzt sein. |
 | 58.3 | §58 Bauaufsichtsbehörden | Abs. 3 | behoerdenstruktur | Die Verbandsgemeinden, die großen kreisangehörigen und die kreisfreien Städte sowie die Landkreise nehmen die Bauaufsich |
 | 59.1 | §59 Aufgaben und Befugnisse der Bauaufsichts | Abs. 1 | genehmigungspflicht | Die Bauaufsichtsbehörden haben bei der Errichtung, Änderung, Instandhaltung, Nutzung, Nutzungsänderung und dem Abbruch b |

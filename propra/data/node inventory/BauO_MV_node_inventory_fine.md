@@ -23,8 +23,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Bauliche Anlagen sind mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlagen; eine Verbindung mit dem Boden. |
 | 2.1 | Gebäude sind selbstständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet. |
-| 3.1 | Gebäude werden in folgende Gebäudeklassen eingeteilt: - Seite 9 von 82 -. |
-| 3.2 | 1. Gebäudeklasse 1: a) freistehende Gebäude mit |
+| 3.1 | Gebäude werden in folgende Gebäudeklassen eingeteilt:. |
 | 4.1 | Sonderbauten sind Anlagen und Räume besonderer Art oder Nutzung, die einen der nachfolgenden Tatbestände erfüllen:. |
 | 4.2 | 1. Ho |
 | 5.1 | Aufenthaltsräume sind Räume, die zum nicht nur vorübergehenden Aufenthalt von Menschen bestimmt oder geeignet sind. |
@@ -110,7 +109,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_MV-Wortlaut) |
 |---|---|
-| 1.1 | - Seite 1 von 82 Titel Gültig ab. |
+| 1.1 | Nicht überbaute Flächen der bebauten Grundstücke, Kinderspielplätze Teil 3 - Bauliche Anlagen 31.10.2015. |
 
 ---
 
@@ -467,8 +466,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst. |
 | 2.1 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,. |
-| 3.1 | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 82 -. |
-| 3.2 | 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 3.1 | Die Absätze 1 und 2 gelten nicht für. |
 | 4.1 | Abweichend von den Absätzen 1 und 2 sind. |
 | 4.2 | 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach |
 | 5.1 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich. |
@@ -525,8 +523,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 4.2 | 1. in Gebäuden der Gebäudeklasse 5 die Bauart v |
 | 5.1 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen. |
 | 5.2 | 1. Bekleidungen, Putze, Dämmstoffe, Unterdecken u |
-| 6.1 | In notwendigen Treppenräumen müssen Öffnungen - Seite 34 von 82 -. |
-| 6.2 | 1. zu Kellergeschossen, zu nicht ausgebauten Dachräume |
+| 6.1 | In notwendigen Treppenräumen müssen Öffnungen. |
 | 7.1 | Notwendige Treppenräume müssen zu beleuchten sein. |
 | 7.2 | Notwendige Treppenräume ohne Fenster müssen in Gebäuden mit einer Höh. |
 | 8.1 | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. |
@@ -812,8 +809,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_MV-Wortlaut) |
 |---|---|
-| 1.1 | Bauaufsichtsbehörden sind - Seite 46 von 82 -. |
-| 1.2 | 1. die Landräte und die Oberbürgermeister der kreisfreien und großen kreis |
+| 1.1 | Bauaufsichtsbehörden sind. |
 | 2.1 | Für den Vollzug dieses Gesetzes sowie anderer öffentlich-rechtlicher Vorschriften für die Errichtung, Änderung, Nutzungs. |
 | 3.1 | Die unteren Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen. |
 

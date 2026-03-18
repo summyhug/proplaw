@@ -8,7 +8,7 @@
 | 1.2 | §1 Anwendungsbereich | Abs. 2 | anwendungsbereich | Dieses Gesetz gilt nicht für 1. Anlagen des öffentlichen Verkehrs einschließlich Zubehör, Nebenanlagen und Nebenbetriebe |
 | 2.1 | §2 Begriffe | Abs. 1 | begriffsbestimmung | Bauliche Anlagen sind mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlagen; eine Verbindung mit dem Boden  |
 | 2.2 | §2 Begriffe | Abs. 2 | begriffsbestimmung | Gebäude sind selbstständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet |
-| 2.3 | §2 Begriffe | Abs. 3 | begriffsbestimmung | Gebäude werden in folgende Gebäudeklassen eingeteilt: - Seite 9 von 82 - 1. Gebäudeklasse 1: a) freistehende Gebäude mit |
+| 2.3 | §2 Begriffe | Abs. 3 | begriffsbestimmung | Gebäude werden in folgende Gebäudeklassen eingeteilt: |
 | 2.4 | §2 Begriffe | Abs. 4 | begriffsbestimmung | Sonderbauten sind Anlagen und Räume besonderer Art oder Nutzung, die einen der nachfolgenden Tatbestände erfüllen: 1. Ho |
 | 2.5 | §2 Begriffe | Abs. 5 | begriffsbestimmung | Aufenthaltsräume sind Räume, die zum nicht nur vorübergehenden Aufenthalt von Menschen bestimmt oder geeignet sind. |
 | 2.6 | §2 Begriffe | Abs. 6 | begriffsbestimmung | Geschosse sind oberirdische Geschosse, wenn ihre Deckenoberkanten im Mittel mehr als 1,40 m über die Geländeoberfläche h |
@@ -31,8 +31,7 @@
 | 6.7 | §6 Abstandsflächen, Abstände | Abs. 7 | abstandsflaeche | Bei der Bemessung der Abstandsflächen bleiben Maßnahmen zum Zwecke der Energieeinsparung und Solaranlagen an bestehenden |
 | 7.1 | §7 Teilung von Grundstücken | Abs. 1 | grundstuecksteilung | Durch die Teilung eines Grundstücks, das bebaut oder dessen Bebauung genehmigt ist, dürfen keine Verhältnisse geschaffen |
 | 7.2 | §7 Teilung von Grundstücken | Abs. 2 | grundstuecksteilung | Soll bei einer Teilung nach Absatz 1 von Vorschriften dieses Gesetzes oder aufgrund dieses Gesetzes abgewichen werden, i |
-| 8.1 | §8 Nicht überbaute Flächen der bebauten Gru | — | freiflaechengestaltung | - Seite 1 von 82 Titel Gültig ab
-Teil 3 - Bauliche Anlagen 31.10.2015
+| 8.1 | §8 Nicht überbaute Flächen der bebauten Gru | — | freiflaechengestaltung | Nicht überbaute Flächen der bebauten Grundstücke, Kinderspielplätze Teil 3 - Bauliche Anlagen 31.10.2015
 Abschnitt 1 - Gestaltung 31.10.2015 |
 | 9.1 | §9 Gestaltung 31.10.2015 | — | gestaltungsanforderung | Gestaltung Bauliche Anlagen müssen nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, Werkstoff und Farbe so gestaltet sein, dass sie nicht verunstaltet wirken. Bauliche Anlagen dürfen das Straßen-, Orts- und Landschaftsbild nicht verunstalten. |
 | 10.1 | §10 Anlagen der Außenwerbung, Warenautomaten | Abs. 1 | gestaltungsanforderung | Anlagen der Außenwerbung (Werbeanlagen) sind alle ortsfesten Einrichtungen, die der Ankündigung oder Anpreisung oder als |
@@ -123,7 +122,7 @@ Abschnitt 1 - Gestaltung 31.10.2015 |
 | 31.4 | §31 Decken | Abs. 4 | decke | Öffnungen in Decken, für die eine Feuerwiderstandsfähigkeit vorgeschrieben ist, sind nur zulässig 1. in Gebäuden der Geb |
 | 32.1 | §32 Dächer | Abs. 1 | dach | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst |
 | 32.2 | §32 Dächer | Abs. 2 | dach | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,  |
-| 32.3 | §32 Dächer | Abs. 3 | dach | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 82 - 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 32.3 | §32 Dächer | Abs. 3 | dach | Die Absätze 1 und 2 gelten nicht für |
 | 32.4 | §32 Dächer | Abs. 4 | dach | Abweichend von den Absätzen 1 und 2 sind 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach  |
 | 32.5 | §32 Dächer | Abs. 5 | dach | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich |
 | 32.6 | §32 Dächer | Abs. 6 | dach | Dächer von traufseitig aneinander gebauten Gebäuden müssen als raumabschließende Bauteile für eine Brandbeanspruchung vo |
@@ -145,7 +144,7 @@ Abschnitt 1 - Gestaltung 31.10.2015 |
 | 35.3 | §35 Notwendige Treppenräume, Ausgänge | Abs. 3 | treppenraum | Jeder notwendige Treppenraum muss einen unmittelbaren Ausgang ins Freie haben. Sofern der Ausgang eines notwendigen Trep |
 | 35.4 | §35 Notwendige Treppenräume, Ausgänge | Abs. 4 | treppenraum | Die Wände notwendiger Treppenräume müssen als raumabschließende Bauteile 1. in Gebäuden der Gebäudeklasse 5 die Bauart v |
 | 35.5 | §35 Notwendige Treppenräume, Ausgänge | Abs. 5 | treppenraum | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen 1. Bekleidungen, Putze, Dämmstoffe, Unterdecken u |
-| 35.6 | §35 Notwendige Treppenräume, Ausgänge | Abs. 6 | treppenraum | In notwendigen Treppenräumen müssen Öffnungen - Seite 34 von 82 - 1. zu Kellergeschossen, zu nicht ausgebauten Dachräume |
+| 35.6 | §35 Notwendige Treppenräume, Ausgänge | Abs. 6 | treppenraum | In notwendigen Treppenräumen müssen Öffnungen |
 | 35.7 | §35 Notwendige Treppenräume, Ausgänge | Abs. 7 | treppenraum | Notwendige Treppenräume müssen zu beleuchten sein. Notwendige Treppenräume ohne Fenster müssen in Gebäuden mit einer Höh |
 | 35.8 | §35 Notwendige Treppenräume, Ausgänge | Abs. 8 | treppenraum | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. Sie müsse |
 | 36.1 | §36 Notwendige Flure, offene Gänge | Abs. 1 | notwendiger_flur | Flure, über die Rettungswege aus Aufenthaltsräumen oder aus Nutzungseinheiten mit Aufenthaltsräumen zu Ausgängen in notw |
@@ -215,7 +214,7 @@ Abschnitt 1 - Gestaltung 31.10.2015 |
 | 56.1 | §56 Bauleiter 31.10.2015 | — | beteiligtenpflicht | Teil 5 - Bauaufsichtsbehörden, Verfahren 31.10.2015
 - Seite 3 von 82 Titel Gültig ab
 Abschnitt 1 - Bauaufsichtsbehörden  |
-| 57.1 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind - Seite 46 von 82 - 1. die Landräte und die Oberbürgermeister der kreisfreien und großen kreis |
+| 57.1 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 1 | behoerdenstruktur | Bauaufsichtsbehörden sind |
 | 57.2 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 2 | behoerdenstruktur | Für den Vollzug dieses Gesetzes sowie anderer öffentlich-rechtlicher Vorschriften für die Errichtung, Änderung, Nutzungs |
 | 57.3 | §57 Aufbau und Zuständigkeit der Bauaufsicht | Abs. 3 | behoerdenstruktur | Die unteren Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen |
 | 58.1 | §58 Aufgaben und Befugnisse der Bauaufsichts | Abs. 1 | behoerdenstruktur | Die Bauaufsichtsbehörden haben bei der Errichtung, Änderung, Nutzungsänderung und Beseitigung sowie bei der Nutzung und  |

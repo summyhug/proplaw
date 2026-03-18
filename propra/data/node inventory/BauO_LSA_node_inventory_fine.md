@@ -199,7 +199,6 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | Nr. | Regeltext (BauO_LSA-Wortlaut) |
 |---|---|
 | 1.1 | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. |
-| 1.2 | - Seite 19 von 8. |
 | 2.1 | Gebäude müssen einen ihrer Nutzung entsprechenden Schallschutz haben. |
 | 2.2 | Geräusche, die von ortsfesten Einrichtungen in bau. |
 | 3.1 | Erschütterungen oder Schwingungen, die von ortsfesten Einrichtungen in baulichen Anlagen oder auf Baugrundstücken ausgeh. |
@@ -263,8 +262,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Ein Verwendbarkeitsnachweis nach den §§ 18 bis 20 ist für ein Bauprodukt erforderlich, wenn. |
 | 1.2 | 1. es keine Technische Baube |
-| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt, - Seite 21 von 87 -. |
-| 2.2 | 1. das von einer allgemein an |
+| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt,. |
 | 3.1 | Die Technischen Baubestimmungen nach § 85a enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwend. |
 
 ---
@@ -460,8 +458,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 |---|---|
 | 1.1 | Bedachungen müssen gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme ausreichend lang widerst. |
 | 2.1 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,. |
-| 3.1 | Die Absätze 1 und 2 gelten nicht für - Seite 30 von 87 -. |
-| 3.2 | 1. 3 Gebäude ohne Aufenthaltsräume und ohne Feuerstätten mit ni |
+| 3.1 | Die Absätze 1 und 2 gelten nicht für. |
 | 4.1 | Abweichend von den Absätzen 1 und 2 sind. |
 | 4.2 | 1. lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach |
 | 5.1 | Dachüberstände, Dachgesimse und Dachaufbauten, lichtdurchlässige Bedachungen, Dachflächenfenster, Lichtkuppeln, Oberlich. |
@@ -569,8 +566,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 | 1.2 | 1. Flächen, die im Allgemeinen zum Be |
 | 2.1 | In Verkehrsflächen liegende Kellerlichtschächte und Betriebsschächte sind in Höhe der Verkehrsfläche verkehrssicher abzu. |
 | 3.1 | Fensterbrüstungen von Flächen mit einer Absturzhöhe bis zu 12 m müssen mindestens 0,80 m, von Flächen mit mehr als 12 m. |
-| 4.1 | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben: - Seite 37 von 87 -. |
-| 4.2 | 1. Umwehrungen zur Sicherung von Ö |
+| 4.1 | Andere notwendige Umwehrungen müssen folgende Mindesthöhen haben:. |
 
 ---
 
@@ -803,8 +799,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 
 | Nr. | Regeltext (BauO_LSA-Wortlaut) |
 |---|---|
-| 1.1 | Bauaufsichtsbehörden sind - Seite 46 von 87 -. |
-| 1.2 | 1. die Landkreise und kreisfreien Städte als untere Bauaufsichtsbehörden |
+| 1.1 | Bauaufsichtsbehörden sind. |
 | 2.1 | Die Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu besetzen und mit. |
 
 ---

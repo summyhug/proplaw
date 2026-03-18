@@ -111,7 +111,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (LBO SH-Wortlaut) |
 |---|---|
-| 10.1 | - Seite 1 von 86 Titel Gültig ab |
+| 10.1 | (1) Anlagen der Außenwerbung (Werbeanlagen) sind alle ortsfesten Einrichtungen, die der Ankündigung oder Anpreisung oder als Hinweis auf Gewerbe oder Beruf dienen und vom öffentlichen Verkehrsraum aus sichtbar sind. Hierzu zählen insbesondere Schilder, Beschriftungen, Bemalungen, Lichtwerbungen, Sch Abschnitt 2 - Allgemeine Anforderungen an die Bauausführung 05.07.2024 |
 
 ### § 11 — Baustelle
 **type:** baustellenanforderung
@@ -635,7 +635,7 @@ _Run split_inventory_to_sentences.py to produce the fine (sentence-level) versio
 
 | Nr. | Regeltext (LBO SH-Wortlaut) |
 |---|---|
-| 57.1 | Bauaufsichtsbehörden sind - Seite 49 von 86 - 1. die für Bauordnungsrecht zuständige oberste Landesbehörde als oberste B |
+| 57.1 | Bauaufsichtsbehörden sind |
 | 57.2 | Die oberste Bauaufsichtsbehörde kann durch Verordnung die Aufgaben der unteren Bauaufsichtsbehörde und in besonderen Fäl |
 | 57.3 | Die Träger der Bauaufsichtsbehörden sind zur Durchführung ihrer Aufgaben ausreichend mit geeigneten Fachkräften zu beset |
 | 57.4 | Fachaufsichtsbehörden sind 1. über die unteren Bauaufsichtsbehörden nach Absatz 1 Satz 1 Nummer 2 und über die Bürgermei |
