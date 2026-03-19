@@ -401,7 +401,8 @@ if __name__ == "__main__":
     graph_path = args[0] if args else _DEFAULT_GRAPH
     graph_name = Path(graph_path).stem
 
-    suffix = "_" + "_".join(filter_prefixes) if filter_prefixes else ""
+    safe_parts = [p.replace("§", "s") for p in filter_prefixes] if filter_prefixes else []
+    suffix = "_" + "_".join(safe_parts) if safe_parts else ""
     out = str(Path(graph_path).parent / f"{graph_name}{suffix}.html")
 
     G = load_graph(graph_path)
