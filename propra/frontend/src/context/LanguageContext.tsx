@@ -140,6 +140,10 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.context.postcode.label": "Postcode (optional)",
     "advisor.context.postcode.placeholder": "e.g. 10115",
     "advisor.classify.pick": "Please select a topic:",
+    "advisor.loading.1": "Checking regulations for your region…",
+    "advisor.loading.2": "Searching legal sources…",
+    "advisor.loading.3": "Assembling your answer…",
+    "advisor.loading.timeout": "This is taking longer than expected. Please wait…",
 
     // Permit page
     "permit.badge": "Member Feature",
@@ -319,6 +323,10 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.context.postcode.label": "Postleitzahl (optional)",
     "advisor.context.postcode.placeholder": "z.B. 10115",
     "advisor.classify.pick": "Bitte wählen Sie ein Thema:",
+    "advisor.loading.1": "Wir prüfen die Vorschriften für Ihre Region…",
+    "advisor.loading.2": "Rechtliche Quellen werden durchsucht…",
+    "advisor.loading.3": "Antwort wird zusammengestellt…",
+    "advisor.loading.timeout": "Das dauert länger als erwartet. Bitte warten…",
 
     // Permit page
     "permit.badge": "Mitglieder-Funktion",
