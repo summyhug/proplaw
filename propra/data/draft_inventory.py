@@ -4,9 +4,9 @@ propra/data/draft_inventory.py
 Semi-automated node inventory drafter for LBO/BayBO source texts.
 
 Parses a cleaned .txt file (output of extract_pdf.py), splits it into
-provisions (§ or Art.), classifies each using the Anthropic API against
-the NODE_TYPES in schema.py, and outputs a draft node_inventory.md in the
-same format as BW_LBO_node_inventory.md.
+provisions (§ or Art.), classifies each using an LLM (Anthropic or Gemini)
+against the NODE_TYPES in schema.py, and outputs a draft node_inventory.md
+in the same format as BW_LBO_node_inventory.md.
 
 The output is a DRAFT — always review and correct before committing.
 
@@ -34,6 +34,11 @@ from pathlib import Path
 
 import anthropic
 from dotenv import load_dotenv
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
 
 # Import node types from schema
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -163,13 +168,39 @@ Rules:
 Node type:"""
 
 
+def _call_llm_anthropic(api_key: str, prompt: str) -> str:
+    """Call Anthropic API; return raw response text."""
+    client = anthropic.Anthropic(api_key=api_key)
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=50,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return response.content[0].text.strip()
+
+
+def _call_llm_gemini(api_key: str, prompt: str, model_id: str | None = None) -> str:
+    """Call Gemini API; return raw response text."""
+    if genai is None:
+        raise RuntimeError("google-generativeai not installed. pip install google-generativeai")
+    genai.configure(api_key=api_key)
+    model_id = model_id or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    model = genai.GenerativeModel(model_id)
+    response = model.generate_content(prompt)
+    if not response.text:
+        raise RuntimeError("Gemini returned empty response")
+    return response.text.strip()
+
+
 def classify_provision(
-    client: anthropic.Anthropic,
+    provider: str,
+    api_key: str,
     provision: Provision,
     lbo_code: str,
+    gemini_model: str | None = None,
 ) -> str:
     """
-    Use Anthropic API to classify a provision into a NODE_TYPE.
+    Use LLM (Anthropic or Gemini) to classify a provision into a NODE_TYPE.
     Returns the node type string.
     """
     node_types_list = "\n".join(f"- {t}" for t in sorted(NODE_TYPES))
@@ -182,13 +213,12 @@ def classify_provision(
         node_types=node_types_list,
     )
 
-    response = client.messages.create(
-        model="claude-sonnet-4-20250514",
-        max_tokens=50,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    if provider == "gemini":
+        raw = _call_llm_gemini(api_key, prompt, model_id=gemini_model)
+    else:
+        raw = _call_llm_anthropic(api_key, prompt)
 
-    result = response.content[0].text.strip().lower().replace(" ", "_")
+    result = raw.lower().replace(" ", "_")
 
     # Validate — fall back to allgemeine_anforderung if unknown
     if result not in NODE_TYPES:
@@ -225,15 +255,10 @@ def format_provision_md(
 
     if provision.absaetze:
         for i, absatz in enumerate(provision.absaetze, 1):
-            # Truncate very long absätze for table readability
             text = absatz.replace("\n", " ").replace("|", "\\|")
-            if len(text) > 400:
-                text = text[:400] + "…"
             lines.append(f"| {num_clean}.{i} | {text} |")
     else:
         text = provision.full_text.replace("\n", " ").replace("|", "\\|")
-        if len(text) > 400:
-            text = text[:400] + "…"
         lines.append(f"| {num_clean}.1 | {text} |")
 
     lines.append("")
@@ -309,6 +334,8 @@ def draft_inventory(
     output_path: Path,
     dry_run: bool = False,
     rate_limit_delay: float = 0.3,
+    provider: str = "anthropic",
+    gemini_model: str | None = None,
 ) -> None:
     """Full pipeline: parse → classify → write inventory."""
 
@@ -336,21 +363,26 @@ def draft_inventory(
         print("[DRY RUN] — stopping here, no API calls, no output written")
         return
 
-    # 2. Classify via Anthropic API
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERR ANTHROPIC_API_KEY not set in .env")
-        sys.exit(1)
+    # 2. Classify via LLM (Anthropic or Gemini)
+    if provider == "gemini":
+        api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            print("ERR GEMINI_API_KEY or GOOGLE_API_KEY not set in .env")
+            sys.exit(1)
+    else:
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("ERR ANTHROPIC_API_KEY not set in .env")
+            sys.exit(1)
 
-    client = anthropic.Anthropic(api_key=api_key)
     node_types = []
 
-    print(f"Classifying {len(provisions)} provisions via Anthropic API...")
+    print(f"Classifying {len(provisions)} provisions via {provider}...")
     print("(This takes ~1-2 minutes for a full LBO)\n")
 
     for i, provision in enumerate(provisions, 1):
         try:
-            node_type = classify_provision(client, provision, lbo_code)
+            node_type = classify_provision(provider, api_key, provision, lbo_code, gemini_model=gemini_model)
             node_types.append(node_type)
             print(f"  [{i:3d}/{len(provisions)}] {provision.number:12s} → {node_type}")
             time.sleep(rate_limit_delay)  # be gentle with the API
@@ -396,6 +428,10 @@ def main():
     parser.add_argument("--output",       default="",       help="Output .md path")
     parser.add_argument("--dry_run",      action="store_true", help="Parse only, no API calls")
     parser.add_argument("--delay",        type=float, default=0.3, help="Seconds between API calls")
+    parser.add_argument("--provider",     default="anthropic", choices=("anthropic", "gemini"),
+                        help="LLM provider for classification (default: anthropic)")
+    parser.add_argument("--gemini-model", default="", dest="gemini_model",
+                        help="Gemini model ID (default: gemini-2.0-flash, or set GEMINI_MODEL in .env)")
 
     args = parser.parse_args()
 
@@ -417,6 +453,8 @@ def main():
         output_path=output_path,
         dry_run=args.dry_run,
         rate_limit_delay=args.delay,
+        provider=args.provider,
+        gemini_model=args.gemini_model or None,
     )
 
 

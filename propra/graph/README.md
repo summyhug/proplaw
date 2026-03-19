@@ -14,6 +14,7 @@ No API keys required.
 ## 1. Build the graph
 
 Loads MBO section anchors and each state in `_STATE_REGISTRY` from `data/node inventory/*_node_inventory_fine.md`, adds structural edges (supplements, sub_item_of), MBO section edges, state edges copied from MBO mapping, and reference edges. Writes `propra/data/graph.pkl` and `graph.graphml`.
+For BbgBO, structural edges (supplements, sub_item_of) are defined in `bbgbo_section_edges.py`.
 
 ```bash
 python -m propra.graph.build_graph
@@ -71,8 +72,10 @@ python -m propra.graph.core_nodes
 | `builder.py` | Graph I/O: create_graph, add_node, add_edge, load_graph, save_graph |
 | `build_graph.py` | Build graph (MBO anchors + state LBOs in _STATE_REGISTRY) |
 | `mbo_section_edges.py` | MBO section-defined edges (e.g. §1 exclusions, §6 exception_of) |
-| `state_structural_edges.py` | sub_item_of for state content nodes (block.sub → block.1) |
+| `state_structural_edges.py` | sub_item_of for state content nodes (general; BbgBO uses `bbgbo_section_edges.py`) |
 | `bbgbo_mbo_edges.py` | Copy MBO edges onto a state using data/{STATE}_mbo_mapping.json |
+| `generate_bbgbo_section_edges.py` | Regenerate `bbgbo_section_edges.py` draft (structural + MBO-projected) |
+| `bbgbo_section_edges.py` | Single-file BbgBO section edges (supplements + sub_item_of + MBO-projected domain edges) |
 | `references_edges.py` | References parsed from node text |
 | `parse_inventory.py` | Parse data/node inventory/*_node_inventory.md → Node list |
 | `map_to_mbo.py` | Generate state↔MBO section mapping (→ data/{STATE}_mbo_mapping.json) |

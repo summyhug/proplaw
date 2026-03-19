@@ -5,8 +5,9 @@ Reads a markdown inventory with one row per Absatz (e.g. | 6.1 | ... |, | 6.2 | 
 and emits a new inventory with one row per sentence or numbered list item, using
 Absatz.Satz IDs (e.g. 1.1, 1.2, 2.1, 2.2) so the structure matches MBO granularity.
 
-Known limitations: sentence split uses period+space; "Abs.", "Nr.", "Satz." can cause
-over-splitting. Numbered lists are detected only when they start on a new line.
+Inline numbered lists in one paragraph (e.g. ", 1. ... 2. ... 3. ...") are split so each
+"N. " is its own row. Newline-started "1. ", "2. " are already handled.
+Limitations: "Abs.", "Nr.", "Satz." can cause over-splitting on period+space.
 
 Usage:
     python -m propra.data.split_inventory_to_sentences
@@ -25,51 +26,57 @@ _INVENTORY_DIR = Path(__file__).parent / "node inventory"
 _DEFAULT_INPUT = _INVENTORY_DIR / "BbgBO_node_inventory_v2.md"
 _DEFAULT_OUTPUT = _INVENTORY_DIR / "BbgBO_node_inventory_fine.md"
 
-# Sentence boundary: period + space, when period follows a letter (avoid "Nr. 1." / "1. item")
-# Negative lookbehinds prevent splitting after common German legal abbreviations.
-_SENTENCE_RE = re.compile(
-    r"(?<!Art)(?<!Abs)(?<!Nr)(?<!Satz)(?<!bzw)(?<!ggf)(?<!Vgl)(?<!vgl)(?<!Hs)"
-    r"(?<=[a-zäöüßA-ZÄÖÜ])\.\s+"
-)
+# Sentence boundary: period + space, when period follows a letter.
+# NOTE: we do NOT want to split after common legal abbreviations like "Abs.", "Nr.", "BGBl.".
+# We therefore use a conservative heuristic splitter instead of relying only on a regex.
+_SENTENCE_RE = re.compile(r"(?<=[a-zäöüßA-ZÄÖÜ])\.\s+")
 # Line that starts a numbered list item: optional space, digits, period, space
 _LIST_LINE_RE = re.compile(r"^\s*(\d+)\.\s+", re.MULTILINE)
+# Inline numbered list: ", 2. " or ", 3. " (comma, space, number, period, space) — same paragraph
+_INLINE_LIST_RE = re.compile(r", (\d+)\.\s+")
 
-# Detects the start of an inline numbered list: space/colon then "1. "
-# NOT preceded by common abbreviations (Nr, Abs, Art, Satz).
-_INLINE_LIST_START_RE = re.compile(
-    r"(?<!\bNr)(?<!\bAbs)(?<!\bArt)(?<!\bSatz)(?<!\bNo)(?<=[:\s])1\.\s+"
-)
-# Splits between inline list items: comma/semicolon/space then "N. "
-_INLINE_LIST_ITEM_RE = re.compile(r"(?:,\s*|;\s*|\s+)(\d{1,2})\.\s+")
+# Abbreviations that commonly appear before a dot but are not sentence ends.
+_ABBREV = {
+    "abs", "nr", "satz", "art", "vgl", "z", "b", "z.b", "d.h", "u.a", "bzw",
+    "ggf", "insb", "i.s.d", "i.s.v", "bgbl", "s", "i", "ii", "iii",
+}
 
 
-def _expand_inline_list(text: str) -> str:
-    """If text contains an inline numbered list (e.g. '... 1. item, 2. item'),
-    expand it to multi-line so the line-based list handler can process it.
-    Returns unchanged text if no inline list is detected."""
-    m = _INLINE_LIST_START_RE.search(text)
-    if not m:
-        return text
-    intro = text[: m.start()].rstrip()
-    rest = text[m.start():]  # starts with "1. item..."
-    pieces = _INLINE_LIST_ITEM_RE.split(rest)
-    # pieces: ["1. item_1_text", "2", "item_2_text", "3", "item_3_text", ...]
-    lines: list[str] = []
-    if intro:
-        lines.append(intro)
-    # First piece starts with "1. "
-    first_text = pieces[0]
-    if first_text.startswith("1. "):
-        first_text = first_text[3:]
-    lines.append(f"1. {first_text.strip().rstrip(',;').strip()}")
-    i = 1
-    while i + 1 < len(pieces):
-        num_str = pieces[i]
-        item_text = pieces[i + 1].strip().rstrip(",;").strip()
-        if item_text:
-            lines.append(f"{num_str}. {item_text}")
-        i += 2
-    return "\n".join(lines)
+def _split_sentences(text: str) -> list[str]:
+    """
+    Split text into sentences using a conservative heuristic.
+
+    Splits on '. ' only when the token before the dot is not a known abbreviation
+    (e.g. avoids splitting at 'BGBl. I S. 1519').
+    """
+    t = re.sub(r"\s+", " ", text.strip())
+    if not t:
+        return []
+
+    parts: list[str] = []
+    start = 0
+    i = 0
+    while i < len(t) - 1:
+        if t[i] == "." and t[i + 1] == " ":
+            # token before the dot (letters only)
+            j = i - 1
+            while j >= 0 and t[j].isalpha():
+                j -= 1
+            token = t[j + 1 : i].lower()
+            if token and token in _ABBREV:
+                i += 1
+                continue
+            seg = t[start:i + 1].strip()
+            if seg:
+                parts.append(seg)
+            start = i + 2
+            i += 2
+            continue
+        i += 1
+    tail = t[start:].strip()
+    if tail:
+        parts.append(tail)
+    return parts
 
 
 @dataclass
@@ -124,7 +131,7 @@ def _parse_inventory(path: Path) -> list[Section]:
                     current.rows.append((current_nr, "\n".join(current_text_parts)))
                 # Check if first cell looks like Nr. (e.g. 1.1, 6.2, 12.3)
                 first = cells[0].strip()
-                if re.match(r"^\d+[a-z]*\.\d+$", first):
+                if re.match(r"^\d+\.\d+$", first):
                     current_nr = first
                     current_text_parts = [cells[1]]
                 else:
@@ -148,8 +155,6 @@ def _split_paragraph_text(text: str) -> list[str]:
     text = text.strip()
     if not text:
         return []
-    # Expand inline numbered lists into separate lines before line-based processing
-    text = _expand_inline_list(text)
     segments: list[str] = []
     lines = text.split("\n")
     # Detect list structure: lines that start with "1. ", "2. ", etc.
@@ -176,18 +181,39 @@ def _split_paragraph_text(text: str) -> list[str]:
                 i += 1
             intro_text = " ".join(intro_lines).strip()
             if intro_text:
-                # Split intro by sentence boundary (period + space, letter before period)
-                parts = _SENTENCE_RE.split(intro_text)
-                if len(parts) == 1 and parts[0]:
-                    segments.append(parts[0].strip() + ("." if not parts[0].strip().endswith(".") else ""))
+                # Scenario 1: intro ends with "... für 1. <item>, 2. <item>, ..."
+                # We want the "1." item to be its own node, not glued to the intro.
+                m1 = re.search(r"\b(für)\s+1\.\s+", intro_text)
+                if m1:
+                    head = intro_text[: m1.start(1)].rstrip()
+                    fuer = intro_text[m1.start(1) : m1.end(1)].strip()  # "für"
+                    rest = intro_text[m1.end(1) :].strip()  # starts with "1. ..."
+                    if head:
+                        segments.append(f"{head} {fuer}".strip())
+                    intro_text = f"1. {rest}".strip()
+
+                # Inline numbered list: ", 2. ", ", 3. " etc. — each N. is its own bullet
+                inline_parts = _INLINE_LIST_RE.split(intro_text)
+                if len(inline_parts) >= 3 and len(inline_parts) % 2 == 1:
+                    # [head_with_1, "2", tail_2, "3", tail_3, ...]; head includes "1. first item"
+                    segments.append(inline_parts[0].strip())
+                    for i in range(1, len(inline_parts) - 1, 2):
+                        num = inline_parts[i]
+                        rest = inline_parts[i + 1].strip()
+                        segments.append(f"{num}. {rest}")
                 else:
-                    for p in parts:
-                        p = p.strip()
-                        if not p:
-                            continue
-                        if not p.endswith("."):
-                            p = p + "."
-                        segments.append(p)
+                    # Split by sentence boundary (abbreviation-aware)
+                    parts = _split_sentences(intro_text)
+                    if len(parts) == 1 and parts[0]:
+                        segments.append(parts[0].strip() + ("." if not parts[0].strip().endswith(".") else ""))
+                    else:
+                        for p in parts:
+                            p = p.strip()
+                            if not p:
+                                continue
+                            if not p.endswith("."):
+                                p = p + "."
+                            segments.append(p)
             # i already advanced
     if not segments:
         return [text]
@@ -212,16 +238,8 @@ def _segment_paragraph(nr: str, text: str) -> list[tuple[str, str]]:
 
 def _write_fine_inventory(sections: list[Section], out_path: Path) -> None:
     """Write refined inventory: same structure, but table rows use Absatz.Satz and split content."""
-    # Derive law name from the first source_paragraph found (e.g. "§1 BbgBO" -> "BbgBO")
-    law_name = "LBO"
-    for sec in sections:
-        if sec.source_paragraph:
-            parts = sec.source_paragraph.replace("**source_paragraph:**", "").strip().split()
-            if len(parts) >= 2:
-                law_name = parts[-1]
-                break
     lines = [
-        f"# {law_name} — Node Inventory (Sentence / List-Item Level)",
+        "# BbgBO — Node Inventory (Sentence / List-Item Level)",
         "",
         "_Refined from paragraph-level inventory by split_inventory_to_sentences.py. One row per sentence or numbered list item._",
         "",
@@ -233,16 +251,11 @@ def _write_fine_inventory(sections: list[Section], out_path: Path) -> None:
         lines.append(sec.type_line)
         lines.append(sec.source_paragraph)
         lines.append("")
-        lines.append(f"| Nr. | Regeltext ({law_name}-Wortlaut) |")
+        lines.append("| Nr. | Regeltext (BbgBO-Wortlaut) |")
         lines.append("|---|---|")
         for nr, text in sec.rows:
             for new_nr, segment in _segment_paragraph(nr, text):
-                # Strip leading superscript sentence numbers (e.g. "1Dieses" -> "Dieses")
-                segment = re.sub(r"^\d+(?=[A-ZÄÖÜ])", "", segment)
-                # Escape pipe in text for markdown table
                 cell = segment.replace("|", "\\|").replace("\n", " ")
-                if len(cell) > 400:
-                    cell = cell[:397] + "..."
                 lines.append(f"| {new_nr} | {cell} |")
         lines.append("")
         lines.append("---")

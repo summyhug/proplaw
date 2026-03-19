@@ -3,6 +3,7 @@ Build the Propra core knowledge graph (MBO + all registered state LBOs).
 
 Loads nodes from MBO_node_inventory.md and each entry in _STATE_REGISTRY,
 adds structural edges + section-defined edges + reference edges.
+For BbgBO specifically, structural edges are sourced from `bbgbo_section_edges.py`.
 Saves to graph.pkl and graph.graphml. This graph is the single source of truth.
 
 To add a new state: drop its *_node_inventory.md into propra/data/node inventory/ and append
@@ -26,7 +27,7 @@ from propra.graph.visualize import export_graphml
 from propra.graph.mbo_section_edges import edges as mbo_section_edges
 from propra.graph.references_edges import references_edges
 from propra.graph.state_structural_edges import state_structural_edges
-from propra.graph.bbgbo_mbo_edges import bbgbo_edges_from_mbo
+from propra.graph.bbgbo_section_edges import edges as bbgbo_section_edges
 
 _DATA = Path(__file__).parent.parent / "data"
 _NODE_INVENTORY_DIR = "node inventory"
@@ -505,13 +506,12 @@ def build() -> nx.DiGraph:
     print("\nDomain edges:")
     _apply_edges(G, mbo_section_edges(), "MBO section (§1 exclusions)")
     for cfg in _STATE_REGISTRY:
-        edges = state_structural_edges(G, cfg["prefix"])
-        _apply_edges(G, edges, f"{cfg['name']} structural (sub_item_of)")
-        # Copy MBO relationship structure onto this state where section mapping exists
-        mapping_path = _DATA / f"{cfg['name']}_mbo_mapping.json"
-        if mapping_path.exists():
-            mbo_copied = bbgbo_edges_from_mbo(G, cfg["prefix"], mapping_path)
-            _apply_edges(G, mbo_copied, f"{cfg['name']} from MBO (mapping)")
+        # BbgBO structural edges are inside bbgbo_section_edges (supplements + sub_item_of)
+        if cfg["name"] != "BbgBO":
+            edges = state_structural_edges(G, cfg["prefix"])
+            _apply_edges(G, edges, f"{cfg['name']} structural (sub_item_of)")
+        if cfg["name"] == "BbgBO":
+            _apply_edges(G, bbgbo_section_edges(), f"{cfg['name']} section (structural + domain)")
     ref_edges = references_edges(G)
     _apply_edges(G, ref_edges, "references (from text)")
 

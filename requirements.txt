@@ -7,6 +7,7 @@ pydantic>=2.7.0
 
 # LLM
 anthropic>=0.26.0
+google-generativeai>=0.8.0  # optional, for draft_inventory --provider gemini
 
 # Knowledge graph (build, explore, visualize, audit — see propra/graph/README.md)
 networkx>=3.3

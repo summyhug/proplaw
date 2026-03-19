@@ -47,11 +47,34 @@ def _extract_titles(path: Path) -> dict[str, str]:
     Parse section headings from an inventory markdown file.
 
     Returns dict of {§_number: title}, e.g. {'29': 'Erster und zweiter Rettungsweg'}.
-    Only the first occurrence of each § number is kept (guards against duplicates).
+    Supports (1) ### § N — Title headings and (2) flat table with | row_id | §N Title | ...
+    (e.g. MBO_node_inventory.md). Only the first occurrence of each § number is kept.
     """
     titles: dict[str, str] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
+    lines = path.read_text(encoding="utf-8").splitlines()
+
+    for line in lines:
         m = re.match(r"^###\s+§§?\s*(\d+[a-z]?)\s*[—\-]\s*(.+)", line.strip(), re.IGNORECASE)
+        if m:
+            num = m.group(1).lower()
+            title = m.group(2).strip()
+            if num not in titles:
+                titles[num] = title
+
+    if titles:
+        return titles
+
+    # Fallback: MBO-style flat table (| Row ID | § | Absatz | ... or | 1.1 | §1 Anwendungsbereich | ...)
+    for line in lines:
+        stripped = line.strip()
+        if not stripped.startswith("|") or "|" not in stripped[1:]:
+            continue
+        cells = [c.strip() for c in stripped.strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        # Second column often "§1 Anwendungsbereich" or "§1 Anwendungsbereich"
+        cell = cells[1]
+        m = re.match(r"§\s*(\d+[a-z]?)\s+(.+)", cell, re.IGNORECASE)
         if m:
             num = m.group(1).lower()
             title = m.group(2).strip()
