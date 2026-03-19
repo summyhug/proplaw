@@ -45,7 +45,6 @@ interface Message {
   timestamp: Date;
   documentBlock?: string;
   classificationLabel?: string;
-  awaitingClassification?: boolean;
 }
 
 interface CaseStep {
@@ -101,22 +100,19 @@ const CASES: Case[] = [
   },
 ];
 
-const LOADING_MESSAGES = [
-  "Wir prüfen die Vorschriften für Ihre Region...",
-  "Rechtliche Quellen werden durchsucht...",
-  "Antwort wird zusammengestellt...",
-];
-const LOADING_TIMEOUT_MSG = "Das dauert länger als erwartet. Bitte warten...";
+const LOADING_KEYS = [
+  "advisor.loading.1",
+  "advisor.loading.2",
+  "advisor.loading.3",
+] as const;
 
 const classifyQuestion = (text: string): string | null => {
   const lower = text.toLowerCase();
-  if (["zaun", "grenze", "hecke"].some((k) => lower.includes(k))) return "Zaun / Grenze";
-  if (["fenster", "öffnung", "tür"].some((k) => lower.includes(k))) return "Fenster / Öffnung";
-  if (["garten", "terrasse", "schuppen"].some((k) => lower.includes(k))) return "Gartenanlage";
+  if (["zaun", "grenze", "hecke", "fence", "boundary", "hedge"].some((k) => lower.includes(k))) return "Zaun / Grenze";
+  if (["fenster", "öffnung", "tür", "window", "opening", "door"].some((k) => lower.includes(k))) return "Fenster / Öffnung";
+  if (["garten", "terrasse", "schuppen", "garden", "terrace", "shed"].some((k) => lower.includes(k))) return "Gartenanlage";
   return null;
 };
-
-const CLASSIFICATION_TILES = ["Zaun / Grenze", "Fenster / Öffnung", "Gartenanlage"];
 
 const ReliabilityBadge = ({ score, label }: { score: number; label: string }) => {
   const color =
@@ -272,12 +268,13 @@ const CaseCard = ({ case: c, statusConfig, stepsLabel, deadlineLabel }: {
 };
 
 const LoadingMessage = () => {
+  const { t } = useLanguage();
   const [msgIndex, setMsgIndex] = useState(0);
   const [timedOut, setTimedOut] = useState(false);
 
   useEffect(() => {
     const cycleInterval = setInterval(() => {
-      setMsgIndex((i) => (i + 1) % LOADING_MESSAGES.length);
+      setMsgIndex((i) => (i + 1) % LOADING_KEYS.length);
     }, 3000);
     const timeoutTimer = setTimeout(() => setTimedOut(true), 15000);
     return () => {
@@ -294,7 +291,7 @@ const LoadingMessage = () => {
       <div className="bg-card border border-border rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-3">
         <Loader2 className="w-4 h-4 text-gold animate-spin shrink-0" />
         <span className="text-sm text-muted-foreground font-body">
-          {timedOut ? LOADING_TIMEOUT_MSG : LOADING_MESSAGES[msgIndex]}
+          {timedOut ? t("advisor.loading.timeout") : t(LOADING_KEYS[msgIndex])}
         </span>
       </div>
     </div>
@@ -367,7 +364,7 @@ const AdvisorPage = () => {
 
     try {
       // TODO: replace with Render URL once Sebastian confirms endpoint
-      const res = await fetch("https://proplaw-api.onrender.com/api/assess", {
+      const res = await fetch("http://localhost:8000/api/assess", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -378,6 +375,7 @@ const AdvisorPage = () => {
           inside_outside: insideOutside,
           postcode,
           project_description: question,
+          has_bplan: false,
         }),
       });
 
@@ -403,7 +401,6 @@ const AdvisorPage = () => {
         : "";
       const content = `**${data.verdict}**\n\n${data.explanation}${nextActionsText}`;
 
-      const label = classifyQuestion(question);
       const aiMsg: Message = {
         id: Date.now() + 1,
         role: "assistant",
@@ -412,8 +409,7 @@ const AdvisorPage = () => {
         reliability: confidenceScore,
         reliabilityLabel: data.confidence_note ?? data.confidence,
         timestamp: new Date(),
-        classificationLabel: label ?? undefined,
-        awaitingClassification: label === null,
+        classificationLabel: classifyQuestion(question) ?? undefined,
       };
 
       setMessages((prev) => [...prev, aiMsg]);
@@ -428,14 +424,6 @@ const AdvisorPage = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const setMessageClassification = (id: number, label: string) => {
-    setMessages((prev) =>
-      prev.map((m) =>
-        m.id === id ? { ...m, classificationLabel: label, awaitingClassification: false } : m
-      )
-    );
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -769,24 +757,6 @@ const AdvisorPage = () => {
                           </div>
                         )}
 
-                        {msg.awaitingClassification && (
-                          <div className="mt-4 pt-4 border-t border-border">
-                            <p className="text-xs font-body text-muted-foreground mb-2">{t("advisor.classify.pick")}</p>
-                            <div className="flex flex-wrap gap-2">
-                              {CLASSIFICATION_TILES.map((tile) => (
-                                <button
-                                  key={tile}
-                                  type="button"
-                                  onClick={() => setMessageClassification(msg.id, tile)}
-                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-navy/30 bg-navy/5 text-navy text-xs font-body font-medium hover:bg-navy/10 hover:border-navy/50 transition-colors"
-                                >
-                                  <Tag className="w-3 h-3" />
-                                  {tile}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                        )}
                       </div>
                       </>
                     )}
