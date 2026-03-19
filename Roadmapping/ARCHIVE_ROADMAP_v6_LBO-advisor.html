@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capstone Roadmap v6.0 — LBO AI Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0f1923;
+    --paper:      #f5f2ec;
+    --paper2:     #ede9e1;
+    --accent:     #c84b2f;
+    --accent2:    #2a6496;
+    --gold:       #b5842a;
+    --muted:      #7a7468;
+    --border:     #d4cfc6;
+    --must:       #1a3d2b;
+    --must-bg:    #e8f4ed;
+    --should:     #1a3060;
+    --should-bg:  #e6eef8;
+    --wont:       #5a3010;
+    --wont-bg:    #fdf0e4;
+    --high-risk:  #8b1a1a;
+    --high-bg:    #fdeaea;
+    --med-risk:   #6b4c00;
+    --med-bg:     #fff8e1;
+    --low-risk:   #1a3d2b;
+    --low-bg:     #e8f4ed;
+    --resolved:   #3a3a3a;
+    --resolved-bg:#f0f0f0;
+    --phase1:     #c84b2f;
+    --phase2:     #2a6496;
+    --new-badge:  #c84b2f;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 36px 48px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,242,236,.08);
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    top: 20px; right: 80px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,242,236,.05);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+  }
+  .project-title em {
+    font-style: italic;
+    color: #c9b99a;
+  }
+  .version-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    background: var(--accent);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+  .header-meta {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 0.8rem;
+    color: rgba(245,242,236,0.65);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+  .header-meta span strong {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  /* scope-change banner */
+  .scope-banner {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 48px;
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scope-banner::before { content: '⚡'; font-size: 1rem; }
+
+  /* ── TABS ── */
+  .tab-bar {
+    background: var(--ink);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #222;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.45);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 14px 20px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .2s, border-color .2s;
+    margin-bottom: -2px;
+  }
+  .tab-btn:hover { color: rgba(245,242,236,0.8); }
+  .tab-btn.active { color: var(--paper); border-bottom-color: var(--accent); }
+
+  /* ── CONTENT ── */
+  .tab-content { display: none; padding: 40px 48px 60px; }
+  .tab-content.active { display: block; }
+
+  /* ── SHARED COMPONENTS ── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.55rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  /* cards grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 22px;
+  }
+  .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 0.82rem; line-height: 1.6; color: #444; }
+
+  /* badge */
+  .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .badge-must   { background: var(--must-bg);   color: var(--must);   border: 1px solid #a8d5b5; }
+  .badge-should { background: var(--should-bg); color: var(--should); border: 1px solid #9ab8d8; }
+  .badge-wont   { background: var(--wont-bg);   color: var(--wont);   border: 1px solid #d4ab7a; }
+  .badge-new    { background: var(--accent);    color: #fff; }
+  .badge-moved  { background: var(--gold);      color: #fff; }
+  .badge-p1     { background: var(--phase1);    color: #fff; }
+  .badge-p2     { background: var(--phase2);    color: #fff; }
+  .badge-week   { background: var(--paper2);    color: var(--ink); border: 1px solid var(--border); }
+  .badge-resolved { background: var(--resolved-bg); color: var(--resolved); border: 1px solid #ccc; }
+
+  /* feature table */
+  .feature-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.82rem; }
+  .feature-table th {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .feature-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .feature-table tr:nth-child(even) td { background: #faf9f7; }
+  .feature-table tr:hover td { background: #f0ede6; }
+
+  /* risk table */
+  .risk-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 16px; }
+  .risk-table th {
+    background: var(--ink); color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 14px; text-align: left;
+  }
+  .risk-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .risk-high   { color: var(--high-risk);  background: var(--high-bg); font-weight: 700; font-size: 0.72rem; font-family: 'DM Mono', monospace; letter-spacing: .05em; padding: 3px 8px; border-radius: 2px; display: inline-block; }
+  .risk-med    { color: var(--med-risk);   background: var(--med-bg);  font-weight: 700; font-size: 0.72rem; font-family: 'DM Mono', monospace; letter-spacing: .05em; padding: 3px 8px; border-radius: 2px; display: inline-block; }
+  .risk-low    { color: var(--low-risk);   background: var(--low-bg);  font-weight: 700; font-size: 0.72rem; font-family: 'DM Mono', monospace; letter-spacing: .05em; padding: 3px 8px; border-radius: 2px; display: inline-block; }
+  .risk-resolved { color: var(--resolved); background: var(--resolved-bg); font-weight: 700; font-size: 0.72rem; font-family: 'DM Mono', monospace; letter-spacing: .05em; padding: 3px 8px; border-radius: 2px; display: inline-block; }
+
+  /* sprint bar */
+  .sprint-bar {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+  .sprint-item {
+    flex: 1; min-width: 140px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .sprint-head {
+    background: var(--ink); color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 8px 12px;
+  }
+  .sprint-body { padding: 12px; font-size: 0.78rem; line-height: 1.6; background: #fff; }
+  .sprint-body strong { display: block; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-family: 'DM Mono', monospace; letter-spacing: .08em; margin-bottom: 4px; }
+
+  /* hypothesis box */
+  .hypothesis-box {
+    border-left: 3px solid var(--accent);
+    background: #fff;
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .hypothesis-box .hyp-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+  .hypothesis-box p { font-size: 0.88rem; line-height: 1.7; }
+
+  /* team cards */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px; margin-top: 20px;
+  }
+  .team-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .team-card-head {
+    padding: 14px 18px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .team-card-name { font-weight: 700; font-size: 0.95rem; }
+  .team-card-role { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+  .team-card-body { padding: 14px 18px; font-size: 0.78rem; line-height: 1.6; color: #444; }
+  .team-card-body strong { display: block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-top: 10px; margin-bottom: 3px; }
+  .team-card-body strong:first-child { margin-top: 0; }
+
+  /* stack pills */
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .stack-pill {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 3px; padding: 8px 14px;
+    font-size: 0.78rem;
+  }
+  .stack-pill .sp-name { font-weight: 700; font-size: 0.82rem; }
+  .stack-pill .sp-role { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 2px; }
+
+  /* change log */
+  .changelog { margin-top: 20px; }
+  .changelog-item {
+    display: grid; grid-template-columns: 100px 1fr;
+    gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border);
+    font-size: 0.82rem;
+  }
+  .changelog-ver {
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    color: var(--accent); font-weight: 600;
+  }
+
+  /* info callout */
+  .callout {
+    background: var(--should-bg);
+    border-left: 3px solid var(--accent2);
+    padding: 14px 18px; border-radius: 0 4px 4px 0;
+    font-size: 0.82rem; line-height: 1.6; margin: 20px 0;
+  }
+  .callout.warning {
+    background: var(--high-bg);
+    border-left-color: var(--accent);
+  }
+  .callout.gold {
+    background: #fff8e8;
+    border-left-color: var(--gold);
+  }
+
+  /* lang toggle demo */
+  .lang-demo {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 16px;
+  }
+  .lang-panel {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+  }
+  .lang-panel-head {
+    padding: 8px 14px; font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-panel-head.de { background: #f5f0e8; color: var(--ink); }
+  .lang-panel-head.en { background: #eaf0f8; color: var(--ink); }
+  .lang-panel-body { padding: 14px 16px; font-size: 0.82rem; line-height: 1.65; color: #444; }
+
+  @media (max-width: 700px) {
+    .site-header, .tab-bar, .tab-content { padding-left: 20px; padding-right: 20px; }
+    .scope-banner { padding-left: 20px; padding-right: 20px; }
+    .project-title { font-size: 1.6rem; }
+    .lang-demo { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <div>
+      <div class="project-title">AI Legal Advisor<br><em>Bauordnungsrecht</em></div>
+    </div>
+    <div class="version-badge">v6.0 — SCOPE RESET</div>
+  </div>
+  <div class="header-meta">
+    <span><strong>Team</strong> Sebastian · Nuria · Matteo · Sumit</span>
+    <span><strong>Bootcamp</strong> neuefische AIPM 2025/2026</span>
+    <span><strong>Deadline</strong> April 2, 2026</span>
+    <span><strong>Phase 1 Scope</strong> 16 LBO (Bundesländer)</span>
+    <span><strong>Languages</strong> DE + EN</span>
+  </div>
+</header>
+
+<div class="scope-banner">
+  SCOPE RESET v6.0 — Phase 1 switched from Wohnraummietrecht/WEG → Bauordnungsrecht (16 LBO). Dual language DE/EN promoted to Phase 1 Must-Have. Roadmap restructured accordingly.
+</div>
+
+<nav class="tab-bar" role="tablist">
+  <button class="tab-btn active" onclick="switchTab('mvp', this)">MVP Definition</button>
+  <button class="tab-btn" onclick="switchTab('features', this)">Features</button>
+  <button class="tab-btn" onclick="switchTab('language', this)">Dual Language</button>
+  <button class="tab-btn" onclick="switchTab('sprints', this)">Sprint Plan</button>
+  <button class="tab-btn" onclick="switchTab('corpus', this)">Corpus</button>
+  <button class="tab-btn" onclick="switchTab('risks', this)">Risks</button>
+  <button class="tab-btn" onclick="switchTab('team', this)">Team & Learning</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     TAB 1 · MVP DEFINITION
+══════════════════════════════════════════════ -->
+<section id="mvp" class="tab-content active">
+  <div class="section-label">Tab 01 — North Star</div>
+  <h2 class="section-title">MVP Definition</h2>
+
+  <div class="hypothesis-box">
+    <div class="hyp-label">Core Hypothesis</div>
+    <p>
+      Germany's building law is fragmented across 16 sovereign state codes (LBO). Architects, planners, foreign investors and Bauherren have no unified, queryable interface to navigate this complexity — especially across language barriers.
+      <br><br>
+      <strong>Our differentiator:</strong> A dual-language (DE/EN) AI advisor combining FAISS vector retrieval and a NetworkX knowledge graph to surface precise, cross-referenced answers from all 16 LBOs — with transparent source attribution and explicit out-of-scope detection.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Target Users — Revised</div>
+  <h3 style="font-family:'DM Serif Display',serif; font-size:1.2rem; margin-bottom:16px;">Who uses this?</h3>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--accent)">Primary</div>
+      <h3>Architects & Planners</h3>
+      <p>Need fast cross-Bundesland comparison of LBO rules. Often work in English in international firms. High query complexity.</p>
+    </div>
+    <div class="card">
+      <div class="card-label" style="color:var(--accent)">Primary</div>
+      <h3>Bauherren & Developers</h3>
+      <p>Initiating construction projects. Need to understand Abstandsflächen, GFZ, building class rules per state before engaging consultants.</p>
+    </div>
+    <div class="card">
+      <div class="card-label" style="color:var(--accent2)">Secondary</div>
+      <h3>Foreign Investors</h3>
+      <p>Evaluating real estate development across multiple German states. English-first users. Benefit most from bilingual interface.</p>
+    </div>
+    <div class="card">
+      <div class="card-label" style="color:var(--accent2)">Secondary</div>
+      <h3>Municipalities & Officials</h3>
+      <p>Compare own LBO rules to neighbouring states. Look up specific §§ during planning approvals. German-first users.</p>
+    </div>
+    <div class="card">
+      <div class="card-label" style="color:var(--muted)">Out of Scope</div>
+      <h3>General Tenants</h3>
+      <p>Wohnraummietrecht / WEG questions are Phase 2. Out-of-scope detection node redirects these users appropriately.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Success Criteria</div>
+  <table class="feature-table" style="margin-top:12px;">
+    <thead>
+      <tr><th>Criterion</th><th>Measure</th><th>Target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Retrieval accuracy</td><td>Correct §§ cited in top-3 results</td><td>≥ 80%</td></tr>
+      <tr><td>Cross-Bundesland queries</td><td>Answers spanning ≥ 2 LBOs correctly</td><td>≥ 70%</td></tr>
+      <tr><td>Language parity</td><td>DE vs EN answer quality delta</td><td>&lt; 10%</td></tr>
+      <tr><td>Out-of-scope detection</td><td>Non-LBO queries correctly flagged</td><td>≥ 90%</td></tr>
+      <tr><td>Latency</td><td>End-to-end response time</td><td>&lt; 6s</td></tr>
+      <tr><td>Deployment</td><td>Live on Lovable, mobile-optimised</td><td>By April 2</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 2 · FEATURES
+══════════════════════════════════════════════ -->
+<section id="features" class="tab-content">
+  <div class="section-label">Tab 02 — Feature Set</div>
+  <h2 class="section-title">Features — Phase 1 vs Phase 2</h2>
+
+  <div class="callout gold">
+    <strong>Scope change impact:</strong> Dual language (F5) promoted from Phase 2 → Phase 1 Must-Have. Wohnraummietrecht/WEG content moved entirely to Phase 2. Knowledge Graph (F2) remains Phase 1 — even more critical for LBO cross-references than it was for BGB.
+  </div>
+
+  <table class="feature-table">
+    <thead>
+      <tr>
+        <th width="50">ID</th>
+        <th width="180">Feature</th>
+        <th>Description</th>
+        <th width="100">Priority</th>
+        <th width="80">Phase</th>
+        <th width="120">Sprint</th>
+        <th width="80">Owner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>F1</strong></td>
+        <td><strong>RAG Pipeline</strong><br><small>FAISS + pdfplumber</small></td>
+        <td>Corpus ingestion, chunking with Bundesland metadata tags, sentence-transformer embeddings, FAISS vector store. Static pipeline built once, queried at runtime.</td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 1–2</span></td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F2</strong></td>
+        <td><strong>Knowledge Graph</strong><br><small>NetworkX</small></td>
+        <td>LBO-specific KG: nodes = §§, concepts (Abstandsfläche, GFZ, Bauklasse), Bundesländer. Edges = cross-references between §§ and between states. Dual retrieval: FAISS + KG combined answer synthesis.</td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 2–3</span></td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F3</strong></td>
+        <td><strong>LangGraph Agent</strong><br><small>Query routing</small></td>
+        <td>LangGraph orchestration: route query → FAISS → KG → synthesis → language layer → response. Includes retry logic, confidence scoring, and graceful fallback.</td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 2–3</span></td>
+        <td>Matteo</td>
+      </tr>
+      <tr>
+        <td><strong>F4</strong></td>
+        <td><strong>Out-of-Scope Detection</strong><br><small>Guard node</small></td>
+        <td>Dedicated LangGraph node classifying queries as: in-scope LBO, out-of-scope (Mietrecht, WEG, GEG, DIN norms), or ambiguous. Provides redirect guidance for out-of-scope queries.</td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 2</span></td>
+        <td>Nuria</td>
+      </tr>
+      <tr>
+        <td><strong>F5</strong></td>
+        <td><strong>Dual Language Interface</strong><br><small>DE / EN</small></td>
+        <td>
+          <span class="badge badge-new">NEW — Promoted to P1</span><br>
+          LLM translation loop: query accepted in DE or EN → processed in DE internally → response generated → translated to user's chosen language. UI rendered in full DE or EN (labels, placeholders, legal disclaimers, metadata). Language toggle persists in session. See <em>Dual Language</em> tab for full spec.
+        </td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 3</span></td>
+        <td>Nuria + Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F6</strong></td>
+        <td><strong>Lovable Frontend</strong><br><small>Mobile-optimised UI</small></td>
+        <td>Chat interface with Bundesland selector, language toggle, source citation panel, out-of-scope alert component. Deployed on Lovable. Mobile-first layout.</td>
+        <td><span class="badge badge-must">Must-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 1 + 3–4</span></td>
+        <td>Sumit + Nuria</td>
+      </tr>
+      <tr>
+        <td><strong>F7</strong></td>
+        <td><strong>User PDF Upload</strong><br><small>Gemini API</small></td>
+        <td>Allow users to upload a Baugenehmigung or Bebauungsplan PDF. Gemini API parses at runtime; agent cross-references with corpus. Adds significant demo value.</td>
+        <td><span class="badge badge-should">Should-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 4</span></td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F8</strong></td>
+        <td><strong>Evaluation Framework</strong><br><small>RAGAS / custom</small></td>
+        <td>Test suite for retrieval quality, KG accuracy, language parity between DE and EN responses, and out-of-scope detection precision/recall.</td>
+        <td><span class="badge badge-should">Should-Have</span></td>
+        <td><span class="badge badge-p1">Phase 1</span></td>
+        <td><span class="badge badge-week">Wk 3–4</span></td>
+        <td>Matteo</td>
+      </tr>
+      <tr>
+        <td><strong>F9</strong></td>
+        <td><strong>Wohnraummietrecht Corpus</strong><br><small>BGB §§535–580a</small></td>
+        <td>
+          <span class="badge badge-moved">Moved → Phase 2</span><br>
+          Previously Phase 1 core scope. Now Phase 2 expansion. Entire BGB rental law corpus, WEG, BetrKV ingestion deferred.
+        </td>
+        <td><span class="badge badge-wont">Phase 2</span></td>
+        <td><span class="badge badge-p2">Phase 2</span></td>
+        <td>—</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td><strong>F10</strong></td>
+        <td><strong>Kreisebene / Local Rules</strong><br><small>Municipal bylaws</small></td>
+        <td>District-level Gestaltungssatzungen and municipal Bebauungsplan rules. Extremely variable. Phase 2 after LBO base is stable.</td>
+        <td><span class="badge badge-wont">Phase 2</span></td>
+        <td><span class="badge badge-p2">Phase 2</span></td>
+        <td>—</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td><strong>F11</strong></td>
+        <td><strong>GEG / EnEV Integration</strong><br><small>Energy codes</small></td>
+        <td>Gebäudeenergiegesetz frequently cross-referenced in LBO queries but is federal law with a different structure. Separate corpus needed. Phase 2.</td>
+        <td><span class="badge badge-wont">Phase 2</span></td>
+        <td><span class="badge badge-p2">Phase 2</span></td>
+        <td>—</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 3 · DUAL LANGUAGE
+══════════════════════════════════════════════ -->
+<section id="language" class="tab-content">
+  <div class="section-label">Tab 03 — Feature Spec</div>
+  <h2 class="section-title">Dual Language — DE / EN</h2>
+
+  <span class="badge badge-new">NEW in v6.0 — Phase 1 Must-Have</span>
+  <span class="badge badge-week" style="margin-left:4px;">Sprint Week 3</span>
+
+  <hr class="divider">
+
+  <div class="section-label">Architecture</div>
+  <h3 style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:14px;">Translation Loop (LLM-driven)</h3>
+
+  <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:20px 24px;margin-bottom:20px;font-family:'DM Mono',monospace;font-size:0.78rem;line-height:2;color:#333;">
+    User Query (DE or EN)<br>
+    &nbsp;&nbsp;↓  <span style="color:var(--muted)">// language detection node</span><br>
+    Normalise → Internal Processing in <strong>DE</strong><br>
+    &nbsp;&nbsp;↓  <span style="color:var(--muted)">// FAISS + KG retrieval (always German corpus)</span><br>
+    Retrieve relevant LBO §§ chunks<br>
+    &nbsp;&nbsp;↓  <span style="color:var(--muted)">// synthesis node</span><br>
+    Draft answer in <strong>DE</strong><br>
+    &nbsp;&nbsp;↓  <span style="color:var(--muted)">// translation node (only if user_lang = EN)</span><br>
+    Translate answer → <strong>EN</strong>  <span style="color:var(--muted)">// Groq LLM, legal-aware prompt</span><br>
+    &nbsp;&nbsp;↓<br>
+    Render response in user's chosen language<br>
+    &nbsp;&nbsp;↓  <span style="color:var(--muted)">// source attribution always shows original DE §§</span><br>
+    Source panel: §§ always shown in <strong>DE</strong> with EN label
+  </div>
+
+  <div class="callout">
+    <strong>Design decision:</strong> The corpus stays German-only. We do not translate source documents. Translation happens only at the response layer — this keeps the retrieval clean and avoids legal accuracy risk from translated §§ citations.
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">UI Scope — What gets translated</div>
+
+  <div class="lang-demo">
+    <div class="lang-panel">
+      <div class="lang-panel-head de">🇩🇪 Deutsche Oberfläche</div>
+      <div class="lang-panel-body">
+        <strong>Alle UI-Elemente:</strong><br>
+        Navigationslabels, Buttons, Platzhaltertexte<br><br>
+        <strong>Antworttext:</strong><br>
+        Vollständige Antwort auf Deutsch<br><br>
+        <strong>Rechtshinweis:</strong><br>
+        „Diese Antwort ersetzt keine Rechtsberatung…"<br><br>
+        <strong>Quellenangaben:</strong><br>
+        § 6 MBO, § 8 BayBO — original DE §§
+      </div>
+    </div>
+    <div class="lang-panel">
+      <div class="lang-panel-head en">🇬🇧 English Interface</div>
+      <div class="lang-panel-body">
+        <strong>All UI elements:</strong><br>
+        Nav labels, buttons, placeholder texts<br><br>
+        <strong>Answer text:</strong><br>
+        Full answer translated to English<br><br>
+        <strong>Legal disclaimer:</strong><br>
+        "This answer does not substitute legal advice…"<br><br>
+        <strong>Source citations:</strong><br>
+        § 6 MBO, § 8 BayBO — original DE §§ preserved
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Implementation Notes</div>
+  <table class="feature-table">
+    <thead><tr><th>Component</th><th>Approach</th><th>Owner</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Language detection</td>
+        <td>LangGraph node — detect query language, set <code>user_lang</code> session variable. Fallback: DE.</td>
+        <td>Nuria</td>
+      </tr>
+      <tr>
+        <td>Translation node</td>
+        <td>Groq LLM with system prompt: legal translation mode, preserve § references verbatim, no paraphrase of cited law.</td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td>UI i18n</td>
+        <td>Simple JSON language files: <code>strings.de.json</code> / <code>strings.en.json</code>. Lovable renders from active lang file. Toggle persists in session state.</td>
+        <td>Nuria + Sumit</td>
+      </tr>
+      <tr>
+        <td>Legal disclaimer</td>
+        <td>Both languages hardcoded — not LLM-generated. Reviewed by team for accuracy in both languages.</td>
+        <td>Nuria</td>
+      </tr>
+      <tr>
+        <td>Source panel</td>
+        <td>Always renders original German §§ identifiers. EN mode adds translated label underneath. Never translates the § itself.</td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td>Evaluation</td>
+        <td>Language parity metric added to eval framework (F8): DE answer vs EN answer factual delta &lt; 10%.</td>
+        <td>Matteo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning" style="margin-top:24px;">
+    <strong>Risk:</strong> Translation latency adds ~1–2s to EN responses. Monitor total latency against the &lt;6s target. If needed, stream the DE response while translating in parallel.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 4 · SPRINT PLAN
+══════════════════════════════════════════════ -->
+<section id="sprints" class="tab-content">
+  <div class="section-label">Tab 04 — Agile Plan</div>
+  <h2 class="section-title">Sprint Plan — 4 Weeks to April 2</h2>
+
+  <div class="callout gold" style="margin-bottom:28px;">
+    Scope change impact on sprints: Week 1 corpus ingestion now targets LBO PDFs. Dual language (F5) added to Week 3. Wohnraummietrecht work fully removed. Remaining structure largely intact — dual retrieval architecture is unchanged.
+  </div>
+
+  <div class="sprint-bar">
+    <div class="sprint-item">
+      <div class="sprint-head">Week 1 — Foundation</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Sumit<br>
+        Repo setup · branching rules · LBO corpus acquisition (all 16 PDFs) · pdfplumber pipeline · Lovable scaffold · Kanban board live<br><br>
+        <strong>Deliverable</strong><br>
+        16 LBOs ingested, chunked, metadata-tagged (Bundesland, §§, version date)
+      </div>
+    </div>
+    <div class="sprint-item">
+      <div class="sprint-head">Week 2 — Core Pipeline</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Nuria<br>
+        FAISS vector store built · LangGraph agent skeleton · KG construction starts · Out-of-scope detection node (Nuria) · Groq integration<br><br>
+        <strong>Deliverable</strong><br>
+        End-to-end query → FAISS retrieval → raw answer working in DE
+      </div>
+    </div>
+    <div class="sprint-item">
+      <div class="sprint-head">Week 3 — Intelligence + Language</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Matteo<br>
+        KG complete · Dual retrieval (FAISS + KG) · Translation loop (F5) · UI i18n strings · Evaluation framework begins · User PDF upload (F7) if on track<br><br>
+        <strong>Deliverable</strong><br>
+        Bilingual responses working · KG cross-references surfacing
+      </div>
+    </div>
+    <div class="sprint-item">
+      <div class="sprint-head">Week 4 — Polish & Ship</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Sebastian<br>
+        Eval suite complete · Lovable UI final · Mobile QA · PDF upload (F7) · Demo script rehearsal · GitHub portfolio clean-up<br><br>
+        <strong>Deliverable</strong><br>
+        Live demo on Lovable · Presentation ready April 2
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Week 1 Tasks — Immediate</div>
+  <table class="feature-table">
+    <thead><tr><th>Task</th><th>Owner</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Clone repo, configure branching rules (see Corpus tab)</td><td>Sebastian</td><td>🔲 Open</td></tr>
+      <tr><td>Acquire all 16 LBO PDFs (official Landesrecht sources)</td><td>Sebastian + Sumit</td><td>🔲 Open</td></tr>
+      <tr><td>Set up pdfplumber ingestion script</td><td>Sebastian</td><td>🔲 Open</td></tr>
+      <tr><td>Define chunk schema: text · bundesland · §§ · version_date · source_url</td><td>Sebastian</td><td>🔲 Open</td></tr>
+      <tr><td>Lovable project scaffold + language toggle placeholder</td><td>Sumit</td><td>🔲 Open</td></tr>
+      <tr><td>Kanban board set up (GitHub Projects or Notion)</td><td>Nuria</td><td>🔲 Open</td></tr>
+      <tr><td>Draft CONTRIBUTING.md + .gitignore</td><td>Sebastian</td><td>🔲 Open</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 5 · CORPUS
+══════════════════════════════════════════════ -->
+<section id="corpus" class="tab-content">
+  <div class="section-label">Tab 05 — Data</div>
+  <h2 class="section-title">Corpus Structure — 16 LBOs</h2>
+
+  <div class="callout gold">
+    Decision confirmed: All 16 Bundesländer LBOs included in Phase 1. Side information (local knowledge, Kreisebene notes, amendment history) included where available as enrichment — not as primary retrieval source.
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Branching Strategy</div>
+  <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:0.78rem;line-height:2;margin-bottom:20px;">
+    main &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← stable, RAG-ready corpus only. PR from dev after review.<br>
+    dev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← integration. Merge LBO branches here when ready.<br>
+    │<br>
+    ├── data/lbo-01-bw &nbsp;&nbsp;← Baden-Württemberg (LBO BW)<br>
+    ├── data/lbo-02-bay &nbsp;← Bayern (BayBO)<br>
+    ├── data/lbo-03-ber &nbsp;← Berlin (BauOBln)<br>
+    ├── data/lbo-04-bb &nbsp;&nbsp;← Brandenburg (BbgBO)<br>
+    ├── data/lbo-05-hb &nbsp;&nbsp;← Bremen (BremLBO)<br>
+    ├── data/lbo-06-hh &nbsp;&nbsp;← Hamburg (HBauO)<br>
+    ├── data/lbo-07-he &nbsp;&nbsp;← Hessen (HBO)<br>
+    ├── data/lbo-08-mv &nbsp;&nbsp;← Mecklenburg-Vorpommern (LBauO MV)<br>
+    ├── data/lbo-09-ni &nbsp;&nbsp;← Niedersachsen (NBauO)<br>
+    ├── data/lbo-10-nrw &nbsp;← Nordrhein-Westfalen (BauO NRW)<br>
+    ├── data/lbo-11-rp &nbsp;&nbsp;← Rheinland-Pfalz (LBauO RLP)<br>
+    ├── data/lbo-12-sl &nbsp;&nbsp;← Saarland (LBO Saar)<br>
+    ├── data/lbo-13-sn &nbsp;&nbsp;← Sachsen (SächsBO)<br>
+    ├── data/lbo-14-st &nbsp;&nbsp;← Sachsen-Anhalt (BauO LSA)<br>
+    ├── data/lbo-15-sh &nbsp;&nbsp;← Schleswig-Holstein (LBO SH)<br>
+    ├── data/lbo-16-th &nbsp;&nbsp;← Thüringen (ThürBO)<br>
+    │<br>
+    ├── enrichment/side-info &nbsp;&nbsp;← local knowledge, amendment notes, Kreisebene context<br>
+    ├── enrichment/case-law &nbsp;&nbsp;&nbsp;← relevant Verwaltungsgerichtsentscheidungen (if added)<br>
+    └── tooling/ingestion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← pdfplumber scripts, chunking, metadata tagging
+  </div>
+
+  <div class="section-label">Chunk Schema</div>
+  <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:0.78rem;line-height:1.9;margin-bottom:20px;">
+    {<br>
+    &nbsp;&nbsp;"text": "§ 6 Abs. 2 BayBO: Abstandsflächen müssen …",<br>
+    &nbsp;&nbsp;"bundesland": "Bayern",<br>
+    &nbsp;&nbsp;"lbo_code": "BayBO",<br>
+    &nbsp;&nbsp;"paragraph": "§ 6",<br>
+    &nbsp;&nbsp;"absatz": "2",<br>
+    &nbsp;&nbsp;"version_date": "2021-11-01",<br>
+    &nbsp;&nbsp;"source_url": "https://www.gesetze-bayern.de/…",<br>
+    &nbsp;&nbsp;"chunk_id": "baybo-§6-abs2-001",<br>
+    &nbsp;&nbsp;"is_enrichment": false<br>
+    }
+  </div>
+
+  <div class="section-label">Official Sources — PDF Acquisition</div>
+  <table class="feature-table">
+    <thead><tr><th>Bundesland</th><th>Code</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Baden-Württemberg</td><td>LBO BW</td><td>landesrecht-bw.de</td></tr>
+      <tr><td>Bayern</td><td>BayBO</td><td>gesetze-bayern.de</td></tr>
+      <tr><td>Berlin</td><td>BauOBln</td><td>gesetze.berlin.de</td></tr>
+      <tr><td>Brandenburg</td><td>BbgBO</td><td>bravors.brandenburg.de</td></tr>
+      <tr><td>Bremen</td><td>BremLBO</td><td>bremen.de/landesrecht</td></tr>
+      <tr><td>Hamburg</td><td>HBauO</td><td>landesrecht-hamburg.de</td></tr>
+      <tr><td>Hessen</td><td>HBO</td><td>rv.hessenrecht.hessen.de</td></tr>
+      <tr><td>Mecklenburg-Vorpommern</td><td>LBauO MV</td><td>landesrecht-mv.de</td></tr>
+      <tr><td>Niedersachsen</td><td>NBauO</td><td>voris.niedersachsen.de</td></tr>
+      <tr><td>Nordrhein-Westfalen</td><td>BauO NRW</td><td>recht.nrw.de</td></tr>
+      <tr><td>Rheinland-Pfalz</td><td>LBauO RLP</td><td>landesrecht-rp.de</td></tr>
+      <tr><td>Saarland</td><td>LBO Saar</td><td>sl.juris.de</td></tr>
+      <tr><td>Sachsen</td><td>SächsBO</td><td>revosax.sachsen.de</td></tr>
+      <tr><td>Sachsen-Anhalt</td><td>BauO LSA</td><td>landesrecht.sachsen-anhalt.de</td></tr>
+      <tr><td>Schleswig-Holstein</td><td>LBO SH</td><td>gesetze-rechtsprechung.sh.juris.de</td></tr>
+      <tr><td>Thüringen</td><td>ThürBO</td><td>landesrecht.thueringen.de</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 6 · RISKS
+══════════════════════════════════════════════ -->
+<section id="risks" class="tab-content">
+  <div class="section-label">Tab 06 — Risk Register</div>
+  <h2 class="section-title">Risks — Updated for LBO Scope</h2>
+
+  <table class="risk-table">
+    <thead>
+      <tr><th>#</th><th>Risk</th><th>Level</th><th>Mitigation</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>R1</td>
+        <td><strong>LBO amendment divergence</strong><br><small>16 states update independently — corpus may go stale mid-project</small></td>
+        <td><span class="risk-high">HIGH</span></td>
+        <td>Pin to a specific version_date per Bundesland at ingestion. Store version_date in chunk metadata. Note in UI: "Based on LBO version as of [date]".</td>
+        <td>Open</td>
+      </tr>
+      <tr>
+        <td>R2</td>
+        <td><strong>Cross-§§ retrieval gaps</strong><br><small>LBO §§ heavily reference each other — FAISS alone misses relational context</small></td>
+        <td><span class="risk-high">HIGH</span></td>
+        <td>Knowledge Graph (F2) is the direct mitigation. This is the core architectural differentiator. KG must be complete before Week 3 eval.</td>
+        <td>Mitigated (F2)</td>
+      </tr>
+      <tr>
+        <td>R3</td>
+        <td><strong>Translation quality degradation</strong><br><small>Legal terms may be mistranslated or paraphrased incorrectly in EN mode</small></td>
+        <td><span class="risk-high">HIGH</span></td>
+        <td>Translation prompt enforces: preserve §§ references verbatim, no paraphrase of cited text, legal-register language. Eval metric: language parity &lt;10% delta. Fallback: show original DE alongside EN.</td>
+        <td>Open — eval in Wk 3</td>
+      </tr>
+      <tr>
+        <td>R4</td>
+        <td><strong>PDF acquisition friction</strong><br><small>Some state portals don't offer clean PDF downloads; OCR may be needed</small></td>
+        <td><span class="risk-med">MED</span></td>
+        <td>Start acquisition Week 1. Prioritise states with clean HTML/PDF exports (Bayern, NRW, BW). Use Gemini OCR as fallback for scanned PDFs.</td>
+        <td>Open — Week 1 task</td>
+      </tr>
+      <tr>
+        <td>R5</td>
+        <td><strong>Scope bleed — GEG / DIN queries</strong><br><small>Users will ask about energy codes and DIN norms not in corpus</small></td>
+        <td><span class="risk-med">MED</span></td>
+        <td>Out-of-scope detection node (F4 / Nuria) classifies and deflects. UI shows clear "outside scope" message with suggested external resources.</td>
+        <td>Mitigated (F4)</td>
+      </tr>
+      <tr>
+        <td>R6</td>
+        <td><strong>Translation latency</strong><br><small>Translation loop adds ~1–2s; total latency may exceed 6s target</small></td>
+        <td><span class="risk-med">MED</span></td>
+        <td>Stream DE response while translating in parallel. Cache common legal phrase translations. Profile in Week 3.</td>
+        <td>Open — Week 3</td>
+      </tr>
+      <tr>
+        <td>R7</td>
+        <td><strong>Team capacity — 4 weeks, expanded scope</strong><br><small>LBO is a larger corpus than BGB rental law; dual language adds feature weight</small></td>
+        <td><span class="risk-med">MED</span></td>
+        <td>F7 (PDF upload) is Should-Have — drop to Phase 2 if Week 3 is under pressure. Kreisebene enrichment is supplementary — not a demo blocker.</td>
+        <td>Open</td>
+      </tr>
+      <tr>
+        <td>R8</td>
+        <td><strong>Stack decision (Lovable)</strong></td>
+        <td><span class="risk-resolved">RESOLVED</span></td>
+        <td>Lovable confirmed. Streamlit dropped. No reverting.</td>
+        <td>✓ Closed</td>
+      </tr>
+      <tr>
+        <td>R9</td>
+        <td><strong>Wohnraummietrecht/WEG scope</strong></td>
+        <td><span class="risk-resolved">RESOLVED</span></td>
+        <td>Moved to Phase 2. Phase 1 = LBO only. Decision final.</td>
+        <td>✓ Closed</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TAB 7 · TEAM & LEARNING
+══════════════════════════════════════════════ -->
+<section id="team" class="tab-content">
+  <div class="section-label">Tab 07 — People</div>
+  <h2 class="section-title">Team & Learning Goals</h2>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-card-head">
+        <div class="team-card-name">Sebastian</div>
+        <div class="team-card-role">Technical PM Anchor · Corpus & FAISS Owner · GitHub Lead</div>
+      </div>
+      <div class="team-card-body">
+        <strong>Sprint PM</strong> Week 4
+        <strong>Owns</strong> F1 RAG pipeline · F2 KG · F5 translation node · corpus repo structure · CONTRIBUTING.md
+        <strong>Learning Goal</strong> "Agile PM in practice, Git workflow ownership, RAG pipeline end-to-end, vibe coding with Claude Code — making the technical PM role real, not just coordination."
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-head">
+        <div class="team-card-name">Nuria</div>
+        <div class="team-card-role">Kanban Owner · Out-of-Scope Node · UI i18n</div>
+      </div>
+      <div class="team-card-body">
+        <strong>Sprint PM</strong> Week 2
+        <strong>Owns</strong> F4 out-of-scope detection · F5 UI i18n strings · F6 Lovable UI components · Kanban board
+        <strong>Learning Goal</strong> Visible technical portfolio output. LangGraph node development. Frontend component ownership.
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-head">
+        <div class="team-card-name">Matteo</div>
+        <div class="team-card-role">Agent Architecture · Evaluation Lead</div>
+      </div>
+      <div class="team-card-body">
+        <strong>Sprint PM</strong> Week 3
+        <strong>Owns</strong> F3 LangGraph agent · F8 evaluation framework · eval architecture document · language parity metric
+        <strong>Learning Goal</strong> Build confidence in technical discussions. Own a concrete architectural deliverable.
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-head">
+        <div class="team-card-name">Sumit</div>
+        <div class="team-card-role">Week 1 PM · Frontend Scaffold</div>
+      </div>
+      <div class="team-card-body">
+        <strong>Sprint PM</strong> Week 1
+        <strong>Owns</strong> F6 Lovable scaffold · project kickoff · stakeholder comms
+        <strong>Background</strong> 10 years PM experience. Anchors Week 1 with process maturity.
+        <strong>Learning Goal</strong> AI-native PM methods. Technical depth in LLM pipeline architecture.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Stack</div>
+  <div class="stack-grid">
+    <div class="stack-pill"><div class="sp-name">LangGraph</div><div class="sp-role">Agent orchestration</div></div>
+    <div class="stack-pill"><div class="sp-name">FAISS</div><div class="sp-role">Vector retrieval</div></div>
+    <div class="stack-pill"><div class="sp-name">NetworkX</div><div class="sp-role">Knowledge graph</div></div>
+    <div class="stack-pill"><div class="sp-name">sentence-transformers</div><div class="sp-role">Embeddings</div></div>
+    <div class="stack-pill"><div class="sp-name">Groq</div><div class="sp-role">LLM inference + translation</div></div>
+    <div class="stack-pill"><div class="sp-name">pdfplumber</div><div class="sp-role">Static corpus ingestion</div></div>
+    <div class="stack-pill"><div class="sp-name">Gemini API</div><div class="sp-role">Runtime PDF upload (F7)</div></div>
+    <div class="stack-pill"><div class="sp-name">Lovable</div><div class="sp-role">Frontend · deployed UI</div></div>
+    <div class="stack-pill"><div class="sp-name">GitHub</div><div class="sp-role">Repo · branching · portfolio</div></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Changelog</div>
+  <div class="changelog">
+    <div class="changelog-item">
+      <div class="changelog-ver">v6.0<br><small style="color:var(--muted);font-size:0.6rem;">Mar 2026</small></div>
+      <div>
+        <strong>SCOPE RESET.</strong> Phase 1 switched from Wohnraummietrecht/WEG → 16 LBO Bundesländer. Dual language DE/EN promoted from Phase 2 → Phase 1 Must-Have. New Dual Language tab added (F5 spec). Feature table restructured: F9 (Mietrecht corpus) and F10 (Kreisebene) moved to Phase 2. Target user profiles updated. Risk register updated: R3 translation quality, R6 latency added; R9 scope resolution logged. Corpus tab expanded with all 16 LBO branch names and official sources. Sprint plan updated to reflect LBO corpus acquisition in Week 1 and translation loop in Week 3.
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-ver">v5.1<br><small style="color:var(--muted);font-size:0.6rem;">Mar 2026</small></div>
+      <div>KG added as F2 Must-Have. Features renumbered F1–F6. Hypothesis updated. Sebastian learning goal in own words. NetworkX added to stack. Learning Goals + Team tabs merged. HTML rendering bug fixed (orphaned section tag). Stack risk marked Resolved.</div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-ver">v5.0<br><small style="color:var(--muted);font-size:0.6rem;">Mar 2026</small></div>
+      <div>Team self-assessment integrated. Role rationale updated. Sumit confirmed Week 1 PM. Matteo assigned eval architecture doc. Nuria — Kanban + out-of-scope node.</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

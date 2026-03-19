@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capstone MVP Definition — German Property Law Agent</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #181614;
+    --paper: #f8f6f1;
+    --cream: #f0ece2;
+    --warm: #e8dfd0;
+    --accent: #b5341a;
+    --accent2: #1f4d35;
+    --accent3: #1c3558;
+    --gold: #c9922a;
+    --muted: #6e6560;
+    --border: #ddd8ce;
+    --week1: #fff8f0;
+    --week1b: #c45f00;
+    --week2: #f0f7f2;
+    --week2b: #1f6b3a;
+    --week3: #f0f4fb;
+    --week3b: #1c3a7a;
+    --week4: #fdf0f4;
+    --week4b: #8a1040;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3.5rem 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-bg-text {
+    position: absolute;
+    top: -0.5rem; right: -1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 9rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+  }
+  .header h1 em { font-style: italic; color: #c8b99a; }
+  .header-sub {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .meta-value { font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.88); }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    display: flex;
+    background: var(--cream);
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 0.75rem 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+    user-select: none;
+  }
+  .nav-tab:hover { color: var(--ink); }
+  .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ── SECTIONS ── */
+  .section { display: none; padding: 2rem 2.5rem 4rem; }
+  .section.active { display: block; }
+
+  /* ── MENTOR ALERT ── */
+  .mentor-alert {
+    background: #fff8f0;
+    border-left: 3px solid var(--accent);
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.75rem;
+    border-radius: 0 5px 5px 0;
+  }
+  .mentor-alert-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .mentor-alert p { font-size: 0.88rem; color: #5a3a1a; line-height: 1.6; }
+  .mentor-alert p + p { margin-top: 0.4rem; }
+
+  /* ── PLACEHOLDER ── */
+  .placeholder {
+    background: repeating-linear-gradient(
+      45deg,
+      #faf8f0,
+      #faf8f0 8px,
+      #f5f0e0 8px,
+      #f5f0e0 16px
+    );
+    border: 1.5px dashed var(--gold);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0;
+  }
+  .placeholder-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .placeholder-text { font-size: 0.85rem; color: #8a7040; line-height: 1.5; font-style: italic; }
+  .placeholder-query {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 0.3rem;
+    line-height: 1.2;
+  }
+  .section-h2-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 1.75rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .block-title .num {
+    background: var(--ink);
+    color: var(--paper);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.58rem;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ── MVP SUMMARY BOX ── */
+  .mvp-summary {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .mvp-summary::before {
+    content: '§';
+    position: absolute;
+    right: 1.5rem; top: -1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+  .mvp-summary-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mvp-summary p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.88);
+    font-weight: 300;
+  }
+
+  /* ── HYPOTHESIS BOX ── */
+  .hypothesis-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .hypothesis-box .if { color: var(--accent2); font-weight: 600; }
+  .hypothesis-box .then { color: var(--accent3); font-weight: 600; }
+  .hypothesis-box p { font-size: 0.9rem; line-height: 1.7; }
+
+  /* ── FEATURE CARDS ── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .feature-card {
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .feature-card-header {
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .feature-card-header.must { background: #1f4d35; color: white; }
+  .feature-card-header.should { background: #1c3558; color: white; }
+  .feature-card-header.nice { background: #5a4a3a; color: white; }
+  .feature-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    opacity: 0.7;
+  }
+  .feature-name { font-weight: 600; font-size: 0.88rem; }
+  .feature-body { padding: 0.9rem 1rem; }
+  .feature-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.6rem; }
+  .feature-tag {
+    display: inline-block;
+    padding: 0.12rem 0.45rem;
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-right: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+  .tag-must { background: rgba(31,77,53,0.1); color: var(--accent2); }
+  .tag-should { background: rgba(28,53,88,0.1); color: var(--accent3); }
+  .tag-nice { background: rgba(90,74,58,0.1); color: #5a4a3a; }
+  .tag-week { background: rgba(0,0,0,0.06); color: var(--muted); }
+
+  /* ── LATER FEATURES TABLE ── */
+  .later-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+    margin-top: 0.5rem;
+  }
+  .later-table th {
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .later-table td {
+    padding: 0.7rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  .later-table tr:last-child td { border-bottom: none; }
+
+  /* ── LEARNING GOALS ── */
+  .learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .learning-card {
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .learning-header {
+    padding: 0.75rem 1rem;
+    background: var(--warm);
+    border-bottom: 1px solid var(--border);
+  }
+  .learning-name { font-weight: 600; font-size: 0.9rem; }
+  .learning-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 0.15rem;
+  }
+  .learning-body { padding: 0.9rem 1rem; }
+  .learning-goal {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── WEEK CARDS ── */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  .week-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .week-header {
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .week-header h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; }
+  .week-dates { font-family: 'DM Mono', monospace; font-size: 0.62rem; opacity: 0.65; }
+  .week-card[data-week="1"] .week-header { background: var(--week1); color: #3e2000; }
+  .week-card[data-week="2"] .week-header { background: var(--week2); color: #0f3020; }
+  .week-card[data-week="3"] .week-header { background: var(--week3); color: #0d2040; }
+  .week-card[data-week="4"] .week-header { background: var(--week4); color: #3a0020; }
+  .week-pm {
+    padding: 0.45rem 1.1rem;
+    background: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .pm-badge {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.08rem 0.35rem;
+    border-radius: 2px;
+    font-size: 0.58rem;
+  }
+  .week-body { padding: 1rem 1.1rem; }
+  .milestone {
+    display: flex; gap: 0.6rem;
+    margin-bottom: 0.85rem; align-items: flex-start;
+  }
+  .milestone:last-of-type { margin-bottom: 0; }
+  .milestone-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 0.48rem;
+  }
+  .week-card[data-week="1"] .milestone-dot { background: var(--week1b); }
+  .week-card[data-week="2"] .milestone-dot { background: var(--week2b); }
+  .week-card[data-week="3"] .milestone-dot { background: var(--week3b); }
+  .week-card[data-week="4"] .milestone-dot { background: var(--week4b); }
+  .milestone-title { font-weight: 600; font-size: 0.84rem; line-height: 1.3; }
+  .milestone-detail { font-size: 0.77rem; color: var(--muted); margin-top: 0.12rem; line-height: 1.4; }
+  .milestone-owner { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); margin-top: 0.18rem; }
+  .week-gate {
+    margin-top: 1rem; padding: 0.65rem 0.85rem;
+    border-radius: 5px; font-size: 0.77rem; font-weight: 500;
+    display: flex; gap: 0.4rem; align-items: flex-start;
+    line-height: 1.4;
+  }
+  .week-card[data-week="1"] .week-gate { background: rgba(196,95,0,0.08); color: var(--week1b); }
+  .week-card[data-week="2"] .week-gate { background: rgba(31,107,58,0.08); color: var(--week2b); }
+  .week-card[data-week="3"] .week-gate { background: rgba(28,58,122,0.08); color: var(--week3b); }
+  .week-card[data-week="4"] .week-gate { background: rgba(138,16,64,0.08); color: var(--week4b); }
+
+  /* ── STACK GRID ── */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin-top: 0.5rem;
+  }
+  .stack-item {
+    border: 1px solid var(--border);
+    border-radius: 7px; padding: 0.95rem 1rem;
+  }
+  .stack-item.rec { border-color: var(--accent2); background: rgba(31,77,53,0.04); }
+  .stack-layer {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.3rem;
+  }
+  .stack-item.rec .stack-layer { color: var(--accent2); }
+  .stack-tech { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.25rem; }
+  .stack-why { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+  /* ── RISK TABLE ── */
+  .risk-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.82rem; margin-top: 0.5rem;
+  }
+  .risk-table th {
+    text-align: left; font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border);
+  }
+  .risk-table td {
+    padding: 0.7rem 0.75rem; border-bottom: 1px solid #ede9e0;
+    vertical-align: top; line-height: 1.4;
+  }
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-badge {
+    display: inline-block; padding: 0.12rem 0.4rem;
+    border-radius: 3px; font-family: 'DM Mono', monospace;
+    font-size: 0.58rem; font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .risk-high { background: rgba(181,52,26,0.1); color: var(--accent); }
+  .risk-med { background: rgba(201,146,42,0.12); color: var(--gold); }
+  .risk-low { background: rgba(31,77,53,0.1); color: var(--accent2); }
+
+  /* ── SCOPE BOX ── */
+  .scope-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .scope-col { padding: 1.2rem; }
+  .scope-col:first-child { border-right: 1px solid var(--border); }
+  .scope-col-label {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.7rem;
+  }
+  .scope-col.yes .scope-col-label { color: var(--accent2); }
+  .scope-col.no .scope-col-label { color: var(--accent); }
+  .scope-item {
+    display: flex; gap: 0.5rem; margin-bottom: 0.5rem;
+    font-size: 0.81rem; line-height: 1.4; align-items: flex-start;
+  }
+  .scope-icon { flex-shrink: 0; }
+
+  /* ── TEAM TABLE ── */
+  .team-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.82rem; margin-top: 0.5rem;
+  }
+  .team-table th {
+    text-align: left; font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--ink);
+  }
+  .team-table td {
+    padding: 0.75rem 0.75rem; border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .team-name { font-weight: 600; }
+  .anchor-badge {
+    background: var(--ink); color: var(--paper);
+    padding: 0.08rem 0.4rem; border-radius: 2px;
+    font-family: 'DM Mono', monospace; font-size: 0.57rem;
+    margin-left: 0.35rem; vertical-align: middle;
+  }
+
+  /* ── WEEKEND TODO ── */
+  .todo-box {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.25rem; margin-top: 0.5rem;
+  }
+  .todo-item {
+    display: flex; gap: 0.6rem; margin-bottom: 0.8rem; align-items: flex-start;
+  }
+  .todo-item:last-child { margin-bottom: 0; }
+  .todo-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0; margin-top: 0.45rem;
+  }
+  .todo-title { font-weight: 600; font-size: 0.85rem; }
+  .todo-detail { font-size: 0.78rem; color: var(--muted); margin-top: 0.12rem; line-height: 1.4; }
+
+  /* ── DECISION GATE ── */
+  .decision-gate {
+    background: var(--ink); color: var(--paper);
+    padding: 1.1rem 1.4rem; border-radius: 6px;
+    margin-bottom: 1.5rem;
+    display: flex; gap: 0.85rem; align-items: flex-start;
+  }
+  .gate-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .gate-label {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.3rem;
+  }
+  .gate-text { font-size: 0.87rem; color: rgba(255,255,255,0.82); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.25rem 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem; color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .header { padding: 2rem 1.5rem 1.75rem; }
+    .section { padding: 1.5rem 1.25rem 3rem; }
+    .scope-grid { grid-template-columns: 1fr; }
+    .scope-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .header-meta { gap: 1.25rem; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .section.active { animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-bg-text">MVP</div>
+  <div class="header-eyebrow">neuefische AIPM Bootcamp · Capstone 2025/2026</div>
+  <h1>German Property Law<br><em>AI Legal Advisor</em></h1>
+  <div class="header-sub">MVP Definition Document — Coach Framework + Sprint Roadmap</div>
+  <div class="header-meta">
+    <div class="meta-item">
+      <span class="meta-label">Team</span>
+      <span class="meta-value">Sebastian · Nuria · Matteo · Sumit</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Presentation</span>
+      <span class="meta-value">2 April 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Sprint Start</span>
+      <span class="meta-value">9 March 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Build Days</span>
+      <span class="meta-value">~24 working days</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Document</span>
+      <span class="meta-value">v5.1 — KG must-have, hypothesis updated, goals filled, tabs merged</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <div class="nav-tab active" onclick="showSection('mvp')">① MVP Definition</div>
+  <div class="nav-tab" onclick="showSection('features')">② Features</div>
+  <div class="nav-tab" onclick="showSection('team')">③ Team & Learning Goals</div>
+  <div class="nav-tab" onclick="showSection('roadmap')">④ Sprint Roadmap</div>
+  <div class="nav-tab" onclick="showSection('stack')">⑤ Stack & Scope</div>
+  <div class="nav-tab" onclick="showSection('kg')">⑥ Knowledge Graph</div>
+  <div class="nav-tab" onclick="showSection('risks')">⑦ Risks</div>
+</nav>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 1 — MVP DEFINITION              -->
+<!-- ════════════════════════════════════ -->
+<section id="mvp" class="section active">
+
+  <div class="section-h2">MVP Definition</div>
+  <div class="section-h2-sub">Coach framework: Goal · Hypothesis · Deliverable summary</div>
+
+  <div class="block-title"><span class="num">1</span> MVP Goal — User + Learning Focused</div>
+  <div class="mvp-summary">
+    <div class="mvp-summary-label">✅ Deliverable — One-paragraph MVP Summary</div>
+    <p>Build a deployed, mobile-optimized AI legal advisor that allows tenants, landlords, and property owners in Germany to ask questions in plain German and receive accurate, cited answers grounded in Wohnraummietrecht (BGB §§535–580a) and WEG condominium law. The agent guides users through a structured intake to understand their specific situation, retrieves the relevant legal paragraphs from a curated corpus, and responds with a plain-language explanation plus the exact § reference — never answering without a source. The MVP validates whether users trust AI-generated legal answers when citations are explicit and the system transparently acknowledges the limits of its scope.</p>
+  </div>
+
+  <div class="block-title"><span class="num">2</span> Core Hypothesis to Validate</div>
+  <div class="hypothesis-box">
+    <p><span class="if">IF</span> users can describe their tenancy or property situation in plain German and receive an answer generated by a combined agent architecture — where KG-enhanced retrieval (NetworkX) expands on FAISS seed results to surface legally connected paragraphs that pure vector search would miss —<br><br>
+    <span class="then">THEN</span> they will rate the AI's response as more trustworthy and complete than both a general web search result <em>and</em> a standard RAG-only answer — because explicit § citations make the legal basis visible and verifiable, and the KG layer demonstrably reduces critical omissions in multi-paragraph legal situations.</p>
+  </div>
+  <p style="font-size:0.8rem; color:var(--muted); margin-top:0.75rem;"><strong>Validation method:</strong> Post-session trust rating (1–5) from the 3 AI-simulated personas run on the Lovable prototype, plus at least 5 real test users in Week 3. Secondary metric: omission rate — RAG-only vs KG-enhanced on 10 complex multi-§ queries.</p>
+
+  <div class="block-title"><span class="num">3</span> Team Context</div>
+  <div style="border:1px solid var(--border); border-radius:7px; padding:1.1rem; font-size:0.85rem; line-height:1.6;">
+    <strong>Team size:</strong> 4 (Sebastian, Nuria, Matteo, Sumit) &nbsp;·&nbsp;
+    <strong>Timeline:</strong> ~24 working days (Mar 9 – Apr 2) &nbsp;·&nbsp;
+    <strong>Core skills:</strong> RAG/Data (Sebastian), KG/Dev/PM (Sumit), QA/Eval/PM (Nuria), UI/Pitch/PM (Matteo)
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 2 — FEATURES                    -->
+<!-- ════════════════════════════════════ -->
+<section id="features" class="section">
+
+  <div class="section-h2">Feature List</div>
+  <div class="section-h2-sub">Must-have MVP · Should Have · Nice to Have</div>
+
+  <div class="block-title"><span class="num">3</span> MVP Core Components — Must-Have</div>
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F1</span>
+        <span class="feature-name">Guided Intake — Situation Flow</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">Structured conversation opener that identifies: user role (Mieter/Vermieter/Eigentümer), situation type (Kündigung/Mängel/Nebenkosten/WEG), and key facts needed for a relevant answer. Prevents vague one-line queries that produce unreliable outputs.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 2</span>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F2</span>
+        <span class="feature-name">Knowledge Graph — NetworkX Layer</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">Knowledge graph built on the structured corpus metadata (§ nodes, relationship edges). Expands FAISS seed results via graph traversal to surface legally connected paragraphs that pure vector search misses. This is the technical USP, the learning goal, and the core differentiator vs. existing legal chatbots.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 1–3</span>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F3</span>
+        <span class="feature-name">RAG Retrieval + LangGraph Agent</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">FAISS-based retrieval over curated Mietrecht + WEG corpus. LangGraph nodes: intake → retrieve → kg_expand → generate → cite_check → respond. Multi-turn conversation with session memory. Graceful "out of scope" handling. RAG acts as safety net; KG as differentiator.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 1–2</span>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F4</span>
+        <span class="feature-name">Citation Engine — Always Show §</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">Every answer must display the BGB/WEG paragraph it draws from. No citation = answer blocked. This is the trust layer and the core product hypothesis. Visible source = verifiable answer.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 2</span>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F5</span>
+        <span class="feature-name">Results + Feedback UI (Mobile-Optimized)</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">Streamlit chat interface, mobile-responsive. Displays: user query → agent answer → cited § → out-of-scope flag if relevant. Legal disclaimer on every response. Feedback thumbs up/down per answer. Skeleton built Week 1 against mock data; wired to real agent Week 2.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 1–3</span>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-header must">
+        <span class="feature-num">F6</span>
+        <span class="feature-name">Live Deployed URL</span>
+      </div>
+      <div class="feature-body">
+        <div class="feature-desc">Streamlit Community Cloud deployment. Public URL accessible to coaches, test users, and recruiters. API keys in secrets.toml (never in repo). Stable for demo day.</div>
+        <span class="feature-tag tag-must">Must Have</span>
+        <span class="feature-tag tag-week">Week 3</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="block-title"><span class="num">4</span> Later Features — Should Have</div>
+  <table class="later-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Value</th>
+        <th>Phase</th>
+        <th>Complexity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Document upload</strong><br><span style="color:var(--muted);font-size:0.76rem;">User uploads their Mietvertrag for context-specific analysis</span></td>
+        <td>High personalisation, strong user value</td>
+        <td><span class="feature-tag tag-should">Phase 2</span></td>
+        <td>Medium — PDF parsing + chunking</td>
+      </tr>
+      <tr>
+        <td><strong>Saved conversation history</strong><br><span style="color:var(--muted);font-size:0.76rem;">User can return and continue a prior session</span></td>
+        <td>Retention + continuity</td>
+        <td><span class="feature-tag tag-should">Phase 2</span></td>
+        <td>Medium — session persistence</td>
+      </tr>
+      <tr>
+        <td><strong>Answer confidence score</strong><br><span style="color:var(--muted);font-size:0.76rem;">Display retrieval similarity score alongside citation</span></td>
+        <td>Additional trust signal</td>
+        <td><span class="feature-tag tag-should">Phase 2</span></td>
+        <td>Low — already available from FAISS</td>
+      </tr>
+      <tr>
+        <td><strong>Expanded domain: Kaufrecht + GBO</strong><br><span style="color:var(--muted);font-size:0.76rem;">Property purchase and land register law</span></td>
+        <td>Broader market coverage</td>
+        <td><span class="feature-tag tag-should">Phase 2</span></td>
+        <td>High — new corpus + eval set</td>
+      </tr>
+      <tr>
+        <td><strong>German language auto-detection</strong><br><span style="color:var(--muted);font-size:0.76rem;">Handle Hochdeutsch, regional terms, legal jargon mixing</span></td>
+        <td>UX quality</td>
+        <td><span class="feature-tag tag-should">Phase 2</span></td>
+        <td>Low — model handles most of this</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="block-title" style="margin-top:1.5rem;">Nice to Have — Future Iterations</div>
+  <table class="later-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Value</th>
+        <th>Phase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Lawyer referral integration</strong><br><span style="color:var(--muted);font-size:0.76rem;">When agent detects high complexity, suggest verified local lawyer</span></td>
+        <td>Monetisation + safety</td>
+        <td><span class="feature-tag tag-nice">Phase 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Letter/document generator</strong><br><span style="color:var(--muted);font-size:0.76rem;">Generate a Mängelrüge or Kündigungsschreiben from the conversation</span></td>
+        <td>High user value, viral potential</td>
+        <td><span class="feature-tag tag-nice">Phase 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Full property law coverage</strong><br><span style="color:var(--muted);font-size:0.76rem;">BauGB, GrEStG, ErbbauRG, BauNVO</span></td>
+        <td>Complete market coverage</td>
+        <td><span class="feature-tag tag-nice">Phase 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Multi-language support (EN, TR, AR)</strong><br><span style="color:var(--muted);font-size:0.76rem;">Serve non-native German speakers</span></td>
+        <td>Major underserved market</td>
+        <td><span class="feature-tag tag-nice">Phase 3</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 4 — SPRINT ROADMAP              -->
+<!-- ════════════════════════════════════ -->
+<section id="roadmap" class="section">
+
+  <div class="section-h2">Sprint Roadmap</div>
+  <div class="section-h2-sub">4-week plan · milestones · owners · decision gates</div>
+
+  <div class="decision-gate">
+    <div class="gate-icon">✅</div>
+    <div>
+      <div class="gate-label">Stack Decision — Confirmed</div>
+      <div class="gate-text">LangGraph + FAISS + NetworkX + sentence-transformers + Groq + Streamlit. Locked as of Monday 9 March kickoff.</div>
+    </div>
+  </div>
+
+  <div class="week-grid">
+
+    <div class="week-card" data-week="1">
+      <div class="week-header">
+        <h3>Week 1 — Foundation</h3>
+        <span class="week-dates">Mar 9–14</span>
+      </div>
+      <div class="week-pm"><span class="pm-badge">PM</span> TBD Monday · Sebastian anchors all decisions</div>
+      <div class="week-body">
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Stack locked & dev environment — all 4 machines</div>
+            <div class="milestone-detail">requirements.txt committed Day 1. Every team member running same Python env. No "works on my machine" debt.</div>
+            <div class="milestone-owner">Owner: Sumit + Sebastian</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Corpus collection + schema — Mietrecht + WEG</div>
+            <div class="milestone-detail">Sources: gesetze-im-internet.de, BMJV PDFs, BGH Leitsätze. Target: 40–80 clean JSON documents. Schema locked by Wed Mar 11 — Sumit validates first 10 before Sebastian processes the rest.</div>
+            <div class="milestone-owner">Owner: Sebastian</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">FAISS index v0.1 + LangGraph skeleton running</div>
+            <div class="milestone-detail">Sebastian: FAISS queryable on first 10 docs — right § returned for 3 real queries. Sumit: all graph.py nodes wired, stubs active, graph.py runs without errors.</div>
+            <div class="milestone-owner">Owner: Sebastian (FAISS) · Sumit (LangGraph + KG skeleton)</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Corpus QA — manual review of Sebastian's documents</div>
+            <div class="milestone-detail">Nuria reviews every JSON document Sebastian produces: schema compliance, text quality, relationship accuracy. Catches errors before they're indexed.</div>
+            <div class="milestone-owner">Owner: Nuria</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Evaluation set v0.1 — 20 labeled Q&A pairs drafted</div>
+            <div class="milestone-detail">Nuria writes questions + expected answers + correct § citations. Covers: Kaution, Kündigung, Mängel, Nebenkosten, Eigenbedarfskündigung, WEG Eigentümerversammlung. No agent needed — pure legal research.</div>
+            <div class="milestone-owner">Owner: Nuria</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Streamlit UI skeleton — mock data only</div>
+            <div class="milestone-detail">Matteo builds full UI layout against mock_response.py (hardcoded AgentState). Chat interface, citation display, legal disclaimer, mobile layout set. No real agent needed yet — one-line swap in Week 2.</div>
+            <div class="milestone-owner">Owner: Matteo</div>
+          </div>
+        </div>
+        <div class="week-gate">🚦 <span><strong>Gate:</strong> Agent returns grounded + cited answer for 3 test queries. UI skeleton demo-able with mock data. Eval set v0.1 drafted.</span></div>
+      </div>
+    </div>
+
+    <div class="week-card" data-week="2">
+      <div class="week-header">
+        <h3>Week 2 — Integration</h3>
+        <span class="week-dates">Mar 16–21</span>
+      </div>
+      <div class="week-pm"><span class="pm-badge">PM</span> Rotating Week 2 · Sebastian anchors</div>
+      <div class="week-body">
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">FAISS → agent integration (replaces stub)</div>
+            <div class="milestone-detail">Real corpus wired into retrieve node. Agent answers from actual BGB paragraphs, not mock data.</div>
+            <div class="milestone-owner">Owner: Sebastian</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">KG expansion node live (replaces stub)</div>
+            <div class="milestone-detail">Sumit's NetworkX traversal wired into kg_expand node. Graph returns related §§ alongside FAISS seeds.</div>
+            <div class="milestone-owner">Owner: Sumit</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">UI wired to real agent (F4)</div>
+            <div class="milestone-detail">Matteo swaps mock_response.py for live agent calls. Chat, citation display, out-of-scope flag all working end-to-end.</div>
+            <div class="milestone-owner">Owner: Matteo</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Out-of-scope detection tested + eval set finalised</div>
+            <div class="milestone-detail">Nuria validates agent correctly flags out-of-scope queries. Eval set 20 Q&A pairs complete and locked.</div>
+            <div class="milestone-owner">Owner: Nuria</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">User research prep — recruit 5 external testers</div>
+            <div class="milestone-detail">Identify and confirm 5 real users (not team) for Week 3 testing. Brief them on what they'll be asked.</div>
+            <div class="milestone-owner">Owner: Nuria</div>
+          </div>
+        </div>
+        <div class="week-gate">🚦 <strong>Gate:</strong> ≥14/20 eval score. Citation on every answer. UI running against real agent. Demo-able to outsider.</div>
+      </div>
+    </div>
+
+    <div class="week-card" data-week="3">
+      <div class="week-header">
+        <h3>Week 3 — Polish & Deploy</h3>
+        <span class="week-dates">Mar 23–28</span>
+      </div>
+      <div class="week-pm"><span class="pm-badge">PM</span> Rotating Week 3 · Sebastian anchors deployment</div>
+      <div class="week-body">
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Corpus v1.0 — final, versioned</div>
+            <div class="milestone-detail">All docs cleaned, deduplicated. Rebuild index script runs clean on fresh machine. README documents every source.</div>
+            <div class="milestone-owner">Owner: Sebastian</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">KG comparison demo polished</div>
+            <div class="milestone-detail">Side-by-side RAG vs KG-enhanced demo working cleanly. Screen recording backup prepared. Omission rate measured on 10 complex queries.</div>
+            <div class="milestone-owner">Owner: Sumit</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">UI polish — mobile-first</div>
+            <div class="milestone-detail">Test on real iPhone + Android. Chat bubbles, citation display, loading states, error handling. Legal disclaimer visible on every response.</div>
+            <div class="milestone-owner">Owner: Matteo</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">External user tests + evaluation report</div>
+            <div class="milestone-detail">5 real users tested. Trust rating (1–5) collected per session. Eval set run on deployed version. Results documented as pitch evidence.</div>
+            <div class="milestone-owner">Owner: Nuria</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Live deployment (F5)</div>
+            <div class="milestone-detail">Streamlit Community Cloud. Secrets in secrets.toml. Public URL shared with coaches.</div>
+            <div class="milestone-owner">Owner: Sumit</div>
+          </div>
+        </div>
+        <div class="week-gate">🚦 <strong>Gate:</strong> Live URL working. Eval results documented. External users tested. KG demo recorded.</div>
+      </div>
+    </div>
+
+    <div class="week-card" data-week="4">
+      <div class="week-header">
+        <h3>Week 4 — Pitch & Buffer</h3>
+        <span class="week-dates">Mar 30 – Apr 2</span>
+      </div>
+      <div class="week-pm"><span class="pm-badge">PM</span> Sebastian (pitch anchor)</div>
+      <div class="week-body">
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Buffer — fix Week 3 breakage</div>
+            <div class="milestone-detail">Mon–Tue protected for deploy issues, retrieval gaps, UI bugs. Don't touch pitch deck until product is stable.</div>
+            <div class="milestone-owner">Owner: Full team</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Pitch deck — 8–10 slides</div>
+            <div class="milestone-detail">Problem → Personas → Hypothesis → Solution → Architecture → KG differentiator → Demo → Eval Results → Learnings → Phase 2. Lovable prototype screenshots for UX vision.</div>
+            <div class="milestone-owner">Owner: Matteo + Sebastian</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Eval results slide + KG architecture diagram</div>
+            <div class="milestone-detail">Nuria's trust rating data visualised. Sumit's omission rate comparison formatted as evidence slide.</div>
+            <div class="milestone-owner">Owner: Nuria + Sumit</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">Live demo rehearsal × 2</div>
+            <div class="milestone-detail">3 killer demo queries. KG comparison as centrepiece. Screen recording backup ready.</div>
+            <div class="milestone-owner">Owner: All 4</div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div class="milestone-content">
+            <div class="milestone-title">GitHub portfolio cleanup + TEAM_CHARTER.md</div>
+            <div class="milestone-detail">README with architecture diagram, live URL, team credits. TEAM_CHARTER.md with learning goals, scope decisions, PM rotation log. Recruiter-ready.</div>
+            <div class="milestone-owner">Owner: Sebastian</div>
+          </div>
+        </div>
+        <div class="week-gate">🏁 <strong>2 April — Presentation Day</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 5 — STACK & SCOPE               -->
+<!-- ════════════════════════════════════ -->
+<section id="stack" class="section">
+
+  <div class="section-h2">Stack & Domain Scope</div>
+  <div class="section-h2-sub">Architecture decision + legal domain boundaries</div>
+
+  <div class="mentor-alert">
+    <div class="mentor-alert-label">⚠ Mentor Note</div>
+    <p><strong>Stack decision must be made this weekend.</strong> Recommendation below. If the team disagrees, bring a counter-proposal to Monday standup — but leave with a decision, not a discussion.</p>
+  </div>
+
+  <div class="block-title">Recommended Stack</div>
+  <div class="stack-grid">
+    <div class="stack-item rec">
+      <div class="stack-layer">Frontend / UI</div>
+      <div class="stack-tech">Streamlit</div>
+      <div class="stack-why">Mobile-responsive, you've deployed it before, Streamlit Community Cloud is free and reliable within your timeline.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">Agent Framework</div>
+      <div class="stack-tech">LangGraph</div>
+      <div class="stack-why">You built modular_pm_agent_v2 with this. Known architecture, modular nodes = testable by node.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">Knowledge Graph</div>
+      <div class="stack-tech">NetworkX</div>
+      <div class="stack-why">Python-native graph library. No infrastructure overhead. Sumit owns. Nodes = BGB/WEG §§, edges = relationships from corpus metadata. Saves + loads via pickle for fast startup.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">Retrieval</div>
+      <div class="stack-tech">FAISS + sentence-transformers</div>
+      <div class="stack-why">Built this in the pharma RAG tutorial. paraphrase-multilingual-mpnet-base-v2 for German.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">LLM</div>
+      <div class="stack-tech">Groq (llama-3.3-70b-versatile)</div>
+      <div class="stack-why">Free tier, fast. Add time.sleep(3) per node. Swap to Claude API for final demo if budget allows.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">Corpus Storage</div>
+      <div class="stack-tech">Local FAISS + GitHub LFS</div>
+      <div class="stack-why">Simple, version-controlled. Rebuild index script in repo.</div>
+    </div>
+    <div class="stack-item rec">
+      <div class="stack-layer">Deployment</div>
+      <div class="stack-tech">Streamlit Community Cloud</div>
+      <div class="stack-why">Free, public URL, GitHub-connected. You've done this. Live by end of Week 3.</div>
+    </div>
+  </div>
+  <p style="font-size:0.78rem; color:var(--muted); margin-top:0.75rem; padding:0.75rem; background:var(--cream); border-radius:5px;">🎨 <strong>Lovable prototype</strong> → use for pitch deck UX vision slides only. It's a great artefact. Don't build production on it.</p>
+
+  <div class="block-title" style="margin-top:2rem;">Domain Scope — In / Out</div>
+  <div class="scope-grid">
+    <div class="scope-col yes">
+      <div class="scope-col-label">✓ In Scope — Build This</div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>Wohnraummietrecht</strong> — BGB §§535–580a (Kündigung, Miete, Mängel, Kaution)</span></div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>Betriebskostenverordnung</strong> — passable costs</span></div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>Mietpreisbremse</strong> — rent control rules</span></div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>WEG §§1–62</strong> — condominium ownership</span></div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>Schönheitsreparaturen</strong> — BGH case law on cosmetic repairs</span></div>
+      <div class="scope-item"><span class="scope-icon">✓</span><span><strong>Eigenbedarfskündigung</strong> — personal use termination</span></div>
+    </div>
+    <div class="scope-col no">
+      <div class="scope-col-label">✗ Out of Scope — Phase 2/3</div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>BGB §§433–534 — Kaufrecht (property purchase)</span></div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>BauGB §§1–246 — Construction & planning law</span></div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>GBO §§1–131 — Land register law</span></div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>GrEStG §§1–23 — Real estate transfer tax</span></div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>ErbbauRG — Ground lease law</span></div>
+      <div class="scope-item"><span class="scope-icon">✗</span><span>BauNVO — Zoning regulations</span></div>
+      <div class="scope-item" style="color:var(--accent); font-style:italic; font-size:0.78rem;"><span>These are Phase 2/3 in your product vision — not abandoned. Frame them that way in the pitch.</span></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 6 — KNOWLEDGE GRAPH             -->
+<!-- ════════════════════════════════════ -->
+<section id="kg" class="section">
+
+  <div class="section-h2">Knowledge Graph Architecture</div>
+  <div class="section-h2-sub">The differentiator — NetworkX KG layer alongside FAISS RAG · Owner: Sumit + Sebastian</div>
+
+  <div class="mvp-summary">
+    <div class="mvp-summary-label">🧠 Why KG — The Pitch Argument</div>
+    <p>Standard vector RAG retrieves semantically similar text — but German property law is a network of interdependencies. §573 (Kündigung) only makes sense alongside §573c (Fristen) and §573a (Ausnahmen). A pure RAG system can return §573 and miss §573c entirely — a critical omission in a legal context. A knowledge graph layer explicitly models these relationships, enabling the agent to traverse connected paragraphs and return complete, omission-resistant answers. This is our architectural differentiator versus existing legal chatbots.</p>
+  </div>
+
+  <div class="block-title"><span class="num">1</span> Architecture — Dual Retrieval Pipeline</div>
+  <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border);">
+      <div style="padding:1.25rem; border-right:1px solid var(--border);">
+        <div class="stack-layer" style="color:var(--accent2); margin-bottom:0.5rem;">Track A — RAG (Safety Net)</div>
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          FAISS vector index → semantic similarity search → top-k chunks → LLM generates answer → citation output.<br><br>
+          <strong style="color:var(--ink);">Owner:</strong> Sebastian<br>
+          <strong style="color:var(--ink);">Deadline:</strong> Working by end Week 1<br>
+          <strong style="color:var(--ink);">Fallback:</strong> If KG fails, this ships alone
+        </div>
+      </div>
+      <div style="padding:1.25rem;">
+        <div class="stack-layer" style="color:var(--accent3); margin-bottom:0.5rem;">Track B — KG-Enhanced (Differentiator)</div>
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          FAISS retrieves seed §§ → NetworkX graph traversal finds related nodes → expanded context sent to LLM → richer, omission-resistant answer.<br><br>
+          <strong style="color:var(--ink);">Owner:</strong> Sumit<br>
+          <strong style="color:var(--ink);">Deadline:</strong> Proof-of-concept by end Week 2<br>
+          <strong style="color:var(--ink);">Demo:</strong> Side-by-side comparison in pitch
+        </div>
+      </div>
+    </div>
+    <div style="padding:1rem 1.25rem; background:var(--cream); font-size:0.8rem; color:var(--muted);">
+      <strong style="color:var(--ink);">Integration point:</strong> LangGraph router node decides which retrieval track to invoke based on query complexity. Simple factual queries → RAG. Queries involving multiple parties, deadlines, or exceptions → KG-enhanced.
+    </div>
+  </div>
+
+  <div class="block-title"><span class="num">2</span> Corpus Document Schema — Sebastian's Output, Sumit's Input</div>
+  <div style="background:var(--ink); color:#d4f0d4; border-radius:8px; padding:1.5rem; font-family:'DM Mono', monospace; font-size:0.78rem; line-height:1.8; margin-bottom:1rem; overflow-x:auto;">
+    <span style="color:#888;"># Every corpus document Sebastian produces follows this schema</span><br>
+    {<br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"paragraph"</span>: <span style="color:#90cfa0;">"§573"</span>,<br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"domain"</span>: <span style="color:#90cfa0;">"Mietrecht"</span>,&nbsp;&nbsp;<span style="color:#888;"># Mietrecht | WEG | BetrKV | Mietpreisbremse</span><br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"rule_type"</span>: <span style="color:#90cfa0;">"Recht"</span>,&nbsp;&nbsp;<span style="color:#888;"># Pflicht | Recht | Ausnahme | Frist | Definition</span><br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"entities"</span>: [<span style="color:#90cfa0;">"Vermieter"</span>, <span style="color:#90cfa0;">"Mieter"</span>],<br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"relationships"</span>: [<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span style="color:#c8b99a;">"from"</span>: <span style="color:#90cfa0;">"§573"</span>, <span style="color:#c8b99a;">"type"</span>: <span style="color:#90cfa0;">"requires"</span>, <span style="color:#c8b99a;">"to"</span>: <span style="color:#90cfa0;">"§573c"</span>},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span style="color:#c8b99a;">"from"</span>: <span style="color:#90cfa0;">"§573"</span>, <span style="color:#c8b99a;">"type"</span>: <span style="color:#90cfa0;">"exception_in"</span>, <span style="color:#c8b99a;">"to"</span>: <span style="color:#90cfa0;">"§573a"</span>},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span style="color:#c8b99a;">"from"</span>: <span style="color:#90cfa0;">"§573"</span>, <span style="color:#c8b99a;">"type"</span>: <span style="color:#90cfa0;">"related_to"</span>, <span style="color:#c8b99a;">"to"</span>: <span style="color:#90cfa0;">"§574"</span>}<br>
+    &nbsp;&nbsp;],<br>
+    &nbsp;&nbsp;<span style="color:#c8b99a;">"text"</span>: <span style="color:#90cfa0;">"Der Vermieter kann nur kündigen, wenn..."</span><br>
+    }
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0.75rem; margin-bottom:1.5rem;">
+    <div style="border:1px solid var(--border); border-radius:6px; padding:0.85rem;">
+      <div class="stack-layer">Relationship types</div>
+      <div style="font-size:0.8rem; line-height:1.7; margin-top:0.3rem;">
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">requires</code> — must be read together<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">exception_in</code> — carves out exception<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">related_to</code> — contextually linked<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">superseded_by</code> — newer ruling applies<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">defined_in</code> — term defined here
+      </div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:6px; padding:0.85rem;">
+      <div class="stack-layer">Rule types</div>
+      <div style="font-size:0.8rem; line-height:1.7; margin-top:0.3rem;">
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Pflicht</code> — obligation<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Recht</code> — right / entitlement<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Ausnahme</code> — exception<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Frist</code> — deadline / time limit<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Definition</code> — legal definition
+      </div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:6px; padding:0.85rem;">
+      <div class="stack-layer">Entities</div>
+      <div style="font-size:0.8rem; line-height:1.7; margin-top:0.3rem;">
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Mieter</code> — tenant<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Vermieter</code> — landlord<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Eigentümer</code> — property owner<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">WEG-Gemeinschaft</code> — owners' association<br>
+        <code style="background:var(--cream); padding:0.1rem 0.3rem; border-radius:3px; font-size:0.72rem;">Verwalter</code> — property manager
+      </div>
+    </div>
+  </div>
+
+  <div class="block-title"><span class="num">3</span> Sumit's KG Build Plan — Week by Week</div>
+  <table class="risk-table">
+    <thead>
+      <tr><th>Week</th><th>KG Milestone</th><th>Input needed from Sebastian</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Week 1</strong><br><span style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">Mar 9–14</span></td>
+        <td>Schema agreed + first 10 documents ingested into NetworkX graph. Prove: nodes created, edges traversable, basic query works in terminal.</td>
+        <td>Schema JSON format finalised by Wed Mar 11. First 10 structured documents by Fri Mar 14.</td>
+      </tr>
+      <tr>
+        <td><strong>Week 2</strong><br><span style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">Mar 16–21</span></td>
+        <td>Full Mietrecht subgraph built. Graph traversal retrieves related §§ correctly. Integration with FAISS: seed retrieval → graph expansion. LangGraph router node working.</td>
+        <td>Full corpus v0.9 with metadata by Mon Mar 16.</td>
+      </tr>
+      <tr>
+        <td><strong>Week 3</strong><br><span style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">Mar 23–28</span></td>
+        <td>WEG subgraph added. Side-by-side comparison demo working (RAG answer vs KG-enhanced answer for same query). Eval: omission rate measured on 10 complex queries.</td>
+        <td>Corpus v1.0 final by Mon Mar 23.</td>
+      </tr>
+      <tr>
+        <td><strong>Week 4</strong><br><span style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);">Mar 30 – Apr 2</span></td>
+        <td>Comparison demo polished for pitch. KG architecture diagram for slide deck. Omission rate results as pitch evidence.</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="block-title" style="margin-top:1.75rem;"><span class="num">4</span> The Pitch Story — How KG Becomes the Differentiator</div>
+  <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+    <div style="padding:1.25rem; border-bottom:1px solid var(--border); background:var(--cream);">
+      <div class="stack-layer" style="margin-bottom:0.4rem;">Slide narrative flow</div>
+      <div style="font-size:0.85rem; line-height:1.8;">
+        <strong>1. Problem:</strong> Existing legal chatbots hallucinate and omit critical connected rules.<br>
+        <strong>2. Why RAG alone isn't enough:</strong> Show a query where pure RAG returns §573 but misses §573c — a real omission with legal consequences.<br>
+        <strong>3. Our solution:</strong> Dual retrieval — RAG for speed, KG for completeness. Live side-by-side demo.<br>
+        <strong>4. Evidence:</strong> Omission rate: RAG vs KG-enhanced on 10 complex queries.<br>
+        <strong>5. Phase 2 vision:</strong> Full property law graph (BauGB, GBO, Kaufrecht) — the architecture already supports it.
+      </div>
+    </div>
+    <div style="padding:1rem 1.25rem; background:#fff8f0; font-size:0.8rem; color:#5a3a1a;">
+      <strong style="color:var(--accent);">⚠ Demo risk:</strong> The KG comparison demo is your most impressive moment — and your highest-risk moment. Prepare a screen recording backup of the comparison working perfectly. If live demo fails, the recording saves the pitch.
+    </div>
+  </div>
+
+  <div class="block-title" style="margin-top:1.75rem;"><span class="num">5</span> KG Fallback Protocol</div>
+  <div style="border:1px solid var(--border); border-radius:7px; padding:1.1rem; font-size:0.83rem; line-height:1.7;">
+    If Sumit's KG layer is not demo-ready by <strong>Friday March 28</strong>:<br><br>
+    ① Ship the RAG agent as the live product — it was always the safety net.<br>
+    ② Present the KG architecture as a fully designed Phase 2 feature with schema, graph design, and implementation plan in the repo.<br>
+    ③ Frame in pitch: "We architected for KG from Day 1 — here's the schema and graph design. Phase 2 implementation is already spec'd." This is still an AIPM-level answer — you made the architectural decision deliberately and documented it.<br><br>
+    <span style="color:var(--accent); font-weight:600;">This is not failure. A well-documented architectural decision you didn't build is more impressive than a half-built KG that breaks during demo.</span>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 7 — RISKS                       -->
+<!-- ════════════════════════════════════ -->
+<section id="risks" class="section">
+
+  <div class="section-h2">Risk Register</div>
+  <div class="section-h2-sub">Know before it hurts — 8 risks ranked by severity</div>
+
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th>Risk</th>
+        <th>Level</th>
+        <th>Mitigation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Scope creep into out-of-scope domains</strong><br><span style="color:var(--muted);font-size:0.76rem;">Team adds BauGB / GBO "just for completeness"</span></td>
+        <td><span class="risk-badge risk-high">High</span></td>
+        <td>PM blocks scope additions. Roadmap is the contract. Phase 2 framing handles the urge.</td>
+      </tr>
+      <tr>
+        <td><strong>Hallucination on legal edge cases</strong><br><span style="color:var(--muted);font-size:0.76rem;">Agent confidently gives wrong legal advice</span></td>
+        <td><span class="risk-badge risk-high">High</span></td>
+        <td>Mandatory disclaimer every response. Citation required or answer blocked. Eval set catches early.</td>
+      </tr>
+      <tr>
+        <td><strong>Corpus quality — low signal documents</strong><br><span style="color:var(--muted);font-size:0.76rem;">Scraped text is messy, duplicate, or unreliable</span></td>
+        <td><span class="risk-badge risk-high">High</span></td>
+        <td>Prioritise gesetze-im-internet.de (clean, authoritative). Manual QA on every document before indexing.</td>
+      </tr>
+      <tr>
+        <td><strong>Stack decision delay</strong><br><span style="color:var(--muted);font-size:0.76rem;">✅ Resolved — stack confirmed Monday 9 March</span></td>
+        <td><span class="risk-badge risk-low">Resolved</span></td>
+        <td>LangGraph + FAISS + NetworkX + sentence-transformers + Groq + Streamlit. Locked.</td>
+      </tr>
+      <tr>
+        <td><strong>KG layer not ready for demo day</strong><br><span style="color:var(--muted);font-size:0.76rem;">NetworkX integration slips past Week 3 gate</span></td>
+        <td><span class="risk-badge risk-med">Medium</span></td>
+        <td>Fallback protocol defined (KG tab). RAG ships regardless. KG becomes documented Phase 2. Screen recording prepared by Mar 28.</td>
+      </tr>
+      <tr>
+        <td><strong>Schema mismatch between Sebastian's corpus and Sumit's KG</strong><br><span style="color:var(--muted);font-size:0.76rem;">Metadata format diverges during Week 1</span></td>
+        <td><span class="risk-badge risk-med">Medium</span></td>
+        <td>Schema locked and committed to repo by Wed Mar 11. First 10 documents validated by Sumit before Sebastian processes the rest.</td>
+      </tr>
+      <tr>
+        <td><strong>Groq rate limits on deployment</strong><br><span style="color:var(--muted);font-size:0.76rem;">Multiple users hit limits during demo</span></td>
+        <td><span class="risk-badge risk-med">Medium</span></td>
+        <td>time.sleep(3) per node (known fix). Consider Claude API for final demo — more stable under burst load.</td>
+      </tr>
+      <tr>
+        <td><strong>Rotating PM causes decision gaps</strong><br><span style="color:var(--muted);font-size:0.76rem;">Week-to-week handoff loses context</span></td>
+        <td><span class="risk-badge risk-med">Medium</span></td>
+        <td>Weekly PM writes 1-page handoff doc every Friday. Sebastian is permanent technical anchor regardless of rotation.</td>
+      </tr>
+      <tr>
+        <td><strong>Mobile optimization underestimated</strong><br><span style="color:var(--muted);font-size:0.76rem;">Streamlit looks broken on phone</span></td>
+        <td><span class="risk-badge risk-med">Medium</span></td>
+        <td>Test on real devices from Week 2. Mobile layout configured in Week 1 setup — not as an afterthought.</td>
+      </tr>
+      <tr>
+        <td><strong>API keys exposed in public repo</strong><br><span style="color:var(--muted);font-size:0.76rem;">secrets committed to GitHub</span></td>
+        <td><span class="risk-badge risk-low">Low</span></td>
+        <td>secrets.toml from Day 1. .gitignore before first commit. Non-negotiable — one leak = keys rotated, deploy broken on demo day.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- TAB 3 — TEAM & LEARNING GOALS       -->
+<!-- ════════════════════════════════════ -->
+<section id="team" class="section">
+
+  <div class="section-h2">Team & Learning Goals</div>
+  <div class="section-h2-sub">Roles · Skills · Individual learning goals · Shared motivations</div>
+
+  <div class="mentor-alert">
+    <div class="mentor-alert-label">📋 Based on team self-assessment document — March 2026</div>
+    <p>Role assignments balance what each person is already strong at against what they explicitly want to grow in. Nobody is typecast. Everyone has at least one stretch goal built into their role. Each person confirms their learning goal card by EOD Monday — then this section becomes TEAM_CHARTER.md in the repo.</p>
+  </div>
+
+  <!-- LEARNING GOALS -->
+  <div class="block-title"><span class="num">1</span> Individual Learning Goals</div>
+  <div class="learning-grid" style="margin-bottom:1.5rem;">
+
+    <div class="learning-card">
+      <div class="learning-header">
+        <div class="learning-name">Sebastian</div>
+        <div class="learning-role">RAG Pipeline · Technical PM Anchor</div>
+      </div>
+      <div class="learning-body">
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          "I want to lead a team using Agile PM in practice and having a real communication structure: regular standups, clear ownership, project documentation, Git workflow. Technically my goal is to build a RAG pipeline and using vibe coding with Claude Code."
+          <br><br>
+          <strong style="color:var(--ink);">Project application:</strong> Permanent PM anchor role puts Agile practice into daily reality — standups, handoff docs, Git discipline. Corpus + FAISS ownership means building RAG end-to-end with genuine understanding. Git workflow goal served by owning repo structure and README.
+        </div>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-header">
+        <div class="learning-name">Sumit</div>
+        <div class="learning-role">KG Architecture · Week 1 PM</div>
+      </div>
+      <div class="learning-body">
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          "I have experience with KG, but I have never built one myself — would be interesting to grow in. Same for rule engines. Getting more to the point — I talk in circles."
+          <br><br>
+          <strong style="color:var(--ink);">Project application:</strong> Building NetworkX KG from scratch satisfies goal 1. Running Week 1 standups with a strict 15-minute timer satisfies goal 2.
+        </div>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-header">
+        <div class="learning-name">Nuria</div>
+        <div class="learning-role">QA · Evaluation · Out-of-scope Node · Week 2 PM</div>
+      </div>
+      <div class="learning-body">
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          "All of the PM stuff! I think I'm a natural organiser, but I still have to master all the Agile process. Building a KG. UI design."
+          <br><br>
+          <strong style="color:var(--ink);">Project application:</strong> Week 2 PM role gives her live Agile practice. Out-of-scope node is her technical build. Kanban ownership plays to natural strength while growing PM skills.
+        </div>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-header">
+        <div class="learning-name">Matteo</div>
+        <div class="learning-role">UI/UX · Pitch · Eval Architecture Doc · Week 3 PM</div>
+      </div>
+      <div class="learning-body">
+        <div style="font-size:0.83rem; line-height:1.6; color:var(--muted);">
+          "Deeper hands-on experience with AI retrieval architectures. Stronger confidence in technical discussions."
+          <br><br>
+          <strong style="color:var(--ink);">Project application:</strong> Evaluation architecture document — explaining FAISS vs KG retrieval in plain language — builds technical confidence without deep coding. Week 3 PM gives him scope discipline practice.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SKILL TABLE -->
+  <div class="block-title"><span class="num">2</span> Self-Assessed Skills (1–5)</div>
+  <div style="overflow-x:auto; margin-bottom:1.5rem;">
+  <table class="team-table" style="min-width:500px;">
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Sebastian</th>
+        <th>Nuria</th>
+        <th>Matteo</th>
+        <th>Sumit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Product Thinking</strong></td>
+        <td><span style="color:var(--accent2);font-weight:600;">5</span></td>
+        <td>4</td>
+        <td><span style="color:var(--accent);font-weight:600;">1</span></td>
+        <td><span style="color:var(--accent2);font-weight:600;">5+</span></td>
+      </tr>
+      <tr>
+        <td><strong>Agile PM</strong></td>
+        <td><span style="color:var(--accent);">2</span></td>
+        <td>3</td>
+        <td><span style="color:var(--accent);">2</span></td>
+        <td><span style="color:var(--accent2);font-weight:600;">5</span></td>
+      </tr>
+      <tr>
+        <td><strong>Communication</strong></td>
+        <td>4</td>
+        <td>3</td>
+        <td>4</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><strong>EDA</strong></td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td><span style="color:var(--accent);">1</span></td>
+      </tr>
+      <tr>
+        <td><strong>Modelling / Statistics</strong></td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td><span style="color:var(--accent);">1</span></td>
+      </tr>
+      <tr>
+        <td><strong>Programming</strong></td>
+        <td><span style="color:var(--accent);">2</span></td>
+        <td><span style="color:var(--accent);">2</span></td>
+        <td><span style="color:var(--accent);">2</span></td>
+        <td>3</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- INDIVIDUAL CARDS -->
+  <div class="block-title"><span class="num">3</span> Individual Role Analysis</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--ink); color:var(--paper); padding:0.85rem 1.1rem;">
+        <div style="font-weight:600; font-size:0.95rem;">Sebastian Plum</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(255,255,255,0.5); margin-top:0.15rem;">RAG Pipeline · Technical PM Anchor</div>
+      </div>
+      <div style="padding:1rem 1.1rem; font-size:0.82rem; line-height:1.6;">
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent2);">Strengths</span><br>Product thinking, scope discipline, design, creative strategy, data understanding</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent);">Weakness</span><br>Procrastination, leans on Claude Code, real team PM process</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent3);">Wants to grow</span><br>Real Agile PM in practice, RAG depth, user stories (DoR/DoD), KG familiarity</div>
+        <div style="background:var(--cream); border-radius:5px; padding:0.6rem 0.75rem; margin-top:0.5rem; font-size:0.78rem;">
+          <strong>Role rationale:</strong> Owns corpus + FAISS because RAG depth is his explicit growth goal — not just "what he already does". The procrastination weakness is mitigated by being the permanent anchor with visible weekly deliverables everyone depends on.
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--ink); color:var(--paper); padding:0.85rem 1.1rem;">
+        <div style="font-weight:600; font-size:0.95rem;">Sumit Mehta</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(255,255,255,0.5); margin-top:0.15rem;">KG Architecture · Week 1 PM · Strategic Vision</div>
+      </div>
+      <div style="padding:1rem 1.1rem; font-size:0.82rem; line-height:1.6;">
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent2);">Strengths</span><br>10 years PM, KG/rules engine experience, product vision, vibe coding, FE/design ability</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent);">Weakness</span><br>Real hardcore coding + testing, talks in circles</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent3);">Wants to grow</span><br>Actually build a KG himself (not just work with one), rule engines, getting to the point</div>
+        <div style="background:var(--cream); border-radius:5px; padding:0.6rem 0.75rem; margin-top:0.5rem; font-size:0.78rem;">
+          <strong>Role rationale:</strong> Week 1 PM is the obvious fit — 10 years experience, strongest Agile score. KG ownership directly satisfies his growth goal. His "talks in circles" weakness is addressed by PM role requiring crisp daily standups and written handoff docs.
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--ink); color:var(--paper); padding:0.85rem 1.1rem;">
+        <div style="font-weight:600; font-size:0.95rem;">Nuria Muñoz</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(255,255,255,0.5); margin-top:0.15rem;">QA · Evaluation · Out-of-scope node · Week 2 PM</div>
+      </div>
+      <div style="padding:1rem 1.1rem; font-size:0.82rem; line-height:1.6;">
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent2);">Strengths</span><br>Natural organiser, Kanban keeper, human-in-the-loop RAG experience, meeting moderator, not afraid of hard tasks</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent);">Weakness</span><br>Fuzzy communication/silence, anything cloud/API/deployment</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent3);">Wants to grow</span><br>All the Agile PM stuff, KG, UI design — wants something visible and portfolio-worthy</div>
+        <div style="background:var(--cream); border-radius:5px; padding:0.6rem 0.75rem; margin-top:0.5rem; font-size:0.78rem;">
+          <strong>Role rationale:</strong> QA + eval set plays to her organiser strength and RAG experience. Out-of-scope detection node gives her a real technical deliverable to own. Week 2 PM satisfies her Agile growth goal. Deployment kept away from her — that's Sumit's domain.
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--ink); color:var(--paper); padding:0.85rem 1.1rem;">
+        <div style="font-weight:600; font-size:0.95rem;">Matteo Vercelli</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(255,255,255,0.5); margin-top:0.15rem;">UI/UX · Pitch · Technical Learning · Week 3 PM</div>
+      </div>
+      <div style="padding:1rem 1.1rem; font-size:0.82rem; line-height:1.6;">
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent2);">Strengths</span><br>Strategic thinking, scope framing, multilingual, networking, structured problem framing</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent);">Weakness</span><br>Technical implementation, overthinks before executing, dislikes full remote</div>
+        <div style="margin-bottom:0.6rem;"><span style="font-family:'DM Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--accent3);">Wants to grow</span><br>Hands-on AI retrieval architecture understanding, confidence in technical discussions</div>
+        <div style="background:var(--cream); border-radius:5px; padding:0.6rem 0.75rem; margin-top:0.5rem; font-size:0.78rem;">
+          <strong>Role rationale:</strong> UI ownership is right for his skills. But his growth goal (technical confidence) means he should also own the evaluation architecture document — writing up how FAISS vs KG retrieval works in plain language. That's a technical deliverable that plays to his communication strength while building genuine understanding.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FINAL ROLE TABLE -->
+  <div class="block-title"><span class="num">4</span> Final Role Assignment — Bring to Monday</div>
+  <table class="team-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Primary Role</th>
+        <th>Growth Opportunity Built In</th>
+        <th>PM Week</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="team-name">Sebastian</span><span class="anchor-badge">Anchor</span></td>
+        <td>RAG pipeline · Corpus · Technical PM anchor · GitHub/portfolio</td>
+        <td>Real RAG depth (not just theory) · Agile PM in practice via anchor role · User stories (DoR/DoD) for each sprint</td>
+        <td>Permanent anchor — non-rotating</td>
+      </tr>
+      <tr>
+        <td><span class="team-name">Sumit</span></td>
+        <td>KG architecture (NetworkX) · LangGraph skeleton · Deployment</td>
+        <td>First time actually building a KG himself · Getting concise as Week 1 PM running standups</td>
+        <td>Week 1 — most qualified, 10yr PM experience</td>
+      </tr>
+      <tr>
+        <td><span class="team-name">Nuria</span></td>
+        <td>Corpus QA · Evaluation set · Out-of-scope detection node · Kanban owner · User research</td>
+        <td>Agile PM in practice as Week 2 PM · Owns a real technical node · Has visible portfolio output</td>
+        <td>Week 2 — natural organiser, Kanban strength</td>
+      </tr>
+      <tr>
+        <td><span class="team-name">Matteo</span></td>
+        <td>Streamlit UI/UX · Pitch deck · Evaluation architecture doc · Demo lead</td>
+        <td>Technical confidence via eval architecture doc (explains FAISS vs KG in plain language) · Scope discipline as Week 3 PM</td>
+        <td>Week 3 — scope definition is his explicit strength</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SHARED MOTIVATIONS -->
+  <div class="block-title" style="margin-top:1.75rem;"><span class="num">5</span> Shared Team Motivations — Design the Project Around These</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:0.5rem;">
+    <div style="border:1px solid var(--accent2); border-radius:7px; padding:1rem; background:rgba(31,77,53,0.04);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--accent2); text-transform:uppercase; margin-bottom:0.4rem;">All 4 agree</div>
+      <div style="font-size:0.83rem; font-weight:600;">Portfolio-ready output</div>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:0.2rem;">Something deployable, impressive to employers, that each person can point to as their own contribution</div>
+    </div>
+    <div style="border:1px solid var(--accent2); border-radius:7px; padding:1rem; background:rgba(31,77,53,0.04);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--accent2); text-transform:uppercase; margin-bottom:0.4rem;">All 4 agree</div>
+      <div style="font-size:0.83rem; font-weight:600;">A real UI</div>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:0.2rem;">Nuria, Sumit, and Sebastian all explicitly named UI as a "nice to have". It makes the project feel real. Matteo owns it.</div>
+    </div>
+    <div style="border:1px solid var(--accent3); border-radius:7px; padding:1rem; background:rgba(28,53,88,0.04);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--accent3); text-transform:uppercase; margin-bottom:0.4rem;">3 of 4 agree</div>
+      <div style="font-size:0.83rem; font-weight:600;">In-person sessions</div>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:0.2rem;">Matteo, Sumit, Nuria and Sebastian are in Berlin. Plan at least one F2F working session — Week 2 integration crunch is the right moment.</div>
+    </div>
+    <div style="border:1px solid var(--accent3); border-radius:7px; padding:1rem; background:rgba(28,53,88,0.04);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--accent3); text-transform:uppercase; margin-bottom:0.4rem;">Process goal</div>
+      <div style="font-size:0.83rem; font-weight:600;">Real teamwork — not "pot throwing"</div>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:0.2rem;">Sebastian named this explicitly. Clear role ownership (Matteo's wish), daily standups, written handoffs, Kanban (Nuria owns) — these solve it structurally.</div>
+    </div>
+  </div>
+
+  <!-- WEEKEND TODO -->
+  <div class="block-title" style="margin-top:1.75rem;">Monday Kickoff Agenda — 30 min max</div>
+  <div class="todo-box">
+    <div class="todo-item">
+      <div class="todo-dot"></div>
+      <div>
+        <div class="todo-title">Share this document with the full team before Monday</div>
+        <div class="todo-detail">Everyone reads the role rationale for their own card. Come to Monday with reactions, not questions — saves 20 minutes of explanation.</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-dot"></div>
+      <div>
+        <div class="todo-title">Confirm roles + PM rotation order</div>
+        <div class="todo-detail">Sumit W1 → Nuria W2 → Matteo W3 → Sebastian anchor throughout. Any objections surfaced and resolved in the first 10 minutes.</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-dot"></div>
+      <div>
+        <div class="todo-title">Nuria sets up Kanban board — Day 1</div>
+        <div class="todo-detail">This is her explicit strength and she wants to own it. Board live before end of Monday. Every task from Week 1 on it with owner + due date.</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-dot"></div>
+      <div>
+        <div class="todo-title">Plan one F2F session — target Week 2 integration crunch</div>
+        <div class="todo-detail">Mar 17 or 18. The moment FAISS + KG + UI all need to connect is exactly when in-person problem solving pays off most.</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-dot"></div>
+      <div>
+        <div class="todo-title">Fill individual learning goals into Tab ③</div>
+        <div class="todo-detail">Based on self-assessment doc, placeholders are now informed guesses. Sebastian confirms his own, then each team member confirms theirs by EOD Monday.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <span>CAPSTONE MVP DEFINITION v5.1 · neuefische AIPM 2025/2026 · updated Mar 2026</span>
+  <span>Presentation: 2 April 2026</span>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

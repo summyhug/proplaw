@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Capstone Roadmap v6.1 — LBO AI Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0f1923; --paper:#f5f2ec; --paper2:#ede9e1;
+  --accent:#c84b2f; --accent2:#2a6496; --gold:#b5842a;
+  --muted:#7a7468; --border:#d4cfc6; --white:#ffffff;
+  --must-bg:#e8f4ed; --must:#1a3d2b;
+  --should-bg:#e6eef8; --should:#1a3060;
+  --wont-bg:#fdf0e4; --wont:#5a3010;
+  --high-bg:#fdeaea; --high:#8b1a1a;
+  --med-bg:#fff8e1; --med:#6b4c00;
+  --res-bg:#f0f0f0; --res:#3a3a3a;
+  --p1:#c84b2f; --p2:#2a6496;
+  --w1:#c45f00; --w2:#1f6b3a; --w3:#1c3a7a; --w4:#8a1040;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Manrope',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh}
+
+/* HEADER */
+.hdr{background:var(--ink);color:var(--paper);padding:36px 48px 28px;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(245,242,236,.08)}
+.hdr-bg{position:absolute;top:-10px;right:-10px;font-family:'DM Serif Display',serif;font-size:11rem;font-weight:700;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none}
+.hdr-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative}
+.hdr-title{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1.15;letter-spacing:-.5px}
+.hdr-title em{font-style:italic;color:#c9b99a}
+.ver{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;background:var(--accent);color:#fff;padding:4px 10px;border-radius:2px;white-space:nowrap;align-self:flex-start;margin-top:4px}
+.hdr-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:24px;font-size:.8rem;color:rgba(245,242,236,.65);font-family:'DM Mono',monospace;letter-spacing:.04em;position:relative}
+.hdr-meta span strong{color:var(--paper);font-weight:500}
+
+.scope-banner{background:var(--accent);color:#fff;padding:10px 48px;font-size:.78rem;font-family:'DM Mono',monospace;letter-spacing:.05em;display:flex;align-items:center;gap:10px}
+.scope-banner::before{content:'⚡';font-size:1rem}
+
+/* TABS */
+.tab-bar{background:var(--ink);padding:0 48px;display:flex;gap:0;border-bottom:2px solid #222;overflow-x:auto}
+.tab-btn{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,236,.45);background:none;border:none;border-bottom:2px solid transparent;padding:14px 18px 12px;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;margin-bottom:-2px}
+.tab-btn:hover{color:rgba(245,242,236,.8)}
+.tab-btn.active{color:var(--paper);border-bottom-color:var(--accent)}
+
+.tab-content{display:none;padding:40px 48px 60px}
+.tab-content.active{display:block}
+
+/* SHARED */
+.slabel{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.stitle{font-family:'DM Serif Display',serif;font-size:1.55rem;margin-bottom:20px;line-height:1.2}
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-right:4px;margin-bottom:4px}
+.b-must{background:var(--must-bg);color:var(--must);border:1px solid #a8d5b5}
+.b-should{background:var(--should-bg);color:var(--should);border:1px solid #9ab8d8}
+.b-wont{background:var(--wont-bg);color:var(--wont);border:1px solid #d4ab7a}
+.b-new{background:var(--accent);color:#fff}
+.b-moved{background:var(--gold);color:#fff}
+.b-p1{background:var(--p1);color:#fff}
+.b-p2{background:var(--p2);color:#fff}
+.b-week{background:var(--paper2);color:var(--ink);border:1px solid var(--border)}
+.b-res{background:var(--res-bg);color:var(--res);border:1px solid #ccc}
+
+/* hypothesis box */
+.hyp{border-left:3px solid var(--accent);background:#fff;padding:20px 24px;margin:24px 0;border-radius:0 4px 4px 0}
+.hyp-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.hyp p{font-size:.88rem;line-height:1.7}
+
+/* callout */
+.callout{background:var(--should-bg);border-left:3px solid var(--accent2);padding:14px 18px;border-radius:0 4px 4px 0;font-size:.82rem;line-height:1.6;margin:16px 0}
+.callout.warn{background:var(--high-bg);border-left-color:var(--accent)}
+.callout.gold{background:#fff8e8;border-left-color:var(--gold)}
+.callout.green{background:var(--must-bg);border-left-color:var(--must)}
+
+/* card grid */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:16px}
+.card{background:#fff;border:1px solid var(--border);border-radius:4px;padding:18px 20px}
+.card-lbl{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.card h3{font-size:.92rem;font-weight:700;margin-bottom:6px}
+.card p{font-size:.8rem;line-height:1.6;color:#444}
+
+/* feature table */
+.ft{width:100%;border-collapse:collapse;margin-top:16px;font-size:.81rem}
+.ft th{background:var(--ink);color:var(--paper);font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;text-align:left}
+.ft td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}
+.ft tr:nth-child(even) td{background:#faf9f7}
+.ft tr:hover td{background:#f0ede6}
+
+/* risk table */
+.rt{width:100%;border-collapse:collapse;font-size:.81rem;margin-top:16px}
+.rt th{background:var(--ink);color:var(--paper);font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;text-align:left}
+.rt td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.r-high{color:var(--high);background:var(--high-bg);font-weight:700;font-size:.7rem;font-family:'DM Mono',monospace;letter-spacing:.05em;padding:3px 8px;border-radius:2px;display:inline-block}
+.r-med{color:var(--med);background:var(--med-bg);font-weight:700;font-size:.7rem;font-family:'DM Mono',monospace;letter-spacing:.05em;padding:3px 8px;border-radius:2px;display:inline-block}
+.r-res{color:var(--res);background:var(--res-bg);font-weight:700;font-size:.7rem;font-family:'DM Mono',monospace;letter-spacing:.05em;padding:3px 8px;border-radius:2px;display:inline-block}
+
+/* sprint cards */
+.sprint-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:28px}
+.sprint-card{border-right:1px solid var(--border);overflow:hidden}
+.sprint-card:last-child{border-right:none}
+.sprint-head{padding:10px 14px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.s1{background:var(--w1)} .s2{background:var(--w2)} .s3{background:var(--w3)} .s4{background:var(--w4)}
+.sprint-body{padding:14px;font-size:.78rem;line-height:1.6;background:#fff}
+.sprint-body strong{display:block;font-size:.68rem;color:var(--muted);text-transform:uppercase;font-family:'DM Mono',monospace;letter-spacing:.08em;margin-top:10px;margin-bottom:2px}
+.sprint-body strong:first-child{margin-top:0}
+
+/* milestone list */
+.milestone-list{margin-top:12px}
+.ms{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.ms:last-child{border-bottom:none}
+.ms-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;flex-shrink:0;margin-top:5px}
+.ms-content{}
+.ms-title{font-weight:600;font-size:.82rem;margin-bottom:2px}
+.ms-detail{font-size:.77rem;color:#555;line-height:1.5}
+.ms-owner{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:3px}
+.gate{background:var(--ink);color:var(--paper);font-size:.78rem;padding:8px 14px;margin-top:12px;border-radius:3px;font-family:'DM Mono',monospace;letter-spacing:.04em}
+
+/* KG architecture */
+.kg-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:16px}
+.kg-col{padding:20px}
+.kg-col:first-child{border-right:1px solid var(--border)}
+.kg-col-head{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.kg-col-body{font-size:.8rem;line-height:1.65;color:#444}
+.kg-footer{padding:12px 16px;background:var(--paper2);font-size:.78rem;border-top:1px solid var(--border);border-bottom-left-radius:4px;border-bottom-right-radius:4px}
+
+/* code block */
+.code{background:var(--ink);color:#d4f0d4;border-radius:4px;padding:16px 20px;font-family:'DM Mono',monospace;font-size:.76rem;line-height:1.8;margin:12px 0;overflow-x:auto}
+.code .c{color:#888} .code .k{color:#c8b99a} .code .v{color:#90cfa0}
+
+/* team cards */
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px}
+.tc{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.tc-head{padding:14px 16px 10px;border-bottom:1px solid var(--border)}
+.tc-name{font-weight:700;font-size:.92rem}
+.tc-role{font-size:.73rem;color:var(--muted);margin-top:2px}
+.tc-body{padding:12px 16px;font-size:.77rem;line-height:1.6;color:#444}
+.tc-body strong{display:block;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-top:8px;margin-bottom:2px}
+.tc-body strong:first-child{margin-top:0}
+
+/* motivations */
+.motiv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.motiv{border-radius:4px;padding:14px 16px;border:1px solid var(--border)}
+.motiv-lbl{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.motiv-title{font-size:.83rem;font-weight:700;margin-bottom:4px}
+.motiv-text{font-size:.77rem;color:#555;line-height:1.5}
+
+/* stack pills */
+.sg{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.sp{background:#fff;border:1px solid var(--border);border-radius:3px;padding:8px 14px}
+.sp-n{font-weight:700;font-size:.82rem}
+.sp-r{font-size:.7rem;color:var(--muted);display:block;margin-top:1px}
+
+/* changelog */
+.cl-item{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--border);font-size:.82rem}
+.cl-ver{font-family:'DM Mono',monospace;font-size:.74rem;color:var(--accent);font-weight:600}
+
+/* lang demo */
+.ld{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.lp{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.lp-head{padding:8px 14px;font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.lp-de{background:#f5f0e8} .lp-en{background:#eaf0f8}
+.lp-body{padding:14px 16px;font-size:.8rem;line-height:1.65;color:#444}
+
+/* pitch story */
+.pitch-box{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:14px}
+.pitch-head{padding:12px 16px;background:var(--paper2);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pitch-body{padding:16px;font-size:.82rem;line-height:1.8}
+.pitch-risk{padding:12px 16px;background:var(--high-bg);font-size:.8rem;border-top:1px solid var(--border)}
+
+/* fallback box */
+.fallback{border:1px solid var(--border);border-radius:4px;padding:16px 20px;font-size:.82rem;line-height:1.7;margin-top:14px}
+
+/* user testing */
+.eval-box{background:#fff;border:1px solid var(--border);border-radius:4px;padding:16px 20px;margin-top:12px;font-size:.82rem;line-height:1.65}
+
+@media(max-width:700px){
+  .hdr,.tab-bar,.tab-content{padding-left:20px;padding-right:20px}
+  .scope-banner{padding-left:20px;padding-right:20px}
+  .hdr-title{font-size:1.55rem}
+  .kg-grid,.ld{grid-template-columns:1fr}
+  .sprint-grid{grid-template-columns:1fr}
+  .sprint-card{border-right:none;border-bottom:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-bg">LBO</div>
+  <div class="hdr-top">
+    <div>
+      <div class="hdr-title">AI Legal Advisor<br><em>Bauordnungsrecht</em></div>
+    </div>
+    <div class="ver">v6.1 — FULL SPEC</div>
+  </div>
+  <div class="hdr-meta">
+    <span><strong>Team</strong> Sebastian · Nuria · Matteo · Sumit</span>
+    <span><strong>Bootcamp</strong> neuefische AIPM 2025/2026</span>
+    <span><strong>Deadline</strong> April 2, 2026</span>
+    <span><strong>Phase 1</strong> 16 LBO (Bundesländer)</span>
+    <span><strong>Languages</strong> DE + EN</span>
+    <span><strong>KG Owner</strong> Sumit + Nuria</span>
+  </div>
+</header>
+
+<div class="scope-banner">
+  v6.1 — Restores KG architecture spec, corpus schema, detailed milestones, pitch story, external user testing, shared motivations, and TEAM_CHARTER.md from v5.1. Conflict resolved: Sumit = KG Owner, Nuria supports. EDA requirement resolved via FAISS-vs-KG model comparison framing.
+</div>
+
+<nav class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('mvp',this)">MVP Definition</button>
+  <button class="tab-btn" onclick="switchTab('features',this)">Features</button>
+  <button class="tab-btn" onclick="switchTab('kg',this)">KG Architecture</button>
+  <button class="tab-btn" onclick="switchTab('language',this)">Dual Language</button>
+  <button class="tab-btn" onclick="switchTab('sprints',this)">Sprint Plan</button>
+  <button class="tab-btn" onclick="switchTab('corpus',this)">Corpus</button>
+  <button class="tab-btn" onclick="switchTab('risks',this)">Risks</button>
+  <button class="tab-btn" onclick="switchTab('team',this)">Team & Learning</button>
+</nav>
+
+<!-- ══ TAB 1 — MVP ══ -->
+<section id="mvp" class="tab-content active">
+  <div class="slabel">Tab 01 — North Star</div>
+  <h2 class="stitle">MVP Definition</h2>
+
+  <div class="hyp">
+    <div class="hyp-label">Core Hypothesis</div>
+    <p>Germany's building law is fragmented across 16 sovereign state codes (LBO). Architects, planners, foreign investors and Bauherren have no unified, queryable interface to navigate this complexity — especially across language barriers.<br><br>
+    <strong>Our differentiator:</strong> A bilingual (DE/EN) AI advisor combining FAISS vector retrieval and a NetworkX knowledge graph to surface precise, cross-referenced answers from all 16 LBOs — with transparent source attribution and explicit out-of-scope detection.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="slabel">Target Users</div>
+  <div class="cg">
+    <div class="card"><div class="card-lbl" style="color:var(--accent)">Primary</div><h3>Architects & Planners</h3><p>Fast cross-Bundesland LBO comparison. International firms often work in English. High query complexity — exactly where KG outperforms RAG.</p></div>
+    <div class="card"><div class="card-lbl" style="color:var(--accent)">Primary</div><h3>Bauherren & Developers</h3><p>Need Abstandsflächen, GFZ, Bauklasse rules before engaging consultants. State-specific answers with explicit attribution.</p></div>
+    <div class="card"><div class="card-lbl" style="color:var(--accent2)">Secondary</div><h3>Foreign Investors</h3><p>Evaluating development across German states. English-first. Benefit most from bilingual interface and cross-Bundesland comparison.</p></div>
+    <div class="card"><div class="card-lbl" style="color:var(--accent2)">Secondary</div><h3>Municipalities & Officials</h3><p>Compare own LBO to neighbouring states. German-first. Precise §§ lookup during planning approvals.</p></div>
+    <div class="card"><div class="card-lbl" style="color:var(--muted)">Out of Scope</div><h3>General Tenants</h3><p>Wohnraummietrecht / WEG = Phase 2. Out-of-scope detection node redirects appropriately.</p></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="slabel">Bootcamp Deliverable Compliance</div>
+  <div class="callout green">
+    <strong>Model comparison requirement met:</strong> FAISS-only retrieval vs. FAISS + KG-enhanced retrieval is our "different models tried and compared" deliverable. Measured via omission rate on 10 complex cross-§§ queries. Results presented as pitch evidence. No separate EDA step required — corpus ingestion pipeline with §§ metadata analysis fulfils the data understanding requirement.
+  </div>
+
+  <hr class="divider">
+
+  <div class="slabel">Success Criteria</div>
+  <table class="ft">
+    <thead><tr><th>Criterion</th><th>Measure</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td>Retrieval accuracy</td><td>Correct §§ cited in top-3 results</td><td>≥ 80%</td></tr>
+      <tr><td>KG vs RAG omission rate</td><td>Cross-§§ queries where KG finds what RAG misses</td><td>Measurable delta on 10 test queries</td></tr>
+      <tr><td>Cross-Bundesland queries</td><td>Answers spanning ≥ 2 LBOs correctly</td><td>≥ 70%</td></tr>
+      <tr><td>Language parity</td><td>DE vs EN answer quality delta</td><td>&lt; 10%</td></tr>
+      <tr><td>Out-of-scope detection</td><td>Non-LBO queries correctly flagged</td><td>≥ 90%</td></tr>
+      <tr><td>Latency</td><td>End-to-end response time</td><td>&lt; 6s</td></tr>
+      <tr><td>External user trust rating</td><td>5 test users rate answers 1–5</td><td>Average ≥ 3.5</td></tr>
+      <tr><td>Deployment</td><td>Live on Lovable, mobile-optimised</td><td>By April 2</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ TAB 2 — FEATURES ══ -->
+<section id="features" class="tab-content">
+  <div class="slabel">Tab 02 — Feature Set</div>
+  <h2 class="stitle">Features — Phase 1 vs Phase 2</h2>
+  <div class="callout gold"><strong>v6.1 note:</strong> F5 (Dual Language) is Phase 1 Must-Have. F9 Wohnraummietrecht fully Phase 2. KG (F2) owner is Sumit + Nuria.</div>
+
+  <table class="ft">
+    <thead><tr><th width="40">ID</th><th width="170">Feature</th><th>Description</th><th width="95">Priority</th><th width="75">Phase</th><th width="110">Sprint</th><th width="110">Owner</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>F1</strong></td>
+        <td><strong>RAG Pipeline</strong><br><small>FAISS + pdfplumber</small></td>
+        <td>Corpus ingestion, chunking with Bundesland metadata, sentence-transformer embeddings, FAISS index. Static build. JSON schema locked Week 1 Day 3.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 1–2</span></td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F2</strong></td>
+        <td><strong>Knowledge Graph</strong><br><small>NetworkX</small></td>
+        <td>LBO-specific KG: nodes = §§, concepts, Bundesländer. Edges = cross-references. Dual retrieval: FAISS seed → KG traversal → expanded context. This is the measurable model comparison vs pure FAISS.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 2–3</span></td>
+        <td>Sumit + Nuria</td>
+      </tr>
+      <tr>
+        <td><strong>F3</strong></td>
+        <td><strong>LangGraph Agent</strong><br><small>Query routing</small></td>
+        <td>Orchestration: route → FAISS → KG → synthesis → language layer → response. Retry logic, confidence scoring, fallback.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 2–3</span></td>
+        <td>Matteo</td>
+      </tr>
+      <tr>
+        <td><strong>F4</strong></td>
+        <td><strong>Out-of-Scope Detection</strong></td>
+        <td>LangGraph guard node: classify as LBO / out-of-scope (Mietrecht, WEG, GEG, DIN) / ambiguous. Redirect with guidance.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 2</span></td>
+        <td>Nuria</td>
+      </tr>
+      <tr>
+        <td><strong>F5</strong></td>
+        <td><strong>Dual Language DE/EN</strong><br><small><span class="badge b-new">Promoted P1</span></small></td>
+        <td>LLM translation loop. Query accepted DE/EN → processed in DE → translated at response layer. UI i18n via strings.de.json / strings.en.json. §§ always shown in original German. See Dual Language tab.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 3</span></td>
+        <td>Nuria + Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F6</strong></td>
+        <td><strong>Lovable Frontend</strong></td>
+        <td>Chat UI, Bundesland selector, language toggle, source citation panel, out-of-scope alert. Mobile-first. Deployed on Lovable.</td>
+        <td><span class="badge b-must">Must</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 1+3–4</span></td>
+        <td>Sumit + Nuria</td>
+      </tr>
+      <tr>
+        <td><strong>F7</strong></td>
+        <td><strong>User PDF Upload</strong><br><small>Gemini API</small></td>
+        <td>Upload Baugenehmigung/Bebauungsplan PDF. Gemini parses at runtime; agent cross-references with corpus. High demo value.</td>
+        <td><span class="badge b-should">Should</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 4</span></td>
+        <td>Sebastian</td>
+      </tr>
+      <tr>
+        <td><strong>F8</strong></td>
+        <td><strong>Evaluation Framework</strong></td>
+        <td>RAGAS + custom: retrieval quality, KG vs RAG omission rate, language parity, out-of-scope precision/recall. Results = pitch evidence slide.</td>
+        <td><span class="badge b-should">Should</span></td>
+        <td><span class="badge b-p1">P1</span></td>
+        <td><span class="badge b-week">Wk 3–4</span></td>
+        <td>Matteo</td>
+      </tr>
+      <tr>
+        <td><strong>F9</strong></td>
+        <td><strong>Mietrecht Corpus</strong><br><small><span class="badge b-moved">→ Phase 2</span></small></td>
+        <td>BGB §§535–580a, WEG, BetrKV, Mietpreisbremse. Previously Phase 1 core scope. Moved.</td>
+        <td><span class="badge b-wont">Phase 2</span></td>
+        <td><span class="badge b-p2">P2</span></td>
+        <td>—</td><td>TBD</td>
+      </tr>
+      <tr>
+        <td><strong>F10</strong></td>
+        <td><strong>Kreisebene Rules</strong></td>
+        <td>District-level Gestaltungssatzungen. Phase 2 after LBO base stable.</td>
+        <td><span class="badge b-wont">Phase 2</span></td>
+        <td><span class="badge b-p2">P2</span></td>
+        <td>—</td><td>TBD</td>
+      </tr>
+      <tr>
+        <td><strong>F11</strong></td>
+        <td><strong>GEG / EnEV</strong></td>
+        <td>Gebäudeenergiegesetz — federal, separate corpus needed.</td>
+        <td><span class="badge b-wont">Phase 2</span></td>
+        <td><span class="badge b-p2">P2</span></td>
+        <td>—</td><td>TBD</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ TAB 3 — KG ARCHITECTURE ══ -->
+<section id="kg" class="tab-content">
+  <div class="slabel">Tab 03 — Technical Differentiator</div>
+  <h2 class="stitle">Knowledge Graph Architecture</h2>
+  <div class="slabel" style="margin-bottom:4px">Owner: Sumit (build) · Nuria (support) · restored from v5.1</div>
+
+  <div class="hyp">
+    <div class="hyp-label">Why KG — The Pitch Argument</div>
+    <p>Standard vector RAG retrieves semantically similar text — but LBO §§ are a network of interdependencies. § 6 (Abstandsflächen) only makes sense alongside § 7 (Bebauung) and § 5 (Bebauungsplan). A pure FAISS system returns § 6 and misses § 7 entirely — a critical omission in a legal context. A knowledge graph layer explicitly models these relationships, enabling the agent to traverse connected §§ and return complete, omission-resistant answers. This is our architectural differentiator and fulfils the bootcamp model comparison requirement.</p>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Dual Retrieval Pipeline</div>
+
+  <div class="kg-grid">
+    <div class="kg-col">
+      <div class="kg-col-head" style="color:var(--must)">Track A — RAG (Safety Net)</div>
+      <div class="kg-col-body">FAISS vector index → semantic similarity search → top-k chunks → LLM synthesis → citation output.<br><br>
+      <strong>Owner:</strong> Sebastian<br>
+      <strong>Deadline:</strong> Working end of Week 1<br>
+      <strong>Fallback:</strong> If KG fails, RAG ships alone and is still a strong product</div>
+    </div>
+    <div class="kg-col">
+      <div class="kg-col-head" style="color:var(--accent2)">Track B — KG-Enhanced (Differentiator)</div>
+      <div class="kg-col-body">FAISS retrieves seed §§ → NetworkX graph traversal finds related nodes → expanded context sent to LLM → omission-resistant answer.<br><br>
+      <strong>Owner:</strong> Sumit + Nuria<br>
+      <strong>Deadline:</strong> Proof-of-concept end Week 2<br>
+      <strong>Demo:</strong> Side-by-side comparison in pitch</div>
+    </div>
+  </div>
+  <div class="kg-footer"><strong>Router logic:</strong> LangGraph node decides which track based on query complexity. Simple factual → RAG. Multi-§§, multi-party, or cross-Bundesland → KG-enhanced.</div>
+
+  <hr class="divider">
+  <div class="slabel">Corpus JSON Schema — Sebastian's Output, Sumit/Nuria's Input</div>
+
+  <div class="code">
+    <span class="c"># Every corpus document follows this schema</span><br>
+    {<br>
+    &nbsp;&nbsp;<span class="k">"paragraph"</span>: <span class="v">"§ 6"</span>,<br>
+    &nbsp;&nbsp;<span class="k">"bundesland"</span>: <span class="v">"Bayern"</span>,<br>
+    &nbsp;&nbsp;<span class="k">"lbo_code"</span>: <span class="v">"BayBO"</span>,<br>
+    &nbsp;&nbsp;<span class="k">"rule_type"</span>: <span class="v">"Pflicht"</span>, <span class="c"># Pflicht | Recht | Ausnahme | Frist | Definition</span><br>
+    &nbsp;&nbsp;<span class="k">"entities"</span>: [<span class="v">"Bauherr"</span>, <span class="v">"Gemeinde"</span>],<br>
+    &nbsp;&nbsp;<span class="k">"relationships"</span>: [<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span class="k">"from"</span>: <span class="v">"§ 6"</span>, <span class="k">"type"</span>: <span class="v">"requires"</span>, <span class="k">"to"</span>: <span class="v">"§ 7"</span>},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span class="k">"from"</span>: <span class="v">"§ 6"</span>, <span class="k">"type"</span>: <span class="v">"exception_in"</span>, <span class="k">"to"</span>: <span class="v">"§ 6a"</span>},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<span class="k">"from"</span>: <span class="v">"§ 6 BayBO"</span>, <span class="k">"type"</span>: <span class="v">"related_to"</span>, <span class="k">"to"</span>: <span class="v">"§ 6 BauOBln"</span>}<br>
+    &nbsp;&nbsp;],<br>
+    &nbsp;&nbsp;<span class="k">"text"</span>: <span class="v">"Die Abstandsflächen müssen auf dem Grundstück selbst liegen..."</span>,<br>
+    &nbsp;&nbsp;<span class="k">"version_date"</span>: <span class="v">"2021-11-01"</span>,<br>
+    &nbsp;&nbsp;<span class="k">"source_url"</span>: <span class="v">"https://www.gesetze-bayern.de/..."</span>,<br>
+    &nbsp;&nbsp;<span class="k">"chunk_id"</span>: <span class="v">"baybo-§6-abs1-001"</span>,<br>
+    &nbsp;&nbsp;<span class="k">"is_enrichment"</span>: <span class="v">false</span><br>
+    }
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:16px">
+    <div class="card"><div class="card-lbl">Relationship Types</div><p><code>requires</code> · <code>exception_in</code> · <code>related_to</code> · <code>superseded_by</code> · <code>defined_in</code></p></div>
+    <div class="card"><div class="card-lbl">Rule Types</div><p><code>Pflicht</code> · <code>Recht</code> · <code>Ausnahme</code> · <code>Frist</code> · <code>Definition</code></p></div>
+    <div class="card"><div class="card-lbl">Key Entities (LBO)</div><p><code>Bauherr</code> · <code>Gemeinde</code> · <code>Nachbar</code> · <code>Behörde</code> · <code>Eigentümer</code></p></div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">KG Build Plan — Week by Week</div>
+  <table class="ft" style="margin-top:12px">
+    <thead><tr><th>Week</th><th>KG Milestone</th><th>Input from Sebastian</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Week 1</strong></td><td>Schema agreed. First 10 LBO documents ingested into NetworkX. Prove: nodes created, edges traversable, basic query works in terminal.</td><td>Schema JSON format locked by Day 3. First 10 structured documents by Fri.</td></tr>
+      <tr><td><strong>Week 2</strong></td><td>Full LBO subgraph built (start with 3–4 key Bundesländer). Graph traversal retrieves related §§ correctly. Integration with FAISS: seed retrieval → graph expansion. LangGraph router node working.</td><td>Corpus v0.9 with metadata — all 16 LBOs by Mon.</td></tr>
+      <tr><td><strong>Week 3</strong></td><td>Cross-Bundesland edges added (same § concept, different state). Side-by-side comparison demo working. Eval: omission rate on 10 complex queries.</td><td>Corpus v1.0 final by Mon Week 3.</td></tr>
+      <tr><td><strong>Week 4</strong></td><td>Comparison demo polished for pitch. KG architecture diagram for slide deck. Omission rate results formatted as pitch evidence.</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+  <div class="slabel">Pitch Story — How KG Becomes the Differentiator</div>
+  <div class="pitch-box">
+    <div class="pitch-head">Slide narrative flow</div>
+    <div class="pitch-body">
+      <strong>1. Problem:</strong> Existing legal chatbots hallucinate and omit critical connected rules.<br>
+      <strong>2. Why RAG alone isn't enough:</strong> Show a query where pure FAISS returns § 6 BayBO but misses § 7 — a real omission with legal consequences.<br>
+      <strong>3. Our solution:</strong> Dual retrieval — RAG for speed, KG for completeness. Live side-by-side demo.<br>
+      <strong>4. Evidence:</strong> Omission rate: FAISS-only vs KG-enhanced on 10 complex queries.<br>
+      <strong>5. Phase 2 vision:</strong> Full property law graph (Mietrecht, GEG, Kreisebene) — the architecture already supports it.
+    </div>
+    <div class="pitch-risk"><strong>⚠ Demo risk:</strong> The KG comparison demo is your most impressive and highest-risk moment. Prepare a screen recording backup. If live demo fails, the recording saves the pitch.</div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">KG Fallback Protocol</div>
+  <div class="fallback">
+    If KG not demo-ready by <strong>Friday March 28</strong>:<br><br>
+    ① Ship the RAG agent as the live product — it was always the safety net.<br>
+    ② Present KG architecture as a fully designed Phase 2 feature with schema, graph design, and implementation plan in the repo.<br>
+    ③ Pitch frame: <em>"We architected for KG from Day 1 — here's the schema and graph design. Phase 2 is already spec'd."</em> This is still an AIPM-level answer — a well-documented architectural decision you didn't build is more impressive than a half-built KG that breaks during demo.
+  </div>
+</section>
+
+<!-- ══ TAB 4 — DUAL LANGUAGE ══ -->
+<section id="language" class="tab-content">
+  <div class="slabel">Tab 04 — Feature Spec</div>
+  <h2 class="stitle">Dual Language — DE / EN</h2>
+  <span class="badge b-new">Phase 1 Must-Have</span> <span class="badge b-week">Sprint Week 3</span>
+
+  <hr class="divider">
+  <div class="slabel">Translation Loop (LLM-driven)</div>
+  <div class="code" style="font-size:.77rem;line-height:2">
+    User Query (DE <span class="c">or</span> EN)<br>
+    &nbsp;&nbsp;↓ <span class="c">// language detection node</span><br>
+    Normalise → Internal Processing in <strong style="color:#d4f0d4">DE</strong><br>
+    &nbsp;&nbsp;↓ <span class="c">// FAISS + KG retrieval (always German corpus)</span><br>
+    Retrieve relevant LBO §§ chunks<br>
+    &nbsp;&nbsp;↓ <span class="c">// synthesis node</span><br>
+    Draft answer in <strong style="color:#d4f0d4">DE</strong><br>
+    &nbsp;&nbsp;↓ <span class="c">// translation node — only if user_lang = EN</span><br>
+    Translate → <strong style="color:#d4f0d4">EN</strong> <span class="c">// Groq LLM, legal-aware prompt, preserve §§ verbatim</span><br>
+    &nbsp;&nbsp;↓<br>
+    Render in user's chosen language<br>
+    &nbsp;&nbsp;↓ <span class="c">// source attribution: §§ always shown in DE</span><br>
+    Source panel: §§ in <strong style="color:#d4f0d4">DE</strong> with EN label
+  </div>
+
+  <div class="callout"><strong>Design decision:</strong> Corpus stays German-only. Translation only at response layer. Keeps retrieval clean and avoids legal accuracy risk from translated §§ citations.</div>
+
+  <hr class="divider">
+  <div class="slabel">UI Scope — What gets translated</div>
+  <div class="ld">
+    <div class="lp"><div class="lp-head lp-de">🇩🇪 Deutsche Oberfläche</div>
+    <div class="lp-body"><strong>Alle UI-Elemente:</strong> Navigationslabels, Buttons, Platzhaltertexte<br><br><strong>Antworttext:</strong> Vollständige Antwort auf Deutsch<br><br><strong>Rechtshinweis:</strong> „Diese Antwort ersetzt keine Rechtsberatung…" (hardcoded, nicht LLM)<br><br><strong>Quellenangaben:</strong> § 6 BayBO, § 8 BauOBln — original DE §§</div></div>
+    <div class="lp"><div class="lp-head lp-en">🇬🇧 English Interface</div>
+    <div class="lp-body"><strong>All UI elements:</strong> Nav labels, buttons, placeholder texts<br><br><strong>Answer text:</strong> Full answer translated to English<br><br><strong>Legal disclaimer:</strong> "This answer does not substitute legal advice…" (hardcoded, not LLM)<br><br><strong>Source citations:</strong> § 6 BayBO, § 8 BauOBln — original DE §§ preserved</div></div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Implementation</div>
+  <table class="ft">
+    <thead><tr><th>Component</th><th>Approach</th><th>Owner</th></tr></thead>
+    <tbody>
+      <tr><td>Language detection</td><td>LangGraph node — detect query language, set <code>user_lang</code> session var. Fallback: DE.</td><td>Nuria</td></tr>
+      <tr><td>Translation node</td><td>Groq LLM with system prompt: legal translation mode, preserve § references verbatim, no paraphrase of cited law.</td><td>Sebastian</td></tr>
+      <tr><td>UI i18n</td><td><code>strings.de.json</code> / <code>strings.en.json</code>. Lovable renders from active lang file. Toggle persists in session.</td><td>Nuria + Sumit</td></tr>
+      <tr><td>Legal disclaimer</td><td>Both languages hardcoded — not LLM-generated. Team-reviewed for accuracy.</td><td>Nuria</td></tr>
+      <tr><td>Source panel</td><td>Always renders original German §§. EN mode adds translated label underneath. Never translates the § identifier.</td><td>Sebastian</td></tr>
+      <tr><td>Evaluation</td><td>Language parity metric added to F8: DE answer vs EN answer factual delta &lt; 10%.</td><td>Matteo</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn" style="margin-top:16px"><strong>Risk R6:</strong> Translation adds ~1–2s latency. Stream DE response while translating in parallel if total >6s.</div>
+</section>
+
+<!-- ══ TAB 5 — SPRINTS ══ -->
+<section id="sprints" class="tab-content">
+  <div class="slabel">Tab 05 — Agile Plan</div>
+  <h2 class="stitle">Sprint Plan — 4 Weeks to April 2</h2>
+
+  <div class="sprint-grid">
+    <div class="sprint-card">
+      <div class="sprint-head s1">Week 1 — Foundation</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Sumit
+        <strong>Dates</strong> Mar 10–14
+        <strong>Focus</strong> Repo · corpus acquisition · schema lock · Lovable scaffold
+      </div>
+    </div>
+    <div class="sprint-card">
+      <div class="sprint-head s2">Week 2 — Core Pipeline</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Nuria
+        <strong>Dates</strong> Mar 16–21
+        <strong>Focus</strong> FAISS index · LangGraph skeleton · KG PoC · out-of-scope node
+      </div>
+    </div>
+    <div class="sprint-card">
+      <div class="sprint-head s3">Week 3 — Intelligence + Language</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Matteo
+        <strong>Dates</strong> Mar 23–28
+        <strong>Focus</strong> KG full build · translation loop · eval starts · RAG vs KG demo
+      </div>
+    </div>
+    <div class="sprint-card">
+      <div class="sprint-head s4">Week 4 — Polish & Ship</div>
+      <div class="sprint-body">
+        <strong>PM</strong> Sebastian
+        <strong>Dates</strong> Mar 30–Apr 2
+        <strong>Focus</strong> Buffer · eval complete · pitch deck · demo rehearsal · portfolio
+      </div>
+    </div>
+  </div>
+
+  <div class="slabel">Week 1 — Detailed Milestones</div>
+  <div class="milestone-list">
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Repo cloned, branching rules configured, CONTRIBUTING.md + .gitignore committed Day 1</div><div class="ms-detail">main ← stable corpus. dev ← integration. data/lbo-XX-[bundesland] per state. tooling/ for scripts.</div><div class="ms-owner">Owner: Sebastian</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">16 LBO PDFs acquired from official Landesrecht sources</div><div class="ms-detail">Priority: Bayern, NRW, BW first (clean PDF exports). Use Gemini OCR for scanned PDFs.</div><div class="ms-owner">Owner: Sebastian + Sumit</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Corpus JSON schema locked with Sumit — first 10 documents validated</div><div class="ms-detail">Schema finalised by Day 3 at latest. Sumit validates first 10 before Sebastian processes remainder.</div><div class="ms-owner">Owner: Sebastian (schema) · Sumit (validation)</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">requirements.txt committed — all 4 machines running same Python env</div><div class="ms-detail">No "works on my machine" debt from Day 1.</div><div class="ms-owner">Owner: Sumit</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Lovable scaffold + language toggle placeholder live</div><div class="ms-detail">Skeleton built against mock data. Wired to real agent Week 2–3.</div><div class="ms-owner">Owner: Sumit</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Kanban board live — every Week 1 task on it with owner + due date</div><div class="ms-owner">Owner: Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">User story #1 written with team (end of week)</div><div class="ms-owner">Owner: Sumit (as Week 1 PM)</div></div></div>
+    <div class="gate">🚦 Gate: 16 LBOs ingested, schema locked, FAISS PoC running, Kanban live</div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="slabel">Week 2 — Detailed Milestones</div>
+  <div class="milestone-list">
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">FAISS index built and tested on full LBO corpus</div><div class="ms-detail">paraphrase-multilingual-mpnet-base-v2. Rebuild index script committed — runs clean on fresh machine.</div><div class="ms-owner">Owner: Sebastian</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">LangGraph agent skeleton — nodes wired, basic Q→A loop working</div><div class="ms-owner">Owner: Matteo</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">KG proof-of-concept: 3–4 Bundesländer subgraph, traversal working in terminal</div><div class="ms-owner">Owner: Sumit + Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Out-of-scope detection node integrated and tested</div><div class="ms-owner">Owner: Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">F2F session in Berlin — target Mar 17 or 18 (integration crunch)</div><div class="ms-detail">FAISS + KG + UI all need to connect — exactly when in-person problem solving pays off most.</div><div class="ms-owner">Owner: All 4</div></div></div>
+    <div class="gate">🚦 Gate: End-to-end DE query → FAISS retrieval → raw answer working. KG PoC demo in terminal.</div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="slabel">Week 3 — Detailed Milestones</div>
+  <div class="milestone-list">
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Full KG complete — all 16 LBOs + cross-Bundesland edges</div><div class="ms-owner">Owner: Sumit + Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Dual retrieval FAISS + KG combined answer synthesis working</div><div class="ms-owner">Owner: Sebastian + Matteo</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Translation loop (F5) tested — language parity measured</div><div class="ms-owner">Owner: Nuria + Sebastian</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Side-by-side RAG vs KG demo working — RECORD SCREEN BACKUP NOW</div><div class="ms-detail">Omission rate measured on 10 complex queries.</div><div class="ms-owner">Owner: Sumit</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Corpus v1.0 final — all docs cleaned, deduplicated, versioned</div><div class="ms-owner">Owner: Sebastian</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">External user tests started — 5 users, trust rating 1–5 per session</div><div class="ms-owner">Owner: Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Live deployment on Lovable — public URL shared with coaches</div><div class="ms-owner">Owner: Sumit</div></div></div>
+    <div class="gate">🚦 Gate: Live URL working. DE + EN responses working. KG demo recorded. Eval started.</div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="slabel">Week 4 — Detailed Milestones</div>
+  <div class="milestone-list">
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Buffer Mon–Tue: fix Week 3 breakage. Do not touch pitch until product is stable.</div><div class="ms-owner">Owner: Full team</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Eval suite complete — results documented as pitch evidence slide</div><div class="ms-owner">Owner: Matteo + Nuria</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Pitch deck — 8–10 slides (Problem · Personas · Hypothesis · Architecture · KG demo · Eval · Learnings · Phase 2)</div><div class="ms-owner">Owner: Matteo + Sebastian</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">Live demo rehearsal ×2 — KG comparison as centrepiece</div><div class="ms-owner">Owner: All 4</div></div></div>
+    <div class="ms"><div class="ms-dot"></div><div class="ms-content"><div class="ms-title">GitHub portfolio: README + architecture diagram + TEAM_CHARTER.md + live URL</div><div class="ms-detail">TEAM_CHARTER.md: learning goals, scope decisions, PM rotation log. Recruiter-ready.</div><div class="ms-owner">Owner: Sebastian</div></div></div>
+    <div class="gate">🏁 April 2 — Presentation Day</div>
+  </div>
+</section>
+
+<!-- ══ TAB 6 — CORPUS ══ -->
+<section id="corpus" class="tab-content">
+  <div class="slabel">Tab 06 — Data</div>
+  <h2 class="stitle">Corpus Structure — 16 LBOs</h2>
+  <div class="callout gold">All 16 Bundesländer LBOs in Phase 1. Enrichment (side info, amendment notes, Kreisebene context) welcome where available — supplementary, not primary retrieval source.</div>
+
+  <hr class="divider">
+  <div class="slabel">Branch Structure</div>
+  <div class="code" style="font-size:.76rem;line-height:2">
+    main &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← stable, RAG-ready. PR from dev only.<br>
+    dev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← integration. Merge LBO branches here when ready.<br>
+    │<br>
+    ├── data/lbo-01-bw &nbsp;&nbsp;&nbsp;&nbsp;← Baden-Württemberg (LBO BW)<br>
+    ├── data/lbo-02-bay &nbsp;&nbsp;&nbsp;← Bayern (BayBO)<br>
+    ├── data/lbo-03-ber &nbsp;&nbsp;&nbsp;← Berlin (BauOBln)<br>
+    ├── data/lbo-04-bb &nbsp;&nbsp;&nbsp;&nbsp;← Brandenburg (BbgBO)<br>
+    ├── data/lbo-05-hb &nbsp;&nbsp;&nbsp;&nbsp;← Bremen (BremLBO)<br>
+    ├── data/lbo-06-hh &nbsp;&nbsp;&nbsp;&nbsp;← Hamburg (HBauO)<br>
+    ├── data/lbo-07-he &nbsp;&nbsp;&nbsp;&nbsp;← Hessen (HBO)<br>
+    ├── data/lbo-08-mv &nbsp;&nbsp;&nbsp;&nbsp;← Mecklenburg-Vorpommern (LBauO MV)<br>
+    ├── data/lbo-09-ni &nbsp;&nbsp;&nbsp;&nbsp;← Niedersachsen (NBauO)<br>
+    ├── data/lbo-10-nrw &nbsp;&nbsp;&nbsp;← Nordrhein-Westfalen (BauO NRW)<br>
+    ├── data/lbo-11-rp &nbsp;&nbsp;&nbsp;&nbsp;← Rheinland-Pfalz (LBauO RLP)<br>
+    ├── data/lbo-12-sl &nbsp;&nbsp;&nbsp;&nbsp;← Saarland (LBO Saar)<br>
+    ├── data/lbo-13-sn &nbsp;&nbsp;&nbsp;&nbsp;← Sachsen (SächsBO)<br>
+    ├── data/lbo-14-st &nbsp;&nbsp;&nbsp;&nbsp;← Sachsen-Anhalt (BauO LSA)<br>
+    ├── data/lbo-15-sh &nbsp;&nbsp;&nbsp;&nbsp;← Schleswig-Holstein (LBO SH)<br>
+    ├── data/lbo-16-th &nbsp;&nbsp;&nbsp;&nbsp;← Thüringen (ThürBO)<br>
+    │<br>
+    ├── enrichment/side-info &nbsp;&nbsp;&nbsp;&nbsp;← local knowledge, amendment notes<br>
+    ├── enrichment/case-law &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Verwaltungsgerichtsentscheidungen<br>
+    └── tooling/ingestion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← pdfplumber scripts, chunking, metadata
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Official Sources</div>
+  <table class="ft">
+    <thead><tr><th>Bundesland</th><th>Code</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Baden-Württemberg</td><td>LBO BW</td><td>landesrecht-bw.de</td></tr>
+      <tr><td>Bayern</td><td>BayBO</td><td>gesetze-bayern.de</td></tr>
+      <tr><td>Berlin</td><td>BauOBln</td><td>gesetze.berlin.de</td></tr>
+      <tr><td>Brandenburg</td><td>BbgBO</td><td>bravors.brandenburg.de</td></tr>
+      <tr><td>Bremen</td><td>BremLBO</td><td>bremen.de/landesrecht</td></tr>
+      <tr><td>Hamburg</td><td>HBauO</td><td>landesrecht-hamburg.de</td></tr>
+      <tr><td>Hessen</td><td>HBO</td><td>rv.hessenrecht.hessen.de</td></tr>
+      <tr><td>Mecklenburg-Vorpommern</td><td>LBauO MV</td><td>landesrecht-mv.de</td></tr>
+      <tr><td>Niedersachsen</td><td>NBauO</td><td>voris.niedersachsen.de</td></tr>
+      <tr><td>Nordrhein-Westfalen</td><td>BauO NRW</td><td>recht.nrw.de</td></tr>
+      <tr><td>Rheinland-Pfalz</td><td>LBauO RLP</td><td>landesrecht-rp.de</td></tr>
+      <tr><td>Saarland</td><td>LBO Saar</td><td>sl.juris.de</td></tr>
+      <tr><td>Sachsen</td><td>SächsBO</td><td>revosax.sachsen.de</td></tr>
+      <tr><td>Sachsen-Anhalt</td><td>BauO LSA</td><td>landesrecht.sachsen-anhalt.de</td></tr>
+      <tr><td>Schleswig-Holstein</td><td>LBO SH</td><td>gesetze-rechtsprechung.sh.juris.de</td></tr>
+      <tr><td>Thüringen</td><td>ThürBO</td><td>landesrecht.thueringen.de</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ TAB 7 — RISKS ══ -->
+<section id="risks" class="tab-content">
+  <div class="slabel">Tab 07 — Risk Register</div>
+  <h2 class="stitle">Risks — Updated for LBO + KG</h2>
+  <table class="rt">
+    <thead><tr><th>#</th><th>Risk</th><th>Level</th><th>Mitigation</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>R1</td><td><strong>LBO amendment divergence</strong><br><small>16 states update independently</small></td><td><span class="r-high">HIGH</span></td><td>Pin version_date per Bundesland at ingestion. UI shows "Based on LBO as of [date]".</td><td>Open</td></tr>
+      <tr><td>R2</td><td><strong>Cross-§§ retrieval gaps</strong><br><small>FAISS alone misses relational context</small></td><td><span class="r-high">HIGH</span></td><td>KG (F2) is direct mitigation. Core differentiator. Must be complete before Week 3 eval.</td><td>Mitigated (F2)</td></tr>
+      <tr><td>R3</td><td><strong>Translation quality degradation</strong><br><small>Legal terms mistranslated in EN mode</small></td><td><span class="r-high">HIGH</span></td><td>Prompt preserves §§ verbatim. Language parity eval &lt;10% delta. Fallback: show DE alongside EN.</td><td>Open — Wk 3</td></tr>
+      <tr><td>R4</td><td><strong>Hallucination on legal edge cases</strong></td><td><span class="r-high">HIGH</span></td><td>Mandatory disclaimer every response. Citation required or answer blocked. Eval catches early.</td><td>Ongoing</td></tr>
+      <tr><td>R5</td><td><strong>KG not demo-ready by March 28</strong></td><td><span class="r-high">HIGH</span></td><td>Fallback protocol defined: ship RAG alone, present KG as architected Phase 2 feature. See KG tab.</td><td>Open — monitor Wk 2</td></tr>
+      <tr><td>R6</td><td><strong>PDF acquisition friction</strong></td><td><span class="r-med">MED</span></td><td>Start Week 1. Prioritise Bayern, NRW, BW. Gemini OCR fallback.</td><td>Open — Wk 1</td></tr>
+      <tr><td>R7</td><td><strong>Translation latency</strong></td><td><span class="r-med">MED</span></td><td>Stream DE while translating in parallel. Profile Week 3.</td><td>Open — Wk 3</td></tr>
+      <tr><td>R8</td><td><strong>Scope bleed — GEG/DIN queries</strong></td><td><span class="r-med">MED</span></td><td>Out-of-scope detection node (F4, Nuria).</td><td>Mitigated (F4)</td></tr>
+      <tr><td>R9</td><td><strong>Team capacity — expanded corpus + dual language</strong></td><td><span class="r-med">MED</span></td><td>F7 PDF upload is Should-Have — first to drop if Wk 3 under pressure.</td><td>Open</td></tr>
+      <tr><td>R10</td><td><strong>Lovable frontend decision</strong></td><td><span class="r-res">RESOLVED</span></td><td>Lovable confirmed. Streamlit dropped permanently.</td><td>✓ Closed</td></tr>
+      <tr><td>R11</td><td><strong>Wohnraummietrecht/WEG scope</strong></td><td><span class="r-res">RESOLVED</span></td><td>Phase 2 only. LBO = Phase 1. Final.</td><td>✓ Closed</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ TAB 8 — TEAM ══ -->
+<section id="team" class="tab-content">
+  <div class="slabel">Tab 08 — People</div>
+  <h2 class="stitle">Team & Learning Goals</h2>
+
+  <div class="tg">
+    <div class="tc">
+      <div class="tc-head"><div class="tc-name">Sebastian</div><div class="tc-role">Technical PM Anchor · RAG/FAISS · Corpus · GitHub Lead</div></div>
+      <div class="tc-body">
+        <strong>PM Week</strong> Permanent anchor + Week 4
+        <strong>Owns</strong> F1 RAG pipeline · F5 translation node · corpus repo · CONTRIBUTING.md · GitHub portfolio
+        <strong>Learning Goal</strong> "Agile PM in practice. Git workflow ownership. RAG pipeline end-to-end. Vibe coding with Claude Code — making the technical PM role real, not just coordination."
+        <strong>Role Rationale</strong> RAG depth is explicit growth goal. Procrastination weakness mitigated by permanent anchor role with weekly deliverables everyone depends on.
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-head"><div class="tc-name">Sumit</div><div class="tc-role">KG Owner · Week 1 PM · Deployment</div></div>
+      <div class="tc-body">
+        <strong>PM Week</strong> Week 1
+        <strong>Owns</strong> F2 KG (lead) · LangGraph skeleton · deployment · requirements.txt · Lovable scaffold
+        <strong>Learning Goal</strong> Actually build a KG himself (not just work with one). Get more concise as PM running standups.
+        <strong>Role Rationale</strong> Week 1 PM = obvious fit (10yr experience). KG ownership directly satisfies growth goal. PM role forces crisp standups — addresses "talks in circles" weakness.
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-head"><div class="tc-name">Nuria</div><div class="tc-role">KG Support · Out-of-scope · Kanban · QA · Week 2 PM</div></div>
+      <div class="tc-body">
+        <strong>PM Week</strong> Week 2
+        <strong>Owns</strong> F2 KG (support Sumit) · F4 out-of-scope node · F5 UI i18n strings · Kanban board · corpus QA · eval set · external user tests
+        <strong>Learning Goal</strong> All the Agile PM stuff. Build KG (growth goal met via F2 support). Visible portfolio output.
+        <strong>Role Rationale</strong> QA + eval plays to organiser strength. Out-of-scope node = real technical deliverable. Deployment kept away — that's Sumit.
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-head"><div class="tc-name">Matteo</div><div class="tc-role">Agent Architecture · Eval Framework · Pitch · Week 3 PM</div></div>
+      <div class="tc-body">
+        <strong>PM Week</strong> Week 3
+        <strong>Owns</strong> F3 LangGraph agent · F8 eval framework · eval architecture doc · pitch deck
+        <strong>Learning Goal</strong> Hands-on AI retrieval architecture. Confidence in technical discussions.
+        <strong>Role Rationale</strong> Eval architecture doc (explaining FAISS vs KG in plain language) plays to communication strength while building genuine technical understanding. Week 3 PM = scope discipline strength used at exactly the right moment.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Shared Team Motivations — Design the Project Around These</div>
+  <div class="motiv-grid">
+    <div class="motiv" style="border-color:var(--must)">
+      <div class="motiv-lbl" style="color:var(--must)">All 4 agree</div>
+      <div class="motiv-title">Portfolio-ready output</div>
+      <div class="motiv-text">Something deployable, impressive to employers, that each person can point to as their own contribution.</div>
+    </div>
+    <div class="motiv" style="border-color:var(--must)">
+      <div class="motiv-lbl" style="color:var(--must)">All 4 agree</div>
+      <div class="motiv-title">A real UI</div>
+      <div class="motiv-text">Nuria, Sumit, and Sebastian all named UI explicitly. Makes the project feel real. Lovable delivers this.</div>
+    </div>
+    <div class="motiv" style="border-color:var(--accent2)">
+      <div class="motiv-lbl" style="color:var(--accent2)">3 of 4</div>
+      <div class="motiv-title">F2F sessions in Berlin</div>
+      <div class="motiv-text">Matteo, Sebastian, Nuria, Sumit all in Berlin. Plan at least one F2F — Week 2 integration crunch (Mar 17/18) is the right moment.</div>
+    </div>
+    <div class="motiv" style="border-color:var(--accent2)">
+      <div class="motiv-lbl" style="color:var(--accent2)">Process goal</div>
+      <div class="motiv-title">Real teamwork — not pot-throwing</div>
+      <div class="motiv-text">Sebastian named this explicitly. Clear role ownership (Matteo's wish), daily standups, written handoffs, Kanban (Nuria owns) — these solve it structurally.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Stack</div>
+  <div class="sg">
+    <div class="sp"><div class="sp-n">LangGraph</div><div class="sp-r">Agent orchestration</div></div>
+    <div class="sp"><div class="sp-n">FAISS</div><div class="sp-r">Vector retrieval</div></div>
+    <div class="sp"><div class="sp-n">NetworkX</div><div class="sp-r">Knowledge graph</div></div>
+    <div class="sp"><div class="sp-n">sentence-transformers</div><div class="sp-r">Embeddings (multilingual)</div></div>
+    <div class="sp"><div class="sp-n">Groq</div><div class="sp-r">LLM inference + translation</div></div>
+    <div class="sp"><div class="sp-n">pdfplumber</div><div class="sp-r">Static corpus ingestion</div></div>
+    <div class="sp"><div class="sp-n">Gemini API</div><div class="sp-r">Runtime PDF upload (F7)</div></div>
+    <div class="sp"><div class="sp-n">Lovable</div><div class="sp-r">Frontend · deployed</div></div>
+    <div class="sp"><div class="sp-n">GitHub</div><div class="sp-r">Repo · branching · portfolio</div></div>
+  </div>
+
+  <hr class="divider">
+  <div class="slabel">Changelog</div>
+  <div class="cl-item">
+    <div class="cl-ver">v6.1<br><small style="color:var(--muted);font-size:.6rem">Mar 2026</small></div>
+    <div>Restored from v5.1: KG Architecture tab (full dual retrieval spec, corpus schema, relationship types, pitch story, fallback protocol), detailed per-week milestones with milestone cards and gates, external user testing (5 users, trust rating), shared team motivations, TEAM_CHARTER.md as portfolio deliverable, pitch deck 8-slide structure. Conflict resolved: Sumit = KG Owner, Nuria = KG Support. Bootcamp deliverable compliance note added to MVP tab (FAISS vs KG = model comparison requirement). F2 owner updated.</div>
+  </div>
+  <div class="cl-item">
+    <div class="cl-ver">v6.0<br><small style="color:var(--muted);font-size:.6rem">Mar 2026</small></div>
+    <div>SCOPE RESET. Phase 1 switched to 16 LBO. Dual language DE/EN promoted to Phase 1. New Dual Language tab. F9 Mietrecht → Phase 2.</div>
+  </div>
+  <div class="cl-item">
+    <div class="cl-ver">v5.1<br><small style="color:var(--muted);font-size:.6rem">Mar 2026</small></div>
+    <div>KG as F2 Must-Have. Features renumbered. Hypothesis updated. Team merged tab. HTML rendering bug fixed.</div>
+  </div>
+</section>
+
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
