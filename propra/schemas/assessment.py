@@ -21,6 +21,10 @@ class CitedSource(BaseModel):
         description="Jurisdiction this source applies to.",
         examples=["Brandenburg"],
     )
+    excerpt: str | None = Field(
+        default=None,
+        description="One or two sentences quoted directly from the law text.",
+    )
 
 
 class AssessmentResponse(BaseModel):
