@@ -14,8 +14,9 @@ networkx>=3.3
 # Vector search
 faiss-cpu>=1.8.0
 
-# Embeddings (for RAG — required to generate FAISS vectors)
-sentence-transformers>=3.0.0
+# Embeddings (HuggingFace Inference API — avoids loading torch locally)
+huggingface_hub>=0.23.0
+numpy>=1.26.0
 
 # PDF parsing (extract text from LBO/MBO source PDFs; propra/data/extract_pdf.py)
 pdfplumber>=0.11.0
