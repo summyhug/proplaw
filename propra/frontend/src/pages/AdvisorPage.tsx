@@ -35,10 +35,13 @@ interface Source {
 }
 
 
+type Verdict = "ALLOWED" | "CONDITIONAL" | "NOT_ALLOWED";
+
 interface Message {
   id: number;
   role: "user" | "assistant";
   content: string;
+  verdict?: Verdict;
   sources?: Source[];
   reliability?: number;
   reliabilityLabel?: string;
@@ -124,6 +127,22 @@ const ReliabilityBadge = ({ score, label }: { score: number; label: string }) =>
     <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-body font-medium ${color}`}>
       <Shield className="w-3 h-3" />
       {label} — {score}% confidence
+    </div>
+  );
+};
+
+const VERDICT_CONFIG: Record<Verdict, { color: string; icon: string }> = {
+  ALLOWED:     { color: "text-emerald-800 bg-emerald-50 border-emerald-300", icon: "✓" },
+  CONDITIONAL: { color: "text-amber-800 bg-amber-50 border-amber-300",   icon: "⚠" },
+  NOT_ALLOWED: { color: "text-red-800 bg-red-50 border-red-300",         icon: "✕" },
+};
+
+const VerdictBadge = ({ verdict, label }: { verdict: Verdict; label: string }) => {
+  const { color, icon } = VERDICT_CONFIG[verdict];
+  return (
+    <div className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-xl border font-body font-semibold text-sm ${color}`}>
+      <span className="text-base leading-none">{icon}</span>
+      {label}
     </div>
   );
 };
@@ -399,12 +418,13 @@ const AdvisorPage = () => {
       const nextActionsText = data.next_action
         ? `\n\n**${t("advisor.next_action")}:**\n- ${data.next_action}`
         : "";
-      const content = `**${data.verdict}**\n\n${data.explanation}${nextActionsText}`;
+      const content = `${data.explanation}${nextActionsText}`;
 
       const aiMsg: Message = {
         id: Date.now() + 1,
         role: "assistant",
         content,
+        verdict: data.verdict as Verdict,
         sources,
         reliability: confidenceScore,
         reliabilityLabel: data.confidence,
@@ -706,6 +726,14 @@ const AdvisorPage = () => {
                         </div>
                       )}
                       <div className="bg-card border border-border rounded-2xl rounded-tl-sm p-5 shadow-sm">
+                        {msg.verdict && (
+                          <div className="mb-4">
+                            <VerdictBadge
+                              verdict={msg.verdict}
+                              label={t(`advisor.verdict.${msg.verdict}`)}
+                            />
+                          </div>
+                        )}
                         <div className="font-body text-sm space-y-1">
                           {renderContent(msg.content)}
                         </div>

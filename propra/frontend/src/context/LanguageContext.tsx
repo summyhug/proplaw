@@ -145,6 +145,9 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.loading.3": "Assembling your answer…",
     "advisor.loading.timeout": "This is taking longer than expected. Please wait…",
     "advisor.next_action": "Next step",
+    "advisor.verdict.ALLOWED": "Permitted",
+    "advisor.verdict.CONDITIONAL": "Conditional",
+    "advisor.verdict.NOT_ALLOWED": "Not permitted",
 
     // Permit page
     "permit.badge": "Member Feature",
@@ -329,6 +332,9 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.loading.3": "Antwort wird zusammengestellt…",
     "advisor.loading.timeout": "Das dauert länger als erwartet. Bitte warten…",
     "advisor.next_action": "Nächster Schritt",
+    "advisor.verdict.ALLOWED": "Zulässig",
+    "advisor.verdict.CONDITIONAL": "Bedingt zulässig",
+    "advisor.verdict.NOT_ALLOWED": "Nicht zulässig",
 
     // Permit page
     "permit.badge": "Mitglieder-Funktion",
