@@ -388,11 +388,11 @@ const AdvisorPage = () => {
         data.confidence === "MEDIUM" ? 70 : 50;
 
       const sources: Source[] = (data.cited_sources ?? []).map(
-        (c: { regulation_name: string; paragraph: string; jurisdiction: string }) => ({
+        (c: { regulation_name: string; paragraph: string; jurisdiction: string; excerpt?: string }) => ({
           code: c.regulation_name,
           section: c.paragraph,
           title: c.jurisdiction,
-          excerpt: "",
+          excerpt: c.excerpt ?? "",
         })
       );
 
