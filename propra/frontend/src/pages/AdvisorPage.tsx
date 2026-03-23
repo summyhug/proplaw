@@ -364,7 +364,7 @@ const AdvisorPage = () => {
 
     try {
       // TODO: replace with Render URL once Sebastian confirms endpoint
-      const res = await fetch("http://localhost:8000/api/assess", {
+      const res = await fetch("https://proplaw-api.onrender.com/api/assess", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
