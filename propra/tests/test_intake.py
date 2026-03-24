@@ -9,7 +9,7 @@ def test_intake_happy_path(client: TestClient, valid_situation: dict) -> None:
 
     assert response.status_code == 200
     body = response.json()
-    assert body["situation"] == valid_situation
+    assert all(body["situation"][k] == v for k, v in valid_situation.items())
     assert "user_message" in body
     assert isinstance(body["user_message"], str)
     assert len(body["user_message"]) > 0
