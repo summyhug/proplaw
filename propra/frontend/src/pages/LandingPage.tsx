@@ -50,8 +50,7 @@ const LandingPage = () => {
   ];
 
   const stats = [
-    { value: "50,000+", label: t("landing.stat1") },
-    { value: "98.2%", label: t("landing.stat2") },
+    { value: "3,784", label: t("landing.stat1") },
     { value: "16", label: t("landing.stat3") },
     { value: "24/7", label: t("landing.stat4") },
   ];
@@ -64,14 +63,9 @@ const LandingPage = () => {
   ];
 
   const legalAreas = [
-    { law: "BGB §§ 433–853", area: t("landing.area1") },
+    { law: "LBO (alle 16 Bundesländer)", area: t("landing.area1") },
     { law: "BauGB §§ 1–246", area: t("landing.area2") },
-    { law: "WEG §§ 1–62", area: t("landing.area3") },
-    { law: "MietG / BGB", area: t("landing.area4") },
-    { law: "GBO §§ 1–131", area: t("landing.area5") },
-    { law: "GrEStG §§ 1–23", area: t("landing.area6") },
-    { law: "ErbbauRG", area: t("landing.area7") },
-    { law: "BauNVO", area: t("landing.area8") },
+    { law: "BauNVO", area: t("landing.area3") },
   ];
 
   const statusConfig = {
@@ -108,7 +102,7 @@ const LandingPage = () => {
               {t("landing.hero.line3")}
             </h1>
 
-            <p className="font-body text-primary-foreground/70 text-lg md:text-xl leading-relaxed mb-10 max-w-xl animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            <p className="font-body text-primary-foreground/90 text-lg md:text-xl leading-relaxed mb-10 max-w-xl animate-fade-up" style={{ animationDelay: "0.15s" }}>
               {t("landing.hero.sub")}
             </p>
 
@@ -133,8 +127,8 @@ const LandingPage = () => {
 
         {/* Sample questions floating card */}
         <div className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-80 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <div className="bg-white/8 backdrop-blur-md border border-white/15 rounded-2xl p-5">
-            <p className="text-primary-foreground/50 text-xs font-body font-medium uppercase tracking-wider mb-4">
+          <div className="bg-navy/70 backdrop-blur-md border border-white/15 rounded-2xl p-5">
+            <p className="text-primary-foreground/80 text-xs font-body font-medium uppercase tracking-wider mb-4">
               {t("landing.hero.samples")}
             </p>
             <div className="flex flex-col gap-2">
@@ -145,7 +139,7 @@ const LandingPage = () => {
                   className="group flex items-start gap-2 p-3 rounded-lg hover:bg-white/8 transition-colors cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-gold mt-0.5 shrink-0" />
-                  <span className="text-primary-foreground/75 text-xs font-body leading-relaxed group-hover:text-primary-foreground transition-colors">
+                  <span className="text-primary-foreground/95 text-xs font-body leading-relaxed group-hover:text-primary-foreground transition-colors">
                     {q}
                   </span>
                 </Link>
@@ -158,7 +152,7 @@ const LandingPage = () => {
       {/* Stats */}
       <section className="bg-navy py-14 border-y border-gold/15">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((s, i) => (
               <div key={i} className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-gold mb-1">{s.value}</div>
@@ -350,7 +344,7 @@ const LandingPage = () => {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3">
               {legalAreas.map((item, i) => (
                 <div key={i} className="p-4 rounded-xl bg-white border border-border hover:border-gold/30 hover:shadow-sm transition-all">
                   <div className="text-xs font-body font-semibold text-gold mb-1">{item.law}</div>

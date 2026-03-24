@@ -26,7 +26,7 @@ const translations: Record<Language, Record<string, string>> = {
     "landing.hero.samples": "Sample Questions",
 
     // Landing — stats
-    "landing.stat1": "Legal Articles Indexed",
+    "landing.stat1": "Legal Paragraphs Indexed",
     "landing.stat2": "Citation Accuracy",
     "landing.stat3": "German States Covered",
     "landing.stat4": "AI Availability",
@@ -60,27 +60,22 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Landing — legal areas
     "landing.areas.badge": "Legal Coverage",
-    "landing.areas.title": "All Areas of German Property Law",
-    "landing.areas.sub": "Our AI is trained on the full spectrum of German Immobilienrecht, from purchase contracts to landlord-tenant disputes and construction permits.",
+    "landing.areas.title": "What our AI Advisor Covers",
+    "landing.areas.sub": "Our AI is trained on Bauordnungsrecht across all 16 German states — the laws that govern what you can build, where, and how.",
     "landing.areas.cta": "Start Asking",
-    "landing.area1": "Property Purchase & Sales",
-    "landing.area2": "Construction Law",
-    "landing.area3": "Condominium Law",
-    "landing.area4": "Tenancy Law",
-    "landing.area5": "Land Register",
-    "landing.area6": "Real Estate Transfer Tax",
-    "landing.area7": "Ground Lease Law",
-    "landing.area8": "Zoning Regulations",
+    "landing.area1": "State Building Codes",
+    "landing.area2": "Federal Construction Law",
+    "landing.area3": "Zoning Regulations",
 
     // Landing — CTA
     "landing.cta.title": "Ready to Understand Your Property Rights?",
-    "landing.cta.sub": "Join thousands of property owners who use RechtImmobilien to navigate German property law with confidence.",
+    "landing.cta.sub": "Built for homeowners navigating German building law — Bauordnungsrecht across all 16 Bundesländer.",
     "landing.cta.btn1": "Try the AI Advisor Free",
     "landing.cta.btn2": "View Permit Process",
 
     // Landing — footer
     "landing.footer.disclaimer": "For informational purposes only. Not a substitute for qualified legal counsel.",
-    "landing.footer.copy": "© 2024 RechtImmobilien",
+    "landing.footer.copy": "© 2026 RechtImmobilien",
 
     // Case statuses
     "status.in_progress": "In Progress",
@@ -108,10 +103,10 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.preset5": "Create a legally-secure letter",
     "advisor.preset5sub": "— Objection, Statement & more",
     "advisor.greeting": "Guten Tag! I'm your German Property Law AI Advisor. Ask me any question about Immobilienrecht — buying, selling, tenancy, construction permits, or property taxes. I'll provide you with precise answers backed by exact legal citations from German law. But first, tell me a little about your property.",
-    "advisor.q1": "Can I add a balcony to my apartment in Berlin without permission?",
-    "advisor.q2": "What are my rights if my landlord claims Eigenbedarf?",
-    "advisor.q3": "How does Grunderwerbsteuer affect my property purchase?",
-    "advisor.q4": "What permits do I need to renovate a Denkmalgeschütztes building?",
+    "advisor.q1": "Can I build a fence around my property in Brandenburg?",
+    "advisor.q2": "Do I need a building permit for a terrace in Bavaria?",
+    "advisor.q3": "How tall can an outbuilding be in NRW?",
+    "advisor.q4": "Is a carport in Berlin permit-free?",
     "advisor.docPreset": "Ich benötige ein rechtssicheres Widerspruchsschreiben gegen die Baugenehmigung meines Nachbarn.",
     "advisor.words": "words",
     "advisor.copy": "Copy document",
@@ -213,7 +208,7 @@ const translations: Record<Language, Record<string, string>> = {
     "landing.hero.samples": "Beispielfragen",
 
     // Landing — stats
-    "landing.stat1": "Rechtliche Artikel indexiert",
+    "landing.stat1": "Rechtliche Paragraphen indexiert",
     "landing.stat2": "Zitiergenauigkeit",
     "landing.stat3": "Bundesländer abgedeckt",
     "landing.stat4": "KI-Verfügbarkeit",
@@ -247,27 +242,22 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Landing — legal areas
     "landing.areas.badge": "Rechtsbereiche",
-    "landing.areas.title": "Alle Bereiche des deutschen Immobilienrechts",
-    "landing.areas.sub": "Unsere KI ist auf das gesamte Spektrum des deutschen Immobilienrechts trainiert — von Kaufverträgen bis zu Miet- und Baustreitigkeiten.",
+    "landing.areas.title": "Was unser KI-Berater abdeckt",
+    "landing.areas.sub": "Unsere KI ist auf das Bauordnungsrecht aller 16 Bundesländer trainiert — die Gesetze, die regeln, was Sie bauen dürfen, wo und wie.",
     "landing.areas.cta": "Frage stellen",
-    "landing.area1": "Kauf & Verkauf von Immobilien",
-    "landing.area2": "Baurecht",
-    "landing.area3": "Wohnungseigentumsrecht",
-    "landing.area4": "Mietrecht",
-    "landing.area5": "Grundbuchordnung",
-    "landing.area6": "Grunderwerbsteuer",
-    "landing.area7": "Erbbaurecht",
-    "landing.area8": "Baunutzungsverordnung",
+    "landing.area1": "Landesbauordnungen",
+    "landing.area2": "Bundesbaurecht",
+    "landing.area3": "Baunutzungsverordnung",
 
     // Landing — CTA
     "landing.cta.title": "Bereit, Ihre Eigentumsrechte zu verstehen?",
-    "landing.cta.sub": "Schließen Sie sich Tausenden von Eigentümern an, die RechtImmobilien nutzen, um sicher durch das deutsche Immobilienrecht zu navigieren.",
+    "landing.cta.sub": "Entwickelt für Eigentümer, die das deutsche Bauordnungsrecht navigieren — LBO aller 16 Bundesländer.",
     "landing.cta.btn1": "KI-Berater kostenlos testen",
     "landing.cta.btn2": "Genehmigungsverfahren ansehen",
 
     // Landing — footer
     "landing.footer.disclaimer": "Nur zu Informationszwecken. Kein Ersatz für qualifizierte Rechtsberatung.",
-    "landing.footer.copy": "© 2024 RechtImmobilien",
+    "landing.footer.copy": "© 2026 RechtImmobilien",
 
     // Case statuses
     "status.in_progress": "In Bearbeitung",
@@ -295,10 +285,10 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.preset5": "Rechtssicheres Schreiben erstellen",
     "advisor.preset5sub": "— Widerspruch, Stellungnahme & mehr",
     "advisor.greeting": "Guten Tag! Ich bin Ihr KI-Rechtsberater für deutsches Immobilienrecht. Stellen Sie mir jede Frage zu Kauf, Verkauf, Miete, Baugenehmigungen oder Grundsteuern — ich liefere präzise Antworten mit exakten Gesetzeszitaten. Aber zuerst, erzählen Sie mir etwas über Ihr Gebäude.",
-    "advisor.q1": "Darf ich meiner Berliner Wohnung einen Balkon hinzufügen ohne Genehmigung?",
-    "advisor.q2": "Was sind meine Rechte bei einer Eigenbedarfskündigung des Vermieters?",
-    "advisor.q3": "Wie wirkt sich die Grunderwerbsteuer auf meinen Immobilienkauf aus?",
-    "advisor.q4": "Welche Genehmigungen benötige ich für die Renovierung eines Denkmalgeschützten Gebäudes?",
+    "advisor.q1": "Darf ich in Brandenburg einen Zaun um mein Grundstück bauen?",
+    "advisor.q2": "Brauche ich eine Baugenehmigung für eine Terrasse in Bayern?",
+    "advisor.q3": "Wie hoch darf ein Nebengebäude in NRW sein?",
+    "advisor.q4": "Ist ein Carport in Berlin genehmigungsfrei?",
     "advisor.docPreset": "Ich benötige ein rechtssicheres Widerspruchsschreiben gegen die Baugenehmigung meines Nachbarn.",
     "advisor.words": "Wörter",
     "advisor.copy": "Dokument kopieren",
