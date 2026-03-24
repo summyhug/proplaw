@@ -5,6 +5,23 @@ from typing import Literal
 from pydantic import BaseModel, Field, model_validator
 
 
+class ClassificationResult(BaseModel):
+    """Result of the goal classification step — what type of project the user is describing."""
+
+    goal_category: str = Field(
+        ...,
+        description="One of the 12 goal categories defined in GOAL_CATEGORIES (e.g. 'fence', 'garage').",
+    )
+    confidence: Literal["LOW", "MEDIUM", "HIGH"] = Field(
+        ...,
+        description="How confidently the classifier matched the description to this category.",
+    )
+    parameters: dict = Field(
+        default_factory=dict,
+        description="Extracted numeric parameters, e.g. {'height_m': 1.8, 'area_m2': 25}.",
+    )
+
+
 class CitedSource(BaseModel):
     paragraph: str = Field(
         ...,
@@ -54,6 +71,10 @@ class AssessmentResponse(BaseModel):
     has_bplan: bool = Field(
         ...,
         description="Whether a B-Plan was present — used to validate confidence ceiling.",
+    )
+    goal_category: str | None = Field(
+        default=None,
+        description="Classified goal category for this request (e.g. 'fence'). None if classification failed.",
     )
 
     @model_validator(mode="after")

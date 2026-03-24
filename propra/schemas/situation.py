@@ -1,5 +1,7 @@
 """Pydantic model for the situation object — captures the user's jurisdiction, property type, and project details."""
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 GERMAN_STATES = [
@@ -46,6 +48,15 @@ class Situation(BaseModel):
             "Whether a Bebauungsplan (B-Plan) is in place for the property. "
             "Required to determine maximum confidence level of the assessment."
         ),
+    )
+    goal_category: str | None = Field(
+        default=None,
+        description="Pre-classified goal category from the frontend (e.g. 'fence', 'garage'). "
+                    "When provided, skips the backend classification LLM call.",
+    )
+    goal_confidence: Literal["LOW", "MEDIUM", "HIGH"] | None = Field(
+        default=None,
+        description="Confidence of the frontend's goal classification. Only used when goal_category is set.",
     )
 
     model_config = {

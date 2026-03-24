@@ -9,7 +9,7 @@ import anthropic
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException, status
 
-from propra.schemas.assessment import AssessmentResponse
+from propra.schemas.assessment import AssessmentResponse, ClassificationResult
 from propra.schemas.situation import Situation
 
 # ── path setup ────────────────────────────────────────────────────────────────
@@ -20,6 +20,7 @@ if str(_RETRIEVAL_DIR) not in sys.path:
     sys.path.insert(0, str(_RETRIEVAL_DIR))
 
 import rag  # noqa: E402
+import kg_query  # noqa: E402
 
 # ── env ───────────────────────────────────────────────────────────────────────
 load_dotenv()
@@ -44,8 +45,10 @@ _LABEL_TO_CODE: dict[str, str] = {
     v["label"]: v["code"] for v in rag.JURISDICTION_MAP.values()
 }
 
-# ── prompt ────────────────────────────────────────────────────────────────────
-_PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "assess.txt"
+# ── prompts ───────────────────────────────────────────────────────────────────
+_PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
+_PROMPT_PATH = _PROMPTS_DIR / "assess.txt"
+_CLASSIFY_PROMPT_PATH = _PROMPTS_DIR / "classify_goal.txt"
 
 
 def _load_system_prompt() -> str:
@@ -56,10 +59,43 @@ def _load_system_prompt() -> str:
         raise RuntimeError(f"Prompt file not found: {_PROMPT_PATH}") from exc
 
 
+def _load_classify_prompt() -> str:
+    """Load the goal classification prompt from file."""
+    try:
+        return _CLASSIFY_PROMPT_PATH.read_text(encoding="utf-8")
+    except FileNotFoundError as exc:
+        raise RuntimeError(f"Prompt file not found: {_CLASSIFY_PROMPT_PATH}") from exc
+
+
 _SYSTEM_PROMPT = _load_system_prompt()
+_CLASSIFY_PROMPT = _load_classify_prompt()
 
 # ── router ────────────────────────────────────────────────────────────────────
 router = APIRouter()
+
+
+def _classify_goal(project_description: str) -> ClassificationResult | None:
+    """
+    Call the LLM to classify the user's project into a goal category.
+
+    Returns a ClassificationResult on success, or None if the LLM call fails
+    or returns unparseable output. Failures are non-fatal — the assess pipeline
+    continues without classification.
+    """
+    try:
+        response = _get_llm().messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=200,
+            system=_CLASSIFY_PROMPT,
+            messages=[{"role": "user", "content": f"Vorhaben: {project_description}"}],
+        )
+        text = response.content[0].text.strip()
+        if text.startswith("```"):
+            text = text.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+        data = json.loads(text)
+        return ClassificationResult(**data)
+    except Exception:
+        return None
 
 
 def _build_context(chunks: list[dict]) -> str:
@@ -78,19 +114,33 @@ def assess(situation: Situation) -> AssessmentResponse:
 
     Pipeline:
       1. Map jurisdiction label → ISO 3166-2 code for FAISS filter.
-      2. FAISS retrieval → top-5 document chunks.
-      3. Anthropic API call with prompts/assess.txt → JSON AssessmentResponse.
-      4. Validate response against AssessmentResponse schema.
+      2. LLM goal classification → category + node types (non-fatal if it fails).
+      3. FAISS retrieval → top-5 document chunks (query augmented with node types).
+      4. Anthropic API call with prompts/assess.txt → JSON AssessmentResponse.
+      5. Validate response against AssessmentResponse schema.
     """
     # 1. Map jurisdiction label to ISO code (None = search all jurisdictions)
     iso_code = _LABEL_TO_CODE.get(situation.jurisdiction)
 
-    # 2. Retrieve relevant chunks
+    # 2. Classify the goal (use frontend-provided category or call LLM classifier)
+    if situation.goal_category:
+        classification = ClassificationResult(
+            goal_category=situation.goal_category,
+            confidence=situation.goal_confidence or "LOW",
+            parameters={},
+        )
+    else:
+        classification = _classify_goal(situation.project_description)
+
+    node_types = kg_query.query_by_category(classification.goal_category) if classification else []
+
+    # 3. Retrieve relevant chunks (query augmented with node type hints)
     try:
         chunks = _retriever.retrieve(
             query=situation.project_description,
             k=5,
             jurisdiction=iso_code,
+            node_types=node_types or None,
         )
     except FileNotFoundError as exc:
         raise HTTPException(
@@ -126,9 +176,10 @@ def assess(situation: Situation) -> AssessmentResponse:
                 "persönliche Beratung."
             ),
             has_bplan=situation.has_bplan,
+            goal_category=classification.goal_category if classification else None,
         )
 
-    # 3. Synthesise with Anthropic
+    # 4. Synthesise with Anthropic
     context = _build_context(chunks)
     user_message = (
         f"Situation:\n"
@@ -141,7 +192,7 @@ def assess(situation: Situation) -> AssessmentResponse:
 
     try:
         response = _get_llm().messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-6",
             max_tokens=1500,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_message}],
@@ -156,15 +207,16 @@ def assess(situation: Situation) -> AssessmentResponse:
             },
         ) from exc
 
-    # 4. Parse and validate JSON response
+    # 5. Parse and validate JSON response
     try:
         text = raw_text.strip()
         # Strip markdown code fences if the model wrapped the JSON
         if text.startswith("```"):
             text = text.split("\n", 1)[1].rsplit("```", 1)[0].strip()
         data = json.loads(text)
-        # has_bplan is sourced from the request, not the LLM
+        # has_bplan and goal_category are sourced from the request, not the LLM
         data["has_bplan"] = situation.has_bplan
+        data["goal_category"] = classification.goal_category if classification else None
         # Belt-and-suspenders: downgrade HIGH → MEDIUM when no B-Plan
         if data.get("confidence") == "HIGH" and not situation.has_bplan:
             data["confidence"] = "MEDIUM"

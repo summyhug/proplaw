@@ -17,6 +17,29 @@ from typing import Optional
 # Allowed node types (German legal taxonomy — do not translate)
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Goal categories — maps user intent to relevant KG node types
+# ---------------------------------------------------------------------------
+
+GOAL_CATEGORIES: dict[str, list[str]] = {
+    "zaun_einfriedung":        ["abstandsflaeche", "gestaltungsanforderung", "verfahrensfreies_vorhaben"],
+    "garage_carport":          ["abstandsflaeche", "genehmigungspflicht", "verfahrensfreies_vorhaben", "stellplatzpflicht"],
+    "terrasse_pergola":        ["verfahrensfreies_vorhaben", "abstandsflaeche", "freiflaechengestaltung"],
+    "nebengebaeude_schuppen":  ["abstandsflaeche", "verfahrensfreies_vorhaben", "genehmigungspflicht"],
+    "anbau_erweiterung":       ["abstandsflaeche", "genehmigungspflicht", "bauantrag", "standsicherheit", "brandschutzanforderung"],
+    "fenster_tueren":          ["fensteroffnung", "bestandsaenderung", "brandschutzanforderung"],
+    "dach_dachausbau":         ["dach", "brandschutzanforderung", "bestandsaenderung", "standsicherheit"],
+    "solaranlage_pv":          ["verfahrensfreies_vorhaben", "technische_anlage", "dach"],
+    "pool_teich":              ["verfahrensfreies_vorhaben", "abstandsflaeche", "grundstuecksbebauung"],
+    "nutzungsaenderung":       ["genehmigungspflicht", "sonderbautyp", "bauantrag", "kenntnisgabeverfahren"],
+    "barrierefreiheit":        ["barrierefreiheit", "aufzugsanlage", "sanitaerraum", "treppe"],
+    "abriss":                  ["baugenehmigung", "bestandsschutz", "bestandsaenderung"],
+}
+
+# ---------------------------------------------------------------------------
+# Allowed node types (German legal taxonomy — do not translate)
+# ---------------------------------------------------------------------------
+
 NODE_TYPES = {
     "anwendungsbereich",
     "begriffsbestimmung",
@@ -59,7 +82,7 @@ NODE_TYPES = {
     "beteiligtenpflicht",
     "behoerdenstruktur",
     "genehmigungspflicht",
-    "verfahrensfreiheit",
+    "verfahrensfreies_vorhaben",
     "verfahrensfreies_vorhaben",  # individual Annex-1 entries
     "kenntnisgabeverfahren",
     "vereinfachtes_genehmigungsverfahren",
