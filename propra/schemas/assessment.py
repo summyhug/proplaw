@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field
 
 
 class ClassificationResult(BaseModel):
@@ -84,14 +84,6 @@ class AssessmentResponse(BaseModel):
         default="graphrag",
         description="Retrieval mode used for this assessment: 'rag' or 'graphrag'.",
     )
-
-    @model_validator(mode="after")
-    def confidence_requires_bplan(self) -> "AssessmentResponse":
-        if self.confidence == "HIGH" and not self.has_bplan:
-            raise ValueError(
-                "Confidence cannot be HIGH when no B-Plan data is present in the corpus."
-            )
-        return self
 
     model_config = {
         "json_schema_extra": {

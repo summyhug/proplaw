@@ -1,6 +1,6 @@
 # WHAT: Synthesises retrieved LBO document chunks into a plain-language regulatory
 #       assessment for a specific homeowner situation.
-# INPUTS: Situation block (Bundesland, Grundstückstyp, Vorhaben, B-Plan flag),
+# INPUTS: Situation block (Bundesland, Grundstückstyp, Vorhaben),
 #         numbered law excerpts [1]…[n] each with jurisdiction and paragraph reference.
 # OUTPUT FORMAT: A single JSON object (no markdown, no prose outside the JSON) with keys:
 #   verdict (ALLOWED|CONDITIONAL|NOT_ALLOWED), confidence (LOW|MEDIUM|HIGH),
@@ -41,6 +41,6 @@ Verdikte:
 - NOT_ALLOWED: Das Vorhaben ist nach den Auszügen nicht zulässig, oder die Auszüge bieten keine ausreichende Grundlage für eine Einschätzung.
 
 Konfidenz:
-- HIGH: Nur wenn ein Bebauungsplan vorhanden ist UND die Auszüge den Fall eindeutig und vollständig abdecken.
+- HIGH: Die Auszüge decken den Fall eindeutig und vollständig ab.
 - MEDIUM: Die Auszüge decken den Fall weitgehend ab, aber Details müssen noch geprüft werden.
 - LOW: Die Auszüge decken den Fall nur unvollständig ab, oder das Vorhaben ist zu komplex für eine eindeutige Einschätzung.

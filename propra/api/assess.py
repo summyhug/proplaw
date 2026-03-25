@@ -190,8 +190,7 @@ def assess(situation: Situation) -> AssessmentResponse:
         f"Situation:\n"
         f"- Bundesland: {situation.jurisdiction}\n"
         f"- Grundstückstyp: {situation.property_type}\n"
-        f"- Vorhaben: {situation.project_description}\n"
-        f"- Bebauungsplan vorhanden: {'Ja' if situation.has_bplan else 'Nein'}\n\n"
+        f"- Vorhaben: {situation.project_description}\n\n"
         f"Gesetzesauszüge:\n{context}"
     )
 
@@ -224,9 +223,6 @@ def assess(situation: Situation) -> AssessmentResponse:
         data["goal_category"] = classification.goal_category if classification else None
         data["kg_nodes_used"] = [c["kg_node_id"] for c in kg_chunks]
         data["retrieval_mode"] = situation.retrieval_mode
-        # Belt-and-suspenders: downgrade HIGH → MEDIUM when no B-Plan
-        if data.get("confidence") == "HIGH" and not situation.has_bplan:
-            data["confidence"] = "MEDIUM"
         result = AssessmentResponse(**data)
     except (json.JSONDecodeError, ValueError, KeyError) as exc:
         raise HTTPException(
