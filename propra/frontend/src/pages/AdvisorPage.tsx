@@ -324,17 +324,12 @@ const CaseCard = ({ case: c, statusConfig, stepsLabel, deadlineLabel }: {
 const LoadingMessage = () => {
   const { t } = useLanguage();
   const [msgIndex, setMsgIndex] = useState(0);
-  const [timedOut, setTimedOut] = useState(false);
 
   useEffect(() => {
     const cycleInterval = setInterval(() => {
       setMsgIndex((i) => (i + 1) % LOADING_KEYS.length);
     }, 3000);
-    const timeoutTimer = setTimeout(() => setTimedOut(true), 15000);
-    return () => {
-      clearInterval(cycleInterval);
-      clearTimeout(timeoutTimer);
-    };
+    return () => clearInterval(cycleInterval);
   }, []);
 
   return (
@@ -345,7 +340,7 @@ const LoadingMessage = () => {
       <div className="bg-card border border-border rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-3">
         <Loader2 className="w-4 h-4 text-gold animate-spin shrink-0" />
         <span className="text-sm text-muted-foreground font-body">
-          {timedOut ? t("advisor.loading.timeout") : t(LOADING_KEYS[msgIndex])}
+          {t(LOADING_KEYS[msgIndex])}
         </span>
       </div>
     </div>
@@ -542,18 +537,6 @@ const AdvisorPage = () => {
 
           {/* ── Tab 1: AI Advisor ── */}
           <TabsContent value="berater" className="flex-1 flex flex-col mt-0">
-            {/* Greeting */}
-            <div className="flex gap-4 mb-5 animate-fade-up">
-              <div className="w-9 h-9 rounded-xl bg-navy border border-gold/30 flex items-center justify-center shrink-0 mt-1">
-                <Scale className="w-4 h-4 text-gold" />
-              </div>
-              <div className="max-w-[85%]">
-                <div className="bg-card border border-border rounded-2xl rounded-tl-sm p-5 shadow-sm">
-                  <p className="font-body text-sm leading-relaxed">{t("advisor.greeting")}</p>
-                </div>
-              </div>
-            </div>
-
             {/* Guided context inputs */}
             <div className={`mb-5 border rounded-2xl transition-all ${contextReady ? "border-gold/40 bg-gold-muted/10" : "border-border bg-card"}`}>
               <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
