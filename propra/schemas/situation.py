@@ -58,6 +58,11 @@ class Situation(BaseModel):
         default=None,
         description="Confidence of the frontend's goal classification. Only used when goal_category is set.",
     )
+    retrieval_mode: Literal["rag", "graphrag"] = Field(
+        default="graphrag",
+        description="Controls whether the KG enrichment step is applied. "
+                    "'rag' = FAISS only; 'graphrag' = FAISS + knowledge graph traversal.",
+    )
 
     model_config = {
         "extra": "ignore",

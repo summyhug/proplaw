@@ -180,8 +180,8 @@ def assess(situation: Situation) -> AssessmentResponse:
             goal_category=classification.goal_category if classification else None,
         )
 
-    # 3b. KG enrichment
-    kg_chunks = get_related_chunks(chunks)
+    # 3b. KG enrichment (skipped when retrieval_mode == "rag")
+    kg_chunks = get_related_chunks(chunks) if situation.retrieval_mode == "graphrag" else []
     all_chunks = chunks + kg_chunks
 
     # 4. Synthesise with Anthropic
@@ -223,6 +223,7 @@ def assess(situation: Situation) -> AssessmentResponse:
         data["has_bplan"] = situation.has_bplan
         data["goal_category"] = classification.goal_category if classification else None
         data["kg_nodes_used"] = [c["kg_node_id"] for c in kg_chunks]
+        data["retrieval_mode"] = situation.retrieval_mode
         # Belt-and-suspenders: downgrade HIGH → MEDIUM when no B-Plan
         if data.get("confidence") == "HIGH" and not situation.has_bplan:
             data["confidence"] = "MEDIUM"

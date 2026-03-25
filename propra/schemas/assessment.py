@@ -80,6 +80,10 @@ class AssessmentResponse(BaseModel):
         default=[],
         description="KG node IDs that contributed context to this assessment.",
     )
+    retrieval_mode: str = Field(
+        default="graphrag",
+        description="Retrieval mode used for this assessment: 'rag' or 'graphrag'.",
+    )
 
     @model_validator(mode="after")
     def confidence_requires_bplan(self) -> "AssessmentResponse":
