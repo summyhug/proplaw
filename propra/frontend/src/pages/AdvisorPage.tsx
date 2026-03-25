@@ -48,6 +48,8 @@ interface Message {
   timestamp: Date;
   documentBlock?: string;
   classificationLabel?: string;
+  retrievalMode?: "rag" | "graphrag";
+  kgNodesCount?: number;
 }
 
 interface CaseStep {
@@ -328,6 +330,8 @@ const AdvisorPage = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const bundeslandRef = useRef<HTMLDivElement>(null);
 
+  const [retrievalMode, setRetrievalMode] = useState<"rag" | "graphrag">("graphrag");
+
   // Guided context inputs
   const [bundesland, setBundesland] = useState("");
   const [bundeslandSearch, setBundeslandSearch] = useState("");
@@ -394,6 +398,7 @@ const AdvisorPage = () => {
           postcode,
           project_description: question,
           has_bplan: false,
+          retrieval_mode: retrievalMode,
         }),
       });
 
@@ -429,6 +434,8 @@ const AdvisorPage = () => {
         reliabilityLabel: data.confidence,
         timestamp: new Date(),
         classificationLabel: classifyQuestion(question) ?? undefined,
+        retrievalMode: (data.retrieval_mode as "rag" | "graphrag") ?? retrievalMode,
+        kgNodesCount: (data.kg_nodes_used ?? []).length,
       };
 
       setMessages((prev) => [...prev, aiMsg]);
@@ -716,12 +723,25 @@ const AdvisorPage = () => {
                       </div>
                     ) : (
                       <>
-                      {msg.classificationLabel && (
-                        <div className="mb-1.5">
-                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-navy/10 text-navy border border-navy/20">
-                            <Tag className="w-3 h-3" />
-                            {msg.classificationLabel}
-                          </span>
+                      {(msg.classificationLabel || msg.retrievalMode) && (
+                        <div className="mb-1.5 flex items-center gap-1.5 flex-wrap">
+                          {msg.classificationLabel && (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-navy/10 text-navy border border-navy/20">
+                              <Tag className="w-3 h-3" />
+                              {msg.classificationLabel}
+                            </span>
+                          )}
+                          {msg.retrievalMode && (
+                            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium border ${
+                              msg.retrievalMode === "graphrag"
+                                ? "bg-navy text-primary-foreground border-navy"
+                                : "bg-muted text-muted-foreground border-border"
+                            }`}>
+                              {msg.retrievalMode === "graphrag"
+                                ? `GraphRAG${msg.kgNodesCount ? ` · ${msg.kgNodesCount} KG nodes` : ""}`
+                                : "RAG only"}
+                            </span>
+                          )}
                         </div>
                       )}
                       <div className="bg-card border border-border rounded-2xl rounded-tl-sm p-5 shadow-sm">
@@ -814,9 +834,36 @@ const AdvisorPage = () => {
                 className="w-full bg-transparent font-body text-sm text-foreground placeholder:text-muted-foreground resize-none outline-none leading-relaxed disabled:cursor-not-allowed"
               />
               <div className="flex items-center justify-between mt-2 pt-2 border-t border-border">
-                <p className="text-xs text-muted-foreground font-body">
-                  {t("advisor.hint")}
-                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-xs text-muted-foreground font-body hidden sm:block">
+                    {t("advisor.hint")}
+                  </p>
+                  {/* Retrieval mode toggle */}
+                  <div className="flex items-center rounded-lg border border-border bg-muted p-0.5 text-xs font-body font-medium">
+                    <button
+                      type="button"
+                      onClick={() => setRetrievalMode("rag")}
+                      className={`px-2.5 py-1 rounded-md transition-colors ${
+                        retrievalMode === "rag"
+                          ? "bg-background text-foreground shadow-sm"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      RAG
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRetrievalMode("graphrag")}
+                      className={`px-2.5 py-1 rounded-md transition-colors ${
+                        retrievalMode === "graphrag"
+                          ? "bg-navy text-primary-foreground shadow-sm"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      GraphRAG
+                    </button>
+                  </div>
+                </div>
                 <div className="flex items-center gap-3">
                   <span className={`text-xs font-body tabular-nums ${
                     input.length > 500 ? "text-red-500" :
