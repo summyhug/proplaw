@@ -82,7 +82,7 @@ NODE_TYPES = {
     "beteiligtenpflicht",
     "behoerdenstruktur",
     "genehmigungspflicht",
-    "verfahrensfreies_vorhaben",
+    "verfahrensfreiheit",         # permit-free status (general rule)
     "verfahrensfreies_vorhaben",  # individual Annex-1 entries
     "kenntnisgabeverfahren",
     "vereinfachtes_genehmigungsverfahren",
