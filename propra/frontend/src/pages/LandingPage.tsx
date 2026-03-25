@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { Scale, MessageSquare, FileCheck, Star, Shield, Zap, ChevronRight, BookOpen, Building2, FileSignature, CheckCircle2, Circle, Bell } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import hero1 from "@/assets/hero1.jpg";
+import hero2 from "@/assets/hero2.jpg";
+import hero3 from "@/assets/hero3.jpg";
+
+const HERO_IMAGES = [hero1, hero2, hero3];
+const heroBg = HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)];
 import { useLanguage } from "@/context/LanguageContext";
 
 const PREVIEW_CASES = [
