@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Scale, MessageSquare, FileCheck, Star, Shield, Zap, ChevronRight, BookOpen, Building2, FileSignature, CheckCircle2, Circle, Bell } from "lucide-react";
+import { useState } from "react";
 import hero1 from "@/assets/hero1.jpg";
 import hero2 from "@/assets/hero2.jpg";
 import hero3 from "@/assets/hero3.jpg";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HERO_IMAGES = [hero1, hero2, hero3];
-const heroBg = HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)];
-import { useLanguage } from "@/context/LanguageContext";
 
 const PREVIEW_CASES = [
   {
@@ -45,6 +45,12 @@ const PREVIEW_CASES = [
 
 const LandingPage = () => {
   const { t } = useLanguage();
+  const [heroBg] = useState(() => {
+    const last = parseInt(localStorage.getItem("heroBgIndex") ?? "-1", 10);
+    const next = (last + 1) % HERO_IMAGES.length;
+    localStorage.setItem("heroBgIndex", String(next));
+    return HERO_IMAGES[next];
+  });
 
   const features = [
     { icon: MessageSquare, title: t("landing.feat1.title"), desc: t("landing.feat1.desc") },
@@ -87,7 +93,7 @@ const LandingPage = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/92 via-navy/80 to-navy/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/98 via-navy/85 to-navy/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
 
         <div className="relative container mx-auto px-6 pt-24 pb-16">
