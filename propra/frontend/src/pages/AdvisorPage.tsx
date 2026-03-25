@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import {
   Send, Scale, BookOpen, Shield, ChevronDown, ChevronUp, Copy,
-  ThumbsUp, ThumbsDown, Loader2, FileSignature, Bell,
+  ThumbsUp, ThumbsDown, Loader2, FileSignature, Bell, Info,
   CheckCircle2, Circle, Search, Check, Building2, MapPin, Layers, Tag, Home, Trees,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -119,16 +119,41 @@ const classifyQuestion = (text: string): string | null => {
   return null;
 };
 
-const ReliabilityBadge = ({ score, label }: { score: number; label: string }) => {
-  const color =
-    score >= 90 ? "text-emerald-700 bg-emerald-50 border-emerald-200" :
-    score >= 75 ? "text-blue-700 bg-blue-50 border-blue-200" :
-    "text-amber-700 bg-amber-50 border-amber-200";
+const RELIABILITY_CONFIG: Record<string, { label: string; color: string }> = {
+  HIGH:   { label: "Direct rule found",           color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+  MEDIUM: { label: "Partial match — verify locally", color: "text-amber-700 bg-amber-50 border-amber-200" },
+  LOW:    { label: "No direct rule found",         color: "text-red-700 bg-red-50 border-red-200" },
+};
+
+const ReliabilityBadge = ({ level }: { level: string }) => {
+  const config = RELIABILITY_CONFIG[level] ?? RELIABILITY_CONFIG.LOW;
 
   return (
-    <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-body font-medium ${color}`}>
-      <Shield className="w-3 h-3" />
-      {label} — {score}% confidence
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className="text-xs font-body font-semibold text-foreground uppercase tracking-wide flex items-center gap-1.5">
+        <Shield className="w-3.5 h-3.5 text-muted-foreground" />
+        Reliability
+      </span>
+      <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-body font-medium ${config.color}`}>
+        {config.label}
+      </div>
+      {/* Tooltip */}
+      <div className="relative group">
+        <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 hidden group-hover:block z-50">
+          <div className="bg-popover border border-border rounded-xl shadow-lg p-3 text-xs font-body text-foreground">
+            <p className="text-muted-foreground mb-2">
+              How conclusively the retrieved law text answered your question.
+            </p>
+            <div className="space-y-1">
+              <p><span className="font-semibold text-emerald-700">Direct rule found</span> — a specific paragraph answers your question directly.</p>
+              <p><span className="font-semibold text-amber-700">Partial match</span> — related rules were found but may not cover your exact case.</p>
+              <p><span className="font-semibold text-red-700">No direct rule found</span> — the system could not locate a conclusive answer; consult an authority.</p>
+            </div>
+          </div>
+          <div className="w-2 h-2 bg-popover border-r border-b border-border rotate-45 mx-auto -mt-1" />
+        </div>
+      </div>
     </div>
   );
 };
@@ -406,9 +431,6 @@ const AdvisorPage = () => {
 
       const data = await res.json();
 
-      const confidenceScore =
-        data.confidence === "HIGH" ? 90 :
-        data.confidence === "MEDIUM" ? 70 : 50;
 
       const sources: Source[] = (data.cited_sources ?? []).map(
         (c: { regulation_name: string; paragraph: string; jurisdiction: string; excerpt?: string }) => ({
@@ -430,7 +452,6 @@ const AdvisorPage = () => {
         content,
         verdict: data.verdict as Verdict,
         sources,
-        reliability: confidenceScore,
         reliabilityLabel: data.confidence,
         timestamp: new Date(),
         classificationLabel: classifyQuestion(question) ?? undefined,
@@ -767,9 +788,9 @@ const AdvisorPage = () => {
                           />
                         )}
 
-                        {msg.reliability && (
+                        {msg.reliabilityLabel && (
                           <div className="mt-4 pt-4 border-t border-border">
-                            <ReliabilityBadge score={msg.reliability} label={msg.reliabilityLabel!} />
+                            <ReliabilityBadge level={msg.reliabilityLabel} />
                           </div>
                         )}
 
