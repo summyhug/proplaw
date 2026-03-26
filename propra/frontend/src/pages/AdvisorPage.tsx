@@ -47,7 +47,6 @@ interface Message {
   reliabilityLabel?: string;
   timestamp: Date;
   documentBlock?: string;
-  classificationLabel?: string;
   goalCategory?: string;
   retrievalMode?: "rag" | "graphrag";
   kgNodesCount?: number;
@@ -112,13 +111,6 @@ const LOADING_KEYS = [
   "advisor.loading.3",
 ] as const;
 
-const classifyQuestion = (text: string): string | null => {
-  const lower = text.toLowerCase();
-  if (["zaun", "grenze", "hecke", "fence", "boundary", "hedge"].some((k) => lower.includes(k))) return "Zaun / Grenze";
-  if (["fenster", "öffnung", "tür", "window", "opening", "door"].some((k) => lower.includes(k))) return "Fenster / Öffnung";
-  if (["garten", "terrasse", "schuppen", "garden", "terrace", "shed"].some((k) => lower.includes(k))) return "Gartenanlage";
-  return null;
-};
 
 const RELIABILITY_COLORS: Record<string, { level: string; desc: string; tooltip: string }> = {
   HIGH:   { level: "text-emerald-700", desc: "text-emerald-700", tooltip: "text-emerald-700" },
@@ -458,7 +450,6 @@ const AdvisorPage = () => {
         sources,
         reliabilityLabel: data.confidence,
         timestamp: new Date(),
-        classificationLabel: classifyQuestion(question) ?? undefined,
         goalCategory: data.goal_category ?? undefined,
         retrievalMode: (data.retrieval_mode as "rag" | "graphrag") ?? retrievalMode,
         kgNodesCount: (data.kg_nodes_used ?? []).length,
@@ -737,18 +728,12 @@ const AdvisorPage = () => {
                       </div>
                     ) : (
                       <>
-                      {(msg.classificationLabel || msg.goalCategory || msg.retrievalMode) && (
+                      {(msg.goalCategory || msg.retrievalMode) && (
                         <div className="mb-1.5 flex items-center gap-1.5 flex-wrap">
-                          {msg.classificationLabel && (
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-navy/10 text-navy border border-navy/20">
-                              <Tag className="w-3 h-3" />
-                              {msg.classificationLabel}
-                            </span>
-                          )}
                           {msg.goalCategory && (
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-gold/10 text-amber-800 border border-gold/30">
                               <Tag className="w-3 h-3" />
-                              {msg.goalCategory}
+                              {t(`goal.${msg.goalCategory}`)}
                             </span>
                           )}
                           {msg.retrievalMode && (

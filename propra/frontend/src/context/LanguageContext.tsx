@@ -156,6 +156,20 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.reliability.tooltip.MEDIUM": "Related rules were found but may not cover your exact case.",
     "advisor.reliability.tooltip.LOW": "No conclusive answer was found. Contact your local Bauaufsichtsbehörde.",
 
+    // Goal category labels
+    "goal.zaun_einfriedung": "Fence / Boundary",
+    "goal.garage_carport": "Garage / Carport",
+    "goal.terrasse_pergola": "Terrace / Pergola",
+    "goal.nebengebaeude_schuppen": "Garden Shed",
+    "goal.anbau_erweiterung": "Extension",
+    "goal.fenster_tueren": "Windows / Doors",
+    "goal.dach_dachausbau": "Roof / Loft",
+    "goal.solaranlage_pv": "Solar / Heat Pump",
+    "goal.pool_teich": "Pool / Pond",
+    "goal.nutzungsaenderung": "Change of Use",
+    "goal.barrierefreiheit": "Accessibility",
+    "goal.abriss": "Demolition",
+
     // Permit page
     "permit.badge": "Member Feature",
     "permit.title1": "Your Permit Process,",
@@ -349,6 +363,20 @@ const translations: Record<Language, Record<string, string>> = {
     "advisor.reliability.tooltip.HIGH": "Ein spezifischer Rechtsparagraph beantwortet Ihre Frage direkt.",
     "advisor.reliability.tooltip.MEDIUM": "Verwandte Vorschriften wurden gefunden, decken Ihren genauen Fall aber möglicherweise nicht ab.",
     "advisor.reliability.tooltip.LOW": "Es konnte keine eindeutige Antwort gefunden werden. Wenden Sie sich an Ihre zuständige Bauaufsichtsbehörde.",
+
+    // Goal category labels
+    "goal.zaun_einfriedung": "Zaun / Einfriedung",
+    "goal.garage_carport": "Garage / Carport",
+    "goal.terrasse_pergola": "Terrasse / Pergola",
+    "goal.nebengebaeude_schuppen": "Nebengebäude / Schuppen",
+    "goal.anbau_erweiterung": "Anbau / Erweiterung",
+    "goal.fenster_tueren": "Fenster / Türen",
+    "goal.dach_dachausbau": "Dach / Dachausbau",
+    "goal.solaranlage_pv": "Solaranlage / Wärmepumpe",
+    "goal.pool_teich": "Pool / Teich",
+    "goal.nutzungsaenderung": "Nutzungsänderung",
+    "goal.barrierefreiheit": "Barrierefreiheit",
+    "goal.abriss": "Abriss",
 
     // Permit page
     "permit.badge": "Mitglieder-Funktion",
