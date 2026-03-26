@@ -93,7 +93,7 @@ const LandingPage = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(222 60% 14% / 0.98) 0%, hsl(222 60% 14% / 0.85) 55%, hsl(222 60% 14% / 0.30) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(222 60% 14% / 0.95) 0%, hsl(222 60% 14% / 0.75) 25%, hsl(222 60% 14% / 0.20) 50%, hsl(222 60% 14% / 0.05) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(222 60% 14% / 0.60) 0%, transparent 60%)" }} />
 
         <div className="relative container mx-auto px-6 pt-24 pb-16">
