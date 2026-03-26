@@ -20,7 +20,11 @@ Usage:
 from __future__ import annotations
 
 import re
+import os.path
 from pathlib import Path
+
+from propra.data.generate_lbo_inventory import _clean_body_text
+from propra.data.generate_lbo_inventory import _clean_section_title
 
 # ── paths ──────────────────────────────────────────────────────────────────────
 _DATA = Path(__file__).parent
@@ -30,17 +34,24 @@ _V2_OUT = _DATA / "node inventory" / "NBauO_node_inventory_v2.md"
 
 # ── regexes ────────────────────────────────────────────────────────────────────
 
-# Matches lines like:  § 1 NBauO - Geltungsbereich
-#                      § 3a NBauO - Elektronische Kommunikation
-# The title group may bleed into body text for single-Absatz sections;
-# callers should prefer the title from the flat inventory when available.
+# Matches lines like:
+#   § 1 NBauO - Geltungsbereich
+#   § 1 Geltungsbereich
+#   § 13 Schutz gegen schädliche Einflüsse 1Bauliche Anlagen ...
+# The title/body separation is cleaned later using the flat-inventory title map.
 _SECTION_HEADER = re.compile(
-    r"^§\s+(\d+[a-z]*)\s+NBauO\s*[-–]\s*(.+)$",
+    r"^§\s+(\d+[a-z]*)\s+(?!Abs\.)(?:NBauO\s*[-–]\s*)?(.+)$",
     re.IGNORECASE,
 )
 
 # Absatz marker: (1), (2), ... at line-start (possibly with leading whitespace)
 _ABSATZ_RE = re.compile(r"^\s*\((\d+)\)\s*(.*)$")
+_INLINE_BODY_HINT_RE = re.compile(
+    r"\b(?:ist|sind|war|waren|wird|werden|wurde|wurden|"
+    r"muss|müssen|darf|dürfen|kann|können|gilt|gelten|"
+    r"hat|haben|erlischt|erlöschen|führt|führen|bedarf|bedürfen)\b",
+    re.IGNORECASE,
+)
 
 
 def _load_flat_inventory(flat_path: Path) -> tuple[dict[str, str], dict[str, str]]:
@@ -82,7 +93,9 @@ def _load_flat_inventory(flat_path: Path) -> tuple[dict[str, str], dict[str, str
             if sec not in title_map:
                 mt = _SEC_TITLE_RE.search(sec_col)
                 if mt:
-                    title_map[sec] = mt.group(2).strip()
+                    title = _clean_section_title(mt.group(2).strip())
+                    if title:
+                        title_map[sec] = title
     return type_map, title_map
 
 
@@ -100,39 +113,103 @@ def _parse_sections(
     Returns sections in document order.
     """
     lines = txt.splitlines()
-    sections: list[tuple[str, str, str]] = []
+    occurrences: list[tuple[str, str, list[str]]] = []
     current_num: str = ""
-    current_title: str = ""
+    current_rest: str = ""
     body_lines: list[str] = []
+
+    def _section_key(sec: str) -> tuple[int, str]:
+        m = re.match(r"^(\d+)([a-z]?)$", sec)
+        if not m:
+            return (0, sec)
+        return (int(m.group(1)), m.group(2))
+
+    def _looks_like_inline_body(text: str) -> bool:
+        cleaned = _clean_body_text(text)
+        if not cleaned:
+            return False
+        if re.match(r"^(?:\(?\d+\)|\d)", cleaned):
+            return True
+        return bool(_INLINE_BODY_HINT_RE.search(cleaned))
+
+    def _derive_title(num: str, raw_candidates: list[str]) -> str:
+        cleaned_candidates = [
+            cleaned for cleaned in (_clean_section_title(item) for item in raw_candidates) if cleaned
+        ]
+        official = _clean_section_title(title_map.get(num.lower(), ""))
+
+        title = ""
+        if len(cleaned_candidates) >= 2:
+            common = _clean_section_title(os.path.commonprefix(cleaned_candidates))
+            if common:
+                title = common
+
+        if not title and cleaned_candidates:
+            shortest = min(cleaned_candidates, key=len)
+            title = shortest
+            if official and shortest.startswith(official):
+                remainder = shortest[len(official):].lstrip()
+                if remainder and not _looks_like_inline_body(remainder):
+                    title = shortest
+                else:
+                    title = official
+
+        if not title:
+            title = official
+
+        if cleaned_candidates:
+            longest = max(cleaned_candidates, key=len)
+            if title and longest.startswith(title):
+                remainder = longest[len(title):].lstrip()
+                if remainder and not _looks_like_inline_body(remainder):
+                    title = longest
+
+        return _clean_section_title(title)
 
     for line in lines:
         m = _SECTION_HEADER.match(line.strip())
         if m:
             # Save previous section
             if current_num:
-                sections.append((current_num, current_title, "\n".join(body_lines).strip()))
+                occurrences.append((current_num, current_rest, body_lines))
             current_num = m.group(1).strip()
-            raw_rest = m.group(2).strip()  # everything after 'NBauO - '
-
-            # Use official title from flat inventory when available
-            official = title_map.get(current_num.lower(), "")
-            if official:
-                current_title = official
-                # If raw_rest is longer than the official title, the remainder
-                # is body text that was on the same line as the header.
-                if len(raw_rest) > len(official) + 5:
-                    body_lines = [raw_rest[len(official):].strip()]
-                else:
-                    body_lines = []
-            else:
-                current_title = raw_rest
-                body_lines = []
+            current_rest = m.group(2).strip()
+            body_lines = []
         elif current_num:
-            body_lines.append(line)
+            cleaned = _clean_body_text(line)
+            if cleaned:
+                body_lines.append(cleaned)
 
     # Flush last section
     if current_num:
-        sections.append((current_num, current_title, "\n".join(body_lines).strip()))
+        occurrences.append((current_num, current_rest, body_lines))
+
+    grouped: dict[str, list[tuple[str, list[str]]]] = {}
+    for num, raw_rest, captured_body_lines in occurrences:
+        grouped.setdefault(num, []).append((raw_rest, captured_body_lines))
+
+    sections: list[tuple[str, str, str]] = []
+    for num in sorted(grouped, key=_section_key):
+        raw_candidates = [raw_rest for raw_rest, _ in grouped[num]]
+        title = _derive_title(num, raw_candidates)
+
+        best_body = ""
+        for raw_rest, captured_body_lines in grouped[num]:
+            raw_clean = _clean_section_title(raw_rest)
+            inline_parts: list[str] = []
+            if title and raw_clean.startswith(title):
+                remainder = raw_clean[len(title):].lstrip()
+                if remainder and _looks_like_inline_body(remainder):
+                    cleaned_remainder = _clean_body_text(remainder)
+                    if cleaned_remainder:
+                        inline_parts.append(cleaned_remainder)
+
+            body_chunks = inline_parts + [chunk for chunk in captured_body_lines if chunk]
+            body = "\n".join(body_chunks).strip()
+            if len(body) > len(best_body):
+                best_body = body
+
+        sections.append((num, title, best_body))
 
     return sections
 
@@ -222,6 +299,9 @@ def generate(txt_path: Path, old_path: Path, out_path: Path) -> None:
 
         absaetze = _split_absaetze(body)
         for idx, (abs_n, text) in enumerate(absaetze):
+            text = _clean_body_text(text)
+            if not text:
+                continue
             row_id = _format_row_id(sec_num, abs_n, idx)
             # Escape any pipe characters in the text
             text_clean = text.replace("|", "\\|")

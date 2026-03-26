@@ -31,7 +31,8 @@ This guide is for adding another state’s building code (e.g. BayBO, NBauO) to 
 | 1 | Refine inventory to sentence/list-item level (match MBO granularity) | `split_inventory_to_sentences.py` |
 | 2 | Create BbgBO↔MBO section mapping (if you want MBO edges copied) | `map_to_mbo.py` → `data/{STATE}_mbo_mapping.json` |
 | 3 | Register the state and its fine inventory in the build | `build_graph.py` → `_STATE_REGISTRY` |
-| 4 | Build and check | `python -m propra.graph.build_graph` |
+| 4 | Optionally generate a Brandenburg-style reviewable section-edge module | `generate_state_section_edges.py` |
+| 5 | Build and check | `python -m propra.graph.build_graph` |
 
 ---
 
@@ -89,7 +90,17 @@ _STATE_REGISTRY = [
 - **inventory** must exist under `propra/data/node inventory/`.
 - **prefix** is used for all node IDs (e.g. `BayBO_§6_1.1`, `BayBO_ROOT`).
 
-No other code changes are required; the build loads the inventory, creates section anchors and structural edges, and copies MBO edges when the mapping file exists.
+No other code changes are required for the baseline graph: the build loads the inventory, creates section anchors and structural edges, and copies MBO edges when the mapping file contains confirmed matches.
+
+If you want a Brandenburg-style reviewed layer, generate a draft section-edge module and then edit it by hand:
+
+```bash
+python -m propra.graph.generate_state_section_edges --state BayBO
+```
+
+- Default output: `propra/graph/baybo_section_edges.py`
+- The build automatically uses `propra.graph.{state_lower}_section_edges` when that module exists.
+- This is the recommended path once a state is important enough to curate beyond structural edges + raw mapping.
 
 ---
 
@@ -104,6 +115,7 @@ Check the log:
 - “Parsed N nodes from …_fine.md” for your state.
 - “{State} section anchors: M” and “{State} structural (sub_item_of): K edges”.
 - “{State} from MBO (mapping): L edges” if the mapping file was found.
+- Or “{State} section (curated structural + domain): L edges” when a reviewed section-edge module exists.
 
 Then e.g.:
 

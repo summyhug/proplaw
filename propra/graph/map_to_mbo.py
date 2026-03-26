@@ -37,6 +37,22 @@ _UMLAUT = str.maketrans({
     "Ä": "ae", "Ö": "oe", "Ü": "ue",
 })
 
+_TITLE_CUTOFF_PATTERNS = [
+    re.compile(r"^\s*Seite\s+\d+\s+von\s+\d+\s+", re.IGNORECASE),
+    re.compile(r"\b2130-\d+\s+\d+\b"),
+    re.compile(
+        r"\b(?:Erster|Erste|Zweiter|Dritter|Vierter|F(?:uenf|ünf)ter|Sechster|Siebenter|Achter|Neunter|Zehnter)\s+"
+        r"(?:Teil|Abschnitt)\b.*$",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\bTeil\s+\d+\b.*$", re.IGNORECASE),
+    re.compile(r"\bAbschnitt\s+(?:[IVXLC]+|\d+)\b.*$", re.IGNORECASE),
+    re.compile(r"\bFassung\s+vom\b.*$", re.IGNORECASE),
+    re.compile(r"\b(?:©\s*20\d{2}\s+)?(?:Wolters|Kluwer)\b.*$", re.IGNORECASE),
+    re.compile(r"\bgespeichert:\s*\d{2}\.\d{2}\.\d{4},\s*\d{2}:\d{2}\s*Uhr.*$", re.IGNORECASE),
+    re.compile(r"©\s*20\d{2}.*$", re.IGNORECASE),
+]
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -57,7 +73,7 @@ def _extract_titles(path: Path) -> dict[str, str]:
         m = re.match(r"^###\s+§§?\s*(\d+[a-z]?)\s*[—\-]\s*(.+)", line.strip(), re.IGNORECASE)
         if m:
             num = m.group(1).lower()
-            title = m.group(2).strip()
+            title = _clean_title(m.group(2).strip())
             if num not in titles:
                 titles[num] = title
 
@@ -77,15 +93,25 @@ def _extract_titles(path: Path) -> dict[str, str]:
         m = re.match(r"§\s*(\d+[a-z]?)\s+(.+)", cell, re.IGNORECASE)
         if m:
             num = m.group(1).lower()
-            title = m.group(2).strip()
+            title = _clean_title(m.group(2).strip())
             if num not in titles:
                 titles[num] = title
     return titles
 
 
+def _clean_title(title: str) -> str:
+    """Trim obvious extraction bleed so matching uses the actual section heading."""
+    cleaned = " ".join(title.split())
+    for pattern in _TITLE_CUTOFF_PATTERNS:
+        cleaned = pattern.sub("", cleaned).strip()
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned.rstrip(" .;,:-")
+
+
 def _normalise(title: str) -> str:
     """Lowercase, strip umlauts, collapse punctuation/whitespace for comparison."""
     t = title.lower().translate(_UMLAUT)
+    t = t.replace("geltungsbereich", "anwendungsbereich")
     t = re.sub(r"[^a-z0-9\s]", " ", t)
     return re.sub(r"\s+", " ", t).strip()
 
@@ -94,14 +120,56 @@ def _similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, _normalise(a), _normalise(b)).ratio()
 
 
-def _best_mbo_match(title: str, mbo_titles: dict[str, str]) -> tuple[str, str, float]:
+def _section_key(num: str) -> tuple[int, str]:
+    m = re.match(r"^(\d+)([a-z]?)$", num)
+    if not m:
+        return (0, num)
+    return (int(m.group(1)), m.group(2))
+
+
+def _score_match(state_num: str, state_title: str, mbo_num: str, mbo_title: str) -> float:
+    """
+    Score one state-title ↔ MBO-title pair.
+
+    Exact or near-exact title matches should win. If the section number also lines up,
+    give a small bonus, but only when the lexical match is already fairly plausible.
+    """
+    base = _similarity(state_title, mbo_title)
+    state_key = _section_key(state_num)
+    mbo_key = _section_key(mbo_num)
+
+    if state_key == mbo_key and base >= 0.70:
+        base += 0.15
+    elif state_key[0] == mbo_key[0] and base >= 0.60:
+        base += 0.10
+    elif abs(state_key[0] - mbo_key[0]) <= 1 and base >= 0.85:
+        base += 0.05
+
+    return min(base, 1.0)
+
+
+def _best_mbo_match(state_num: str, title: str, mbo_titles: dict[str, str]) -> tuple[str, str, float]:
     """Return (mbo_num, mbo_title, score) for the closest MBO section title."""
     best_num, best_title, best_score = "", "", 0.0
     for num, t in mbo_titles.items():
-        s = _similarity(title, t)
+        s = _score_match(state_num, title, num, t)
         if s > best_score:
             best_num, best_title, best_score = num, t, s
     return best_num, best_title, best_score
+
+
+def _find_state_inventory(state: str) -> Path:
+    """Prefer the fine inventory, then v2, then the paragraph-level fallback."""
+    state_dir = _DATA / _NODE_INVENTORY_DIR
+    candidates = [
+        state_dir / f"{state}_node_inventory_fine.md",
+        state_dir / f"{state}_node_inventory_v2.md",
+        state_dir / f"{state}_node_inventory.md",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[-1]
 
 
 # ---------------------------------------------------------------------------
@@ -118,10 +186,7 @@ def build_mapping(
 
     Returns a dict with keys: state, generated, mapping, review, unmatched.
     """
-    state_dir = _DATA / _NODE_INVENTORY_DIR
-    state_inventory = state_dir / f"{state}_node_inventory_v2.md"
-    if not state_inventory.exists():
-        state_inventory = state_dir / f"{state}_node_inventory.md"
+    state_inventory = _find_state_inventory(state)
     if not state_inventory.exists():
         print(f"[ERROR] Inventory not found: {state_inventory}", file=sys.stderr)
         sys.exit(1)
@@ -140,8 +205,8 @@ def build_mapping(
     # Track which MBO sections are already claimed (warn on duplicates)
     claimed: dict[str, str] = {}          # mbo_§ -> state_§ that claimed it
 
-    for state_num, state_title in sorted(state_titles.items(), key=lambda x: int(re.sub(r"[a-z]", "", x[0]))):
-        mbo_num, mbo_title, score = _best_mbo_match(state_title, mbo_titles)
+    for state_num, state_title in sorted(state_titles.items(), key=lambda x: _section_key(x[0])):
+        mbo_num, mbo_title, score = _best_mbo_match(state_num, state_title, mbo_titles)
 
         if score >= high_threshold:
             if mbo_num in claimed:

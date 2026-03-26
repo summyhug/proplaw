@@ -20,8 +20,13 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import os.path
 import re
 from pathlib import Path
+
+from propra.graph.build_graph import _is_pure_heading_text
+from propra.graph.build_graph import _strip_known_text_artifacts
+from propra.graph.build_graph import _strip_trailing_heading_text
 
 # ── State configuration ────────────────────────────────────────────────────────
 # header_type:
@@ -34,16 +39,15 @@ _STATE_CONFIGS: dict[str, dict] = {
         "full_name": "Bauordnung für das Land Berlin (BauO BE)",
         "jurisdiction": "DE-BE",
         "source_suffix": "BauO_BE",
-        # ToC uses 'dash_date' but body uses 'no_dash'; body never matched → empty
-        # sections for 94 of 100 §§. Use flat inventory for reliable coverage.
-        "header_type": "from_flat",
+        # After trimming the repeated ToC, the actual law body parses as no_dash.
+        "header_type": "no_dash",
     },
     "BauO_HE": {
         "full_name": "Hessische Bauordnung (HBO)",
         "jurisdiction": "DE-HE",
         "source_suffix": "BauO_HE",
-        # Same ToC/body format mismatch as BauO_BE.
-        "header_type": "from_flat",
+        # After dropping the repeated ToC block, the real law body parses as no_dash.
+        "header_type": "no_dash",
     },
     "BauO_NRW": {
         "full_name": "Bauordnung für das Land Nordrhein-Westfalen (BauO NRW)",
@@ -55,30 +59,26 @@ _STATE_CONFIGS: dict[str, dict] = {
         "full_name": "Bauordnung des Landes Sachsen-Anhalt (BauO LSA)",
         "jurisdiction": "DE-ST",
         "source_suffix": "BauO_LSA",
-        # Same ToC/body format mismatch.
-        "header_type": "from_flat",
+        "header_type": "no_dash",
     },
     "BauO_MV": {
         "full_name": "Landesbauordnung Mecklenburg-Vorpommern (LBauO MV)",
         "jurisdiction": "DE-MV",
         "source_suffix": "BauO_MV",
-        # Same ToC/body format mismatch.
-        "header_type": "from_flat",
+        "header_type": "no_dash",
     },
     "HBauO": {
         "full_name": "Hamburger Bauordnung (HBauO)",
         "jurisdiction": "DE-HH",
         "source_suffix": "HBauO",
-        # The HBauO txt is a synoptic comparison of two law versions; far too
-        # noisy to parse reliably.  Generate v2 from the flat inventory instead.
-        "header_type": "from_flat",
+        # Official PDF-backed text parses as no_dash after trimming preamble/annex.
+        "header_type": "no_dash",
     },
     "LBO_SH": {
         "full_name": "Landesbauordnung Schleswig-Holstein (LBO SH)",
         "jurisdiction": "DE-SH",
         "source_suffix": "LBO_SH",
-        # Same ToC/body format mismatch.
-        "header_type": "from_flat",
+        "header_type": "no_dash",
     },
     "LBO_SL": {
         "full_name": "Landesbauordnung des Saarlandes (LBO SL)",
@@ -90,24 +90,30 @@ _STATE_CONFIGS: dict[str, dict] = {
         "full_name": "Landesbauordnung Rheinland-Pfalz (LBauO RLP)",
         "jurisdiction": "DE-RP",
         "source_suffix": "LBauO_RLP",
-        # ToC uses '§ N - Title DATE' but body uses '§ N Title' (inline),
-        # causing section boundary ambiguity. Use flat inventory instead.
-        "header_type": "from_flat",
+        "header_type": "no_dash",
     },
     "SaechsBO": {
         "full_name": "Sächsische Bauordnung (SächsBO)",
         "jurisdiction": "DE-SN",
         "source_suffix": "SaechsBO",
-        # Body content is inline on same line as header (§ N Title Text...);
-        # flat inventory has better structure.
-        "header_type": "from_flat",
+        "header_type": "no_dash",
     },
     "ThuerBO": {
         "full_name": "Thüringer Bauordnung (ThürBO)",
         "jurisdiction": "DE-TH",
         "source_suffix": "ThuerBO",
-        # ToC uses '§ N - Title DATE' but body uses '§ N Title', causing
-        # deduplication to keep the wrong version. Use flat inventory.
+        "header_type": "no_dash",
+    },
+    "BW_LBO": {
+        "full_name": "Landesbauordnung für Baden-Württemberg (LBO BW)",
+        "jurisdiction": "DE-BW",
+        "source_suffix": "BW_LBO",
+        "header_type": "from_flat",
+    },
+    "BremLBO": {
+        "full_name": "Bremische Landesbauordnung (BremLBO)",
+        "jurisdiction": "DE-HB",
+        "source_suffix": "BremLBO",
         "header_type": "from_flat",
     },
 }
@@ -129,8 +135,9 @@ _HDR_DASH_DATE = re.compile(
 # Length constraint (≥ 4 chars) excludes bare "§ 1 a)" type references, and
 # the negative lookahead stops us matching "§ 3 Abs." references in body text.
 _HDR_NO_DASH = re.compile(
-    r"^§\s*(\d+[a-z]*)\s+(?!Abs\.|Absatz\s)([A-ZÄÖÜ][^\n(]{3,100})$",
+    r"^§\s*(\d+[a-z]*)\s+(?!Abs\.|Absatz\s|Satz\s|Sätze\s|Nr\.\s)([A-ZÄÖÜ][^\n(]{3,100})$",
 )
+_HDR_FREI = re.compile(r"^§\s*(\d+[a-z]*)\s+\((frei)\)\s*$", re.IGNORECASE)
 
 # LBO_SL has two edge-case header formats that _HDR_NO_DASH misses:
 # 1) "§ 13 2130-1 13 Standsicherheit" — legislative ref number before title
@@ -139,6 +146,10 @@ _HDR_NO_DASH = re.compile(
 _LBO_SL_LEG_REF = re.compile(
     r"^(§\s*\d+[a-z]*\s+)\d{4}-\d+\s+\d+\s+",
     re.MULTILINE,
+)
+_PAGE_MARKER_PREFIX_RE = re.compile(
+    r"^\s*-?\s*Seite\s+\d+\s+von\s+\d+\s*-?\s*",
+    re.IGNORECASE,
 )
 # synoptic (HBauO): § N Title § N Title  – take first title
 _HDR_SYNOPTIC = re.compile(
@@ -159,10 +170,156 @@ _TITLE_NOISE_RE = re.compile(
     r"|\bLBO\b(?:\s+SL)?"  # same for LBO
 )
 
+_TITLE_STRIP_PATTERNS = (
+    re.compile(r"^\s*Seite\s+\d+\s+von\s+\d+\s+", re.IGNORECASE),
+    re.compile(r"\b2130-\d+\s+\d+\b"),
+    re.compile(r"\s+\d{1,2}\.\d{1,2}(?:\.\d{1,4})?$"),
+    re.compile(r"\s+1\s+2\b.*$"),
+    re.compile(
+        r"\b(?:Erster|Erste|Zweiter|Dritter|Vierter|F(?:uenf|ünf)ter|Sechster|Siebenter|Achter|Neunter|Zehnter)\s+"
+        r"(?:Teil|Abschnitt)\b.*$",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\bTeil\s+\d+\b.*$", re.IGNORECASE),
+    re.compile(r"\bAbschnitt\s+(?:[IVXLC]+|\d+)\b.*$", re.IGNORECASE),
+    re.compile(r"\b(?:©\s*20\d{2}\s+)?(?:Wolters|Kluwer)\b.*$", re.IGNORECASE),
+    re.compile(r"\bgespeichert:\s*\d{2}\.\d{2}\.\d{4},\s*\d{2}:\d{2}\s*Uhr.*$", re.IGNORECASE),
+    re.compile(r"\bFassung\s+vom\b.*$", re.IGNORECASE),
+)
+_INLINE_BODY_HINT_RE = re.compile(
+    r"\b(?:ist|sind|war|waren|wird|werden|wurde|wurden|"
+    r"muss|müssen|darf|dürfen|kann|können|gilt|gelten|"
+    r"hat|haben|erlischt|erlöschen|führt|führen|bedarf|bedürfen)\b",
+    re.IGNORECASE,
+)
+_HEADER_STAMP_RE = re.compile(
+    r"^(?:Fassung\s+vom\b.*|Stand:.*|Titel\s+Gültig\s+ab\b.*|Nichtamtliche\s+Lesefassung\b.*|SächsBO\b.*)$",
+    re.IGNORECASE,
+)
+
 
 def _is_noise_title(title: str) -> bool:
     """Return True if the title contains markers that indicate a ToC or page-break line."""
     return bool(_TITLE_NOISE_RE.search(title))
+
+
+def _clean_section_title(title: str) -> str:
+    """Strip obvious extraction/page noise from a section title candidate."""
+    cleaned = " ".join(title.split())
+    for pattern in _TITLE_STRIP_PATTERNS:
+        cleaned = pattern.sub("", cleaned).strip()
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" .;,:-")
+    return cleaned
+
+
+def _clean_body_text(text: str) -> str:
+    """Strip source-text artifacts from body text and drop heading-only bleed."""
+    cleaned = " ".join(text.split())
+    cleaned = _strip_known_text_artifacts(cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    cleaned = _strip_trailing_heading_text(cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" .;,:-")
+    if cleaned and _is_pure_heading_text(cleaned):
+        return ""
+    return cleaned
+
+
+def _looks_like_inline_body_fragment(text: str) -> bool:
+    """Heuristic: tell apart inline body text from a genuine section title."""
+    cleaned = _clean_body_text(text)
+    if not cleaned:
+        return False
+    if re.match(r"^(?:\(?\d+\)|\d)", cleaned):
+        return True
+    return bool(_INLINE_BODY_HINT_RE.search(cleaned))
+
+
+def _pick_best_title(candidates: list[str]) -> str:
+    """Choose the cleanest section title candidate from txt/flat duplicates."""
+    cleaned_candidates = [
+        cleaned for cleaned in (_clean_section_title(candidate) for candidate in candidates) if cleaned
+    ]
+    if not cleaned_candidates:
+        return ""
+    if len(cleaned_candidates) >= 2:
+        common = _clean_section_title(os.path.commonprefix(cleaned_candidates))
+        if common:
+            cleaned_candidates.append(common)
+
+    def score(title: str) -> tuple[int, int]:
+        penalty = 0
+        if _looks_like_inline_body_fragment(title):
+            penalty += 6
+        if re.search(r"\b(?:Teil|Abschnitt)\b", title, re.IGNORECASE):
+            penalty += 4
+        if re.search(r"\bAnlage\b", title, re.IGNORECASE):
+            penalty += 4
+        if re.search(r"\b\d+\b", title):
+            penalty += 3
+        if title.endswith("-"):
+            penalty += 2
+        if len(title) < 6:
+            penalty += 2
+        return (penalty, -len(title))
+
+    return min(cleaned_candidates, key=score)
+
+
+def _trim_to_occurrence(txt: str, marker: str, occurrence: int) -> str:
+    """Drop everything before the Nth occurrence of a marker string."""
+    if occurrence <= 1:
+        return txt
+    start = 0
+    found = -1
+    for _ in range(occurrence):
+        found = txt.find(marker, start)
+        if found == -1:
+            return txt
+        start = found + len(marker)
+    return txt[found:]
+
+
+def _trim_bauo_he_text(txt: str) -> str:
+    """Keep the actual Hessen law body and drop the appendix after §93."""
+    txt = _trim_to_second_section_one_line(txt)
+    kept_lines: list[str] = []
+    for line in txt.splitlines():
+        if line.startswith("§ 93 Inkrafttreten"):
+            kept_lines.append(re.sub(r"\s+Anlage\s*$", "", line).rstrip())
+            break
+        kept_lines.append(line)
+    return "\n".join(kept_lines)
+
+
+def _trim_hbauo_text(txt: str) -> str:
+    """Keep the official HBauO law body and drop the annex after §87."""
+    positions: list[int] = []
+    offset = 0
+    for line in txt.splitlines(keepends=True):
+        if re.match(r"^§\s*1\b", line.strip()):
+            positions.append(offset)
+        offset += len(line)
+    if len(positions) >= 3:
+        txt = txt[positions[2]:]
+    kept_lines: list[str] = []
+    for line in txt.splitlines():
+        if re.match(r"^Anlage\b", line.strip(), re.IGNORECASE):
+            break
+        kept_lines.append(line)
+    return "\n".join(kept_lines)
+
+
+def _trim_to_second_section_one_line(txt: str) -> str:
+    """Drop repeated ToC text before the second line-start `§ 1 ...` block."""
+    positions: list[int] = []
+    offset = 0
+    for line in txt.splitlines(keepends=True):
+        if re.match(r"^§\s*1\b", line.strip()):
+            positions.append(offset)
+        offset += len(line)
+    if len(positions) >= 2:
+        return txt[positions[1]:]
+    return txt
 
 
 def _make_header_matcher(header_type: str):
@@ -173,6 +330,9 @@ def _make_header_matcher(header_type: str):
             return (m.group(1).lower(), m.group(2).strip()) if m else None
     elif header_type == "no_dash":
         def match(line: str):
+            mf = _HDR_FREI.match(line.strip())
+            if mf:
+                return (mf.group(1).lower(), f"({mf.group(2).lower()})")
             m = _HDR_NO_DASH.match(line.strip())
             if not m:
                 return None
@@ -245,10 +405,64 @@ def _load_flat_inventory(flat_path: Path) -> tuple[dict[str, str], dict[str, str
                 raw = mt.group(2).strip()
                 raw = re.sub(r"\s+(?:geändert|bis|ab|zuletzt)\b.*$", "", raw, flags=re.IGNORECASE)
                 raw = re.sub(r"\s+\d{2}\.\d{2}\.\d{4}.*$", "", raw).strip()
-                if raw:
+                raw = _clean_section_title(raw)
+                if raw and not _is_noise_title(raw):
                     title_map[sec] = raw
 
     return type_map, title_map
+
+
+def _load_sectioned_inventory_sections(
+    path: Path,
+) -> list[tuple[str, str, str, list[tuple[str, str]]]]:
+    """
+    Parse a sectioned markdown inventory with 2-column rule tables.
+
+    This supports inventories such as BW_LBO and BremLBO that already have
+    `### § N — Title` headings and `| Nr. | Regeltext |` tables, but are not
+    in the older 5-column flat-table format.
+    """
+    sections: list[tuple[str, str, str, list[tuple[str, str]]]] = []
+    current_sec = ""
+    current_title = ""
+    current_type = ""
+    current_rows: list[tuple[str, str]] = []
+
+    def flush() -> None:
+        if current_sec and current_rows:
+            sections.append((current_sec, current_title, current_type, list(current_rows)))
+
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        m = re.match(r"^###\s+§\s*(\d+[a-z]*)\s*[—\-]\s*(.+)", stripped, re.IGNORECASE)
+        if m:
+            flush()
+            current_sec = m.group(1).lower()
+            current_title = _clean_section_title(m.group(2).strip())
+            current_type = ""
+            current_rows = []
+            continue
+        if not current_sec:
+            continue
+        if stripped.startswith("**type:**"):
+            current_type = stripped.split("**type:**", 1)[1].strip()
+            continue
+        if not stripped.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        first = cells[0]
+        if first.lower() in {"nr.", "nr"} or set(first) == {"-"}:
+            continue
+        if not re.match(r"^\d+[a-z]?(?:\.\d+)+$", first, re.IGNORECASE):
+            continue
+        cleaned_text = _clean_body_text(cells[1])
+        if cleaned_text:
+            current_rows.append((first, cleaned_text))
+
+    flush()
+    return sections
 
 
 def _dedupe_synoptic_line(line: str) -> str:
@@ -277,6 +491,25 @@ def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
     # Step 1: strip legislative reference numbers
     txt = _LBO_SL_LEG_REF.sub(r"\1", txt)
 
+    # Step 1b: merge bare "§ N" lines with a title that spilled onto the next
+    # line, optionally after a page-marker prefix.
+    merged_lines = []
+    lines = txt.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if re.match(r"^§\s*\d+[a-z]*\s*$", line.strip()):
+            title_line = ""
+            if i + 1 < len(lines):
+                title_line = _PAGE_MARKER_PREFIX_RE.sub("", lines[i + 1].strip()).strip()
+            if title_line and not title_line.startswith("§") and not _ABSATZ_RE.match(title_line):
+                merged_lines.append(f"{line.strip()} {title_line}".strip())
+                i += 2
+                continue
+        merged_lines.append(line)
+        i += 1
+    txt = "\n".join(merged_lines)
+
     # Build an enriched title map: start by collecting clean titles found via
     # the header regex (e.g. from the ToC), then fill gaps from title_map.
     # Regex-matched titles are preferred because flat-inventory titles can be
@@ -286,15 +519,16 @@ def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
         m = _HDR_NO_DASH.match(line.strip())
         if m and not _is_noise_title(m.group(2).strip()):
             sec = m.group(1).lower()
-            title = m.group(2).strip().rstrip(".")
-            # Keep longest regex-matched title per section
-            if sec not in enriched or len(title) > len(enriched[sec]):
-                enriched[sec] = title
+            title = _clean_section_title(m.group(2).strip().rstrip("."))
+            if not title:
+                continue
+            enriched[sec] = _pick_best_title([enriched.get(sec, ""), title])
     # Fill gaps from flat inventory title_map
     if title_map:
         for sec, title in title_map.items():
-            if sec not in enriched:
-                enriched[sec] = title
+            cleaned = _clean_section_title(title)
+            if cleaned:
+                enriched[sec] = _pick_best_title([enriched.get(sec, ""), cleaned])
 
     # Step 2: split lines where body text follows a known title
     if not enriched:
@@ -302,7 +536,7 @@ def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
     out_lines = []
     for line in txt.splitlines():
         m = re.match(r"^§\s*(\d+[a-z]*)\s+", line)
-        if m and len(line) > 105:
+        if m:
             sec = m.group(1).lower()
             title = enriched.get(sec)
             if title:
@@ -311,9 +545,10 @@ def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
                 if idx >= 0:
                     end = idx + len(title)
                     rest = line[end:].strip()
-                    if rest and not rest.startswith("§"):
+                    if rest and not rest.startswith("§") and not re.fullmatch(r"\d+(?:\s+\d+)*", rest):
                         out_lines.append(line[:end])
-                        out_lines.append(rest)
+                        if not (_HEADER_STAMP_RE.match(rest) or _is_pure_heading_text(rest)):
+                            out_lines.append(rest)
                         continue
             # Fallback: title may differ between ToC and body.  Try to find
             # the split point where a new sentence begins by looking for
@@ -321,16 +556,17 @@ def _preprocess_no_dash(txt: str, title_map: dict[str, str]) -> str:
             fb = re.search(
                 r"([a-zäöü)n]\s+)"
                 r"((?:\(\d+\)\s+)?"          # optional Absatz marker
-                r"(?:Die|Der|Das|Ein|Bei|Mit|Auf|Sind|Soweit|Bauliche|Jede)\s)",
-                line[len(m.group(0)) + 15:],  # skip past "§ N " + min title
+                r"(?:Die|Der|Das|Ein|Bei|Mit|Auf|Sind|Soweit|Bauliche|Jede|Anlagen|Verfahrensfrei|Keiner)\s)",
+                line[len(m.group(0)):],
             )
             if fb:
-                split_pos = len(m.group(0)) + 15 + fb.start() + len(fb.group(1))
+                split_pos = len(m.group(0)) + fb.start() + len(fb.group(1))
                 header = line[:split_pos].rstrip()
                 body = line[split_pos:].strip()
                 if body:
                     out_lines.append(header)
-                    out_lines.append(body)
+                    if not (_HEADER_STAMP_RE.match(body) or _is_pure_heading_text(body)):
+                        out_lines.append(body)
                     continue
         out_lines.append(line)
     return "\n".join(out_lines)
@@ -361,11 +597,13 @@ def _parse_sections(
                 sections.append((current_num, current_title, "\n".join(body_lines).strip()))
             current_num = sec_num
             # Prefer clean title from flat inventory; fall back to txt
-            current_title = title_map.get(sec_num, raw_title)
+            current_title = _pick_best_title([title_map.get(sec_num, ""), raw_title]) or _clean_section_title(raw_title)
             body_lines = []
         elif current_num:
             clean = _dedupe_synoptic_line(line) if header_type == "synoptic" else line
-            body_lines.append(clean)
+            clean = _clean_body_text(clean)
+            if clean:
+                body_lines.append(clean)
 
     if current_num:
         sections.append((current_num, current_title, "\n".join(body_lines).strip()))
@@ -443,7 +681,36 @@ def _generate_from_flat(
         m = re.match(r"^(\d+[a-z]*)\.", row_id)
         if not m:
             continue
-        rows.append((row_id, m.group(1).lower(), node_type.strip(), text.strip()))
+        cleaned_text = _clean_body_text(text.strip())
+        if not cleaned_text:
+            continue
+        rows.append((row_id, m.group(1).lower(), node_type.strip(), cleaned_text))
+
+    if not rows:
+        sectioned_sections = _load_sectioned_inventory_sections(flat_path)
+        if sectioned_sections:
+            lines_out = [
+                f"# {law_short} — Node Inventory (Paragraph Level)",
+                "",
+                f"_Generated by generate_lbo_inventory.py from {state}_node_inventory.md (sectioned)._",
+                f"_Types sourced from existing {state}_node_inventory.md._",
+                "_Run split_inventory_to_sentences.py to produce the fine (sentence-level) version._",
+                "",
+            ]
+            for sec_num, title, node_type, sec_rows in sectioned_sections:
+                lines_out.append(f"### § {sec_num} — {title}")
+                lines_out.append(f"**type:** {node_type or 'allgemeine_anforderung'}")
+                lines_out.append(f"**source_paragraph:** §{sec_num} {source_suffix}")
+                lines_out.append("")
+                lines_out.append(f"| Nr. | Regeltext ({law_short}-Wortlaut) |")
+                lines_out.append("|---|---|")
+                for row_id, text in sec_rows:
+                    lines_out.append(f"| {row_id} | {text.replace('|', chr(92) + '|')} |")
+                lines_out.append("")
+
+            out_path.write_text("\n".join(lines_out), encoding="utf-8")
+            print(f"   Written  : {out_path}  ({len(sectioned_sections)} sections, from sectioned inventory)")
+            return
 
     # Group rows by section
     from collections import OrderedDict
@@ -498,6 +765,14 @@ def generate(state: str) -> None:
     txt_path = _TXT_DIR / f"{state}.txt"
     print(f"   Reading  : {txt_path}")
     txt = txt_path.read_text(encoding="utf-8", errors="replace")
+    if state == "BauO_HE":
+        txt = _trim_bauo_he_text(txt)
+    elif state == "HBauO":
+        txt = _trim_hbauo_text(txt)
+    elif state in {"BauO_BE", "BauO_LSA", "BauO_MV", "LBO_SH", "LBauO_RLP", "ThuerBO"}:
+        txt = _trim_to_second_section_one_line(txt)
+    elif state == "SaechsBO":
+        txt = _trim_to_second_section_one_line(txt)
 
     print(f"   Flat inv : {flat_path}")
     type_map, title_map = _load_flat_inventory(flat_path)
@@ -532,6 +807,9 @@ def generate(state: str) -> None:
 
         absaetze = _split_absaetze(body)
         for idx, (abs_n, text) in enumerate(absaetze):
+            text = _clean_body_text(text)
+            if not text:
+                continue
             row_id = _format_row_id(sec_num, abs_n, idx)
             text_clean = text.replace("|", "\\|")
             lines_out.append(f"| {row_id} | {text_clean} |")

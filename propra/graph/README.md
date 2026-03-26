@@ -13,8 +13,7 @@ No API keys required.
 
 ## 1. Build the graph
 
-Loads MBO section anchors and each state in `_STATE_REGISTRY` from `data/node inventory/*_node_inventory_fine.md`, adds structural edges (supplements, sub_item_of), MBO section edges, state edges copied from MBO mapping, and reference edges. Writes `propra/data/graph.pkl` and `graph.graphml`.
-For BbgBO, structural edges (supplements, sub_item_of) are defined in `bbgbo_section_edges.py`.
+Loads MBO section anchors and each state in `_STATE_REGISTRY` from `data/node inventory/*_node_inventory_fine.md`, adds structural edges (supplements, sub_item_of), MBO section edges, state edges copied from MBO mapping, and reference edges. If a curated state module such as `bbgbo_section_edges.py` or `baybo_section_edges.py` exists, the build uses that file instead of the generic structural + mapping pass. Writes `propra/data/graph.pkl` and `graph.graphml`.
 
 ```bash
 python -m propra.graph.build_graph
@@ -73,7 +72,9 @@ python -m propra.graph.core_nodes
 | `build_graph.py` | Build graph (MBO anchors + state LBOs in _STATE_REGISTRY) |
 | `mbo_section_edges.py` | MBO section-defined edges (e.g. §1 exclusions, §6 exception_of) |
 | `state_structural_edges.py` | sub_item_of for state content nodes (general; BbgBO uses `bbgbo_section_edges.py`) |
-| `bbgbo_mbo_edges.py` | Copy MBO edges onto a state using data/{STATE}_mbo_mapping.json |
+| `state_mbo_edges.py` | Copy MBO edges onto any state using data/{STATE}_mbo_mapping.json |
+| `bbgbo_mbo_edges.py` | Backward-compatible Brandenburg wrapper around `state_mbo_edges.py` |
+| `generate_state_section_edges.py` | Generate a reviewable `{state}_section_edges.py` draft from fine inventory + mapping |
 | `generate_bbgbo_section_edges.py` | Regenerate `bbgbo_section_edges.py` draft (structural + MBO-projected) |
 | `bbgbo_section_edges.py` | Single-file BbgBO section edges (supplements + sub_item_of + MBO-projected domain edges) |
 | `references_edges.py` | References parsed from node text |

@@ -86,7 +86,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §7 — Begrünung
-**type:** grundstuecksteilung
+**type:** freiflaechengestaltung
 **source_paragraph:** §7 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -97,7 +97,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §8 — Baugestaltung
-**type:** freiflaechengestaltung
+**type:** gestaltungsanforderung
 **source_paragraph:** §8 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -107,7 +107,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §9 — Baustelle
-**type:** gestaltungsanforderung
+**type:** baustellenanforderung
 **source_paragraph:** §9 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -119,7 +119,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §10 — Standsicherheit
-**type:** gestaltungsanforderung
+**type:** standsicherheit
 **source_paragraph:** §10 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -129,7 +129,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §11 — Schutz gegen Einwirkungen
-**type:** baustellenanforderung
+**type:** schutzanforderung
 **source_paragraph:** §11 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -139,7 +139,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §12 — Brandschutz
-**type:** standsicherheit
+**type:** brandschutzanforderung
 **source_paragraph:** §12 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -161,7 +161,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §14 — Verkehrssicherheit
-**type:** brandschutzanforderung
+**type:** verkehrssicherheit
 **source_paragraph:** §14 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -172,7 +172,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §15 — Bauarten
-**type:** schutzanforderung
+**type:** bauproduktzulassung
 **source_paragraph:** §15 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -187,7 +187,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §16 — Verwendung von Bauprodukten
-**type:** verkehrssicherheit
+**type:** bauproduktzulassung
 **source_paragraph:** §16 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -278,7 +278,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §24 — Allgemeine Anforderungen an das Brandverhalten von Baustoffen und Bauteilen
-**type:** bauproduktzulassung
+**type:** brandklassifizierung
 **source_paragraph:** §24 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -289,7 +289,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §25 — Tragende Wände, Stützen
-**type:** bauproduktzulassung
+**type:** tragende_wand
 **source_paragraph:** §25 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -300,7 +300,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §26 — Außenwände
-**type:** brandklassifizierung
+**type:** aussenwand
 **source_paragraph:** §26 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -314,7 +314,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §27 — Trennwände
-**type:** tragende_wand
+**type:** trennwand
 **source_paragraph:** §27 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -329,7 +329,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §28 — Brandwände
-**type:** aussenwand
+**type:** brandwand
 **source_paragraph:** §28 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -349,7 +349,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §29 — Decken
-**type:** trennwand
+**type:** decke
 **source_paragraph:** §29 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -362,7 +362,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §30 — Dächer
-**type:** brandwand
+**type:** dach
 **source_paragraph:** §30 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -379,7 +379,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §31 — Rettungswege
-**type:** decke
+**type:** brandschutzanforderung
 **source_paragraph:** §31 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -391,7 +391,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §32 — Treppen
-**type:** dach
+**type:** treppe
 **source_paragraph:** §32 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -406,7 +406,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §33 — Notwendige Treppenräume, Ausgänge
-**type:** bestandsaenderung
+**type:** treppenraum
 **source_paragraph:** §33 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -423,7 +423,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §34 — Notwendige Flure, offene Gänge
-**type:** treppe
+**type:** notwendiger_flur
 **source_paragraph:** §34 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -438,7 +438,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §35 — Fenster, Türen, sonstige Öffnungen
-**type:** treppenraum
+**type:** fensteroffnung
 **source_paragraph:** §35 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -451,7 +451,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §36 — Umwehrungen
-**type:** notwendiger_flur
+**type:** allgemeine_anforderung
 **source_paragraph:** §36 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -462,7 +462,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §37 — Aufzüge
-**type:** fensteroffnung
+**type:** aufzugsanlage
 **source_paragraph:** §37 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -476,7 +476,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §38 — Leitungsanlagen, Installationsschächte und -kanäle
-**type:** allgemeine_anforderung
+**type:** technische_anlage
 **source_paragraph:** §38 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -488,7 +488,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §39 — Lüftungsanlagen
-**type:** aufzugsanlage
+**type:** technische_anlage
 **source_paragraph:** §39 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -529,7 +529,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §42 — Sanitäre Anlagen
-**type:** technische_anlage
+**type:** sanitaerraum
 **source_paragraph:** §42 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -539,7 +539,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §43 — Aufbewahrung fester Abfallstoffe
-**type:** sanitaerraum
+**type:** technische_anlage
 **source_paragraph:** §43 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -559,7 +559,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §44a — Solaranlagen
-**type:** allgemeine_anforderung
+**type:** technische_anlage
 **source_paragraph:** §44a BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -574,7 +574,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §45 — Aufenthaltsräume
-**type:** technische_anlage
+**type:** aufenthaltsraum
 **source_paragraph:** §45 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -587,7 +587,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §46 — Wohnungen
-**type:** technische_anlage
+**type:** wohnung
 **source_paragraph:** §46 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -602,7 +602,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §47 — Stellplätze, Verordnungsermächtigung
-**type:** aufenthaltsraum
+**type:** stellplatzpflicht
 **source_paragraph:** §47 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -613,7 +613,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §48 — Barrierefreies Bauen
-**type:** wohnung
+**type:** barrierefreiheit
 **source_paragraph:** §48 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -626,7 +626,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §49 — Grundpflichten
-**type:** stellplatzpflicht
+**type:** beteiligtenpflicht
 **source_paragraph:** §49 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -636,7 +636,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §50 — Bauherr
-**type:** barrierefreiheit
+**type:** beteiligtenpflicht
 **source_paragraph:** §50 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -647,7 +647,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §51 — Entwurfsverfasser
-**type:** sonderbautyp
+**type:** beteiligtenpflicht
 **source_paragraph:** §51 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -669,7 +669,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §53 — Aufbau und Zuständigkeit der Bauaufsichtsbehörden, Verordnungsermächtigung
-**type:** beteiligtenpflicht
+**type:** behoerdenstruktur
 **source_paragraph:** §53 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -681,7 +681,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §54 — Aufgaben und Befugnisse der Bauaufsichtsbehörden
-**type:** beteiligtenpflicht
+**type:** behoerdenstruktur
 **source_paragraph:** §54 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -696,7 +696,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §55 — Grundsatz
-**type:** verfahrensfreies_vorhaben
+**type:** genehmigungspflicht
 **source_paragraph:** §55 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -707,7 +707,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §56 — Vorrang anderer Gestattungsverfahren
-**type:** beteiligtenpflicht
+**type:** genehmigungspflicht
 **source_paragraph:** §56 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -717,7 +717,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §57 — Verfahrensfreie Bauvorhaben, Beseitigung von Anlagen
-**type:** behoerdenstruktur
+**type:** verfahrensfreies_vorhaben
 **source_paragraph:** §57 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -733,7 +733,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §58 — Genehmigungsfreistellung
-**type:** behoerdenstruktur
+**type:** kenntnisgabeverfahren
 **source_paragraph:** §58 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -746,7 +746,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §59 — Vereinfachtes Baugenehmigungsverfahren
-**type:** genehmigungspflicht
+**type:** vereinfachtes_genehmigungsverfahren
 **source_paragraph:** §59 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -766,7 +766,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §61 — Bauvorlageberechtigung
-**type:** verfahrensfreies_vorhaben
+**type:** beteiligtenpflicht
 **source_paragraph:** §61 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -782,7 +782,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §61a — Bauvorlageberechtigung Staatsangehöriger anderer Mitgliedstaaten
-**type:** bauantrag
+**type:** beteiligtenpflicht
 **source_paragraph:** §61a BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -799,7 +799,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §61b — Bauvorlageberechtigung auswärtiger Dienstleister
-**type:** bauantrag
+**type:** beteiligtenpflicht
 **source_paragraph:** §61b BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -848,7 +848,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §63 — Abweichungen
-**type:** vereinfachtes_genehmigungsverfahren
+**type:** abweichung
 **source_paragraph:** §63 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -860,7 +860,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §64 — Bauantrag, Bauvorlagen
-**type:** genehmigungspflicht
+**type:** bauantrag
 **source_paragraph:** §64 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -873,7 +873,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §65 — Behandlung des Bauantrags
-**type:** beteiligtenpflicht
+**type:** bauantrag
 **source_paragraph:** §65 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -885,7 +885,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §66 — Beteiligung des Nachbarn
-**type:** bauantrag
+**type:** nachbarbenachrichtigung
 **source_paragraph:** §66 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -908,7 +908,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §67 — Ersetzung des gemeindlichen Einvernehmens
-**type:** abweichung
+**type:** baugenehmigung
 **source_paragraph:** §67 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -921,7 +921,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §68 — Baugenehmigung, Genehmigungsfiktion und Baubeginn
-**type:** bauantrag
+**type:** baugenehmigung
 **source_paragraph:** §68 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -949,7 +949,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §70 — Teilbaugenehmigung
-**type:** nachbarbenachrichtigung
+**type:** baugenehmigung
 **source_paragraph:** §70 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -959,7 +959,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §71 — Vorbescheid
-**type:** baugenehmigung
+**type:** bauvorbescheid
 **source_paragraph:** §71 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -985,7 +985,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §73 — Bauaufsichtliche Zustimmung
-**type:** baugenehmigung
+**type:** besonderes_verfahren
 **source_paragraph:** §73 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1024,7 +1024,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §75 — Einstellung von Arbeiten
-**type:** bauvorbescheid
+**type:** bauueberwachung
 **source_paragraph:** §75 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1035,7 +1035,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §76 — Beseitigung von Anlagen, Nutzungsuntersagung
-**type:** besonderes_verfahren
+**type:** sanktion
 **source_paragraph:** §76 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1045,7 +1045,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §77 — Bauüberwachung
-**type:** besonderes_verfahren
+**type:** bauueberwachung
 **source_paragraph:** §77 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1060,7 +1060,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §78 — Bauzustandsanzeigen, Aufnahme der Nutzung
-**type:** bauproduktzulassung
+**type:** baubeginn
 **source_paragraph:** §78 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1072,7 +1072,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §79 — Ordnungswidrigkeiten
-**type:** bauueberwachung
+**type:** sanktion
 **source_paragraph:** §79 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1083,7 +1083,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §80 — Rechtsverordnungen
-**type:** sanktion
+**type:** ermaechtigungsgrundlage
 **source_paragraph:** §80 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1099,7 +1099,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §80a — Digitale Baugenehmigung, digitale Verfahren
-**type:** bestandsschutz
+**type:** baugenehmigung
 **source_paragraph:** §80a BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1109,7 +1109,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §81 — Örtliche Bauvorschriften
-**type:** bauueberwachung
+**type:** oertliche_bauvorschrift
 **source_paragraph:** §81 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1134,7 +1134,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §82 — Windenergie und Nutzungsänderung ehemaliger landwirtschaftlicher Gebäude
-**type:** baubeginn
+**type:** abstandsflaeche_sonderfall
 **source_paragraph:** §82 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1149,7 +1149,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §82a — Feste Abstandsvorschriften für Windenergieanlagen
-**type:** abstandsflaeche
+**type:** abstandsflaeche_sonderfall
 **source_paragraph:** §82a BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1159,7 +1159,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §82b — Windenergiegebiete
-**type:** ermaechtigungsgrundlage
+**type:** abstandsflaeche_sonderfall
 **source_paragraph:** §82b BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1181,7 +1181,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §83 — Übergangsvorschriften
-**type:** sicherheitsleistung
+**type:** schlussvorschrift
 **source_paragraph:** §83 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |
@@ -1198,7 +1198,7 @@ One row per Absatz. Node types sourced from existing inventory._
 ---
 
 ### §84 — Inkrafttreten
-**type:** sanktion
+**type:** schlussvorschrift
 **source_paragraph:** §84 BayBO
 
 | Nr. | Regeltext (BayBO-Wortlaut) |

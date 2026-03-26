@@ -1,593 +1,297 @@
 {
   "state": "BauO_NRW",
-  "generated": "2026-03-17",
+  "generated": "2026-03-26",
   "thresholds": {
     "auto": 0.85,
     "review": 0.5
   },
-  "mapping": {},
-  "review": [],
-  "unmatched": [
-    {
-      "state_para": "1",
-      "state_title": "Absatz 1",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "2",
-      "state_title": "Begriffe",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "4",
-      "state_title": "Absatz 2",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "5",
-      "state_title": "Zugänge und Zufahrten auf den Grundstück",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "6",
-      "state_title": "Abstandsflächen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "7",
-      "state_title": "Teilung von Grundstücken",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "8",
-      "state_title": "Nicht überbaute Flächen der bebauten Grundstücke, Kinderspielplätze",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "9",
-      "state_title": "Gestaltung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "10",
-      "state_title": "Anlagen der Außenwerbung, Warenautomaten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "11",
-      "state_title": "Baustelle",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "12",
-      "state_title": "Standsicherheit",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "13",
-      "state_title": "geändert durch Gesetz vom 31. Oktober 20",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "15",
-      "state_title": "Wärme-, Schall-, Erschütterungsschutz",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "16",
-      "state_title": "Verkehrssicherheit",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "17",
-      "state_title": "Bauarten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "18",
-      "state_title": "Allgemeine Anforderungen für die Verwend",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "20",
-      "state_title": "Verwendbarkeitsnachweise",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "21",
-      "state_title": "Absatz 4",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "22",
-      "state_title": "Absatz 2",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "23",
-      "state_title": "Absatz 2 neu gefasst durch Gesetz vom 31",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
+  "mapping": {
+    "2": "2",
+    "5": "5",
+    "6": "6",
+    "7": "7",
+    "8": "8",
+    "9": "9",
+    "10": "10",
+    "11": "11",
+    "12": "12",
+    "15": "15",
+    "16": "16",
+    "17": "16a",
+    "18": "16b",
+    "20": "17",
+    "25": "24",
+    "27": "27",
+    "29": "29",
+    "30": "30",
+    "31": "31",
+    "36": "36",
+    "37": "37",
+    "38": "38",
+    "39": "39",
+    "40": "40",
+    "41": "41",
+    "43": "43",
+    "44": "45",
+    "45": "46",
+    "47": "48",
+    "48": "49",
+    "49": "50",
+    "53": "53",
+    "55": "55",
+    "56": "56",
+    "57": "57",
+    "58": "58",
+    "60": "59",
+    "61": "60",
+    "62": "61",
+    "63": "62",
+    "66": "72a",
+    "67": "65",
+    "69": "67",
+    "70": "68",
+    "71": "69",
+    "73": "71",
+    "74": "72",
+    "76": "74",
+    "78": "76",
+    "80": "78",
+    "81": "79",
+    "82": "80",
+    "83": "81",
+    "86": "84"
+  },
+  "review": [
     {
       "state_para": "24",
       "state_title": "Übereinstimmungsbestätigung und -erkläru",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "25",
-      "state_title": "Prüf-, Zertifizierungs- und Überwachungs",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "21",
+      "mbo_title": "Übereinstimmungsbestätigung",
+      "score": 0.817,
+      "flag": "low_confidence"
     },
     {
       "state_para": "26",
       "state_title": "Allgemeine Anforderungen an das Brandverhalten von Baustoffen und Bauteilen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "27",
-      "state_title": "Tragende Wände, Stützen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "28",
-      "state_title": "Absatz 5",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "29",
-      "state_title": "Trennwände",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "30",
-      "state_title": "Brandwände",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "31",
-      "state_title": "Decken",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "32",
-      "state_title": "Absatz 5",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "33",
-      "state_title": "Absatz 1",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "34",
-      "state_title": "Absatz 5, § 35 Absatz 1, § 54 Absatz 1 u",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "36",
-      "state_title": "Notwendige Flure, offene Gänge",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "37",
-      "state_title": "Fenster, Türen, sonstige Öffnungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "38",
-      "state_title": "Umwehrungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "39",
-      "state_title": "Aufzüge",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "40",
-      "state_title": "Leitungsanlagen, Installationsschächte u",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "41",
-      "state_title": "Lüftungsanlagen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "26",
+      "mbo_title": "Allgemeine Anforderungen an das Brandver",
+      "score": 0.796,
+      "flag": "low_confidence"
     },
     {
       "state_para": "42",
       "state_title": "Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung und zurEnergiebereitstellung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "42a",
-      "state_title": "neu eingefügt durch Gesetz vom 31. Oktob",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "43",
-      "state_title": "Sanitäre Anlagen, Wasserzähler",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "44",
-      "state_title": "Aufbewahrung fester Abfallstoffe",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "46",
-      "state_title": "Absatz 1 und 2",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "47",
-      "state_title": "Wohnungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "48",
-      "state_title": "Stellplätze, Garagen und Fahrradabstellplätze",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "49",
-      "state_title": "Barrierefreies Bauen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "42",
+      "mbo_title": "Feuerungsanlagen, sonstige Anlagen zur W",
+      "score": 0.745,
+      "flag": "low_confidence"
     },
     {
       "state_para": "50",
       "state_title": "Sonderbauten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "76",
+      "mbo_title": "Fliegende Bauten",
+      "score": 0.643,
+      "flag": "low_confidence"
     },
     {
       "state_para": "51",
       "state_title": "Behelfsbauten und untergeordnete Gebäude",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "52",
-      "state_title": "geändert durch Gesetz vom 31. Oktober 20",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "53",
-      "state_title": "Bauherrschaft",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "54",
-      "state_title": "Absatz 2, 3 und 4",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "55",
-      "state_title": "Unternehmen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "56",
-      "state_title": "Bauleitende",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "57",
-      "state_title": "Aufbau und Zuständigkeit der Bauaufsichtsbehörden",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "58",
-      "state_title": "Aufgaben und Befugnisse der Bauaufsichtsbehörden",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "4",
+      "mbo_title": "Bebauung der Grundstücke mit Gebäuden",
+      "score": 0.525,
+      "flag": "low_confidence"
     },
     {
       "state_para": "59",
       "state_title": "Bestehende Anlagen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "60",
-      "state_title": "Grundsatz",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "61",
-      "state_title": "Vorrang anderer Gestattungsverfahren",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "62",
-      "state_title": "Verfahrensfreie Bauvorhaben, Beseitigung von Anlagen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "63",
-      "state_title": "Genehmigungsfreistellung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "64",
-      "state_title": "und § 66 neu gefasst durch Gesetz vom 30",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "46",
+      "mbo_title": "Blitzschutzanlagen",
+      "score": 0.556,
+      "flag": "low_confidence"
     },
     {
       "state_para": "65",
       "state_title": "Baugenehmigungsverfahren",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "66",
-      "state_title": "Typengenehmigung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "67",
-      "state_title": "Bauvorlageberechtigung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "69",
-      "state_title": "Abweichungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "70",
-      "state_title": "Bauantrag, Bauvorlagen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "71",
-      "state_title": "Behandlung des Bauantrags",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "63",
+      "mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "score": 0.774,
+      "flag": "low_confidence"
     },
     {
       "state_para": "72",
       "state_title": "Beteiligung der Nachbarinnen und Nachbarn und der Öffentlichkeit",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "73",
-      "state_title": "Ersetzen des gemeindlichen Einvernehmens",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "74",
-      "state_title": "Baugenehmigung, Baubeginn",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "75",
-      "state_title": "Absatz 2",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "76",
-      "state_title": "Teilbaugenehmigung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "78",
-      "state_title": "Fliegende Bauten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "79",
-      "state_title": "ein:",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "81",
-      "state_title": "Einstellung von Arbeiten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "82",
-      "state_title": "Beseitigung von Anlagen, Nutzungsuntersagung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "83",
-      "state_title": "Bauüberwachung",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "84",
-      "state_title": "Absatz 2 und 5",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "85",
-      "state_title": "Absatz 2, 3 und 5",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
-    },
-    {
-      "state_para": "86",
-      "state_title": "Ordnungswidrigkeiten",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "70",
+      "mbo_title": "Beteiligung der Nachbarn und der Öffentl",
+      "score": 0.774,
+      "flag": "low_confidence"
     },
     {
       "state_para": "87",
       "state_title": "Rechtsverordnungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "85",
+      "mbo_title": "Rechtsvorschriften",
+      "score": 0.611,
+      "flag": "low_confidence"
     },
     {
       "state_para": "88",
       "state_title": "Technische Baubestimmungen",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "mbo_para": "66",
+      "mbo_title": "Bautechnische Nachweise",
+      "score": 0.612,
+      "flag": "low_confidence"
     },
     {
       "state_para": "89",
-      "state_title": "bleibt unberührt.",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "state_title": "bleibt unberührt",
+      "mbo_para": "56",
+      "mbo_title": "Bauleiter",
+      "score": 0.538,
+      "flag": "low_confidence"
     },
     {
       "state_para": "90",
-      "state_title": "Übergangsvorschriften Erster Teil Allgem",
-      "best_mbo_para": "",
-      "best_mbo_title": "",
-      "best_score": 0.0
+      "state_title": "Übergangsvorschriften",
+      "mbo_para": "87",
+      "mbo_title": "Inkrafttreten, Übergangsvorschriften",
+      "score": 0.759,
+      "flag": "low_confidence"
+    }
+  ],
+  "unmatched": [
+    {
+      "state_para": "1",
+      "state_title": "Absatz 1",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "4",
+      "state_title": "Absatz 2",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "13",
+      "state_title": "geändert durch Gesetz vom 31. Oktober 20",
+      "best_mbo_para": "27",
+      "best_mbo_title": "Tragende Wände, Stützen",
+      "best_score": 0.406
+    },
+    {
+      "state_para": "21",
+      "state_title": "Absatz 4",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "22",
+      "state_title": "Absatz 2",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "23",
+      "state_title": "Absatz 2 neu gefasst durch Gesetz vom 31",
+      "best_mbo_para": "16c",
+      "best_mbo_title": "Anforderungen für die Verwendung von CE",
+      "best_score": 0.375
+    },
+    {
+      "state_para": "28",
+      "state_title": "Absatz 5",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "32",
+      "state_title": "Absatz 5",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "33",
+      "state_title": "Absatz 1",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "34",
+      "state_title": "Absatz 5, § 35 Absatz 1, § 54 Absatz 1 u",
+      "best_mbo_para": "49",
+      "best_mbo_title": "Stellplätze, Garagen und Abstellplätze f",
+      "best_score": 0.347
+    },
+    {
+      "state_para": "42a",
+      "state_title": "neu eingefügt durch Gesetz vom 31. Oktob",
+      "best_mbo_para": "16c",
+      "best_mbo_title": "Anforderungen für die Verwendung von CE",
+      "best_score": 0.425
+    },
+    {
+      "state_para": "46",
+      "state_title": "Absatz 1 und 2",
+      "best_mbo_para": "28",
+      "best_mbo_title": "Außenwände",
+      "best_score": 0.385
+    },
+    {
+      "state_para": "52",
+      "state_title": "geändert durch Gesetz vom 31. Oktober 20",
+      "best_mbo_para": "27",
+      "best_mbo_title": "Tragende Wände, Stützen",
+      "best_score": 0.406
+    },
+    {
+      "state_para": "54",
+      "state_title": "Absatz 2, 3 und 4",
+      "best_mbo_para": "28",
+      "best_mbo_title": "Außenwände",
+      "best_score": 0.357
+    },
+    {
+      "state_para": "64",
+      "state_title": "und § 66 neu gefasst durch Gesetz vom 30",
+      "best_mbo_para": "58",
+      "best_mbo_title": "Aufgaben und Befugnisse der Bauaufsichts",
+      "best_score": 0.359
+    },
+    {
+      "state_para": "75",
+      "state_title": "Absatz 2",
+      "best_mbo_para": "59",
+      "best_mbo_title": "Grundsatz",
+      "best_score": 0.471
+    },
+    {
+      "state_para": "79",
+      "state_title": "ein",
+      "best_mbo_para": "31",
+      "best_mbo_title": "Decken",
+      "best_score": 0.444
+    },
+    {
+      "state_para": "84",
+      "state_title": "Absatz 2 und 5",
+      "best_mbo_para": "28",
+      "best_mbo_title": "Außenwände",
+      "best_score": 0.385
+    },
+    {
+      "state_para": "85",
+      "state_title": "Absatz 2, 3 und 5",
+      "best_mbo_para": "28",
+      "best_mbo_title": "Außenwände",
+      "best_score": 0.357
     }
   ]
 }

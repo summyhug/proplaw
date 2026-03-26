@@ -1,0 +1,254 @@
+{
+  "state": "BW_LBO",
+  "generated": "2026-03-25",
+  "thresholds": {
+    "auto": 0.85,
+    "review": 0.5
+  },
+  "mapping": {
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "6": "6",
+    "8": "7",
+    "11": "9",
+    "12": "11",
+    "13": "12",
+    "15": "14",
+    "16": "16",
+    "27": "27",
+    "27a": "28",
+    "27b": "29",
+    "27c": "30",
+    "27d": "31",
+    "27e": "32",
+    "28": "34",
+    "28a": "35",
+    "28b": "36",
+    "28c": "37",
+    "34": "47",
+    "35": "48",
+    "52": "63",
+    "57": "75",
+    "58": "74",
+    "74": "86",
+    "75": "84"
+  },
+  "review": [
+    {
+      "state_para": "5",
+      "state_title": "Abstandsflächen",
+      "mbo_para": "6",
+      "mbo_title": "Abstandsflächen, Abstände",
+      "score": 0.762,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "7",
+      "state_title": "Übernahme von Abständen auf Nachbargrundstücke",
+      "mbo_para": "5",
+      "mbo_title": "Zugänge und Zufahrten auf den Grundstück",
+      "score": 0.527,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "9",
+      "state_title": "Nichtüberbaute Flächen, Kinderspielplätze",
+      "mbo_para": "8",
+      "mbo_title": "Nicht überbaute Flächen der bebauten Gru",
+      "score": 0.729,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "10",
+      "state_title": "Höhenlage des Grundstücks",
+      "mbo_para": "5",
+      "mbo_title": "Zugänge und Zufahrten auf den Grundstück",
+      "score": 0.551,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "14",
+      "state_title": "Schutz baulicher Anlagen",
+      "mbo_para": "46",
+      "mbo_title": "Blitzschutzanlagen",
+      "score": 0.619,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "29",
+      "state_title": "Aufzugsanlagen",
+      "mbo_para": "41",
+      "mbo_title": "Lüftungsanlagen",
+      "score": 0.8,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "36",
+      "state_title": "Toilettenräume und Bäder",
+      "mbo_para": "35",
+      "mbo_title": "Notwendige Treppenräume, Ausgänge",
+      "score": 0.567,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "38",
+      "state_title": "Sonderbauten",
+      "mbo_para": "76",
+      "mbo_title": "Fliegende Bauten",
+      "score": 0.643,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "39",
+      "state_title": "Barrierefreie Anlagen",
+      "mbo_para": "50",
+      "mbo_title": "Barrierefreies Bauen",
+      "score": 0.829,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "40",
+      "state_title": "Gemeinschaftsanlagen",
+      "mbo_para": "46",
+      "mbo_title": "Blitzschutzanlagen",
+      "score": 0.632,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "49",
+      "state_title": "Genehmigungspflichtige Vorhaben",
+      "mbo_para": "72",
+      "mbo_title": "Baugenehmigung, Baubeginn",
+      "score": 0.582,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "50",
+      "state_title": "Verfahrensfreie Vorhaben",
+      "mbo_para": "61",
+      "mbo_title": "Verfahrensfreie Bauvorhaben, Beseitigung",
+      "score": 0.762,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "51",
+      "state_title": "Kenntnisgabeverfahren",
+      "mbo_para": "54",
+      "mbo_title": "Entwurfsverfasser",
+      "score": 0.526,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "53",
+      "state_title": "Bauvorlagen und Bauantrag",
+      "mbo_para": "69",
+      "mbo_title": "Behandlung des Bauantrags",
+      "score": 0.64,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "54",
+      "state_title": "Fristen im Genehmigungsverfahren",
+      "mbo_para": "63",
+      "mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "score": 0.714,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "55",
+      "state_title": "Benachrichtigung der Nachbarn",
+      "mbo_para": "70",
+      "mbo_title": "Beteiligung der Nachbarn und der Öffentl",
+      "score": 0.6,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "56",
+      "state_title": "Abweichungen, Ausnahmen und Befreiungen",
+      "mbo_para": "70",
+      "mbo_title": "Beteiligung der Nachbarn und der Öffentl",
+      "score": 0.532,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "59",
+      "state_title": "Baubeginn",
+      "mbo_para": "16a",
+      "mbo_title": "Bauarten",
+      "score": 0.588,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "60",
+      "state_title": "Sicherheitsleistung",
+      "mbo_para": "12",
+      "mbo_title": "Standsicherheit",
+      "score": 0.588,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "68",
+      "state_title": "Typengenehmigung, Typenprüfung",
+      "mbo_para": "72a",
+      "mbo_title": "MBO Typengenehmigung",
+      "score": 0.64,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "73",
+      "state_title": "Rechtsverordnungen",
+      "mbo_para": "85",
+      "mbo_title": "Rechtsvorschriften",
+      "score": 0.611,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "73a",
+      "state_title": "Technische Baubestimmungen",
+      "mbo_para": "66",
+      "mbo_title": "Bautechnische Nachweise",
+      "score": 0.612,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "76",
+      "state_title": "Bestehende bauliche Anlagen",
+      "mbo_para": "69",
+      "mbo_title": "Behandlung des Bauantrags",
+      "score": 0.538,
+      "flag": "low_confidence"
+    }
+  ],
+  "unmatched": [
+    {
+      "state_para": "26",
+      "state_title": "Brandverhalten von Baustoffen und Bauteilen",
+      "best_mbo_para": "83",
+      "best_mbo_title": "Baulasten, Baulastenverzeichnis",
+      "best_score": 0.466
+    },
+    {
+      "state_para": "27f",
+      "state_title": "Nutzungsänderungen im Bestand (tragende Bauteile)",
+      "best_mbo_para": "42",
+      "best_mbo_title": "Feuerungsanlagen, sonstige Anlagen zur W",
+      "best_score": 0.483
+    },
+    {
+      "state_para": "28d",
+      "state_title": "Nutzungsänderungen bei Bauteilen im Bestand",
+      "best_mbo_para": "42",
+      "best_mbo_title": "Feuerungsanlagen, sonstige Anlagen zur W",
+      "best_score": 0.458
+    },
+    {
+      "state_para": "37",
+      "state_title": "Stellplätze für Kraftfahrzeuge und Fahrräder, Garagen",
+      "best_mbo_para": "5",
+      "best_mbo_title": "Zugänge und Zufahrten auf den Grundstück",
+      "best_score": 0.412
+    }
+  ]
+}

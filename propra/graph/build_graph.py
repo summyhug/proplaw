@@ -14,6 +14,7 @@ Usage:
 """
 
 import argparse
+import importlib
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -27,7 +28,7 @@ from propra.graph.visualize import export_graphml
 from propra.graph.mbo_section_edges import edges as mbo_section_edges
 from propra.graph.references_edges import references_edges
 from propra.graph.state_structural_edges import state_structural_edges
-from propra.graph.bbgbo_section_edges import edges as bbgbo_section_edges
+from propra.graph.state_mbo_edges import state_edges_from_mbo
 
 _DATA = Path(__file__).parent.parent / "data"
 _NODE_INVENTORY_DIR = "node inventory"
@@ -154,7 +155,7 @@ _STATE_REGISTRY = [
     {
         "name": "BW_LBO",
         "full_name": "Landesbauordnung für Baden-Württemberg (LBO BW)",
-        "inventory": "BW_LBO_node_inventory.md",
+        "inventory": "BW_LBO_node_inventory_fine.md",
         "prefix": "BW_LBO_",
         "source_suffix": "BW_LBO",
         "jurisdiction": "DE-BW",
@@ -278,6 +279,59 @@ _SECTION_ANCHORS = {
     "86": ("Örtliche Bauvorschriften", "oertliche_bauvorschrift"),
     "87": ("Übergangsvorschriften", "schlussvorschrift"),
 }
+
+_ORDINAL_PART_WORDS = (
+    "Erster",
+    "Zweiter",
+    "Dritter",
+    "Vierter",
+    "Fünfter",
+    "Sechster",
+    "Siebter",
+    "Achter",
+    "Neunter",
+    "Zehnter",
+    "Elfter",
+    "Zwölfter",
+    "Dreizehnter",
+    "Vierzehnter",
+    "Fünfzehnter",
+    "Sechzehnter",
+    "Siebzehnter",
+    "Achtzehnter",
+    "Neunzehnter",
+    "Zwanzigster",
+)
+_ORDINAL_PART_PATTERN = "|".join(_ORDINAL_PART_WORDS)
+_HEADING_ONLY_RE = re.compile(
+    rf"""
+    ^(?:
+        (?:{_ORDINAL_PART_PATTERN})\s+Teil\b.*|
+        Teil\s+\d+[a-z]?\b.*|
+        Abschnitt\s+(?:[IVXLCDM]+|\d+[a-z]?)\b.*|
+        Kapitel\s+(?:[IVXLCDM]+|\d+[a-z]?)\b.*|
+        §§\s*\d+[a-z]?\s*(?:[-–]\s*\d+[a-z]?)?(?:\s*,\s*|\s+)
+            (?:
+                (?:{_ORDINAL_PART_PATTERN})\s+Teil|
+                Teil\s+\d+[a-z]?|
+                Abschnitt\s+(?:[IVXLCDM]+|\d+[a-z]?)|
+                Kapitel\s+(?:[IVXLCDM]+|\d+[a-z]?)
+            )\b.*
+    )$
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
+_TEXT_ARTIFACT_PATTERNS = (
+    re.compile(
+        r"\s*(?:©\s*\d{4}\s+)?(?:(?:Wolters|ters)\s+Kluwer\s+)?Deutschland GmbH \d+\s*/\s*\d+\s+gespeichert:\s*\d{2}\.\d{2}\.\d{4},\s*\d{2}:\d{2}\s*Uhr\s*",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\s*2130-1\s+\d+\s*"),
+    re.compile(r"\s*Seite\s+\d+\s+von\s+\d+\s*", re.IGNORECASE),
+)
+_EMBEDDED_PAGE_MARKER_RE = re.compile(
+    r"(?<=[A-Za-zÄÖÜäöüß])\s*2130-1\s+\d+\s*(?=[A-Za-zÄÖÜäöüß])"
+)
 
 
 def _para_number_from_source(source_paragraph: str) -> str | None:
@@ -404,6 +458,130 @@ def _apply_edges(G: nx.DiGraph, edge_list: list, label: str) -> None:
     print(f"  {label}: {len(edge_list)} edges  {status}")
 
 
+def _has_mbo_content_nodes(G: nx.DiGraph) -> bool:
+    """Return True when the graph contains real MBO content nodes, not just anchors."""
+    for nid in G.nodes():
+        if nid.startswith("MBO_§") and "_" in nid[len("MBO_"):]:
+            return True
+    return False
+
+
+def _is_pure_heading_text(text: str) -> bool:
+    """Return True when a row is only a carried-over legal heading, not rule text."""
+    normalized = re.sub(r"\s+", " ", (text or "")).strip(" .;:-")
+    if not normalized:
+        return False
+    return bool(_HEADING_ONLY_RE.match(normalized))
+
+
+def _strip_known_text_artifacts(text: str) -> str:
+    """Remove vendor/page artifacts that leaked into inventory text."""
+    cleaned = text or ""
+    cleaned = _EMBEDDED_PAGE_MARKER_RE.sub("", cleaned)
+    for pattern in _TEXT_ARTIFACT_PATTERNS:
+        cleaned = pattern.sub(" ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    cleaned = re.sub(r"\s+([,.;:!?])", r"\1", cleaned)
+    cleaned = re.sub(r"([(\[])\s+", r"\1", cleaned)
+    cleaned = re.sub(r"\s+([)\]])", r"\1", cleaned)
+    return cleaned.strip()
+
+
+def _clean_text_artifacts(G: nx.DiGraph) -> int:
+    """Normalize known OCR/vendor artifacts out of section-content text."""
+    cleaned_count = 0
+    for nid, data in G.nodes(data=True):
+        if not re.match(r"^.+_§\d+[a-z]?_", nid):
+            continue
+        text = data.get("text", "")
+        cleaned = _strip_known_text_artifacts(text)
+        if cleaned == text:
+            continue
+        G.nodes[nid]["text"] = cleaned
+        cleaned_count += 1
+    return cleaned_count
+
+
+def _prune_empty_content_nodes(G: nx.DiGraph) -> int:
+    """Remove content nodes that become empty or non-lexical after cleanup."""
+    removed = 0
+    for nid, data in list(G.nodes(data=True)):
+        if not re.match(r"^.+_§\d+[a-z]?_", nid):
+            continue
+        text = (data.get("text") or "").strip()
+        if re.search(r"[A-Za-zÄÖÜäöüß]", text):
+            continue
+        G.remove_node(nid)
+        removed += 1
+    return removed
+
+
+def _prune_heading_content_nodes(G: nx.DiGraph) -> int:
+    """Remove section-content nodes that are only inventory heading carry-overs."""
+    removed = 0
+    for nid, data in list(G.nodes(data=True)):
+        if not re.match(r"^.+_§\d+[a-z]?_", nid):
+            continue
+        if not _is_pure_heading_text(data.get("text", "")):
+            continue
+        G.remove_node(nid)
+        removed += 1
+    return removed
+
+
+def _strip_trailing_heading_text(text: str) -> str:
+    """Drop a trailing heading fragment from otherwise valid rule text."""
+    normalized = re.sub(r"\s+", " ", (text or "")).strip()
+    if not normalized:
+        return normalized
+
+    match = re.match(r"^(?P<content>.+[.!?])\s+(?P<heading>.+)$", normalized)
+    if not match:
+        return normalized
+
+    heading = match.group("heading").strip(" .;:-")
+    if not _is_pure_heading_text(heading):
+        return normalized
+    return match.group("content").strip()
+
+
+def _trim_heading_tails(G: nx.DiGraph) -> int:
+    """Trim stray heading suffixes from content nodes before text-reference parsing."""
+    trimmed = 0
+    for nid, data in G.nodes(data=True):
+        if not re.match(r"^.+_§\d+[a-z]?_", nid):
+            continue
+        text = data.get("text", "")
+        cleaned = _strip_trailing_heading_text(text)
+        if cleaned == text:
+            continue
+        G.nodes[nid]["text"] = cleaned
+        trimmed += 1
+    return trimmed
+
+
+def _section_edges_module_name(state_name: str) -> str:
+    """Return the conventional module name for a state's curated section-edge file."""
+    return f"propra.graph.{state_name.lower()}_section_edges"
+
+
+def _load_curated_state_edges(cfg: dict) -> list | None:
+    """
+    Load a curated state section-edge module if one exists.
+
+    Convention:
+      BbgBO    -> propra.graph.bbgbo_section_edges
+      BayBO    -> propra.graph.baybo_section_edges
+      BauO_BE  -> propra.graph.bauo_be_section_edges
+    """
+    module_name = cfg.get("section_edges_module") or _section_edges_module_name(cfg["name"])
+    try:
+        module = importlib.import_module(module_name)
+    except ModuleNotFoundError:
+        return None
+    return module.edges()
+
+
 def build() -> nx.DiGraph:
     """Build the core graph and save to graph.pkl / graph.graphml."""
     print("=== Propra — Core graph build ===\n")
@@ -504,14 +682,34 @@ def build() -> nx.DiGraph:
 
     # 3. Domain edges
     print("\nDomain edges:")
-    _apply_edges(G, mbo_section_edges(), "MBO section (§1 exclusions)")
+    if _has_mbo_content_nodes(G):
+        _apply_edges(G, mbo_section_edges(), "MBO section (§1 exclusions)")
+    else:
+        print("  MBO section (§1 exclusions): skipped (no MBO content nodes loaded)")
     for cfg in _STATE_REGISTRY:
-        # BbgBO structural edges are inside bbgbo_section_edges (supplements + sub_item_of)
-        if cfg["name"] != "BbgBO":
-            edges = state_structural_edges(G, cfg["prefix"])
-            _apply_edges(G, edges, f"{cfg['name']} structural (sub_item_of)")
-        if cfg["name"] == "BbgBO":
-            _apply_edges(G, bbgbo_section_edges(), f"{cfg['name']} section (structural + domain)")
+        curated_edges = _load_curated_state_edges(cfg)
+        if curated_edges is not None:
+            _apply_edges(G, curated_edges, f"{cfg['name']} section (curated structural + domain)")
+            continue
+
+        structural_edges = state_structural_edges(G, cfg["prefix"])
+        _apply_edges(G, structural_edges, f"{cfg['name']} structural (sub_item_of)")
+
+        mapped_edges = state_edges_from_mbo(G, cfg["prefix"])
+        if mapped_edges:
+            _apply_edges(G, mapped_edges, f"{cfg['name']} from MBO (mapping)")
+    cleaned_artifacts = _clean_text_artifacts(G)
+    if cleaned_artifacts:
+        print(f"  text artifacts stripped from content rows: {cleaned_artifacts}")
+    pruned_empty = _prune_empty_content_nodes(G)
+    if pruned_empty:
+        print(f"  empty/non-lexical content rows pruned: {pruned_empty}")
+    pruned_headings = _prune_heading_content_nodes(G)
+    if pruned_headings:
+        print(f"  heading-only content rows pruned: {pruned_headings}")
+    trimmed_heading_tails = _trim_heading_tails(G)
+    if trimmed_heading_tails:
+        print(f"  heading tails trimmed from content rows: {trimmed_heading_tails}")
     ref_edges = references_edges(G)
     _apply_edges(G, ref_edges, "references (from text)")
 

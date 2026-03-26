@@ -1,4 +1,4 @@
-# LBauO_RLP — Node Inventory (Sentence / List-Item Level)
+# LBauO RLP — Node Inventory (Sentence / List-Item Level)
 
 _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One row per sentence or numbered list item._
 
@@ -6,13 +6,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** anwendungsbereich
 **source_paragraph:** §1 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Dieses Gesetz gilt für bauliche Anlagen und Bauprodukte. |
-| 1.2 | Es gilt auch für bebaute und bebaubare Grundstücke sowie für an. |
-| 2.1 | Dieses Gesetz gilt nicht für. |
+| 1.2 | Es gilt auch für bebaute und bebaubare Grundstücke sowie für andere Anlagen und Einrichtungen, an die in diesem Gesetz oder in Vorschriften aufgrund dieses Gesetzes Anforderungen gestellt werden. |
+| 2.1 | Dieses Gesetz gilt nicht für |
 | 2.2 | 1. Anlagen des öffentlichen Verkehrs und ihre Nebenanlagen, mit Ausnahme von Gebäuden |
-| 2.3 | 2. A |
+| 2.3 | 2. Anlagen, die der Bergaufsicht unterliegen, mit Ausnahme von oberirdischen Gebäuden |
+| 2.4 | 3. Leitungen, die der öffentlichen Versorgung mit Wasser, Gas, Elektrizität, Wärme, der öffentlichen Abwasserbeseitigung oder dem Fernmeldewesen dienen |
+| 2.5 | 4. Rohrleitungen, die dem Ferntransport von Stoffen dienen |
+| 2.6 | 5. Krane, mit Ausnahme von Kranbahnen und deren Unterstützungen |
 
 ---
 
@@ -20,21 +23,40 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** begriffsbestimmung
 **source_paragraph:** §2 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauliche Anlagen sind mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlagen. |
-| 1.2 | Eine Verbindung mit dem Erdbod. |
-| 2.1 | Gebäude sind selbständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet o. |
+| 1.1 | Bauliche Anlagen sind mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlagen. Eine Verbindung mit dem Erdboden besteht auch dann, wenn die Anlage durch eigene Schwere auf dem Boden ruht oder wenn sie nach ihrem Verwendungszweck dazu bestimmt ist, überwiegend ortsfest benutzt zu werden. Als bauliche Anlagen gelten auch |
+| 1.2 | 1. Aufschüttungen und Abgrabungen |
+| 1.3 | 2. Lager-, Abstell-, Aufstell- und Ausstellungsplätze |
+| 1.4 | 3. Camping- und Wochenendplätze |
+| 1.5 | 4. Stellplätze |
+| 1.6 | 5. Sport- und Spielplätze |
+| 1.7 | 6. Schiffe und sonstige schwimmfähige Anlagen, die ortsfest benutzt werden und dem Wohnen oder gewerblichen, sportlichen oder ähnlichen Zwecken dienen |
+| 1.8 | 7. Gerüste |
+| 1.9 | 8. Hilfseinrichtungen zur statischen Sicherung von Bauzuständen |
+| 2.1 | Gebäude sind selbständig benutzbare, überdeckte bauliche Anlagen, die von Menschen betreten werden können und geeignet oder bestimmt sind, dem Schutz von Menschen, Tieren oder Sachen zu dienen. Sie werden in folgende Gebäudeklassen eingeteilt |
+| 2.2 | 1. Gebäudeklasse 1 Freistehende Wohngebäude mit einer Wohnung in nicht mehr als zwei Geschossen, andere freistehende Gebäude ähnlicher Größe, freistehende land- oder forstwirtschaftliche Betriebsgebäude |
+| 2.3 | 2. Gebäudeklasse 2 Gebäude, bei denen der Fußboden keines Geschosses, in dem Aufenthaltsräume möglich sind, im Mittel mehr als 7 m über der Geländeoberfläche liegt a) mit nicht mehr als zwei Wohnungen b) mit drei Wohnungen in freistehenden Gebäuden in Hanglage, wenn die dritte Wohnung im untersten Geschoss liegt und ihren Zugang unmittelbar vom Freien aus hat. An die Stelle der Wohnungen nach Satz 2 Nr. 2 können jeweils sonstige Nutzungseinheiten treten, wenn die Nutzfläche des Gebäudes insgesamt 400 m² nicht überschreitet |
+| 2.4 | 3. Gebäudeklasse 3 Gebäude, bei denen der Fußboden keines Geschosses, in dem Aufenthaltsräume möglich sind, im Mittel mehr als 7 m über der Geländeoberfläche liegt |
+| 2.5 | 4. Gebäudeklasse 4 Gebäude, bei denen der Fußboden keines Geschosses, in dem Aufenthaltsräume möglich sind, im Mittel mehr als 13 m über der Geländeoberfläche liegt |
+| 2.6 | 5. Gebäudeklasse 5 Sonstige Gebäude |
 | 3.1 | Hochhäuser sind Gebäude, bei denen der Fußboden eines Aufenthaltsraums mehr als 22 m über der Geländeoberfläche liegt. |
-| 4.1 | Geschosse über der Geländeoberfläche sind Geschosse, die im Mittel mehr als 1,40 m über die Geländeoberfläche hinausrage. |
+| 4.1 | Geschosse über der Geländeoberfläche sind Geschosse, die im Mittel mehr als 1,40 m über die Geländeoberfläche hinausragen; tiefer liegende Geschosse sind Kellergeschosse. |
+| 4.2 | Vollgeschosse sind Geschosse über der Geländeoberfläche, die über zwei Drittel, bei Geschossen im Dachraum über drei Viertel ihrer Grundfläche eine Höhe von 2,30 m haben. |
+| 4.3 | Gegenüber einer Außenwand zurückgesetzte oberste Geschosse sind nur Vollgeschosse, wenn sie diese Höhe über zwei Drittel der Grundfläche des darunter liegenden Geschosses haben. |
+| 4.4 | Die Höhe wird von Oberkante Fußboden bis Oberkante Fußboden oder Oberkante Dachhaut gemessen. |
 | 5.1 | Aufenthaltsräume sind Räume, die zum nicht nur vorübergehenden Aufenthalt von Menschen bestimmt oder geeignet sind. |
-| 6.1 | Geländeoberfläche ist die Fläche, die sich aus den Festsetzungen des Bebauungsplans ergibt oder die von der Bauaufsichts. |
-| 7.1 | Feuerstätten sind in oder an Gebäuden ortsfest benutzte Anlagen oder Einrichtungen, die dazu bestimmt sind, durch Verbre. |
+| 6.1 | Geländeoberfläche ist die Fläche, die sich aus den Festsetzungen des Bebauungsplans ergibt oder die von der Bauaufsichtsbehörde festgelegt ist, im Übrigen die natürliche, an das Gebäude angrenzende Geländeoberfläche. |
+| 7.1 | Feuerstätten sind in oder an Gebäuden ortsfest benutzte Anlagen oder Einrichtungen, die dazu bestimmt sind, durch Verbrennung Wärme zu erzeugen. |
 | 8.1 | Stellplätze sind Flächen zum Abstellen von Kraftfahrzeugen außerhalb öffentlicher Verkehrsflächen. |
-| 8.2 | Garagen sind ganz ode. |
-| 9.1 | Barrierefrei sind bauliche Anlagen, soweit sie ihrem Zweck entsprechend für Menschen mit Behinderungen, ältere Menschen. |
-| 10.1 | Bauprodukte sind. |
-| 10.2 | 1. Produkte, Baustoffe, Bauteile und Anlagen sowie Bausätze gemäß Artikel 2 Nr. 2 der Verordnung (EU) N |
+| 8.2 | Garagen sind ganz oder teilweise umschlossene Räume zum Abstellen von Kraftfahrzeugen. |
+| 8.3 | Ausstellungs-, Verkaufs-, Werk- und Lagerräume gelten nicht als Garagen. |
+| 9.1 | Barrierefrei sind bauliche Anlagen, soweit sie ihrem Zweck entsprechend für Menschen mit Behinderungen, ältere Menschen und Personen mit Kleinkindern in der allgemein üblichen Weise, ohne besondere Erschwernis und grundsätzlich ohne fremde Hilfe auffindbar, zugänglich und nutzbar sind. |
+| 10.1 | Bauprodukte sind 1. |
+| 10.2 | Produkte, Baustoffe, Bauteile und Anlagen sowie Bausätze gemäß Artikel 2 Nr. 2 der Verordnung (EU) Nr. 305/2011 des Europäischen Parlaments und des Rates vom 9. |
+| 10.3 | März 2011 zur Festlegung harmonisierter Bedingungen für die Vermarktung von Bauprodukten und zur Aufhebung der Richtlinie 89/106/EWG des Rates (ABl. |
+| 10.4 | EU Nr. L 88 S. 5; 2013 Nr. L 103 S. 10) in der jeweils geltenden Fassung, die hergestellt werden, um dauerhaft in bauliche Anlagen eingebaut zu werden 2. |
+| 10.5 | aus Produkten, Baustoffen, Bauteilen sowie Bausätzen gemäß Artikel 2 Nr. 2 der Verordnung (EU) Nr. 305/2011 vorgefertigte Anlagen, die hergestellt werden, um mit dem Erdboden verbunden zu werden, wie Fertighäuser, Fertiggaragen und Silos und deren Verwendung sich auf die Anforderungen nach § 3 Abs. 1 Satz 1 auswirken kann. |
 | 11.1 | Bauart ist das Zusammenfügen von Bauprodukten zu baulichen Anlagen oder Teilen von baulichen Anlagen. |
 
 ---
@@ -43,20 +65,25 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** allgemeine_anforderung
 **source_paragraph:** §3 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 sind so anzuordnen, zu errichten,. |
-| 2.1 | Die oberste Bauaufsichtsbehörde macht zur Durchführung dieses Gesetzes und der aufgrund dieses Gesetzes erlassenen Recht. |
+| 1.1 | Bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass sie die öffentliche Sicherheit oder Ordnung sowie die natürlichen Lebensgrundlagen nicht gefährden; dabei sind die Grundanforderungen an Bauwerke gemäß Anhang I der Verordnung (EU) Nr. 305/2011 zu berücksichtigen. |
+| 1.2 | Dies gilt entsprechend für die Änderung ihrer Benutzung und ihren Abbruch. |
+| 2.1 | Die oberste Bauaufsichtsbehörde macht zur Durchführung dieses Gesetzes und der aufgrund dieses Gesetzes erlassenen Rechtsverordnungen die Technischen Baubestimmungen nach § 87a als Verwaltungsvorschrift bekannt; diese sind zu beachten. |
+| 2.2 | Bei der Bekanntmachung kann hinsichtlich des Inhalts auf eine Fundstelle verwiesen werden; dazu wird die Anlage zur Verwaltungsvorschrift bei der obersten Bauaufsichtsbehörde geführt und vorgehalten sowie auf der Internetseite des für die oberste Bauaufsichtsbehörde zuständigen Ministeriums veröffentlicht. |
+| 2.3 | Die Verwaltungsvorschrift basiert auf einem Muster, das das Deutsche Institut für Bautechnik, Berlin, nach Anhörung der beteiligten Kreise im Einvernehmen mit der obersten Bauaufsichtsbehörde veröffentlicht. |
+| 2.4 | § 17a Abs. 2 und § 18b Abs. 1 sowie § 69 bleiben unberührt. |
 
 ---
 
-### § 4 — Soziale und ökologische Belange 15.12.20
+### § 4 — Soziale und ökologische Belange
 **type:** grundstuecksbebauung
 **source_paragraph:** §4 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Soziale und ökologische Belange Bei der Anordnung, Errichtung, Instandhaltung, Änderung und Nutzungsänderung baulicher Anlagen sind die allgemeinen Anforderungen an gesunde Wohn- und Arbeitsverhältnisse, die Belange des Umwelt- und Klimaschutzes und die Belange und Sicherheitsbedürfnisse von Frauen,. |
+| 1.1 | Bei der Anordnung, Errichtung, Instandhaltung, Änderung und Nutzungsänderung baulicher Anlagen sind die allgemeinen Anforderungen an gesunde Wohn- und Arbeitsverhältnisse, die Belange des Umwelt- und Klimaschutzes und die Belange und Sicherheitsbedürfnisse von Frauen, Familien und Kindern, von Menschen mit Behinderungen und älteren Menschen insbesondere im Hinblick auf die Barrierefreiheit sowie angemessenen Wohnraum auch für Familien mit mehreren Kindern und für besondere Wohnformen nach den Bestimmungen dieses Gesetzes und den aufgrund dieses Gesetzes erlassenen Vorschriften zu berücksichtigen. |
+| 1.2 | Darüber hinaus sind die Bestimmungen zum barrierefreien Bauen im Sinne des § 3 Abs. 4 des Landesinklusionsgesetzes sowie sonstiger Vorschriften zugunsten von Menschen mit Behinderungen zu berücksichtigen. |
 
 ---
 
@@ -64,23 +91,28 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** verkehrssicherheit
 **source_paragraph:** §5 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauliche Anlagen sind so zu gestalten, dass sie nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, We. |
-| 2.1 | Bauliche Anlagen sind mit ihrer Umgebung so in Einklang zu bringen, dass sie benachbarte bauliche Anlagen sowie das Stra. |
+| 1.1 | Bauliche Anlagen sind so zu gestalten, dass sie nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, Werkstoff und Farbe nicht verunstaltet wirken. |
+| 2.1 | Bauliche Anlagen sind mit ihrer Umgebung so in Einklang zu bringen, dass sie benachbarte bauliche Anlagen sowie das Straßen-, Orts- oder Landschaftsbild nicht verunstalten und deren beabsichtigte Gestaltung nicht stören. |
+| 2.2 | Auf Kultur- und Naturdenkmäler und auf andere erhaltenswerte Eigenarten der Umgebung ist besondere Rücksicht zu nehmen. |
 
 ---
 
-### § 6 — Seite 11 von 92 Bebauung der Grundstücke
+### § 6 — Bebauung der Grundstücke
 **type:** abstandsflaeche
 **source_paragraph:** §6 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Grundstücke, die mit umweltgefährdenden Stoffen belastet sind, dürfen nur bebaut werden, wenn von ihnen keine Gefährdung. |
-| 2.1 | Gebäude dürfen nur errichtet werden, wenn gesichert ist, dass bis zum Beginn ihrer Benutzung. |
-| 2.2 | 1. das Grundstück in angeme |
-| 3.1 | Ein Gebäude darf nur dann auf mehreren Grundstücken errichtet werden, wenn durch Baulast gesichert ist, dass sie für die. |
+| 1.1 | Grundstücke, die mit umweltgefährdenden Stoffen belastet sind, dürfen nur bebaut werden, wenn von ihnen keine Gefährdungen für die Umwelt, insbesondere die menschliche Gesundheit, ausgehen oder die Gefährdung nach Art der vorgesehenen Bebauung unschädlich ist. |
+| 2.1 | Gebäude dürfen nur errichtet werden, wenn gesichert ist, dass bis zum Beginn ihrer Benutzung |
+| 2.2 | 1. das Grundstück in angemessener Breite an einer befahrbaren öffentlichen Verkehrsfläche liegt, eine öffentlich-rechtlich gesicherte Zufahrt zu einer befahrbaren öffentlichen Verkehrsfläche hat oder bei Vorhaben im Sinne des § 35 Abs. 1 Nr. 1 bis 6, 8 und 9 des Baugesetzbuchs (BauGB) über einen befahrbaren Wirtschaftsweg erreichbar ist; ein nicht befahrbarer Wohnweg genügt, wenn der Brandschutz gewährleistet ist |
+| 2.3 | 2. die erforderlichen Wasserversorgungs- und Abwasseranlagen benutzbar sind. Als Sicherung der Zufahrt genügt eine Dienstbarkeit, wenn sie vor dem |
+| 2.4 | 1. Oktober 1974 begründet worden ist |
+| 3.1 | Ein Gebäude darf nur dann auf mehreren Grundstücken errichtet werden, wenn durch Baulast gesichert ist, dass sie für die Dauer der Bebauung als Grundstückseinheit zusammengefasst bleiben. |
+| 3.2 | Dabei bleiben vor die Außenwand geringfügig vortretende Gebäudeteile wie Dachvorsprünge außer Betracht. |
+| 3.3 | Satz 2 gilt auch für Anlagen zur Nutzung solarer Strahlungsenergie und Maßnahmen zum Zwecke der Energieeinsparung, soweit sie die Vorgaben des § 8 Abs. 5 Satz 3 und Abs. 11 Satz 1 Nr. 7 einhalten. |
 
 ---
 
@@ -88,13 +120,20 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** grundstuecksteilung
 **source_paragraph:** §7 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Zu Gebäuden der Gebäudeklassen 2 und 3 ist von öffentlichen Verkehrsflächen ein geradliniger Zu- oder Durchgang zu schaf. |
-| 2.1 | Zu Gebäuden der Gebäudeklassen 4 und 5 ist anstelle eines Zu- oder Durchgangs nach Absatz 1 eine 3 m breite Zu- oder Dur. |
-| 3.1 | Eine andere Verbindung als nach den Absätzen 1 oder 2 kann zugelassen werden, wenn dadurch der Einsatz der Feuerwehr nic. |
-| 4.1 | Bei Gebäuden der Gebäudeklassen 4 und 5 müssen die mit Rettungsgeräten der Feuerwehr erreichbaren Stellen (§ 15 Abs. 4). |
-| 5.1 | Die Zu- und Durchfahrten nach Absatz 2 sowie die Flächen nach Absatz 4 dürfen nicht durch Einbauten eingeengt werden und. |
+| 1.1 | Zu Gebäuden der Gebäudeklassen 2 und 3 ist von öffentlichen Verkehrsflächen ein geradliniger Zu- oder Durchgang zu schaffen, wenn der zweite Rettungsweg dieser Gebäude über Rettungsgeräte der Feuerwehr führt. |
+| 1.2 | Der Zu- oder Durchgang muss 1,25 m breit sein. |
+| 1.3 | Bei Türöffnungen und anderen geringfügigen Einengungen genügt eine lichte Breite von 1 m. |
+| 1.4 | Die lichte Höhe des Zu- oder Durchgangs muss 2 m betragen. |
+| 2.1 | Zu Gebäuden der Gebäudeklassen 4 und 5 ist anstelle eines Zu- oder Durchgangs nach Absatz 1 eine 3 m breite Zu- oder Durchfahrt zu schaffen. |
+| 2.2 | Die lichte Höhe der Zu- oder Durchfahrt muss senkrecht zur Fahrbahn gemessen 3,50 m betragen. |
+| 2.3 | Wände und Decken von Durchfahrten müssen feuerbeständig sein. |
+| 3.1 | Eine andere Verbindung als nach den Absätzen 1 oder 2 kann zugelassen werden, wenn dadurch der Einsatz der Feuerwehr nicht behindert wird. |
+| 3.2 | Bei Gebäuden, deren zweiter Rettungsweg nicht über Rettungsgeräte der Feuerwehr führt, kann eine Verbindung nach den Absätzen 1 oder 2 verlangt werden, wenn der Einsatz der Feuerwehr dies erfordert. |
+| 4.1 | Bei Gebäuden der Gebäudeklassen 4 und 5 müssen die mit Rettungsgeräten der Feuerwehr erreichbaren Stellen (§ 15 Abs. 4) von einer für Feuerwehrfahrzeuge befahrbaren Fläche anleiterbar sein. |
+| 4.2 | Die für Feuerwehrfahrzeuge erforderlichen Aufstell- und Bewegungsflächen sind vorzusehen. |
+| 5.1 | Die Zu- und Durchfahrten nach Absatz 2 sowie die Flächen nach Absatz 4 dürfen nicht durch Einbauten eingeengt werden und müssen für Feuerwehrfahrzeuge ausreichend befestigt und tragfähig sein; sie sind ständig freizuhalten. |
 
 ---
 
@@ -102,52 +141,79 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** freiflaechengestaltung
 **source_paragraph:** §8 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Vor Außenwänden oberirdischer Gebäude sind Flächen von Gebäuden freizuhalten (Abstandsflächen). Innerhalb der überbaubar. |
+| 1.1 | Vor Außenwänden oberirdischer Gebäude sind Flächen von Gebäuden freizuhalten (Abstandsflächen). Innerhalb der überbaubaren Grundstücksflächen sind Abstandsflächen nicht erforderlich vor Außenwänden, die an Grundstücksgrenzen errichtet werden, wenn nach planungsrechtlichen Vorschriften |
+| 1.2 | 1. das Gebäude ohne Grenzabstand gebaut werden muss oder |
+| 1.3 | 2. das Gebäude ohne Grenzabstand gebaut werden darf und öffentlich-rechtlich gesichert ist, dass auf dem Nachbargrundstück ebenfalls ohne Grenzabstand gebaut wird. Muss nach planungsrechtlichen Vorschriften mit Grenzabstand gebaut werden, ist aber auf dem Nachbargrundstück innerhalb der überbaubaren Grundstücksfläche ein Gebäude ohne Grenzabstand vorhanden, so kann zugelassen oder verlangt werden, dass ebenfalls ohne Grenzabstand gebaut wird. Muss nach planungsrechtlichen Vorschriften ohne Grenzabstand gebaut werden, ist aber auf dem Nachbargrundstück innerhalb der überbaubaren Grundstücksfläche ein Gebäude mit Grenzabstand vorhanden, so kann zugelassen oder verlangt werden, dass eine Abstandsfläche eingehalten wird |
 | 2.1 | Die Abstandsflächen müssen auf dem Grundstück selbst liegen. |
-| 2.2 | Sie dürfen auch auf öffentlichen Verkehrs-, Grün- oder Wass. |
-| 3.1 | Die Abstandsflächen vor Wänden, die einander gegenüberstehen, dürfen sich nicht überdecken; dies gilt nicht für. |
-| 3.2 | 1. Wände |
-| 4.1 | Die Tiefe der Abstandsfläche bemisst sich nach der Höhe der Wand oder des Wandteils (Wandhö- he); sie wird senkrecht zur. |
+| 2.2 | Sie dürfen auch auf öffentlichen Verkehrs-, Grün- oder Wasserflächen liegen, jedoch nur bis zu deren Mitte. |
+| 3.1 | Die Abstandsflächen vor Wänden, die einander gegenüberstehen, dürfen sich nicht überdecken; dies gilt nicht für |
+| 3.2 | 1. Wände, die in einem Winkel von mehr als 75° zueinander stehen |
+| 3.3 | 2. Gebäude und andere bauliche Anlagen, die in den Abstandsflächen zulässig sind oder zugelassen werden |
+| 4.1 | Die Tiefe der Abstandsfläche bemisst sich nach der Höhe der Wand oder des Wandteils (Wandhö he); sie wird senkrecht zur Wand gemessen. Als Wandhöhe gilt das Maß von der Geländeoberfläche bis zur Schnittlinie der Wand mit der Dachhaut oder bis zum oberen Abschluss der Wand. Bei Wänden unter Giebelflächen gilt als oberer Abschluss der Wand die Waagrechte in Höhe der Schnittlinien nach Satz 2; liegen die Schnittlinien nicht auf einer Höhe, ist die Waagrechte in der Mitte zwischen den Schnittlinien, bei Pultdächern an der unteren Schnittlinie anzunehmen. Maßgebend ist die im Mittel gemessene Höhe der Wand oder des Wandteils. Zur Wandhöhe werden hinzugerechnet |
+| 4.2 | 1. voll die Höhe von a) Dächern und Dachteilen mit einer Dachneigung von mehr als 70° b) Giebelflächen, wenn die Summe der Dachneigungen mehr als 140° beträgt, sowie Giebelflächen von Pultdächern mit einer Dachneigung von mehr als 70° |
+| 4.3 | 2. zu einem Drittel die Höhe von a) Dächern und Dachteilen mit einer Dachneigung von mehr als 45° b) Dächern mit Dachgauben oder anderen Dachaufbauten, wenn diese zusammen mehr als halb so breit wie die Wand sind c) Giebelflächen, die nicht unter Nummer 1 Buchst. b fallen. Nicht hinzugerechnet wird in den Fällen des Satzes 5 Nr. 1 Buchst. b und Nr. 2 Buchst. c die Höhe von Giebelflächen, die innerhalb eines Dreiecks mit einer in Höhe der Waagrechten nach Satz 3 anzunehmenden Grundlinie von 8 m Länge und mit 4 m Höhe liegen; dies gilt nicht, wenn Dachaufbauten weniger als 1,50 m von der Giebelfläche entfernt sind. Die Summe der Maße nach den Sätzen 2 bis 6 ergibt das Maß H |
 | 5.1 | Für vor- oder zurücktretende Wandteile wird die Abstandsfläche gesondert ermittelt. |
-| 5.2 | Vor die Wand vortretende Gebäudeteil. |
+| 5.2 | Vor die Wand vortretende Gebäudeteile wie Pfeiler, Gesimse, Dachvorsprünge, Blumenfenster, Hauseingangstreppen und deren Überdachungen sowie untergeordnete Vorbauten wie Erker und Balkone bleiben bei der Bemessung der Tiefe der Abstandsfläche außer Betracht, wenn sie nicht mehr als 1,50 m vortreten; von der gegenüberliegenden Grundstücksgrenze müssen sie mindestens 2 m entfernt bleiben. |
+| 5.3 | Satz 2 gilt auch für Anlagen zur Nutzung solarer Strahlungsenergie, die nur geringfügig hervortreten wie parallel zu Außenwänden oder Dachflächen angebrachte Solarmodule. |
 | 6.1 | Die Tiefe der Abstandsfläche beträgt 0,4 H, in Gewerbe- und Industriegebieten 0,25 H. |
-| 6.2 | In Kerngebieten sowie in Sondergeb. |
-| 7.1 | Für bauliche Anlagen, andere Anlagen und Einrichtungen, von denen Wirkungen wie von oberirdischen Gebäuden ausgehen, gel. |
-| 8.1 | Gegenüber Grundstücksgrenzen dürfen ohne Abstandsflächen oder mit einer geringeren Tiefe der Abstandsflächen. |
-| 8.2 | 1. Garagen |
-| 9.1 | Geringere Tiefen der Abstandsflächen können zugelassen werden. |
-| 9.2 | 1. vor Wänden, die auf demselben Grundstück in einem Winke |
-| 10.1 | Geringere Abstandsflächen sind zulässig, wenn sie aus zwingenden Festsetzungen eines Bebauungsplans, aus der Sonderregel. |
-| 11.1 | Bei rechtmäßig bestehenden Gebäuden, deren Außenwände die nach diesem Gesetz erforderlichen Abstandsflächen nicht einhal. |
-| 12.1 | Bei Windenergieanlagen in nicht bebauten Gebieten beträgt die Tiefe der Abstandsfläche 0,2 H, mindestens die Länge des R. |
-| 13.1 | Antennenanlagen im Außenbereich einschließlich der Masten mit einer maximalen Breite des Mastes von 1,50 m und einer Ges. |
+| 6.2 | In Kerngebieten sowie in Sondergebieten, die nicht der Erholung dienen, kann eine geringere Tiefe als 0,4 H zugelassen werden, wenn die Nutzung der Gebiete dies rechtfertigt. |
+| 6.3 | In allen Fällen muss die Tiefe der Abstandsfläche jedoch mindestens 3 m betragen. |
+| 7.1 | Für bauliche Anlagen, andere Anlagen und Einrichtungen, von denen Wirkungen wie von oberirdischen Gebäuden ausgehen, gelten die Absätze 1 bis 6 gegenüber Gebäuden und Grundstücksgrenzen entsprechend. |
+| 7.2 | Sie sind ohne eigene Abstandsflächen oder mit einer geringeren Tiefe der Abstandsflächen und in den Abstandsflächen von Gebäuden zulässig, wenn die Beleuchtung mit Tageslicht nicht erheblich beeinträchtigt wird und der Brandschutz gewährleistet ist. |
+| 7.3 | Ohne eigene Abstandsflächen und in den Abstandsflächen von Gebäuden sind Einfriedungen und Stützmauern bis zu 2 m Höhe, in Gewerbe- und Industriegebieten ohne Begrenzung der Höhe zulässig. |
+| 8.1 | Gegenüber Grundstücksgrenzen dürfen ohne Abstandsflächen oder mit einer geringeren Tiefe der Abstandsflächen |
+| 8.2 | 1. Garagen ohne Feuerstätten |
+| 8.3 | 2. Gebäude und Anlagen zur örtlichen Versorgung mit Elektrizität, Gas und Wasser und |
+| 8.4 | 3. sonstige Gebäude ohne Aufenthaltsräume und Feuerstätten errichtet werden, wenn sie an den Grundstücksgrenzen oder in einem Abstand von bis zu 3 m von den Grundstücksgrenzen a) eine mittlere Wandhöhe von 3,20 m über der Geländeoberfläche nicht überschreiten b) eine Länge von 12 m an einer Grundstücksgrenze nicht überschreiten und c) Dächer haben, die zur Grundstücksgrenze nicht mehr als 45° geneigt sind; Giebel an der Grundstücksgrenze dürfen eine Höhe von 4 m über der Geländeoberfläche nicht überschreiten. Die Höhen und Längen nach Satz 1 gelten nur für Wände und Wandteile, die in einem Winkel von nicht mehr als 75° zur Grundstücksgrenze stehen. Die Gebäude nach Satz 1 sind in den Abstandsflächen von anderen Gebäuden sowie ohne eigene Abstandsflächen oder mit einer geringeren Tiefe der Abstandsflächen gegenüber anderen Gebäuden zulässig, wenn der Brandschutz gewährleistet ist und die Beleuchtung von Aufenthaltsräumen mit Tageslicht nicht erheblich beeinträchtigt wird. Die Gebäude nach Satz 1 dürfen eine Länge von insgesamt 18 m an allen Grundstücksgrenzen nicht überschreiten; diese Begrenzung ist nicht nachbarschützend. Die Gebäude nach Satz 1 Nr. 1 und 3 dürfen auch einen Zugang zu einem anderen Gebäude haben und mit diesem im Bereich der Dächer baulich verbunden werden, wenn das andere Gebäude für sich betrachtet die erforderliche Abstandsfläche einhält. Anlagen zur Nutzung solarer Strahlungsenergie sind auf den Dächern der Gebäude nach Satz 1 unter den Voraussetzungen des Absatzes 5 Satz 3 zulässig; sonstige Anlagen und Nutzungen (wie Dachterrassen) sind nur zulässig, wenn sichergestellt ist, dass ein Abstand von 3 m zu den Grundstücksgrenzen eingehalten wird |
+| 9.1 | Geringere Tiefen der Abstandsflächen können zugelassen werden |
+| 9.2 | 1. vor Wänden, die auf demselben Grundstück in einem Winkel von 75° oder weniger zueinander stehen, wenn es sich handelt um a) Wände von Gebäuden, die nicht dem Wohnen dienen b) Wände von Wohngebäuden, in denen keine Fenster von Wohn- oder Schlafräumen angeordnet sind c) Wände derselben Wohnung zu einem eigenen Innenhof |
+| 9.3 | 2. in überwiegend bebauten Gebieten, wenn die Gestaltung des Straßenbildes oder städtebauliche Verhältnisse dies erfordern, sofern die Beleuchtung mit Tageslicht und die Lüftung von Aufenthaltsräumen nicht erheblich beeinträchtigt werden und der Brandschutz gewährleistet ist |
+| 10.1 | Geringere Abstandsflächen sind zulässig, wenn sie aus zwingenden Festsetzungen eines Bebauungsplans, aus der Sonderregelung zur sparsamen und effizienten Nutzung von Energie nach § 248 BauGB oder aus einer örtlichen Bauvorschrift nach § 88 folgen und die Beleuchtung mit Tageslicht, die Lüftung und der Brandschutz gewährleistet sind; entsprechendes gilt für größere Abstandsflächen. |
+| 11.1 | Bei rechtmäßig bestehenden Gebäuden, deren Außenwände die nach diesem Gesetz erforderlichen Abstandsflächen nicht einhalten, sind abweichend von den Absätzen 1 bis 6 auch zulässig |
+| 11.2 | 1. Ausbau und Änderungen innerhalb des Gebäudes |
+| 11.3 | 2. Nutzungsänderungen |
+| 11.4 | 3. die Errichtung und Änderung von Vor- und Anbauten, die für sich genommen die Tiefe der Abstandsflächen nach Absatz 6 einhalten |
+| 11.5 | 4. Aufstockungen und die Errichtung und Änderung von Aufbauten, wenn deren Abstandsflächen nicht über die Abstandsflächen des bestehenden Gebäudes hinausgehen |
+| 11.6 | 5. der Ersatz von Gebäuden oder Gebäudeteilen bis zu den bisherigen Abmessungen; die Nummern 2 bis 4 bleiben unberührt |
+| 11.7 | 6. die Errichtung vor die Außenwand vortretender Aufzüge, Treppen und Treppenräume, wenn zu Nachbargrenzen ein Abstand von mindestens 2 m eingehalten wird; sie sind in den Abstandsflächen von Gebäuden auf demselben Grundstück zulässig, wenn die Beleuchtung mit Tageslicht nicht erheblich beeinträchtigt wird und der Brandschutz gewährleistet ist, und |
+| 11.8 | 7. Maßnahmen zum Zwecke der Energieeinsparung und Anlagen zur Nutzung solarer Strahlungsenergie, soweit sie insgesamt die Abstandsfläche um nicht mehr als 0,40 m verringern und die Bedachung um nicht mehr als 0,40 m parallel zur Dachfläche angehoben wird. Satz 1 Nr. 1 bis 6 gilt nicht für Gebäude im Sinne des Absatzes 8 |
+| 12.1 | Bei Windenergieanlagen in nicht bebauten Gebieten beträgt die Tiefe der Abstandsfläche 0,2 H, mindestens die Länge des Rotorradius zuzüglich 3 m; das Maß H bemisst sich bei Windenergieanlagen nach ihrer Gesamthöhe im ruhenden Betriebszustand. |
+| 12.2 | Die Abstandsfläche ist ein Kreis um den geometrischen Mittelpunkt des Mastes. |
+| 13.1 | Antennenanlagen im Außenbereich einschließlich der Masten mit einer maximalen Breite des Mastes von 1,50 m und einer Gesamthöhe von nicht mehr als 50 m sind ohne eigene Abstandsflächen gegenüber anderen Grundstücken im Außenbereich zulässig. |
+| 13.2 | Für sonstige Antennenanlagen einschließlich Masten im Außenbereich kann eine Tiefe der Abstandsfläche bis zu 0,2 H zugelassen werden. |
 
 ---
 
-### § 9 — Übernahme von Abständen und Abstandsfläc
+### § 9 — Übernahme von Abständen und Abstandsflächen auf Nachbargrundstücke, Grundstücksteilungen
 **type:** gestaltungsanforderung
 **source_paragraph:** §9 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Soweit nach diesem Gesetz oder nach Vorschriften aufgrund dieses Gesetzes Abstände und Abstandsflächen auf dem Grundstüc. |
-| 2.1 | Die bei der Errichtung eines Gebäudes vorgeschriebenen Abstände und Abstandsflächen dürfen bei nachträglichen Grenzänder. |
+| 1.1 | Soweit nach diesem Gesetz oder nach Vorschriften aufgrund dieses Gesetzes Abstände und Abstandsflächen auf dem Grundstück selbst liegen müssen, kann zugelassen werden, dass sie sich ganz oder teilweise auf andere Grundstücke erstrecken, wenn öffentlich-rechtlich gesichert ist, dass sie nicht überbaut und auf die auf diesen Grundstücken erforderlichen Abstände und Abstandsflächen nicht angerechnet werden. |
+| 1.2 | Vorschriften, nach denen eine Überbauung zulässig ist oder zugelassen werden kann, bleiben unberührt. |
+| 2.1 | Die bei der Errichtung eines Gebäudes vorgeschriebenen Abstände und Abstandsflächen dürfen bei nachträglichen Grenzänderungen und Grundstücksteilungen nicht unterschritten oder überbaut werden. |
+| 2.2 | Dabei muss die Erschließung gesichert sein und es dürfen auch sonst keine baurechtlichen Vorschriften entgegenstehen. |
+| 2.3 | Absatz 1 gilt entsprechend. |
+| 2.4 | Die Zulassung von Abweichungen nach § 69 ist zu beantragen; die §§ 63, 65, 68 und 70 gelten entsprechend. |
 
 ---
 
-### § 10 — Höhenlage, Abfall- und Wertstoffbehälter
+### § 10 — Höhenlage, Abfall- und Wertstoffbehälter, nicht überbaute Flächen
 **type:** gestaltungsanforderung
 **source_paragraph:** §10 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bei der Errichtung oder Änderung baulicher Anlagen kann verlangt werden, dass die Oberfläche des Grundstücks erhalten od. |
+| 1.1 | Bei der Errichtung oder Änderung baulicher Anlagen kann verlangt werden, dass die Oberfläche des Grundstücks erhalten oder in ihrer Höhenlage verändert wird, um eine Störung des Straßen-, Ortsoder Landschaftsbildes zu vermeiden oder zu beseitigen oder um die Oberfläche an die Höhe der Verkehrsfläche oder der Nachbargrundstücke anzugleichen. |
 | 2.1 | Die Höhenlage der baulichen Anlagen ist, soweit erforderlich, festzusetzen. |
-| 2.2 | Hierbei sind die Höhenlage der Verkehrsfläch. |
+| 2.2 | Hierbei sind die Höhenlage der Verkehrsflächen und die Anforderungen an die Abwasserbeseitigung zu beachten. |
 | 3.1 | Für Abfall- und Wertstoffbehälter sollen befestigte Plätze an geeigneter Stelle hergestellt werden. |
-| 4.1 | Nicht überbaute Flächen bebauter Grundstücke sind zu begrünen, soweit sie nicht für eine zulässige Nutzung benötigt werd. |
+| 4.1 | Nicht überbaute Flächen bebauter Grundstücke sind zu begrünen, soweit sie nicht für eine zulässige Nutzung benötigt werden. |
+| 4.2 | Befestigungen, die die Wasserdurchlässigkeit des Bodens wesentlich beschränken, sind nur zulässig, soweit ihre Zweckbestimmung dies erfordert. |
+| 4.3 | Die Sätze 1 und 2 finden keine Anwendung, soweit Bebauungspläne oder andere Satzungen entgegenstehende Festsetzungen zu den nicht überbauten Flächen treffen. |
 
 ---
 
@@ -155,13 +221,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** baustellenanforderung
 **source_paragraph:** §11 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bei der Errichtung von Gebäuden mit mehr als drei Wohnungen ist ein Spielplatz für Kleinkinder herzustellen, der nach se. |
+| 1.1 | Bei der Errichtung von Gebäuden mit mehr als drei Wohnungen ist ein Spielplatz für Kleinkinder herzustellen, der nach seiner Lage und Beschaffenheit ein gefahrloses Spielen ermöglicht. |
+| 1.2 | Der Spielplatz soll in angemessenem Umfang barrierefrei sein und besonnt und windgeschützt liegen; Ruf- und Sichtkontakt zur Wohnbebauung sollen gewährleistet sein. |
+| 1.3 | Seine Größe richtet sich nach der Zahl der Wohnungen. |
 | 2.1 | Der Spielplatz ist auf dem zu bebauenden Grundstück herzustellen. |
-| 2.2 | Es kann zugelassen werden, ihn in unmittelbarer Nähe a. |
-| 3.1 | Der Spielplatz muss spätestens sechs Monate nach Bezug der Wohnungen benutzbar sein; die Frist kann verlängert werden, w. |
-| 4.1 | Bei bestehenden Gebäuden kann die Herstellung und Instandhaltung von Spielplätzen verlangt werden, wenn dies wegen der G. |
+| 2.2 | Es kann zugelassen werden, ihn in unmittelbarer Nähe auf einem anderen Grundstück, auch in einer Gemeinschaftsanlage, herzustellen, wenn dieses Grundstück von den Kindern gefahrlos erreicht werden kann und seine Benutzung als Spielplatz öffentlich-rechtlich gesichert ist. |
+| 2.3 | Es kann ferner zugelassen werden, dass die Verpflichtung der Bauherrin oder des Bauherrn nach Absatz 1 durch eine angemessene Beteiligung an den Kosten für die Herstellung und Unterhaltung eines öffentlichen Spielplatzes in unmittelbarer Nähe des Baugrundstücks erfüllt wird; die Gemeinde kann Sicherheitsleistung verlangen. |
+| 3.1 | Der Spielplatz muss spätestens sechs Monate nach Bezug der Wohnungen benutzbar sein; die Frist kann verlängert werden, wenn besondere Umstände die Einhaltung der Frist nicht zulassen oder die Herstellung eines Spielplatzes noch nicht erfordern. |
+| 4.1 | Bei bestehenden Gebäuden kann die Herstellung und Instandhaltung von Spielplätzen verlangt werden, wenn dies wegen der Gesundheit der Kinder oder zum Schutz vor Verkehrsgefahren erforderlich ist und die Grundstücksverhältnisse nicht entgegenstehen. |
 | 5.1 | Die Absätze 1 bis 4 gelten nicht, wenn nach der Art der Wohnungen ein Spielplatz nicht erforderlich ist. |
 
 ---
@@ -170,12 +239,11 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** standsicherheit
 **source_paragraph:** §12 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Wenn die Verkehrssicherheit es erfordert, kann verlangt werden, dass Grundstücke eingefriedet oder abgegrenzt werden. |
-| 1.2 | Di. |
+| 1.2 | Dies gilt auch für bauliche Anlagen im Sinne des § 2 Abs. 1 Satz 3 Nr. 1 bis 5. |
 | 2.1 | Für Einfriedungen und Abgrenzungen, die keine baulichen Anlagen sind, gelten die §§ 5 und 17 entsprechend. |
-| 2.2 | Dritter Teil. |
 
 ---
 
@@ -183,20 +251,22 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schutzanforderung
 **source_paragraph:** §13 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Jede bauliche Anlage muss im Ganzen und in ihren einzelnen Teilen sowie für sich allein standsicher und dauerhaft sein. |
-| 2.1 | Die Verwendung gemeinsamer Bauteile für mehrere bauliche Anlagen ist zulässig, wenn öffentlichrechtlich und technisch ge. |
+| 1.2 | Die Standsicherheit anderer baulicher Anlagen und die Tragfähigkeit des Baugrundes des Nachbargrundstücks dürfen nicht gefährdet werden. |
+| 2.1 | Die Verwendung gemeinsamer Bauteile für mehrere bauliche Anlagen ist zulässig, wenn öffentlichrechtlich und technisch gesichert ist, dass die gemeinsamen Bauteile beim Abbruch einer baulichen Anlage erhalten bleiben. |
 
 ---
 
-### § 14 — Schutz gegen schädliche Einwirkungen 01.
+### § 14 — Schutz gegen schädliche Einwirkungen
 **type:** brandschutzanforderung
 **source_paragraph:** §14 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Schutz gegen schädliche Einwirkungen Bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 müssen so angeordnet und beschaffen sein, dass durch Wasser, Feuchtigkeit, pflanzliche oder tierische Schädlinge sowie andere chemische, physikalische oder biologische Einflüss. |
+| 1.1 | Bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 müssen so angeordnet und beschaffen sein, dass durch Wasser, Feuchtigkeit, pflanzliche oder tierische Schädlinge sowie andere chemische, physikalische oder biologische Einflüsse Gefahren oder unzumutbare Belästigungen nicht entstehen. |
+| 1.2 | Dabei sind in Gebieten mit signifikantem Hochwasserrisiko im Sinne des § 73 Abs. 1 des Wasserhaushaltsgesetzes die in den wasserrechtlichen Gefahrenkarten und Risikokarten enthaltenen Angaben zu berücksichtigen. |
 
 ---
 
@@ -204,13 +274,22 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schutzanforderung
 **source_paragraph:** §15 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauliche Anlagen müssen so angeordnet und beschaffen sein, dass der Entstehung eines Brandes und der Ausbreitung von Feu. |
-| 2.1 | Baustoffe werden nach den Anforderungen an ihr Brandverhalten unterschieden in nicht brennbare, schwer entflammbare und. |
-| 3.1 | Bauteile werden nach den Anforderungen an ihre Feuerwiderstandsfähigkeit unterschieden in feuerbeständige, hochfeuerhemm. |
-| 4.1 | Jede Nutzungseinheit mit einem oder mehreren Aufenthaltsräumen muss in jedem Geschoss über mindestens zwei voneinander u. |
-| 5.1 | Bauliche Anlagen, bei denen Blitzschlag leicht eintreten oder zu besonders schweren Folgen führen kann, sind mit dauernd. |
+| 1.1 | Bauliche Anlagen müssen so angeordnet und beschaffen sein, dass der Entstehung eines Brandes und der Ausbreitung von Feuer und Rauch vorgebeugt wird und bei einem Brand die Rettung von Menschen und Tieren und wirksame Löscharbeiten möglich sind. |
+| 2.1 | Baustoffe werden nach den Anforderungen an ihr Brandverhalten unterschieden in nicht brennbare, schwer entflammbare und normalentflammbare Baustoffe. |
+| 2.2 | Leicht entflammbare Baustoffe dürfen nicht verwendet werden; dies gilt nicht, wenn sie durch Verbindung mit anderen Baustoffen nicht mehr leicht entflammbar sind. |
+| 3.1 | Bauteile werden nach den Anforderungen an ihre Feuerwiderstandsfähigkeit unterschieden in feuerbeständige, hochfeuerhemmende und feuerhemmende Bauteile. |
+| 3.2 | Die Feuerwiderstandsfähigkeit bezieht sich bei tragenden und aussteifenden Bauteilen auf deren Standsicherheit im Brandfall, bei raumabschließenden Bauteilen auf deren Widerstand gegen die Brandausbreitung. |
+| 3.3 | Bauteile werden zusätzlich nach dem Brandverhalten ihrer Baustoffe unterschieden. |
+| 3.4 | Feuerbeständige Bauteile müssen mindestens in den wesentlichen Teilen aus nicht brennbaren Baustoffen bestehen. |
+| 3.5 | Hochfeuerhemmende Bauteile, deren tragende und aussteifende Teile aus brennbaren Baustoffen bestehen, müssen allseitig mindestens eine brandschutztechnisch wirksame Bekleidung (Brandschutzbekleidung) und Dämmstoffe jeweils aus nicht brennbaren Baustoffen haben. |
+| 3.6 | Die Sätze 4 und 5 gelten nicht für Abschlüsse von Öffnungen. |
+| 3.7 | Abweichend von den Sätzen 4 und 5 sind Bauteile, die feuerbeständig oder hochfeuerhemmend sein müssen, aus brennbaren Baustoffen zulässig, sofern sie den Technischen Baubestimmungen nach § 87a Abs. 2 entsprechen; dies gilt nicht für Wände nach § 30 Abs. 1 und in Gebäuden der Gebäudeklasse 5 für Wände nach § 34 Abs. 6 Satz 1. |
+| 4.1 | Jede Nutzungseinheit mit einem oder mehreren Aufenthaltsräumen muss in jedem Geschoss über mindestens zwei voneinander unabhängige Rettungswege erreichbar sein; beide Rettungswege dürfen jedoch innerhalb des Geschosses über denselben notwendigen Flur führen. Die Rettungswege müssen bei Nutzungseinheiten, die nicht zu ebener Erde liegen, über notwendige Treppen (§ 33 Abs. 1) führen. Bei Gebäuden, die nicht Hochhäuser sind, darf der zweite Rettungsweg über mit vorhandenen Rettungsgeräten der Feuerwehr erreichbare Stellen (Oberkante der Brüstung eines notwendigen Fensters oder sonstige geeignete Stellen) führen; diese Stellen dürfen bei Gebäuden der Gebäudeklassen 2 und 3 nicht mehr als 8 m über der Geländeoberfläche liegen. Abweichend von Satz 1 genügt ein Rettungsweg |
+| 4.2 | 1. wenn der Treppenraum der notwendigen Treppe so angeordnet und beschaffen ist, dass Feuer und Rauch nicht eindringen können (Sicherheitstreppenraum) |
+| 4.3 | 2. für eingeschossige Nutzungseinheiten, die zu ebener Erde liegen, wenn die Rettung über einen direkten Ausgang ins Freie möglich ist |
+| 5.1 | Bauliche Anlagen, bei denen Blitzschlag leicht eintreten oder zu besonders schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. |
 
 ---
 
@@ -218,12 +297,12 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** verkehrssicherheit
 **source_paragraph:** §16 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Gebäude müssen einen ihrer Nutzung und den klimatischen Verhältnissen entsprechenden Wärmeschutz haben. |
 | 2.1 | Gebäude müssen einen ihrer Lage und Nutzung entsprechenden Schallschutz haben. |
-| 2.2 | Geräusche, die von ortsfesten Anlagen und. |
-| 3.1 | Erschütterungen oder Schwingungen, die von ortsfesten Anlagen und Einrichtungen in baulichen Anlagen oder auf Grundstück. |
+| 2.2 | Geräusche, die von ortsfesten Anlagen und Einrichtungen in baulichen Anlagen oder auf Grundstücken ausgehen, sind so zu dämmen, dass Gefahren oder unzumutbare Belästigungen nicht entstehen. |
+| 3.1 | Erschütterungen oder Schwingungen, die von ortsfesten Anlagen und Einrichtungen in baulichen Anlagen oder auf Grundstücken ausgehen, sind so zu dämmen, dass Gefahren oder unzumutbare Belästigungen nicht entstehen. |
 
 ---
 
@@ -231,7 +310,7 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §17 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Bauliche Anlagen und die dem Verkehr dienenden nicht überbauten Flächen bebauter Grundstücke müssen verkehrssicher sein. |
 | 2.1 | Bauliche Anlagen und ihre Benutzung dürfen die Sicherheit oder Leichtigkeit des öffentlichen Verkehrs nicht gefährden. |
@@ -242,38 +321,44 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §17a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauarten dürfen nur angewendet werden, wenn bei ihrer Anwendung die baulichen Anlagen bei ordnungsgemäßer Instandhaltung. |
-| 2.1 | Bauarten, die von Technischen Baubestimmungen nach § 87a Abs. 2 Nr. 2 oder Nr. 3 Buchst. |
-| 2.2 | a wesentlich abweichen oder für. |
-| 3.1 | Anstelle einer allgemeinen Bauartgenehmigung genügt ein allgemeines bauaufsichtliches Prüfzeugnis für Bauarten, wenn die. |
-| 4.1 | Wenn Gefahren im Sinne des § 3 Abs. 1 Satz 1 nicht zu erwarten sind, kann die oberste Bauaufsichtsbehörde im Einzelfall. |
-| 5.1 | Bauarten bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 87a Abs. 2, den all. |
-| 6.1 | Bei Bauarten, deren Anwendung in außergewöhnlichem Maß von der Sachkunde und Erfahrung der damit betrauten Personen oder. |
-| 7.1 | Für Bauarten, die wegen ihrer besonderen Eigenschaften oder ihres besonderen Verwendungszwecks einer außergewöhnlichen S. |
-| 8.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung vorschreiben, dass für bestimmte Bauarten, auch soweit s. |
+| 1.1 | Bauarten dürfen nur angewendet werden, wenn bei ihrer Anwendung die baulichen Anlagen bei ordnungsgemäßer Instandhaltung während einer dem Zweck entsprechenden angemessenen Zeitdauer die Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes erfüllen und für ihren Anwendungszweck tauglich sind. |
+| 2.1 | Bauarten, die von Technischen Baubestimmungen nach § 87a Abs. 2 Nr. 2 oder Nr. 3 Buchst. a wesentlich abweichen oder für die es allgemein anerkannte Regeln der Technik nicht gibt, dürfen bei der Errichtung, Änderung und Instandhaltung baulicher Anlagen nur angewendet werden, wenn für sie |
+| 2.2 | 1. eine allgemeine Bauartgenehmigung durch das Deutsche Institut für Bautechnik oder |
+| 2.3 | 2. eine vorhabenbezogene Bauartgenehmigung durch die oberste Bauaufsichtsbehörde erteilt worden ist. § 19 Abs. 2 bis 6 gilt entsprechend |
+| 3.1 | Anstelle einer allgemeinen Bauartgenehmigung genügt ein allgemeines bauaufsichtliches Prüfzeugnis für Bauarten, wenn die Bauart nach allgemein anerkannten Prüfverfahren beurteilt werden kann. |
+| 3.2 | In der Verwaltungsvorschrift nach § 3 Abs. 2 und § 87a werden diese Bauarten mit der Angabe der maßgebenden technischen Regeln bekannt gemacht. |
+| 3.3 | § 20 Abs. 2 gilt entsprechend. |
+| 4.1 | Wenn Gefahren im Sinne des § 3 Abs. 1 Satz 1 nicht zu erwarten sind, kann die oberste Bauaufsichtsbehörde im Einzelfall oder für genau begrenzte Fälle allgemein festlegen, dass eine Bauartgenehmigung nicht erforderlich ist. |
+| 5.1 | Bauarten bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 87a Abs. 2, den allgemeinen Bauartgenehmigungen, den allgemeinen bauaufsichtlichen Prüfzeugnissen für Bauarten oder den vorhabenbezogenen Bauartgenehmigungen; als Übereinstimmung gilt auch eine Abweichung, die nicht wesentlich ist. |
+| 5.2 | § 22 Abs. 2 gilt für die Anwenderin oder den Anwender der Bauart entsprechend. |
+| 6.1 | Bei Bauarten, deren Anwendung in außergewöhnlichem Maß von der Sachkunde und Erfahrung der damit betrauten Personen oder von einer Ausstattung mit besonderen Vorrichtungen abhängt, kann in der Bauartgenehmigung oder durch Rechtsverordnung des fachlich zuständigen Ministeriums vorgeschrieben werden, dass die Anwenderinnen und Anwender über solche Fachkräfte und Vorrichtungen verfügen und den Nachweis hierüber gegenüber einer Prüfstelle nach § 25 Satz 1 Nr. 6 zu erbringen haben. |
+| 7.1 | Für Bauarten, die wegen ihrer besonderen Eigenschaften oder ihres besonderen Verwendungszwecks einer außergewöhnlichen Sorgfalt bei Ausführung, Einbau, Transport, Instandhaltung oder Reinigung bedürfen, kann in der Bauartgenehmigung oder durch Rechtsverordnung des fachlich zuständigen Ministeriums die Überwachung dieser Tätigkeiten durch eine Überwachungsstelle nach § 25 Satz 1 Nr. 5 vorgeschrieben werden. |
+| 8.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung vorschreiben, dass für bestimmte Bauarten, auch soweit sie Anforderungen nach anderen Rechtsvorschriften unterliegen, die Absätze 1 bis 7 ganz oder teilweise anwendbar sind, wenn die anderen Rechtsvorschriften dies verlangen oder zulassen. |
+| 8.2 | Zweiter Abschnitt Bauprodukte. |
 
 ---
 
-### § 18 — Allgemeine Anforderungen für die Verwend
+### § 18 — Allgemeine Anforderungen für die Verwendung von Bauprodukten
 **type:** bauproduktzulassung
 **source_paragraph:** §18 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauprodukte dürfen nur verwendet werden, wenn bei ihrer Verwendung die baulichen Anlagen bei ordnungsgemäßer Instandhalt. |
-| 2.1 | Bauprodukte, die den in Vorschriften eines anderen Mitgliedstaates der Europäischen Union oder eines nach dem Recht der. |
+| 1.1 | Bauprodukte dürfen nur verwendet werden, wenn bei ihrer Verwendung die baulichen Anlagen bei ordnungsgemäßer Instandhaltung während einer dem Zweck entsprechenden angemessenen Zeitdauer die Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes erfüllen und gebrauchstauglich sind. |
+| 2.1 | Bauprodukte, die den in Vorschriften eines anderen Mitgliedstaates der Europäischen Union oder eines nach dem Recht der Europäischen Union gleichgestellten Staates genannten technischen Anforderungen entsprechen, dürfen verwendet oder angewendet werden, wenn das geforderte Schutzniveau in Bezug auf Sicherheit, Gesundheit und Gebrauchstauglichkeit gleichermaßen dauerhaft erreicht wird. |
 
 ---
 
-### § 18a — Anforderungen für die Verwendung von CE-
+### § 18a — Anforderungen für die Verwendung von CE-gekennzeichneten Bauprodukten
 **type:** bauproduktzulassung
 **source_paragraph:** §18a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Anforderungen für die Verwendung von CE-gekennzeichneten Baupro- 29.06.2019 dukten. |
+| 1.1 | Ein Bauprodukt, das die CE-Kennzeichnung trägt, darf verwendet werden, wenn die erklärten Leistungen den in diesem Gesetz oder aufgrund dieses Gesetzes festgelegten Anforderungen für diese Verwendung entsprechen. |
+| 1.2 | Die §§ 18b bis 26 Abs. 1 gelten nicht für Bauprodukte, die die CE-Kennzeichnung aufgrund der Verordnung (EU) Nr. 305/2011 tragen. |
 
 ---
 
@@ -281,13 +366,17 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §18b LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Ein Verwendbarkeitsnachweis in Form einer allgemeinen bauaufsichtlichen Zulassung nach § 19, eines allgemeinen bauaufsic. |
-| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt,. |
-| 2.2 | 1. das von einer allgemein anerkannten Regel der |
-| 3.1 | Die Technischen Baubestimmungen nach § 87a enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwend. |
-| 4.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung vorschreiben, dass für bestimmte Bauprodukte, auch sowei. |
+| 1.1 | Ein Verwendbarkeitsnachweis in Form einer allgemeinen bauaufsichtlichen Zulassung nach § 19, eines allgemeinen bauaufsichtlichen Prüfzeugnisses nach § 20 oder einer Zustimmung im Einzelfall nach § 21 ist für ein Bauprodukt erforderlich, wenn |
+| 1.2 | 1. es keine Technische Baubestimmung nach § 87a und keine allgemein anerkannte Regel der Technik gibt |
+| 1.3 | 2. das Bauprodukt von einer Technischen Baubestimmung nach § 87a Abs. 2 Nr. 3 wesentlich abweicht oder |
+| 1.4 | 3. eine Verordnung nach Absatz 4 es vorsieht |
+| 2.1 | Ein Verwendbarkeitsnachweis ist nicht erforderlich für ein Bauprodukt |
+| 2.2 | 1. das von einer allgemein anerkannten Regel der Technik abweicht oder |
+| 2.3 | 2. das für die Erfüllung der Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes nur eine untergeordnete Bedeutung hat |
+| 3.1 | Die Technischen Baubestimmungen nach § 87a enthalten eine nicht abschließende Liste von Bauprodukten, die keines Verwendbarkeitsnachweises nach Absatz 1 bedürfen. |
+| 4.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung vorschreiben, dass für bestimmte Bauprodukte, auch soweit sie Anforderungen nach anderen Rechtsvorschriften unterliegen, hinsichtlich dieser Anforderungen bestimmte Nachweise der Verwendbarkeit und bestimmte Überein stimmungsnachweise nach Maßgabe der §§ 18b bis 26 zu führen sind, wenn die anderen Rechtsvorschriften diese Nachweise verlangen oder zulassen. |
 
 ---
 
@@ -295,22 +384,31 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §19 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Das Deutsche Institut für Bautechnik erteilt unter den Voraussetzungen des § 18b Abs. 1 auf Antrag eine allgemeine bauau. |
+| 1.1 | Das Deutsche Institut für Bautechnik erteilt unter den Voraussetzungen des § 18b Abs. 1 auf Antrag eine allgemeine bauaufsichtliche Zulassung für Bauprodukte, wenn bei deren Verwendung die baulichen Anlagen den Anforderungen dieses Gesetzes und aufgrund dieses Gesetzes genügen. |
 | 2.1 | Die zur Begründung des Antrags erforderlichen Unterlagen sind beizufügen. |
-| 2.2 | Soweit erforderlich, sind Probestücke von der. |
+| 2.2 | Soweit erforderlich, sind Probestücke von der antragstellenden Person zur Verfügung zu stellen oder durch sachverständige Personen oder Stellen, die das Deutsche Institut für Bautechnik bestimmen kann, zu entnehmen sowie Probeausführungen unter Aufsicht der sachverständigen Personen oder Stellen herzustellen § 65 Abs. 2 Satz 2 bis 4 gilt entsprechend. |
+| 3.1 | Das Deutsche Institut für Bautechnik kann für die Durchführung der Prüfung die sachverständige Person oder Stelle und für Probeausführungen die Ausführungsstelle und Ausführungszeit vorschreiben. |
+| 4.1 | Die allgemeine bauaufsichtliche Zulassung wird widerruflich und für eine bestimmte Frist erteilt, die in der Regel fünf Jahre beträgt. |
+| 4.2 | Die Zulassung kann mit Nebenbestimmungen erteilt werden. |
+| 4.3 | Sie kann auf in Textform gestellten Antrag in der Regel um jeweils fünf Jahre verlängert werden; § 74 Abs. 2 Satz 2 und 3 gilt entsprechend. |
+| 5.1 | Die Zulassung wird unbeschadet der Rechte Dritter erteilt. |
+| 6.1 | Das Deutsche Institut für Bautechnik macht die allgemeinen bauaufsichtlichen Zulassungen nach Gegenstand und wesentlichem Inhalt öffentlich bekannt. |
 
 ---
 
-### § 20 — Allgemeines bauaufsichtliches Prüfzeugni
+### § 20 — Allgemeines bauaufsichtliches Prüfzeugnis
 **type:** bauproduktzulassung
 **source_paragraph:** §20 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauprodukte, die nach allgemein anerkannten Prüfverfahren beurteilt werden, bedürfen anstelle einer allgemeinen bauaufsi. |
-| 2.1 | Ein allgemeines bauaufsichtliches Prüfzeugnis wird von einer Prüfstelle nach § 25 Satz 1 Nr. 1 für Bauprodukte nach Absa. |
+| 1.1 | Bauprodukte, die nach allgemein anerkannten Prüfverfahren beurteilt werden, bedürfen anstelle einer allgemeinen bauaufsichtlichen Zulassung nur eines allgemeinen bauaufsichtlichen Prüfzeugnisses. |
+| 1.2 | Dies wird mit der Angabe der maßgebenden technischen Regeln in den Technischen Baubestimmungen nach § 87a bekannt gemacht. |
+| 2.1 | Ein allgemeines bauaufsichtliches Prüfzeugnis wird von einer Prüfstelle nach § 25 Satz 1 Nr. 1 für Bauprodukte nach Absatz 1 erteilt, wenn bei deren Verwendung die baulichen Anlagen den Anforderungen dieses Gesetzes und aufgrund dieses Gesetzes genügen. |
+| 2.2 | § 19 Abs. 2, Abs. 4 bis 6 gilt entsprechend. |
+| 2.3 | Die oberste Bauaufsichtsbehörde kann allgemeine bauaufsichtliche Prüfzeugnisse zurücknehmen oder widerrufen; die §§ 48 und 49 des Verwaltungsverfahrensgesetzes (VwVfG) finden Anwendung. |
 
 ---
 
@@ -318,10 +416,10 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §21 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Zustimmung im Einzelfall Mit Zustimmung der obersten Bauaufsichtsbehörde dürfen unter den Voraussetzungen des § 18b Abs. 1 im Einzelfall Bauprodukte verwendet werden, wenn ihre Verwendbarkeit im Sinne des § 18 Abs. 1 nachgewiesen ist. |
-| 1.2 | Die oberste Bauaufsichtsbehörde kann für genau begrenzte Fälle fe. |
+| 1.1 | Mit Zustimmung der obersten Bauaufsichtsbehörde dürfen unter den Voraussetzungen des § 18b Abs. 1 im Einzelfall Bauprodukte verwendet werden, wenn ihre Verwendbarkeit im Sinne des § 18 Abs. 1 nachgewiesen ist. |
+| 1.2 | Die oberste Bauaufsichtsbehörde kann für genau begrenzte Fälle festlegen, dass ihre Zustimmung nicht erforderlich ist. |
 
 ---
 
@@ -329,27 +427,29 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §22 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauprodukte bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 87a Abs. 2, den. |
+| 1.1 | Bauprodukte bedürfen einer Bestätigung ihrer Übereinstimmung mit den Technischen Baubestimmungen nach § 87a Abs. 2, den allgemeinen bauaufsichtlichen Zulassungen, den allgemeinen bauaufsichtlichen Prüfzeugnissen oder den Zustimmungen im Einzelfall; als Übereinstimmung gilt auch eine Abweichung, die nicht wesentlich ist. |
 | 2.1 | Die Bestätigung der Übereinstimmung erfolgt durch Übereinstimmungserklärung des Herstellerunternehmens (§ 23). |
-| 3.1 | Die Übereinstimmungserklärung hat das Herstellerunternehmen durch die Kennzeichnung der Bauprodukte mit dem Übereinstimm. |
-| 4.1 | Das Ü-Zeichen ist auf dem Bauprodukt, auf einem Beipackzettel oder auf seiner Verpackung oder, wenn dies Schwierigkeiten. |
-| 5.1 | Sind Bauprodukte ohne Vorliegen der Voraussetzungen mit dem Ü-Zeichen gekennzeichnet, so kann die Bauaufsichtsbehörde di. |
-| 6.1 | Die von Herstellerunternehmen, die in einem anderen Land der Bundesrepublik Deutschland oder einem anderen Staat ansässi. |
+| 3.1 | Die Übereinstimmungserklärung hat das Herstellerunternehmen durch die Kennzeichnung der Bauprodukte mit dem Übereinstimmungszeichen (Ü-Zeichen) unter Hinweis auf den Verwendungszweck abzugeben. |
+| 4.1 | Das Ü-Zeichen ist auf dem Bauprodukt, auf einem Beipackzettel oder auf seiner Verpackung oder, wenn dies Schwierigkeiten bereitet, auf dem Lieferschein oder auf einer Anlage zum Lieferschein anzubringen. |
+| 5.1 | Sind Bauprodukte ohne Vorliegen der Voraussetzungen mit dem Ü-Zeichen gekennzeichnet, so kann die Bauaufsichtsbehörde die Verwendung dieser Bauprodukte untersagen und deren Kennzeichnung entwerten oder beseitigen lassen. |
+| 6.1 | Die von Herstellerunternehmen, die in einem anderen Land der Bundesrepublik Deutschland oder einem anderen Staat ansässig sind, ausgestellten Ü-Zeichen gelten auch in Rheinland-Pfalz. |
 
 ---
 
-### § 23 — Übereinstimmungserklärung des Hersteller
+### § 23 — Übereinstimmungserklärung des Herstellerunternehmens
 **type:** bauproduktzulassung
 **source_paragraph:** §23 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Das Herstellerunternehmen darf eine Übereinstimmungserklärung nur abgeben, wenn es durch werkseigene Produktionskontroll. |
-| 2.1 | In den Technischen Baubestimmungen nach § 87a, in den allgemeinen bauaufsichtlichen Zulassungen, in den allgemeinen baua. |
-| 3.1 | In den Technischen Baubestimmungen nach § 87a, in den allgemeinen bauaufsichtlichen Zulassungen oder in den Zustimmungen. |
-| 4.1 | Bauprodukte, die nicht in Serie hergestellt werden, bedürfen nur einer Übereinstimmungserklärung nach Absatz 1, sofern n. |
+| 1.1 | Das Herstellerunternehmen darf eine Übereinstimmungserklärung nur abgeben, wenn es durch werkseigene Produktionskontrolle sichergestellt hat, dass das von ihm hergestellte Bauprodukt den maßgebenden technischen Regeln, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht. |
+| 2.1 | In den Technischen Baubestimmungen nach § 87a, in den allgemeinen bauaufsichtlichen Zulassungen, in den allgemeinen bauaufsichtlichen Prüfzeugnissen oder in den Zustimmungen im Einzelfall kann eine Prüfung der Bauprodukte durch eine Prüfstelle nach § 25 Satz 1 Nr. 2 vor Abgabe der Übereinstimmungserklärung vorgeschrieben werden, wenn dies zur Sicherung einer ordnungsgemäßen Herstellung erforderlich ist. |
+| 2.2 | In diesen Fällen hat die Prüfstelle das Bauprodukt daraufhin zu überprüfen, ob es den maßgebenden technischen Regeln, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht. |
+| 3.1 | In den Technischen Baubestimmungen nach § 87a, in den allgemeinen bauaufsichtlichen Zulassungen oder in den Zustimmungen im Einzelfall kann eine Zertifizierung vor Abgabe der Übereinstimmungserklärung vorgeschrieben werden, wenn dies zum Nachweis einer ordnungsgemäßen Herstellung eines Bauproduktes erforderlich ist. |
+| 3.2 | Die oberste Bauaufsichtsbehörde kann im Einzelfall die Verwendung von Bauprodukten ohne Zertifizierung gestatten, wenn nachgewiesen ist, dass diese Bauprodukte den technischen Regeln, Zulassungen, Prüfzeugnissen oder Zustimmungen nach Absatz 1 entsprechen. |
+| 4.1 | Bauprodukte, die nicht in Serie hergestellt werden, bedürfen nur einer Übereinstimmungserklärung nach Absatz 1, sofern nichts anderes bestimmt ist. |
 
 ---
 
@@ -357,32 +457,41 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §24 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Dem Herstellerunternehmen ist auf Antrag ein Übereinstimmungszertifikat von einer Zertifizierungsstelle nach § 25 Satz 1. |
+| 1.1 | Dem Herstellerunternehmen ist auf Antrag ein Übereinstimmungszertifikat von einer Zertifizierungsstelle nach § 25 Satz 1 Nr. 3 zu erteilen, wenn das Bauprodukt |
+| 1.2 | 1. den Technischen Baubestimmungen nach § 87a Abs. 2, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht und |
+| 1.3 | 2. einer werkseigenen Produktionskontrolle sowie einer Fremdüberwachung nach Maßgabe des Absatzes 2 unterliegt |
 | 2.1 | Die Fremdüberwachung ist von Überwachungsstellen nach § 25 Satz 1 Nr. 4 durchzuführen. |
-| 2.2 | Die Fremdüberwachung hat regelmäß. |
+| 2.2 | Die Fremdüberwachung hat regelmäßig zu überprüfen, ob das Bauprodukt den Technischen Baubestimmungen nach § 87a Abs. 2, der allgemeinen bauaufsichtlichen Zulassung, dem allgemeinen bauaufsichtlichen Prüfzeugnis oder der Zustimmung im Einzelfall entspricht. |
 
 ---
 
-### § 25 — Prüf-, Zertifizierungs- und Überwachungs
+### § 25 — Prüf-, Zertifizierungs- und Überwachungsstellen
 **type:** bauproduktzulassung
 **source_paragraph:** §25 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | 1. Prüfstelle für die Erteilung allgemeiner bauaufsichtlicher Prüfzeugnisse (§ 20 Abs. 2), |
+| 1.1 | Die oberste Bauaufsichtsbehörde kann eine natürliche oder juristische Person als |
+| 1.2 | 1. Prüfstelle für die Erteilung allgemeiner bauaufsichtlicher Prüfzeugnisse (§ 20 Abs. 2) |
+| 1.3 | 2. Prüfstelle für die Überprüfung von Bauprodukten vor Bestätigung der Übereinstimmung (§ 23 Abs. 2) |
+| 1.4 | 3. Zertifizierungsstelle (§ 24 Abs. 1) |
+| 1.5 | 4. Überwachungsstelle für die Fremdüberwachung (§ 24 Abs. 2) |
+| 1.6 | 5. Überwachungsstelle für die Überwachung nach § 17a Abs. 7 und § 26 Abs. 2 oder |
+| 1.7 | 6. Prüfstelle für die Überprüfung nach § 17a Abs. 6 und § 26 Abs. 1 anerkennen, wenn sie oder die bei ihr Beschäftigten nach ihrer Ausbildung, Fachkenntnis, persönlichen Zuverlässigkeit, ihrer Unparteilichkeit und ihren Leistungen die Gewähr dafür bieten, dass diese Aufgaben den öffentlich-rechtlichen Vorschriften entsprechend wahrgenommen werden, und wenn sie über die erforderlichen Vorrichtungen verfügen. Satz 1 ist entsprechend auf Behörden anzuwenden, wenn sie ausreichend mit geeigneten Fachkräften besetzt und mit den erforderlichen Vorrichtungen ausgestattet sind. Die von anderen Ländern der Bundesrepublik Deutschland anerkannten Prüf-, Zertifizierungs- und Überwachungsstellen sind auch in Rheinland-Pfalz anerkannt |
 
 ---
 
-### § 26 — Besondere Sachkunde- und Sorgfaltspflich
+### § 26 — Besondere Sachkunde- und Sorgfaltspflichten
 **type:** brandklassifizierung
 **source_paragraph:** §26 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bei Bauprodukten, deren Herstellung in außergewöhnlichem Maß von der Sachkunde und Erfahrung der damit betrauten Persone. |
-| 2.1 | Für Bauprodukte, die wegen ihrer besonderen Eigenschaften oder ihres besonderen Verwendungszwecks einer außergewöhnliche. |
+| 1.1 | Bei Bauprodukten, deren Herstellung in außergewöhnlichem Maß von der Sachkunde und Erfahrung der damit betrauten Personen oder von einer Ausstattung mit besonderen Vorrichtungen abhängt, kann in der allgemeinen bauaufsichtlichen Zulassung, in der Zustimmung im Einzelfall oder durch Rechtsverordnung des fachlich zuständigen Ministeriums vorgeschrieben werden, dass das Herstellerunternehmen über solche Fachkräfte und Vorrichtungen verfügt und den Nachweis hierüber gegenüber einer Prüfstelle nach § 25 Satz 1 Nr. 6 zu erbringen hat. |
+| 2.1 | Für Bauprodukte, die wegen ihrer besonderen Eigenschaften oder ihres besonderen Verwendungszwecks einer außergewöhnlichen Sorgfalt bei Einbau, Transport, Instandhaltung oder Reinigung bedürfen, kann in der allgemeinen bauaufsichtlichen Zulassung, in der Zustimmung im Einzelfall oder durch Rechtsverordnung des fachlich zuständigen Ministeriums die Überwachung dieser Tätigkeiten durch eine Überwachungsstelle nach § 25 Satz 1 Nr. 5 vorgeschrieben werden, soweit diese Tätigkeiten nicht bereits durch die Verordnung (EU) Nr. 305/2011 erfasst sind. |
+| 2.2 | Dritter Abschnitt Wände, Decken und Dächer. |
 
 ---
 
@@ -390,9 +499,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** tragende_wand
 **source_paragraph:** §27 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Tragende und aussteifende Wände und ihre Unterstützungen müssen im Brandfall zur Durchführung von Rettungsmaßnahmen und. |
+| 1.1 | Tragende und aussteifende Wände und ihre Unterstützungen müssen im Brandfall zur Durchführung von Rettungsmaßnahmen und wirksamen Löscharbeiten ausreichend lang standsicher sein. Sie sind bei Gebäuden der |
+| 1.2 | 1. Gebäudeklasse 5 feuerbeständig |
+| 1.3 | 2. Gebäudeklasse 4 in Kellergeschossen feuerbeständig, im Übrigen hochfeuerhemmend |
+| 1.4 | 3. Gebäudeklasse 3 in Kellergeschossen feuerbeständig, im Übrigen feuerhemmend |
+| 1.5 | 4. Gebäudeklasse 2 in Kellergeschossen sowie im untersten Geschoss mit einer dritten Wohnung feuerhemmend und in den wesentlichen Teilen aus nicht brennbaren Baustoffen, im Übrigen feuerhemmend herzustellen; dies gilt nicht für Geschosse im Dachraum, über denen sich keine Aufenthaltsräume befinden, für zu ebener Erde liegende, eingeschossige Vorbauten wie Wintergärten sowie für Unterstützungen von Balkonen |
 | 2.1 | Für tragende Pfeiler und Stützen gilt Absatz 1 entsprechend. |
 
 ---
@@ -401,10 +514,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** aussenwand
 **source_paragraph:** §28 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Nicht tragende Außenwände und nicht tragende Teile tragender Außenwände sind bei Gebäuden der Gebäudeklassen 4 und 5 aus. |
-| 2.1 | Außenflächen sowie Bekleidungen von Außenbauteilen einschließlich der Dämmstoffe und der Unterkonstruktionen sind so aus. |
+| 1.1 | Nicht tragende Außenwände und nicht tragende Teile tragender Außenwände sind bei Gebäuden der Gebäudeklassen 4 und 5 aus nicht brennbaren Baustoffen oder als raumabschließende Bauteile feuerhemmend herzustellen. |
+| 1.2 | Satz 1 gilt nicht für Türen und Fenster, Fugendichtungen, brennbare Dämmstoffe in nicht brennbaren geschlossenen Profilen der Außenwandkonstruktionen sowie Kleinteile, die nicht zur Brandausbreitung beitragen. |
+| 2.1 | Außenflächen sowie Bekleidungen von Außenbauteilen einschließlich der Dämmstoffe und der Unterkonstruktionen sind so auszubilden, dass eine Brandausbreitung auf und in diesen Bauteilen aus reichend lang begrenzt ist. |
+| 2.2 | Sie müssen bei Gebäuden der Gebäudeklassen 4 und 5 schwer entflammbar sein und dürfen nicht brennend abfallen oder abtropfen; Dämmstoffe und Unterkonstruktionen aus normalentflammbaren Baustoffen sind zulässig, wenn die Anforderungen nach Satz 1 erfüllt sind. |
+| 2.3 | Abweichend von Satz 2 sind Außenwandbekleidungen, die den Technischen Baubestimmungen nach § 87a Abs. 2 entsprechen, mit Ausnahme der Dämmstoffe, aus normalentflammbaren Baustoffen zulässig. |
+| 2.4 | Für Doppelfassaden sind bei Gebäuden der Gebäudeklassen 3 bis 5 gegen die Brandausbreitung besondere Vorkehrungen zu treffen; dies gilt für hinterlüftete Bekleidungen bei Gebäuden der Gebäudeklassen 4 und 5 entsprechend. |
+| 2.5 | Die Begrenzung der Brandausbreitung im Sinne von Satz 1 ist auch beim Anbringen von Anlagen zur Nutzung solarer Strahlungsenergie zu berücksichtigen. |
+| 2.6 | § 30 Abs. 7 Satz 1 bis 3 bleibt unberührt. |
 
 ---
 
@@ -412,14 +531,18 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** trennwand
 **source_paragraph:** §29 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Trennwände sind als raumabschließende Bauteile zur Verhinderung der Brandausbreitung innerhalb von Geschossen herzustell. |
-| 2.1 | Die Trennwände müssen in Gebäuden der. |
+| 1.1 | Trennwände sind als raumabschließende Bauteile zur Verhinderung der Brandausbreitung innerhalb von Geschossen herzustellen |
+| 1.2 | 1. zwischen Wohnungen sowie zwischen Wohnungen und fremden Räumen |
+| 1.3 | 2. zwischen sonstigen Nutzungseinheiten |
+| 2.1 | Die Trennwände müssen in Gebäuden der |
 | 2.2 | 1. Gebäudeklasse 5 feuerbeständig |
-| 2.3 | 2. Gebäudeklasse 4 hochfeuerhemmend, jeweils im |
+| 2.3 | 2. Gebäudeklasse 4 hochfeuerhemmend, jeweils im obersten Geschoss im Dachraum feuerhemmend |
+| 2.4 | 3. Gebäudeklassen 2 und 3 feuerhemmend sein |
 | 3.1 | Die Trennwände sind bis zur Rohdecke oder bis unter die Dachhaut zu führen. |
-| 3.2 | Öffnungen sind zulässig, wenn sie für die Be. |
+| 3.2 | Öffnungen sind zulässig, wenn sie für die Benutzung des Gebäudes erforderlich sind. |
+| 3.3 | Sie sind mit mindestens feuerhemmenden, dicht- und selbstschließenden Abschlüssen zu versehen. |
 
 ---
 
@@ -427,23 +550,39 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** brandwand
 **source_paragraph:** §30 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Brandwände müssen als raumabschließende Bauteile feuerbeständig sein und aus nicht brennbaren Baustoffen bestehen; sie m. |
-| 2.1 | Brandwände sind herzustellen. |
-| 2.2 | 1. zum Abschluss von Gebäuden, soweit die Abschlusswand in einem Abstand bis zu 2,50 m von |
-| 3.1 | Anstelle von Brandwänden sind raumabschließende Wände zulässig, die. |
-| 3.2 | 1. in den Fällen des Absatzes 2 Satz 1 Nr. 1 und 2 b |
-| 4.1 | Brandwände und Wände, die anstelle von Brandwänden zulässig sind, müssen in einer Ebene durchgehend sein. |
-| 4.2 | Eine geschossw. |
-| 5.1 | Müssen auf einem Grundstück Gebäude oder Gebäudeteile, die über Eck zusammenstoßen, durch eine Brandwand getrennt werden. |
+| 1.1 | Brandwände müssen als raumabschließende Bauteile feuerbeständig sein und aus nicht brennbaren Baustoffen bestehen; sie müssen so beschaffen sein, dass sie bei einem Brand ihre Standsicherheit auch unter zusätzlicher mechanischer Beanspruchung nicht verlieren und die Brandausbreitung auf andere Gebäude oder Gebäudeabschnitte verhindern. |
+| 2.1 | Brandwände sind herzustellen |
+| 2.2 | 1. zum Abschluss von Gebäuden, soweit die Abschlusswand in einem Abstand bis zu 2,50 m von der Nachbargrenze errichtet wird, es sei denn, dass ein Abstand von 5 m zu auf dem Nachbargrundstück bestehenden oder nach baurechtlichen Vorschriften zulässigen Gebäuden öffent lich-rechtlich gesichert ist; dies gilt nicht für Gebäude ohne Aufenthaltsräume, Toiletten oder Feuerstätten bis zu 50 m³ umbauten Raums |
+| 2.3 | 2. zum Abschluss von aneinander gereihten Gebäuden auf demselben Grundstück in Abständen von höchstens 60 m, bei Gebäuden, deren tragende Bauteile in den wesentlichen Teilen aus brennbaren Baustoffen bestehen, in Abständen von höchstens 40 m |
+| 2.4 | 3. innerhalb ausgedehnter Gebäude in Abständen von höchstens 60 m; größere Abstände können zugelassen werden, wenn es die Benutzung des Gebäudes erfordert und der Brandschutz auf andere Weise gewährleistet ist; bei Gebäudetiefen von mehr als 40 m können besondere Anforderungen gestellt werden |
+| 2.5 | 4. zwischen Wohngebäuden und angebauten land- oder forstwirtschaftliche Betriebsgebäuden auf demselben Grundstück sowie zwischen dem Wohnteil oder Wohn- und Schlafräumen und dem land- oder forstwirtschaftliche Betriebsteil eines Gebäudes. Gemeinsame Brandwände sind zulässig. Satz 1 gilt nicht für Außenwände und sonstige Abschlüsse von untergeordneten Vorbauten, wenn sie nicht mehr als 1,50 m vor die Flucht der vorderen oder hinteren Außenwand des Nachbargebäudes vortreten und vom Nachbargebäude oder von der Grundstücksgrenze einen ihrer Ausladung entsprechenden Abstand, mindestens aber einen Abstand von 1 m, einhalten |
+| 3.1 | Anstelle von Brandwänden sind raumabschließende Wände zulässig, die |
+| 3.2 | 1. in den Fällen des Absatzes 2 Satz 1 Nr. 1 und 2 bei Gebäuden der Gebäudeklassen 2 und 3 und in den Fällen des Absatzes 2 Satz 1 Nr. 3 bei Gebäuden der Gebäudeklasse 3 hochfeuerhemmend sind |
+| 3.3 | 2. in den Fällen des Absatzes 2 Satz 1 Nr. 1 und 3 bei Gebäuden der Gebäudeklasse 4 auch unter zusätzlicher mechanischer Beanspruchung hochfeuerhemmend sind |
+| 3.4 | 3. in den Fällen des Absatzes 2 Satz 1 Nr. 4 feuerbeständig sind, wenn der umbaute Raum des Betriebsgebäudes oder des Betriebsteils nicht mehr als 2 000 m beträgt. Abweichend von Satz 1 Nr. 1 genügen in den Fällen des Absatzes 2 Satz 1 Nr. 1 bei Gebäuden der Gebäudeklassen 2 und 3, deren tragende Bauteile aus brennbaren Baustoffen hergestellt sind, jeweils raumabschließende Wände aus brennbaren Baustoffen, deren Feuerwiderstand von innen nach außen dem feuerhemmender Wände und von außen nach innen dem feuerbeständiger Wände entspricht, mit einer gegen Brandeinwirkung widerstandsfähigen Bekleidung aus nicht brennbaren Baustoffen. Die Absätze 5 bis 9 gelten entsprechend |
+| 4.1 | Brandwände und Wände, die anstelle von Brandwänden zulässig sind, müssen in einer Ebene durchgehend sein. Eine geschossweise versetzte Anordnung von Wänden zur Unterteilung eines Gebäudes anstelle von Brandwänden ist zulässig, wenn |
+| 4.2 | 1. die Nutzung des Gebäudes dies erfordert |
+| 4.3 | 2. die Wände in der Bauart von Brandwänden hergestellt sind |
+| 4.4 | 3. die Decken, soweit sie in Verbindung mit diesen Wänden stehen, feuerbeständig sind, aus nicht brennbaren Baustoffen bestehen und keine Öffnungen haben |
+| 4.5 | 4. die Bauteile, die diese Wände und Decken unterstützen, feuerbeständig sind und aus nicht brennbaren Baustoffen bestehen |
+| 4.6 | 5. die Außenwände innerhalb des Gebäudeabschnitts, in dem diese Wände angeordnet sind, in allen Geschossen feuerbeständig sind und |
+| 4.7 | 6. Öffnungen in den Außenwänden so angeordnet sind oder andere Vorkehrungen so getroffen sind, dass eine Brandübertragung in andere Brandabschnitte nicht möglich ist. Abweichend von Satz 2 Nr. 3 bis 5 genügen hinsichtlich der Feuerwiderstandsfähigkeit der Bauteile in den Fällen des Absatzes 3 Satz 1 Nr. 1 und 2 und Satz 2 die dort genannten Anforderungen. Die Absätze 5 bis 9 gelten entsprechend |
+| 5.1 | Müssen auf einem Grundstück Gebäude oder Gebäudeteile, die über Eck zusammenstoßen, durch eine Brandwand getrennt werden, so muss der Abstand der Brandwand von der inneren Ecke 5 m betragen, wenn nicht durch andere bauliche Vorkehrungen ein Feuerüberschlagsweg von 5 m gewährleistet ist. |
+| 5.2 | Dies gilt nicht, wenn die Gebäude oder Gebäudeteile in einem Winkel von mehr als 120° über Eck zusammenstoßen. |
 | 6.1 | Bei Gebäuden der Gebäudeklassen 1 bis 3 ist die Brandwand bis unmittelbar unter die Dachhaut zu führen. |
-| 6.2 | Bei Gebäuden der. |
+| 6.2 | Bei Gebäuden der Gebäudeklassen 4 und 5 ist die Brandwand 0,30 m über Dach zu führen oder in Höhe der Dachhaut mit einer beiderseits 0,50 m auskragenden feuerbeständigen Platte aus nicht brennbaren Baustoffen abzuschließen; brennbare Teile des Daches dürfen nicht darüber hinweggeführt werden. |
+| 6.3 | Satz 1 gilt für rechtmäßig bestehende Gebäude, die durch nachträglichen Dachausbau zur Schaffung von Wohnraum zu einem Gebäude der Gebäudeklasse 4 werden, entsprechend. |
 | 7.1 | Bauteile mit brennbaren Baustoffen dürfen Brandwände nicht überbrücken. |
-| 7.2 | Dies gilt auch für Anlagen und Leitungen mit bre. |
+| 7.2 | Dies gilt auch für Anlagen und Leitungen mit brennbaren Materialien auf Dächern und an Außenwänden; sie müssen so angeordnet und beschaffen sein, dass ein Brand nicht auf andere Brandabschnitte, Gebäude oder Gebäudeteile übertragen werden kann. |
+| 7.3 | Außenbekleidungen von Gebäudeabschlusswänden nach Absatz 2 Satz 1 Nr. 1 müssen einschließlich der Dämmstoffe und Unterkonstruktionen aus nicht brennbaren Baustoffen bestehen. |
+| 7.4 | Bauteile dürfen in Brandwände nur so weit eingreifen, dass der verbleibende Wandquerschnitt feuerbeständig bleibt. |
+| 7.5 | Für Leitungen, Leitungsschlitze und Schornsteine gilt Satz 4 entsprechend. |
 | 8.1 | Öffnungen in Brandwänden sind unzulässig. |
-| 8.2 | In Brandwänden innerhalb ausgedehnter Gebäude sind Öffnungen zulässig, wenn es. |
-| 9.1 | In Brandwänden können Teilflächen aus lichtdurchlässigen, nicht brennbaren Baustoffen zugelassen werden, wenn diese Einb. |
+| 8.2 | In Brandwänden innerhalb ausgedehnter Gebäude sind Öffnungen zulässig, wenn es die Nutzung des Gebäudes erfordert. |
+| 8.3 | Die Öffnungen müssen mit feuerbeständigen, dicht- und selbstschließenden Abschlüssen versehen werden; Abweichungen können zugelassen werden, wenn der Brandschutz gewährleistet ist. |
+| 9.1 | In Brandwänden können Teilflächen aus lichtdurchlässigen, nicht brennbaren Baustoffen zugelassen werden, wenn diese Einbauten feuerbeständig sind. |
 
 ---
 
@@ -451,11 +590,18 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** decke
 **source_paragraph:** §31 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Decken müssen als tragende und raumabschließende Bauteile zwischen Geschossen im Brandfall ausreichend lang standsicher. |
-| 2.1 | Absatz 1 gilt nicht für Decken von land- oder forstwirtschaftliche Betriebsgebäuden, außer Ställen, mit nicht mehr als z. |
-| 3.1 | Öffnungen in Decken, für die eine feuerhemmende, hochfeuerhemmende oder feuerbeständige Bauart vorgeschrieben ist, sind. |
+| 1.1 | Decken müssen als tragende und raumabschließende Bauteile zwischen Geschossen im Brandfall ausreichend lang standsicher und widerstandsfähig gegen die Brandausbreitung sein; dies gilt auch für ihre Unterstützungen, für den Raumabschluss nur soweit erforderlich. Sie sind bei Gebäuden der |
+| 1.2 | 1. Gebäudeklasse 5 sowie zwischen dem land- oder forstwirtschaftliche Betriebsteil und dem Wohnteil eines Gebäudes feuerbeständig |
+| 1.3 | 2. Gebäudeklasse 4 in Kellergeschossen feuerbeständig, im Übrigen hochfeuerhemmend |
+| 1.4 | 3. Gebäudeklasse 3 in Kellergeschossen feuerbeständig, im Übrigen feuerhemmend |
+| 1.5 | 4. Gebäudeklasse 2 feuerhemmend herzustellen; dies gilt, unbeschadet des § 45 Abs. 5, nicht für Geschosse im Dachraum, über denen sich keine Aufenthaltsräume befinden, sowie für Balkone |
+| 2.1 | Absatz 1 gilt nicht für Decken von land- oder forstwirtschaftliche Betriebsgebäuden, außer Ställen, mit nicht mehr als zwei Geschossen über der Geländeoberfläche. |
+| 2.2 | Für Decken von Gebäuden mit nicht mehr als einem Geschoss über der Geländeoberfläche können Abweichungen von Absatz 1 zugelassen werden, wenn der Brandschutz gewährleistet ist. |
+| 3.1 | Öffnungen in Decken, für die eine feuerhemmende, hochfeuerhemmende oder feuerbeständige Bauart vorgeschrieben ist, sind unzulässig |
+| 3.2 | 1. bei Gebäuden der Gebäudeklassen 3 bis 5 |
+| 3.3 | 2. bei Gebäuden der Gebäudeklasse 2 in Kellergeschossen sowie im untersten Geschoss mit einer dritten Wohnung; dies gilt nicht für Decken innerhalb von Wohnungen und Nutzungseinheiten mit einer Nutzfläche von nicht mehr als 400 m² in nicht mehr als zwei Geschossen. Im Übrigen können, außer in der Decke über einer dritten Wohnung im untersten Geschoss von Gebäuden der Gebäudeklasse 2, Öffnungen zugelassen werden, wenn es die Nutzung des Gebäudes erfordert. Sie müssen entsprechend der Bauart der Decken mit feuerhemmenden, hochfeuerhemmenden oder feuerbeständigen Abschlüssen versehen werden; dies gilt nicht für den Abschluss von Öffnungen bei einschiebbaren Treppen oder Leitern nach § 33 Abs. 2 Satz 4 in Gebäuden der Gebäudeklasse 2; Abweichungen können zugelassen werden, wenn der Brandschutz gewährleistet ist |
 
 ---
 
@@ -463,20 +609,31 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** dach
 **source_paragraph:** §32 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bedachung muss gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme widerstandsfähig sein (h. |
-| 2.1 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3,. |
-| 3.1 | Die Absätze 1 und 2 gelten nicht für. |
+| 1.1 | Die Bedachung muss gegen eine Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme widerstandsfähig sein (harte Bedachung). |
+| 2.1 | Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, sind zulässig bei Gebäuden der Gebäudeklassen 1 bis 3, wenn die Gebäude |
+| 2.2 | 1. einen Abstand von der Grundstücksgrenze von 12 m, bei Gebäuden der Gebäudeklassen 1 und 2 von 6 m |
+| 2.3 | 2. von Gebäuden auf demselben Grundstück mit harter Bedachung einen Abstand von 15 m, bei Gebäuden der Gebäudeklassen 1 und 2 von 9 m |
+| 2.4 | 3. von Gebäuden auf demselben Grundstück mit Bedachungen, die die Anforderungen nach Absatz 1 nicht erfüllen, einen Abstand von 24 m, bei Gebäuden der Gebäudeklassen 1 und 2 von 12 m |
+| 2.5 | 4. von kleinen, nur Nebenzwecken dienenden Gebäuden ohne Feuerstätten auf demselben Grundstück einen Abstand von 5 m einhalten, soweit wegen des Brandverhaltens der Bedachung oder aufgrund von Vorkehrungen nicht geringere Abstände zugelassen werden. In den Fällen des Satzes 1 Nr. 1 werden angrenzende öffentliche Verkehrs-, Grün- und Wasserflächen zur Hälfte eingerechnet |
+| 3.1 | Die Absätze 1 und 2 gelten nicht für |
 | 3.2 | 1. lichtdurchlässige Bedachungen aus nicht brennbaren Baustoffen |
-| 3.3 | 2. Dachflächenfen |
-| 4.1 | Abweichend von den Absätzen 1 und 2 sind lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach Abs. |
-| 5.1 | Bei aneinander gebauten giebelständigen Gebäuden ist das Dach, waagrecht gemessen, mindestens 2 m von der Gebäudetrennwa. |
-| 6.1 | Die Dächer von Anbauten, die an Wände mit Öffnungen oder an Wände, die nicht mindestens feuerhemmend sind, anschließen,. |
-| 7.1 | Dachvorsprünge, Dachgesimse, Dachaufbauten, lichtdurchlässige Bedachungen und Lichtkuppeln sowie Anlagen zur Nutzung sol. |
-| 8.1 | Dächer an Verkehrsflächen und über Eingängen müssen Vorrichtungen zum Schutz gegen das Herabfallen von Schnee und Eis ha. |
+| 3.3 | 2. Dachflächenfenster, Oberlichter und Lichtkuppeln |
+| 3.4 | 3. Eingangsüberdachungen und Vordächer aus nicht brennbaren Baustoffen |
+| 3.5 | 4. Eingangsüberdachungen aus brennbaren Baustoffen, wenn die Eingänge nur zu Wohnungen führen |
+| 3.6 | 5. Gebäude ohne Aufenthaltsräume, Toiletten oder Feuerstätten bis zu 50 m³ umbauten Raums |
+| 4.1 | Abweichend von den Absätzen 1 und 2 sind lichtdurchlässige Teilflächen aus brennbaren Baustoffen in Bedachungen nach Absatz 1 und begrünte Bedachungen zulässig, wenn eine Brandentstehung bei einer Brandbeanspruchung von außen durch Flugfeuer und strahlende Wärme nicht zu befürchten ist oder Vorkehrungen hiergegen getroffen werden. |
+| 5.1 | Bei aneinander gebauten giebelständigen Gebäuden ist das Dach, waagrecht gemessen, mindestens 2 m von der Gebäudetrennwand oder der Grenze zu einem Nachbargrundstück entfernt von innen nach außen feuerhemmend und ohne Öffnungen herzustellen. |
+| 6.1 | Die Dächer von Anbauten, die an Wände mit Öffnungen oder an Wände, die nicht mindestens feuerhemmend sind, anschließen, sind innerhalb eines Abstands von 5 m von diesen Wänden so widerstandsfähig gegen Feuer herzustellen wie die Decken des höheren Gebäudeteils. |
+| 6.2 | Dies gilt nicht für Anbauten an Wohngebäude der Gebäudeklassen 2 und 3. |
+| 7.1 | Dachvorsprünge, Dachgesimse, Dachaufbauten, lichtdurchlässige Bedachungen und Lichtkuppeln sowie Anlagen zur Nutzung solarer Strahlungsenergie auf Dachflächen sind so anzuordnen und herzustellen, dass ein Brand nicht auf andere Gebäude oder Gebäudeteile übertragen werden kann. Von Brandwänden oder von Wänden, die anstelle von Brandwänden zulässig sind, müssen 1,25 m entfernt sein |
+| 7.2 | 1. Öffnungen wie Dachflächenfenster, Oberlichter und Lichtkuppeln in der Dachfläche, wenn die Brandwände oder Gebäudetrennwände nicht mindestens 0,30 m über Dach geführt sind |
+| 7.3 | 2. Dachgauben und ähnliche Dachaufbauten aus brennbaren Baustoffen, wenn sie nicht durch Wände nach Nummer 1 gegen Brandübertragung geschützt sind |
+| 7.4 | 3. aufgeständerte Anlagen zur Nutzung solarer Strahlungsenergie bei Gebäuden der Gebäudeklassen 3 bis 5, wenn sie nicht durch Wände nach Nummer 1 oder sonst geeignete Vorkehrungen gegen Brandübertragung geschützt sind; § 30 Abs. 7 Satz 2 bleibt unberührt |
+| 8.1 | Dächer an Verkehrsflächen und über Eingängen müssen Vorrichtungen zum Schutz gegen das Herabfallen von Schnee und Eis haben, wenn es die Verkehrssicherheit erfordert. |
 | 9.1 | Für Arbeiten auf dem Dach sind sicher benutzbare Vorrichtungen anzubringen. |
-| 9.2 | Vierter Abschnitt Treppen, Flure, Aufzüge un. |
+| 9.2 | Vierter Abschnitt Treppen, Flure, Aufzüge und Öffnungen. |
 
 ---
 
@@ -484,18 +641,26 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bestandsaenderung
 **source_paragraph:** §33 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Jedes nicht zu ebener Erde liegende Geschoss eines Gebäudes muss über mindestens eine Treppe zugänglich sein (notwendige. |
-| 2.1 | Notwendige Treppen müssen so angeordnet und ausgebildet sein, dass sie für den größten zu erwartenden Verkehr ausreichen. |
-| 3.1 | In Gebäuden der Gebäudeklassen 3 bis 5 sind die notwendigen Treppen in einem Zuge zu allen angeschlossenen Geschossen zu. |
-| 4.1 | Die tragenden Teile notwendiger Treppen sind bei Gebäuden der Gebäudeklasse 5 feuerhemmend aus nicht brennbaren Baustoff. |
+| 1.1 | Jedes nicht zu ebener Erde liegende Geschoss eines Gebäudes muss über mindestens eine Treppe zugänglich sein (notwendige Treppe); weitere Treppen können verlangt werden, wenn dies zur Rettung von Menschen im Brandfall erforderlich ist. |
+| 2.1 | Notwendige Treppen müssen so angeordnet und ausgebildet sein, dass sie für den größten zu erwartenden Verkehr ausreichen und leicht und gefahrlos als Rettungsweg benutzt werden können. |
+| 2.2 | Statt notwendiger Treppen sind Rampen mit flacher Neigung zulässig. |
+| 2.3 | Einschiebbare Treppen und Rolltreppen sind als notwendige Treppen unzulässig. |
+| 2.4 | Einschiebbare Treppen und Leitern sind bei Gebäuden der Gebäudeklassen 2 und 3 als Zugang zu einem Dachraum ohne Aufenthaltsräume zulässig; sie können als Zugang zu sonstigen Räumen, die keine Aufenthaltsräume sind, zugelassen werden, wenn der Brandschutz gewährleistet ist. |
+| 3.1 | In Gebäuden der Gebäudeklassen 3 bis 5 sind die notwendigen Treppen in einem Zuge zu allen angeschlossenen Geschossen zu führen; sie müssen mit den Treppen zum Dachraum unmittelbar verbunden sein. |
+| 3.2 | Satz 1 gilt nicht für Treppen in Wohnungen. |
+| 4.1 | Die tragenden Teile notwendiger Treppen sind bei Gebäuden der Gebäudeklasse 5 feuerhemmend aus nicht brennbaren Baustoffen, bei Gebäuden der Gebäudeklasse 4 aus nicht brennbaren Baustoffen, in der Gebäudeklasse 3 aus nicht brennbaren Baustoffen oder feuerhemmend herzustellen; dies gilt nicht für Treppen in Wohnungen. |
+| 4.2 | Für tragende Teile von notwendigen Außentreppen genügen nicht brennbare Baustoffe. |
 | 5.1 | Die nutzbare Breite notwendiger Treppen und ihrer Absätze muss 1 m betragen. |
-| 5.2 | In Gebäuden der Gebäudeklasse 2 und innerha. |
-| 6.1 | Zwischen einer Treppe und einer in ihrer Richtung aufschlagenden Tür muss ein Treppenabsatz angeordnet werden, dessen Ti. |
+| 5.2 | In Gebäuden der Gebäudeklasse 2 und innerhalb von Wohnungen genügt eine Breite von 0,80 m. |
+| 5.3 | Geringere Breiten können in bestehenden Gebäuden zugelassen werden, wenn der Brandschutz gewährleistet ist. |
+| 5.4 | Treppen mit geringer Benutzung können eine geringere Breite haben. |
+| 6.1 | Zwischen einer Treppe und einer in ihrer Richtung aufschlagenden Tür muss ein Treppenabsatz angeordnet werden, dessen Tiefe der Breite der Tür entspricht. |
 | 7.1 | Treppen müssen mindestens einen festen und griffsicheren Handlauf haben. |
-| 7.2 | Bei besonders breiten Treppen können Handläufe. |
-| 8.1 | An den freien Seiten der Treppen und Treppenabsätze sind verkehrssichere Geländer anzubringen; sie müssen 0,90 m, bei me. |
+| 7.2 | Bei besonders breiten Treppen können Handläufe auf beiden Seiten und Zwischenhandläufe gefordert werden. |
+| 8.1 | An den freien Seiten der Treppen und Treppenabsätze sind verkehrssichere Geländer anzubringen; sie müssen 0,90 m, bei mehr als 12 m Absturzhöhe 1,10 m hoch sein. |
+| 8.2 | Fenster, die unmittelbar an Treppen liegen und deren Brüstungen unter der erforderlichen Geländerhöhe liegen, sind zu sichern. |
 | 9.1 | Auf Handläufe und Geländer kann verzichtet werden, wenn die Verkehrssicherheit gewährleistet ist. |
 
 ---
@@ -504,25 +669,39 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** treppe
 **source_paragraph:** §34 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Jede notwendige Treppe im Innern von Gebäuden der Gebäudeklassen 3 bis 5 muss zur Sicherstellung der Rettungswege aus de. |
-| 2.1 | Von jeder Stelle eines Aufenthaltsraums sowie eines Kellergeschosses muss mindestens ein notwendiger Treppenraum oder ei. |
-| 3.1 | Jeder notwendige Treppenraum muss auf möglichst kurzem Weg einen sicheren Ausgang ins Freie haben. |
-| 3.2 | Sofern der Ausgang ei. |
+| 1.1 | Jede notwendige Treppe im Innern von Gebäuden der Gebäudeklassen 3 bis 5 muss zur Sicherstellung der Rettungswege aus den Geschossen ins Freie in einem eigenen, durchgehenden Treppenraum liegen (notwendiger Treppenraum). Notwendige Treppenräume müssen so angeordnet und ausgebildet sein, dass die Nutzung der notwendigen Treppen im Brandfall ausreichend lang möglich ist. Notwendige Treppen sind ohne eigenen Treppenraum zulässig |
+| 1.2 | 1. in Gebäuden der Gebäudeklassen 1 und 2 |
+| 1.3 | 2. für die innere Verbindung von höchstens zwei Geschossen derselben Wohnung oder derselben Nutzungseinheit mit einer Nutzfläche von insgesamt nicht mehr als 200 m, wenn die Rettung von Menschen aus den über diese Treppen zugänglichen Räumen noch auf andere Weise gewährleistet ist |
+| 1.4 | 3. als Außentreppe, wenn ihre Nutzung ausreichend sicher ist und im Brandfall nicht gefährdet werden kann |
+| 2.1 | Von jeder Stelle eines Aufenthaltsraums sowie eines Kellergeschosses muss mindestens ein notwendiger Treppenraum oder ein Ausgang ins Freie in höchstens 35 m Entfernung erreichbar sein. |
+| 2.2 | Sind mehrere notwendige Treppenräume erforderlich, so sind sie so zu verteilen, dass die Rettungswege möglichst kurz sind. |
+| 3.1 | Jeder notwendige Treppenraum muss auf möglichst kurzem Weg einen sicheren Ausgang ins Freie haben. Sofern der Ausgang eines notwendigen Treppenraums nicht unmittelbar ins Freie führt, muss der Raum zwischen dem notwendigen Treppenraum und dem Ausgang ins Freie |
+| 3.2 | 1. mindestens so breit sein wie die zugehörigen notwendigen Treppen |
+| 3.3 | 2. Wände haben, die die Anforderungen an die Wände des notwendigen Treppenraums erfüllen |
+| 3.4 | 3. rauchdichte und selbstschließende Türen zu notwendigen Fluren haben und |
+| 3.5 | 4. ohne Öffnungen zu anderen Räumen, ausgenommen zu notwendigen Fluren, sein Abweichungen von Satz 2 Nr. 2 und 4 können zugelassen werden, wenn der Brandschutz gewährleistet ist |
 | 4.1 | Übereinander liegende Kellergeschosse müssen jeweils mindestens zwei getrennte Ausgänge haben. |
-| 4.2 | Von je zwei Ausgängen jed. |
-| 5.1 | In Gebäuden der Gebäudeklassen 4 und 5 müssen in Geschossen mit mehr als vier Wohnungen oder Nutzungseinheiten vergleich. |
-| 6.1 | Die Wände notwendiger Treppenräume sind als raumabschließende Bauteile in Gebäuden der Gebäudeklasse 5 in der Bauart von. |
-| 7.1 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen. |
-| 7.2 | 1. Bekleidungen, Putze, Dämmstoffe, Unterdecken u |
-| 8.1 | Für den oberen Abschluss von notwendigen Treppenräumen gilt § 31 Abs. 1 Satz 2 Halbsatz 1 entsprechend, sofern nicht das. |
-| 9.1 | In notwendigen Treppenräumen müssen, unbeschadet des Absatzes 11 Satz 4, Öffnungen zu. |
-| 9.2 | 1. Kellergeschossen, nicht ausgeba |
+| 4.2 | Von je zwei Ausgängen jedes Kellergeschosses muss einer unmittelbar oder durch einen eigenen, an einer Außenwand angeordneten notwendigen Treppenraum ins Freie führen. |
+| 4.3 | Auf eigene Treppenräume für jedes Kellergeschoss kann verzichtet werden, wenn der Brandschutz gewährleistet ist. |
+| 5.1 | In Gebäuden der Gebäudeklassen 4 und 5 müssen in Geschossen mit mehr als vier Wohnungen oder Nutzungseinheiten vergleichbarer Größe vor Treppenräumen notwendige Flure angeordnet werden. |
+| 6.1 | Die Wände notwendiger Treppenräume sind als raumabschließende Bauteile in Gebäuden der Gebäudeklasse 5 in der Bauart von Brandwänden, in Gebäuden der Gebäudeklasse 4 in Kellergeschossen feuerbeständig, im Übrigen auch unter zusätzlicher mechanischer Beanspruchung hochfeuerhemmend, und in Gebäuden der Gebäudeklasse 3 in Kellergeschossen feuerbeständig, im Übrigen hochfeuerhemmend herzustellen; bei Geschossen über der Geländeoberfläche in Gebäuden der Gebäudeklasse 3 mit tragenden Bauteilen aus brennbaren Baustoffen genügen auch Wände, die eine gegen Brandeinwirkung widerstandsfähige Bekleidung aus nicht brennbaren Baustoffen haben und deren Feuerwiderstandsfähigkeit dem feuerbeständiger Wände entspricht. |
+| 6.2 | Satz 1 gilt nicht für nicht tragende Außenwände notwendiger Treppenräume, wenn sie aus nicht brennbaren Baustoffen bestehen und durch Öffnungen in anschließenden Außenwänden im Brandfall nicht gefährdet werden können. |
+| 7.1 | In notwendigen Treppenräumen und in Räumen nach Absatz 3 Satz 2 müssen |
+| 7.2 | 1. Bekleidungen, Putze, Dämmstoffe, Unterdecken und Einbauten aus nicht brennbaren Baustoffen |
+| 7.3 | 2. Bodenbeläge, ausgenommen Gleitschutzprofile, aus mindestens schwer entflammbaren Baustoffen bestehen. Leitungsanlagen sind nur zulässig, wenn der Brandschutz gewährleistet ist |
+| 8.1 | Für den oberen Abschluss von notwendigen Treppenräumen gilt § 31 Abs. 1 Satz 2 Halbsatz 1 entsprechend, sofern nicht das Dach den Abschluss bildet. |
+| 8.2 | Der notwendige Treppenraum kann mit einem Glasdach überdeckt werden. |
+| 9.1 | In notwendigen Treppenräumen müssen, unbeschadet des Absatzes 11 Satz 4, Öffnungen zu |
+| 9.2 | 1. Kellergeschossen, nicht ausgebauten Dachräumen, Werkstätten, Läden, Gaststätten, Lagerräumen und ähnlichen Räumen sowie Nutzungseinheiten mit einer Nutzfläche von mehr als 200 m² mindestens feuerhemmende, rauchdichte und selbstschließende Türen |
+| 9.3 | 2. notwendigen Fluren rauchdichte und selbstschließende Türen |
+| 9.4 | 3. Wohnungen, sonstigen Nutzungseinheiten vergleichbarer Größe sowie sonstigen Räumen mindestens dicht- und selbstschließende Türen haben. Die Türen nach Satz 1 Nr. 1 und 2 dürfen lichtdurchlässige Seitenteile und Oberlichter haben, wenn der jeweilige Abschluss insgesamt nicht breiter als 2,5 m ist und die brandschutztechnischen Anforderungen nach Satz 1 Nr. 1 und 2 erfüllt |
 | 10.1 | Notwendige Treppenräume müssen zu beleuchten sein. |
-| 10.2 | Notwendige Treppenräume ohne Fenster müssen in Gebäuden der Gebäudekl. |
-| 11.1 | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. |
-| 11.2 | Sie müsse. |
+| 10.2 | Notwendige Treppenräume ohne Fenster müssen in Gebäuden der Gebäudeklasse 5 eine Sicherheitsbeleuchtung haben. |
+| 11.1 | Notwendige Treppenräume müssen belüftet und zur Unterstützung wirksamer Löscharbeiten entraucht werden können. Sie müssen mindestens |
+| 11.2 | 1. in jedem oberirdischen Geschoss unmittelbar ins Freie führende Fenster mit einem freien Querschnitt von mindestens 0,50 m haben, die leicht geöffnet werden können und auch für den obersten Zugangsbereich eine Rauchableitung ermöglichen, oder |
+| 11.3 | 2. an der höchsten Stelle eine Öffnung zur Rauchableitung haben. In Gebäuden der Gebäudeklasse 5 ist in den Fällen des Satzes 2 Nr. 1 an der höchsten Stelle des Treppenraumes anstelle des Fensters im obersten Geschoss eine Öffnung zur Rauchableitung erforderlich. In den Fällen des Satzes 2 Nr. 2 müssen in den Treppenräumen von Gebäuden der Gebäudeklassen 4 und 5 Öffnungen zu Wohnungen, sonstigen Nutzungseinheiten und Räumen feuerhemmende, rauchdichte und selbstschließende Türen haben. Öffnungen zur Rauchableitung nach den Sätzen 2 und 3 müssen in jedem Treppenraum einen freien Querschnitt von mindestens 1 m und Vorrichtungen zum Öffnen ihrer Abschlüsse haben, die vom Erdgeschoss und vom obersten Treppenabsatz aus bedient werden können. Es kann verlangt werden, dass die Öffnungen zur Rauchableitung auch von anderen Stellen aus bedient werden können. Abweichungen können zugelassen werden, wenn der Rauch auf andere Weise abgeführt werden kann, eine Brandausbreitung in den Treppenraum nicht zu befürchten ist oder Vorkehrungen hiergegen getroffen sind |
 
 ---
 
@@ -530,15 +709,22 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** treppenraum
 **source_paragraph:** §35 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Flure, über die Rettungswege von Aufenthaltsräumen oder aus Nutzungseinheiten mit Aufenthaltsräumen zu notwendigen Trepp. |
+| 1.1 | Flure, über die Rettungswege von Aufenthaltsräumen oder aus Nutzungseinheiten mit Aufenthaltsräumen zu notwendigen Treppenräumen oder zu Ausgängen ins Freie führen (notwendige Flure), müssen so angeordnet und ausgebildet sein, dass die Nutzung im Brandfall ausreichend lang möglich ist. Als notwendige Flure gelten nicht |
+| 1.2 | 1. Flure innerhalb von Wohnungen oder sonstigen Nutzungseinheiten vergleichbarer Größe |
+| 1.3 | 2. Flure in Gebäuden der Gebäudeklassen 1 und 2 |
+| 1.4 | 3. Flure innerhalb von Nutzungseinheiten, die einer Büro- oder Verwaltungsnutzung dienen und deren Nutzfläche in einem Geschoss nicht mehr als 400 m² beträgt |
 | 2.1 | Die benutzbare Breite notwendiger Flure muss für den größten zu erwartenden Verkehr ausreichen. |
-| 2.2 | Notwendige Flure von meh. |
-| 3.1 | Wände notwendiger Flure sind als raumabschließende Bauteile in Gebäuden der. |
-| 3.2 | 1. Gebäudeklassen 4 und 5 feuerhemmend und i |
-| 4.1 | Offene Gänge vor den Außenwänden, die als Rettungswege dienen, müssen in ihren tragenden Teilen den Anforderungen an tra. |
-| 5.1 | Bekleidungen einschließlich Unterdecken und Dämmstoffe müssen in notwendigen Fluren und offenen Gängen aus nicht brennba. |
+| 2.2 | Notwendige Flure von mehr als 30 m Länge sollen durch nicht abschließbare, rauchdichte und selbstschließende Türen in Rauchabschnitte unterteilt werden. |
+| 2.3 | Stufen in Fluren sind nur als Folge von mindestens drei Stufen zulässig. |
+| 3.1 | Wände notwendiger Flure sind als raumabschließende Bauteile in Gebäuden der |
+| 3.2 | 1. Gebäudeklassen 4 und 5 feuerhemmend und in den wesentlichen Teilen aus nicht brennbaren Baustoffen oder feuerhemmend und mit einer gegen Brandeinwirkung widerstandsfähigen Bekleidung aus nicht brennbaren Baustoffen |
+| 3.3 | 2. Gebäudeklasse 3 feuerhemmend herzustellen. Die Wände sind bis an die Rohdecke oder bis an einen oberen Raumabschluss zu führen, der hinsichtlich Feuerwiderstand und Bauart den Wänden entspricht; Türen in diesen Wänden müssen dicht schließend sein |
+| 4.1 | Offene Gänge vor den Außenwänden, die als Rettungswege dienen, müssen in ihren tragenden Teilen den Anforderungen an tragende und aussteifende Wände sowie an Decken entsprechen. |
+| 4.2 | Für Wände und Brüstungen von offenen Gängen mit nur einer Fluchtrichtung gilt Absatz 3 entsprechend; Fenster sind in diesen Außenwänden ab einer Brüstungshöhe von 0,90 m zulässig. |
+| 5.1 | Bekleidungen einschließlich Unterdecken und Dämmstoffe müssen in notwendigen Fluren und offenen Gängen aus nicht brennbaren Baustoffen bestehen; entsprechende Bekleidungen sind auch erforderlich, wenn Wände und Decken in diesen Fluren und Gängen aus brennbaren Baustoffen bestehen. |
+| 5.2 | Leitungsanlagen sind nur zulässig, wenn der Brandschutz gewährleistet ist. |
 
 ---
 
@@ -546,14 +732,28 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** notwendiger_flur
 **source_paragraph:** §36 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Aufzüge im Innern von Gebäuden müssen eigene Schächte haben, um eine Brandausbreitung in andere Geschosse ausreichend la. |
-| 2.1 | Die Fahrschächte von Aufzügen im Innern von Gebäuden müssen raumabschließende Wände haben, die den Wänden notwendiger Tr. |
+| 1.1 | Aufzüge im Innern von Gebäuden müssen eigene Schächte haben, um eine Brandausbreitung in andere Geschosse ausreichend lange zu verhindern. |
+| 1.2 | In einem Aufzugsschacht dürfen bis zu drei Aufzüge liegen. |
+| 1.3 | In Gebäuden mit nicht mehr als fünf Geschossen über der Geländeoberfläche dürfen Aufzüge ohne eigene Schächte innerhalb der Umfassungswände des Treppenraums liegen. |
+| 1.4 | Aufzüge außerhalb von Gebäuden, innerhalb von Räumen, über die Geschosse oder Ebenen erschlossen werden, und innerhalb von Wohnungen sowie innerhalb sonstiger Nutzungseinheiten vergleichbarer Größe, sind ohne eigene Schächte zulässig. |
+| 1.5 | Die Aufzüge müssen sicher umkleidet sein. |
+| 2.1 | Die Fahrschächte von Aufzügen im Innern von Gebäuden müssen raumabschließende Wände haben, die den Wänden notwendiger Treppenräume nach § 34 Abs. 6 Satz 1 entsprechen, mindestens jedoch Wände gemäß § 35 Abs. 3 Satz 1 Nr. 1 haben. |
+| 2.2 | Verkleidungen der Innenseiten müssen aus nicht brennbaren Baustoffen bestehen. |
+| 2.3 | Für die Decken der Fahrschächte gilt § 31 Abs. 1 entsprechend. |
+| 2.4 | Fahrschachttüren und andere Öffnungen in Fahrschachtwänden sind so herzustellen, dass Feuer und Rauch nicht in andere Geschosse übertragen werden können. |
 | 3.1 | Die Fahrschächte dürfen nur für Aufzugseinrichtungen benutzt werden. |
-| 3.2 | Sie müssen zu lüften und mit Rauchabzugsöffnungen m. |
-| 4.1 | In Gebäuden mit mehr als vier Geschossen über der Geländeoberfläche müssen Aufzüge in ausreichender Zahl eingebaut und b. |
-| 5.1 | Der Maschinenraum muss von benachbarten Räumen feuerbeständig abgetrennt sein; seine Türen müssen feuerhemmend und rauch. |
+| 3.2 | Sie müssen zu lüften und mit Rauchabzugsöffnungen mit einem freien Querschnitt von 2,5 v. |
+| 3.3 | H. |
+| 3.4 | der Grundfläche des Fahrschachts, mindestens von 0,10 m² versehen sein. |
+| 3.5 | Diese Öffnungen dürfen Abschlüsse haben, die im Brandfall selbsttätig öffnen und von mindestens einer geeigneten Stelle aus bedient werden können. |
+| 4.1 | In Gebäuden mit mehr als vier Geschossen über der Geländeoberfläche müssen Aufzüge in ausreichender Zahl eingebaut und betrieben werden; hierbei zählt das oberste Geschoss nicht, wenn seine Nutzung einen Aufzug nicht erfordert. |
+| 4.2 | Mindestens einer der Aufzüge muss auch zur Aufnahme von Rollstühlen, Krankentragen und Lasten geeignet und barrierefrei nutzbar sein; dieser Aufzug soll von den Wohnungen und Nutzungseinheiten im Gebäude und von der öffentlichen Verkehrsfläche aus stu fenlos zu erreichen sein. |
+| 4.3 | Fahrkörbe zur Aufnahme einer Krankentrage müssen eine nutzbare Grundfläche von 1,10 m x 2,10 m zur Aufnahme eines Rollstuhls von 1,10 m x 1,40 m haben; Türen müssen eine lichte Durchgangsbreite von 0,90 m haben. |
+| 4.4 | Vor den Aufzügen muss eine ausreichende Bewegungsfläche vorhanden sein. |
+| 4.5 | Satz 1 gilt nicht beim nachträglichen Ausbau von Geschossen im Dachraum bestehender Gebäude. |
+| 5.1 | Der Maschinenraum muss von benachbarten Räumen feuerbeständig abgetrennt sein; seine Türen müssen feuerhemmend und rauchdicht sein. |
 
 ---
 
@@ -561,12 +761,14 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** fensteroffnung
 **source_paragraph:** §37 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Glastüren und andere Glasflächen, die bis zum Fußboden allgemein zugänglicher Verkehrsflächen herabreichen, sind so zu k. |
-| 2.1 | Öffnungen in Fenstern, die als Rettungswege dienen, müssen im Lichten 0,90 m breit x 1,20 m hoch und von innen leicht zu. |
+| 1.1 | Glastüren und andere Glasflächen, die bis zum Fußboden allgemein zugänglicher Verkehrsflächen herabreichen, sind so zu kennzeichnen, dass sie leicht erkannt werden können. |
+| 1.2 | Schutzmaßnahmen sind vorzusehen, wenn es die Verkehrssicherheit erfordert. |
+| 2.1 | Öffnungen in Fenstern, die als Rettungswege dienen, müssen im Lichten 0,90 m breit x 1,20 m hoch und von innen leicht zu öffnen sein; ihre Brüstungshöhe darf 1,20 m nicht überschreiten. |
+| 2.2 | Liegen diese Öffnungen in Dachschrägen oder Dachaufbauten, müssen sie so angeordnet und beschaffen sein, dass Personen sich von diesen Öffnungen aus bemerkbar machen und über die Rettungsgeräte der Feuerwehr gerettet werden können. |
 | 3.1 | Jedes Kellergeschoss ohne Fenster muss mindestens eine Öffnung ins Freie haben, um eine Rauchableitung zu ermöglichen. |
-| 3.2 | G. |
+| 3.2 | Gemeinsame Kellerlichtschächte für übereinander liegende Kellergeschosse sind unzulässig. |
 
 ---
 
@@ -574,48 +776,59 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** allgemeine_anforderung
 **source_paragraph:** §38 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Zu umwehren sind. |
-| 1.2 | 1. im Allgemeinen zum Begehen bestimmte Flächen in, an und auf baulichen Anlagen bei einer Absturzhöhe |
-| 2.1 | Kellerlicht- und Betriebsschächte sind an Verkehrsflächen zu umwehren oder abzudecken, in Verkehrsflächen abzudecken; Ab. |
-| 3.1 | Umwehrungen von Öffnungen in begehbaren Decken und Dachflächen sowie von Flächen bis zu 12 m Absturzhöhe müssen 0,90 m,. |
+| 1.1 | Zu umwehren sind |
+| 1.2 | 1. im Allgemeinen zum Begehen bestimmte Flächen in, an und auf baulichen Anlagen bei einer Absturzhöhe von mehr als 1 m; dies gilt nicht, wenn die Umwehrung dem Zweck der Flächen widerspricht |
+| 1.3 | 2. zum Aufenthalt von Menschen bestimmte Dachflächen |
+| 1.4 | 3. nicht sicher abgedeckte Öffnungen in Flächen nach den Nummern 1 und 2 |
+| 1.5 | 4. nicht begehbare Teile in Flächen nach den Nummern 1 und 2, wie Oberlichte und Glasabdeckungen, wenn sie weniger als 0,50 m aus diesen Flächen herausragen und nicht auf andere Weise gegen Betreten gesichert sind |
+| 2.1 | Kellerlicht- und Betriebsschächte sind an Verkehrsflächen zu umwehren oder abzudecken, in Verkehrsflächen abzudecken; Abdeckungen an und in öffentlichen Verkehrsflächen müssen gegen unbefugtes Abheben gesichert sein. |
+| 3.1 | Umwehrungen von Öffnungen in begehbaren Decken und Dachflächen sowie von Flächen bis zu 12 m Absturzhöhe müssen 0,90 m, mit mehr als 12 m Absturzhöhe 1,10 m hoch sein. |
 | 4.1 | Fensterbrüstungen müssen bis zu 12 m Absturzhöhe 0,80 m, im Übrigen 0,90 m hoch sein. |
-| 4.2 | Geringere Brüstungshöhen sind zulä. |
+| 4.2 | Geringere Brüstungshöhen sind zulässig, wenn durch andere Vorrichtungen, wie Geländer, die Mindesthöhen nach Absatz 3 eingehalten werden. |
+| 4.3 | Im Erdgeschoss sind geringere Brüstungshöhen zulässig, wenn es die Verkehrssicherheit erlaubt. |
+| 4.4 | Fünfter Abschnitt Feuerungs- und haustechnische Anlagen. |
 
 ---
 
-### § 39 — Feuerungsanlagen, sonstige Anlagen zur W
+### § 39 — Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung und Energiebereitstellung
 **type:** aufzugsanlage
 **source_paragraph:** §39 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Feuerstätten und Abgasanlagen (Feuerungsanlagen) müssen betriebssicher und brandsicher sein. |
-| 2.1 | Feuerstätten dürfen in Räumen nur aufgestellt werden, wenn nach der Art der Feuerstätte und nach Lage, Größe, baulicher. |
-| 3.1 | Abgase von Feuerstätten sind durch Abgasleitungen, Schornsteine und Verbindungsstücke (Abgasanlagen) so abzuführen, dass. |
+| 2.1 | Feuerstätten dürfen in Räumen nur aufgestellt werden, wenn nach der Art der Feuerstätte und nach Lage, Größe, baulicher Beschaffenheit und Nutzung der Räume Gefahren nicht entstehen. |
+| 3.1 | Abgase von Feuerstätten sind durch Abgasleitungen, Schornsteine und Verbindungsstücke (Abgasanlagen) so abzuführen, dass keine Gefahren oder unzumutbaren Belästigungen entstehen. |
+| 3.2 | Abgasanlagen sind in solcher Zahl und Lage und so herzustellen, dass die Feuerstätten des Gebäudes ordnungsgemäß angeschlossen werden können. |
+| 3.3 | Sie müssen leicht gereinigt werden können. |
+| 3.4 | Die Sätze 1 bis 3 gelten nicht für Feuerungsanlagen, die nach dem Stand der Technik ohne eine Einrichtung zur Ableitung der Abgase betrieben werden können. |
 | 4.1 | Behälter und Rohrleitungen für brennbare Gase und Flüssigkeiten müssen betriebssicher und brandsicher sein. |
-| 4.2 | Diese Behält. |
-| 5.1 | Für ortsfeste Verbrennungsmotoren, Blockheizkraftwerke, Brennstoffzellen, Verdichter und Wasserstoff-Elektrolyseure sowi. |
+| 4.2 | Diese Behälter sowie feste Brennstoffe sind so aufzustellen oder zu lagern, dass keine Gefahren oder unzumutbaren Belästigungen entstehen. |
+| 5.1 | Für ortsfeste Verbrennungsmotoren, Blockheizkraftwerke, Brennstoffzellen, Verdichter und Wasserstoff-Elektrolyseure sowie die Ableitung ihrer Prozessgase gelten die Absätze 1 bis 3 entsprechend. |
 
 ---
 
-### § 40 — Lüftungsanlagen, Installationsschächte u
+### § 40 — Lüftungsanlagen, Installationsschächte und -kanäle, Leitungsdurchführungen
 **type:** technische_anlage
 **source_paragraph:** §40 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Lüftungsanlagen müssen betriebs- und brandsicher sein. |
-| 1.2 | Sie dürfen den ordnungsgemäßen Betrieb von Feuerungsanlagen nicht. |
-| 2.1 | Lüftungsleitungen sowie deren Bekleidungen und Dämmstoffe müssen aus nicht brennbaren Baustoffen bestehen; Abweichungen. |
+| 1.2 | Sie dürfen den ordnungsgemäßen Betrieb von Feuerungsanlagen nicht beeinträchtigen. |
+| 2.1 | Lüftungsleitungen sowie deren Bekleidungen und Dämmstoffe müssen aus nicht brennbaren Baustoffen bestehen; Abweichungen können zugelassen werden, wenn der Brandschutz gewährleistet ist. |
+| 2.2 | Sie dürfen Brandwände und Wände, die anstelle von Brandwänden zulässig sind, sowie raumabschließende Bauteile in Gebäuden der Gebäudeklassen 3 bis 5, die feuerwiderstandsfähig sein müssen, nur überbrücken, wenn eine Brandausbreitung ausreichend lange nicht zu befürchten ist oder wenn Vorkehrungen hiergegen getroffen sind; dies gilt nicht für Decken innerhalb von Wohnungen sowie innerhalb von Nutzungseinheiten mit einer Nutzfläche von nicht mehr als 200 m² in höchstens zwei Geschossen. |
 | 3.1 | Lüftungsanlagen sind so herzustellen, dass sie Gerüche und Staub nicht in andere Räume übertragen. |
-| 3.2 | Die Weiterleitung von. |
-| 4.1 | Lüftungsleitungen dürfen nicht in Abgasanlagen eingeführt werden; die gemeinsame Benutzung von Lüftungsleitungen zur Abl. |
-| 5.1 | Lüftungsschächte, die aus Mauersteinen oder aus Formstücken für Schornsteine hergestellt sind, müssen den Anforderungen. |
+| 3.2 | Die Weiterleitung von Schall in fremde Räume muss gedämmt sein. |
+| 4.1 | Lüftungsleitungen dürfen nicht in Abgasanlagen eingeführt werden; die gemeinsame Benutzung von Lüftungsleitungen zur Ableitung der Abluft und der Abgase von Gasfeuerstätten ist zulässig, wenn die Betriebssicherheit und der Brandschutz gewährleistet sind. |
+| 4.2 | Die Abluft ist ins Freie zu führen. |
+| 4.3 | Nicht zu Lüftungsanlagen gehörende Einrichtungen sind in Lüftungsleitungen unzulässig. |
+| 5.1 | Lüftungsschächte, die aus Mauersteinen oder aus Formstücken für Schornsteine hergestellt sind, müssen den Anforderungen an Schornsteine entsprechen und gekennzeichnet sein. |
 | 6.1 | Für raumlufttechnische Anlagen und Warmluftheizungen gelten die Absätze 1 bis 5 entsprechend. |
 | 7.1 | Für Installationsschächte und -kanäle gelten Absatz 2 und Absatz 3 Satz 2 entsprechend. |
-| 8.1 | Leitungen dürfen durch Brandwände, durch Wände, die anstelle von Brandwänden zulässig sind sowie durch raumabschließende. |
+| 8.1 | Leitungen dürfen durch Brandwände, durch Wände, die anstelle von Brandwänden zulässig sind sowie durch raumabschließende Bauteile in Gebäuden der Gebäudeklassen 3 bis 5, die feuerwiderstandsfähig sein müssen, nur hindurchgeführt werden, wenn eine Übertragung von Feuer und Rauch nicht zu befürchten ist oder Vorkehrungen hiergegen getroffen sind; dies gilt nicht für Decken innerhalb von Wohnungen sowie innerhalb von Nutzungseinheiten mit einer Nutzfläche von nicht mehr als 400 m² in höchstens zwei Geschossen. |
 
 ---
 
@@ -623,12 +836,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** technische_anlage
 **source_paragraph:** §41 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Gebäude mit Aufenthaltsräumen müssen, soweit es ihre Benutzung erfordert, eine Versorgung mit Trinkwasser haben, die dau. |
+| 1.1 | Gebäude mit Aufenthaltsräumen müssen, soweit es ihre Benutzung erfordert, eine Versorgung mit Trinkwasser haben, die dauernd gesichert ist. |
+| 1.2 | Zur Brandbekämpfung muss eine ausreichende Wassermenge zur Verfügung stehen; Abweichungen können für Einzelgehöfte in der freien Feldflur zugelassen werden. |
 | 2.1 | Bauliche Anlagen dürfen nur errichtet werden, wenn die Beseitigung des Abwassers auf Dauer gesichert ist. |
-| 3.1 | Wasserversorgungs- und Abwasseranlagen sind so anzuordnen, herzustellen und instand zu halten, dass sie betriebssicher s. |
-| 4.1 | Bei gewerblich genutzten baulichen Anlagen mit hohem Trinkwasserverbrauch kann die Wiederverwendung des Brauchwassers ve. |
+| 3.1 | Wasserversorgungs- und Abwasseranlagen sind so anzuordnen, herzustellen und instand zu halten, dass sie betriebssicher sind und keine Gefahren oder unzumutbaren Belästigungen entstehen. |
+| 4.1 | Bei gewerblich genutzten baulichen Anlagen mit hohem Trinkwasserverbrauch kann die Wiederverwendung des Brauchwassers verlangt werden. |
 
 ---
 
@@ -636,11 +850,15 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** technische_anlage
 **source_paragraph:** §42 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Kleinkläranlagen und Gruben dürfen nicht unter Aufenthaltsräumen und nur in einem solchen Abstand von öffentlichen Verke. |
+| 1.1 | Kleinkläranlagen und Gruben dürfen nicht unter Aufenthaltsräumen und nur in einem solchen Abstand von öffentlichen Verkehrsflächen, Gewässern, Wasserversorgungsanlagen, Nachbargrenzen sowie Fenstern und Türen von Aufenthaltsräumen angelegt werden, dass keine Gefahren oder unzumutbaren Belästigungen entstehen. |
 | 2.1 | Kleinkläranlagen und Gruben müssen ausreichend groß und wasserdicht sein. |
-| 2.2 | Sie müssen eine dichte und sichere Abdeckung s. |
+| 2.2 | Sie müssen eine dichte und sichere Abdeckung sowie Reinigungs- und Entleerungsöffnungen haben; die Öffnungen dürfen nur vom Freien aus zugänglich sein. |
+| 2.3 | Die Anlagen sind so zu entlüften, dass Gesundheitsschäden oder unzumutbare Belästigungen nicht entstehen. |
+| 2.4 | Die Zuleitungen und Ablaufleitungen müssen geschlossen, dicht und, soweit erforderlich, zum Reinigen eingerichtet sein; Gruben dürfen keinen Ablauf haben und müssen gegen Überlaufen gesichert sein. |
+| 2.5 | Niederschlagswasser darf nicht in Kleinkläranlagen und nicht in dieselbe Grube wie das übrige Abwasser geleitet werden. |
+| 2.6 | Sechster Abschnitt Aufenthaltsräume und Wohnungen. |
 
 ---
 
@@ -648,12 +866,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** sanitaerraum
 **source_paragraph:** §43 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Aufenthaltsräume müssen eine für ihre Benutzung ausreichende Grundfläche und eine lichte Höhe von 2,40 m haben. |
-| 2.1 | Aufenthaltsräume müssen unmittelbar ins Freie führende Fenster von solcher Zahl und Beschaffenheit haben, dass die Räume. |
-| 3.1 | Verglaste Vorbauten und Loggien sind vor notwendigen Fenstern zulässig, wenn die Beleuchtung mit Tageslicht und die Lüft. |
-| 4.1 | Aufenthaltsräume, deren Benutzung eine Beleuchtung mit Tageslicht und eine Lüftung nach Absatz 2 verbietet, sind ohne no. |
+| 2.1 | Aufenthaltsräume müssen unmittelbar ins Freie führende Fenster von solcher Zahl und Beschaffenheit haben, dass die Räume ausreichend mit Tageslicht beleuchtet und gelüftet werden können (notwendige Fenster). |
+| 2.2 | Das Rohbaumaß der Fensteröffnungen muss mindestens ein Zehntel der Grundfläche des Raums betragen; ein geringeres Maß kann zugelassen werden, wenn wegen der Lichtverhältnisse keine Bedenken bestehen. |
+| 2.3 | Bei Aufenthaltsräumen im Dachraum bleiben Raumteile mit einer lichten Höhe bis 1,50 m bei der Ermittlung der Grundfläche außer Betracht. |
+| 2.4 | Oberlichte anstelle von Fenstern können zugelassen werden, wenn die Gesundheit nicht beeinträchtigt wird. |
+| 3.1 | Verglaste Vorbauten und Loggien sind vor notwendigen Fenstern zulässig, wenn die Beleuchtung mit Tageslicht und die Lüftung gewährleistet sind. |
+| 4.1 | Aufenthaltsräume, deren Benutzung eine Beleuchtung mit Tageslicht und eine Lüftung nach Absatz 2 verbietet, sind ohne notwendige Fenster zulässig, wenn die damit verbundenen Nachteile durch geeignete Maßnahmen wie den Einbau von raumlufttechnischen Anlagen ausgeglichen werden. |
+| 4.2 | Für Aufenthaltsräume, die nicht dem Wohnen dienen, kann eine Ausführung nach Satz 1 zugelassen werden, wenn die Gesundheit nicht beeinträchtigt wird und der Brandschutz gewährleistet ist. |
 | 5.1 | Aufenthaltsräume dürfen von Räumen mit erhöhter Brandgefahr sowie von Ställen nicht unmittelbar zugänglich sein. |
 
 ---
@@ -662,35 +884,51 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** technische_anlage
 **source_paragraph:** §44 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Jede Wohnung muss von anderen Wohnungen und fremden Räumen baulich abgeschlossen sein und einen eigenen, abschließbaren. |
+| 1.1 | Jede Wohnung muss von anderen Wohnungen und fremden Räumen baulich abgeschlossen sein und einen eigenen, abschließbaren Zugang unmittelbar vom Freien, von einem Treppenraum, einem Flur oder einem anderen Vorraum haben. |
+| 1.2 | Wohnungen in Wohngebäuden mit nicht mehr als zwei Wohnungen brauchen nicht abgeschlossen zu sein. |
+| 1.3 | Wohnungen in Gebäuden, die nicht nur dem Wohnen dienen, müssen einen besonderen Zugang haben; gemeinsame Zugänge sind zulässig, wenn Gefahren oder unzumutbare Belästigungen für die Benutzerinnen und Benutzer der Wohnungen nicht entstehen. |
 | 2.1 | Wohnungen müssen durchlüftet werden können. |
-| 2.2 | Jede Wohnung mit mehreren Aufenthaltsräumen soll einen besonnten Wohn- oder. |
+| 2.2 | Jede Wohnung mit mehreren Aufenthaltsräumen soll einen besonnten Wohn- oder Schlafraum haben. |
 | 3.1 | Jede Wohnung muss eine Küche oder Kochnische sowie einen Abstellraum haben. |
-| 3.2 | Fensterlose Küchen oder Kochnischen sind zul. |
-| 4.1 | Für Gebäude mit Wohnungen über dem zweiten Geschoss über der Geländeoberfläche sollen leicht erreichbare und stufenlos z. |
+| 3.2 | Fensterlose Küchen oder Kochnischen sind zulässig, wenn sie für sich lüftbar sind. |
+| 3.3 | Der Abstellraum soll 6 m² groß sein; davon soll eine Abstellfläche von 1 m² innerhalb der Wohnung liegen. |
+| 4.1 | Für Gebäude mit Wohnungen über dem zweiten Geschoss über der Geländeoberfläche sollen leicht erreichbare und stufenlos zugängliche Abstellräume für Kinderwagen, Fahrräder und Rollatoren hergestellt werden; § 51 Abs. 4 gilt entsprechend. |
 | 5.1 | Für Gebäude mit mehr als zwei Wohnungen sollen ausreichend große Trockenräume eingerichtet werden. |
 | 6.1 | Jede Wohnung in Gebäuden mit mehr als zwei Wohnungen soll einen eigenen Wasserzähler haben. |
-| 7.1 | In Wohnungen müssen Schlafräume und Kinderzimmer sowie Flure, über die Rettungswege von Aufenthaltsräumen führen, jeweil. |
-| 8.1 | Werden Nutzungseinheiten mit Aufenthaltsräumen in rechtmäßig bestehenden Gebäuden in Wohnraum umgenutzt, sind auf besteh. |
-| 9.1 | Fallen rechtmäßig bestehende Gebäude aufgrund eines Dachgeschossausbaus, einschließlich der Errichtung von Dachgauben, o. |
-| 10.1 | Fallen rechtmäßig bestehende Gebäude aufgrund eines Dachgeschossausbaus, einschließlich der Errichtung von Dachgauben, o. |
+| 7.1 | In Wohnungen müssen Schlafräume und Kinderzimmer sowie Flure, über die Rettungswege von Aufenthaltsräumen führen, jeweils mindestens einen Rauchwarnmelder haben. |
+| 7.2 | Die Rauchwarnmelder müssen so eingebaut und betrieben werden, dass Brandrauch frühzeitig erkannt und gemeldet wird. |
+| 7.3 | Bestehende Wohnungen sind entsprechend auszustatten. |
+| 8.1 | Werden Nutzungseinheiten mit Aufenthaltsräumen in rechtmäßig bestehenden Gebäuden in Wohnraum umgenutzt, sind auf bestehende Gebäude und Bauteile die Anforderungen der §§ 27 bis 33 und § 34 Abs. 1 und 4 bis 11 und § 35 für die Wohnnutzung nicht anzuwenden. |
+| 8.2 | Satz 1 gilt für den Dachgeschossausbau, einschließlich der Errichtung von Dachgauben, und die Aufstockung eines rechtmäßig bestehenden Gebäudes um maximal zwei Geschosse zu Wohnzwecken ohne Änderung der Gebäudeklasse entsprechend. |
+| 8.3 | Satz 2 gilt nicht für Hochhäuser. |
+| 9.1 | Fallen rechtmäßig bestehende Gebäude aufgrund eines Dachgeschossausbaus, einschließlich der Errichtung von Dachgauben, oder einer Aufstockung zu Wohnzwecken nach § 2 Abs. 2 Satz 2 in die Gebäudeklasse 4, so sind für die bestehende Gebäudekonstruktion die Anforderungen an den Feuerwiderstand der tragenden und aussteifenden sowie raumabschließenden Bauteile der Gebäudeklasse 3 ausreichend, wenn |
+| 9.2 | 1. Nutzungseinheiten, die nicht zu ebener Erde liegen, Rettungswege nach § 15 Abs. 4 Satz 2 und 3 haben |
+| 9.3 | 2. die Türen vom notwendigen Treppenraum zu Kellergeschossen mindestens feuerhemmend, rauchdicht und selbstschließend sind |
+| 9.4 | 3. der notwendige Treppenraum nach § 34 Abs. 11 entraucht werden kann und |
+| 9.5 | 4. Wohnungseingangstüren der neu geschaffenen Wohnungen mindestens feuerhemmend, rauchdicht und selbstschließend sind, sofern im notwendigen Treppenraum die notwendige Treppe oder Wand- und Deckenbekleidungen aus brennbaren Baustoffen bestehen oder die übrigen Türen des notwendigen Treppenraums nicht mindestens den Anforderungen nach § 34 Abs. 9 entsprechen. Beträgt die Aufstockung nicht mehr als ein Geschoss, so sind für dieses Geschoss die Anforderungen an den Feuerwiderstand der tragenden und aussteifenden sowie raumabschließenden Bauteile der Gebäudeklasse 3 ausreichend |
+| 10.1 | Fallen rechtmäßig bestehende Gebäude aufgrund eines Dachgeschossausbaus, einschließlich der Errichtung von Dachgauben, oder einer Aufstockung um maximal zwei Geschosse zu Wohnzwecken nach § 2 Abs. 2 Satz 2 in die Gebäudeklasse 5, gilt Absatz 9 entsprechend, wenn die Bauteile nach Absatz 9 die Anforderungen an tragende und aussteifende sowie raumabschließende Bauteile der Gebäudeklasse 4 erfüllen und im Treppenraum eine trockene Steigleitung vorhanden ist, sofern das Treppenauge eine lichte Breite von 0,15 m unterschreitet. |
+| 10.2 | Satz 1 gilt nicht für Hochhäuser. |
 
 ---
 
-### § 45 — Aufenthaltsräume und Wohnungen in Keller
+### § 45 — Aufenthaltsräume und Wohnungen in Kellergeschossen und Dachräumen
 **type:** technische_anlage
 **source_paragraph:** §45 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | In Kellergeschossen sind Aufenthaltsräume und Wohnungen nur zulässig, wenn das Gelände vor Außenwänden mit notwendigen F. |
-| 2.1 | Aufenthaltsräume, deren Benutzung eine Beleuchtung mit Tageslicht verbietet, sind in Kellergeschossen unter den Vorausse. |
+| 1.1 | In Kellergeschossen sind Aufenthaltsräume und Wohnungen nur zulässig, wenn das Gelände vor Außenwänden mit notwendigen Fenstern in einer für die Beleuchtung mit Tageslicht ausreichenden Entfernung und Breite nicht mehr als 0,70 m über dem Fußboden der Aufenthaltsräume liegt; dies gilt auch für unterste Geschosse über der Geländeoberfläche. |
+| 2.1 | Aufenthaltsräume, deren Benutzung eine Beleuchtung mit Tageslicht verbietet, sind in Kellergeschossen unter den Voraussetzungen des § 43 Abs. 4 Satz 1 zulässig. |
+| 2.2 | Verkaufsräume, Gaststätten ärztliche Behandlungsräume, Sport-, Spiel- und Werkräume sowie ähnliche Räume können in Kellergeschossen zugelassen werden; § 43 Abs. 4 Satz 1 gilt entsprechend. |
 | 3.1 | Räume nach Absatz 2 müssen unmittelbar mit Rettungswegen in Verbindung stehen, die ins Freie führen. |
-| 3.2 | Die Räume und Rettu. |
-| 4.1 | Aufenthaltsräume im Dachraum müssen eine lichte Raumhöhe von 2,20 m über der Hälfte ihrer Grundfläche haben; Raumteile m. |
-| 5.1 | Aufenthaltsräume und Wohnungen im Dachraum von Gebäuden der Gebäudeklassen 2 bis 5 sind nur zulässig, wenn sie einschlie. |
+| 3.2 | Die Räume und Rettungswege müssen von anderen Räumen im Kellergeschoss durch raumabschließende feuerbeständige Wände abgetrennt sein; Türen in diesen Wänden müssen feuerhemmend, dicht- und selbstschließend sein. |
+| 3.3 | Dies gilt nicht bei Gebäuden der Gebäudeklassen 1 und 2. |
+| 4.1 | Aufenthaltsräume im Dachraum müssen eine lichte Raumhöhe von 2,20 m über der Hälfte ihrer Grundfläche haben; Raumteile mit einer lichten Höhe bis zu 1,50 m bleiben außer Betracht. |
+| 5.1 | Aufenthaltsräume und Wohnungen im Dachraum von Gebäuden der Gebäudeklassen 2 bis 5 sind nur zulässig, wenn sie einschließlich ihrer Nebenräume |
+| 5.2 | 1. unmittelbar über Geschossen angeordnet werden, deren tragende Bauteile den §§ 27 und 31 entsprechen; liegen diese Geschosse im Dachraum, müssen ihre Dachschrägen von innen dem Feuerwiderstand dieser Bauteile entsprechen |
+| 5.3 | 2. Trennwände nach § 29 und feuerhemmende Decken haben; dies gilt nicht für Decken von Geschossen, über denen Aufenthaltsräume nicht möglich sind. Ihre Zugänge müssen durch Wände nach § 35 Abs. 3, feuerhemmende Türen und feuerhemmende Decken gegen den nicht ausgebauten Dachraum abgeschlossen sein |
 
 ---
 
@@ -698,14 +936,15 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** technische_anlage
 **source_paragraph:** §46 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Jede Wohnung muss ein Bad mit Badewanne oder Dusche haben. |
 | 2.1 | Jede Wohnung und jede Nutzungseinheit mit Aufenthaltsräumen muss mindestens eine Toilette mit Wasserspülung haben. |
-| 2.2 | Toile. |
-| 3.1 | Gebäude, die für einen größeren Personenkreis bestimmt sind, müssen eine ausreichende Zahl von Toiletten haben; die Toil. |
+| 2.2 | Toiletten ohne Wasserspülung können zugelassen werden, wenn öffentliche Belange nicht entgegenstehen, insbesondere Gesundheit und Hygiene gewährleistet sind. |
+| 2.3 | Toilettenräume für Wohnungen müssen innerhalb der Wohnung liegen. |
+| 3.1 | Gebäude, die für einen größeren Personenkreis bestimmt sind, müssen eine ausreichende Zahl von Toiletten haben; die Toilettenräume sollen je einen eigenen lüftbaren und beleuchtbaren Vorraum mit Waschbecken haben. |
 | 4.1 | Fensterlose Bäder und Toilettenräume sind nur zulässig, wenn eine wirksame Lüftung gewährleistet ist. |
-| 4.2 | Siebter Abschnitt. |
+| 4.2 | Siebter Abschnitt Besondere Anlagen. |
 
 ---
 
@@ -713,18 +952,34 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** aufenthaltsraum
 **source_paragraph:** §47 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauliche Anlagen sowie andere Anlagen, bei denen ein Zugangs- oder Abgangsverkehr zu erwarten ist, dürfen nur errichtet. |
-| 2.1 | Werden bauliche Anlagen oder andere Anlagen, bei denen ein Zugangs- oder Abgangsverkehr zu erwarten ist, geändert oder ä. |
-| 3.1 | Die Stellplätze oder Garagen sind auf dem Grundstück oder, sofern öffentlich-rechtlich gesichert, auf einem in zumutbare. |
-| 4.1 | Ist die Herstellung notwendiger Stellplätze oder Garagen nicht oder nur unter großen Schwierigkeiten möglich oder ist si. |
-| 5.1 | Der Geldbetrag nach Absatz 4 ist in jeweils angemessenem Verhältnis und angemessener Reihenfolge zu verwenden:. |
-| 5.2 | 1. zur He |
-| 6.1 | Stellplätze und Garagen müssen von den öffentlichen Verkehrsflächen aus sicher und auf möglichst kurzem Weg zu erreichen. |
+| 1.1 | Bauliche Anlagen sowie andere Anlagen, bei denen ein Zugangs- oder Abgangsverkehr zu erwarten ist, dürfen nur errichtet werden, wenn Stellplätze in ausreichender Zahl und Größe sowie in geeigneter Beschaffenheit hergestellt werden (notwendige Stellplätze). |
+| 1.2 | Ihre Zahl und Größe richtet sich nach Art und Zahl der vorhandenen und zu erwartenden Kraftfahrzeuge der Benutzerinnen und Benutzer sowie der Besucherinnen und Besucher der Anlagen; dabei ist die Möglichkeit der Inanspruch nahme öffentlicher Verkehrsmittel oder alternativer Mobilitätskonzepte zu berücksichtigen. |
+| 1.3 | Statt der Stellplätze können Garagen hergestellt werden. |
+| 1.4 | Die Herstellung von Garagen anstelle von Stellplätzen kann verlangt werden, wenn die in Absatz 7 genannten Erfordernisse dies gebieten. |
+| 1.5 | Es kann zugelassen werden, dass die notwendigen Stellplätze oder Garagen innerhalb einer angemessenen Frist nach Fertigstellung der Anlagen hergestellt werden. |
+| 1.6 | Abstellplätze für Fahrräder sind herzustellen, soweit ein Zugangs- und Abgangsverkehr mit Fahrrädern zu erwarten ist; die Absätze 2, 3 und 9 gelten entsprechend. |
+| 2.1 | Werden bauliche Anlagen oder andere Anlagen, bei denen ein Zugangs- oder Abgangsverkehr zu erwarten ist, geändert oder ändert sich ihre Benutzung, so sind Stellplätze in solcher Zahl und Größe herzustellen, dass sie die infolge der Änderung zusätzlich zu erwartenden Kraftfahrzeuge aufnehmen können. |
+| 2.2 | Dies gilt nicht, wenn Wohnraum in Gebäuden, deren Fertigstellung mindestens zwei Jahre zurückliegt, durch Wohnungsteilung, Änderung der Nutzung, Aufstocken oder durch Ausbau des Dachgeschosses geschaffen wird. |
+| 3.1 | Die Stellplätze oder Garagen sind auf dem Grundstück oder, sofern öffentlich-rechtlich gesichert, auf einem in zumutbarer Entfernung liegenden anderen Grundstück herzustellen. |
+| 3.2 | Die Bauaufsichtsbehörde kann, wenn Gründe des Verkehrs dies erfordern, im Einzelfall bestimmen, ob die Stellplätze oder Garagen auf dem zu bebauenden Grundstück oder einem anderen Grundstück herzustellen sind. |
+| 4.1 | Ist die Herstellung notwendiger Stellplätze oder Garagen nicht oder nur unter großen Schwierigkeiten möglich oder ist sie aufgrund einer Satzung nach § 88 Abs. 3 untersagt oder eingeschränkt, so kann die Bauherrin oder der Bauherr, wenn die Gemeinde zustimmt, die Verpflichtungen nach den Absätzen 1, 2 und 3 auch durch Zahlung eines Geldbetrags an die Gemeinde erfüllen. |
+| 4.2 | Der Geldbetrag darf 60 v. |
+| 4.3 | H. |
+| 4.4 | der durchschnittlichen Herstellungskosten der Parkeinrichtungen einschließlich der Kosten des Grunderwerbs nicht übersteigen. |
+| 4.5 | Die Höhe des Geldbetrags je Stellplatz oder Garage ist durch Satzung festzulegen. |
+| 5.1 | Der Geldbetrag nach Absatz 4 ist in jeweils angemessenem Verhältnis und angemessener Reihenfolge zu verwenden |
+| 5.2 | 1. zur Herstellung, Instandhaltung und Modernisierung von Parkeinrichtungen |
+| 5.3 | 2. für investive Maßnahmen zur Verbesserung des öffentlichen Personennahverkehrs oder des Fahrradverkehrs |
+| 5.4 | 3. für sonstige Maßnahmen, die den Bedarf an Parkeinrichtungen verringern |
+| 6.1 | Stellplätze und Garagen müssen von den öffentlichen Verkehrsflächen aus sicher und auf möglichst kurzem Weg zu erreichen sein; es kann gefordert werden, dass Hinweise angebracht werden. |
 | 7.1 | Stellplätze und Garagen dürfen die Herstellung der Spielplätze für Kleinkinder (§ 11) nicht behindern. |
-| 7.2 | Durch ihre Benutz. |
-| 8.1 | Stellplätze, Garagen und ihre Nebenanlagen müssen verkehrssicher sein und entsprechend der Art und Zahl der abzustellend. |
+| 7.2 | Durch ihre Benutzung darf die Gesundheit nicht geschädigt sowie das Wohnen und Arbeiten, die Ruhe und Erholung in der Umgebung nicht unzumutbar beeinträchtigt werden. |
+| 7.3 | Das Anpflanzen von Bäumen und Sträuchern kann verlangt werden. |
+| 8.1 | Stellplätze, Garagen und ihre Nebenanlagen müssen verkehrssicher sein und entsprechend der Art und Zahl der abzustellenden Kraftfahrzeuge sowie der Gefährlichkeit der Treibstoffe den Anforderungen des Brandschutzes genügen. |
+| 8.2 | Abfließende Treibstoffe und Schmierstoffe müssen unschädlich beseitigt werden können. |
+| 8.3 | Garagen und ihre Nebenanlagen müssen gelüftet werden können. |
 | 9.1 | Notwendige Stellplätze und Garagen dürfen ihrem Zweck nicht entfremdet werden. |
 
 ---
@@ -733,12 +988,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** wohnung
 **source_paragraph:** §48 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Ställe müssen so angeordnet und beschaffen sein, dass die Gesundheit der Tiere nicht beeinträchtigt wird und für die Umg. |
-| 2.1 | Ins Freie führende Stalltüren dürfen nicht nach innen aufschlagen und müssen in solcher Zahl und Größe vorhanden sein, d. |
+| 1.1 | Ställe müssen so angeordnet und beschaffen sein, dass die Gesundheit der Tiere nicht beeinträchtigt wird und für die Umgebung keine Gefahren oder unzumutbaren Belästigungen entstehen. |
+| 1.2 | Sie müssen eine für ihre Benutzung ausreichende Grundfläche und lichte Höhe haben und gelüftet werden können. |
+| 2.1 | Ins Freie führende Stalltüren dürfen nicht nach innen aufschlagen und müssen in solcher Zahl und Größe vorhanden sein, dass die Tiere bei Gefahr ohne Schwierigkeiten ins Freie gelangen können. |
 | 3.1 | Wände, Decken und Fußböden sind gegen schädliche Einflüsse der Stallluft, der Jauche und des Flüssigmists zu schützen. |
-| 3.2 | D. |
+| 3.2 | Dungstätten sollen von Öffnungen zu Aufenthaltsräumen 5 m, von Grundstücksgrenzen 2 m entfernt sein. |
 
 ---
 
@@ -746,25 +1002,39 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** stellplatzpflicht
 **source_paragraph:** §49 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Für bauliche Anlagen, die nur für eine begrenzte Zeit aufgestellt werden sollen (Behelfsbauten), können Erleichterungen. |
-| 2.1 | Absatz 1 gilt auch für freistehende andere Gebäude, die eingeschossig und nicht für einen Aufenthalt oder nur für einen. |
-
----
-
-### § 50 — Bauliche Anlagen und Räume besonderer Ar
-**type:** barrierefreiheit
-**source_paragraph:** §50 LBauO_RLP
-
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
-|---|---|
-| 1.1 | Soweit die Bestimmungen der §§ 6 bis 48 zur Abwehr von Gefahren oder unzumutbaren Belästigungen nicht ausreichen, können. |
-| 2.1 | Die Bestimmungen des Absatzes 1 gelten insbesondere für. |
+| 1.1 | Für bauliche Anlagen, die nur für eine begrenzte Zeit aufgestellt werden sollen (Behelfsbauten), können Erleichterungen von den §§ 27 bis 48 zugelassen werden, wenn keine Gründe nach § 3 Abs. 1 entgegenstehen. |
+| 2.1 | Absatz 1 gilt auch für freistehende andere Gebäude, die eingeschossig und nicht für einen Aufenthalt oder nur für einen vorübergehenden Aufenthalt bestimmt sind wie Lauben und Unterkunftshütten § 50 Bauliche Anlagen und Räume besonderer Art oder Nutzung (Sonderbauten). |
+| 1.1 | Soweit die Bestimmungen der §§ 6 bis 48 zur Abwehr von Gefahren oder unzumutbaren Belästigungen nicht ausreichen, können für bauliche Anlagen und Räume besonderer Art oder Nutzung im Einzelfall besondere Anforderungen gestellt werden. Erleichterungen können zugelassen werden, soweit es im Einzelfall der Einhaltung dieser Bestimmungen wegen der besonderen Art oder Nutzung der baulichen Anlagen und Räume oder wegen besonderer Anforderungen nach Satz 1 nicht bedarf. Anforderungen und Erleichterungen können sich insbesondere erstrecken auf die |
+| 1.2 | 1. Abstände von Grundstücksgrenzen, von anderen baulichen Anlagen auf dem Grundstück, von öffentlichen Verkehrsflächen, von Gewässern sowie auf die Größe der freizuhaltenden Flächen der Grundstücke |
+| 1.3 | 2. Anordnung der baulichen Anlagen auf dem Grundstück |
+| 1.4 | 3. Öffnungen zu öffentlichen Verkehrsflächen und zu angrenzenden Grundstücken |
+| 1.5 | 4. Bauart und Anordnung aller für die Standsicherheit, Verkehrssicherheit, den Brandschutz, den Wärme- und Schallschutz oder Gesundheitsschutz wesentlichen Bauteile |
+| 1.6 | 5. Brandschutzeinrichtungen und Brandschutzvorkehrungen sowie Löschwasserrückhalteeinrichtungen |
+| 1.7 | 6. Feuerungsanlagen, Heizräume sowie Räume für die Aufstellung ortsfester Verbrennungsmotoren und Verdichter |
+| 1.8 | 7. Anordnung und Herstellung der Aufzüge sowie der Treppen, Ausgänge und sonstigen Rettungswege |
+| 1.9 | 8. zulässige Zahl der Benutzerinnen und Benutzer, die Anordnung und Zahl der zulässigen Sitzund Stehplätze bei Versammlungsstätten, Tribünen und Fliegenden Bauten |
+| 1.10 | 9. Lüftung |
+| 1.11 | 10. Beleuchtung und Energieversorgung |
+| 1.12 | 11. Wasserversorgung |
+| 1.13 | 12. Aufbewahrung und Beseitigung von Abwasser und Abfällen |
+| 1.14 | 13. Stellplätze und Garagen |
+| 1.15 | 14. Anlage der Zu- und Abfahrten, einschließlich Maßgaben für bauleitende Personen nach § 56a. Als Nachweis dafür, dass die besonderen Anforderungen erfüllt sind, können Bescheinigungen und besondere Nachweise wie ein Brandschutzkonzept verlangt werden. Ferner kann gefordert werden, dass Prüfungen und deren Wiederholungen in festzulegenden Zeitabständen durch die Bauaufsichtsbehörde oder sachverständige Personen oder Stellen vorgenommen werden. Soweit notwendig, können auch Anforderungen an den Betrieb und die Nutzung der Anlagen und Räume gestellt werden einschließlich der Bestellung und der Qualifikation einer oder eines Brandschutzbeauftragten |
+| 2.1 | Die Bestimmungen des Absatzes 1 gelten insbesondere für |
 | 2.2 | 1. Hochhäuser |
 | 2.3 | 2. Verkaufsstätten |
 | 2.4 | 3. Versammlungsstätten |
-| 2.5 | 4. Bü |
+| 2.5 | 4. Büro- und Verwaltungsgebäude |
+| 2.6 | 5. Gaststätten, Beherbergungsbetriebe |
+| 2.7 | 6. Krankenhäuser und ähnliche Einrichtungen der Gesundheitspflege, bauliche Anlagen zum Zweck der Pflege oder Betreuung, Tages- und Begegnungsstätten sowie Wohnheime, einschließlich der Gebäude mit Nutzungseinheiten zum Zwecke der Pflege und Betreuung von Personen mit Pflegebedürftigkeit oder Behinderung, deren Selbstrettungsfähigkeit eingeschränkt ist, wenn die Nutzungseinheiten a) einzeln für mehr als acht Personen oder b) einen gemeinsamen Rettungsweg haben und für insgesamt mehr als 16 Personen bestimmt sind |
+| 2.8 | 7. Kindertagesstätten und sonstige Einrichtungen für Kinder und Jugendliche |
+| 2.9 | 8. Schulen und Sportstätten |
+| 2.10 | 9. bauliche Anlagen und Räume von großer Ausdehnung oder mit erhöhter Brand-, Explosionsoder Verkehrsgefahr |
+| 2.11 | 10. bauliche Anlagen und Räume, die für gewerbliche Betriebe bestimmt sind |
+| 2.12 | 11. bauliche Anlagen und Räume, deren Nutzung mit einem starken Abgang schädlicher Stoffe verbunden ist |
+| 2.13 | 12. Fliegende Bauten |
+| 2.14 | 13. Camping- und Wochenendplätze |
 
 ---
 
@@ -772,13 +1042,31 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** sonderbautyp
 **source_paragraph:** §51 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Gebäude mit mehr als zwei Wohnungen sind so herzustellen und instand zu halten, dass von den ersten drei Wohnungen eine. |
-| 2.1 | Bauliche Anlagen oder Teile baulicher Anlagen, die überwiegend oder ausschließlich von Menschen mit Behinderungen oder ä. |
-| 3.1 | Folgende allgemein zugängliche bauliche Anlagen oder Teile baulicher Anlagen müssen barrierefrei sein:. |
-| 3.2 | 1. Versammlungsst |
-| 4.1 | Die Bauaufsichtsbehörde kann Abweichungen von Anforderungen an die Barrierefreiheit der Absätze 1 bis 3 zulassen, soweit. |
+| 1.1 | Gebäude mit mehr als zwei Wohnungen sind so herzustellen und instand zu halten, dass von den ersten drei Wohnungen eine und von jeweils acht weiteren Wohnungen zusätzlich eine Wohnung barrierefrei und uneingeschränkt mit dem Rollstuhl nutzbar ist. |
+| 1.2 | Bei Gebäuden mit mehr als einer nach Satz 1 herzustellenden Wohnung genügt es, wenn von jeweils bis zu drei weiteren dieser Wohnungen die erste Wohnung barrierefrei nutzbar ist. |
+| 1.3 | Notwendige Stellplätze von Wohnungen, die nach Satz 1 oder Satz 2 barrierefrei und uneingeschränkt mit dem Rollstuhl nutzbar sind, müssen in der erforderlichen Anzahl barrierefrei sein. |
+| 2.1 | Bauliche Anlagen oder Teile baulicher Anlagen, die überwiegend oder ausschließlich von Menschen mit Behinderungen oder älteren Menschen genutzt werden, wie Tages- und Begegnungsstätten, Werkstätten, Einrichtungen zum Zweck der Pflege oder Betreuung und ähnliche Einrichtungen der Gesundheitspflege, müssen entsprechend ihrer speziellen Erfordernisse barrierefrei sein. |
+| 2.2 | [2]. |
+| 3.1 | Folgende allgemein zugängliche bauliche Anlagen oder Teile baulicher Anlagen müssen barrierefrei sein |
+| 3.2 | 1. Versammlungsstätten einschließlich Kultureinrichtungen und für den Gottesdienst bestimmte Anlagen |
+| 3.3 | 2. Verkaufsstätten; Läden und ähnliche Geschäftsräume in Erdgeschossen müssen barrierefrei zugänglich sein |
+| 3.4 | 3. Gebäude der öffentlichen Verwaltung und Gerichte |
+| 3.5 | 4. Schalter- und Abfertigungsräume der Verkehrs- und Versorgungseinrichtungen sowie Einrichtungen für Finanz- und Postdienstleistungen |
+| 3.6 | 5. Gaststätten, Kantinen, Beherbergungsbetriebe |
+| 3.7 | 6. Schulen, Hochschulen und Weiterbildungseinrichtungen sowie Forschungsinstitute |
+| 3.8 | 7. Kindertagesstätten und sonstige Einrichtungen für Kinder und Jugendliche |
+| 3.9 | 8. Krankenhäuser und Rehabilitationseinrichtungen |
+| 3.10 | 9. Arztpraxen und ähnliche Einrichtungen der Gesundheitspflege |
+| 3.11 | 10. Notariate, Steuerberatungs- und Rechtsanwaltskanzleien und sonstige Nutzungseinheiten für freiberuflich Tätige und solche Gewerbetreibende, die ihren Beruf in ähnlicher Art ausüben, jeweils mit einer Nutzfläche von mehr als 100 m; kleinere Nutzungseinheiten für diese Berufe in Erdgeschossen müssen barrierefrei zugänglich sein |
+| 3.12 | 11. Büro- und Verwaltungsgebäude der Gebäudeklassen 4 und 5 sowie Räume, die einer Büro- und Verwaltungsnutzung dienen und insgesamt eine Nutzfläche von mehr als 400 m je Geschoss haben; entsprechende Räume mit geringerer Nutzfläche in Erdgeschossen müssen barrierefrei zugänglich sein |
+| 3.13 | 12. Museen, öffentliche Bibliotheken, Messe- und Ausstellungsgelände und -gebäude |
+| 3.14 | 13. Sport- und Freizeitstätten, Spielplätze und ähnliche Anlagen |
+| 3.15 | 14. öffentliche Toilettenanlagen |
+| 3.16 | 15. 2 Stellplätze und Garagen mit mehr als 1 000 m Nutzfläche sowie Stellplätze und Garagen, die zu den Anlagen und Einrichtungen nach den Nummern 1 bis 13 gehören. Für die der zweckentsprechenden Nutzung dienenden Räume und Anlagen genügt es, wenn sie in dem erforderlichen Umfang barrierefrei sind; entsprechendes gilt für erforderliche Toilettenräume. Notwendige Stellplätze müssen in der erforderlichen Anzahl barrierefrei sein |
+| 4.1 | Die Bauaufsichtsbehörde kann Abweichungen von Anforderungen an die Barrierefreiheit der Absätze 1 bis 3 zulassen, soweit sie nur mit unverhältnismäßigem Mehraufwand erfüllt werden können, insbesondere wegen des Einbaus eines sonst nicht erforderlichen Aufzugs, bei baulichen Maßnahmen im Gebäudebestand oder bei der Änderung der Nutzung. |
+| 4.2 | Fußnoten [1]) Absatz 1 in Kraft mit Wirkung vom 01.12.2015 [2]) Absatz 3 in Kraft mit Wirkung vom 01.12.2015. |
 
 ---
 
@@ -786,18 +1074,29 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §52 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Anlagen der Außenwerbung (Werbeanlagen) sind alle ortsfesten Einrichtungen, die der Ankündigung oder Anpreisung oder als. |
+| 1.1 | Anlagen der Außenwerbung (Werbeanlagen) sind alle ortsfesten Einrichtungen, die der Ankündigung oder Anpreisung oder als Hinweis auf Gewerbe oder Beruf dienen und vom öffentlichen Verkehrsraum aus sichtbar sind. |
+| 1.2 | Hierzu zählen insbesondere Schilder, sonstige Anschläge, Beschriftungen, Bemalungen, Lichtwerbungen, Schaukästen sowie für Anschläge oder Lichtwerbung bestimmte Säulen, Tafeln und Flächen. |
 | 2.1 | Für Werbeanlagen, die keine baulichen Anlagen sind, gelten § 3 Abs. 1 und § 5 entsprechend. |
-| 2.2 | Eine störende Häufung von We. |
-| 3.1 | Außerhalb der im Zusammenhang bebauten Ortsteile sind Werbeanlagen unzulässig. |
-| 3.2 | Das Gleiche gilt für Werbeanlagen an Orts. |
-| 4.1 | In Kleinsiedlungsgebieten, reinen Wohngebieten, allgemeinen Wohngebieten und Dorfgebieten sind nur Werbeanlagen an der S. |
+| 2.2 | Eine störende Häufung von Werbeanlagen ist unzulässig. |
+| 3.1 | Außerhalb der im Zusammenhang bebauten Ortsteile sind Werbeanlagen unzulässig. Das Gleiche gilt für Werbeanlagen an Ortsrändern, soweit sie in die freie Landschaft wirken. Ausgenommen sind |
+| 3.2 | 1. Werbeanlagen an der Stätte der Leistung |
+| 3.3 | 2. Schilder, die gewerbliche Betriebe nach Art und Inhaberschaft kennzeichnen (Hinweisschilder), wenn sie vor Ortsdurchfahrten auf einer Tafel zusammengefasst sind |
+| 3.4 | 3. einzelne Hinweiszeichen an Verkehrsstraßen und Wegabzweigungen, die im Interesse des Verkehrs auf außerhalb der Ortsdurchfahrt liegende gewerbliche oder landwirtschaftliche Betriebe oder versteckt liegende Stätten aufmerksam machen |
+| 3.5 | 4. Hinweisschilder des Landesbetriebs Mobilität, Kreiswappenschilder, Gemeindewappenschilder am Ortsein- und -ausgang, landschaftsangepasste Hinweisschilder auf Gebietskörperschaften an Ortsumgehungen sowie auf die herausragende Weinlage einer Gemeinde |
+| 3.6 | 5. Werbeanlagen an und auf Flugplätzen und Sportstätten sowie auf abgegrenzten Versammlungsstätten, soweit sie nicht störend in die freie Landschaft wirken |
+| 3.7 | 6. Werbeanlagen auf Ausstellungs- und Messegeländen |
+| 4.1 | In Kleinsiedlungsgebieten, reinen Wohngebieten, allgemeinen Wohngebieten und Dorfgebieten sind nur Werbeanlagen an der Stätte der Leistung sowie Anlagen für amtliche Mitteilungen und zur Unterrichtung der Bevölkerung über kirchliche, kulturelle, politische, sportliche und ähnliche Veranstaltungen zulässig; die jeweils freie Fläche dieser Anlagen darf auch für andere Werbung verwendet werden. |
+| 4.2 | In reinen Wohngebieten darf an der Stätte der Leistung nur mit Hinweisschildern geworben werden. |
+| 4.3 | An Haltestellen des öffentlichen Personennahverkehrs können andere Werbeanlagen zugelassen werden, wenn die Eigenart des Gebiets und das Ortsbild nicht beeinträchtigt werden. |
+| 4.4 | Auf öffentlichen Verkehrsflächen sind Hinweiszeichen, die auf versteckt liegende gewerbliche Betriebe oder Stätten aufmerksam machen, zulässig, wenn sie das Ortsbild nicht beeinträchtigen und die Verkehrssicherheit gewährleistet ist; die Hinweiszeichen dürfen auf einer Tafel zusammengefasst sein. |
 | 5.1 | Die Absätze 2 und 3 gelten für Warenautomaten entsprechend, wenn sie vom öffentlichen Verkehrsraum aus sichtbar sind. |
-| 5.2 | -. |
-| 6.1 | Die Bestimmungen dieses Gesetzes sind nicht anzuwenden auf. |
-| 6.2 | 1. Anschläge und Lichtwerbung an genehmigten Säulen, Tafeln u |
+| 6.1 | Die Bestimmungen dieses Gesetzes sind nicht anzuwenden auf |
+| 6.2 | 1. Anschläge und Lichtwerbung an genehmigten Säulen, Tafeln und Flächen |
+| 6.3 | 2. Werbemittel an Zeitungs- und Zeitschriftenverkaufsstellen |
+| 6.4 | 3. Auslagen und Dekorationen in Schaufenstern und Schaukästen |
+| 6.5 | 4. Wahlwerbung für die Dauer eines Wahlkampfs |
 
 ---
 
@@ -805,12 +1104,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §53 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Baustellen sind so einzurichten, dass bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Sa. |
-| 2.1 | Öffentliche Verkehrsflächen, Versorgungs-, Abwasser- und Meldeanlagen sowie Pegel- und Grundwassermessstellen, Vermessun. |
-| 3.1 | Bei der Ausführung genehmigungsbedürftiger Vorhaben ist an der Baustelle eine von der Bauaufsichtsbehörde ausgehändigte. |
-| 4.1 | Bei der Ausführung von Vorhaben, für die das Freistellungsverfahren nach § 67 durchgeführt wurde, sind an der Baustelle. |
+| 1.1 | Baustellen sind so einzurichten, dass bauliche Anlagen sowie andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 ordnungsgemäß errichtet, geändert oder abgebrochen werden können und Gefahren oder unzumutbare Belästigungen nicht entstehen. |
+| 2.1 | Öffentliche Verkehrsflächen, Versorgungs-, Abwasser- und Meldeanlagen sowie Pegel- und Grundwassermessstellen, Vermessungs- und Grenzmarken sind während der Bauarbeiten zu schützen und, soweit erforderlich, unter den notwendigen Sicherheitsvorkehrungen zugänglich zu halten. |
+| 2.2 | Bäume, Hecken und andere Gehölze, die aufgrund öffentlich-rechtlicher Vorschriften zu erhalten sind, müssen während der Bauarbeiten geschützt werden. |
+| 3.1 | Bei der Ausführung genehmigungsbedürftiger Vorhaben ist an der Baustelle eine von der Bauaufsichtsbehörde ausgehändigte Kennzeichnung anzubringen, die über die Erteilung der Baugenehmigung unter Angabe des Ausstellungsdatums, des Aktenzeichens sowie des Namens und der Rufnummer der Bauherrin oder des Bauherrn Auskunft gibt. |
+| 3.2 | Die Bauherrin oder der Bauherr hat vor Baubeginn Namen und Rufnummer der Bauleiterin oder des Bauleiters und der am Rohbau beteiligten Unternehmen in die Kennzeichnung einzutragen. |
+| 3.3 | Die Kennzeichnung muss dauerhaft, leicht lesbar und von der öffentlichen Verkehrsfläche aus sichtbar angebracht sein. |
+| 4.1 | Bei der Ausführung von Vorhaben, für die das Freistellungsverfahren nach § 67 durchgeführt wurde, sind an der Baustelle Angaben über die Art des Vorhabens sowie über Namen und Rufnummer der Bauherrin oder des Bauherrn, der Bauleiterin oder des Bauleiters und der am Rohbau beteiligten Unternehmen anzubringen. |
+| 4.2 | Die Angaben müssen dauerhaft, leicht lesbar und von der öffentlichen Verkehrsfläche aus sichtbar angebracht sein. |
 
 ---
 
@@ -818,10 +1121,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §54 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bei der Errichtung, Änderung, Nutzungsänderung oder dem Abbruch baulicher Anlagen sowie anderer Anlagen und Einrichtunge. |
-| 2.1 | Die Bauherrin oder der Bauherr sowie die Eigentümerin oder der Eigentümer sind dafür verantwortlich, dass bauliche Anlag. |
+| 1.1 | Bei der Errichtung, Änderung, Nutzungsänderung oder dem Abbruch baulicher Anlagen sowie anderer Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 sind die Bauherrin oder der Bauherr und im Rahmen ihres Wirkungskreises die anderen am Bau Beteiligten dafür verantwortlich, dass die baurechtlichen und die sonstigen öffentlich-rechtlichen Vorschriften eingehalten werden. |
+| 2.1 | Die Bauherrin oder der Bauherr sowie die Eigentümerin oder der Eigentümer sind dafür verantwortlich, dass bauliche Anlagen sowie Grundstücke den baurechtlichen Vorschriften entsprechen. |
+| 2.2 | Wer erbbauberechtigt ist, tritt an die Stelle der Person, die das Eigentum innehat. |
+| 2.3 | Wer die tatsächliche Ge walt über eine bauliche Anlage oder ein Grundstück ausübt, ist neben der Person, die das Eigentum oder das Erbbaurecht innehat, verantwortlich. |
+| 2.4 | § 5 Abs. 3 des Polizei- und Ordnungsbehördengesetzes gilt entsprechend. |
 
 ---
 
@@ -829,25 +1135,35 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** verfahrensfreies_vorhaben
 **source_paragraph:** §55 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauherrin oder der Bauherr hat zur Vorbereitung, Ausführung und Überwachung genehmigungsbedürftiger Vorhaben und von. |
-| 2.1 | Bei geringfügigen oder technisch einfachen Vorhaben kann die Bauaufsichtsbehörde auf die Bestellung einer Entwurfsverfas. |
-| 3.1 | Die Bauaufsichtsbehörde kann verlangen, dass ihr für bestimmte Bauarbeiten die Unternehmen und Fachleute (§ 57) namhaft. |
-| 4.1 | Ist eine von der Bauherrin oder dem Bauherrn bestellte Person für ihre Aufgabe nach Sachkunde und Erfahrung nicht geeign. |
-| 5.1 | Wechselt die Bauherrin oder der Bauherr, so hat die neue Bauherrin oder der neue Bauherr dies der Bauaufsichtsbehörde un. |
-| 6.1 | Treten bei einem Vorhaben mehrere Personen als Bauherrin oder Bauherr auf, so kann die Bauaufsichtsbehörde verlangen, da. |
+| 1.1 | Die Bauherrin oder der Bauherr hat zur Vorbereitung, Ausführung und Überwachung genehmigungsbedürftiger Vorhaben und von Vorhaben, für die das Freistellungsverfahren nach § 67 durchgeführt wurde, nach Sachkunde und Erfahrung geeignete Beteiligte nach Maßgabe der §§ 56 bis 57 zu bestellen; § 50 bleibt unberührt. |
+| 1.2 | Der Bauherrin oder dem Bauherrn obliegt es, die nach baurechtlichen und sonstigen öffentlich-rechtlichen Vorschriften erforderlichen Anzeigen und Nachweise gegenüber der Bauaufsichtsbehörde zu erbringen. |
+| 1.3 | Sie oder er hat die zur Erfüllung der Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes erforderlichen Nachweise und Unterlagen zu den verwendeten Bauprodukten und den angewandten Bauarten bereitzuhalten. |
+| 1.4 | Werden Bauprodukte verwendet, die die CE-Kennzeichnung nach der Verordnung (EU) Nr. 305/2011 tragen, ist die Leistungserklärung bereitzuhalten. |
+| 1.5 | Die Bauherrin oder der Bauherr hat vor Baubeginn Namen und Anschrift der bauleitenden Person und während der Bauausführung einen Wechsel dieser Person unverzüglich der Bauaufsichtsbehörde in Textform mitzuteilen. |
+| 2.1 | Bei geringfügigen oder technisch einfachen Vorhaben kann die Bauaufsichtsbehörde auf die Bestellung einer Entwurfsverfasserin oder eines Entwurfsverfassers und einer Bauleiterin oder eines Bauleiters verzichten. |
+| 2.2 | Bei Bauarbeiten, die in Selbst- oder Nachbarschaftshilfe ausgeführt werden, ist die Bestellung von Unternehmen nach Absatz 1 Satz 1 nicht erforderlich, wenn genügend Fachkräfte mit der notwendigen Sachkunde, Erfahrung und Zuverlässigkeit mitwirken. |
+| 3.1 | Die Bauaufsichtsbehörde kann verlangen, dass ihr für bestimmte Bauarbeiten die Unternehmen und Fachleute (§ 57) namhaft gemacht werden. |
+| 4.1 | Ist eine von der Bauherrin oder dem Bauherrn bestellte Person für ihre Aufgabe nach Sachkunde und Erfahrung nicht geeignet, so kann die Bauaufsichtsbehörde vor und während der Ausführung des Vorhabens verlangen, dass sie durch eine geeignete Person ersetzt wird oder geeignete Fachleute oder sachverständige Personen herangezogen werden. |
+| 4.2 | Die Bauaufsichtsbehörde kann die Einstellung der Bauarbeiten anordnen, bis geeignete Personen bestellt oder herangezogen worden sind. |
+| 4.3 | Die Sätze 1 und 2 gelten für von der Bauherrin oder dem Bauherrn bestellte Unternehmen entsprechend. |
+| 5.1 | Wechselt die Bauherrin oder der Bauherr, so hat die neue Bauherrin oder der neue Bauherr dies der Bauaufsichtsbehörde unverzüglich in Textform mitzuteilen. |
+| 6.1 | Treten bei einem Vorhaben mehrere Personen als Bauherrin oder Bauherr auf, so kann die Bauaufsichtsbehörde verlangen, dass eine Vertretung bestellt wird, die ihr gegenüber die Pflichten der Bauherrin oder des Bauherrn zu erfüllen hat. |
 
 ---
 
-### § 56 — Entwurfsverfasserinnen, Entwurfsverfasse
+### § 56 — Entwurfsverfasserinnen, Entwurfsverfasser
 **type:** beteiligtenpflicht
 **source_paragraph:** §56 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Entwurfsverfasserinnen und Entwurfsverfasser sind für die Vollständigkeit und Brauchbarkeit ihrer Entwürfe verantwortlic. |
-| 2.1 | Haben Entwurfsverfasserinnen und Entwurfsverfasser auf einzelnen Fachgebieten nicht die erforderliche Sachkunde und Erfa. |
+| 1.1 | Entwurfsverfasserinnen und Entwurfsverfasser sind für die Vollständigkeit und Brauchbarkeit ihrer Entwürfe verantwortlich. |
+| 1.2 | Sie haben dafür zu sorgen, dass die für die Ausführung des Vorhabens erforderlichen Einzelzeichnungen, Einzelberechnungen und Anweisungen geliefert werden und dass diese den genehmigten Bauunterlagen sowie den baurechtlichen und sonstigen öffentlich-rechtlichen Vorschriften entsprechen. |
+| 2.1 | Haben Entwurfsverfasserinnen und Entwurfsverfasser auf einzelnen Fachgebieten nicht die erforderliche Sachkunde und Erfahrung, so haben sie die Bauherrin oder den Bauherrn zu veranlassen, geeignete sachverständige Personen heranzuziehen. |
+| 2.2 | Für diese gilt Absatz 1 entsprechend. |
+| 2.3 | Entwurfsverfasserinnen und Entwurfsverfasser sind für das Ineinandergreifen ihrer Entwürfe und der Entwürfe der sachverständigen Personen verantwortlich. |
 
 ---
 
@@ -855,10 +1171,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §56a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauleiterin oder der Bauleiter hat darüber zu wachen, dass die Baumaßnahme nach den Vorschriften des öffentlichen Ba. |
-| 2.1 | Soweit die Überwachung besondere Sachkunde oder Erfahrung erfordert, hat die Bauleiterin oder der Bauleiter die Bauherri. |
+| 1.1 | Die Bauleiterin oder der Bauleiter hat darüber zu wachen, dass die Baumaßnahme nach den Vorschriften des öffentlichen Baurechts durchgeführt wird. |
+| 1.2 | Verstöße, denen nicht abgeholfen wird, hat sie oder er unverzüglich der Bauaufsichtsbehörde mitzuteilen. |
+| 2.1 | Soweit die Überwachung besondere Sachkunde oder Erfahrung erfordert, hat die Bauleiterin oder der Bauleiter die Bauherrin oder den Bauherrn zu veranlassen, geeignete Fachbauleiterinnen oder Fachbauleiter hinzuzuziehen. |
+| 2.2 | Für diese gilt Absatz 1 entsprechend. |
+| 2.3 | Neben der Veranlassung nach Satz 1 ist die Bauleiterin oder der Bauleiter für das Ineinandergreifen ihrer oder seiner Tätigkeit und der Tätigkeiten der Fachbauleiterinnen oder Fachbauleiter sowie anderer sachverständiger Personen verantwortlich. |
 
 ---
 
@@ -866,11 +1185,15 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** behoerdenstruktur
 **source_paragraph:** §57 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Unternehmen sind dafür verantwortlich, dass die von ihnen übernommenen Arbeiten nach den geprüften oder, wenn eine P. |
-| 2.1 | Haben Unternehmen für einzelne Bauarbeiten nicht die erforderliche Sachkunde und Erfahrung, so haben sie die Bauherrin o. |
-| 3.1 | Die Unternehmen und Fachleute haben auf Verlangen der Bauaufsichtsbehörde für Bauarbeiten, bei denen die Sicherheit der. |
+| 1.1 | Die Unternehmen sind dafür verantwortlich, dass die von ihnen übernommenen Arbeiten nach den geprüften oder, wenn eine Prüfung nicht erforderlich ist, den eingereichten Bauunterlagen und den Anweisungen der Entwurfsverfasserin oder des Entwurfsverfassers gemäß den baurechtlichen und sonstigen öffentlich-rechtlichen Vorschriften ausgeführt werden. |
+| 1.2 | Sie sind ferner verantwortlich für die ordnungsgemäße Einrichtung und den sicheren Betrieb der Baustelle. |
+| 1.3 | Sie haben die zur Erfüllung der Anforderungen dieses Gesetzes oder aufgrund dieses Gesetzes erforderlichen Nachweise und Unterlagen über die Verwendbarkeit der verwendeten Bauprodukte und die Anwendbarkeit von Bauarten zu erbringen und auf der Baustelle bereitzuhalten. |
+| 1.4 | Bei Bauprodukten, die die CE-Kennzeichnung nach der Verordnung (EU) Nr. 305/2011 tragen, ist die Leistungserklärung bereitzuhalten. |
+| 2.1 | Haben Unternehmen für einzelne Bauarbeiten nicht die erforderliche Sachkunde und Erfahrung, so haben sie die Bauherrin oder den Bauherrn zu veranlassen, andere geeignete Unternehmen oder Fachleute heranzuziehen. |
+| 2.2 | Diese sind für ihre Arbeiten verantwortlich. |
+| 3.1 | Die Unternehmen und Fachleute haben auf Verlangen der Bauaufsichtsbehörde für Bauarbeiten, bei denen die Sicherheit der baulichen Anlage in außergewöhnlichem Maße von einer besonderen Sachkunde und Erfahrung oder von einer Ausstattung des Unternehmens mit besonderen Einrichtungen abhängt, nachzuweisen, dass sie für diese Bauarbeiten geeignet sind und über die erforderlichen Einrichtungen verfügen. |
 
 ---
 
@@ -878,24 +1201,30 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** behoerdenstruktur
 **source_paragraph:** §58 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauaufsichtsbehörden sind:. |
+| 1.1 | Bauaufsichtsbehörden sind |
+| 1.2 | 1. das fachlich zuständige Ministerium als oberste Bauaufsichtsbehörde |
+| 1.3 | 2. die Struktur- und Genehmigungsdirektion als obere Bauaufsichtsbehörde |
+| 1.4 | 3. die Kreisverwaltung, in kreisfreien und großen kreisangehörigen Städten die Stadtverwaltung, als untere Bauaufsichtsbehörde. Soweit eine Übertragung der Aufgaben der unteren Bauaufsichtsbehörde auf die Verbandsgemeindeverwaltung besteht, ist diese untere Bauaufsichtsbehörde |
 | 2.1 | Die unteren Bauaufsichtsbehörden müssen mit geeigneten Fachkräften besetzt sein. |
-| 3.1 | Die Verbandsgemeinden, die großen kreisangehörigen und die kreisfreien Städte sowie die Landkreise nehmen die Bauaufsich. |
+| 3.1 | Die Verbandsgemeinden, die großen kreisangehörigen und die kreisfreien Städte sowie die Landkreise nehmen die Bauaufsicht als Auftragsangelegenheit wahr. |
 
 ---
 
-### § 59 — Aufgaben und Befugnisse der Bauaufsichts
+### § 59 — Aufgaben und Befugnisse der Bauaufsichtsbehörden
 **type:** genehmigungspflicht
 **source_paragraph:** §59 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauaufsichtsbehörden haben bei der Errichtung, Änderung, Instandhaltung, Nutzung, Nutzungsänderung und dem Abbruch b. |
-| 2.1 | Die Bauaufsichtsbehörden haben im Rahmen ihrer Aufgaben zugleich die Befugnisse von allgemeinen Ordnungsbehörden nach de. |
+| 1.1 | Die Bauaufsichtsbehörden haben bei der Errichtung, Änderung, Instandhaltung, Nutzung, Nutzungsänderung und dem Abbruch baulicher Anlagen sowie anderer Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 darüber zu wachen, dass die baurechtlichen und sonstigen öffentlich-rechtlichen Vorschriften und die aufgrund dieser Vorschriften erlassenen Anordnungen eingehalten werden; sie haben zu diesem Zweck nach pflichtgemäßem Ermessen die erforderlichen Maßnahmen zu treffen. |
+| 1.2 | Im Rahmen ihrer Zuständigkeit haben sie die verantwortlichen Personen (§ 54 Abs. 1) zu beraten. |
+| 2.1 | Die Bauaufsichtsbehörden haben im Rahmen ihrer Aufgaben zugleich die Befugnisse von allgemeinen Ordnungsbehörden nach den §§ 6 und 7 des Polizei- und Ordnungsbehördengesetzes. |
 | 3.1 | Die Bauaufsichtsbehörden können sachverständige Personen oder Stellen heranziehen. |
-| 4.1 | Die mit der Durchführung dieses Gesetzes beauftragten Personen sind befugt, zur Wahrnehmung ihrer Aufgaben Grundstücke u. |
+| 4.1 | Die mit der Durchführung dieses Gesetzes beauftragten Personen sind befugt, zur Wahrnehmung ihrer Aufgaben Grundstücke und bauliche Anlagen einschließlich der Wohnungen zu betreten. |
+| 4.2 | Wohnungen dürfen nur zur Abwehr dringender Gefahren für die öffentliche Sicherheit oder Ordnung betreten werden; die Absicht des Betretens soll unter Darlegung des Zwecks vorher schriftlich mitgeteilt werden. |
+| 4.3 | Das Grundrecht der Unverletzlichkeit der Wohnung (Artikel 13 des Grundgesetzes) wird insoweit eingeschränkt. |
 
 ---
 
@@ -903,10 +1232,9 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** genehmigungspflicht
 **source_paragraph:** §60 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Sachliche Zuständigkeit Sachlich zuständig ist, soweit in diesem Gesetz oder in Vorschriften aufgrund dieses Gesetzes nichts anderes bestimmt ist, die untere Bauaufsichtsbehörde. |
-| 1.2 | Sechster Teil Verfahren. |
+| 1.1 | Sachlich zuständig ist, soweit in diesem Gesetz oder in Vorschriften aufgrund dieses Gesetzes nichts anderes bestimmt ist, die untere Bauaufsichtsbehörde. |
 
 ---
 
@@ -914,9 +1242,9 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** verfahrensfreies_vorhaben
 **source_paragraph:** §61 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Errichtung, die Änderung, die Nutzungsänderung und der Abbruch baulicher Anlagen sowie anderer Anl. |
+| 1.1 | Die Errichtung, die Änderung, die Nutzungsänderung und der Abbruch baulicher Anlagen sowie anderer Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 bedürfen der Genehmigung (Baugenehmigung), soweit in den §§ 62, 67, 76 und 84 nichts anderes bestimmt ist. |
 
 ---
 
@@ -924,9 +1252,29 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** kenntnisgabeverfahren
 **source_paragraph:** §62 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Unbeschadet einer nach anderen Vorschriften erforderlichen Genehmigung bedürfen keiner Baugenehmigung das Errichten, Her. |
+| 1.1 | Unbeschadet einer nach anderen Vorschriften erforderlichen Genehmigung bedürfen keiner Baugenehmigung das Errichten, Herstellen, Aufstellen, Anbringen oder Ändern von folgenden baulichen Anlagen, anderen Anlagen und Einrichtungen |
+| 1.2 | 1. Gebäude a) Gebäude bis zu 50 m³, im Außenbereich bis zu 10 m³ umbauten Raums ohne Aufenthaltsräume, Toiletten oder Feuerstätten; ausgenommen sind Kulturdenkmäler und Gebäude in der Umgebung von Kultur- und Naturdenkmälern sowie Garagen, Verkaufs- und Ausstellungsstände b) freistehende Gebäude ohne Unterkellerung und ohne Feuerstätten bis zu 100 m² Grundfläche und 6 m Firsthöhe, die einem land- oder forstwirtschaftlichen Betrieb oder einem Betrieb der gartenbaulichen Erzeugung dienen und nur zur Unterbringung von Sachen oder zum vorübergehenden, im Falle von ortsveränderlich genutzten und fahrbereit aufgestellten Anlagen auch zum dauerhaften Schutz von Tieren bestimmt sind c) Gewächshäuser bis zu 6 m Firsthöhe, die einem landwirtschaftlichen Betrieb oder einem Betrieb der gartenbaulichen Erzeugung dienen, und Einrichtungen zum vorübergehenden Schutz von Pflanzenkulturen im Erwerbsgarten- und Erwerbsobstbau, wie Hagelschutznetze d) Kleinwochenendhäuser, Wohnwagen und Zelte auf genehmigten Camping- und Wochenendplätzen e) Gartenlauben in Dauerkleingärten (§ 1 Abs. 3 und § 3 Abs. 2 des Bundeskleingartengesetzes) f) Garagen, überdachte Stellplätze und Abstellplätze für Fahrräder bis zu 50 m² Grundfläche und einer mittleren Wandhöhe der Außenwände von jeweils nicht mehr als 3,20 m, bei Wänden mit Giebeln einer Firsthöhe von nicht mehr als 4 m; ausgenommen sind Garagen, überdachte Stellplätze und Abstellplätze für Fahrräder im Außenbereich sowie in der Umgebung von Kultur- und Naturdenkmälern g) Fahrgastunterstände des öffentlichen Personennahverkehrs |
+| 1.3 | 2. Feuerungs- und andere Energieerzeugungsanlagen a) Feuerstätten, wenn sie nachweislich (Unternehmensbescheinigung) von einem Fachunternehmen errichtet werden; § 79 Abs. 2 bleibt unberührt b) Abgasanlagen für Feuerstätten an Gebäuden sowie freistehende Abgasanlagen bis zu 10 m Höhe über der Geländeoberfläche; § 79 Abs. 2 bleibt unberührt c) Blockheizkraftwerke in Gebäuden; § 79 Abs. 2 bleibt unberührt d) Wärmepumpen und Brennstoffzellenheizgeräte; für Wärmepumpen und Brennstoffzellenheizgeräte, die Feuerstätten sind, gilt Buchstabe a e) Anlagen zur Nutzung solarer Strahlungsenergie in, an und auf Dach- und Außenwandflächen ausgenommen bei Hochhäusern sowie damit verbundene Nutzungsänderungen baulicher Anlagen; gebäudeunabhängige Anlagen zur Nutzung solarer Strahlungsenergie mit einer Höhe bis zu 3 m und einer Gesamtlänge bis zu 9 m in Gewerbe- und Industriegebieten; die Halbsätze 1 und 2 gelten im Außenbereich nur, wenn sie einem nach § 35 Abs. 1 BauGB zulässigen Vorhaben dienen; ausgenommen sind Anlagen zur Nutzung solarer Strahlungsenergie auf oder an Kulturdenkmälern sowie in der Umgebung von Kultur- und Naturdenkmälern f) Anlagen zur Nutzung solarer Strahlungsenergie im Geltungsbereich einer städtebaulichen oder einer Satzung nach § 88, die Regelungen über die Zulässigkeit, den Standort und die Größe der Anlage enthält, wenn sie den Festsetzungen nicht widersprechen g) Anlagen zur Wasserstofferzeugung, sofern der darin erzeugte Wasserstoff dem Eigenverbrauch in den baulichen Anlagen dient, für die sie errichtet werden h) Anlagen zur Erzeugung und Nutzung von Wasserstoff sowie die zugehörigen Gasspeicher, bei denen die Prozessschritte Erzeugung und Nutzung in einem werksmäßig hergestellten Gerät kombiniert sind und die Speichermenge 20 kg nicht überschreitet |
+| 1.4 | 3. Leitungen und Anlagen für Lüftung, Wasser- und Energieversorgung, Abwasserbeseitigung und Fernmeldewesen a) Transformatoren-, Gasregler- und Gewässergütemessstationen bis zu 50 m³ umbauten Raums; ausgenommen sind Anlagen in der Umgebung von Kultur- und Naturdenkmälern b) Wasser- und Warmwasserversorgungsanlagen in Gebäuden und auf Grundstücken c) Abwasserbeseitigungsanlagen in Gebäuden und auf Grundstücken d) Anlagen zur Verteilung von Wärme bei Wasserheizungsanlagen e) Lüftungsleitungen, Leitungen von Warmluftheizungen und Klimaanlagen, Installationsschächte und -kanäle, wenn sie weder Brandabschnitte noch in Gebäuden der Gebäudeklassen 4 und 5 Geschosse überbrücken f) Energie- und Telekommunikationsanlagen in Gebäuden und auf Grundstücken g) Ladestationen für elektrisch betriebene Kraftfahrzeuge einschließlich notwendiger Versorgungseinrichtungen sowie damit verbundene Nutzungsänderungen |
+| 1.5 | 4. Masten, Antennen und ähnliche bauliche Anlagen a) Blitzschutzanlagen b) Antennenanlagen, einschließlich der Masten bis zu 15 m Höhe, auf Gebäuden gemessen ab dem Schnittpunkt der Anlage mit der Dachhaut, im Außenbereich freistehend mit einer Höhe bis zu 20 m und notwendiger Versorgungseinrichtungen, sowie damit verbundene Nutzungsänderungen baulicher Anlagen; ausgenommen sind Parabolantennen auf oder an Kulturdenkmälern sowie in der Umgebung von Kultur- und Naturdenkmälern; bei Antennenanlagen mit mehr als 10 m Höhe muss sich die Bauherrin oder der Bauherr vor Baubeginn die Standsicherheit der Maßnahme von einer Person nach § 66 Abs. 6 Satz 1 bestätigen lassen c) ortsveränderliche Antennenanlagen, die für längstens 24 Monate aufgestellt werden; bei Masten mit mehr als 10 m Höhe ist die geplante Aufstellung der Bauaufsichtsbehörde und der Gemeinde frühzeitig anzuzeigen und muss sich die Bauherrin oder der Bauherr vor Baubeginn die Standsicherheit der Maßnahme von einer Person nach § 66 Abs. 6 Satz 1 bestätigen lassen d) Masten und Unterstützungen für Fernmeldeleitungen oder Leitungen zur Versorgung mit Elektrizität, für Sirenen sowie sonstige Masten bis zu 10 m Höhe e) Unterstützungen von Seilbahnen, die der Lastenbeförderung dienen und nicht über öffentliche Verkehrsflächen führen f) Signalhochbauten des amtlichen Vermessungswesens g) Windenergieanlagen bis zu einer Gesamthöhe von 10 m, auf Dächern bis zu einer Gesamthöhe von 2 m, in Gewerbe- und Industriegebieten sowie im Außenbereich, wenn sie einem nach § 35 Abs. 1 BauGB zulässigen Vorhaben dienen, einschließlich der damit verbundenen Nutzungsänderungen baulicher Anlagen; es gelten die Anforderungen des § 66 Abs. 3 Satz 4 und 5; ausgenommen sind Windenergieanlagen auf oder an Kulturdenkmälern sowie in der Umgebung von Kultur- und Naturdenkmälern |
+| 1.6 | 5. Behälter, Wasserbecken a) Wasserbecken im Freien bis zu 100 m³ Rauminhalt, außer im Außenbereich b) Behälter bis zu 50 m³ Behälterinhalt und bis zu 3 m Höhe, im Außenbereich nur, wenn sie einem land- oder forstwirtschaftlichen Betrieb oder einem Betrieb der gartenbaulichen Erzeugung dienen; ausgenommen sind Behälter für Gase, Behälter für brennbare und wassergefährdende Flüssigkeiten mit mehr als 10 m³ Behälterinhalt sowie Behälter mit mehr als 5 m³ Behälterinhalt in der Umgebung von Kultur- und Naturdenkmälern c) ortsfeste Behälter für verflüssigte Gase mit weniger als 3 t Fassungsvermögen und nicht verflüssigte Gase bis zu 5 m³ Behälterinhalt d) landwirtschaftliche Fahrsilos |
+| 1.7 | 6. Einfriedungen, Stützmauern, Brücken, Durchlässe a) Einfriedungen; ausgenommen sind Einfriedungen im Außenbereich sowie in der Umgebung von Kultur- und Naturdenkmälern b) Stützmauern bis zu 2 m Höhe über der Geländeoberfläche c) Durchlässe und Brücken bis zu 5 m lichte Weite; ausgenommen sind Überbrückungen zwischen Gebäuden d) Weidezäune sowie offene Einfriedungen im Außenbereich, die einem land- oder forstwirtschaftlichen Betrieb oder einem Betrieb der gartenbaulichen Erzeugung etwa zum Schutz von land- oder forstwirtschaftlichen Kulturen, dem Schutz von Wildgehegen zu Jagdzwecken oder dem Schutz von Verkehrswegen dienen; ausgenommen sind Einfriedungen in der Umgebung von Kultur- und Naturdenkmälern |
+| 1.8 | 7. bauliche Anlagen in Gärten und zur Freizeitgestaltung a) Sprungschanzen und -türme bis zu 5 m Höhe b) luftgetragene Schwimmbeckenüberdachungen bis zu 100 m² Grundfläche, außer im Außenbereich sowie in der Umgebung von Kultur- und Naturdenkmälern c) bauliche Anlagen, die der Gartengestaltung oder der zweckentsprechenden Einrichtung von Sport- und Spielplätzen dienen, wie Pergolen, Trockenmauern, Tore für Ballspiele; ausgenommen sind bauliche Anlagen in der Umgebung von Kulturdenkmälern sowie in historischen Park- und Gartenanlagen d) Hochsitze mit einer Nutzfläche bis zu 4 m² |
+| 1.9 | 8. Werbeanlagen, Warenautomaten, Hinweisschilder a) Werbeanlagen bis zu 1 m² Größe, soweit durch Satzung nach § 88 Abs. 1 keine andere Größe bestimmt ist b) Werbeanlagen für zeitlich begrenzte Veranstaltungen, wie Aus- und Schlussverkäufe, Märkte, Messen und Heimatfeste, für die Dauer der Veranstaltung c) Werbeanlagen, die an der Stätte der Leistung vorübergehend angebracht oder aufgestellt sind, soweit sie nicht mit dem Boden oder einer baulichen Anlage verbunden sind d) Hinweisschilder des Landesbetriebs Mobilität, Kreiswappenschilder und Gemeindewappenschilder am Ortsein- und -ausgang e) Warenautomaten einschließlich Paketstationen und ähnliche Anlagen |
+| 1.10 | 9. sonstige vorübergehend aufgestellte oder genutzte Anlagen a) Gerüste b) Baustelleneinrichtungen einschließlich der Lager- und Schutzhallen sowie der zum vorübergehenden Aufenthalt dienenden Unterkünfte (Baubuden) c) bauliche Anlagen, die für höchstens drei Monate auf genehmigtem Messe- und Ausstellungsgelände errichtet werden, ausgenommen sind Fliegende Bauten d) Behelfsbauten, die der Landesverteidigung, dem Katastrophenschutz, der Unfallhilfe oder der Abwehr sonstiger außergewöhnlicher Ereignisse zum Schutz der Bevölkerung dienen |
+| 1.11 | 10. tragende und nicht tragende Bauteile a) tragende oder aussteifende Bauteile im Innern von Gebäuden nach § 66 Abs. 1 mit Ausnahme von Kulturdenkmälern; die Bauherrin oder der Bauherr muss sich vor Baubeginn die Unbedenklichkeit der Maßnahme von einer Person nach § 66 Abs. 6 Satz 1 bestätigen lassen b) nicht tragende oder nicht aussteifende Bauteile im Innern von Gebäuden, bei Gebäuden, die nicht unter § 66 Abs. 1 fallen, jedoch nur außerhalb von Rettungswegen; ausgenommen sind Kulturdenkmäler |
+| 1.12 | 11. sonstige bauliche Anlagen und Teile baulicher Anlagen a) selbständige Aufschüttungen oder Abgrabungen bis zu 300 m² Grundfläche und bis zu 2 m Höhe oder Tiefe; ausgenommen sind Abgrabungen in Grabungsschutzgebieten gemäß § 22 des Denkmalschutzgesetzes b) Ausgrabungen der Denkmalfachbehörde und ihrer Beauftragten nach § 25 des Denkmalschutzgesetzes c) Plastiken, Denkmäler und ähnliche Anlagen bis zu 3 m Höhe sowie Grabkreuze und -steine auf Friedhöfen d) Stellplätze und Sport- und Spielplätze bis zu 100 m² Fläche e) Abstellplätze für Fahrräder f) freistehende Regale bis zu 12 m Höhe auf genehmigten oder genehmigungsfreien Lagerplätzen g) Kranbahnen und ihre Unterstützungen für Krane bis zu 50 kN Traglast h) Fahrzeugwaagen i) Lager-, Abstellplätze und Ausläufe für Tiere, die einem land- oder forstwirtschaftlichen Betrieb dienen, sowie sonstige Lager-, Abstell-, Aufstell- und Ausstellungsplätze bis zu 300 m² Fläche j) nicht öffentliche Verkehrsflächen k) Zapfsäulen und Tankautomaten genehmigter Tankstellen l) Vorhaben inländischer öffentlicher Stellen, die der Landesverteidigung dienen; ausgenommen sind Vorhaben, für die eine Umweltverträglichkeitsprüfung oder eine Vorprüfung nach dem Recht über die Umweltverträglichkeitsprüfung durchzuführen sind m) unbedeutende bauliche Anlagen, soweit sie nicht durch die Nummern 1 bis 11 Buchst. l erfasst sind, wie nicht überdachte Terrassen, zu Straßenfesten und ähnlichen Veranstaltungen kurzfristig errichtete bauliche Anlagen, die keine Fliegenden Bauten sind, Kleintierställe bis zu 5 m³ umbauten Raums, Fahnen- oder Teppichstangen sowie Markisen außerhalb öffentlicher Verkehrsflächen |
+| 1.13 | 12. Imbiss- und Verkaufswagen auf öffentlichen Verkehrsflächen und gewerblich genutzten Flächen, außer im Außenbereich |
+| 2.1 | Keiner Baugenehmigung bedürfen ferner |
+| 2.2 | 1. die Änderung der äußeren Gestaltung genehmigungsbedürftiger baulicher Anlagen durch Anstrich, Verputz oder Dacheindeckung, durch Austausch von Fenstern, Fenstertüren oder Außentüren und der Bedachung einschließlich Maßnahmen zum Zwecke der Energieeinsparung sowie durch Bekleidungen und Verblendungen von Wänden, ausgenommen Hochhäuser; dies gilt nicht in Gebieten, für die örtliche Vorschriften über die Gestaltung oder Erhaltung baulicher Anlagen bestehen, sowie für Gebäude in der Umgebung von Kultur- und Naturdenkmälern |
+| 2.3 | 2. zu ebener Erde liegende, unbeheizte Anbauten wie Wintergärten und Terrassenüberdachungen bis zu 50 m³ umbauten Raums bei Wohngebäuden der Gebäudeklassen 1 bis 3, mit Ausnahme von Wohngebäuden im Außenbereich |
+| 2.4 | 3. der Ausbau einzelner Aufenthaltsräume im Dachraum von Wohngebäuden der Gebäudeklassen 1 bis 3, wenn die äußere Gestaltung des Gebäudes nicht verändert wird; in der Dachfläche liegende Fenster sind zulässig |
+| 2.5 | 4. die nicht wesentliche Änderung von Schornsteinen; § 79 Abs. 2 bleibt unberührt |
+| 2.6 | 5. Nutzungsänderungen von a) Gebäuden, Nutzungseinheiten und Räumen, die nicht im Außenbereich liegen, wenn für die neue Nutzung keine anderen bedeutsamen öffentlich-rechtlichen Anforderungen als für die bisherige Nutzung gelten b) Gebäuden und Räumen, die nicht im Außenbereich liegen, bei einer teilweisen, untergeordneten gewerblichen oder geschäftlichen Mitbenutzung von Wohnraum ohne Änderung der Bausubstanz durch freiberuflich Tätige oder Gewerbetreibende. Dies gilt insbesondere für Existenzgründerinnen und Existenzgründer. Unbeschadet dessen kann für solche Nutzungsänderungen eine Genehmigung nach § 66 Abs. 1 beantragt werden. Anforderungen nach anderen Vorschriften sowie Rechte und Pflichten aufgrund privatrechtlicher Verträge bleiben unberührt, insbesondere ist dafür Sorge zu tragen, dass durch die Nutzungsänderung keine der Eigenart des Baugebietes widersprechende Belästigungen oder Störungen zu erwarten sind c) anderen Anlagen und Einrichtungen, wenn deren Errichtung oder Änderung für die neue Nutzung genehmigungsfrei wäre |
+| 2.7 | 6. der Abbruch oder die Beseitigung von a) Anlagen und Einrichtungen nach Nummer 2 und Absatz 1 b) baulichen Anlagen, die keine Gebäude sind, bis zu einer Höhe von 30 m sowie baulichen Anlagen nach § 83 Abs. 4 und § 84 c) Gebäuden mit Ausnahme von Hochhäusern d) ortsfesten Behältern e) Feuerstätten |
+| 3.1 | Die Genehmigungsfreiheit entbindet nicht von der Verpflichtung zur Einhaltung der Anforderungen, die durch baurechtliche und sonstige öffentlich-rechtliche Vorschriften an bauliche Anlagen sowie andere Anlagen und Einrichtungen gestellt werden. |
 
 ---
 
@@ -934,13 +1282,15 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** vereinfachtes_genehmigungsverfahren
 **source_paragraph:** §63 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Der Antrag auf Erteilung der Baugenehmigung (Bauantrag) ist von der Bauherrin oder dem Bauherrn bei der Bauaufsichtsbehö. |
-| 2.1 | Mit dem Bauantrag sind alle für die Beurteilung des Vorhabens und die Bearbeitung des Antrags erforderlichen Unterlagen. |
-| 3.1 | Die Bauaufsichtsbehörde leitet den Bauantrag unverzüglich an die Gemeindeverwaltung weiter und ersucht soweit erforderli. |
-| 4.1 | Hat die Bauherrin oder der Bauherr nicht das Eigentum oder das Erbbaurecht an dem Grundstück inne, so kann ein zur Ausfü. |
-| 5.1 | Zur Beurteilung, wie sich das Vorhaben in die Umgebung einfügt, kann verlangt werden, dass es in geeigneter Weise, sowei. |
+| 1.1 | Der Antrag auf Erteilung der Baugenehmigung (Bauantrag) ist von der Bauherrin oder dem Bauherrn bei der Bauaufsichtsbehörde einzureichen. |
+| 2.1 | Mit dem Bauantrag sind alle für die Beurteilung des Vorhabens und die Bearbeitung des Antrags erforderlichen Unterlagen (Bauunterlagen) einzureichen. |
+| 2.2 | Es kann zugelassen werden, dass einzelne Bauunterlagen nachgereicht werden. |
+| 3.1 | Die Bauaufsichtsbehörde leitet den Bauantrag unverzüglich an die Gemeindeverwaltung weiter und ersucht soweit erforderlich um die Erteilung des Einvernehmens oder der Zustimmung der Gemeinde nach dem Baugesetzbuch, die umgehend zu dem Vorhaben Stellung nimmt. |
+| 3.2 | Bei verbandsangehörigen Gemeinden tritt an die Stelle der Gemeindeverwaltung die Verbandsgemeindeverwaltung. |
+| 4.1 | Hat die Bauherrin oder der Bauherr nicht das Eigentum oder das Erbbaurecht an dem Grundstück inne, so kann ein zur Ausführung des Vorhabens berechtigender Nachweis verlangt werden. |
+| 5.1 | Zur Beurteilung, wie sich das Vorhaben in die Umgebung einfügt, kann verlangt werden, dass es in geeigneter Weise, soweit erforderlich auf dem Grundstück, dargestellt wird. |
 
 ---
 
@@ -948,22 +1298,58 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** genehmigungspflicht
 **source_paragraph:** §64 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauunterlagen für die genehmigungsbedürftige Errichtung und Änderung von Gebäuden sowie für Vorhaben, für die das Freist. |
-| 2.1 | Bauvorlageberechtigt ist,. |
-| 2.2 | 1. wer aufgrund des Architektengesetzes die Berufsbezeichnung Architektin oder Architekt zu fü |
-| 3.1 | Bauvorlageberechtigt sind ferner folgende in die Liste der eingeschränkt Bauvorlageberechtigten bei der Architektenkamme. |
-| 4.1 | Sollte eine nach Absatz 3 Satz 1 bauvorlageberechtigte Person mit Ausnahme der Absolventinnen und Absolventen der Fachri. |
-| 5.1 | Die Ingenieurkammer Rheinland-Pfalz kann die Eintragung in der Liste nach Absatz 4 Satz 1 löschen, wenn die Voraussetzun. |
-| 6.1 | Die Bauvorlageberechtigten nach Absatz 3 Satz 1 Nr. 1, mit Ausnahme der Absolventinnen und Absolventen der Fachrichtung. |
-| 7.1 | Möchte eine Absolventin oder ein Absolvent der Fachrichtung Architektur Vorhaben nach Absatz 3 Satz 2 ausführen, so muss. |
-| 8.1 | Die Architektenkammer Rheinland-Pfalz kann die Eintragung in der Liste nach Absatz 7 Satz 1 löschen, wenn die Voraussetz. |
-| 9.1 | Für bauvorlageberechtige Personen nach Absatz 3 Satz 1 Nr. 1 erlischt eine Eintragung und endet die Befugnis der eingesc. |
-| 10.1 | Nicht bauvorlageberechtigte Personen, die vor dem. |
-| 10.2 | 1. Juli 1987 regelmäßig Bauunterlagen für Gebäude nach § 95 Abs. 6 Nr. |
-| 11.1 | Zur Erfüllung ihrer Pflichten als listenführende und Eintragungsvoraussetzung prüfende Stelle nach Absatz 4 Satz 1 sowie. |
-| 12.1 | Gebühren für die Eintragung und Listenführung nach den Absätzen 4 bis 7 regeln die Beitragsordnungen der Architektenkamm. |
+| 1.1 | Bauunterlagen für die genehmigungsbedürftige Errichtung und Änderung von Gebäuden sowie für Vorhaben, für die das Freistellungsverfahren nach § 67 durchgeführt wird, müssen von einer bauvorla geberechtigten Entwurfsverfasserin oder einem bauvorlageberechtigten Entwurfsverfasser verantwortet werden. Dies gilt nicht für |
+| 1.2 | 1. Bauunterlagen, die üblicherweise von Fachkräften mit anderer Ausbildung als nach Absatz 2 verfasst werden |
+| 1.3 | 2. 2 Garagen bis zu 100 m Nutzfläche sowie |
+| 1.4 | 3. Behelfsbauten und untergeordnete Gebäude (§ 49). Die Bauaufsichtsbehörde kann verlangen, dass die Bauvorlageberechtigung nachgewiesen wird |
+| 2.1 | Bauvorlageberechtigt ist |
+| 2.2 | 1. wer aufgrund des Architektengesetzes die Berufsbezeichnung Architektin oder Architekt zu führen berechtigt ist |
+| 2.3 | 2. wer in einer von der Ingenieurkammer Rheinland-Pfalz zu führenden Liste der Bauvorlageberechtigten eingetragen ist oder ohne eine solche Listeneintragung gemäß § 64d bauvorlageberechtigt ist |
+| 2.4 | 3. wer aufgrund des Architektengesetzes die Berufsbezeichnung Innenarchitektin oder Innenarchitekt zu führen berechtigt ist, für die mit der Berufsaufgabe der Innenarchitektin oder des Innenarchitekten verbundene bauliche Änderung von Gebäuden |
+| 2.5 | 4. wer Bedienstete oder Bediensteter einer juristischen Person des öffentlichen Rechts ist und einen berufsqualifizierenden Hochschulabschluss eines Studiums der Fachrichtung Bauingenieurwesen gemäß den in der Anlage geregelten Leitlinien oder der Fachrichtung Architektur nachweisen kann und danach mindestens zwei Jahre auf dem Gebiet der Entwurfsplanung von Gebäuden praktisch tätig gewesen ist, im Rahmen der dienstlichen Tätigkeit |
+| 3.1 | Bauvorlageberechtigt sind ferner folgende in die Liste der eingeschränkt Bauvorlageberechtigten bei der Architektenkammer Rheinland-Pfalz oder der Ingenieurkammer Rheinland-Pfalz eingetragene Personen |
+| 3.2 | 1. Berufsangehörige, die über einen inländischen oder auswärtigen Hochschulabschluss der Fachrichtung Architektur oder Bauingenieurwesen verfügen |
+| 3.3 | 2. staatlich geprüfte Technikerinnen und Techniker der Fachrichtung Bautechnik |
+| 3.4 | 3. Personen, die die Meisterprüfung des Maurer-, Betonbauer- oder Zimmererhandwerks abgelegt haben und in die Handwerksrolle eingetragen sind, zwei Jahre als Meisterin oder Meister tätig waren und einen von der Architektenkammer Rheinland-Pfalz oder der Ingenieurkammer Rheinland-Pfalz anerkannten und mindestens 60 Stunden umfassenden Lehrgang mit Inhalten der Bauplanung in Ergänzung zur Meisterausbildung vorweisen können. Die Erteilung der Ausübungsberechtigung nach den §§ 7a und 7b der Handwerksordnung in der Fassung vom |
+| 3.5 | 24. September 1998 (BGBl. I S. 3074; 2006 S. 2095) in der jeweils geltenden Fassung ist hierfür nicht ausreichend Der in Satz 1 genannte Personenkreis ist bauvorlageberechtigt für |
+| 3.6 | 1. Wohngebäude der Gebäudeklassen 1 und 2 mit maximal zwei Wohnungen bis zu insgesamt 100 m2 Grundfläche |
+| 3.7 | 2. gewerbliche sowie land- und forstwirtschaftliche Gebäude mit nicht mehr als einem oberirdischen Geschoss bis zu 250 m2 Grundfläche |
+| 4.1 | Sollte eine nach Absatz 3 Satz 1 bauvorlageberechtigte Person mit Ausnahme der Absolventinnen und Absolventen der Fachrichtung Architektur das Recht zur Ausführung eines in Absatz 3 Satz 2 genannten Vorhabens ausüben wollen, ist sie verpflichtet, sich vor dem ersten Tätigwerden in die Liste nach Absatz 3 Satz 1 eintragen zu lassen, die bei der Ingenieurkammer Rheinland-Pfalz geführt wird. |
+| 4.2 | Voraussetzungen für die Eintragung in die Liste sind die in Absatz 3 Satz 1 sowie in Absatz 6 Satz 2 bis 5 genannten Anforderungen. |
+| 4.3 | Mit Eintragung in die Liste unterfällt die eingetragene Person den Pflichten des § 36 Abs. 2 Nr. 1 bis 3, 6, 9 und 10 des Landesgesetzes zum Schutz der Berufsbezeichnungen im Ingenieurwesen und über die Ingenieurkammer Rheinland-Pfalz (IngKaG) vom 9. |
+| 4.4 | März 2011 (GVBl. |
+| 4.5 | S. 47, BS 714-1) in der jeweils geltenden Fassung. |
+| 4.6 | Die Ingenieurkammer Rheinland-Pfalz hat auf Antrag zu bestätigen, dass die Eintragung nach Absatz 4 Satz 1 erfolgt ist. |
+| 5.1 | Die Ingenieurkammer Rheinland-Pfalz kann die Eintragung in der Liste nach Absatz 4 Satz 1 löschen, wenn die Voraussetzungen des Absatzes 3 Satz 1 sowie des Absatzes 6 Satz 2 bis 5 nicht erfüllt sind oder gegen die Bestimmungen des § 36 Abs. 2 Nr. 1 bis 3, 6, 9 und 10 IngKaG sowie des Absatzes 6 Satz 1 verstoßen wird. |
+| 5.2 | Mit der Löschung gilt das Tätigwerden als bauvorlageberechtigte Person als untersagt. |
+| 5.3 | Die für die Löschung aus Listen geltenden Regelungen der Ingenieurkammer Rheinland-Pfalz gelten auch für diese Liste. |
+| 6.1 | Die Bauvorlageberechtigten nach Absatz 3 Satz 1 Nr. 1, mit Ausnahme der Absolventinnen und Absolventen der Fachrichtung Architektur, Nr. 2 und 3 sind verpflichtet, sich jährlich mindestens acht Stunden im Bereich des Baurechts und der Baukonstruktion fortzubilden. |
+| 6.2 | Sie haben sich ausreichend gegen Haftpflichtansprüche zu versichern, die aus ihrer eigenverantwortlichen Tätigkeit herrühren können. |
+| 6.3 | Es ist eine Nachhaftung des Versicherers für mindestens fünf Jahre nach Beendigung des Versicherungsvertrags zu vereinbaren. |
+| 6.4 | Die Mindestversicherungssumme beträgt für jeden Versicherungsfall 1,5 Millionen Euro für Personenschäden und 300 000 Euro für Sach- und Vermögensschäden. |
+| 6.5 | Als Jahreshöchstleistung für alle im Versicherungsjahr verursachten Schäden muss der dreifache Betrag der Mindestversicherungssumme veranschlagt sein. |
+| 6.6 | Die Erfüllung der jährlichen Fortbildungspflicht sowie das Vorliegen der Haftpflichtversicherung haben die Bauvorlageberechtigten gegenüber der Ingenieurkammer Rheinland-Pfalz auf Anfrage nachzuweisen. |
+| 6.7 | In Bezug auf die Versicherungspflicht nach Satz 2 ist zuständige Stelle im Sinne des § 117 Abs. 2 des Versicherungsvertragsgesetzes die Ingenieurkammer Rheinland-Pfalz. |
+| 7.1 | Möchte eine Absolventin oder ein Absolvent der Fachrichtung Architektur Vorhaben nach Absatz 3 Satz 2 ausführen, so muss sie oder er entweder als Juniormitglied der Architektenkammer RheinlandPfalz oder in einer bei der Architektenkammer Rheinland-Pfalz zu führenden Liste eingetragen sein. |
+| 7.2 | Voraussetzung für die Eintragung in diese Liste sind die in Absatz 3 Satz 1 Nr. 1 Alternative 1 sowie in Absatz 6 Satz 2 bis 5 genannten Anforderungen. |
+| 7.3 | Mit Eintragung in die Liste unterfällt die Person den Berufspflichten der Architektinnen und Architekten gemäß § 2 Abs. 1 des Architektengesetzes (ArchG) vom 16. |
+| 7.4 | Dezember 2005 (GVBl. |
+| 7.5 | S. 505, BS 70-10) in der jeweils geltenden Fassung. |
+| 7.6 | Insbesondere sind der Architektenkammer Rheinland-Pfalz die regelmäßige Fortbildung sowie das Vorliegen einer ausreichenden Haftpflichtversicherung entsprechend Absatz 6 Satz 2 bis 5 auf Anforderung nachzuwei sen. |
+| 7.7 | In Bezug auf die Versicherungspflicht nach Satz 2 in Verbindung mit Absatz 6 Satz 2 ist zuständige Stelle im Sinne des § 117 Abs. 2 des Versicherungsvertragsgesetzes die Architektenkammer Rheinland-Pfalz. |
+| 8.1 | Die Architektenkammer Rheinland-Pfalz kann die Eintragung in der Liste nach Absatz 7 Satz 1 löschen, wenn die Voraussetzungen des Absatzes 3 Satz 1 Nr. 1 Alternative 1 sowie des Absatzes 6 Satz 2 bis 5 nicht erfüllt sind oder gegen die Bestimmungen des § 2 Abs. 1 ArchG verstoßen wird. |
+| 8.2 | Mit der Löschung gilt das Tätigwerden als bauvorlageberechtigte Person als untersagt. |
+| 8.3 | Die für die Löschung aus Listen geltenden Regelungen der Architektenkammer Rheinland-Pfalz gelten auch für diese Liste. |
+| 9.1 | Für bauvorlageberechtige Personen nach Absatz 3 Satz 1 Nr. 1 erlischt eine Eintragung und endet die Befugnis der eingeschränkten Bauvorlageberechtigung nach Absatz 3 Satz 2 mit Ablauf von drei Jahren nach Abschluss des entsprechenden Hochschulstudiums. |
+| 10.1 | Nicht bauvorlageberechtigte Personen, die vor dem 1. |
+| 10.2 | Juli 1987 regelmäßig Bauunterlagen für Gebäude nach § 95 Abs. 6 Nr. 1 bis 3 der Landesbauordnung für Rheinland-Pfalz vom 27. |
+| 10.3 | Februar 1974 (GVBl. |
+| 10.4 | S. 53) gefertigt und dies bis zum 1. |
+| 10.5 | Juli 1990 der zuständigen oberen Bauaufsichtsbehörde nachgewiesen haben, können Bauunterlagen für Gebäude dieser Art auch weiterhin unterschreiben. |
+| 11.1 | Zur Erfüllung ihrer Pflichten als listenführende und Eintragungsvoraussetzung prüfende Stelle nach Absatz 4 Satz 1 sowie Absatz 5 besteht ein Auskunftsanspruch der Ingenieurkammer RheinlandPfalz gegenüber der Handwerkskammer im Hinblick auf das Vorliegen der Voraussetzungen des Absatzes 3 Satz 1 Nr. 3. |
+| 12.1 | Gebühren für die Eintragung und Listenführung nach den Absätzen 4 bis 7 regeln die Beitragsordnungen der Architektenkammer Rheinland-Pfalz beziehungsweise der Ingenieurkammer RheinlandPfalz. |
 
 ---
 
@@ -971,16 +1357,26 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** besonderes_verfahren
 **source_paragraph:** §64a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | In die Liste nach § 64 Abs. 2 Nr. 2 ist auf Antrag von der Ingenieurkammer Rheinland-Pfalz einzutragen, wer. |
-| 1.2 | 1. einen ber |
-| 2.1 | Auf Antrag ist in die Liste nach § 64 Abs. 2 Nr. 2 einzutragen, wer über einen auswärtigen Hochschulabschluss verfügt, d. |
-| 3.1 | Eine Antragstellerin oder ein Antragsteller wird in die Liste nach § 64 Abs. 2 Nr. 2 auch eingetragen, wenn - Seite 61 v. |
-| 4.1 | Die Eintragung in eine vergleichbare Liste eines anderen Landes der Bundesrepublik Deutschland gilt auch in Rheinland-Pf. |
-| 5.1 | § 17 des Berufsqualifikationsfeststellunggesetzes Rheinland-Pfalz (BQFGRP) vom 8. Oktober 2013 (GVBl. |
-| 5.2 | S. |
-| 5.3 | 359, BS 806-4). |
+| 1.1 | In die Liste nach § 64 Abs. 2 Nr. 2 ist auf Antrag von der Ingenieurkammer Rheinland-Pfalz einzutragen, wer |
+| 1.2 | 1. einen berufsqualifizierenden Hochschulabschluss eines Studiums der Fachrichtung Bauingenieurwesen gemäß der in der Anlage geregelten Leitlinien an einer deutschen Hochschule nachweist und |
+| 1.3 | 2. danach mindestens zwei Jahre auf dem Gebiet der Entwurfsplanung von Gebäuden praktisch tätig gewesen ist |
+| 2.1 | Auf Antrag ist in die Liste nach § 64 Abs. 2 Nr. 2 einzutragen, wer über einen auswärtigen Hochschulabschluss verfügt, der den in Absatz 1 Nr. 1 genannten Anforderungen gleichwertig ist, und die Anforderungen des Absatzes 1 Nr. 2 erfüllt. |
+| 3.1 | Eine Antragstellerin oder ein Antragsteller wird in die Liste nach § 64 Abs. 2 Nr. 2 auch eingetragen, wenn 1. |
+| 3.2 | sie oder er in Bezug auf die Studienanforderungen einen Ausbildungsnachweis nach Artikel 11 der Richtlinie 2005/36/EG des Europäischen Parlaments und des Rates vom 7. |
+| 3.3 | September 2005 über die Anerkennung von Berufsqualifikationen (ABl. |
+| 3.4 | EU Nr. L 255 S. 22) in der jeweils geltenden Fassung besitzt, soweit diese in einem Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat erforderlich sind, um in dessen Hoheitsgebiet die Erlaubnis zur Aufnahme und Ausübung dieses Berufs zu erhalten 2. |
+| 3.5 | der Ausbildungsnachweis den Anforderungen nach Artikel 13 Abs. 2 Satz 2 der Richtlinie 2005/36/EG genügt und 3. |
+| 3.6 | die berufspraktische Tätigkeit mit den Anforderungen nach Absatz 1 Nr. 2 vergleichbar ist. |
+| 3.7 | Satz 1 gilt auch für eine Antragstellerin oder einen Antragsteller, die oder der nachweist, dass sie oder er 1. |
+| 3.8 | diesen Beruf ein Jahr lang vollzeitbeschäftigt oder während einer entsprechenden Gesamtdauer in Teilzeit während der vorhergehenden zehn Jahre in einem Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat ausgeübt hat; ist entweder der Beruf oder die Ausbildung zu diesem Beruf im Herkunftsstaat reglementiert, ist kein Nachweis über die Berufsausübung zu fordern 2. |
+| 3.9 | im Besitz eines Befähigungs- oder Ausbildungsnachweises ist, der den Anforderungen nach Artikel 13 Abs. 2 Satz 2 der Richtlinie 2005/36/EG genügt und 3. |
+| 3.10 | keine wesentlichen Unterschiede gemäß Absatz 3 Satz 1 bestehen. |
+| 4.1 | Die Eintragung in eine vergleichbare Liste eines anderen Landes der Bundesrepublik Deutschland gilt auch in Rheinland-Pfalz. |
+| 5.1 | § 17 des Berufsqualifikationsfeststellunggesetzes Rheinland-Pfalz (BQFGRP) vom 8. |
+| 5.2 | Oktober 2013 (GVBl. |
+| 5.3 | S. 359, BS 806-4) in der jeweils geltenden Fassung findet entsprechend Anwendung. |
 
 ---
 
@@ -988,13 +1384,28 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §64b LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Für die Form des Antrags auf Eintragung, die einzureichenden Unterlagen sowie das diesbezügliche Verfahren gelten die §§. |
-| 2.1 | Antragstellende haben Unterlagen nach Artikel 50 Abs. 1 der Richtlinie 2005/36/EG in Verbindung mit deren Anhang VII Nr. |
-| 3.1 | Über die Eintragung in die Liste nach § 64 Abs. 2 Nr. 2 ist eine Bescheinigung auszustellen. |
-| 3.2 | Die Liste enthält folgende. |
-| 4.1 | Kann eine Eintragung in die Liste nicht erfolgen, weil die Antragstellerin oder der Antragsteller die Voraussetzungen de. |
+| 1.1 | mit Hochschulabschlüssen aus anderen Mitgliedstaaten der Europäischen Union. |
+| 1.1 | Für die Form des Antrags auf Eintragung, die einzureichenden Unterlagen sowie das diesbezügliche Verfahren gelten die §§ 12 und 13 BQFGRP. |
+| 2.1 | Antragstellende haben Unterlagen nach Artikel 50 Abs. 1 der Richtlinie 2005/36/EG in Verbindung mit deren Anhang VII Nr. 1 Buchst. |
+| 2.2 | a und b Satz 1 sowie auf Anforderung nach Anhang VII Nr. 1 Buchst. |
+| 2.3 | b Satz 2 dieser Richtlinie vorzulegen. |
+| 2.4 | Gibt die Antragstellerin oder der Antragsteller an, hierzu nicht in der Lage zu sein, wendet sich die Ingenieurkammer Rheinland-Pfalz zur Beschaffung der erforderlichen Unterlagen an die Kontaktstelle, die zuständige Behörde oder eine Ausbildungsstelle. |
+| 2.5 | Bei Ausbildungsnachweisen gemäß Artikel 50 Abs. 3 der Richtlinie 2005/36/EG kann die Ingenieurkammer Rheinland-Pfalz bei berechtigten Zweifeln von der zuständigen Stelle des Ausstellungsstaates die Überprüfung der Kriterien gemäß Artikel 50 Abs. 3 Buchst. |
+| 2.6 | a bis c der Richtlinie 2005/36/EG verlangen. |
+| 2.7 | War die Antragstellerin oder der Antragsteller bereits in einem anderen Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat tätig, kann die Ingenieurkammer Rheinland-Pfalz im Fall berechtigter Zweifel von der im Herkunftsstaat zuständigen Behörde eine Bestätigung der Tatsache verlangen, dass die Ausübung dieses Berufs durch die Antragstellerin oder den Antragsteller nicht aufgrund schwerwiegenden standeswidrigen Verhaltens oder einer Verurteilung wegen strafbarer Handlungen untersagt worden ist. |
+| 2.8 | Im Übrigen finden die Vorschriften des Artikels 50 Abs. 1 der Richtlinie 2005/36/EG in Verbindung mit deren Anhang VII Nr. 1 Buchst. |
+| 2.9 | d, e, f und g Anwendung. |
+| 2.10 | Die auf Verlangen übermittelten Unterlagen und Bescheinigungen dürfen bei ihrer Vorlage nicht älter als drei Monate sein. |
+| 2.11 | Der Informationsaustausch erfolgt über das Binnenmarkt-Informationssystem (IMI). |
+| 3.1 | Über die Eintragung in die Liste nach § 64 Abs. 2 Nr. 2 ist eine Bescheinigung auszustellen. Die Liste enthält folgende Angaben |
+| 3.2 | 1. Zeitpunkt der Eintragung |
+| 3.3 | 2. Familienname, Geburtsname und Vornamen |
+| 3.4 | 3. Geburtsdatum, Geburtsort und Geschlecht |
+| 3.5 | 4. akademische Grade und Titel |
+| 3.6 | 5. ladungsfähige Adresse. Die Liste nach § 64 Abs. 2 Nr. 2 enthält darüber hinaus Angaben über die Staatsangehörigkeit der Antragstellerin oder des Antragstellers und den Staat, in dem die Berufsqualifikation erworben wurde. Wesentliche Änderungen gegenüber der nach Satz 2 bescheinigten Situation hat die Antragstellerin oder der Antragsteller der Ingenieurkammer Rheinland-Pfalz unverzüglich mitzuteilen. Die für die Löschung aus Listen geltenden Regelungen der Ingenieurkammer Rheinland-Pfalz gelten auch für diese Liste |
+| 4.1 | Kann eine Eintragung in die Liste nicht erfolgen, weil die Antragstellerin oder der Antragsteller die Voraussetzungen des § 64a Abs. 3 nicht erfüllt, ist dies durch Bescheid im Sinne des § 10 BQFGRP festzustellen. |
 
 ---
 
@@ -1002,11 +1413,17 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §64c LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Antragstellende, die nicht nach § 64a Abs. 2 und 3 in die Liste nach § 64 Abs. 2 Nr. 2 eingetragen werden können, weil s. |
-| 2.1 | Die Einzelheiten zur Durchführung von Ausgleichsmaßnahmen werden durch Satzung der Ingenieurkammer Rheinland-Pfalz festg. |
-| 3.1 | Die Ingenieurkammer Rheinland-Pfalz kann mit anderen zuständigen Stellen innerhalb der Bundesrepublik Deutschland landes. |
+| 1.1 | Antragstellende, die nicht nach § 64a Abs. 2 und 3 in die Liste nach § 64 Abs. 2 Nr. 2 eingetragen werden können, weil sie aufgrund von wesentlichen Unterschieden nicht über eine gleichwertige Berufsqualifikation verfügen und die über einen Ausbildungsnachweis verfügen, der dem Berufsqualifikationsniveau nach Artikel 11 Buchst. |
+| 1.2 | b, c, d oder e der Richtlinie 2005/36/EG entspricht, können einen höchstens dreijährigen Anpassungslehrgang absolvieren oder eine Eignungsprüfung ablegen. |
+| 1.3 | Beantragt eine Inhaberin oder ein Inhaber einer Berufsqualifikation gemäß Artikel 11 Buchst. |
+| 1.4 | a der Richtlinie 2005/36/EG die Anerkennung ihrer oder seiner Berufsqualifikationen und ist die erforderliche Berufsqualifikation unter Artikel 11 Buchst. |
+| 1.5 | d der Richtlinie 2005/36/EG eingestuft, so kann die Ingenieurkammer Rheinland-Pfalz sowohl einen Anpassungslehrgang als auch eine Eignungsprüfung vorschreiben. |
+| 2.1 | Die Einzelheiten zur Durchführung von Ausgleichsmaßnahmen werden durch Satzung der Ingenieurkammer Rheinland-Pfalz festgelegt. |
+| 2.2 | Diese ist von der für die Ingenieurkammer Rheinland-Pfalz zuständigen Aufsichtsbehörde zu genehmigen. |
+| 3.1 | Die Ingenieurkammer Rheinland-Pfalz kann mit anderen zuständigen Stellen innerhalb der Bundesrepublik Deutschland landesübergreifende Vereinbarungen zur Durchführung von Ausgleichsmaßnahmen schließen. |
+| 3.2 | Die Vereinbarung bedarf der Genehmigung des für das Bauberufsrecht fachlich zuständigen Ministeriums. |
 
 ---
 
@@ -1014,38 +1431,115 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** beteiligtenpflicht
 **source_paragraph:** §64d LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Dienstleisterinnen oder Dienstleister, die zur vorübergehenden und gelegentlichen Erstellung von Bauunterlagen berechtig. |
-| 2.1 | Dienstleisterinnen oder Dienstleister nach Absatz 1 haben das erstmalige Erbringen von Dienstleistungen zuvor der Ingeni. |
-| 3.1 | Die Vorlage der Anzeige nach Absatz 2 berechtigt die Dienstleisterin oder den Dienstleister zur Erstellung von Bauunterl. |
-| 4.1 | Das Recht zur Führung der Berufsbezeichnung des Niederlassungsstaates nach Artikel 7 Abs. 3 der Richtlinie 2005/36/EG bl. |
+| 1.1 | eistungserbringung von bauvorlageberechtigten Ingenieurinnen oder Ingenieuren, Anzeigeverfahren. |
+| 1.1 | Dienstleisterinnen oder Dienstleister, die zur vorübergehenden und gelegentlichen Erstellung von Bauunterlagen berechtigt sind, sind in ein entsprechendes Verzeichnis bei der Ingenieurkammer Rheinland-Pfalz einzutragen. |
+| 1.2 | Die für die Erstellung von Listen geltenden Regelungen für die Ingenieurkammer Rheinland-Pfalz gelten auch für dieses Verzeichnis. |
+| 2.1 | Dienstleisterinnen oder Dienstleister nach Absatz 1 haben das erstmalige Erbringen von Dienstleistungen zuvor der Ingenieurkammer Rheinland-Pfalz in Textform anzuzeigen. Einer Anzeige nach Satz 1 bedarf es nicht, wenn die Dienstleisterin oder der Dienstleister bereits aufgrund einer Regelung eines anderen Landes der Bundesrepublik Deutschland zur Dienstleistungserbringung berechtigt ist. Zusammen mit der Anzeige sind folgende Unterlagen vorzulegen |
+| 2.2 | 1. ein Identitätsnachweis |
+| 2.3 | 2. eine Bescheinigung, dass sie oder er in einem Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat rechtmäßig zur Ausübung der betreffenden Tätigkeit niedergelassen ist und ihr oder ihm die Ausübung dieser Tätigkeit zum Zeitpunkt der Vorlage der Bescheinigung nicht, auch nicht vorübergehend, untersagt ist |
+| 2.4 | 3. ein Berufsqualifikationsnachweis |
+| 2.5 | 4. in den in § 64a Abs. 3 Satz 2 genannten Fällen ein Nachweis in beliebiger Form darüber, dass die Dienstleisterin oder der Dienstleister die betreffende Tätigkeit mindestens ein Jahr während der vorhergehenden zehn Jahre ausgeübt hat; ist entweder der Beruf oder die Ausbildung zu diesem Beruf im Herkunftsstaat reglementiert, ist kein Nachweis über die Berufsausübung zu fordern |
+| 2.6 | 5. ein Nachweis über eine ausreichende Berufshaftpflichtversicherung. Die §§ 12 und 13 BQFGRP gelten entsprechend |
+| 3.1 | Die Vorlage der Anzeige nach Absatz 2 berechtigt die Dienstleisterin oder den Dienstleister zur Erstellung von Bauunterlagen. |
+| 3.2 | Der Ingenieurkammer Rheinland-Pfalz steht es frei, die Unterlagen nach Absatz 2 Satz 3 nachzuprüfen. |
+| 3.3 | Die Erstellung von Bauunterlagen ist der Dienstleisterin oder dem Dienstleister zu untersagen, wenn sie oder er nicht zur Ausübung desselben Berufs rechtmäßig in einem Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat niedergelassen ist, ihr oder ihm die Ausübung dieser Tätigkeit nach der Anzeige untersagt wird oder sie oder er die Voraussetzungen des § 64a Abs. 3 Satz 2 nicht erfüllt. |
+| 3.4 | In diesen Fällen ist der Dienstleisterin oder dem Dienstleister die Möglichkeit einzuräumen, Kenntnisse, Fähigkeiten und Kompetenzen durch einen Anpassungslehrgang zu erwerben oder durch eine Eignungsprüfung nachzuweisen. |
+| 3.5 | Ist die Dienstleisterin oder der Dienstleister zur Ausübung desselben Berufs recht mäßig in einem Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat niedergelassen oder erfüllt sie oder er die Voraussetzungen des § 64a Abs. 3 Satz 2, so darf ihr oder ihm die Berechtigung zur Erstellung von Bauunterlagen nicht aufgrund ihrer oder seiner Berufsqualifikation beschränkt werden. |
+| 3.6 | Für die Bestimmung desselben Berufs im Sinne dieses Absatzes gilt das gestufte System des § 64. |
+| 4.1 | Das Recht zur Führung der Berufsbezeichnung des Niederlassungsstaates nach Artikel 7 Abs. 3 der Richtlinie 2005/36/EG bleibt unberührt. |
+| 4.2 | Die Berufsbezeichnung ist dann so zu führen, dass keine Verwechslung mit einer inländischen Berufsbezeichnung möglich ist. |
 | 5.1 | Auswärtige bauvorlageberechtigte Ingenieurinnen und Ingenieure haben die Berufspflichten zu beachten. |
-| 5.2 | Sie sind hierfür w. |
+| 5.2 | Sie sind hierfür wie Pflichtmitglieder der Ingenieurkammer Rheinland-Pfalz zu behandeln. |
+| 5.3 | Die Ingenieurkammer Rheinland-Pfalz stellt über die Eintragung in das Verzeichnis nach Absatz 1 Satz 1 eine auf fünf Jahre befristete Bescheinigung aus, die auf Antrag verlängert werden kann. |
 | 6.1 | § 17 BQFGRP findet entsprechend Anwendung. |
 
 ---
 
-### § 65 — Abs. 2 Satz 2
+### § 65 — Behandlung des Bauantrags
 **type:** beteiligtenpflicht
 **source_paragraph:** §65 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 3.1 | Das Deutsche Institut für Bautechnik kann für die Durchführung der Prüfung die sachverständige Person oder Stelle und fü. |
-| 4.1 | Die allgemeine bauaufsichtliche Zulassung wird widerruflich und für eine bestimmte Frist erteilt, die in der Regel fünf. |
-| 5.1 | Die Zulassung wird unbeschadet der Rechte Dritter erteilt. |
-| 6.1 | Das Deutsche Institut für Bautechnik macht die allgemeinen bauaufsichtlichen Zulassungen nach Gegenstand und wesentliche. |
+| 1.1 | Die Bauaufsichtsbehörde hat zu prüfen, ob dem Vorhaben baurechtliche oder sonstige öffentlichrechtliche Vorschriften entgegenstehen, sofern in diesem Gesetz nichts anderes bestimmt ist. |
+| 1.2 | Obliegt die Entscheidung über die Vereinbarkeit des Vorhabens mit sonstigen öffentlich-rechtlichen Vorschriften einer anderen Behörde, ist die Prüfung durch die Bauaufsichtsbehörde insoweit eingeschränkt. |
+| 1.3 | Die Nachweise des Wärme- und Schallschutzes sind nicht zu prüfen. |
+| 2.1 | Die Bauaufsichtsbehörde hat nach Eingang des Bauantrags binnen 15 Arbeitstagen zu prüfen, ob |
+| 2.2 | 1. der Bauantrag und die Bauunterlagen vollständig |
+| 2.3 | 2. andere Behörden oder Stellen zu beteiligen und |
+| 2.4 | 3. sachverständige Personen heranzuziehen sind. Ist der Bauantrag unvollständig oder weist er sonst erhebliche Mängel auf, fordert die Bauaufsichtsbehörde die Bauherrin oder den Bauherrn innerhalb einer angemessenen Frist zur Nachbesserung auf. § 63 Abs. 2 Satz 2 bleibt unberührt. Werden die Mängel innerhalb der Frist nicht behoben, gilt der Antrag als zurückgenommen. Die Bauaufsichtsbehörde führt unverzüglich einen Anhörungstermin durch, wenn dies der Vereinfachung und Beschleunigung des Verfahrens dient |
+| 3.1 | Typenprüfungen sind nach § 75 zu behandeln. |
+| 4.1 | Legt die Bauherrin oder der Bauherr Bescheinigungen einer sachverständigen Person im Sinne der Rechtsverordnung nach § 87 Abs. 5 vor, wird vermutet, dass die bauaufsichtlichen Anforderungen insoweit erfüllt sind. |
+| 4.2 | Die Bauaufsichtsbehörde kann die Vorlage solcher Bescheinigungen verlangen. |
+| 4.3 | Sie ist nicht verpflichtet, den Inhalt der Bescheinigungen zu überprüfen. |
+| 5.1 | Ist die Erteilung der Baugenehmigung von der Zustimmung, dem Einvernehmen, der Genehmigung oder der Erlaubnis einer anderen Behörde abhängig oder muss über das Vorhaben im Benehmen mit einer anderen Behörde entschieden werden, so holt die Bauaufsichtsbehörde die Entscheidung der anderen Behörde ein. |
+| 5.2 | Zu diesem Zweck kann sie der anderen Behörde personenbezogene Daten übermitteln, die diese für ihre Entscheidung benötigt. |
+| 5.3 | Eine nach landesrechtlichen Vorschriften erforderliche Entscheidung nach Satz 1 gilt als erteilt, wenn sie nicht innerhalb eines Monats nach Eingang des Ersuchens unter Angabe der Gründe versagt wird; dies gilt nicht, wenn die Bauaufsichtsbehörde auf begründeten Antrag der anderen Behörde die Frist verlängert hat. |
+| 5.4 | Die Bauaufsichtsbehörde teilt die Entscheidung der anderen Behörde zusammen mit ihrer Entscheidung der Bauherrin oder dem Bauherrn mit. |
+| 6.1 | Betrifft das Vorhaben eine Anlage, die in den Anwendungsbereich der Richtlinie (EU) 2018/2001 des Europäischen Parlaments und des Rates vom 11. |
+| 6.2 | Dezember 2018 zur Förderung der Nutzung von Energie aus erneuerbaren Quellen (ABl. |
+| 6.3 | EU Nr. L 328 S. 82) in der jeweils geltenden Fassung fällt, gilt ergänzend Folgendes 1. |
+| 6.4 | Auf Antrag der Bauherrin oder des Bauherrn werden das bauaufsichtliche Verfahren sowie alle sonstigen Zulassungsverfahren, die für die Durchführung des Vorhabens nach Bundes- oder Landesrecht erforderlich sind, über eine einheitliche Stelle im Sinne des § 71a VwVfG abgewickelt 2. |
+| 6.5 | Die einheitliche Stelle stellt ein Verfahrenshandbuch für Bauherrinnen und Bauherren bereit und macht diese Informationen auch im Internet zugänglich. |
+| 6.6 | Dabei geht sie gesondert auch auf kleinere Vorhaben und Vorhaben zur Eigenversorgung mit Elektrizität ein. |
+| 6.7 | In den im Internet veröffentlichten Informationen weist die einheitliche Stelle auch darauf hin, für welche Vorhaben sie zuständig ist und welche weiteren einheitlichen Stellen in Rheinland-Pfalz für Vorhaben nach Satz 1 zuständig sind 3. |
+| 6.8 | Nach Eingang der vollständigen Antragsunterlagen erstellt die Bauaufsichtsbehörde einen Zeitplan für das weitere Verfahren und teilt diesen Zeitplan der antragstellenden Person mit. |
+| 6.9 | Einheitliche Stelle im Sinne des Satzes 1 ist die untere Bauaufsichtsbehörde. |
 
 ---
 
-### § 66 — Abs. 3 Satz 4 und 5; ausgenommen sind Wi
+### § 66 — Vereinfachtes Genehmigungsverfahren
 **type:** bauantrag
 **source_paragraph:** §66 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | 5. Behälter, Wasserbecken |
+| 1.1 | Bei folgenden Vorhaben wird, soweit sie nicht nach § 62 oder § 67 genehmigungsfrei sind, ein vereinfachtes Genehmigungsverfahren durchgeführt |
+| 1.2 | 1. Wohngebäude der Gebäudeklassen 1 bis 3, sonstige Gebäude der Gebäudeklassen 1 und 2, ausgenommen Gebäude im Sinne des § 50 (Sonderbauten), jeweils einschließlich ihrer Nebengebäude und Nebenanlagen |
+| 1.3 | 2. land- oder forstwirtschaftliche Betriebsgebäude mit nicht mehr als zwei Geschossen über der Geländeoberfläche einschließlich ihrer Nebenanlagen |
+| 1.4 | 3. Gewächshäuser bis zu 6 m Firsthöhe |
+| 1.5 | 4. nicht gewerblich genutzte Gebäude bis zu 300 m³ umbauten Raums |
+| 1.6 | 5. oberirdische Garagen bis zu 100 m² Nutzfläche |
+| 1.7 | 6. Behelfsbauten und untergeordnete Gebäude (§ 49) |
+| 1.8 | 7. nicht gewerblich genutzte Lager-, Abstell-, Aufstell- und Ausstellungsplätze |
+| 1.9 | 8. Stellplätze, Sport- und Spielplätze |
+| 1.10 | 9. Werbeanlagen und Warenautomaten |
+| 1.11 | 10. gebäudeunabhängige Anlagen zur Nutzung solarer Strahlungsenergie |
+| 1.12 | 11. sonstige Anlagen, die in den Anwendungsbereich der Richtlinie (EU) 2018/2001 fallen. Spätestens bei Baubeginn müssen der Bauaufsichtsbehörde Erklärungen über die ordnungsgemäße Aufstellung der Nachweise der Standsicherheit, des Wärmeschutzes und, soweit erforderlich, des Schallschutzes vorliegen. Die Erklärungen sind von den Personen abzugeben, die die Nachweise aufgestellt und erforderlichenfalls geprüft haben. Die Nachweise sind auf der Baustelle vorzuhalten, der Bauaufsichtsbehörde auf Verlangen vorzulegen und dauerhaft aufzubewahren |
+| 2.1 | Werden Bescheinigungen sachverständiger Personen nach § 65 Abs. 4 über die Gewährleistung der Standsicherheit und des Brandschutzes vorgelegt, wird auf Verlangen der Bauherrin oder des Bauherrn bei folgenden Vorhaben einschließlich ihrer Nebengebäude und Nebenanlagen ebenfalls ein vereinfachtes Genehmigungsverfahren durchgeführt |
+| 2.2 | 1. Wohngebäude der Gebäudeklassen 4 und 5 mit Ausnahme von Hochhäusern |
+| 2.3 | 2. Gebäude der Gebäudeklassen 3 bis 5, die ausschließlich oder neben der Wohnnutzung überwiegend freiberuflich im Sinne des § 13 der Baunutzungsverordnung (BauNVO) in der Fassung der Bekanntmachung vom |
+| 2.4 | 21. November 2017 (BGBl. I S. 3786) in der jeweils geltenden Fassung genutzt werden, mit Ausnahme von Hochhäusern |
+| 2.5 | 3. Gebäude der Gebäudeklassen 3 bis 5, die einer Büro- oder Verwaltungsnutzung dienen einschließlich der Wohnungen nach § 8 Abs. 3 Nr. 1 BauNVO, mit Ausnahme von Hochhäusern |
+| 2.6 | 4. Gebäude, die ausschließlich als Garage genutzt werden, mit über 100 m² bis 1 000 m² Nutzfläche (Mittelgaragen) |
+| 2.7 | 5. erdgeschossige Werkstatt- und Lagergebäude mit nicht mehr als 5 000 m² Nutzfläche einschließlich erforderlicher Büro- und Sozialräume sowie Wohnungen nach § 8 Abs. 3 Nr. 1 BauN VO. Spätestens bei Baubeginn müssen der Bauaufsichtsbehörde die Bescheinigungen der sachverständigen Personen nach § 65 Abs. 4 über die Gewährleistung der Standsicherheit und des Brandschutzes und, soweit erforderlich, die Nachweise des Wärme- und Schallschutzes vorliegen. Bei Antennenanlagen einschließlich der Masten mit einer Höhe bis zu 50 m und notwendiger Versorgungseinrichtungen gelten die Sätze 1 und 2 entsprechend mit der Maßgabe, dass nur die Bescheinigung über die Gewährleistung der Standsicherheit vorliegen muss |
+| 3.1 | Bei Windenergieanlagen bis zu einer Gesamthöhe von 50 m ist abweichend von Absatz 1 Satz 2 die Vorlage einer Erklärung einer oder eines Prüfsachverständigen für Standsicherheit im Sinne der Rechtsverordnung nach § 87 Abs. 5, dass die erforderlichen bautechnischen Unterlagen einschließlich der für die Standsicherheit erforderlichen und geprüften Nachweise wie Typenprüfung, Bodengut achten, Fundamentbemessung vorliegen und die Einhaltung der erforderlichen Abstände zu anderen Windenergieanlagen, Gebäuden und Verkehrswegen nachgewiesen sind, ausreichend. |
+| 3.2 | Mit der Fertigstellungsanzeige ist eine weitere Erklärung der oder des Prüfsachverständigen für Standsicherheit nach Satz 1 darüber vorzulegen, dass sie oder er die Bauausführung hinsichtlich der Standsicherheit nach Maßgabe der erforderlichen Nachweise nach Satz 1 überwacht hat. |
+| 3.3 | Für Windenergieanlagen bis zu einer Gesamthöhe von 10 m, auf Dächern bis zu einer Gesamthöhe von 2 m, die nicht nach § 62 Abs. 1 Nr. 4 Buchst. |
+| 3.4 | g genehmigungsfrei sind, wird ein vereinfachtes Genehmigungsverfahren ohne die nach Absatz 1 Satz 2 bis 4 oder nach den Sätzen 1 und 2 erforderlichen Erklärungen durchgeführt. |
+| 3.5 | Die zur Gewährleistung der Stand- und Betriebssicherheit der Windenergieanlagen erforderlichen wiederkehrenden Prüfungen sind durchzuführen und zu dokumentieren. |
+| 3.6 | Sämtliche Erklärungen, Nachweise und Dokumentationen sind dauerhaft aufzubewahren und der Bauaufsichtsbehörde auf Verlangen vorzulegen. |
+| 4.1 | Im vereinfachten Genehmigungsverfahren beschränkt sich die Prüfung auf die Zulässigkeit des Vorhabens nach den Bestimmungen des Baugesetzbuchs, örtlicher Bauvorschriften (§ 88), des § 52 und der sonstigen öffentlich-rechtlichen Vorschriften. |
+| 4.2 | Die Prüfung auf Übereinstimmung mit den Bestimmungen der Arbeitsstättenverordnung vom 12. |
+| 4.3 | August 2004 (BGBl. I S. 2179) in der jeweils geltenden Fassung ist nur bei Vorhaben nach Absatz 2 Satz 1 Nr. 5 erforderlich. |
+| 4.4 | Aus der Stellungnahme der Gemeindeverwaltung nach § 63 Abs. 3 muss hervorgehen, dass die Erschließung (§ 6) und die Erfüllung der Stellplatzverpflichtung (§ 47) gesichert sind. |
+| 5.1 | Die Vollständigkeit des Bauantrags ist unter Angabe des Datums ihrer Feststellung in Textform zu bestätigen. Bei Vorhaben nach Absatz 1 Satz 1 Nr. 1 bis 10 ist über den Bauantrag innerhalb einer Frist von einem Monat, bei Vorhaben nach Absatz 2 Satz 1 und 3 innerhalb einer Frist von drei Monaten zu entscheiden. Die Frist beginnt |
+| 5.2 | 1. 15 Arbeitstage nach Eingang des Bauantrags bei der Bauaufsichtsbehörde oder |
+| 5.3 | 2. 15 Arbeitstage nach Eingang der verlangten Unterlagen, wenn die Bauaufsichtsbehörde vor Fristbeginn eine Aufforderung nach § 65 Abs. 2 Satz 2 versandt hat; ist das Einvernehmen oder die Zustimmung der Gemeinde nach dem Baugesetzbuch erforderlich, beginnt diese Frist frühestens mit Eingang der Mitteilung über die Entscheidung der Gemeinde oder, sofern das Einvernehmen oder die Zustimmung der Gemeinde durch Fristablauf als erteilt gilt, mit dem Zeitpunkt, bis zu dem die Mitteilung über die Verweigerung des Einvernehmens oder der Zustimmung der Gemeinde bei der Bauaufsichtsbehörde hätte eingehen müssen. Die Bauaufsichtsbehörde kann die Frist aus wichtigem Grund um bis zu zwei Monate verlängern. Als wichtiger Grund gelten insbesondere die notwendige Beteiligung anderer Behörden sowie Entscheidungen über Abweichungen. Die Baugenehmigung gilt als erteilt, wenn über den Bauantrag nicht innerhalb der nach den Sätzen 2 bis 4 maßgeblichen Frist entschieden worden ist. Satz 6 findet keine Anwendung, wenn die Bauherrin oder der Bauherr vor Ablauf der Frist gegenüber der Bauaufsichtsbehörde in Textform auf den Eintritt der Genehmigungsfiktion verzichtet hat; auf Verlangen der Bauherrin oder des Bauherrn hat die Bauaufsichtsbehörde die Baugenehmigung nach Satz 6 schriftlich zu bestätigen. Die Sätze 1 bis 7 gelten nicht für Vorhaben im Außenbereich nach § 35 BauGB; davon ausgenommen sind Antennenanlagen nach Absatz 2 Satz |
+| 5.4 | 3. Bei Bauvorhaben nach Absatz 1 Satz 1 Nr. 11, die eine Anlage mit einer Stromerzeugungskapazität unter 150 kW betreffen, darf das Baugenehmigungsverfahren nicht länger als ein Jahr, bei sonstigen Anlagen nach Absatz 1 Satz 1 Nr. 11 nicht länger als zwei Jahre jeweils nach Eingang der vollständigen Bauunterlagen dauern. Die Bauaufsichtsbehörde kann die Fris ten nach Satz 9 in durch außergewöhnliche Umstände hinreichend begründeten Fällen um bis zu einem Jahr verlängern |
+| 6.1 | Standsicherheitsnachweise für Vorhaben nach Absatz 1 Satz 1, ausgenommen Wohngebäude der Gebäudeklasse 3, müssen von Personen aufgestellt sein, die in einer von der Ingenieurkammer Rheinland-Pfalz zu führenden Liste eingetragen sind. |
+| 6.2 | In die Liste sind auf Antrag Personen mit einem berufsqualifizierenden Hochschulabschluss eines Studiums der Fachrichtung Architektur oder Bauingenieurwesen einzutragen, die mindestens drei Jahre regelmäßig Standsicherheitsnachweise aufgestellt oder geprüft haben. |
+| 6.3 | Die Eintragung in eine vergleichbare Liste eines anderen Landes der Bundesrepublik Deutschland gilt auch in Rheinland-Pfalz. |
+| 6.4 | Für Personen, die in einem anderen Mitgliedstaat der Europäischen Union oder einem nach dem Recht der Europäischen Union gleichgestellten Staat niedergelassen und dort zur Aufstellung von Standsicherheitsnachweisen berechtigt sind, gilt § 64d entsprechend. |
+| 7.1 | Standsicherheitsnachweise für Wohngebäude der Gebäudeklasse 3 müssen von Prüfsachverständigen für Standsicherheit im Sinne der Rechtsverordnung nach § 87 Abs. 5 aufgestellt oder geprüft sein. |
+| 7.2 | Dies gilt nicht, wenn die Standsicherheitsnachweise von Personen aufgestellt sind, die vor dem 28. |
+| 7.3 | Dezember 2009 in der Liste nach Absatz 6 Satz 1 oder der vergleichbaren Liste eines anderen Landes der Bundesrepublik Deutschland eingetragen sind. |
+| 8.1 | Personen, die vor dem 1. |
+| 8.2 | Juli 1987 aufgrund des § 96 Abs. 3 der Landesbauordnung für RheinlandPfalz vom 27. |
+| 8.3 | Februar 1974 (GVBl. |
+| 8.4 | S. 53) einen Bescheid darüber erhalten haben, dass sie ausreichende Sachkunde und Erfahrung für die Aufstellung von Standsicherheitsnachweisen für statisch einfache Konstruktionen besitzen, können solche Standsicherheitsnachweise für Einfamilienhäuser und deren zugehörige Nebengebäude auch weiterhin aufstellen, ohne dass die Nachweise einer Prüfung bedürfen. |
 
 ---
 
@@ -1053,28 +1547,47 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** abweichung
 **source_paragraph:** §67 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Vorhaben nach § 66 Abs. 1 Satz 1 Nr. 1 und 10 sowie die Modernisierung und der Ersatz von Anlagen zur Erzeugung von Stro. |
-| 2.1 | Mit dem Vorhaben darf einen Monat nach Eingang der erforderlichen Bauunterlagen bei der Gemeindeverwaltung begonnen werd. |
-| 3.1 | Die Gemeinde kann die Erklärung nach Absatz 1 Satz 2 abgeben, wenn sie beabsichtigt, eine Veränderungssperre nach § 14 B. |
-| 4.1 | § 62 Abs. 3, § 63 Abs. 2 und 3 Satz 2, § 66 Abs. 1 Satz 2 bis 4 und Abs. 6 und 7 sowie § 77 Abs. 2 und 3 gelten entsprec. |
-| 5.1 | Liegen in den Fällen des § 66 Abs. 2 Satz 1 und 3 die Voraussetzungen des Absatzes 1 Satz 1 und keine Ausschlussgründe n. |
-| 6.1 | Das Recht zur Ausführung des Vorhabens erlischt, wenn innerhalb von vier Jahren nach Vorliegen der Voraussetzungen nach. |
-| 7.1 | Für die vollständige oder teilweise Wiederherstellung von Gebäuden, die durch Naturkatastrophen zerstört oder beschädigt. |
+| 1.1 | Vorhaben nach § 66 Abs. 1 Satz 1 Nr. 1 und 10 sowie die Modernisierung und der Ersatz von Anlagen zur Erzeugung von Strom aus erneuerbaren Energien (Repowering) im Geltungsbereich eines Bebauungsplans im Sinne des § 12 oder des § 30 Abs. 1 BauGB bedürfen einschließlich ihrer Nebengebäude und Nebenanlagen keiner Baugenehmigung, wenn |
+| 1.2 | 1. sie den Festsetzungen des Bebauungsplans entsprechen und |
+| 1.3 | 2. die Erschließung gesichert ist. Dies gilt nicht, wenn |
+| 1.4 | 1. die Gemeinde erklärt, dass ein Genehmigungsverfahren durchgeführt werden soll |
+| 1.5 | 2. für das Vorhaben eine Pflicht zur Durchführung einer Umweltverträglichkeitsprüfung oder einer Vorprüfung nach dem Recht über die Umweltverträglichkeitsprüfung besteht oder |
+| 1.6 | 3. das Vorhaben nach seiner Art, Größe und Lage nahe oder innerhalb eines Betriebsbereichs im Sinne des § 3 Abs. 5 a des Bundes-Immissionsschutzgesetzes (BImSchG) dem Anwendungsbereich der Richtlinie 2012/18/EU des Europäischen Parlaments und des Rates vom |
+| 1.7 | 4. Juli 2012 zur Beherrschung der Gefahren schwerer Unfälle mit gefährlichen Stoffen, zur Änderung und anschließenden Aufhebung der Richtlinie 96/82/EG des Rates (ABl. EU Nr. L 197 S. 1) in der jeweils geltenden Fassung unterfällt. Satz 1 gilt unter den Voraussetzungen des Satzes 1 Nr. 2 und des Satzes 2 im Anwendungsbereich des § 34 BauGB für die Änderung und Nutzungsänderung von Dachgeschossen zu Wohnzwecken einschließlich der Errichtung von Dachgauben bei Gebäuden sowie im Anwendungsbereich des § 35 Abs. 1 Nr. 8 Buchst. b BauGB für die Errichtung und Änderung von Anlagen zur Nutzung solarer Strahlungsenergie |
+| 2.1 | Mit dem Vorhaben darf einen Monat nach Eingang der erforderlichen Bauunterlagen bei der Gemeindeverwaltung begonnen werden; teilt die Gemeinde der Bauherrin oder dem Bauherrn vor Ablauf der Frist in Textform mit, dass kein Genehmigungsverfahren durchgeführt werden soll, darf die Bauherrin oder der Bauherr bereits vor Ablauf der Monatsfrist mit dem Vorhaben beginnen. |
+| 2.2 | Nach Ablauf der Monatsfrist ist die Abgabe der Erklärung nach Absatz 1 Satz 2 Nr. 1 ausgeschlossen. |
+| 2.3 | Die Gemeindeverwaltung leitet die Bauunterlagen elektronisch an die Bauaufsichtsbehörde weiter, soweit sie nicht selbst die Aufgaben der Bauaufsicht wahrnimmt; wurden die Bauunterlagen nicht elektronisch eingereicht, leitet die Gemeindeverwaltung eine Ausfertigung der Bauunterlagen weiter. |
+| 3.1 | Die Gemeinde kann die Erklärung nach Absatz 1 Satz 2 abgeben, wenn sie beabsichtigt, eine Veränderungssperre nach § 14 BauGB zu beschließen oder eine Zurückstellung nach § 15 BauGB zu beantragen, oder wenn sie der Auffassung ist, dass dem Vorhaben öffentlich-rechtliche Vorschriften entgegenstehen. |
+| 3.2 | Erklärt die Gemeinde, dass ein Genehmigungsverfahren durchgeführt werden soll, hat sie der Bauherrin oder dem Bauherrn vorgelegte Unterlagen zurückzureichen, es sei denn, die Bauherrin oder der Bauherr hat bei Einreichung der Bauunterlagen zum Ausdruck gebracht, dass diese im Falle der Erklärung der Gemeinde nach Absatz 1 Satz 2 als Bauantrag zu behandeln sind. |
+| 3.3 | In diesem Fall leitet die Gemeinde die Unterlagen umgehend an die Bauaufsichtsbehörde weiter; § 63 Abs. 3 gilt entsprechend. |
+| 4.1 | § 62 Abs. 3, § 63 Abs. 2 und 3 Satz 2, § 66 Abs. 1 Satz 2 bis 4 und Abs. 6 und 7 sowie § 77 Abs. 2 und 3 gelten entsprechend. |
+| 5.1 | Liegen in den Fällen des § 66 Abs. 2 Satz 1 und 3 die Voraussetzungen des Absatzes 1 Satz 1 und keine Ausschlussgründe nach Absatz 1 Satz 2 vor, ist auf Verlangen der Bauherrin oder des Bauherrn ein Verfahren nach den Absätzen 1 bis 3 durchzuführen. |
+| 5.2 | § 62 Abs. 3, § 63 Abs. 2 und 3 Satz 2, § 66 Abs. 2 Satz 2 und 3 sowie § 77 Abs. 2 und 3 gelten entsprechend. |
+| 5.3 | Die Sätze 1 und 2 gelten bei Vorhaben nach § 66 Abs. 2 Satz 1 Nr. 5 nur bis zu einer Größe von nicht mehr als 3 000 m² Nutzfläche; zudem ist der Bauaufsichtsbehörde spätestens bei Baubeginn eine Bescheinigung der Struktur- und Genehmigungsdirektion über die Vereinbarkeit des Vorhabens mit den Anforderungen der Arbeitsstättenverordnung und des Immissionsschutzrechts vorzulegen; ist die Überwachung der Einhaltung der Bestimmungen der Arbeitsstättenverordnung aufgrund des § 21 Abs. 4 des Arbeitsschutzgesetzes vom 7. |
+| 5.4 | August 1996 (BGBl. I S. 1246) in der jeweils geltenden Fassung auf einen Träger der gesetzlichen Unfallversicherung übertragen, ist insoweit eine Bescheinigung dieses Trägers der gesetzlichen Unfallversicherung vorzulegen. |
+| 6.1 | Das Recht zur Ausführung des Vorhabens erlischt, wenn innerhalb von vier Jahren nach Vorliegen der Voraussetzungen nach Absatz 2 Satz 1 mit dem Vorhaben nicht begonnen wurde oder die Ausführung vier Jahre unterbrochen worden ist; § 74 Abs. 1 Satz 2 gilt entsprechend. |
+| 7.1 | Für die vollständige oder teilweise Wiederherstellung von Gebäuden, die durch Naturkatastrophen zerstört oder beschädigt wurden und im Geltungsbereich eines Bebauungsplans im Sinne des § 12 oder des § 30 Abs. 1 BauGB oder innerhalb eines im Zusammenhang bebauten Ortsteils im Sinne des. |
 
 ---
 
-### § 68 — Beteiligung der Nachbarinnen und Nachbar
+### § 68 — Beteiligung der Nachbarinnen und Nachbarn
 **type:** bauantrag
 **source_paragraph:** §68 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Nachbarinnen und Nachbarn sind die Eigentümerinnen und Eigentümer der angrenzenden Grundstücke. |
-| 1.2 | Die Bauherrin oder der B. |
-| 2.1 | Beabsichtigt die Bauaufsichtsbehörde von Bestimmungen, die auch dem Schutz nachbarlicher Interessen dienen, Abweichungen. |
-| 3.1 | Bei einer Mehrheit von Eigentümerinnen und Eigentümern eines angrenzenden Grundstücks genügt die Mitteilung an eine dies. |
+| 1.2 | Die Bauherrin oder der Bauherr hat den Nachbarinnen und Nachbarn den Lageplan und die Bauzeichnungen zur Unterschrift vorzulegen, wenn Abweichungen von Bestimmungen erforderlich sind, die auch dem Schutz nachbarlicher Interessen dienen. |
+| 1.3 | Stimmen die Nachbarinnen und Nachbarn zu, ist diese Zustimmung gegenüber der Bauaufsichtsbehörde nachzuweisen. |
+| 1.4 | Wird die Zustimmung verweigert, so hat die Bauherrin oder der Bauherr dies der Bauaufsichtsbehörde unter Angabe der Gründe mitzuteilen. |
+| 2.1 | Beabsichtigt die Bauaufsichtsbehörde von Bestimmungen, die auch dem Schutz nachbarlicher Interessen dienen, Abweichungen zuzulassen, so teilt sie dies den Nachbarinnen und Nachbarn mit, deren Zustimmung fehlt. |
+| 2.2 | Auf Verlangen ist diesen Einsicht in den Lageplan und in die Bauzeichnungen zu gewähren; hierauf ist in der Mitteilung hinzuweisen. |
+| 2.3 | Die Nachbarinnen und Nachbarn können innerhalb von zwei Wochen nach Zustellung oder Bekanntgabe nach Maßgabe des § 9 Abs. 1 des Onlinezugangsgesetzes (OZG) vom 14. |
+| 2.4 | August 2017 (BGBl. I S. 3122 -3138-) in der jeweils geltenden Fassung der Mitteilung bei der Bauaufsichtsbehörde in Textform oder zur Niederschrift Einwendungen erheben. |
+| 3.1 | Bei einer Mehrheit von Eigentümerinnen und Eigentümern eines angrenzenden Grundstücks genügt die Mitteilung an eine dieser Personen. |
+| 3.2 | Ist eine Eigentümerin oder ein Eigentümer nur unter Schwierigkeiten zu ermitteln oder zu erreichen, so genügt die Mitteilung an eine unmittelbare Besitzerin oder einen unmittelbaren Besitzer. |
 
 ---
 
@@ -1082,10 +1595,15 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** baugenehmigung
 **source_paragraph:** §69 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauaufsichtsbehörde soll Abweichungen von bauaufsichtlichen Anforderungen nach diesem Gesetz und nach den aufgrund d. |
-| 2.1 | Soll bei baulichen Anlagen, die keiner Baugenehmigung bedürfen, von bauaufsichtlichen Anforderungen nach Absatz 1, von d. |
+| 1.1 | Die Bauaufsichtsbehörde soll Abweichungen von bauaufsichtlichen Anforderungen nach diesem Gesetz und nach den aufgrund dieses Gesetzes erlassenen Vorschriften zulassen, wenn sie unter Berücksichtigung des Zwecks der jeweiligen Anforderungen und unter Würdigung der nachbarlichen Interessen mit den öffentlichen Belangen vereinbar sind, soweit in diesem Gesetz oder in den aufgrund dieses Gesetzes erlassenen Vorschriften nichts anderes bestimmt ist. Dies gilt insbesondere für |
+| 1.2 | 1. Vorhaben, die der Weiternutzung bestehender Gebäude dienen |
+| 1.3 | 2. Vorhaben zur Energieeinsparung und Nutzung erneuerbarer Energien oder |
+| 1.4 | 3. Vorhaben zur Erprobung neuer Bau- und Wohnformen. Soll von einer technischen Anforderung abgewichen werden, ist der Bauaufsichtsbehörde nachzuweisen, dass dem Zweck dieser Anforderung auf andere Weise entsprochen wird. Bezüglich des Brandschutzes bedarf es der Zulassung einer Abweichung durch die Bauaufsichtsbehörde nach Satz 1 sowie eines Nachweises gegenüber der Bauaufsichtsbehörde nach Satz 3 nicht, soweit die Bauherrin oder der Bauherr eine Bescheinigung einer sachverständigen Person im Sinne der Rechtsverordnung nach § 87 Abs. 5 vorlegt, dass die bauaufsichtlichen Anforderungen auch unter Berücksichtigung von Abweichungen erfüllt sind. Satz 4 gilt nicht, soweit Abweichungen von Bestimmungen bezüglich des Brandschutzes erforderlich sind, die auch dem Schutz nachbarlicher Interessen dienen, und die Nachbarinnen und Nachbarn nicht zugestimmt haben |
+| 2.1 | Soll bei baulichen Anlagen, die keiner Baugenehmigung bedürfen, von bauaufsichtlichen Anforderungen nach Absatz 1, von den Festsetzungen eines Bebauungsplans, einer sonstigen städtebaulichen Satzung oder nach § 34 Abs. 2 Halbsatz 2 BauGB von Bestimmungen der Baunutzungsverordnung über die zulässige Art der baulichen Nutzung abgewichen werden, so ist die Zulassung der Abweichung zu beantragen; dies gilt nicht in den Fällen des § 62 Abs. 1 Nr. 11 Buchst. |
+| 2.2 | l. |
+| 2.3 | Die §§ 63, 65, 68, 70, 71 und 74 gelten entsprechend. |
 
 ---
 
@@ -1093,30 +1611,42 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** nachbarbenachrichtigung
 **source_paragraph:** §70 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Baugenehmigung ist zu erteilen, wenn dem Vorhaben keine baurechtlichen oder sonstigen öffentlich-rechtlichen Vorschr. |
-| 2.1 | Bauliche Anlagen, die nur für eine begrenzte Zeit errichtet werden sollen, können widerruflich oder befristet genehmigt. |
-| 3.1 | Die Baugenehmigung ist der Bauherrin oder dem Bauherrn mit den mit dem Genehmigungsvermerk versehenen Unterlagen zuzuste. |
-| 4.1 | Der Gemeindeverwaltung ist die Entscheidung der Bauaufsichtsbehörde durch Übermittlung des Bescheids zur Kenntnis zu geb. |
-| 5.1 | Bei Anlagen und Räumen, die für gewerbliche Betriebe bestimmt sind, ist der Gewerbeaufsicht die Entscheidung der Bauaufs. |
-| 6.1 | Bedarf das Vorhaben nach seiner Art, Größe und Lage nahe oder innerhalb eines Betriebsbereichs im Sinne des § 3 Abs. 5 a. |
+| 1.1 | Die Baugenehmigung ist zu erteilen, wenn dem Vorhaben keine baurechtlichen oder sonstigen öffentlich-rechtlichen Vorschriften entgegenstehen. |
+| 1.2 | Die durch eine Umweltverträglichkeitsprüfung ermittelten, beschriebenen und bewerteten Umweltauswirkungen sind nach Maßgabe der hierfür geltenden Vorschriften zu berücksichtigen; § 66 Abs. 5 Satz 2 ist nicht anzuwenden. |
+| 1.3 | Die Baugenehmigung wird unbeschadet privater Rechte Dritter erteilt und wirkt für und gegen die Rechtsnachfolgenden der Bauherrin oder des Bauherrn. |
+| 1.4 | Die Baugenehmigung bedarf der Schriftform (Bauschein); sie und ihre Nebenbestimmungen müssen nur insoweit begründet werden, als Einwendungen von Nachbarinnen und Nachbarn nicht entsprochen wird. |
+| 1.5 | Wird die Baugenehmigung mit Nebenbestimmungen erteilt, kann eine Sicherheitsleistung verlangt werden. |
+| 2.1 | Bauliche Anlagen, die nur für eine begrenzte Zeit errichtet werden sollen, können widerruflich oder befristet genehmigt werden. |
+| 2.2 | Die Baugenehmigung soll nur erteilt werden, wenn die Beseitigung bei Widerruf oder nach Fristablauf gesichert ist. |
+| 2.3 | Behelfsbauten, Werbeanlagen und Warenautomaten sowie bauliche Anlagen auf öffentlichen Verkehrs-, Versorgungs- und Grünflächen sowie auf Flächen, die als solche festgesetzt sind, dürfen nur widerruflich oder befristet genehmigt werden. |
+| 2.4 | Nach Widerruf oder nach Fristablauf sind die Anlagen ohne Entschädigung zu beseitigen; ein ordnungsgemäßer Zustand ist herzustellen. |
+| 3.1 | Die Baugenehmigung ist der Bauherrin oder dem Bauherrn mit den mit dem Genehmigungsvermerk versehenen Unterlagen zuzustellen oder nach Maßgabe des § 9 Abs. 1 OZG bekannt zu geben. |
+| 3.2 | Haben Nachbarinnen oder Nachbarn Einwendungen erhoben, denen nicht entsprochen wird, oder haben sie sich innerhalb der Frist nach § 68 Abs. 2 Satz 3 nicht geäußert, so ist ihnen eine Ausfertigung des Bauscheins mit Rechtsbehelfsbelehrung zuzustellen oder nach Maßgabe des § 9 Abs. 1 OZG bekannt zu geben. |
+| 4.1 | Der Gemeindeverwaltung ist die Entscheidung der Bauaufsichtsbehörde durch Übermittlung des Bescheids zur Kenntnis zu geben. |
+| 5.1 | Bei Anlagen und Räumen, die für gewerbliche Betriebe bestimmt sind, ist der Gewerbeaufsicht die Entscheidung der Bauaufsichtsbehörde durch Übermittlung des Bescheids zur Kenntnis zu geben. |
+| 6.1 | Bedarf das Vorhaben nach seiner Art, Größe und Lage nahe oder innerhalb eines Betriebsbereichs im Sinne des § 3 Abs. 5 a BImSchG gemäß der Richtlinie 2012/18/EU einer Öffentlichkeitsbeteiligung, ist diese nach Maßgabe der hierfür geltenden Vorschriften durchzuführen. |
+| 6.2 | Auf Vorhaben, die im Sinne des Satzes 1 dem Anwendungsbereich der Richtlinie 2012/18/EU unterfallen, ist § 66 Abs. 5 Satz 2 nicht anzuwenden. |
 | 7.1 | Die Genehmigung nach § 7 des Atomgesetzes schließt die Baugenehmigung ein. |
 
 ---
 
-### § 71 — Ersetzung des gemeindlichen Einvernehmen
+### § 71 — Ersetzung des gemeindlichen Einvernehmens
 **type:** baugenehmigung
 **source_paragraph:** §71 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Hat eine Gemeinde, die nicht untere Bauaufsichtsbehörde ist, ihr nach § 14 Abs. 2 Satz 2, § 22 Abs. 5 Satz 1 oder § 36 A. |
-| 2.1 | Die Baugenehmigung ersetzt das rechtswidrig versagte Einvernehmen der Gemeinde und gilt zugleich als Ersatzvornahme im S. |
+| 1.1 | Hat eine Gemeinde, die nicht untere Bauaufsichtsbehörde ist, ihr nach § 14 Abs. 2 Satz 2, § 22 Abs. 5 Satz 1 oder § 36 Abs. 1 Satz 1 BauGB erforderliches Einvernehmen rechtswidrig versagt, ist das Einvernehmen der Gemeinde im bauaufsichtlichen Verfahren nach Maßgabe der Absätze 2 bis 5 zu ersetzen. |
+| 2.1 | Die Baugenehmigung ersetzt das rechtswidrig versagte Einvernehmen der Gemeinde und gilt zugleich als Ersatzvornahme im Sinne des § 123 der Gemeindeordnung; sie ist insoweit zu begründen. |
 | 3.1 | Wird die Baugenehmigung erteilt, findet § 121 der Gemeindeordnung keine Anwendung. |
-| 3.2 | Die Gemeinde ist vor der Entscheidung. |
-| 4.1 | Die Baugenehmigung kann, soweit sie als Ersatzvornahme gilt, nicht gesondert nach § 126 der Gemeindeordnung angefochten. |
-| 5.1 | Wird die Baugenehmigung versagt, ist das rechtswidrig versagte Einvernehmen der Gemeinde im Widerspruchsverfahren durch. |
+| 3.2 | Die Gemeinde ist vor der Entscheidung anzuhören; dabei ist ihr Gelegenheit zu geben, binnen angemessener Frist erneut über das gemeindliche Einvernehmen zu entscheiden. |
+| 4.1 | Die Baugenehmigung kann, soweit sie als Ersatzvornahme gilt, nicht gesondert nach § 126 der Gemeindeordnung angefochten werden. |
+| 4.2 | Entfällt nach § 80 Abs. 2 Satz 1 Nr. 3 oder 4 der Verwaltungsgerichtsordnung die aufschiebende Wirkung von Widerspruch und Anfechtungsklage gegen die Baugenehmigung, haben diese Rechtsbehelfe auch insoweit keine aufschiebende Wirkung, als die Baugenehmigung als Ersatzvornahme gilt. |
+| 4.3 | Den Widerspruchsbescheid erlässt der Kreisrechtsausschuss. |
+| 5.1 | Wird die Baugenehmigung versagt, ist das rechtswidrig versagte Einvernehmen der Gemeinde im Widerspruchsverfahren durch Erteilung der Baugenehmigung gemäß Absatz 2 zu ersetzen; die Absätze 3 und 4 gelten für das Widerspruchsverfahren entsprechend. |
+| 5.2 | Für die Beteiligung der Gemeinde in diesem Widerspruchsverfahren finden § 65 Abs. 2 und § 121 der Verwaltungsgerichtsordnung entsprechende Anwendung. |
 
 ---
 
@@ -1124,9 +1654,11 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** baugenehmigung
 **source_paragraph:** §72 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bauvorbescheid Vor Einreichung des Bauantrags kann die Bauherrin oder der Bauherr zu einzelnen Fragen des Vorhabens einen Bescheid (Bauvorbescheid) beantragen; bei Vorhaben, für die ein vereinfachtes Genehmigungsverfahren nach § 66 durchgeführt werden kann, beschränkt sich der Bauvorbescheid auf Fra. |
+| 1.1 | Vor Einreichung des Bauantrags kann die Bauherrin oder der Bauherr zu einzelnen Fragen des Vorhabens einen Bescheid (Bauvorbescheid) beantragen; bei Vorhaben, für die ein vereinfachtes Genehmigungsverfahren nach § 66 durchgeführt werden kann, beschränkt sich der Bauvorbescheid auf Fragen, die nach § 66 Abs. 4 zu prüfen sind, sowie auf die Zulässigkeit von Abweichungen nach § 69. |
+| 1.2 | Der Bauvorbescheid gilt vier Jahre, wenn er nicht kürzer befristet ist. |
+| 1.3 | Die §§ 63, 65 und 68 bis 71 sowie § 74 Abs. 2 gelten entsprechend. |
 
 ---
 
@@ -1134,10 +1666,10 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** baugenehmigung
 **source_paragraph:** §73 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Ist ein Bauantrag eingereicht, so kann der Beginn der Bauarbeiten für die Baugrube und für einzelne Teile oder Bauabschn. |
-| 2.1 | In der Baugenehmigung können, ungeachtet der Teilbaugenehmigung, für bereits ausgeführte Teile oder Bauabschnitte zusätz. |
+| 1.1 | Ist ein Bauantrag eingereicht, so kann der Beginn der Bauarbeiten für die Baugrube und für einzelne Teile oder Bauabschnitte des Vorhabens auf in Textform gestellten Antrag schon vor Erteilung der Baugenehmigung genehmigt werden (Teilbaugenehmigung); die §§ 63 bis 71 gelten entsprechend. |
+| 2.1 | In der Baugenehmigung können, ungeachtet der Teilbaugenehmigung, für bereits ausgeführte Teile oder Bauabschnitte zusätzliche Anforderungen gestellt werden, wenn sich bei der weiteren Prüfung der Bauunterlagen ergibt, dass diese Anforderungen zum Schutz der öffentlichen Sicherheit oder Ordnung erforderlich sind. |
 
 ---
 
@@ -1145,11 +1677,14 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** baugenehmigung
 **source_paragraph:** §74 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Baugenehmigung und die Teilbaugenehmigung erlöschen, wenn innerhalb von vier Jahren nach ihrer Zustellung oder Bekan. |
+| 1.1 | Die Baugenehmigung und die Teilbaugenehmigung erlöschen, wenn innerhalb von vier Jahren nach ihrer Zustellung oder Bekanntgabe nach Maßgabe des § 9 Abs. 1 OZG mit der Ausführung des Vorhabens nicht begonnen oder die Ausführung vier Jahre unterbrochen worden ist. |
+| 1.2 | Die Ausführung eines Vorhabens gilt nur dann als begonnen oder als nicht unterbrochen, wenn innerhalb der Frist wesentliche Bauarbeiten ausgeführt wurden. |
 | 2.1 | Die Frist nach Absatz 1 kann auf in Textform gestellten Antrag jeweils bis zu vier Jahre verlängert werden. |
-| 2.2 | Sie kann auc. |
+| 2.2 | Sie kann auch rückwirkend verlängert werden, wenn der Antrag vor Fristablauf bei der Bauaufsichtsbehörde eingegangen ist. |
+| 2.3 | Die Verlängerung kann mit neuen Nebenbestimmungen verbunden werden. |
+| 2.4 | Der Bescheid über die Verlängerung ist der Bauherrin oder dem Bauherrn zuzustellen oder nach Maßgabe des § 9 Abs. 1 OZG bekannt zu geben; § 70 Abs. 4 und 5 gilt entsprechend. |
 
 ---
 
@@ -1157,14 +1692,20 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauvorbescheid
 **source_paragraph:** §75 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Für bauliche Anlagen oder Teile baulicher Anlagen, die in derselben Ausführung an mehreren Stellen errichtet oder verwen. |
+| 1.1 | Für bauliche Anlagen oder Teile baulicher Anlagen, die in derselben Ausführung an mehreren Stellen errichtet oder verwendet werden sollen, können die Nachweise der Standsicherheit einschließlich der Feuerwiderstandsfähigkeit der Bauteile sowie des Brand-, Wärme- und Schallschutzes allgemein geprüft werden (Typenprüfung). |
+| 1.2 | Eine Typenprüfung kann auch erteilt werden für bauliche Anlagen, die in unterschiedlicher Ausführung, aber nach einem bestimmten System und aus bestimmten Bauteilen an mehreren Stellen errichtet werden sollen; in der Typenprüfung ist die zulässige Veränderbarkeit festzulegen. |
+| 1.3 | Für Fliegende Bauten wird eine Typenprüfung nicht erteilt. |
 | 2.1 | Die Typenprüfung wird auf in Textform gestellten Antrag von einem Prüfamt für Baustatik durchgeführt. |
-| 2.2 | Soweit die Typenpr. |
+| 2.2 | Soweit die Typenprüfung ergibt, dass die Ausführung den öffentlich-rechtlichen Vorschriften entspricht und für den jeweiligen Verwendungszweck brauchbar ist, ist dies durch Bescheid festzustellen. |
+| 2.3 | Die Typenprüfung wird widerruflich und für eine bestimmte Frist erteilt, die fünf Jahre nicht überschreiten soll; sie kann auf in Textform gestellten Antrag um jeweils bis zu fünf Jahre verlängert werden. |
+| 2.4 | Eine Ausfertigung der mit dem Genehmigungsvermerk versehenen Bauunterlagen ist der antragstellenden Person mit der Typenprüfung zuzustellen oder nach Maßgabe des § 9 Abs. 1 OZG bekannt zu geben. |
+| 2.5 | § 69 gilt entsprechend. |
 | 3.1 | Typenprüfungen anderer Länder der Bundesrepublik Deutschland gelten auch im Land RheinlandPfalz. |
 | 4.1 | Eine Typenprüfung entbindet nicht von der Verpflichtung, eine Baugenehmigung einzuholen. |
-| 4.2 | Die Bauaufsichtsbehörde braucht. |
+| 4.2 | Die Bauaufsichtsbehörde braucht eine Prüfung nur insoweit vorzunehmen, als diese nicht bereits nach den Absätzen 1 und 2 erfolgt ist. |
+| 4.3 | Sie kann im Einzelfall weitere Auflagen machen oder die Verwendung genehmigter Typen ausschließen, wenn dies nach den örtlichen Verhältnissen erforderlich ist. |
 
 ---
 
@@ -1172,14 +1713,16 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** typengenehmigung
 **source_paragraph:** §75a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Für bauliche Anlagen, die in derselben Ausführung an mehreren Stellen errichtet werden sollen, wird auf Antrag durch die. |
+| 1.1 | Für bauliche Anlagen, die in derselben Ausführung an mehreren Stellen errichtet werden sollen, wird auf Antrag durch die oberste Bauaufsichtsbehörde eine Typengenehmigung erteilt, wenn die baulichen Anlagen oder Teile von baulichen Anlagen den Anforderungen nach diesem Gesetz oder aufgrund dieses Gesetzes erlassenen Vorschriften entsprechen. |
+| 1.2 | Eine Typengenehmigung kann auch für bauliche Anlagen erteilt werden, die in unterschiedlicher Ausführung, aber nach einem bestimmten System und aus bestimmten Bauteilen an mehreren Stellen errichtet werden sollen; in der Typengenehmigung ist die zulässige Veränderbarkeit festzulegen. |
+| 1.3 | Für Fliegende Bauten wird eine Typengenehmigung nicht erteilt. |
 | 2.1 | Die Typengenehmigung gilt fünf Jahre. |
-| 2.2 | Die Frist kann auf Antrag jeweils bis zu fünf Jahre verlängert werden; § 63 Abs. 2. |
-| 3.1 | Typengenehmigungen anderer Länder gelten auch im Land Rheinland-Pfalz, soweit die nach Absatz 1 zuständige Stelle die An. |
+| 2.2 | Die Frist kann auf Antrag jeweils bis zu fünf Jahre verlängert werden; § 63 Abs. 2, §§ 65 und 69 sowie § 74 Abs. 2 Satz 2 und 3 gelten entsprechend. |
+| 3.1 | Typengenehmigungen anderer Länder gelten auch im Land Rheinland-Pfalz, soweit die nach Absatz 1 zuständige Stelle die Anwendbarkeit bestätigt hat. |
 | 4.1 | Eine Typengenehmigung entbindet nicht von der Verpflichtung, ein bauaufsichtliches Verfahren durchzuführen. |
-| 4.2 | Die in der T. |
+| 4.2 | Die in der Typengenehmigung entschiedenen Fragen sind von der Bauaufsichtsbehörde nicht mehr zu prüfen. |
 
 ---
 
@@ -1187,18 +1730,35 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** besonderes_verfahren
 **source_paragraph:** §76 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Fliegende Bauten sind bauliche Anlagen, die dazu geeignet und bestimmt sind, an verschiedenen Orten wiederholt aufgestel. |
-| 2.1 | Fliegende Bauten bedürfen, bevor sie erstmals aufgestellt und in Gebrauch genommen werden, einer Ausführungsgenehmigung. |
-| 3.1 | Die Ausführungsgenehmigung wird von der oberen Bauaufsichtsbehörde oder der nach Absatz 4 bestimmten Stelle erteilt, in. |
-| 4.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung Stellen bestimmen, die die Ausführungsgenehmigung erteil. |
+| 1.1 | Fliegende Bauten sind bauliche Anlagen, die dazu geeignet und bestimmt sind, an verschiedenen Orten wiederholt aufgestellt und zerlegt zu werden. |
+| 1.2 | Baustelleneinrichtungen, Gerüste und ortsveränderliche Antennenanlagen gelten nicht als Fliegende Bauten. |
+| 2.1 | Fliegende Bauten bedürfen, bevor sie erstmals aufgestellt und in Gebrauch genommen werden, einer Ausführungsgenehmigung. Dies gilt nicht für |
+| 2.2 | 1. Fliegende Bauten bis zu 5 m Höhe, die nicht dazu bestimmt sind, von Besucherinnen und Besuchern betreten zu werden |
+| 2.3 | 2. erdgeschossige Zelte und betretbare Verkaufsstände, die Fliegende Bauten sind, bis zu einer Grundfläche von 75 m² |
+| 2.4 | 3. Kinderfahrgeschäfte mit einer Geschwindigkeit von weniger als 1 m/s und weniger als 5 m Höhe |
+| 2.5 | 4. aufblasbare Spielgeräte mit einer Höhe des betretbaren Bereichs von bis zu 5 m oder mit überdachten Bereichen, bei denen die Entfernung zum Ausgang nicht mehr als 3 m, oder, sofern ein Absinken der Überdachung konstruktiv verhindert wird, nicht mehr als 10 m, beträgt |
+| 2.6 | 5. Bühnen, wenn ihre Grundfläche weniger als 100 m², ihre Fußbodenhöhe weniger als 1,50 m und ihre Höhe einschließlich der Überdachungen und sonstigen Aufbauten weniger als 5 m beträgt |
+| 2.7 | 6. Toilettenwagen |
+| 3.1 | Die Ausführungsgenehmigung wird von der oberen Bauaufsichtsbehörde oder der nach Absatz 4 bestimmten Stelle erteilt, in deren Bereich die antragstellende Person ihren Wohnsitz oder ihre gewerbliche Niederlassung hat. |
+| 3.2 | Hat sie ihren Wohnsitz oder ihre gewerbliche Niederlassung außerhalb der Bundesrepublik Deutschland, so ist die Bauaufsichtsbehörde oder die nach Absatz 4 bestimmte Stelle zuständig, in deren Bereich der Fliegende Bau erstmals aufgestellt und in Gebrauch genommen werden soll. |
+| 3.3 | § 59 Abs. 3, § 63 Abs. 2 sowie die §§ 65 und 69 gelten entsprechend. |
+| 4.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung Stellen bestimmen, die die Ausführungsgenehmigung erteilen und Aufgaben und Befugnisse der Bauaufsichtsbehörde nach den Absätzen 7 bis 9 wahrnehmen, und die Vergütung dieser Stellen regeln. |
 | 5.1 | Die Ausführungsgenehmigung wird für eine bestimmte Frist erteilt, die fünf Jahre nicht überschreiten soll. |
-| 5.2 | Die Frist kan. |
-| 6.1 | Wer eine Ausführungsgenehmigung innehat, hat den Wechsel seines Wohnsitzes oder seiner gewerblichen Niederlassung oder d. |
-| 7.1 | Fliegende Bauten, die einer Ausführungsgenehmigung bedürfen, dürfen unbeschadet anderer Vorschriften nur in Gebrauch gen. |
-| 8.1 | Die Bauaufsichtsbehörde des Aufstellungsorts kann Auflagen machen oder die Aufstellung oder den Gebrauch Fliegender Baut. |
-| 9.1 | Bei Fliegenden Bauten, die längere Zeit an demselben Aufstellungsort betrieben werden, kann die Bauaufsichtsbehörde des. |
+| 5.2 | Die Frist kann auf schriftlichen Antrag von der für die Erteilung der Ausführungsgenehmigung zuständigen Behörde oder der nach Absatz 4 bestimmten Stelle jeweils bis zu fünf Jahre verlängert werden; § 74 Abs. 2 Satz 2 und 3 gilt entsprechend. |
+| 5.3 | Die Genehmigungen werden in ein Prüfbuch eingetragen, dem eine Ausfertigung der mit einem Genehmigungsvermerk zu versehenden Bauunterlagen beizufügen ist. |
+| 5.4 | Ausführungsgenehmigungen anderer Länder der Bundesrepublik Deutschland gelten auch im Land Rheinland-Pfalz. |
+| 6.1 | Wer eine Ausführungsgenehmigung innehat, hat den Wechsel seines Wohnsitzes oder seiner gewerblichen Niederlassung oder die Übertragung eines Fliegenden Baus an Dritte der Bauaufsichtsbehörde oder der nach Absatz 4 bestimmten Stelle anzuzeigen, die die Ausführungsgenehmigung erteilt hat. |
+| 6.2 | Die Behörde oder die nach Absatz 4 zuständige Stelle hat die Änderungen in das Prüfbuch einzutragen und diese, wenn mit den Änderungen ein Wechsel der Zuständigkeit verbunden ist, der nunmehr zuständigen Behörde oder Stelle mitzuteilen. |
+| 7.1 | Fliegende Bauten, die einer Ausführungsgenehmigung bedürfen, dürfen unbeschadet anderer Vorschriften nur in Gebrauch genommen werden, wenn ihre Aufstellung der Bauaufsichtsbehörde des Aufstellungsorts unter Vorlage des Prüfbuchs angezeigt ist und die Fliegenden Bauten von ihr abgenommen sind (Gebrauchsabnahme). |
+| 7.2 | Die Bauaufsichtsbehörde kann im Einzelfall auf die Gebrauchsabnahme verzichten. |
+| 7.3 | Das Ergebnis der Gebrauchsabnahme ist in das Prüfbuch einzutragen. |
+| 8.1 | Die Bauaufsichtsbehörde des Aufstellungsorts kann Auflagen machen oder die Aufstellung oder den Gebrauch Fliegender Bauten untersagen, wenn dies nach den örtlichen Verhältnissen oder sonst zur Abwehr von Gefahren für die öffentliche Sicherheit oder Ordnung erforderlich ist, insbesondere weil die Betriebssicherheit oder die Standsicherheit nicht oder nicht mehr gewährleistet ist oder weil von der Ausführungsgenehmigung abgewichen wurde. |
+| 8.2 | Wird die Aufstellung oder der Gebrauch wegen Mängeln untersagt, so ist dies in das Prüfbuch einzutragen. |
+| 8.3 | Ist die Behebung der Mängel innerhalb angemessener Frist nicht zu erwarten, so ist das Prüfbuch einzuziehen und der für die Erteilung der Ausführungsgenehmigung zuständigen Behörde oder Stelle zuzuleiten. |
+| 9.1 | Bei Fliegenden Bauten, die längere Zeit an demselben Aufstellungsort betrieben werden, kann die Bauaufsichtsbehörde des Aufstellungsorts Nachabnahmen anordnen und vornehmen. |
+| 9.2 | Das Ergebnis der Nachabnahmen ist in das Prüfbuch einzutragen. |
 | 10.1 | Die Führung des Prüfbuchs in elektronischer Form ist ausgeschlossen. |
 
 ---
@@ -1207,11 +1767,13 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** besonderes_verfahren
 **source_paragraph:** §77 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Mit der Ausführung genehmigungsbedürftiger Vorhaben einschließlich des Aushubs der Baugrube darf erst begonnen werden, w. |
+| 1.1 | Mit der Ausführung genehmigungsbedürftiger Vorhaben einschließlich des Aushubs der Baugrube darf erst begonnen werden, wenn |
+| 1.2 | 1. die Baugenehmigung oder Teilbaugenehmigung zugestellt oder nach Maßgabe des § 9 Abs. 1 OZG bekannt gegeben worden ist oder durch Fristablauf nach § 66 Abs. 5 Satz 6 oder § 73 Abs. 1 Halbsatz 2 als erteilt gilt und |
+| 1.3 | 2. die Bauherrin oder der Bauherr den Beginn der Bauarbeiten der Bauaufsichtsbehörde mindestens eine Woche vorher in Textform mitgeteilt hat; dies gilt auch für die Wiederaufnahme von Bauarbeiten nach einer Unterbrechung von mehr als drei Monaten. Satz 1 Nr. 2 gilt für Vorhaben nach § 67 entsprechend |
 | 2.1 | Vor Baubeginn muss die Grundfläche der baulichen Anlage abgesteckt und ihre Höhenlage festgestellt sein. |
-| 2.2 | Die Bauaufsicht. |
+| 2.2 | Die Bauaufsichtsbehörde kann verlangen, dass die Absteckung und die Festlegung der Höhenlage durch sachverständige Personen oder Stellen vorgenommen oder vor Baubeginn abgenommen werden. |
 | 3.1 | Baugenehmigung und Bauunterlagen müssen an der Baustelle von Baubeginn an vorliegen. |
 
 ---
@@ -1220,18 +1782,28 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauproduktzulassung
 **source_paragraph:** §78 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Bauaufsichtsbehörde kann die Einhaltung der öffentlich-rechtlichen Vorschriften und Anforderungen sowie die ordnungs. |
-| 2.1 | Die Fertigstellung des Rohbaus und die abschließende Fertigstellung genehmigungsbedürftiger baulicher Anlagen sind der B. |
-| 3.1 | Der Rohbau ist fertig gestellt, wenn die tragenden Teile, Schornsteine, Brandwände, Treppenräume und die Dachkonstruktio. |
-| 4.1 | Ob und in welchem Umfang eine Besichtigung nach Absatz 2 Satz 1 oder 2 durchgeführt wird, liegt im Ermessen der Bauaufsi. |
-| 5.1 | Mit dem Innenausbau darf erst einen Tag nach dem in der Anzeige nach Absatz 2 Satz 1 genannten Zeitpunkt der Fertigstell. |
-| 6.1 | Die Bauaufsichtsbehörde kann verlangen, dass bestimmte Arbeiten erst fortgesetzt oder Anlagen erst benutzt werden, wenn. |
-| 7.1 | Die Bauaufsichtsbehörde kann über Absatz 2 hinaus verlangen, dass ihr oder einer von ihr beauftragten Person Beginn und. |
-| 8.1 | Den mit der Überprüfung beauftragten Personen ist jederzeit Einblick in die Genehmigungen, Zulassungen, Prüfzeugnisse, Ü. |
-| 9.1 | Die Bauherrin oder der Bauherr hat für die Besichtigungen und die damit verbundenen Prüfungen die erforderlichen Arbeits. |
-| 10.1 | Die Bauaufsichtsbehörde sowie sachverständige Personen und Stellen nach § 65 Abs. 4 und § 87 Abs. 4 Nr. 3 sollen, soweit. |
+| 1.1 | Die Bauaufsichtsbehörde kann die Einhaltung der öffentlich-rechtlichen Vorschriften und Anforderungen sowie die ordnungsgemäße Erfüllung der Pflichten der am Bau Beteiligten überprüfen. |
+| 1.2 | Auf Verlangen der Bauaufsichtsbehörde hat die Bauherrin oder der Bauherr die Verwendbarkeit der Bauprodukte und die Anwendbarkeit der Bauarten nachzuweisen. |
+| 1.3 | Die Bauaufsichtsbehörde und die von ihr Beauftragten können Proben von Bauprodukten, soweit erforderlich auch aus fertigen Bauteilen, entnehmen und prüfen oder prüfen lassen. |
+| 2.1 | Die Fertigstellung des Rohbaus und die abschließende Fertigstellung genehmigungsbedürftiger baulicher Anlagen sind der Bauaufsichtsbehörde von der Bauherrin oder dem Bauherrn jeweils zwei Wochen vorher anzuzeigen, um ihr eine Besichtigung des Bauzustands zu ermöglichen; bei Anlagen mit Schornsteinen ist die Fertigstellung des Rohbaus auch der bevollmächtigten Bezirksschornsteinfegerin oder dem bevollmächtigten Bezirksschornsteinfeger anzuzeigen. |
+| 2.2 | Die abschließende Fertigstellung baulicher Anlagen, für die das Freistellungsverfahren nach § 67 durchgeführt wurde, ist der Bauaufsichtsbehörde von der Bauherrin oder dem Bauherrn zwei Wochen vorher anzuzeigen, um ihr eine Besichtigung des Bauzustands zu ermöglichen. |
+| 2.3 | Hat die Bauherrin oder der Bauherr Bescheinigungen sachverständiger Personen nach § 65 Abs. 4 vorgelegt, sind mit der Anzeige über die abschließende Fertigstellung Bescheinigungen dieser Personen einzureichen, dass sie die Bauausführung bezüglich der von ihnen zu verantwortenden Bauunterlagen überwacht haben. |
+| 2.4 | In den Fällen des § 66 Abs. 1 und des § 67 Abs. 1 gilt Satz 3 sinngemäß hinsichtlich einer Erklärung der Person, die den Standsicherheitsnachweis aufgestellt hat. |
+| 3.1 | Der Rohbau ist fertig gestellt, wenn die tragenden Teile, Schornsteine, Brandwände, Treppenräume und die Dachkonstruktion vollendet sind. |
+| 3.2 | Zur Besichtigung des Rohbaus sind die Bauteile, die für die Standsicherheit und, soweit möglich, die Bauteile, die für den Brandschutz, den Wärme- und den Schallschutz sowie für die Abwasserbeseitigung wesentlich sind, derart offen zu halten, dass Maße und Ausführungsart geprüft werden können. |
+| 3.3 | Die abschließende Fertigstellung umfasst auch die Fertigstellung der Wasserversorgungs- und Abwasserbeseitigungsanlagen. |
+| 4.1 | Ob und in welchem Umfang eine Besichtigung nach Absatz 2 Satz 1 oder 2 durchgeführt wird, liegt im Ermessen der Bauaufsichtsbehörde. |
+| 4.2 | Über das Ergebnis der Besichtigung ist auf Verlangen der Bauherrin oder des Bauherrn eine Bescheinigung auszustellen. |
+| 5.1 | Mit dem Innenausbau darf erst einen Tag nach dem in der Anzeige nach Absatz 2 Satz 1 genannten Zeitpunkt der Fertigstellung des Rohbaus begonnen werden, soweit die Bauaufsichtsbehörde nicht einem früheren Beginn des Innenausbaus zugestimmt hat. |
+| 6.1 | Die Bauaufsichtsbehörde kann verlangen, dass bestimmte Arbeiten erst fortgesetzt oder Anlagen erst benutzt werden, wenn sie von ihr oder einer von ihr beauftragten Person geprüft worden sind. |
+| 7.1 | Die Bauaufsichtsbehörde kann über Absatz 2 hinaus verlangen, dass ihr oder einer von ihr beauftragten Person Beginn und Beendigung bestimmter Bauarbeiten angezeigt werden. |
+| 7.2 | Sie kann ferner die Vorlage von Bescheinigungen bestimmter sachverständiger Personen oder Stellen verlangen, dass bestimmte Bauteile oder Bauarbeiten entsprechend den Bauunterlagen ordnungsgemäß ausgeführt sind. |
+| 8.1 | Den mit der Überprüfung beauftragten Personen ist jederzeit Einblick in die Genehmigungen, Zulassungen, Prüfzeugnisse, Übereinstimmungserklärungen, Übereinstimmungszertifikate, Befähigungsnachweise, Zeugnisse und Aufzeichnungen über die Prüfungen von Bauprodukten und Bauarten, in die CE-Kennzeichnungen und Leistungserklärungen nach der Verordnung (EU) Nr. 305/2011 in die Bautagebücher und in andere vorgeschriebene Aufzeichnungen zu gewähren. |
+| 9.1 | Die Bauherrin oder der Bauherr hat für die Besichtigungen und die damit verbundenen Prüfungen die erforderlichen Arbeitskräfte und Geräte bereitzustellen. |
+| 9.2 | Die mit der Baugenehmigungsgebühr nicht abgegoltenen Kosten der Bauüberwachung, insbesondere für die Entnahme und Prüfung von Bauprodukten und Bauarten sowie für die Heranziehung sachverständiger Personen und Stellen, fallen der Bauherrin oder dem Bauherrn zur Last. |
+| 10.1 | Die Bauaufsichtsbehörde sowie sachverständige Personen und Stellen nach § 65 Abs. 4 und § 87 Abs. 4 Nr. 3 sollen, soweit sie im Rahmen der Bauüberwachung Erkenntnisse über systematische Rechtsverstöße gegen die Verordnung (EU) Nr. 305/2011 erlangen, diese der für die harmonisierten Bauprodukte zuständigen Marktüberwachungsbehörde mitteilen. |
 
 ---
 
@@ -1239,11 +1811,12 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** bauueberwachung
 **source_paragraph:** §79 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Eine bauliche Anlage darf erst benutzt werden, wenn sie ordnungsgemäß fertig gestellt und sicher benutzbar ist. |
-| 1.2 | Genehmig. |
-| 2.1 | Bei der Errichtung oder Änderung von Feuerungsanlagen muss sich die Bauherrin oder der Bauherr vor der Inbetriebnahme di. |
+| 1.2 | Genehmigungsbedürftige bauliche Anlagen und bauliche Anlagen, für die das Freistellungsverfahren nach § 67 durchgeführt wurde, dürfen frühestens eine Woche nach dem in der Anzeige nach § 78 Abs. 2 Satz 1 oder 2 genannten Zeitpunkt der abschließenden Fertigstellung benutzt werden. |
+| 1.3 | Die Bauaufsichtsbehörde soll auf Antrag zulassen, dass die bauliche Anlage ganz oder teilweise schon früher benutzt wird, wenn wegen der öffentlichen Sicherheit oder Ordnung keine Bedenken bestehen. |
+| 2.1 | Bei der Errichtung oder Änderung von Feuerungsanlagen muss sich die Bauherrin oder der Bauherr vor der Inbetriebnahme die sichere Benutzbarkeit der Abgasanlagen und der Anschlüsse der Feu erstätten durch die bevollmächtigte Bezirksschornsteinfegerin oder den bevollmächtigten Bezirksschornsteinfeger bescheinigen lassen. |
 
 ---
 
@@ -1251,30 +1824,33 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** sanktion
 **source_paragraph:** §80 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Werden Bauarbeiten im Widerspruch zu baurechtlichen oder sonstigen öffentlich-rechtlichen Vorschriften ausgeführt oder w. |
-| 2.1 | Werden Bauarbeiten trotz einer angeordneten Einstellung fortgesetzt, so kann die Bauaufsichtsbehörde die Baustelle versi. |
+| 1.1 | Werden Bauarbeiten im Widerspruch zu baurechtlichen oder sonstigen öffentlich-rechtlichen Vorschriften ausgeführt oder werden Bauprodukte verwendet, die unberechtigt mit dem CE-Zeichen (§ 18a) oder dem Ü-Zeichen (§ 22 Abs. 3) gekennzeichnet sind, so kann die Bauaufsichtsbehörde die Einstellung dieser Arbeiten anordnen. |
+| 2.1 | Werden Bauarbeiten trotz einer angeordneten Einstellung fortgesetzt, so kann die Bauaufsichtsbehörde die Baustelle versiegeln und die an der Baustelle vorhandenen Bauprodukte, Hilfsmittel, Gerüste, Maschinen und ähnliche Gegenstände auf Kosten der Bauherrin oder des Bauherrn sicherstellen § 22 Nr. 1 sowie die §§ 23 bis 25 des Polizei- und Ordnungsbehördengesetzes gelten entsprechend. |
 
 ---
 
-### § 81 — Beseitigungsanordnung und Benutzungsunte
+### § 81 — Beseitigungsanordnung und Benutzungsuntersagung
 **type:** bauueberwachung
 **source_paragraph:** §81 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Beseitigungsanordnung und Benutzungsuntersagung Verstoßen bauliche Anlagen oder andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 gegen baurechtliche oder sonstige öffentlich-rechtliche Vorschriften über die Errichtung, die Änderung, die Instandhaltung oder die Nutzungsänderung dieser. |
+| 1.1 | Verstoßen bauliche Anlagen oder andere Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 gegen baurechtliche oder sonstige öffentlich-rechtliche Vorschriften über die Errichtung, die Änderung, die Instandhaltung oder die Nutzungsänderung dieser Anlagen, so kann die Bauaufsichtsbehörde deren teilweise oder vollständige Beseitigung auf Kosten der nach § 54 verantwortlichen Personen anordnen oder die Benutzung der Anlagen untersagen, wenn nicht auf andere Weise rechtmäßige Zustände hergestellt werden können. |
+| 1.2 | Die Bauaufsichtsbehörde kann verlangen, dass ein Bauantrag gestellt wird. |
+| 1.3 | Beseitigungsanordnung und Benutzungsuntersagung gelten auch gegenüber den Rechtsnachfolgenden. |
 
 ---
 
-### § 82 — Abbruch verfallender baulicher Anlagen 1
+### § 82 — Abbruch verfallender baulicher Anlagen
 **type:** baubeginn
 **source_paragraph:** §82 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Abbruch verfallender baulicher Anlagen Soweit bauliche Anlagen nicht genutzt werden und im Verfall begriffen sind, kann die Bauaufsichtsbehörde die nach § 54 Abs. 2 verantwortlichen Personen verpflichten, die Anlage abzubrechen oder zu beseitigen; die Bestimmungen des Denkmalschutzgesetzes bleiben u. |
+| 1.1 | Soweit bauliche Anlagen nicht genutzt werden und im Verfall begriffen sind, kann die Bauaufsichtsbehörde die nach § 54 Abs. 2 verantwortlichen Personen verpflichten, die Anlage abzubrechen oder zu beseitigen; die Bestimmungen des Denkmalschutzgesetzes bleiben unberührt. |
+| 1.2 | Für die Grundstücke gilt § 10 Abs. 4 entsprechend. |
 
 ---
 
@@ -1282,25 +1858,37 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** sicherheitsleistung
 **source_paragraph:** §83 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Vorhaben des Bundes und der Länder sowie ihrer rechtsfähigen Anstalten, Körperschaften und Stiftungen bedürfen anstelle. |
+| 1.1 | Vorhaben des Bundes und der Länder sowie ihrer rechtsfähigen Anstalten, Körperschaften und Stiftungen bedürfen anstelle der Baugenehmigung der Zustimmung der Bauaufsichtsbehörde, wenn sie unter der Leitung eigener geeigneter Fachkräfte vorbereitet und ausgeführt werden. |
 | 2.1 | Der Antrag auf Zustimmung ist bei der Bauaufsichtsbehörde einzureichen; § 63 gilt entsprechend. |
-| 2.2 | Die bautechnischen Nachw. |
+| 2.2 | Die bautechnischen Nachweise brauchen nicht vorgelegt zu werden. |
 | 3.1 | Für das Zustimmungsverfahren gelten die §§ 65 und 66 Abs. 4 sowie die §§ 68 bis 74 entsprechend. |
-| 3.2 | Über die Zulässigkeit v. |
+| 3.2 | Über die Zulässigkeit von Abweichungen nach § 69 entscheidet die Bauaufsichtsbehörde. |
+| 3.3 | Eine Bauüberwachung findet nicht statt. |
 | 4.1 | Vorhaben, die der Landesverteidigung dienen und die nicht nach § 62 Abs. 1 Nr. 11 Buchst. |
-| 4.2 | l genehmigungsfrei sind, bedür. |
+| 4.2 | l genehmigungsfrei sind, bedürfen der Zustimmung der oberen Bauaufsichtsbehörde; ist für ein solches Vorhaben eine Umweltverträglichkeitsprüfung oder eine Vorprüfung nach dem Recht über die Um weltverträglichkeitsprüfung durchzuführen, bedarf es der Zustimmung der oberen Bauaufsichtsbehörde; § 70 Abs. 1 Satz 2 gilt entsprechend. |
+| 4.3 | Die Absätze 1 bis 3 sind nicht anzuwenden. |
+| 4.4 | Auf Fliegende Bauten, die der Landesverteidigung dienen, ist § 76 Abs. 2 bis 9 nicht anzuwenden. |
 
 ---
 
-### § 84 — Der Bauaufsicht nicht unterliegende Vorh
+### § 84 — Der Bauaufsicht nicht unterliegende Vorhaben
 **type:** sanktion
 **source_paragraph:** §84 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | 1. Anlagen in und an oberirdischen Gewässern, Anlagen der Gewässerbenutzung, der Gewässerunterhaltung und des Gewässerau |
+| 1.1 | Wenn nach anderen Rechtsvorschriften eine Genehmigung, Bewilligung oder Erlaubnis erforderlich ist, bedürfen keines bauaufsichtlichen Verfahrens |
+| 1.2 | 1. Anlagen in und an oberirdischen Gewässern, Anlagen der Gewässerbenutzung, der Gewässerunterhaltung und des Gewässerausbaus sowie Deiche und Dämme; ausgenommen sind Gebäude |
+| 1.3 | 2. Wasserversorgungs- und Abwasseranlagen |
+| 1.4 | 3. Entwässerungs- und Bewässerungsanlagen |
+| 1.5 | 4. Abfallentsorgungsanlagen |
+| 1.6 | 5. Anlagen für das Fernmeldewesen und Anlagen für die öffentliche Versorgung mit Elektrizität, Gas und Wärme; ausgenommen sind oberirdische Anlagen mit mehr als 50 m³ umbauten Raums oder Behälterinhalt sowie Gebäude |
+| 1.7 | 6. Aufschüttungen und Abgrabungen im Außenbereich, die unter die Naturschutz- und Wassergesetze von Bund und Land oder das Landesgesetz über den Abbau und die Verwertung von Bimsvorkommen fallen |
+| 1.8 | 7. überwachungsbedürftige Anlagen nach § 2 Nr. 1 des Gesetzes über überwachungsbedürftige Anlagen (ÜAnlG) vom |
+| 1.9 | 27. Juli 2021 (BGBl. I S. 3146 -3162-) in der jeweils geltenden Fassung |
+| 1.10 | 8. Anlagen, die im Rahmen eines Flurbereinigungsverfahrens außerhalb der im Zusammenhang bebauten Ortsteile errichtet werden, mit Ausnahme von Gebäuden. Die für den Vollzug dieser Rechtsvorschriften zuständigen Behörden nehmen die Aufgaben nach § 69 wahr |
 
 ---
 
@@ -1308,10 +1896,11 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** ermaechtigungsgrundlage
 **source_paragraph:** §85 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bei rechtmäßig begonnenen oder bestehenden baulichen Anlagen sowie anderen Anlagen und Einrichtungen im Sinne des § 1 Ab. |
-| 2.1 | Sollen rechtmäßig bestehende bauliche Anlagen, andere Anlagen oder Einrichtungen wesentlich geändert werden, so kann gef. |
+| 1.1 | Bei rechtmäßig begonnenen oder bestehenden baulichen Anlagen sowie anderen Anlagen und Einrichtungen im Sinne des § 1 Abs. 1 Satz 2 können nachträglich Anforderungen nur gestellt werden, wenn dies zur Abwehr von erheblichen Gefahren für die öffentliche Sicherheit, insbesondere für Leben oder Gesundheit, erforderlich ist. |
+| 1.2 | Bei Gefahr im Verzug kann bis zur Erfüllung dieser Anforderungen die Benutzung der Anlagen und Einrichtungen eingeschränkt oder untersagt werden. |
+| 2.1 | Sollen rechtmäßig bestehende bauliche Anlagen, andere Anlagen oder Einrichtungen wesentlich geändert werden, so kann gefordert werden, dass auch die nicht unmittelbar berührten Teile mit den baurechtlichen und sonstigen öffentlich-rechtlichen Vorschriften in Einklang gebracht werden, wenn dies keine unzumutbaren Mehrkosten verursacht. |
 
 ---
 
@@ -1319,36 +1908,72 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** oertliche_bauvorschrift
 **source_paragraph:** §86 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Person, die das Eigentum an dem Grundstück innehat, kann durch Erklärung gegenüber der Bauaufsichtsbehörde öffentlic. |
+| 1.1 | Die Person, die das Eigentum an dem Grundstück innehat, kann durch Erklärung gegenüber der Bauaufsichtsbehörde öffentlich-rechtliche Verpflichtungen zu einem ihr Grundstück betreffenden Tun, Dulden oder Unterlassen übernehmen, die sich nicht schon aus öffentlich-rechtlichen Vorschriften ergeben (Baulast). |
+| 1.2 | Baulasten werden unbeschadet der Rechte Dritter mit der Eintragung in das Baulastenverzeichnis wirksam und wirken auch gegenüber den Rechtsnachfolgenden. |
 | 2.1 | Die Erklärung nach Absatz 1 bedarf der Schriftform. |
 | 2.2 | Eine Erklärung in elektronischer Form ist ausgeschlossen. |
-| 2.3 | Die Unters. |
+| 2.3 | Die Unterschrift muss öffentlich beglaubigt oder vor der Bauaufsichtsbehörde geleistet oder vor ihr anerkannt werden. |
 | 3.1 | Das Baulastenverzeichnis wird von der Bauaufsichtsbehörde geführt. |
-| 3.2 | In das Baulastenverzeichnis können auch Auflagen, Bed. |
+| 3.2 | In das Baulastenverzeichnis können auch Auflagen, Bedingungen, Befristungen und Widerrufsvorbehalte eingetragen werden. |
+| 3.3 | Eintragungen in das Baulastenverzeichnis sind den zuständigen Vermessungs- und Katasterbehörden zum Zweck der Aufnahme eines Hinweises in das Liegenschaftskataster mitzuteilen. |
 | 4.1 | Die Baulast geht durch Verzicht der Bauaufsichtsbehörde unter. |
-| 4.2 | Der Verzicht ist zu erklären, wenn ein öffentliches Inter. |
-| 5.1 | Wer ein berechtigtes Interesse darlegt, kann in das Baulastenverzeichnis Einsicht nehmen und sich einen Auszug erstellen. |
+| 4.2 | Der Verzicht ist zu erklären, wenn ein öffentliches Interesse an der Baulast nicht mehr besteht. |
+| 4.3 | Vor dem Verzicht sollen die durch die Baulast verpflichteten und begünstigten Personen gehört werden. |
+| 4.4 | Der Verzicht wird mit der Eintragung in das Baulastenverzeichnis wirksam; von der Eintragung sollen die verpflichteten und begünstigten Personen benachrichtigt werden. |
+| 5.1 | Wer ein berechtigtes Interesse darlegt, kann in das Baulastenverzeichnis Einsicht nehmen und sich einen Auszug erstellen lassen. |
 
 ---
 
-### § 87 — Ermächtigung zum Erlass von Rechts- und
+### § 87 — Ermächtigung zum Erlass von Rechts- und Verwaltungsvorschriften
 **type:** schlussvorschrift
 **source_paragraph:** §87 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Zur Verwirklichung der allgemeinen Anforderungen nach den §§ 3 und 17a Abs. 1 und § 18 Abs. 1 kann das fachlich zuständi. |
-| 2.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung Vorschriften erlassen über. |
-| 2.2 | 1. Umfang, Inhalt, Zahl und B |
-| 3.1 | Das fachlich zuständige Ministerium kann, hinsichtlich der Nummern 2 und 3 im Einvernehmen mit dem für die Aufsicht über. |
-| 4.1 | Das fachlich zuständige Ministerium kann zur Vereinfachung oder Beschleunigung des Baugenehmigungsverfahrens oder zur En. |
-| 5.1 | Das fachlich zuständige Ministerium kann für sachverständige Personen nach § 65 Abs. 4 Satz 1 durch Rechtsverordnung Vor. |
-| 6.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung. |
-| 6.2 | 1. das Ü-Zeichen festlegen und zu diesem Zeichen zusätzl |
-| 7.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung bestimmen, dass die Anforderungen der aufgrund des § 31. |
-| 8.1 | In den Rechtsverordnungen nach Absatz 1 kann wegen der technischen Einzelheiten auf Bekanntmachungen besonderer sachvers. |
+| 1.1 | Zur Verwirklichung der allgemeinen Anforderungen nach den §§ 3 und 17a Abs. 1 und § 18 Abs. 1 kann das fachlich zuständige Ministerium durch Rechtsverordnung Vorschriften erlassen über |
+| 1.2 | 1. die nähere Bestimmung der Anforderungen in den §§ 6 bis 17, 27 bis 49, 52 und 53 |
+| 1.3 | 2. den Nachweis der Befähigung der in § 17a Abs. 6 und § 26 Abs. 1 genannten Personen; dabei können Mindestanforderungen an die Ausbildung, die durch Prüfung nachzuweisende Befähigung und die Ausbildungsstätten einschließlich der Anerkennungsvoraussetzungen gestellt werden |
+| 1.4 | 3. die Überwachung der Tätigkeiten nach § 17a Abs. 7 und § 26 Abs. 2; dabei können für die Überwachungsstellen über die in § 25 Satz 1 Nr. 5 festgelegten Mindestanforderungen hinaus weitere Anforderungen im Hinblick auf die besonderen Eigenschaften und die besondere Verwendung der Bauprodukte gestellt werden |
+| 1.5 | 4. die nähere Bestimmung allgemeiner Anforderungen in § 39, insbesondere über Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung und Energiebereitstellung und Anlagen zur Verteilung von Wärme oder zur Warmwasserversorgung sowie über deren Betrieb, über Brennstoff leitungsanlagen, über Aufstellräume für Feuerstätten, Verbrennungsmotoren und Verdichter, über die Lagerung von Brennstoffen sowie über die Anwendung solcher Anforderungen auf bestehende bauliche Anlagen; dabei können Erleichterungen unter bestimmten Voraussetzungen allgemein für zulässig erklärt und es kann vorgesehen werden, dass für Feuerungsanlagen besonderer Art andere Anforderungen gestellt werden können |
+| 1.6 | 5. besondere Anforderungen oder Erleichterungen, die sich aus der besonderen Art oder Nutzung der baulichen Anlagen und Räume für ihre Errichtung, Änderung, Instandhaltung, Nutzung und ihren Betrieb ergeben (§§ 50 und 51) sowie über die Anwendung solcher Anforderungen auf bestehende bauliche Anlagen |
+| 1.7 | 6. eine von Zeit zu Zeit zu wiederholende Nachprüfung von Anlagen oder Einrichtungen, die zur Verhütung erheblicher Gefahren oder Nachteile ständig ordnungsgemäß instand gehalten werden müssen, und die Erstreckung dieser Nachprüfungspflicht auf bestehende Anlagen oder Einrichtungen |
+| 1.8 | 7. die Anwesenheit von Fachleuten beim Betrieb technisch schwieriger Anlagen und Einrichtungen, wie Bühnenbetriebe und technisch schwierige Fliegende Bauten |
+| 1.9 | 8. den Nachweis der Befähigung der in Nummer 7 genannten Fachleute |
+| 1.10 | 9. die Durchführung von Verordnungen, Richtlinien, Entscheidungen oder Beschlüssen des Rates oder der Kommission, die sich auf Bauarten oder Bauprodukte nach den §§ 17a bis 26 beziehen |
+| 2.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung Vorschriften erlassen über |
+| 2.2 | 1. Umfang, Inhalt, Zahl und Beschaffenheit der Bauunterlagen sowie die Verwendung von Vordrucken |
+| 2.3 | 2. die erforderlichen Anträge, Anzeigen, Nachweise und Bescheinigungen |
+| 2.4 | 3. die Übermittlung personenbezogener Daten an Behörden außerhalb des Baugenehmigungsverfahrens zur Erfüllung der ihnen gesetzlich zugewiesenen Aufgaben |
+| 2.5 | 4. das Verfahren im Einzelnen. Es kann dabei |
+| 2.6 | 1. die Art und Form der Übermittlung sowie weitere Einzelheiten zur Übermittlung |
+| 2.7 | 2. für verschiedene Arten von Bauvorhaben unterschiedliche Anforderungen und Verfahren |
+| 2.8 | 3. den Gebrauch der von der obersten Bauaufsichtsbehörde veröffentlichten Formulare vorschreiben |
+| 3.1 | Das fachlich zuständige Ministerium kann, hinsichtlich der Nummern 2 und 3 im Einvernehmen mit dem für die Aufsicht über die Ingenieurkammer Rheinland-Pfalz zuständigen Ministerium, durch Rechtsverordnung vorschreiben |
+| 3.2 | 1. dass zum Nachweis der ordnungsgemäßen Bauausführung von Entwurfsverfasserinnen oder Entwurfsverfassern, Unternehmen, sachverständigen Personen oder Behörden erstellte Bescheinigungen, Bestätigungen oder Nachweise über die Einhaltung bauaufsichtlicher Anforderungen vorzulegen sind |
+| 3.3 | 2. wie das Verfahren für die Eintragung in die von der Ingenieurkammer Rheinland-Pfalz nach § 64 Abs. 2 Nr. 2 und § 66 Abs. 6 zu führenden Listen durchzuführen ist und welche Nachweise vorzulegen sind; dabei können auch Regelungen über Gebühren für die Eintragung getroffen werden |
+| 3.4 | 3. dass Personen nach § 64 Abs. 2 Nr. 2 und § 66 Abs. 6 sich einer laufenden Fortbildung unterziehen und ausreichend haftpflichtversichert sein müssen sowie unter welchen Voraussetzungen die Eintragung in die Liste nach § 64 Abs. 2 Nr. 2 und § 66 Abs. 6 zu löschen ist |
+| 4.1 | Das fachlich zuständige Ministerium kann zur Vereinfachung oder Beschleunigung des Baugenehmigungsverfahrens oder zur Entlastung der Bauaufsichtsbehörden durch Rechtsverordnung Vorschriften erlassen über |
+| 4.2 | 1. weitere und weitergehende Ausnahmen von den Erfordernissen der Baugenehmigung |
+| 4.3 | 2. den vollständigen oder teilweisen Wegfall der bautechnischen Prüfung bei bestimmten Arten von Bauvorhaben |
+| 4.4 | 3. die Heranziehung von sachverständigen Personen oder Stellen und die Übertragung von Prüfaufgaben der Bauaufsichtsbehörde im Rahmen des bauaufsichtlichen Verfahrens einschließlich der Bauüberwachung auf sachverständige Personen oder Stellen; insoweit kann es für die sachverständigen Personen oder Stellen a) bestimmte Mindestanforderungen an die Fachkenntnisse sowie in zeitlicher und sachlicher Hinsicht an die Berufserfahrung festlegen b) durch Prüfungen nachzuweisende Befähigungen, den Nachweis der persönlichen Zuverlässigkeit sowie eine ausreichende Haftpflichtversicherung fordern c) Altersgrenzen festlegen d) eine laufende Fortbildung vorschreiben e) die sonstigen Voraussetzungen festlegen, die sie zu erfüllen haben f) eine besondere Anerkennung vorschreiben sowie das Verfahren und die Voraussetzungen für die Anerkennung, ihren Widerruf, ihre Rücknahme und ihr Erlöschen regeln g) das Verfahren regeln, nach dem die übertragenen Aufgaben wahrzunehmen sind, und h) unter Berücksichtigung des Schwierigkeitsgrads der Tätigkeit, des Zeitaufwands oder anderer zweckdienlicher Bemessungsgrundlagen Regelungen über deren Vergütung treffen sowie für die Verantwortlichen nach den §§ 56 bis 57 Regelungen entsprechend den Buchstaben a bis e treffen |
+| 5.1 | Das fachlich zuständige Ministerium kann für sachverständige Personen nach § 65 Abs. 4 Satz 1 durch Rechtsverordnung Vorschriften erlassen über |
+| 5.2 | 1. die Fachbereiche, in denen sie tätig werden |
+| 5.3 | 2. die Anforderungen, insbesondere in Bezug auf deren Ausbildung, Fachkenntnisse, Berufserfahrung, persönliche Zuverlässigkeit sowie Fort- und Weiterbildung |
+| 5.4 | 3. das Verfahren, nach dem die Berechtigung zur Ausübung der Tätigkeit als sachverständige Person erworben wird, sowie den Widerruf, die Rücknahme und das Erlöschen der Berechtigung |
+| 5.5 | 4. deren Überwachung |
+| 5.6 | 5. die Festsetzung einer Altersgrenze |
+| 5.7 | 6. das Erfordernis einer ausreichenden Haftpflichtversicherung sowie |
+| 5.8 | 7. deren Vergütung. Dabei können die Befugnisse zur Erteilung, zum Widerruf und zur Rücknahme der Berechtigung nach Satz 1 Nr. 3 sowie zur Überwachung nach Satz 1 Nr. 4 auf Dritte übertragen werden |
+| 6.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung |
+| 6.2 | 1. das Ü-Zeichen festlegen und zu diesem Zeichen zusätzliche Angaben verlangen |
+| 6.3 | 2. das Anerkennungsverfahren nach § 25, die Voraussetzungen für die Anerkennung, ihren Widerruf und ihr Erlöschen regeln, insbesondere auch Altersgrenzen festlegen, sowie eine ausreichende Haftpflichtversicherung fordern |
+| 6.4 | 3. für die natürlichen Personen, juristischen Personen und Behörden nach § 25 die Gebühren und Vergütungen festlegen sowie die Fachaufsicht regeln |
+| 7.1 | Das fachlich zuständige Ministerium kann durch Rechtsverordnung bestimmen, dass die Anforderungen der aufgrund des § 31 ÜAnlG und des § 49 Abs. 4 des Energiewirtschaftsgesetzes erlassenen Verordnungen entsprechend für Anlagen und Einrichtungen gelten, die weder gewerblichen noch wirtschaftlichen Zwecken dienen und in deren Gefahrenbereich keine Arbeitnehmerinnen und Arbeitnehmer beschäftigt werden. |
+| 7.2 | Es kann auch die Verfahrensvorschriften sowie die Straf- und Bußgeldbestimmungen dieser Verordnungen für anwendbar erklären oder selbst das Verfahren bestimmen sowie Zu ständigkeiten und Gebühren regeln. |
+| 7.3 | Dabei kann es auch vorschreiben, dass danach zu erteilende Erlaubnisse die Baugenehmigung einschließlich der zugehörigen Abweichungen einschließen. |
+| 8.1 | In den Rechtsverordnungen nach Absatz 1 kann wegen der technischen Einzelheiten auf Bekanntmachungen besonderer sachverständiger Stellen unter Angabe der Fundstelle verwiesen werden, soweit diese in einer den Betroffenen zugänglichen Weise veröffentlicht worden sind. |
 | 9.1 | Das fachlich zuständige Ministerium erlässt die zur Durchführung dieses Gesetzes erforderlichen Verwaltungsvorschriften. |
 
 ---
@@ -1357,11 +1982,17 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** technische_baubestimmungen
 **source_paragraph:** §87a LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
 | 1.1 | Die Anforderungen nach § 3 Abs. 1 und § 4 können durch Technische Baubestimmungen konkretisiert werden. |
-| 2.1 | Die Konkretisierungen können durch Bezugnahmen auf technische Regeln und deren Fundstellen oder auf andere Weise erfolge. |
-| 3.1 | Die Technischen Baubestimmungen sollen nach den Grundanforderungen gemäß Anhang I der Verordnung (EU) Nr. 305/2011 gegli. |
+| 2.1 | Die Konkretisierungen können durch Bezugnahmen auf technische Regeln und deren Fundstellen oder auf andere Weise erfolgen, insbesondere in Bezug auf |
+| 2.2 | 1. bestimmte bauliche Anlagen oder ihre Teile |
+| 2.3 | 2. die Planung, Bemessung und Ausführung baulicher Anlagen und ihrer Teile |
+| 2.4 | 3. die Leistung von Bauprodukten in bestimmten baulichen Anlagen oder ihren Teilen, insbesondere a) Planung, Bemessung und Ausführung baulicher Anlagen bei Einbau eines Bauproduktes b) Merkmale von Bauprodukten, die sich für einen Verwendungszweck auf die Erfüllung der Anforderungen nach § 3 Abs. 1 Satz 1 auswirken c) Verfahren für die Feststellung der Leistung eines Bauproduktes im Hinblick auf Merkmale, die sich für einen Verwendungszweck auf die Erfüllung der Anforderungen nach § 3 Abs. 1 Satz 1 auswirken d) zulässige oder unzulässige besondere Verwendungszwecke e) die Festlegung von Klassen und Stufen in Bezug auf bestimmte Verwendungszwecke f) die für einen bestimmten Verwendungszweck anzugebende oder erforderliche und anzugebende Leistung in Bezug auf ein Merkmal, das sich für einen Verwendungszweck auf die Erfüllung der Anforderungen nach § 3 Abs. 1 Satz 1 auswirkt, soweit vorgesehen in Klassen und Stufen |
+| 2.5 | 4. die Bauarten und die Bauprodukte, die nur eines allgemeinen bauaufsichtlichen Prüfzeugnisses nach § 17a Abs. 3 oder nach § 20 Abs. 1 bedürfen |
+| 2.6 | 5. Voraussetzungen zur Abgabe der Übereinstimmungserklärung für ein Bauprodukt nach § 23 |
+| 2.7 | 6. die Art, den Inhalt und die Form technischer Dokumentation |
+| 3.1 | Die Technischen Baubestimmungen sollen nach den Grundanforderungen gemäß Anhang I der Verordnung (EU) Nr. 305/2011 gegliedert sein. |
 | 4.1 | Die Technischen Baubestimmungen enthalten die in § 18b Abs. 3 genannte Liste. |
 
 ---
@@ -1370,20 +2001,37 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schlussvorschrift
 **source_paragraph:** §88 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die Gemeinden können durch Satzung Vorschriften erlassen über. |
-| 1.2 | 1. die äußere Gestaltung baulicher Anlagen sowie von Werbe |
-| 2.1 | Anforderungen in Satzungen nach Absatz 1 können auch in einem Plan durch Zeichnung, Farbe oder Schrift festgesetzt werde. |
-| 3.1 | Die Gemeinden können ferner für abgegrenzte Teile des Gemeindegebiets oder für bestimmte Fälle durch Satzung. |
-| 3.2 | 1. die Hers |
-| 4.1 | Die Gemeinden können außerdem durch Satzung bestimmen, dass. |
-| 4.2 | 1. in wegen ihrer kulturellen, historischen oder städtebauli |
+| 1.1 | Die Gemeinden können durch Satzung Vorschriften erlassen über |
+| 1.2 | 1. die äußere Gestaltung baulicher Anlagen sowie von Werbeanlagen und Warenautomaten zur Durchführung gestalterischer Absichten in bestimmten bebauten oder unbebauten Teilen des Gemeindegebiets; die Vorschriften über Werbeanlagen können sich auch auf deren Art, Größe und Anbringungsort erstrecken |
+| 1.3 | 2. besondere Anforderungen gestalterischer Art an bauliche Anlagen, Werbeanlagen und Warenautomaten zum Schutz bestimmter Bauten, Straßen, Plätze oder Ortsteile von kultureller, historischer oder städtebaulicher Bedeutung oder zum Schutz von Kultur- und Naturdenkmälern; dabei können nach den örtlichen Gegebenheiten insbesondere bestimmte Arten von Werbeanlagen und Warenautomaten und die Werbung an bestimmten baulichen Anlagen ausgeschlossen sowie Werbeanlagen und Warenautomaten auf Teile baulicher Anlagen und auf bestimmte Farben beschränkt werden |
+| 1.4 | 3. die Gestaltung der Lager-, Abstell-, Aufstell- und Ausstellungsplätze, der Camping- und Wochenendplätze, der Sport- und Spielplätze, der Stellplätze und der unbebauten Flächen der bebauten Grundstücke sowie über die Notwendigkeit, Art, Gestaltung und Höhe von Einfriedungen; dabei kann bestimmt werden, dass Vorgärten nicht als Arbeits- oder Lagerflächen benutzt werden dürfen |
+| 1.5 | 4. geringere oder größere als die in § 8 Abs. 6 vorgeschriebenen Maße zur Wahrung der baugeschichtlichen Bedeutung oder der sonstigen erhaltenswerten Eigenart eines Ortsteils; die Ortsteile sind in der Satzung genau zu bestimmen |
+| 1.6 | 5. den Anbringungsort und die Gestaltung von Hausnummern |
+| 1.7 | 6. die Unzulässigkeit von mehr als einer Antenne auf Gebäuden sowie die Unzulässigkeit von Außenantennen, soweit der Anschluss an die Gemeinschaftsantenne möglich ist |
+| 1.8 | 7. die Begrünung baulicher Anlagen sowie die Anpflanzung von Bäumen und Sträuchern |
+| 1.9 | 8. die Zahl der notwendigen Stellplätze nach § |
+| 1.10 | 47. Örtliche Bauvorschriften, die zur Durchführung baugestalterischer Absichten erlassen werden, dürfen die Nutzung erneuerbarer Energien nicht ausschließen oder unangemessen beeinträchtigen |
+| 2.1 | Anforderungen in Satzungen nach Absatz 1 können auch in einem Plan durch Zeichnung, Farbe oder Schrift festgesetzt werden (Gestaltungsplan). |
+| 2.2 | Der Gestaltungsplan ist zum Bestandteil der Satzung zu erklären. |
+| 2.3 | Satzungen mit einem Gestaltungsplan sind öffentlich auszulegen. |
+| 3.1 | Die Gemeinden können ferner für abgegrenzte Teile des Gemeindegebiets oder für bestimmte Fälle durch Satzung |
+| 3.2 | 1. die Herstellung notwendiger Stellplätze für bestehende bauliche Anlagen verlangen, soweit Bedürfnisse des Verkehrs oder die Behebung städtebaulicher Missstände dies erfordern |
+| 3.3 | 2. auf die Herstellung von Stellplätzen ganz oder teilweise verzichten, soweit Bedürfnisse des Verkehrs nicht entgegenstehen oder ein Bedarf an Stellplätzen nicht besteht, insbesondere weil die Benutzerinnen und Benutzer der baulichen Anlagen öffentliche Verkehrsmittel in Anspruch nehmen können |
+| 3.4 | 3. die Herstellung von Stellplätzen untersagen oder einschränken, soweit Bedürfnisse des Verkehrs oder städtebauliche Gründe dies erfordern |
+| 3.5 | 4. die Herstellung von Abstellplätzen für Fahrräder verlangen; die erforderliche Größe, die Lage, die Ausstattung und die Anzahl der unterzubringenden Fahrräder können in der Satzung festgelegt werden |
+| 4.1 | Die Gemeinden können außerdem durch Satzung bestimmen, dass |
+| 4.2 | 1. in wegen ihrer kulturellen, historischen oder städtebaulichen Bedeutung besonders schutzwürdigen Gebieten genehmigungsfreie Werbeanlagen und Warenautomaten einer Genehmigung durch die Bauaufsichtsbehörde bedürfen |
+| 4.3 | 2. im Gemeindegebiet oder in Teilen des Gemeindegebiets bei bestehenden Gebäuden Kinderspielplätze nach Maßgabe des § 11 Abs. 4 herzustellen und instand zu halten sind |
+| 4.4 | 3. im Gemeindegebiet oder in Teilen des Gemeindegebiets im Interesse des Klimaschutzes bei vor dem |
+| 4.5 | 1. Januar 2009 errichteten Gebäuden anteilig erneuerbare Energien zu nutzen sind |
 | 5.1 | Für die Satzungen gelten die Bestimmungen der Gemeindeordnung sowie die dazu erlassenen Durchführungsvorschriften. |
-| 5.2 | In de. |
+| 5.2 | In den Fällen des Absatzes 1 Satz 1 Nr. 2 und 4 wird die Satzung im Benehmen mit der zuständigen Denkmalschutzbehörde erlassen. |
 | 6.1 | Regelungen nach den Absätzen 1 bis 4 können in den Bebauungsplan als Festsetzungen aufgenommen werden. |
-| 6.2 | Auf diese Festset. |
-| 7.1 | Für Abweichungen von Satzungsbestimmungen gilt § 69. Vor der Zulassung von Abweichungen ist die Gemeinde, in den Fällen. |
+| 6.2 | Auf diese Festsetzungen sind die §§ 3, 4, 10 bis 18 und 214 bis 216 BauGB anzuwenden; Absatz 5 findet keine Anwendung. |
+| 7.1 | Für Abweichungen von Satzungsbestimmungen gilt § 69. |
+| 7.2 | Vor der Zulassung von Abweichungen ist die Gemeinde, in den Fällen des Absatzes 1 Satz 1 Nr. 2 und 4 auch die zuständige Denkmalschutzbehörde zu hören. |
 
 ---
 
@@ -1391,17 +2039,41 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schlussvorschrift
 **source_paragraph:** §89 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig eine bauliche Anlage errichtet, ändert, benutzt oder abbricht, o. |
-| 2.1 | Absatz 1 Satz 1 und 2 gilt für die Errichtung, Aufstellung, Anbringung, Änderung und den Abbruch anderer Anlagen und Ein. |
-| 3.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig. |
-| 3.2 | 1. als Bauherrin oder Bauherr oder als verantwortliche Person ei |
-| 4.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig. |
-| 4.2 | 1. als verantwortliche Person eines Unternehmens oder bei Bauarb |
-| 5.1 | Ordnungswidrig handelt, wer wider besseres Wissen unrichtige Angaben macht oder unrichtige Pläne oder Unterlagen vorlegt. |
-| 6.1 | Gegenstände, auf die sich eine Ordnungswidrigkeit bezieht oder die zu ihrer Vorbereitung oder Begehung verwendet worden. |
-| 7.1 | Zuständige Verwaltungsbehörde im Sinne des § 36 Abs. 1 Nr. 1 des Gesetzes über Ordnungswidrigkeiten ist die untere Bauau. |
+| 1.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig eine bauliche Anlage errichtet, ändert, benutzt oder abbricht, ohne die hierfür erforderliche Genehmigung zu besitzen. |
+| 1.2 | Ordnungswidrig handelt auch, wer vorsätzlich oder fahrlässig von der erteilten Genehmigung abweicht, wenn die Abweichung einer erneuten Genehmigung bedurft hätte. |
+| 1.3 | Ordnungswidrig handelt ferner, wer vor Ablauf der Frist nach § 67 Abs. 2 mit dem Vorhaben beginnt. |
+| 1.4 | Die Ordnungswidrigkeit kann mit einer Geldbuße bis zu fünfzigtausend Euro geahndet werden. |
+| 2.1 | Absatz 1 Satz 1 und 2 gilt für die Errichtung, Aufstellung, Anbringung, Änderung und den Abbruch anderer Anlagen und Einrichtungen, an die in diesem Gesetz oder aufgrund dieses Gesetzes Anforderungen gestellt werden, und für Abweichungen von einer für diese Anlagen oder Einrichtungen erteilten Genehmigung entsprechend. |
+| 2.2 | Die Ordnungswidrigkeit kann mit einer Geldbuße bis zu zehntausend Euro geahndet werden. |
+| 3.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig |
+| 3.2 | 1. als Bauherrin oder Bauherr oder als verantwortliche Person eines Unternehmens Bauprodukte verwendet oder verwenden lässt, für die der nach § 18b erforderliche Nachweis über ihre Verwendbarkeit nicht vorliegt |
+| 3.3 | 2. Bauprodukte mit dem Ü-Zeichen kennzeichnet, ohne dass dafür die Voraussetzungen nach § 22 Abs. 3 vorliegen, oder |
+| 3.4 | 3. als Bauherrin oder Bauherr oder als verantwortliche Person eines Unternehmens Bauarten entgegen § 17a ohne die erforderliche allgemeine Bauartgenehmigung oder ohne allgemeines bauaufsichtliches Prüfzeugnis für Bauarten oder ohne vorhabenbezogene Bauartgenehmigung anwendet oder anwenden lässt. Die Ordnungswidrigkeit kann mit einer Geldbuße bis zu zwanzigtausend Euro geahndet werden |
+| 4.1 | Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig |
+| 4.2 | 1. als verantwortliche Person eines Unternehmens oder bei Bauarbeiten in Selbst- oder Nachbarschaftshilfe als Bauherrin oder Bauherr bei der Einrichtung und dem Betrieb einer Baustelle entgegen § 53 Abs. 2 die erforderlichen Schutzvorkehrungen oder Sicherheitsvorkehrungen unterlässt |
+| 4.3 | 2. einer vollziehbaren Einstellungsanordnung nach § 55 Abs. 4 Satz 2 zuwiderhandelt |
+| 4.4 | 3. die Pflicht, den Wechsel der Bauleiterin oder des Bauleiters oder der Bauherrin oder des Bauherrn mitzuteilen (§ 55 Abs. 1 Satz 5 und Abs. 5), verletzt |
+| 4.5 | 4. als Bauleiterin oder Bauleiter oder Fachbauleiterin oder Fachbauleiter ihre oder seine Mitteilungspflicht nach § 56a Abs. 1 Satz 2 verletzt |
+| 4.6 | 5. entgegen § 62 Abs. 1 Nr. 10 Buchst. a Halbsatz 2 tragende oder aussteifende Bauteile errichtet oder ändert |
+| 4.7 | 6. entgegen § 66 Abs. 1 Satz 2 oder Satz 4 die Erklärung über die erforderlichen Nachweise nicht rechtzeitig vorlegt oder die erforderlichen Nachweise auf der Baustelle nicht vorhält oder der Bauaufsichtsbehörde auf deren Verlangen nicht vorlegt |
+| 4.8 | 7. entgegen § 66 Abs. 2 Satz 2 oder Satz 3 die erforderlichen Nachweise nicht, nicht richtig, nicht vollständig oder nicht rechtzeitig der Bauaufsichtsbehörde vorlegt |
+| 4.9 | 8. als Inhaberin oder Inhaber einer Ausführungsgenehmigung für Fliegende Bauten die Anzeigepflicht nach § 76 Abs. 6 Satz 1 verletzt |
+| 4.10 | 9. entgegen § 76 Abs. 7 Satz 1 oder entgegen einer vollziehbaren Anordnung nach § 76 Abs. 8 Fliegende Bauten aufstellt oder in Gebrauch nimmt |
+| 4.11 | 10. entgegen § 77 Abs. 1 mit der Ausführung eines genehmigungsbedürftigen Vorhabens beginnt |
+| 4.12 | 11. entgegen § 78 Abs. 2 die Fertigstellung des Rohbaus oder die abschließende Fertigstellung der baulichen Anlage nicht oder nicht fristgerecht anzeigt oder mit der Anzeige der abschließenden Fertigstellung die erforderlichen Bescheinigungen nicht, nicht richtig oder nicht vollständig vorlegt |
+| 4.13 | 12. entgegen § 78 Abs. 5 mit dem Innenausbau beginnt |
+| 4.14 | 13. entgegen § 78 Abs. 6 bestimmte Arbeiten fortsetzt oder eine bauliche Anlage benutzt |
+| 4.15 | 14. entgegen § 78 Abs. 7 Satz 1 Beginn oder Beendigung bestimmter Bauarbeiten nicht anzeigt |
+| 4.16 | 15. entgegen § 79 Abs. 1 eine bauliche Anlage benutzt oder entgegen § 79 Abs. 2 Feuerungsanlagen in Betrieb nimmt |
+| 4.17 | 16. einer vollziehbaren Einstellungsanordnung nach § 80 Abs. 1 zuwiderhandelt |
+| 4.18 | 17. einer vollziehbaren Benutzungsuntersagung nach § 81 zuwiderhandelt oder |
+| 4.19 | 18. gegen eine Verfahrens- oder Betriebsbestimmung verstößt, die in einer aufgrund des § 87 Abs. 1 Nr. 5 oder 6 oder Abs. 7 erlassenen Rechtsverordnung enthalten ist oder auf die verwiesen wird, soweit die Rechtsverordnung für einen bestimmten Tatbestand auf diese Bußgeldbestimmung verweist. Die Ordnungswidrigkeit kann mit einer Geldbuße bis zu zehntausend Euro geahndet werden |
+| 5.1 | Ordnungswidrig handelt, wer wider besseres Wissen unrichtige Angaben macht oder unrichtige Pläne oder Unterlagen vorlegt, um einen nach diesem Gesetz vorgesehenen Verwaltungsakt zu erwirken oder zu verhindern. |
+| 5.2 | Die Ordnungswidrigkeit kann mit einer Geldbuße bis zu zehntausend Euro geahndet werden. |
+| 6.1 | Gegenstände, auf die sich eine Ordnungswidrigkeit bezieht oder die zu ihrer Vorbereitung oder Begehung verwendet worden sind, können eingezogen werden. |
+| 7.1 | Zuständige Verwaltungsbehörde im Sinne des § 36 Abs. 1 Nr. 1 des Gesetzes über Ordnungswidrigkeiten ist die untere Bauaufsichtsbehörde. |
 
 ---
 
@@ -1409,10 +2081,10 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schlussvorschrift
 **source_paragraph:** §90 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Die vor dem In-Kraft-Treten dieses Gesetzes eingeleiteten Verfahren sind nach den bisherigen Verfahrensbestimmungen weit. |
-| 2.1 | Ist ein Antrag vor dem In-Kraft-Treten dieses Gesetzes gestellt worden, so kann die antragstellende Person verlangen, da. |
+| 1.1 | Die vor dem In-Kraft-Treten dieses Gesetzes eingeleiteten Verfahren sind nach den bisherigen Verfahrensbestimmungen weiterzuführen. |
+| 2.1 | Ist ein Antrag vor dem In-Kraft-Treten dieses Gesetzes gestellt worden, so kann die antragstellende Person verlangen, dass die Entscheidung nach dem zur Zeit der Antragstellung geltenden Recht getroffen wird. |
 
 ---
 
@@ -1420,25 +2092,53 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schlussvorschrift
 **source_paragraph:** §91 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Bestehende Anerkennungen als Prüf-, Überwachungs- und Zertifizierungsstellen bleiben in dem bis zum 28. Juni 2019 bestim. |
-| 2.1 | Bis zum 28. Juni 2019 für Bauarten erteilte allgemeine bauaufsichtliche Zulassungen oder Zustimmungen im Einzelfall gelt. |
-| 3.1 | Die bis zum 28. Juni 2019 eingeführten technischen Baubestimmungen und an die Stelle der Bauregellisten getretenen Besti. |
-| 4.1 | Die in der Anlage bestimmten Ausbildungsanforderungen finden keine Anwendung auf Personen, die zum 31. März 2025 ihr Stu. |
+| 1.1 | Bestehende Anerkennungen als Prüf-, Überwachungs- und Zertifizierungsstellen bleiben in dem bis zum 28. |
+| 1.2 | Juni 2019 bestimmten Umfang wirksam. |
+| 1.3 | Vor dem 29. |
+| 1.4 | Juni 2019 gestellte Anträge gelten als Anträge nach diesem Gesetz. |
+| 2.1 | Bis zum 28. |
+| 2.2 | Juni 2019 für Bauarten erteilte allgemeine bauaufsichtliche Zulassungen oder Zustimmungen im Einzelfall gelten als Bauartgenehmigungen fort. |
+| 3.1 | Die bis zum 28. |
+| 3.2 | Juni 2019 eingeführten technischen Baubestimmungen und an die Stelle der Bauregellisten getretenen Bestimmungen gelten bis zum Inkrafttreten der Verwaltungsvorschrift nach § 3 Abs. 2 als Technische Baubestimmungen nach § 87a fort. |
+| 4.1 | Die in der Anlage bestimmten Ausbildungsanforderungen finden keine Anwendung auf Personen, die zum 31. |
+| 4.2 | März 2025 ihr Studium bereits begonnen haben. |
+| 4.3 | Für diese Personen gelten die Ausbildungsanforderungen des § 64 in der bis zum 3. |
+| 4.4 | Januar 2025 geltenden Fassung. |
 
 ---
 
-### § 92 — Außer-Kraft-Treten bestehender Vorschrif
+### § 92 — Außer-Kraft-Treten bestehender Vorschriften
 **type:** schlussvorschrift
 **source_paragraph:** §92 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Mit dem In-Kraft-Treten dieses Gesetzes treten außer Kraft:. |
-| 1.2 | 1. die Landesbauordnung Rheinland-Pfalz vom |
-| 1.3 | 8. März 1995 (GV |
-| 2.1 | Rechtsverordnungen, die aufgrund des in Absatz 1 Nr. 1 genannten Gesetzes, aufgrund der Landesbauordnung für Rheinland-P. |
+| 1.1 | Mit dem In-Kraft-Treten dieses Gesetzes treten außer Kraft 1. |
+| 1.2 | die Landesbauordnung Rheinland-Pfalz vom 8. |
+| 1.3 | März 1995 (GVBl. |
+| 1.4 | S. 19, BS 213-1) 2. |
+| 1.5 | die Landesverordnung über die Gebiete mit geringer Wohnsiedlungstätigkeit vom 28. |
+| 1.6 | Oktober 1977 (GVBl. |
+| 1.7 | S. 363, BS 213-7). |
+| 2.1 | Rechtsverordnungen, die aufgrund des in Absatz 1 Nr. 1 genannten Gesetzes, aufgrund der Landesbauordnung für Rheinland-Pfalz vom 27. |
+| 2.2 | Februar 1974 (GVBl. |
+| 2.3 | S. 53), zuletzt geändert durch Gesetz vom 20. |
+| 2.4 | Juli 1982 (GVBl. |
+| 2.5 | S. 264), BS 213-1, aufgrund der Landesbauordnung für Rheinland-Pfalz vom 15. |
+| 2.6 | November 1961 (GVBl. |
+| 2.7 | S. 229), zuletzt geändert durch Artikel 10 des Gesetzes vom 20. |
+| 2.8 | November 1969 (GVBl. |
+| 2.9 | S. 179) oder aufgrund der Landesbauordnung Rheinland-Pfalz vom 8. |
+| 2.10 | November 1986 (GVBl. |
+| 2.11 | S. 307, 1987 S. 48), zuletzt geändert durch Artikel 6 des Gesetzes vom 5. |
+| 2.12 | Oktober 1993 (GVBl. |
+| 2.13 | S. 481), BS 213-1, erlassen worden sind, bleiben, soweit sie nicht durch Absatz 1 oder durch § 89 Abs. 1 der Landesbauordnung Rheinland-Pfalz vom 8. |
+| 2.14 | März 1995 außer Kraft getreten sind, bis zum Erlass neuer Rechtsverordnungen in Kraft. |
+| 2.15 | Das fachlich zuständige Ministerium wird ermächtigt, sie durch Rechtsverordnung außer Kraft zu setzen. |
+| 3.1 | Soweit in anderen Vorschriften auf Vorschriften oder Bestimmungen verwiesen wird, die durch Absatz 1 oder durch § 89 Abs. 1 der Landesbauordnung Rheinland-Pfalz vom 8. |
+| 3.2 | März 1995 außer Kraft getreten sind, treten an deren Stelle die entsprechenden Bestimmungen dieses Gesetzes. |
 
 ---
 
@@ -1446,9 +2146,20 @@ _Refined from paragraph-level inventory by split_inventory_to_sentences.py. One 
 **type:** schlussvorschrift
 **source_paragraph:** §93 LBauO_RLP
 
-| Nr. | Regeltext (LBauO_RLP-Wortlaut) |
+| Nr. | Regeltext (LBauO RLP-Wortlaut) |
 |---|---|
-| 1.1 | Dieses Gesetz tritt am. |
-| 1.2 | 1. Januar 1999 in Kraft. Anlage (zu § 64 Abs. 2 und zu § 64a Abs. 1) Leitlinien |
+| 1.1 | Dieses Gesetz tritt am 1. |
+| 1.2 | Januar 1999 in Kraft. |
+| 1.3 | Anlage (zu § 64 Abs. 2 und zu § 64a Abs. 1) Leitlinien zu Ausbildungsinhalten Allgemeines Die theoretischen und praktischen Inhalte des Studiums müssen auf die umfassenden Berufsaufgaben sowie auf die beruflichen Fähigkeiten und Tätigkeiten von Bauingenieurinnen und Bauingenieuren ausgerichtet sein. |
+| 1.4 | Die Tätigkeit von Bauingenieurinnen und Bauingenieuren umfasst im Wesentlichen die Planung, den Entwurf, die Konstruktion, die Ausführung, die Instandhaltung, den Betrieb und den Rückbau von Gebäuden und baulichen Anlagen jeder Art, insbesondere in den Bereichen des Hoch-, Verkehrs-, Tief- und Wasserbaus. |
+| 1.5 | Inhaltliche Anforderungen an das Studium des Bauingenieurwesens Im Rahmen eines hauptsächlich auf das Bauingenieurwesen ausgerichteten Studiengangs mit der Bezeichnung „Bauingenieurwesen“ oder entsprechenden Studiengängen von mit mindestens drei Studienjahren (entspricht 180 ECTS-Leistungspunkten) müssen mindestens 135 ECTS-Punkte in Studienfächern erworben werden, die dem Bauwesen zugeordnet werden können. |
+| 1.6 | Hierzu gehören 1. |
+| 1.7 | Studienfächer, die ein fundiertes Grundlagenwissen im thematisch-naturwissenschaftlichen Bereich vermitteln: insbesondere Höhere Mathematik, Technische Mechanik, Bauphysik, Bauchemie und Baustoffkunde und Technisches Darstellen 2. |
+| 1.8 | Studienfächer, die allgemeine fachspezifische Grundlagen des Bauingenieurwesens vermitteln: insbesondere Baukonstruktion/Objektplanung Gebäude, Tragwerkslehreplanung, Bauinformatik/Geoinformatik, Digitales Bauen, Numerische Modellierung, Geotechnik, Bodenmechanik und Geodäsie 3. |
+| 1.9 | Studienfächer, die spezifische Kenntnisse des konstruktiven Ingenieurbaus vermitteln: insbesondere Baustatik, Massivbau (Beton-, Stahlbeton- und Mauerwerksbau), Stahl- und Metallbau, Holzbau, Verbundbau, Glasbau und Kunststoffe, Brückenbau 4. |
+| 1.10 | Studienfächer, die vertiefte Kenntnisse in bauingenieurspezifischen Spezialbereichen vermitteln: insbesondere Wasserwirtschaft, Wasserbau, Siedlungswasserwirtschaft, Abfallwirtschaft und Altlasten, Verkehrsplanung, öffentliche Verkehrssysteme und Verkehrswege (Straße, Schie ne), Straßenwesen 5. |
+| 1.11 | Studienfächer, die vertiefte Kenntnisse des Baumanagements vermitteln: insbesondere Bauprojektmanagement, Bauprozessmanagement und Baubetriebswirtschaft, Bauplanungsmanagement 6. |
+| 1.12 | Studieninhalte, die weitere allgemeine Grundlagen vermitteln: insbesondere Baurecht (Planungsrecht, Ordnungsrecht, Zivilrecht -Verträge, Haftung-), Bauen im Bestand, Ökologie, Fremdsprachen (Fachwortschatz) und technische Gebäudeausrüstung. |
+| 1.13 | Der Anteil der Studienfächer in den Nummern 1 bis 4 muss dabei mindestens 110 ECTS-Punkte betragen. |
 
 ---

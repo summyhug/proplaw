@@ -1,0 +1,256 @@
+{
+  "state": "BremLBO",
+  "generated": "2026-03-25",
+  "thresholds": {
+    "auto": 0.85,
+    "review": 0.5
+  },
+  "mapping": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "5": "5",
+    "6": "6",
+    "7": "7",
+    "8": "8",
+    "10": "10",
+    "11": "11",
+    "12": "12",
+    "13": "13",
+    "15": "15",
+    "16": "16",
+    "16a": "16a",
+    "16b": "16b",
+    "16c": "16c",
+    "17": "17",
+    "18": "18",
+    "19": "19",
+    "20": "20",
+    "21": "21",
+    "22": "22",
+    "23": "23",
+    "24": "24",
+    "25": "25",
+    "27": "27",
+    "28": "28",
+    "29": "29",
+    "30": "30",
+    "31": "31",
+    "32": "32",
+    "33": "33",
+    "34": "34",
+    "35": "35",
+    "36": "36",
+    "37": "37",
+    "38": "38",
+    "39": "39",
+    "40": "40",
+    "41": "41",
+    "43": "43",
+    "47": "47",
+    "48": "48",
+    "50": "50",
+    "52": "52",
+    "57": "57",
+    "58": "58",
+    "59": "59",
+    "62": "62",
+    "63": "63",
+    "64a": "77",
+    "65": "65",
+    "67": "67",
+    "68": "68",
+    "69": "69",
+    "72a": "72a",
+    "73": "73",
+    "74": "74",
+    "75": "75",
+    "76": "76",
+    "77": "78",
+    "78": "79",
+    "79": "80",
+    "81": "82",
+    "82": "83",
+    "83": "84",
+    "84": "85",
+    "86": "86",
+    "87": "87"
+  },
+  "review": [
+    {
+      "state_para": "26",
+      "state_title": "Allgemeine Anforderungen an das Brandverhalten von Baustoffen und Bauteilen",
+      "mbo_para": "26",
+      "mbo_title": "Allgemeine Anforderungen an das Brandver",
+      "score": 0.796,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "42",
+      "state_title": "Feuerungsanlagen, sonstige Anlagen zur Wärmeerzeugung und Energiebereitstellung",
+      "mbo_para": "42",
+      "mbo_title": "Feuerungsanlagen, sonstige Anlagen zur W",
+      "score": 0.761,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "49",
+      "state_title": "Stellplätze und Fahrradabstellplätze, Mobilitätsmanagement",
+      "mbo_para": "49",
+      "mbo_title": "Stellplätze, Garagen und Abstellplätze f",
+      "score": 0.734,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "51",
+      "state_title": "Sonderbauten",
+      "mbo_para": "76",
+      "mbo_title": "Fliegende Bauten",
+      "score": 0.643,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "53",
+      "state_title": "Bauherrin oder Bauherr",
+      "mbo_para": "50",
+      "mbo_title": "Barrierefreies Bauen",
+      "score": 0.571,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "54",
+      "state_title": "Entwurfsverfasserin oder Entwurfsverfasser",
+      "mbo_para": "54",
+      "mbo_title": "Entwurfsverfasser",
+      "score": 0.576,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "55",
+      "state_title": "Unternehmerin oder Unternehmer",
+      "mbo_para": "55",
+      "mbo_title": "Unternehmer",
+      "score": 0.537,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "56",
+      "state_title": "Bauleiterin oder Bauleiter",
+      "mbo_para": "76",
+      "mbo_title": "Fliegende Bauten",
+      "score": 0.571,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "61",
+      "state_title": "Verfahrensfreie Bauvorhaben, Beseitigung von Anlagen, Vorhaben des Bundes, Nothilfevorschrift",
+      "mbo_para": "61",
+      "mbo_title": "Verfahrensfreie Bauvorhaben, Beseitigung",
+      "score": 0.705,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "64",
+      "state_title": "Baugenehmigungsverfahren",
+      "mbo_para": "63",
+      "mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "score": 0.774,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "66",
+      "state_title": "bleibt unberührt",
+      "mbo_para": "56",
+      "mbo_title": "Bauleiter",
+      "score": 0.538,
+      "flag": "low_confidence"
+    },
+    {
+      "state_para": "85",
+      "state_title": "Technische Baubestimmungen",
+      "mbo_para": "66",
+      "mbo_title": "Bautechnische Nachweise",
+      "score": 0.612,
+      "flag": "low_confidence"
+    }
+  ],
+  "unmatched": [
+    {
+      "state_para": "3",
+      "state_title": "Allgemeine Anforderungen Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass die öffentliche Sicherheit oder Ordnung, insbesondere Leben und Gesundheit nicht gefährdet sowie die natürlichen Lebensgrundlagen geschont und keine unzumutbaren Belästigungen verursacht werden. Dabei soll auf die Belange von Menschen mit Behinderung sowie Aspekte der Nachhaltigkeit, des Klimaschutzes und der Klimaanpassung Rücksicht genommen werden und es sind die Grundanforderungen an Bauwerke gemäß Anhang I der Verordnung (EU) Nummer 305/2011 zu berücksichtigen. Dies gilt auch für die Beseitigung von Anlagen und bei der Änderung ihrer Nutzung. Teil 2",
+      "best_mbo_para": "16b",
+      "best_mbo_title": "Allgemeine Anforderungen für die Verwend",
+      "best_score": 0.113
+    },
+    {
+      "state_para": "9",
+      "state_title": "Gestaltung Bauliche Anlagen müssen nach Form, Maßstab, Verhältnis der Baumassen und Bauteile zueinander, Werkstoff und Farbe so gestaltet sein, dass sie nicht verunstaltet wirken. Bauliche Anlagen dürfen das Straßen-, Orts- und Landschaftsbild nicht verunstalten",
+      "best_mbo_para": "40",
+      "best_mbo_title": "Leitungsanlagen, Installationsschächte u",
+      "best_score": 0.214
+    },
+    {
+      "state_para": "14",
+      "state_title": "Brandschutz Bauliche Anlagen sind so anzuordnen, zu errichten, zu ändern und instand zu halten, dass der Entstehung eines Brandes und der Ausbreitung von Feuer und Rauch (Brandausbreitung) vorgebeugt wird und bei einem Brand die Rettung von Menschen und Tieren sowie wirksame Löscharbeiten möglich sind",
+      "best_mbo_para": "5",
+      "best_mbo_title": "Zugänge und Zufahrten auf den Grundstück",
+      "best_score": 0.187
+    },
+    {
+      "state_para": "44",
+      "state_title": "Kleinkläranlagen, Gruben Kleinkläranlagen und Gruben müssen wasserdicht und ausreichend groß sein. Sie müssen eine dichte und sichere Abdeckung sowie Reinigungs- und Entleerungsöffnungen haben. Diese Öffnungen dürfen nur vom Freien aus zugänglich sein",
+      "best_mbo_para": "10",
+      "best_mbo_title": "Anlagen der Außenwerbung, Warenautomaten",
+      "best_score": 0.209
+    },
+    {
+      "state_para": "45",
+      "state_title": "Aufbewahrung fester Abfallstoffe Feste Abfallstoffe dürfen innerhalb von Gebäuden vorübergehend aufbewahrt werden, in Gebäuden der Gebäudeklassen 3 bis 5 jedoch nur, wenn die dafür bestimmten Räume",
+      "best_mbo_para": "45",
+      "best_mbo_title": "Aufbewahrung fester Abfallstoffe Feste A",
+      "best_score": 0.331
+    },
+    {
+      "state_para": "46",
+      "state_title": "Blitzschutzanlagen Bauliche Anlagen, bei denen nach Lage, Bauart oder Nutzung Blitzschlag leicht eintreten oder zu schweren Folgen führen kann, sind mit dauernd wirksamen Blitzschutzanlagen zu versehen. Abschnitt 7Nutzungsbedingte Anforderungen",
+      "best_mbo_para": "85a",
+      "best_mbo_title": "werden diese Bauarten mit der Angabe der",
+      "best_score": 0.206
+    },
+    {
+      "state_para": "60",
+      "state_title": "Vorrang anderer Gestattungsverfahren Keiner Baugenehmigung, Abweichung, Genehmigungsfreistellung und Bauüberwachung nach diesem Gesetz bedürfen",
+      "best_mbo_para": "60",
+      "best_mbo_title": "Vorrang anderer Gestattungsverfahren 1Ke",
+      "best_score": 0.426
+    },
+    {
+      "state_para": "70",
+      "state_title": "Absatz 3 Satz 2 handelt, die innerhalb eines von der Immissionsschutzbehörde im Amtsblatt der Freien Hansestadt Bremen bekanntgemachten Achtungsabstandes oder angemessenen Sicherheitsabstandes im Sinne des § 3 Absatz 5a des Bundesimmissionsschutzgesetzes liegt",
+      "best_mbo_para": "85a",
+      "best_mbo_title": "werden diese Bauarten mit der Angabe der",
+      "best_score": 0.208
+    },
+    {
+      "state_para": "71",
+      "state_title": ", § 72 Absatz 6 und 7 sind entsprechend anzuwenden. Abschnitt 3Genehmigungsverfahren",
+      "best_mbo_para": "63",
+      "best_mbo_title": "Vereinfachtes Baugenehmigungsverfahren",
+      "best_score": 0.496
+    },
+    {
+      "state_para": "72",
+      "state_title": "Absatz 2 bleibt unberührt",
+      "best_mbo_para": "1",
+      "best_mbo_title": "Anwendungsbereich",
+      "best_score": 0.419
+    },
+    {
+      "state_para": "80",
+      "state_title": "Absatz 2 Nummer 1 gilt entsprechend",
+      "best_mbo_para": "65a",
+      "best_mbo_title": "Voraussetzung für die Eintragung in die",
+      "best_score": 0.427
+    }
+  ]
+}

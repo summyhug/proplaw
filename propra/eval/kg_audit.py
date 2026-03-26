@@ -29,17 +29,17 @@ _DEFAULT_GRAPH = Path(__file__).parent.parent / "data" / "graph.pkl"
 _EXPECTED_ANCHORS: dict[str, int] = {
     "BbgBO": 80,
     "BayBO": 90,
-    "NBauO": 90,
+    "NBauO": 88,
     "BauO_BE": 95,
     "BauO_HE": 90,
     "BauO_NRW": 78,
     "BauO_LSA": 90,
     "BauO_MV": 90,
-    "HBauO": 100,
+    "HBauO": 92,
     "LBO_SH": 88,
     "LBO_SL": 80,
     "LBauO_RLP": 95,
-    "SaechsBO": 88,
+    "SaechsBO": 90,
     "ThuerBO": 95,
 }
 

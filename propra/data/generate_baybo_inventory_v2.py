@@ -236,6 +236,22 @@ def load_type_map(old_inv: Path) -> dict[str, str]:
     return type_map
 
 
+def infer_section_type(
+    num: str,
+    title: str,
+    legacy_types: dict[str, str],
+) -> str:
+    """
+    Pick a stable BayBO section type.
+
+    BayBO's legacy flat inventory drifts badly through large parts of the law,
+    so we prefer explicit BayBO corrections for the shifted sections while
+    falling back to the legacy type map elsewhere.
+    """
+    del title
+    return _BAYBO_SECTION_TYPE_OVERRIDES.get(num, legacy_types.get(num, "allgemeine_anforderung"))
+
+
 _HEADER = """\
 # BayBO — Node Inventory (Paragraph Level)
 
@@ -244,16 +260,86 @@ One row per Absatz. Node types sourced from existing inventory._
 
 """
 
+_BAYBO_SECTION_TYPE_OVERRIDES = {
+    "7": "freiflaechengestaltung",
+    "8": "gestaltungsanforderung",
+    "9": "baustellenanforderung",
+    "10": "standsicherheit",
+    "11": "schutzanforderung",
+    "12": "brandschutzanforderung",
+    "14": "verkehrssicherheit",
+    "15": "bauproduktzulassung",
+    "16": "bauproduktzulassung",
+    "24": "brandklassifizierung",
+    "25": "tragende_wand",
+    "26": "aussenwand",
+    "27": "trennwand",
+    "28": "brandwand",
+    "29": "decke",
+    "30": "dach",
+    "31": "brandschutzanforderung",
+    "32": "treppe",
+    "33": "treppenraum",
+    "34": "notwendiger_flur",
+    "35": "fensteroffnung",
+    "36": "allgemeine_anforderung",
+    "37": "aufzugsanlage",
+    "38": "technische_anlage",
+    "39": "technische_anlage",
+    "42": "sanitaerraum",
+    "43": "technische_anlage",
+    "44a": "technische_anlage",
+    "45": "aufenthaltsraum",
+    "46": "wohnung",
+    "47": "stellplatzpflicht",
+    "48": "barrierefreiheit",
+    "49": "beteiligtenpflicht",
+    "50": "beteiligtenpflicht",
+    "51": "beteiligtenpflicht",
+    "53": "behoerdenstruktur",
+    "54": "behoerdenstruktur",
+    "55": "genehmigungspflicht",
+    "56": "genehmigungspflicht",
+    "57": "verfahrensfreies_vorhaben",
+    "58": "kenntnisgabeverfahren",
+    "59": "vereinfachtes_genehmigungsverfahren",
+    "61": "beteiligtenpflicht",
+    "61a": "beteiligtenpflicht",
+    "61b": "beteiligtenpflicht",
+    "63": "abweichung",
+    "64": "bauantrag",
+    "65": "bauantrag",
+    "66": "nachbarbenachrichtigung",
+    "67": "baugenehmigung",
+    "68": "baugenehmigung",
+    "70": "baugenehmigung",
+    "71": "bauvorbescheid",
+    "73": "besonderes_verfahren",
+    "75": "bauueberwachung",
+    "76": "sanktion",
+    "77": "bauueberwachung",
+    "78": "baubeginn",
+    "79": "sanktion",
+    "80": "ermaechtigungsgrundlage",
+    "80a": "baugenehmigung",
+    "81": "oertliche_bauvorschrift",
+    "82": "abstandsflaeche_sonderfall",
+    "82a": "abstandsflaeche_sonderfall",
+    "82b": "abstandsflaeche_sonderfall",
+    "83": "schlussvorschrift",
+    "84": "schlussvorschrift",
+}
+
 
 def main() -> None:
     raw = _TXT_IN.read_text(encoding="utf-8")
-    type_map = load_type_map(_OLD_INVENTORY)
+    legacy_type_map = load_type_map(_OLD_INVENTORY)
     title_map = load_title_map_from_md(_MD_TITLES)
 
     sections = find_sections(raw, title_map)
     print(f"Found {len(sections)} sections:")
     for num, title, start, end in sections:
-        typ = type_map.get(num, "allgemeine_anforderung")
+        typ = infer_section_type(num, title, legacy_type_map)
         print(f"  Art. {num:5s} | {title[:50]:50s} | type={typ}")
 
     # Build output
@@ -266,7 +352,7 @@ def main() -> None:
         if not absaetze:
             continue
 
-        node_type = type_map.get(num, "allgemeine_anforderung")
+        node_type = infer_section_type(num, title, legacy_type_map)
         lines.append(f"### §{num} — {title}")
         lines.append(f"**type:** {node_type}")
         lines.append(f"**source_paragraph:** §{num} BayBO")
@@ -275,7 +361,6 @@ def main() -> None:
         lines.append("|---|---|")
 
         for abs_num, text in absaetze:
-            # Clean up whitespace and pipe chars
             text_clean = text.replace("\n", " ").replace("|", "\\|").strip()
             text_clean = re.sub(r"\s{2,}", " ", text_clean)
             if text_clean:
