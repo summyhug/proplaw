@@ -139,7 +139,7 @@ def assess(situation: Situation) -> AssessmentResponse:
     try:
         chunks = _retriever.retrieve(
             query=situation.project_description,
-            k=5,
+            k=8,
             jurisdiction=iso_code,
             node_types=node_types or None,
         )
