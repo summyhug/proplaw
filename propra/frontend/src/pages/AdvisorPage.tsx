@@ -48,6 +48,7 @@ interface Message {
   timestamp: Date;
   documentBlock?: string;
   classificationLabel?: string;
+  goalCategory?: string;
   retrievalMode?: "rag" | "graphrag";
   kgNodesCount?: number;
 }
@@ -458,6 +459,7 @@ const AdvisorPage = () => {
         reliabilityLabel: data.confidence,
         timestamp: new Date(),
         classificationLabel: classifyQuestion(question) ?? undefined,
+        goalCategory: data.goal_category ?? undefined,
         retrievalMode: (data.retrieval_mode as "rag" | "graphrag") ?? retrievalMode,
         kgNodesCount: (data.kg_nodes_used ?? []).length,
       };
@@ -735,12 +737,18 @@ const AdvisorPage = () => {
                       </div>
                     ) : (
                       <>
-                      {(msg.classificationLabel || msg.retrievalMode) && (
+                      {(msg.classificationLabel || msg.goalCategory || msg.retrievalMode) && (
                         <div className="mb-1.5 flex items-center gap-1.5 flex-wrap">
                           {msg.classificationLabel && (
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-navy/10 text-navy border border-navy/20">
                               <Tag className="w-3 h-3" />
                               {msg.classificationLabel}
+                            </span>
+                          )}
+                          {msg.goalCategory && (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-body font-medium bg-gold/10 text-amber-800 border border-gold/30">
+                              <Tag className="w-3 h-3" />
+                              {msg.goalCategory}
                             </span>
                           )}
                           {msg.retrievalMode && (
