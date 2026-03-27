@@ -99,7 +99,7 @@ QUERIES_DE: dict[str, str] = {
 
 CSV_COLUMNS = [
     "query_id", "query_type", "difficulty", "query_text", "system",
-    "retrieved_chunk_ids", "retrieved_jurisdictions", "top_score", "kg_chunks_added",
+    "retrieved_chunk_ids", "retrieved_chunks_text", "retrieved_jurisdictions", "top_score", "kg_chunks_added",
     "answer", "retrieval_ms", "total_ms", "tokens",
     "retrieval_draft", "reasoning_draft", "grounding_draft", "total_draft",
     "retrieval_final", "reasoning_final", "grounding_final", "total_final",
@@ -210,6 +210,7 @@ def main() -> None:
                 total_ms = 0.0
                 tokens = 0
                 retrieved_chunk_ids = ""
+                retrieved_chunks_text = ""
                 retrieved_jurisdictions = ""
                 top_score = ""
                 kg_chunks_added = 0
@@ -222,11 +223,18 @@ def main() -> None:
                         all_chunks, retrieval_ms = run_rag(query_de, rag.retriever, jurisdiction)
                         faiss_chunks = all_chunks
                         kg_chunks_added = 0
+                        retrieved_chunks_text = " ||| ".join(
+                            c["text"] for c in faiss_chunks if "text" in c
+                        )
                     else:
                         faiss_only, _ = run_rag(query_de, rag.retriever, jurisdiction)
                         all_chunks, retrieval_ms = run_graphrag(query_de, rag.retriever, jurisdiction)
                         faiss_chunks = faiss_only
                         kg_chunks_added = len(all_chunks) - len(faiss_chunks)
+                        retrieved_chunks_text = " ||| ".join(
+                            ("[KG] " if c.get("source") == "kg" else "") + c["text"]
+                            for c in all_chunks if "text" in c
+                        )
 
                     retrieved_chunk_ids = "|".join(
                         c["chunk_id"] for c in faiss_chunks if "chunk_id" in c
@@ -270,6 +278,7 @@ def main() -> None:
                     query_de,
                     system,
                     retrieved_chunk_ids,
+                    retrieved_chunks_text,
                     retrieved_jurisdictions,
                     top_score,
                     kg_chunks_added,
