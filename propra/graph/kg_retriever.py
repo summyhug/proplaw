@@ -8,6 +8,7 @@ source_paragraph.
 """
 
 import logging
+import re
 import sys
 from collections import deque
 from pathlib import Path
@@ -95,26 +96,15 @@ def get_related_chunks(
     if not faiss_chunks:
         return []
 
-    # Build a lookup: source_paragraph -> node_id for all graph nodes.
-    # We use substring matching (chunk value IN node value) so a shorter
-    # chunk reference like "§6 BbgBO" still matches "§6 Abs. 1 BbgBO".
     results: list[dict[str, Any]] = []
     seen_node_ids: set[str] = set()
 
     for chunk in faiss_chunks:
-        chunk_sp = (chunk.get("source_paragraph") or "").strip()
-        if not chunk_sp:
+        candidate_id = _chunk_to_node_id(chunk)
+        if candidate_id is None or candidate_id not in g.nodes:
             continue
 
-        # Find all seed nodes whose source_paragraph contains chunk_sp.
-        seed_ids: list[str] = []
-        for node_id, data in g.nodes(data=True):
-            node_sp = (data.get("source_paragraph") or "").strip()
-            if chunk_sp in node_sp:
-                seed_ids.append(node_id)
-
-        if not seed_ids:
-            continue
+        seed_ids = [candidate_id]
 
         # BFS from each seed over both successors and predecessors.
         for seed in seed_ids:
@@ -132,6 +122,25 @@ def get_related_chunks(
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+
+def _chunk_to_node_id(chunk: dict) -> str | None:
+    """Derive KG node ID from FAISS chunk metadata.
+
+    FAISS source_paragraph: '§ 7 Nicht überbaute Flächen...'
+    FAISS source_file:      'BbgBO'
+    Target node ID:         'BbgBO_§7'
+    """
+    sp = chunk.get("source_paragraph", "")
+    sf = chunk.get("source_file", "")
+    if not sp or not sf:
+        return None
+    # Extract section number (handles § 6, § 6a, Art. 6, Art. 6a)
+    m = re.match(r"(?:§\s*|Art\.\s*)(\d+\w*)", sp.strip())
+    if not m:
+        return None
+    section = m.group(1)  # e.g. "7" or "6a"
+    return f"{sf}_§{section}"  # e.g. "BbgBO_§7"
 
 
 def _bfs_neighbours(g, start: str, hops: int, max_nodes: int) -> list[str]:

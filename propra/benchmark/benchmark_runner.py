@@ -232,7 +232,7 @@ def main() -> None:
                         faiss_chunks = faiss_only
                         kg_chunks_added = len(all_chunks) - len(faiss_chunks)
                         retrieved_chunks_text = " ||| ".join(
-                            ("[KG] " if c.get("source") == "kg" else "") + c["text"]
+                            ("[KG] " if c.get("kg_source") is True else "") + c["text"]
                             for c in all_chunks if "text" in c
                         )
 
