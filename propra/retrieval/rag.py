@@ -121,6 +121,42 @@ def _split_long_chunk(text: str, max_chars: int = CHUNK_MAX_CHARS) -> list[str]:
     return parts
 
 
+# Matches (1), (2), (3)... at line-start — Absatz boundaries
+_ABSATZ_PATTERN = re.compile(r"(?:^|\n)(\(\d+\))", re.MULTILINE)
+
+
+def _split_on_absatz(para_header: str, body: str) -> list[str]:
+    """
+    Split a paragraph body on Absatz boundaries (1), (2), (3)...
+
+    Each sub-chunk is prefixed with the parent § header so Claude
+    retains full citation context. Falls back to the whole body if
+    no Absatz markers are found.
+    """
+    parts = _ABSATZ_PATTERN.split(body)
+    # split() with a capturing group produces: [pre, marker, text, marker, text...]
+    if len(parts) <= 1:
+        # No Absatz markers — return whole paragraph as one chunk
+        return [f"{para_header}\n{body}".strip()]
+
+    chunks = []
+    # First element is any text before (1) — usually empty or a preamble sentence
+    preamble = parts[0].strip()
+    i = 1
+    while i < len(parts) - 1:
+        marker = parts[i]       # e.g. "(1)"
+        text = parts[i + 1].strip()
+        if text:
+            chunk_text = f"{para_header}\n{marker} {text}".strip()
+            if preamble and i == 1:
+                # Attach preamble to first Absatz for context
+                chunk_text = f"{para_header}\n{preamble}\n{marker} {text}".strip()
+            chunks.append(chunk_text)
+        i += 2
+
+    return chunks if chunks else [f"{para_header}\n{body}".strip()]
+
+
 def chunk_file(txt_path: Path) -> list[Chunk]:
     """
     Parse a single LBO .txt file into Chunk objects.
@@ -163,20 +199,24 @@ def chunk_file(txt_path: Path) -> list[Chunk]:
                 and not re.match(r"^\(", body.strip())):
             continue
 
-        for part_idx, part in enumerate(_split_long_chunk(full_text)):
-            # Normalise header to first token for chunk_id
-            para_token = re.sub(r"\s+", "_", header.split("\n")[0])[:30]
-            chunk_id = f"{jur['code']}_{para_token}_{part_idx}"
-            chunks.append(
-                Chunk(
-                    chunk_id=chunk_id,
-                    jurisdiction=jur["code"],
-                    jurisdiction_label=jur["label"],
-                    source_file=stem,
-                    source_paragraph=header.split("\n")[0],
-                    text=part,
+        para_header = header.split("\n")[0]
+        para_token = re.sub(r"\s+", "_", para_header)[:30]
+        sub_chunks = _split_on_absatz(para_header, body)
+
+        for part_idx, part in enumerate(sub_chunks):
+            # Apply hard cap to any sub-chunk that still exceeds max_chars
+            for seg_idx, seg in enumerate(_split_long_chunk(part)):
+                chunk_id = f"{jur['code']}_{para_token}_{part_idx}_{seg_idx}"
+                chunks.append(
+                    Chunk(
+                        chunk_id=chunk_id,
+                        jurisdiction=jur["code"],
+                        jurisdiction_label=jur["label"],
+                        source_file=stem,
+                        source_paragraph=para_header,
+                        text=seg,
+                    )
                 )
-            )
 
     return chunks
 
