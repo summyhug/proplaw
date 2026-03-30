@@ -11,13 +11,13 @@ from __future__ import annotations
 
 import logging
 import re
-
-import joblib
 import sys
 from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
+import joblib
 
 # Ensure UTF-8 output on Windows (cp1252 consoles would otherwise mangle
 # German legal text in log messages).
@@ -79,9 +79,15 @@ def get_related_chunks(
     faiss_chunks: list[dict[str, Any]],
     hops: int = 2,
     max_per_seed: int = 5,
+    goal_category: str | None = None,
+    jurisdiction: str | None = None,
 ) -> KGEnrichmentResult:
     """
     Traverse the KG from FAISS-seeded nodes and return context + diagnostics.
+
+    When ``goal_category`` is provided, nodes whose ``type`` matches the
+    category's node types (from GOAL_CATEGORIES) are used as additional seeds,
+    giving the graph traversal a direct entry point for the user's intent.
 
     Status values:
       - ``graph_unavailable``: graph file missing or failed to load
@@ -106,23 +112,36 @@ def get_related_chunks(
     seen_node_ids: set[str] = set()
     seed_paragraphs: list[str] = []
 
+    # FAISS-derived seeds: match chunks to graph nodes by source_file + § number
     for chunk in faiss_chunks:
         candidate_id = _chunk_to_node_id(chunk)
         if candidate_id is None or candidate_id not in g.nodes:
             continue
 
-        seed_ids = [candidate_id]
-
         seed_paragraphs.append(chunk.get("source_paragraph", "").strip())
 
-        for seed in seed_ids:
-            neighbours = _bfs_neighbours(g, seed, hops=hops, max_nodes=max_per_seed)
-            for node_id in neighbours:
+        neighbours = _bfs_neighbours(g, candidate_id, hops=hops, max_nodes=max_per_seed)
+        for node_id in neighbours:
+            if node_id in seen_node_ids:
+                continue
+            seen_node_ids.add(node_id)
+            results.append(_make_context_dict(node_id, g.nodes[node_id]))
+
+    # Category-derived seeds: find nodes whose type matches the goal category,
+    # filtered to the same jurisdiction when available
+    if goal_category:
+        from propra.graph.schema import GOAL_CATEGORIES  # noqa: PLC0415
+        target_types = set(GOAL_CATEGORIES.get(goal_category, []))
+        if target_types:
+            for node_id, data in g.nodes(data=True):
+                if data.get("type") not in target_types:
+                    continue
+                if jurisdiction and data.get("jurisdiction") and data["jurisdiction"] != jurisdiction:
+                    continue
                 if node_id in seen_node_ids:
                     continue
                 seen_node_ids.add(node_id)
-                node_data = g.nodes[node_id]
-                results.append(_make_context_dict(node_id, node_data))
+                results.append(_make_context_dict(node_id, data))
 
     unique_seed_paragraphs = sorted(set(seed_paragraphs))
 

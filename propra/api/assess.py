@@ -200,7 +200,11 @@ def assess(situation: Situation) -> AssessmentResponse:
     # 4. Optionally enrich with KG context when GraphRAG is requested
     context_chunks = chunks
     if retrieval_mode == "graphrag":
-        kg_result = get_related_chunks(chunks)
+        kg_result = get_related_chunks(
+            chunks,
+            goal_category=classification.goal_category if classification else None,
+            jurisdiction=iso_code,
+        )
         if kg_result.nodes:
             context_chunks = chunks + kg_result.nodes
 
