@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 class ClassificationResult(BaseModel):
@@ -76,14 +76,43 @@ class AssessmentResponse(BaseModel):
         default=None,
         description="Classified goal category for this request (e.g. 'fence'). None if classification failed.",
     )
+    retrieval_mode: Literal["rag", "graphrag"] = Field(
+        ...,
+        description="Retrieval mode that was actually used for this assessment.",
+    )
+    kg_status: Literal[
+        "not_requested",
+        "graph_unavailable",
+        "no_seed_match",
+        "no_related_nodes",
+        "used",
+    ] = Field(
+        ...,
+        description=(
+            "Debug status for the KG enrichment step. "
+            "'used' means graph context was added; the other values explain why it was not."
+        ),
+    )
     kg_nodes_used: list[str] = Field(
-        default=[],
-        description="KG node IDs that contributed context to this assessment.",
+        default_factory=list,
+        description="Knowledge-graph node IDs added to the context for this assessment.",
     )
-    retrieval_mode: str = Field(
-        default="graphrag",
-        description="Retrieval mode used for this assessment: 'rag' or 'graphrag'.",
+    kg_seed_paragraphs: list[str] = Field(
+        default_factory=list,
+        description="FAISS source paragraphs that successfully matched KG seed nodes.",
     )
+    kg_message: str | None = Field(
+        default=None,
+        description="Human-readable debug note for the KG enrichment step.",
+    )
+
+    @model_validator(mode="after")
+    def confidence_requires_bplan(self) -> "AssessmentResponse":
+        if self.confidence == "HIGH" and not self.has_bplan:
+            raise ValueError(
+                "Confidence cannot be HIGH when no B-Plan data is present in the corpus."
+            )
+        return self
 
     model_config = {
         "json_schema_extra": {
@@ -106,6 +135,12 @@ class AssessmentResponse(BaseModel):
                     "ggf. eine Baugenehmigung bei Ihrer Gemeinde."
                 ),
                 "has_bplan": False,
+                "goal_category": "garage",
+                "retrieval_mode": "graphrag",
+                "kg_status": "used",
+                "kg_nodes_used": ["BBGBO_6_9"],
+                "kg_seed_paragraphs": ["§ 6"],
+                "kg_message": "2 KG nodes were added from 1 FAISS seed paragraph.",
             }
         }
     }

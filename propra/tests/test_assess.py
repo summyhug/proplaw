@@ -3,8 +3,9 @@
 from unittest.mock import MagicMock, patch
 
 import anthropic
-import pytest
 from fastapi.testclient import TestClient
+
+from propra.graph.kg_retriever import KGEnrichmentResult
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
@@ -59,6 +60,10 @@ def test_assess_happy_path(client: TestClient, valid_situation: dict) -> None:
     assert isinstance(body["cited_sources"], list)
     assert isinstance(body["next_action"], str) and len(body["next_action"]) > 0
     assert "has_bplan" in body
+    assert body["retrieval_mode"] == "rag"
+    assert body["kg_status"] == "not_requested"
+    assert body["kg_nodes_used"] == []
+    assert body["kg_seed_paragraphs"] == []
 
 
 def test_assess_confidence_capped_without_bplan(client: TestClient, valid_situation: dict) -> None:
@@ -88,6 +93,81 @@ def test_assess_no_chunks_returns_low_confidence(client: TestClient, valid_situa
     body = response.json()
     assert body["confidence"] == "LOW"
     assert body["cited_sources"] == []
+    assert body["retrieval_mode"] == "rag"
+    assert body["kg_status"] == "not_requested"
+
+
+def test_assess_graphrag_surfaces_graph_unavailable_status(
+    client: TestClient, valid_situation: dict
+) -> None:
+    """GraphRAG responses should expose when the graph could not be loaded."""
+    mock_llm = MagicMock(spec=anthropic.Anthropic)
+    mock_llm.messages.create.return_value = _make_llm_response(_VALID_LLM_JSON)
+
+    with (
+        patch("propra.api.assess._retriever") as mock_retriever,
+        patch("propra.api.assess._llm", mock_llm),
+        patch("propra.api.assess.get_related_chunks") as mock_kg,
+    ):
+        mock_retriever.retrieve.return_value = _SAMPLE_CHUNKS
+        mock_kg.return_value = KGEnrichmentResult(
+            status="graph_unavailable",
+            message="Graph file not found at propra/data/graph.pkl",
+        )
+        response = client.post(
+            "/api/assess",
+            json={**valid_situation, "retrieval_mode": "graphrag"},
+        )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["retrieval_mode"] == "graphrag"
+    assert body["kg_status"] == "graph_unavailable"
+    assert body["kg_nodes_used"] == []
+    assert body["kg_seed_paragraphs"] == []
+    assert "graph.pkl" in body["kg_message"]
+
+
+def test_assess_graphrag_reports_used_nodes(
+    client: TestClient, valid_situation: dict
+) -> None:
+    """GraphRAG responses should expose which KG nodes contributed context."""
+    mock_llm = MagicMock(spec=anthropic.Anthropic)
+    mock_llm.messages.create.return_value = _make_llm_response(_VALID_LLM_JSON)
+
+    with (
+        patch("propra.api.assess._retriever") as mock_retriever,
+        patch("propra.api.assess._llm", mock_llm),
+        patch("propra.api.assess.get_related_chunks") as mock_kg,
+    ):
+        mock_retriever.retrieve.return_value = _SAMPLE_CHUNKS
+        mock_kg.return_value = KGEnrichmentResult(
+            status="used",
+            nodes=[
+                {
+                    "text": "Grenzbebauung ist bei Garagen bis 3 m Höhe zulässig.",
+                    "source_paragraph": "§ 6 Abs. 8",
+                    "jurisdiction": "DE-BB",
+                    "jurisdiction_label": "Brandenburg",
+                    "kg_source": True,
+                    "kg_node_id": "BBGBO_6_8",
+                }
+            ],
+            node_ids=["BBGBO_6_8"],
+            seed_paragraphs=["§ 6"],
+            message="Added 1 KG node from 1 matched FAISS seed paragraph.",
+        )
+        response = client.post(
+            "/api/assess",
+            json={**valid_situation, "retrieval_mode": "graphrag"},
+        )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["retrieval_mode"] == "graphrag"
+    assert body["kg_status"] == "used"
+    assert body["kg_nodes_used"] == ["BBGBO_6_8"]
+    assert body["kg_seed_paragraphs"] == ["§ 6"]
 
 
 # ── error paths ───────────────────────────────────────────────────────────────

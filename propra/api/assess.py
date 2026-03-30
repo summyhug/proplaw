@@ -9,7 +9,7 @@ import anthropic
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException, status
 
-from propra.graph.kg_retriever import get_related_chunks
+from propra.graph.kg_retriever import KGEnrichmentResult, get_related_chunks
 from propra.schemas.assessment import AssessmentResponse, ClassificationResult
 from propra.schemas.situation import Situation
 
@@ -21,7 +21,6 @@ if str(_RETRIEVAL_DIR) not in sys.path:
     sys.path.insert(0, str(_RETRIEVAL_DIR))
 
 import rag  # noqa: E402
-import kg_query  # noqa: E402
 
 # ── env ───────────────────────────────────────────────────────────────────────
 load_dotenv()
@@ -119,12 +118,19 @@ def assess(situation: Situation) -> AssessmentResponse:
     Pipeline:
       1. Map jurisdiction label → ISO 3166-2 code for FAISS filter.
       2. LLM goal classification → category + node types (non-fatal if it fails).
-      3. FAISS retrieval → top-5 document chunks (query augmented with node types).
-      4. Anthropic API call with prompts/assess.txt → JSON AssessmentResponse.
-      5. Validate response against AssessmentResponse schema.
+      3. FAISS retrieval → top-8 document chunks.
+      4. Optionally enrich context via the knowledge graph when GraphRAG is requested.
+      5. Anthropic API call with prompts/assess.txt → JSON AssessmentResponse.
+      6. Validate response against AssessmentResponse schema.
     """
     # 1. Map jurisdiction label to ISO code (None = search all jurisdictions)
     iso_code = _LABEL_TO_CODE.get(situation.jurisdiction)
+    retrieval_mode = situation.retrieval_mode
+
+    kg_result = KGEnrichmentResult(
+        status="not_requested",
+        message="Knowledge-graph enrichment was skipped because retrieval_mode='rag'.",
+    )
 
     # 2. Classify the goal (use frontend-provided category or call LLM classifier)
     if situation.goal_category:
@@ -136,15 +142,13 @@ def assess(situation: Situation) -> AssessmentResponse:
     else:
         classification = _classify_goal(situation.project_description)
 
-    node_types = kg_query.query_by_category(classification.goal_category) if classification else []
-
     # 3. Retrieve relevant chunks — pure semantic search, no node_type query augmentation.
     # Node types appended to the query string hurt retrieval (e.g. "abstandsflaeche" steers
     # FAISS toward setback rules when the user asked about fences). KG enrichment runs after.
     try:
         chunks = _retriever.retrieve(
             query=situation.project_description,
-            k=5,
+            k=8,
             jurisdiction=iso_code,
         )
     except FileNotFoundError as exc:
@@ -182,14 +186,26 @@ def assess(situation: Situation) -> AssessmentResponse:
             ),
             has_bplan=situation.has_bplan,
             goal_category=classification.goal_category if classification else None,
+            retrieval_mode=retrieval_mode,
+            kg_status=(
+                "not_requested" if retrieval_mode == "rag" else "no_seed_match"
+            ),
+            kg_message=(
+                "Knowledge-graph enrichment was skipped because FAISS returned no chunks."
+                if retrieval_mode == "graphrag"
+                else kg_result.message
+            ),
         )
 
-    # 3b. KG enrichment (skipped when retrieval_mode == "rag")
-    kg_chunks = get_related_chunks(chunks) if situation.retrieval_mode == "graphrag" else []
-    all_chunks = chunks + kg_chunks
+    # 4. Optionally enrich with KG context when GraphRAG is requested
+    context_chunks = chunks
+    if retrieval_mode == "graphrag":
+        kg_result = get_related_chunks(chunks)
+        if kg_result.nodes:
+            context_chunks = chunks + kg_result.nodes
 
-    # 4. Synthesise with Anthropic
-    context = _build_context(all_chunks)
+    # 5. Synthesise with Anthropic
+    context = _build_context(context_chunks)
     user_message = (
         f"Situation:\n"
         f"- Bundesland: {situation.jurisdiction}\n"
@@ -225,8 +241,14 @@ def assess(situation: Situation) -> AssessmentResponse:
         # has_bplan and goal_category are sourced from the request, not the LLM
         data["has_bplan"] = situation.has_bplan
         data["goal_category"] = classification.goal_category if classification else None
-        data["kg_nodes_used"] = [c["kg_node_id"] for c in kg_chunks]
-        data["retrieval_mode"] = situation.retrieval_mode
+        data["retrieval_mode"] = retrieval_mode
+        data["kg_status"] = kg_result.status
+        data["kg_nodes_used"] = kg_result.node_ids
+        data["kg_seed_paragraphs"] = kg_result.seed_paragraphs
+        data["kg_message"] = kg_result.message
+        # Belt-and-suspenders: downgrade HIGH → MEDIUM when no B-Plan
+        if data.get("confidence") == "HIGH" and not situation.has_bplan:
+            data["confidence"] = "MEDIUM"
         result = AssessmentResponse(**data)
     except (json.JSONDecodeError, ValueError, KeyError) as exc:
         raise HTTPException(
