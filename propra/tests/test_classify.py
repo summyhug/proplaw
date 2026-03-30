@@ -63,8 +63,8 @@ def test_classify_sets_goal_category_in_response(client: TestClient, valid_situa
     assert response.json()["goal_category"] == "zaun_einfriedung"
 
 
-def test_classify_node_types_passed_to_retriever(client: TestClient, valid_situation: dict) -> None:
-    """node_types from the fence category are forwarded to the retriever."""
+def test_classify_node_types_not_passed_to_retriever(client: TestClient, valid_situation: dict) -> None:
+    """node_types are NOT forwarded to the retriever — KG enrichment runs after FAISS retrieval."""
     mock_llm = _mock_llm_sequence(_CLASSIFY_JSON, _ASSESS_JSON)
 
     with (
@@ -76,8 +76,7 @@ def test_classify_node_types_passed_to_retriever(client: TestClient, valid_situa
         client.post("/api/assess", json=payload)
 
     call_kwargs = mock_retriever.retrieve.call_args.kwargs
-    assert call_kwargs.get("node_types") is not None
-    assert "abstandsflaeche" in call_kwargs["node_types"]
+    assert call_kwargs.get("node_types") is None
 
 
 def test_classify_uses_frontend_category_when_provided(client: TestClient, valid_situation: dict) -> None:

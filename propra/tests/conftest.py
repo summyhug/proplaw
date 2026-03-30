@@ -18,4 +18,5 @@ def valid_situation() -> dict:
         "property_type": "Einfamilienhaus",
         "project_description": "Ich möchte eine Garage mit 6 m × 4 m im Hintergarten bauen.",
         "has_bplan": False,
+        "retrieval_mode": "rag",
     }
