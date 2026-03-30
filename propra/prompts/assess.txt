@@ -24,7 +24,7 @@ Antworte AUSSCHLIESSLICH mit einem validen JSON-Objekt — ohne Markdown-Codebl�
 {
   "verdict": "ALLOWED" | "CONDITIONAL" | "NOT_ALLOWED",
   "confidence": "LOW" | "MEDIUM" | "HIGH",
-  "explanation": "<2–4 sentences in the same language as the Vorhaben>",
+  "explanation": "<clear, complete answer in the same language as the Vorhaben — cover all relevant conditions and paragraphs found in the sources>",
   "cited_sources": [
     {
       "paragraph": "<z.B. § 6 Abs. 1>",
