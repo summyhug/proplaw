@@ -36,6 +36,12 @@ GOAL_CATEGORIES: dict[str, list[str]] = {
     "abriss":                  ["baugenehmigung", "bestandsschutz", "bestandsaenderung"],
 }
 
+# Node types that are conceptually identical but named differently across states.
+# Key: canonical name (used in GOAL_CATEGORIES); Value: synonym used in some states' graphs.
+TYPE_SYNONYMS: dict[str, str] = {
+    "verfahrensfreies_vorhaben": "verfahrensfreiheit",
+}
+
 # ---------------------------------------------------------------------------
 # Allowed node types (German legal taxonomy — do not translate)
 # ---------------------------------------------------------------------------

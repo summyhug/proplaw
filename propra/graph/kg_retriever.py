@@ -130,8 +130,10 @@ def get_related_chunks(
     # Category-derived seeds: find nodes whose type matches the goal category,
     # filtered to the same jurisdiction when available
     if goal_category:
-        from propra.graph.schema import GOAL_CATEGORIES  # noqa: PLC0415
+        from propra.graph.schema import GOAL_CATEGORIES, TYPE_SYNONYMS  # noqa: PLC0415
         target_types = set(GOAL_CATEGORIES.get(goal_category, []))
+        # Expand with synonyms so states that use alternate type names also match
+        target_types |= {TYPE_SYNONYMS[t] for t in target_types if t in TYPE_SYNONYMS}
         if target_types:
             for node_id, data in g.nodes(data=True):
                 if data.get("type") not in target_types:
