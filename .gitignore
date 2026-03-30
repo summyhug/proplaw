@@ -15,10 +15,6 @@ node_modules/
 # macOS
 .DS_Store
 
-# Raw source documents (PDFs — tracked by folder, not content)
-data/raw/*.pdf
-propra/data/raw/*.pdf
-
 # Vector database files
 *.faiss
 *.pkl

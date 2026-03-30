@@ -10,7 +10,6 @@ and whether any seed nodes matched.
 from __future__ import annotations
 
 import logging
-import pickle
 import re
 import sys
 from collections import deque
@@ -107,13 +106,11 @@ def get_related_chunks(
     seed_paragraphs: list[str] = []
 
     for chunk in faiss_chunks:
-        chunk_sp = (chunk.get("source_paragraph") or "").strip()
-        if not chunk_sp:
+        candidate_id = _chunk_to_node_id(chunk)
+        if candidate_id is None or candidate_id not in g.nodes:
             continue
 
-        seed_ids = _find_seed_ids(g, chunk)
-        if not seed_ids:
-            continue
+        seed_ids = [candidate_id]
 
         seed_paragraphs.append(chunk_sp)
 
@@ -220,6 +217,25 @@ def _extract_section_refs(value: str) -> set[str]:
     for match in _SECTION_REF_RE.findall(value):
         refs.add(_WHITESPACE_RE.sub(" ", match).strip().lower())
     return refs
+
+
+def _chunk_to_node_id(chunk: dict) -> str | None:
+    """Derive KG node ID from FAISS chunk metadata.
+
+    FAISS source_paragraph: '§ 7 Nicht überbaute Flächen...'
+    FAISS source_file:      'BbgBO'
+    Target node ID:         'BbgBO_§7'
+    """
+    sp = chunk.get("source_paragraph", "")
+    sf = chunk.get("source_file", "")
+    if not sp or not sf:
+        return None
+    # Extract section number (handles § 6, § 6a, Art. 6, Art. 6a)
+    m = re.match(r"(?:§\s*|Art\.\s*)(\d+\w*)", sp.strip())
+    if not m:
+        return None
+    section = m.group(1)  # e.g. "7" or "6a"
+    return f"{sf}_§{section}"  # e.g. "BbgBO_§7"
 
 
 def _bfs_neighbours(g, start: str, hops: int, max_nodes: int) -> list[str]:
