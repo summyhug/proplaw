@@ -116,7 +116,8 @@ def get_related_chunks(
         seed_paragraphs.append(chunk.get("source_paragraph", "").strip())
 
         for seed in seed_ids:
-            neighbours = _bfs_neighbours(g, seed, hops=hops, max_nodes=max_per_seed)
+            neighbours = _bfs_neighbours(g, seed, hops=hops, max_nodes=max_per_seed,
+                                         jurisdiction=chunk.get("jurisdiction", ""))
             for node_id in neighbours:
                 if node_id in seen_node_ids:
                     continue
@@ -239,8 +240,22 @@ def _chunk_to_node_id(chunk: dict) -> str | None:
     return f"{sf}_§{section}"  # e.g. "BbgBO_§7"
 
 
-def _bfs_neighbours(g, start: str, hops: int, max_nodes: int) -> list[str]:
-    """Collect up to ``max_nodes`` unique neighbour IDs within ``hops`` steps."""
+def _bfs_neighbours(
+    g,
+    start: str,
+    hops: int,
+    max_nodes: int,
+    jurisdiction: str = "",
+) -> list[str]:
+    """
+    Collect neighbours using directional, edge-type-aware traversal.
+
+    Edge-type rules (based on graph schema):
+      sub_item_of  — follow predecessors only (child -> parent, gives context)
+      supplements  — follow predecessors only (node -> section anchor)
+      exception_of — follow both directions (base rule <-> exception mutually important)
+      references   — follow successors only (-> the referenced section)
+    """
     visited: set[str] = {start}
     queue: deque[tuple[str, int]] = deque([(start, 0)])
     collected: list[str] = []
@@ -250,10 +265,36 @@ def _bfs_neighbours(g, start: str, hops: int, max_nodes: int) -> list[str]:
         if depth >= hops:
             continue
 
-        neighbours = list(g.successors(current)) + list(g.predecessors(current))
-        for nb in neighbours:
+        candidates: list[str] = []
+
+        # sub_item_of: upward only (toward parent)
+        for nb in g.predecessors(current):
+            if g.edges[nb, current].get("relation") == "sub_item_of":
+                candidates.append(nb)
+        # supplements: upward only (toward section anchor)
+        for nb in g.predecessors(current):
+            if g.edges[nb, current].get("relation") == "supplements":
+                candidates.append(nb)
+        # exception_of: both directions
+        for nb in g.successors(current):
+            if g.edges[current, nb].get("relation") == "exception_of":
+                candidates.append(nb)
+        for nb in g.predecessors(current):
+            if g.edges[nb, current].get("relation") == "exception_of":
+                candidates.append(nb)
+        # references: follow the reference (successors only)
+        for nb in g.successors(current):
+            if g.edges[current, nb].get("relation") == "references":
+                candidates.append(nb)
+
+        for nb in candidates:
             if nb in visited:
                 continue
+            # Jurisdiction filter
+            if jurisdiction:
+                node_jur = g.nodes[nb].get("jurisdiction", "")
+                if node_jur and node_jur != jurisdiction:
+                    continue
             visited.add(nb)
             collected.append(nb)
             if len(collected) >= max_nodes:
