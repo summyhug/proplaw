@@ -21,7 +21,6 @@ if str(_RETRIEVAL_DIR) not in sys.path:
     sys.path.insert(0, str(_RETRIEVAL_DIR))
 
 import rag  # noqa: E402
-import kg_query  # noqa: E402
 
 # ── env ───────────────────────────────────────────────────────────────────────
 load_dotenv()
@@ -94,6 +93,9 @@ def _classify_goal(project_description: str) -> ClassificationResult | None:
         if text.startswith("```"):
             text = text.split("\n", 1)[1].rsplit("```", 1)[0].strip()
         data = json.loads(text)
+        # Prompt returns "category"; schema expects "goal_category"
+        if "category" in data and "goal_category" not in data:
+            data["goal_category"] = data.pop("category")
         return ClassificationResult(**data)
     except Exception:
         return None
@@ -140,15 +142,14 @@ def assess(situation: Situation) -> AssessmentResponse:
     else:
         classification = _classify_goal(situation.project_description)
 
-    node_types = kg_query.query_by_category(classification.goal_category) if classification else []
-
-    # 3. Retrieve relevant chunks (query augmented with node type hints)
+    # 3. Retrieve relevant chunks — pure semantic search, no node_type query augmentation.
+    # Node types appended to the query string hurt retrieval (e.g. "abstandsflaeche" steers
+    # FAISS toward setback rules when the user asked about fences). KG enrichment runs after.
     try:
         chunks = _retriever.retrieve(
             query=situation.project_description,
             k=8,
             jurisdiction=iso_code,
-            node_types=node_types or None,
         )
     except FileNotFoundError as exc:
         raise HTTPException(
