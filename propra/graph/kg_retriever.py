@@ -117,7 +117,7 @@ def get_related_chunks(
 
         for seed in seed_ids:
             neighbours = _bfs_neighbours(g, seed, hops=hops, max_nodes=max_per_seed,
-                                         jurisdiction=chunk.get("jurisdiction", ""))
+                                         source_file=chunk.get("source_file", ""))
             for node_id in neighbours:
                 if node_id in seen_node_ids:
                     continue
@@ -245,7 +245,7 @@ def _bfs_neighbours(
     start: str,
     hops: int,
     max_nodes: int,
-    jurisdiction: str = "",
+    source_file: str = "",
 ) -> list[str]:
     """
     Collect neighbours using directional, edge-type-aware traversal.
@@ -267,33 +267,24 @@ def _bfs_neighbours(
 
         candidates: list[str] = []
 
-        # sub_item_of: upward only (toward parent)
         for nb in g.predecessors(current):
-            if g.edges[nb, current].get("relation") == "sub_item_of":
+            data = g.get_edge_data(nb, current) or {}
+            rel = data.get("relation", "")
+            if rel in ("sub_item_of", "supplements", "exception_of"):
                 candidates.append(nb)
-        # supplements: upward only (toward section anchor)
-        for nb in g.predecessors(current):
-            if g.edges[nb, current].get("relation") == "supplements":
-                candidates.append(nb)
-        # exception_of: both directions
+
         for nb in g.successors(current):
-            if g.edges[current, nb].get("relation") == "exception_of":
-                candidates.append(nb)
-        for nb in g.predecessors(current):
-            if g.edges[nb, current].get("relation") == "exception_of":
-                candidates.append(nb)
-        # references: follow the reference (successors only)
-        for nb in g.successors(current):
-            if g.edges[current, nb].get("relation") == "references":
+            data = g.get_edge_data(current, nb) or {}
+            rel = data.get("relation", "")
+            if rel in ("exception_of", "references"):
                 candidates.append(nb)
 
         for nb in candidates:
             if nb in visited:
                 continue
-            # Jurisdiction filter
-            if jurisdiction:
-                node_jur = g.nodes[nb].get("jurisdiction", "")
-                if node_jur and node_jur != jurisdiction:
+            if source_file:
+                node_sf = g.nodes[nb].get("sourced_from", "")
+                if node_sf and source_file not in node_sf and node_sf not in source_file:
                     continue
             visited.add(nb)
             collected.append(nb)
