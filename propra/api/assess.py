@@ -247,9 +247,6 @@ def assess(situation: Situation) -> AssessmentResponse:
         data["kg_nodes_used"] = kg_result.node_ids
         data["kg_seed_paragraphs"] = kg_result.seed_paragraphs
         data["kg_message"] = kg_result.message
-        # Belt-and-suspenders: downgrade HIGH → MEDIUM when no B-Plan
-        if data.get("confidence") == "HIGH" and not situation.has_bplan:
-            data["confidence"] = "MEDIUM"
         result = AssessmentResponse(**data)
     except (json.JSONDecodeError, ValueError, KeyError) as exc:
         raise HTTPException(

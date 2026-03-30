@@ -66,8 +66,8 @@ def test_assess_happy_path(client: TestClient, valid_situation: dict) -> None:
     assert body["kg_seed_paragraphs"] == []
 
 
-def test_assess_confidence_capped_without_bplan(client: TestClient, valid_situation: dict) -> None:
-    """Confidence is downgraded from HIGH to MEDIUM when has_bplan is False."""
+def test_assess_high_confidence_not_capped(client: TestClient, valid_situation: dict) -> None:
+    """HIGH confidence from the LLM is passed through unchanged regardless of has_bplan."""
     high_conf_json = _VALID_LLM_JSON.replace('"MEDIUM"', '"HIGH"')
     mock_llm = MagicMock(spec=anthropic.Anthropic)
     mock_llm.messages.create.return_value = _make_llm_response(high_conf_json)
@@ -80,7 +80,7 @@ def test_assess_confidence_capped_without_bplan(client: TestClient, valid_situat
         response = client.post("/api/assess", json={**valid_situation, "has_bplan": False})
 
     assert response.status_code == 200
-    assert response.json()["confidence"] != "HIGH"
+    assert response.json()["confidence"] == "HIGH"
 
 
 def test_assess_no_chunks_returns_low_confidence(client: TestClient, valid_situation: dict) -> None:

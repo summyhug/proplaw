@@ -159,6 +159,19 @@ const ReliabilityBadge = ({ level }: { level: string }) => {
   );
 };
 
+const buildCopyText = (msg: Message, verdictLabel: string, sourcesLabel: string): string => {
+  const lines: string[] = [];
+  if (msg.verdict) lines.push(`${verdictLabel}\n`);
+  lines.push(msg.content);
+  if (msg.sources && msg.sources.length > 0) {
+    lines.push(`\n${sourcesLabel}:`);
+    msg.sources.forEach((s, i) => {
+      lines.push(`${i + 1}. ${s.code} ${s.section} (${s.title})${s.excerpt ? `\n   "${s.excerpt}"` : ""}`);
+    });
+  }
+  return lines.join("\n");
+};
+
 const VERDICT_CONFIG: Record<Verdict, { color: string; icon: string }> = {
   ALLOWED:     { color: "text-emerald-800 bg-emerald-50 border-emerald-300", icon: "✓" },
   CONDITIONAL: { color: "text-amber-800 bg-amber-50 border-amber-300",   icon: "⚠" },
@@ -803,7 +816,12 @@ const AdvisorPage = () => {
                             <button className="p-1.5 rounded-lg hover:bg-muted transition-colors">
                               <ThumbsDown className="w-3.5 h-3.5 text-muted-foreground hover:text-foreground" />
                             </button>
-                            <button className="p-1.5 rounded-lg hover:bg-muted transition-colors ml-auto">
+                            <button
+                              className="p-1.5 rounded-lg hover:bg-muted transition-colors ml-auto"
+                              onClick={() => navigator.clipboard.writeText(
+                                buildCopyText(msg, t(`advisor.verdict.${msg.verdict}`), t("advisor.sources"))
+                              )}
+                            >
                               <Copy className="w-3.5 h-3.5 text-muted-foreground hover:text-foreground" />
                             </button>
                           </div>

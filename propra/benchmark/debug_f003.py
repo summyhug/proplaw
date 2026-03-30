@@ -8,16 +8,17 @@ Usage:
     python -m propra.benchmark.debug_f003
 """
 
+import re
 import sys
 import pickle
 from pathlib import Path
 
-sys.stdout.reconfigure(encoding="utf-8")
-
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-import joblib
-from propra.retrieval.rag import Chunk
+import joblib  # noqa: E402
+from propra.retrieval.rag import Chunk  # noqa: E402
+
+sys.stdout.reconfigure(encoding="utf-8")
 
 _PROPRA_DIR = Path(__file__).resolve().parents[1]
 _CHUNKS_PATH = _PROPRA_DIR / "retrieval" / "chunks.pkl"
@@ -114,7 +115,7 @@ elif isinstance(graph, dict):
         print(f"KG node_id format: {first_node_id!r}")
 else:
     print(f"Graph type: {type(graph).__name__} — no .nodes or dict interface")
-    print(f"KG node_id format: <unknown>")
+    print("KG node_id format: <unknown>")
 
 # ---------------------------------------------------------------------------
 # 3. Attempt source_paragraph match for first Brandenburg chunk
@@ -169,7 +170,6 @@ else:
 print("=" * 60)
 print("F003 FIX VALIDATION — derived node ID lookup")
 print("=" * 60)
-import re
 
 def _chunk_to_node_id(chunk):
     sp = chunk.get("source_paragraph", "")
